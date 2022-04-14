@@ -1,0 +1,155 @@
+:root {
+  --blue: #2ff1ff;
+  --display: freight-display-pro, Times, serif;
+  --text: freight-text-pro, Times, serif;
+  --sans: acumin-pro, sans-serif;
+  font-family: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--blue);
+  color: #003;
+  transition: background-color linear 0.5s;
+}
+
+header.title {
+  font-family: var(--display);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  height: 100dvh;
+  max-height: 1000px;
+  /* background: var(--blue); */
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  backdrop-filter: blur(30px) saturate(180%);
+  background: #1b45bbcc;
+  /* background: #da2f07; */
+  color: var(--blue);
+  /* color: #da2f07; */
+  position: relative;
+  box-shadow: 0 50px 50px 20px #000a;
+  /* box-shadow: 0 50px 50px 20px #1b45bbcc; */
+  z-index: 100;
+}
+
+section {
+  padding-bottom: 1em;
+}
+
+section h2 {
+  width: 50%;
+  position: relative;
+  left: 16vw;
+  font-size: 5em;
+  margin-top: 1.5em;
+  font-family: freight-display-pro, var(--text);
+}
+
+@media (max-width: 768px) {
+  .mobile-flex-vertical {
+    flex-direction: column;
+  }
+  section h2 {
+    font-size: 3em;
+  }
+  .mobile-w-100 {
+    width: 100% !important;
+  }
+  .mobile-left-13vw {
+    left: 13vw !important;
+  }
+}
+
+header.title .logo {
+  max-width: 95vw;
+  object-fit: contain;
+  object-position: top;
+  filter: invert();
+}
+
+h1 {
+  font-size: min(11.5vw, 5em);
+  text-align: center;
+  padding: 0 5vw;
+  margin: 0;
+  max-width: 1000px;
+}
+
+a {
+  color: var(--red);
+}
+
+header h2 {
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+
+article p {
+  font-size: 1.18rem;
+}
+article p,
+article figcaption,
+footer p {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+figure {
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figure img,
+figure video {
+  width: 100%;
+  object-fit: contain;
+}
+figcaption {
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+}
+cite {
+  font-style: normal;
+  font-weight: bold;
+}
+
+footer {
+  padding: 1em;
+  border-top: 1px solid currentColor;
+  font-family: var(--sans);
+  text-align: center;
+}
+
+.section-link {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-family: var(--text);
+}
+.section-link:not(:hover) {
+  text-decoration: none;
+}
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 3px 8px;
+  margin: 0;
+  border-radius: 1000px;
+  cursor: pointer;
+}

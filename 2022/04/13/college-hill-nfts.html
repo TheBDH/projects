@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://use.typekit.net/mxr8glf.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="title">
+      <a href="https://www.browndailyherald.com"
+        ><img
+          class="logo"
+          src="/logo-black.png"
+          alt="The Brown Daily Herald"
+          width="400"
+          height="71"
+      /></a>
+      <a
+        href="https://www.browndailyherald.com/section/arts-culture"
+        class="section-link"
+        >ARTS & CULTURE</a
+      >
+      <div style="flex: 1"></div>
+      <h1>
+        Courses, collectives and controversy: A deep dive into NFTs on College
+        Hill
+      </h1>
+      <div style="flex: 1"></div>
+      <h2 style="color: white">
+        <br />
+        By
+        <a href="https://www.browndailyherald.com/staff/claire-liu"
+          >Claire Liu</a
+        >,
+        <a href="https://www.browndailyherald.com/staff/rebeccacarcieri"
+          >Rebecca Carcieri</a
+        >
+        <br />
+        Web Design &amp; Layout by
+        <a href="https://www.browndailyherald.com/author/jed-fox/">Jed Fox</a>
+      </h2>
+      <p>
+        <time
+          datetime="2020-04-13"
+          style="font-family: var(--sans); font-weight: bold; color: white"
+          >April 13, 2022</time
+        >
+      </p>
+    </header>
+
+    <img
+      style="width: 100vw; position: fixed; top: 0"
+      id="fixed-image"
+      src="AMKMQ1.jpeg"
+    />
+    <figure style="margin: 0">
+      <img
+        style="width: 100vw; visibility: hidden"
+        id="sliding-image"
+        src="AMKMQ1.jpeg"
+      />
+      <figcaption>
+        <cite>UNTITLED | <a href="https://m3dium.xyz/AMQ">AMKMQ</a></cite>
+      </figcaption>
+    </figure>
+
+    <script>
+      const slidingImage = document.getElementById("sliding-image");
+      const fixedImage = document.getElementById("fixed-image");
+      const header = document.querySelector("header");
+      document.addEventListener("scroll", () => {
+        if (
+          (document.documentElement.scrollTop || document.body.scrollTop) >
+          header.clientHeight
+        ) {
+          slidingImage.style.visibility = "visible";
+          fixedImage.style.visibility = "hidden";
+        } else {
+          slidingImage.style.visibility = "hidden";
+          fixedImage.style.visibility = "visible";
+        }
+
+        for (const section of document.querySelectorAll("[data-color]")) {
+          if (section.getBoundingClientRect().top < window.innerHeight / 2) {
+            const color = section.getAttribute("data-color");
+            document.body.style.backgroundColor = color;
+          }
+        }
+      });
+    </script>
+    <article>
+      <section data-color="#2ff1ff">
+        <p>
+          Imagine coming across a piece of art online as one-of-a-kind as the
+          Mona Lisa. You decide to buy an NFT for that artwork — a kind of
+          digital certificate of authenticity. Once the certificate is made, it
+          is impossible to change. Anyone can see the full ownership history of
+          the certificate, so you only have to verify that the original creator
+          of the NFT is the artist to know that you own a legitimate
+          certificate.
+        </p>
+
+        <p>
+          Simplified, this system of certificates is the technological value
+          that NFTs, or non-fungible tokens, aim to bring to art: a trusted
+          transaction between buyer and artist that removes anyone else from the
+          equation.
+        </p>
+
+        <p>
+          At Brown and Rhode Island School of Design, NFTs have become part of
+          the curriculum for a student-run course and the marketplace of choice
+          for a new art collective, sparking polarized discourse on their
+          implications.
+        </p>
+      </section>
+      <section data-color="#2ff1ff">
+        <div style="display: flex" class="mobile-flex-vertical">
+          <h2 style="color: inherit; left: 5vw">
+            Blockchains — the technology behind NFTs
+          </h2>
+          <figure style="width: 50%" class="mobile-w-100">
+            <img src="AMKMQ2.jpeg" />
+            <figcaption>
+              <cite>
+                UNTITLED | <a href="https://m3dium.xyz/AMQ-2">AMKMQ</a>
+              </cite>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p>
+          Non-fungible, meaning non-replaceable, tokens are
+          <a
+            href="https://www.nytimes.com/2021/03/11/arts/design/what-is-an-nft.html"
+            >created</a
+          >
+          and stored using blockchain technology. A
+          <a href="https://www.investopedia.com/terms/b/blockchain.asp"
+            >blockchain</a
+          >
+          is an unchangeable, universally-accessible digital list that securely
+          records transaction history. This technology opens up new
+          opportunities for how artists can make money from their art that are
+          not possible with the sale of traditional paper art, according to
+          Professor of Computer Science Maurice Herlihy, who serves as an
+          advisor for blockchain developers and teaches the course CSCI 1951L:
+          “Blockchains and Cryptocurrencies.”
+        </p>
+
+        <p>
+          For instance, the blockchain can be programmed to give the original
+          artist of the NFT a percentage of the resale value every time it is
+          sold, Herlihy said.
+        </p>
+
+        <p>
+          This technology could prevent the fate of famous artists like Vincent
+          Van Gogh, whose paintings skyrocketed in
+          <a href="https://www.britannica.com/biography/Vincent-van-Gogh"
+            >value long after his death while his</a
+          >
+          estate was left without a means of compensation from resales, he
+          added.
+        </p>
+
+        <p>
+          NFT ownership is
+          <a
+            href="https://www.nytimes.com/2021/03/11/arts/design/what-is-an-nft.html"
+            >different</a
+          >
+          from traditional ownership because while owning a physical piece of
+          artwork lets you control other people&#39;s access to that work,
+          owning an NFT instead gives you an indisputable claim over that unique
+          digital object, which is independent of the artwork itself and other
+          people&#39;s ability to view it. Just like any other collectible, an
+          NFT only holds as much monetary
+          <a
+            href="https://www.vox.com/the-goods/22313936/non-fungible-tokens-crypto-explained"
+            >value</a
+          >
+          as others are willing to pay.
+        </p>
+
+        <p>
+          Beginning with Bitcoin, early blockchains used a mechanism known as
+          <a
+            href="https://www.coinbase.com/learn/crypto-basics/what-is-proof-of-work-or-proof-of-stake"
+            >proof of work</a
+          >, which essentially relies on using a computer to solve computational
+          problems in order to “mint” an NFT. The first person to solve such an
+          equation “mines” that spot.
+          <a
+            href="https://www.forbes.com/sites/forbestechcouncil/2018/07/06/blockchain-mining-the-key-to-powering-a-decentralized-world/?sh=1bab73f25a11"
+            >Mining</a
+          >
+          is essential to having a decentralized trust system, where no one
+          individual or company has the power to verify the authenticity of the
+          art and oversee transactions. These features of authenticity and
+          transparency are the basis of blockchain technology.
+        </p>
+
+        <p>
+          But proof of work is “hugely inefficient” in the amount of energy
+          consumption required per transaction, Herlihy emphasized. The
+          <a
+            href="https://www.statista.com/statistics/1263975/ethereum-binance-share-in-defi-tvl/"
+            >most popular</a
+          >
+          blockchain for NFTs, Ethereum, has considered
+          <a href="https://ethereum.org/en/energy-consumption/#the-merge"
+            >transitioning</a
+          >
+          from proof of work to a less energy-intensive mechanism called proof
+          of stake.
+        </p>
+
+        <p>
+          Rather than putting computers to work and using energy to create the
+          decentralized trust mechanism, proof of stake utilizes a system where
+          people stake their own crypto for the chance to validate a transaction
+          and receive a reward in crypto for participating in the validation
+          process.
+        </p>
+
+        <p>
+          While forms of cryptocurrencies have existed before, Bitcoin, and the
+          popular blockchains that came after it, became the first decentralized
+          transaction services to remove a middle man or operator, Herlihy said.
+          Owned by no one, and open to anyone to use, this decentralization is
+          fundamentally different from how digital transactions have operated.
+        </p>
+
+        <p>
+          “People are realizing that blockchains are good for things more than
+          simple payments,” Herlihy said — and NFTs have become a prime example.
+        </p>
+      </section>
+
+      <section data-color="#f0e4cb">
+        <div style="display: flex" class="mobile-flex-vertical">
+          <h2 style="color: #e68914">
+            RISD students launch NFT collective M3DIUM
+          </h2>
+          <figure style="width: 50%" class="mobile-w-100">
+            <img src="GREG-SHARK1.jpeg" />
+            <figcaption>
+              <cite>
+                YOUR LEGS TO BE CUT BY MULTIPLE FACTORS, THAT I WILL SQUEEZE A
+                WOUND
+                <a href="https://m3dium.xyz/GREG2">Gregory Shark</a>
+              </cite>
+            </figcaption>
+          </figure>
+        </div>
+        <p>
+          M3DIUM Studio, an NFT artist collective co-founded by RISD seniors
+          Arlo Walker and Quinn Lockwood along with Lars Delin, a senior at
+          Wesleyan University, launched March 14 on
+          <a
+            href="https://opensea.io/collection/m3dium-risd?search%5BsortBy%5D=PRICE&amp;search%5BsortAscending%5D=false"
+            >OpenSea</a
+          >, the world’s first and largest NFT marketplace, according to its
+          website. The collective aims to be “the first ever NFT collection
+          dedicated to the works of practicing student artists,” according to
+          M3DIUM’s press release.&nbsp;
+        </p>
+
+        <p>
+          Our collective is “not like a bunch of monkey faces” created
+          anonymously, Walker said, referring to the Bored Ape Yacht Club NFTs
+          that have
+          <a
+            href="https://fortune.com/2022/03/18/what-is-bored-ape-yacht-club-nft-apecoin-explained/"
+            >sold for millions</a
+          >. M3DIUM is “a community of people that decided to try something, and
+          it&#39;s an … ongoing experiment.”
+        </p>
+
+        <p>
+          The student-run collective was created with the goal of breaking down
+          barriers and allowing student artists to monetize their work outside
+          the traditional art market, where agents and galleries can be complex
+          and
+          <a
+            href="https://www.format.com/magazine/resources/art/art-agent-artist-agency"
+            >costly</a
+          >
+          to navigate, with commercial gallery representation estimated to cost
+          the artist around a 50% commission. M3DIUM harnesses the collective
+          fanbases and social media followings of its artists, Walker
+          said.&nbsp;
+        </p>
+
+        <p>
+          The group also wants to influence where the NFT market is headed,
+          Walker and Lockwood said. The co-founders hope to make the NFT market
+          a place where artists can legitimize their work in a respected
+          manner.&nbsp;
+        </p>
+
+        <p>
+          The name M3DIUM reflects the group’s aim to bring together art from
+          different mediums, with the number three representing how the
+          collective fits into
+          <a href="https://ethereum.org/en/developers/docs/web2-vs-web3/"
+            >Web3</a
+          >, a purported next generation of the internet that claims to be
+          decentralized, Walker said. M3DIUM’s first collection features 82
+          works from 35 artists including animated GIFs, scans of oil paintings,
+          animated short films, photo prints and computer-generated
+          images.&nbsp;
+        </p>
+
+        <p>
+          The co-founders said that curating artists for the collective meant
+          finding a variety of art forms that would translate well to the NFT
+          format. For instance, both digital art and physical art scanned into a
+          digital format can be minted as NFTs into the collection.
+        </p>
+
+        <p>
+          Each time a piece of art is sold, the artist and M3DIUM co-founders
+          divide the profit 60% to 40% respectively, according to the artist
+          contract. Prices are set between 0.1ETH and 0.3ETH, which is
+          <a href="https://www.coinbase.com/converter/eth/usd">equivalent to</a>
+          a range of around $300 to $900, though prices fluctuate, Delin wrote
+          in an email to The Herald.&nbsp;
+        </p>
+
+        <p>
+          Originally, the collective planned to mint NFTs using Ethereum, which
+          cost at least $100 to mint one NFT. The founders’ cut of the sale
+          would have been used to cover some of the minting cost, Walker said,
+          along with the fees to sell on OpenSea which the founders still cover.
+          In response to backlash from other students over environmental
+          concerns, M3DIUM switched from minting on the Ethereum blockchain to
+          minting on Polygon, which uses proof of stake and has no
+          <a
+            href="https://beincrypto.com/learn/how-much-does-it-cost-to-create-an-nft/#:~:text=There%20are%20no%20upfront%20costs,price%2C%20after%20it&#39;s%20first%20sold."
+            >upfront</a
+          >
+          mining costs.&nbsp;
+        </p>
+
+        <p>
+          The terms of the contract have not changed since the collective’s move
+          to Polygon, Delin wrote. The 40% cut is a lower charge to artists than
+          the average traditional gallery, according to the founders. “And we do
+          not have any exclusive rights to any of their work,” he added.&nbsp;
+        </p>
+
+        <p>
+          If a piece of art is not sold, no transfer of money takes place,
+          leading to a “zero risk” situation, he said. As of April 13, the
+          collective had 3.6ETH traded in total sales for 21 items on its
+          OpenSea page, equivalent to around $12,444. Since its launch, M3DIUM
+          has been featured on Opensea’s list of “Notable Drops” on its homepage
+          as well as its social media, which has helped the collective grow its
+          following, the founders wrote.&nbsp;
+        </p>
+
+        <p>
+          The co-founders noted that M3DIUM’s goal is not to replace physical
+          art. “We&#39;re attempting to use the NFT as basically a way for
+          people to be patrons of (the artists’) physical art practice, as well
+          as make digital art something that (the artists) could do on the
+          side,” Walker said. They hope that buyers interested in an NFT can
+          become exposed to the artist’s larger portfolio and learn more about
+          their work.&nbsp;
+        </p>
+
+        <p>
+          The co-founders have ambitions to expand their NFT collections to
+          include drops with artists from other top design schools and
+          collaborate with nonprofits and Web2 companies looking to enter the
+          NFT space.&nbsp;
+        </p>
+
+        <p>
+          “We see Web3 and digital art like this being a core part of the
+          curriculum at any design school within the next five to 10 years,”
+          Walker said.
+        </p>
+      </section>
+
+      <section data-color="#f0a1d7">
+        <div style="display: flex" class="mobile-flex-vertical">
+          <h2 style="color: rgb(229, 55, 142); left: 20vw">
+            GISP 0003: NFTs, Blockchain & Art
+          </h2>
+          <figure style="width: 50%" class="mobile-w-100">
+            <img src="QINRU-ZHANG1.png" />
+            <figcaption>
+              <cite>
+                ROUTINE 1 |
+                <a href="https://m3dium.xyz/QINRU-ZHANG-2">Qinru Zhang</a>
+              </cite>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p>
+          Instead of forming an art collective, some Brown students have
+          approached NFTs in a classroom setting.
+        </p>
+
+        <p>
+          Ally Zhu ’22 and Nikolas Lazar ’22 were first formally introduced to
+          NFTs while working together at management consulting company Arthur D.
+          Little over the summer. After working on a project that involved NFTs,
+          they became interested in the field and decided to form an independent
+          study to get course credit and “dig more into the space,” Zhu said.
+        </p>
+
+        <p>
+          In the fall, the two designed a syllabus to plan the logistics of the
+          class and were surprised by how many students were interested in the
+          course. Despite the high demand, they had to cap the class at 20 due
+          to University guidelines.
+        </p>
+
+        <p>
+          According to the syllabus, the goals of the independent study include
+          understanding the socio-economic, political and technological rise of
+          blockchain technology in NFTs and creating informed predictions about
+          the future of NFTs. The course looks at blockchains and NFTs from
+          three perspectives: the arts, computer science and economics. The
+          creators added that they consider the class’s slate of guest speakers
+          from different backgrounds one of its highlights.
+        </p>
+
+        <figure>
+          <img src="QINRU-ZHANG2.png" style="max-height: calc(100vh - 2em)" />
+          <figcaption>
+            <cite>
+              ROUTINE 2 |
+              <a href="https://m3dium.xyz/QINRU-ZHANG-3">Qinru Zhang</a>
+            </cite>
+          </figcaption>
+        </figure>
+
+        <p>
+          The course concludes with a final NFT project, Zhu said. Students can
+          choose to make this anything from an argumentative paper about the
+          positive or negative role NFTs play in the art world to a computer
+          science project on minting, launching and marketing a set of NFTs.
+        </p>
+
+        <p>
+          Zhu has made her own NFT known as Paradise Lost. The art is one of her
+          “favorite digital art pieces” that she has made, and she wanted to
+          test out the blockchain technology for herself.
+        </p>
+
+        <p>
+          Although he’s one of the leaders of the class, Lazar is still pretty
+          skeptical about NFTs and cryptocurrency as a whole, he said. But he
+          believes this technology is here to stay, and he wants to learn more
+          about the impact NFTs will have in areas such as politics or the
+          environment.
+        </p>
+
+        <p>
+          “I’m much more skeptical of crypto than I am of NFTs,” he said. “I
+          think at least with NFTs there’s somewhat of a use. You can’t do
+          anything with Bitcoin.”
+        </p>
+      </section>
+
+      <section data-color="#a29cc6">
+        <div style="display: flex" class="mobile-flex-vertical">
+          <h2
+            style="color: #19133e; left: 7vw; padding-inline: 5vw; width: 50%"
+            class="mobile-w-100"
+          >
+            NFTs see pushback with concerns over economic factors, purpose of
+            art
+          </h2>
+          <figure
+            style="width: 40%; object-fit: contain; margin-right: 5vw"
+            class="mobile-w-100"
+          >
+            <img src="GREG-SHARK2.png" />
+            <figcaption>
+              <cite>
+                STAR DOWN FROM THE SKY |
+                <a href="https://m3dium.xyz/GREG1">Gregory Shark</a>
+              </cite>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p>
+          After announcing the creation of the M3DIUM Collective, the
+          co-founders and artists in the group received criticism online from
+          other RISD students as student artists split over whether they thought
+          NFTs do more harm than good.
+        </p>
+
+        <p>
+          Asher White, a RISD senior studying sculpture, was caught in the
+          backlash after she expressed on social media that it was pointless and
+          hypocritical to criticize people who sell NFTs.
+        </p>
+
+        <p>
+          “In our fury at NFTs, we’re forgetting to look inwards toward the ways
+          in which we’re all participating in a system of exploitation, which is
+          the art institution and the gallery scene,” she said to The Herald.
+        </p>
+
+        <p>
+          At the time of posting, she was unaware of M3DIUM and said anger was
+          directed towards her for appearing to defend the group.
+        </p>
+
+        <p>
+          “NFTs very quickly became the new thing to hate, but the thing we
+          should hate is the ‘mechanisms’” that NFTs, RISD and elite galleries
+          take part in, White said, explaining that these spaces ultimately
+          tokenize, exploit and extract artists’ art “to be traded by
+          millionaires and clout-chasers, reducing art to a site of
+          commercialization.”
+        </p>
+
+        <p>
+          While she said that she believes NFTs are “hollow certificates of
+          value,” one benefit is the promise that the value of artists’ work
+          will not be mediated by anything other than the market. She argued
+          that the formation of a collective like M3DIUM “nullifies the appeal
+          of the NFT” by having a third-party — the co-founders — involved in
+          the art transactions.
+        </p>
+
+        <p>
+          For some, such as Lindsay Caplan, assistant professor of history of
+          art and architecture, NFTs cannot be viewed separately from
+          cryptocurrency. From her background as a professor, she primarily
+          views the NFT movement as “financial speculation,” or a risky
+          financial endeavor.
+        </p>
+
+        <p>
+          Caplan views NFTs as a natural continuation of the “long and exciting
+          history of artists who are really thinking of new modes of creation
+          and engagement.” But, she still is “deeply disturbed” by&nbsp; how the
+          ease of access into the NFT market “cannot be uncoupled with right
+          wing populism.” The
+          <a
+            href="https://slate.com/technology/2022/01/crypto-bitcoin-republicans-josh-mandel.html"
+            >right wing leanings</a
+          >
+          of cryptocurrency advocates has been a documented trend.
+        </p>
+
+        <p>
+          Lately, established galleries such as Sotheby’s, Christie’s and Pace
+          have even taken part in the metaverse and the presentation of NFTs.
+          Caplan said that since these large galleries are participating in this
+          space, it “may have staying power,” but she is unsure about the extent
+          to which it will have a role in society.
+        </p>
+
+        <p>
+          “I think NFTs will be there as a format. What kind of effects it will
+          have remains to be seen,” she said. “Will more interesting artists
+          pick up on it? Will we see more unexpected things? I hope so.”
+        </p>
+
+        <p>
+          Professor Alex Poterack, lecturer in economics, described NFTs and
+          their purpose as “very silly” in an email to The Herald. Poterack
+          pointed out that someone could spend tens of millions of dollars on an
+          original Rembrandt painting, but anyone could get a high resolution
+          photo of the same painting for free. From an economic standpoint, he
+          believes the value of the product is that it was painted by an artist
+          “who&#39;s been dead for over 350 years.” He wrote that if someone
+          painted an exact copy, it would be worth a fraction of the price.
+        </p>
+
+        <p>
+          Poterack views cryptocurrency, particularly Bitcoin, as a way to make
+          it easier to “buy drugs” and “break the law.”
+        </p>
+
+        <p>
+          “As near as I can tell the only financial pro is that NFTs make money
+          laundering easier, … but even then, I&#39;m not sure,” he wrote. “Is
+          it easier to launder money by selling a Bored Ape Yacht Club NFT than
+          by slapping some paint on a canvas and calling it contemporary art?”
+        </p>
+
+        <p>
+          Herlihy expressed concerns over the lack of security around the
+          ac​​tual artwork represented by the NFT, which is linked to the
+          blockchain as a URL. For many existing NFTs, there aren’t technical
+          measures to prevent the owner of the URL from vandalizing the file
+          linked to the NFT, he said.
+        </p>
+
+        <p>
+          “The part that&#39;s on the blockchain is tamper proof and secure, but
+          the part you care about” –– the file linked to the NFT –– “is
+          insecure,” he added.
+        </p>
+      </section>
+
+      <section data-color="#b1ffc2">
+        <div style="display: flex" class="mobile-flex-vertical">
+          <h2 style="color: #0d7c87; left: 22vw" class="mobile-left-13vw">
+            Environmental impact of NFTs
+          </h2>
+          <figure style="width: 50%" class="mobile-w-100">
+            <img src="ALLY-ZHU.jpg" />
+            <figcaption>
+              <cite>
+                ANNAL #1: NEVERLAND |
+                <a href="https://foundation.app/@yllart/paradiselost/1"
+                  >Ally Zhu</a
+                >
+              </cite>
+            </figcaption>
+          </figure>
+        </div>
+        <p>
+          NFTs are infamously known for their
+          <a
+            href="https://www.investopedia.com/nfts-and-the-environment-5220221"
+            >impact</a
+          >
+          on the environment.
+        </p>
+
+        <p>
+          A problem with proof of work, the mechanism Etherum uses, is that as
+          Bitcoin becomes more valuable, there will be “a lot more people
+          effectively running their computers all the time to try and mine the
+          Bitcoin,” said Ricardo Bayon, founder and partner of Encourage Capital
+          and part of the advisory council for the Institute at Brown for
+          Environment and Society. Encourage Capital is a “a new breed of asset
+          management firm focused on profitable and strategic investments to
+          solve critical social and environmental problems,”
+          <a href="https://ibes.brown.edu/people/ricardo-bayon"
+            >according to Bayon’s website.</a
+          >
+        </p>
+
+        <p>
+          Due to running on proof of work, Ethereum’s latest annualized
+          electricity consumption is estimated to be
+          <a href="https://digiconomist.net/ethereum-energy-consumption"
+            >similar to the total electricity consumption of the Netherlands</a
+          >
+          — a source of strong concern about its environmental damage that
+          underlies the blockchain’s long-promised
+          <a href="https://ethereum.org/en/energy-consumption/#the-merge"
+            >merge</a
+          >
+          to a less energy-intensive system, Bayon added.
+        </p>
+      </section>
+
+      <section data-color="#2ff1ff">
+        <div style="display: flex" class="mobile-flex-vertical">
+          <h2 style="color: #1b45bb">
+            Anticipating a blockchain future beyond NFTs
+          </h2>
+        </div>
+        <figure style="width: 50%" class="mobile-w-100">
+          <video src="Future-Wonderland-2.mp4" autoplay loop muted></video>
+          <figcaption>
+            <cite>
+              FUTURE WONDERLAND |
+              <a href="https://m3dium.xyz/QINRU-ZHANG-1">Qinru Zhang</a> |
+              <button class="video-unmute">UNMUTE</button>
+            </cite>
+          </figcaption>
+        </figure>
+        <script>
+          const muteButton = document.querySelector(".video-unmute");
+          muteButton.addEventListener("click", () => {
+            if (muteButton.textContent === "UNMUTE") {
+              muteButton.textContent = "MUTE";
+              document.querySelector("video").muted = false;
+            } else {
+              muteButton.textContent = "UNMUTE";
+              document.querySelector("video").muted = true;
+            }
+          });
+        </script>
+        <p>
+          While types of blockchains and cryptocurrency may come and go, Herlihy
+          believes some form of this technology is “inevitable.”
+        </p>
+
+        <p>
+          “We need the ability to do global commerce (that) existing mechanisms
+          aren&#39;t really set up to do,” he said. Centralized organizations
+          like large credit card companies have established systems for risks
+          like fraud, but they take time to process and charge fees on every
+          transaction for managing all of these payments.
+        </p>
+
+        <p>
+          “If you can replace them with something that works just as well but is
+          more decentralized, then the world would be in a better place,” he
+          said. But current blockchain replacements are not yet better than
+          standard means of payment, he added.
+        </p>
+
+        <p>
+          According to a
+          <a
+            href="https://www.statista.com/statistics/1265891/ethereum-energy-consumption-transaction-comparison-visa/"
+            >January estimate</a
+          >, one Ethereum transaction consumed as much energy as several hundred
+          thousand VISA transactions.
+        </p>
+
+        <p>
+          Bayon is skeptical about whether renewable energy efforts are in the
+          near future for cryptocurrency transactions.
+        </p>
+
+        <p>
+          “Some of the advocates of Bitcoin and the proof of work mechanism say
+          the future is going to be renewable energy powering the mine,” Bayon
+          said. “I don’t think we’re there yet and we’ll see if that’s the way
+          it comes.”
+        </p>
+      </section>
+    </article>
+
+    <footer>
+      <p>Copyright &copy; 2022 The Brown Daily Herald, Inc.</p>
+    </footer>
+  </body>
+</html>
