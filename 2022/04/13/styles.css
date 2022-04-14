@@ -62,6 +62,12 @@ section h2 {
   .mobile-w-100 {
     width: 100% !important;
   }
+  .mobile-w-75vw {
+    width: 75vw !important;
+  }
+  .mobile-left-0 {
+    left: 0 !important;
+  }
   .mobile-left-13vw {
     left: 13vw !important;
   }
