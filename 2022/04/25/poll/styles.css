@@ -34,10 +34,9 @@ header.title {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  max-height: 1000px;
   position: relative;
   color: white;
-  aspect-ratio: 1915/1118;
+  height: calc(1118 / 1915 * 100vw);
 }
 
 #headerImage {
