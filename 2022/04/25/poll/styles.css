@@ -1,0 +1,145 @@
+:root {
+  --display: freight-display-pro, Times, serif;
+  --bs-body-font-family: public sans, Times, serif;
+  --sans: roboto, sans-serif;
+  --red: #620f08;
+}
+
+nav,
+.nav,
+section {
+  font-family: var(--sans);
+}
+
+.nav-pills .nav-link {
+  color: var(--red);
+}
+.nav-pills .nav-link.active {
+  color: #fff;
+  background-color: var(--red);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  transition: background-color linear 0.5s;
+}
+
+header.title {
+  font-family: var(--display);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  height: 100dvh;
+  max-height: 1000px;
+  position: relative;
+  color: white;
+  margin-bottom: 30px;
+}
+
+header h2 a {
+  color: white !important;
+}
+
+section {
+  padding-bottom: 1em;
+}
+
+section h2 {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  section h2 {
+    font-size: 3em;
+  }
+}
+
+header.title .logo {
+  max-width: 95vw;
+  object-fit: contain;
+  object-position: top;
+  filter: invert();
+}
+
+h1 {
+  font-size: min(11.5vw, 5em);
+  text-align: center;
+  padding: 0 5vw;
+  margin: 0;
+  max-width: 1000px;
+}
+
+a {
+  color: var(--red);
+}
+
+header h2 {
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+
+article p {
+  font-size: 1.18rem;
+}
+article > p,
+article figcaption,
+footer p,
+article section {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+article section {
+  border: 10px double #888;
+  border-radius: 25px;
+  margin-block: 1em;
+  padding-bottom: 0;
+}
+
+figure {
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figure img,
+figure video {
+  width: 100%;
+  object-fit: contain;
+}
+figcaption {
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+}
+cite {
+  font-style: normal;
+  font-weight: bold;
+}
+
+footer {
+  padding: 1em;
+  border-top: 1px solid currentColor;
+  font-family: var(--sans);
+  text-align: center;
+}
+
+.section-link {
+  text-align: center;
+  font-weight: bold;
+  font-family: var(--bs-body-font-family);
+  color: white !important;
+}
+.section-link:not(:hover) {
+  text-decoration: none;
+}
