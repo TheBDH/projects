@@ -34,12 +34,11 @@ header.title {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
-  height: 100dvh;
   max-height: 1000px;
   position: relative;
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 3em;
+  aspect-ratio: 1915/1118;
 }
 
 header h2 a {
@@ -79,6 +78,9 @@ h1 {
 a {
   color: var(--red);
 }
+a:hover {
+  color: #b01b0e;
+}
 
 header h2 {
   font-size: 1.5em;
@@ -100,9 +102,9 @@ article section {
 }
 
 article section {
-  border: 10px double #888;
+  border: 8px double #aaa;
   border-radius: 25px;
-  margin-block: 1em;
+  margin-bottom: 2em;
   padding-bottom: 0;
 }
 
