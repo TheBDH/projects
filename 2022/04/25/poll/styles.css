@@ -37,8 +37,16 @@ header.title {
   max-height: 1000px;
   position: relative;
   color: white;
-  margin-bottom: 3em;
   aspect-ratio: 1915/1118;
+}
+
+#headerImage {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 header h2 a {
@@ -59,11 +67,18 @@ section h2 {
     font-size: 3em;
   }
 }
+@media (min-width: 768px) {
+  .cols-2-lg {
+    columns: 2;
+    list-style: none;
+    padding: 0;
+  }
+}
 
 header.title .logo {
-  max-width: 95vw;
+  max-width: 25vw;
   object-fit: contain;
-  object-position: top;
+  object-position: center 40%;
   filter: invert();
 }
 
@@ -83,13 +98,15 @@ a:hover {
 }
 
 header h2 {
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin-bottom: 0;
 }
 
 article p {
   font-size: 1.18rem;
 }
+article > h2,
+article > ul,
 article > p,
 article figcaption,
 footer p,
@@ -97,15 +114,22 @@ article section {
   max-width: 650px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-inline: 1rem;
 }
-
 article section {
   border: 8px double #aaa;
   border-radius: 25px;
   margin-bottom: 2em;
   padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  article section {
+    margin-inline: 0.5rem;
+    border-radius: 10px;
+    border-width: 6px;
+    padding-inline: 0.5rem;
+  }
 }
 
 figure {
