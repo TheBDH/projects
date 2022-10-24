@@ -203,6 +203,7 @@ footer {
   border-top: 1px solid currentColor;
   font-family: var(--sans);
   text-align: center;
+  position: relative;
 }
 
 .section-link {
