@@ -177,10 +177,36 @@
         >October 23, 2022</time
       >
     </p>
+    <button
+      disabled
+      type="button"
+      class="play-button btn btn-link mx-auto"
+      style="
+        opacity: 0;
+        display: block;
+        color: inherit;
+        text-decoration: none;
+        transition: opacity 1s ease-out;
+        font-family: var(--sans);
+      "
+      onclick="playAll()"
+    >
+      ▶&#xfe0e; <u>Play Video Background</u>
+    </button>
   </div>
 </header>
 
 <script>
+  function playAll() {
+    const videos = document.querySelectorAll("video");
+    videos.forEach((video) => {
+      video.onplay = null;
+      video.play();
+    });
+    document.querySelector(".intro-bg").classList.add("ready");
+    document.querySelector(".play-button").style.opacity = "0";
+    document.querySelector(".play-button").disabled = true;
+  }
   function shuffle(array) {
     let currentIndex = array.length,
       randomIndex;
@@ -209,7 +235,11 @@
     vid.addEventListener("loadeddata", () => {
       vid.playbackRate = 0.75;
       loaded++;
-      if (loaded >= 10) {
+      if (vid.paused) {
+        document.querySelector(".play-button").disabled = false;
+        document.querySelector(".play-button").style.opacity = 1;
+      }
+      if (loaded >= 10 && !vid.paused) {
         document.querySelector(".intro-bg").classList.add("ready");
       }
     });
