@@ -116,7 +116,7 @@ section h2 {
 
 @media (max-width: 768px) {
   section h2 {
-    font-size: 3em;
+    font-size: 2em;
   }
 }
 @media (min-width: 768px) {
@@ -259,6 +259,12 @@ footer {
   width: 500px;
 }
 
+.intro-nav {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
 @media (max-width: 768px) {
   .main-header .logos {
     flex-direction: column;
@@ -268,6 +274,10 @@ footer {
 
   .main-header .logo-bdh {
     width: 100%;
+  }
+  .intro-nav {
+    flex-direction: column;
+    gap: 30px;
   }
 }
 
@@ -291,7 +301,11 @@ footer {
 @media (max-width: 768px) {
   .intro-bg {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(5, calc(20vh - 1.25em));
+    grid-template-rows: repeat(5, calc(20vh - 0.4em));
+    margin: 0;
+    width: 100vw;
+    --height: 100vh;
+    gap: 0.5em;
   }
 }
 
