@@ -209,7 +209,7 @@
     vid.addEventListener("loadeddata", () => {
       vid.playbackRate = 0.75;
       loaded++;
-      if (loaded == videos.length) {
+      if (loaded >= 10) {
         document.querySelector(".intro-bg").classList.add("ready");
       }
     });
