@@ -371,6 +371,9 @@ footer {
     transition-duration: 0.5s;
     opacity: 1;
   }
+  article section iframe {
+    border-radius: 1em;
+  }
   article section:not(.active) figure {
     opacity: 0;
     visibility: hidden;
