@@ -1,0 +1,451 @@
+:root {
+  --red: #e50000;
+  --offwhite: #f5f3ef;
+  --black: #000000;
+  --brown: #8d5124;
+  --offblack: #241b16;
+  --tan: #e3d4bf;
+}
+
+@font-face {
+  font-family: Redaction3;
+  src: url(./fonts/Redaction_35-Italic.woff2);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Lora;
+  src: url(./fonts/Lora-VariableFont_wght.ttf);
+  font-weight: 400 700;
+}
+@font-face {
+  font-family: Lora;
+  src: url(./fonts/Lora-Italic-VariableFont_wght.ttf);
+  font-style: italic;
+  font-weight: 400 700;
+}
+
+.font-loader {
+  opacity: 0;
+  height: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f3ef;
+  font-family: Lora, Georgia, "Times New Roman", Times, serif;
+  line-height: 1.3;
+  font-size: 1em;
+}
+@media screen and (max-width: 768px) {
+  .body {
+    font-size: 2em;
+  }
+}
+
+#intro-section1 {
+  margin-bottom: 30vh;
+  max-width: 650px;
+  justify-content: center;
+  margin: auto;
+}
+#intro-graf1 {
+  margin-top: 40vh;
+}
+@media (max-width: 768px) {
+  #intro-graf1 {
+    margin-top: 30vh !important;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}
+
+#map-properties path {
+  fill: var(--fill, var(--red));
+  stroke: var(--stroke, var(--offwhite));
+  stroke-width: var(--stroke-width, 0.2);
+}
+
+.maps {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100lvh;
+  z-index: -1;
+}
+.maps::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  aspect-ratio: 0.8943089430895341;
+  /* background: linear-gradient(to right, #F5F3EF 0%, transparent 20%, transparent 80%, #F5F3EF 100%); */
+}
+.maps svg {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Redaction3, serif;
+}
+
+h1 {
+  font-family: Redaction3;
+  line-height: 5rem;
+  font-size: 5rem;
+  color: var(--red);
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
+h2 {
+  font-size: 2.2rem;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+  }
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#hed {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.byline {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  justify-content: center;
+}
+.byline a {
+  font-weight: bold;
+  color: inherit;
+}
+@media (max-width: 768px) {
+  .byline {
+    margin: auto;
+    width: 60vw;
+  }
+}
+
+#headline-wrapper {
+  max-width: 800px;
+}
+
+#byline {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#content {
+  max-width: 650px;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: var(--offblack);
+  font-size: 1.18rem;
+  gap: 0.5ch;
+  margin-block: 1em;
+}
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+  }
+  .footer-bullet {
+    display: none;
+  }
+}
+
+.footer-bullet {
+  margin-inline: 0.5em;
+}
+
+#to-top {
+  border-style: none;
+  background-color: transparent;
+  color: black;
+  padding: 0;
+  text-decoration: underline;
+  font: inherit;
+}
+
+#to-top:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+#logo {
+  width: 20vw;
+  display: block;
+  margin: auto;
+  margin-top: 2em;
+}
+@media (max-width: 768px) {
+  #logo {
+    width: 80vw;
+  }
+}
+
+.over-map {
+  color: var(--offwhite);
+  background-color: var(--offblack);
+  padding: 1.5em;
+  margin-inline: -1.5em;
+  margin-top: 70vh;
+}
+.over-map:first-child {
+  margin-top: 10vh;
+}
+
+@media (max-width: 768px) {
+  .over-map {
+    margin-top: 90vh;
+  }
+}
+
+.over-map a {
+  color: var(--offwhite);
+}
+
+#debug-overlay {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 1.2em;
+  font-variant-numeric: tabular-nums;
+  color: white;
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+#debug-overlay ~ * [id^="intro-graf"] {
+  position: relative;
+}
+#debug-overlay ~ * [id^="intro-graf"]::after {
+  content: attr(id);
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  opacity: 0.5;
+}
+
+#year-1,
+#year-2 {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  font-size: 2em;
+  font-family: Redaction3;
+  color: var(--red);
+  transform-origin-y: 50%;
+  backface-visibility: hidden;
+}
+
+a {
+  color: var(--red);
+}
+
+.over-map-in {
+  margin-top: 2em;
+  background-color: var(--offwhite);
+  color: var(--offblack);
+  padding: 1.5em;
+}
+
+.separator {
+  display: block;
+  margin: auto;
+  margin-bottom: 0;
+}
+.separator:not(:first-child) {
+  margin-top: 10em;
+}
+
+.separator > path {
+  fill: var(--red);
+  stroke: var(--offwhite);
+}
+
+#slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  height: 10px; /* Specified height */
+  background: var(--tan); /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+  transition: opacity 0.2s;
+  margin-top: 2em;
+  width: 100%;
+  border-radius: 1000px;
+}
+
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  border-radius: 100px;
+  background: var(--red);
+  cursor: pointer; /* Cursor on hover */
+}
+
+#slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: var(--red);
+  cursor: pointer; /* Cursor on hover */
+}
+
+#slider-year {
+  display: block;
+  margin: 20px auto;
+  font-size: 2em;
+  font-family: Redaction3;
+  color: var(--red);
+  width: 100px;
+  text-align: center;
+  padding-top: 0.1em;
+  background: var(--offwhite);
+  border-radius: 0.5em;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+.year span {
+  display: inline-block;
+  width: 1ch;
+  text-align: center;
+}
+.year span:first-child {
+  text-align: right;
+}
+
+aside {
+  position: relative;
+  background: var(--offblack);
+  padding: 1em;
+  margin-block: 3em;
+}
+
+@supports (-webkit-backdrop-filter: invert()) {
+  aside {
+    -webkit-backdrop-filter: invert(90%) hue-rotate(180deg);
+    background-color: transparent;
+  }
+}
+@supports (backdrop-filter: invert()) {
+  aside {
+    backdrop-filter: invert(90%) hue-rotate(180deg);
+    background-color: transparent;
+  }
+}
+
+aside > .aside-content {
+  max-width: 1100px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5em;
+}
+
+aside h2 {
+  max-width: calc(650px + 20vw - 2em);
+  padding-inline: calc(10vw - 0.75em);
+  margin: 0 auto;
+  color: white;
+  text-align: left;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.4em;
+}
+
+.aside-content .related-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  margin-block: 1em;
+  color: white;
+  font-weight: bold;
+}
+.aside-content .related-article:not(:hover) {
+  text-decoration: none;
+}
+
+.aside-content .related-article picture {
+  width: 100%;
+}
+.aside-content .related-article img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  aspect-ratio: 1.25;
+  margin-inline: -4px;
+  transition: all 0.2s;
+}
+
+.aside-content .related-article img:hover {
+  filter: brightness(120%);
+  transform: scale(1.025);
+  box-shadow: 5px 5px 20px black, 5px 5px 20px rgba(0, 0, 0, 50%);
+}
+
+figure {
+  float: right;
+  margin-left: 1.5em;
+  margin-right: -2em;
+  margin-block: 0;
+  max-width: 300px;
+}
+figure img {
+  max-width: 100%;
+  border-radius: 0.3em;
+}
+figcaption {
+  margin-inline: 0.25em;
+  font-size: 0.8em;
+  text-align: justify;
+}
+
+figcaption cite {
+  display: inline-block;
+  font-size: 0.75em;
+}
