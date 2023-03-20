@@ -385,3 +385,18 @@ div.home > div.panel > a > img  {
   width: 15px;
   margin-left: 10px;
 }
+
+footer {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-top: 1px solid #D7D7D7;
+}
+
+footer > p {
+  font-family: var(--body-font);
+  color: #525252;
+}
