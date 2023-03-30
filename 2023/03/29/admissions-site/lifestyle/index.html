@@ -1,0 +1,559 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDH Admitted Class of 2027</title>
+    <link rel="stylesheet" href="https://use.typekit.net/mxr8glf.css">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="icon" href="../assets/html-img.png">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WTGQ6EEKTK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WTGQ6EEKTK');
+</script>
+  </head>
+  <body>
+    <div class="tool">
+    <nav id="navbar">
+        <div id="navbar-logo">
+            <a href="https://www.browndailyherald.com">
+                <img id="navbar-logo-img" src="/images/logo-black.png"/>
+            </a>
+        </div>
+        <h2 class="all-site-title" style="font-family: var(--header-font);padding:1rem;font-size:1.7rem;">Brown University's Admitted Class of 2027</h2>
+
+        <div id="nav-links">
+            <a id="story-link" href="http://www.browndailyherald.com/article/2023/03/brown-accepts-5-of-students-to-class-of-2027-largest-admitted-class-in-six-years">
+                <div>Read the story</div>
+                <img src="../assets/white-arrow.svg" />
+            </a>
+        </div>
+    </nav>
+    <section class="section-wrapper"> 
+
+        <div class="question-categories-wrapper">
+            <div class="question-categories"><button class='Acceptance Rate Over Time' data-target="highlights" id='highlights'>Highlights</button><button class='Applications Over Time' data-target="acceptance" id='acceptance'>Acceptance Rate</button><button class='Average SAT/ACT Test Scores of Admitted Applicants Over Time' data-target="test_scores" id='test_scores'>Test Scores</button><button class='PLME Applicants Admitted, Denied for the Class of 2027' data-target="dual_degree" id='dual_degree'>Dual-Degree Programs</button><button class='Applicants Admitted and Denied by Gender Over Time' data-target="gender" id='gender'>Gender</button><button class='Intended Concentrations of Admitted Applicants for the Class of 2027' data-target="concentrations" id='concentrations'>Areas of Study</button><button class='Countries of Admitted International Students' data-target="geography" id='geography'>Geography</button><button class='Type of High Schools Admitted Students Attended for the Class of 2027' data-target="hs" id='hs'>High School</button><button class='First-Generation Admitted Applicants for the Class of 2027' data-target="gen_one" id='gen_one'>First-Generation</button><button class='Admitted Applicants Applying for Financial Aid for the Class of 2027' data-target="aid" id='aid'>Financial Aid</button></div>
+        </div>
+        <div class="main-content-wrapper">
+            <div class="question-text"><div class="question-highlights-text" style="display: none;">
+                        <h1 class="graph-title">Acceptance Rate Over Time</h1>
+                    </div><div class="question-acceptance-text" style="display: none;">
+                        <h1 class="graph-title">Applications Over Time</h1>
+                    </div><div class="question-test_scores-text" style="display: none;">
+                        <h1 class="graph-title">Average SAT/ACT Test Scores of Admitted Applicants Over Time</h1>
+                    </div><div class="question-dual_degree-text" style="display: none;">
+                        <h1 class="graph-title">PLME Applicants Admitted, Denied for the Class of 2027</h1>
+                    </div><div class="question-gender-text" style="display: none;">
+                        <h1 class="graph-title">Applicants Admitted and Denied by Gender Over Time</h1>
+                    </div><div class="question-concentrations-text" style="display: none;">
+                        <h1 class="graph-title">Intended Concentrations of Admitted Applicants for the Class of 2027</h1>
+                    </div><div class="question-geography-text" style="display: none;">
+                        <h1 class="graph-title">Countries of Admitted International Students</h1>
+                    </div><div class="question-hs-text" style="display: none;">
+                        <h1 class="graph-title">Type of High Schools Admitted Students Attended for the Class of 2027</h1>
+                    </div><div class="question-gen_one-text" style="display: none;">
+                        <h1 class="graph-title">First-Generation Admitted Applicants for the Class of 2027</h1>
+                    </div><div class="question-aid-text" style="display: none;">
+                        <h1 class="graph-title">Admitted Applicants Applying for Financial Aid for the Class of 2027</h1>
+                    </div></div>
+            <div class="subdiv-graph-wrapper">
+                <div class="question-subdivisions"><div class="question-highlights-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Breakdown</h2><button id="acceptance_rate" class="Acceptance Rate Over Time">Acceptance Rate</button>
+                            <button id="applicants_vs_admitted" class="Applications Over Time">Applications</button>
+                            <button id="SAT_ACT" class="Average SAT/ACT Test Scores of Admitted Applicants Over Time">SAT/ACT Scores</button>
+                            <button id="intended_concentration" class="Intended Concentrations of Admitted Applicants Over Time">Concentration</button>
+                            <button id="international_countries" class="Top Countries of Admitted Applicants Over Time">Countries</button>
+                            <button id="plme" class="PLME Applicants Admitted, Denied for the Class of 2027">PLME</button>
+                            <button id="risd" class="Brown-RISD Applicants Admitted, Denied for the Class of 2027">Brown-RISD</button>
+                            
+                        </div>
+                    <div class="question-acceptance-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Breakdown</h2><button id="admit_pie" class=" Application Outcomes for the Class of 2027">Total</button>
+                            <button id="admitted_rate" class="Regular Decision, Early Decision, and Overall Acceptance Rate for the Class of 2027">Early vs. Regular</button>
+                            <button id="admitted_bar" class="ED v. RD Acceptances - Over Time">ED vs. RD Over Time</button>
+                            <button id="applicants_vs_admitted" class="Applications Over Time">Applications</button>
+                            <button id="acceptance_rate" class="Acceptance Rate Over Time">Acceptance Rates</button>
+                            
+                        </div>
+                    <div class="question-test_scores-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Breakdown</h2><button id="SAT_ACT" class="Average SAT/ACT Test Scores of Admitted Applicants Over Time">SAT/ACT Scores</button>
+                            
+                        </div>
+                    <div class="question-dual_degree-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Breakdown</h2><button id="plme" class="PLME Applicants Admitted, Denied for the Class of 2027">PLME 2027</button>
+                            <button id="plme_ot" class="PLME Acceptance Rate, Applicants Over Time">PLME Over Time</button>
+                            <button id="risd" class="Brown-RISD Applicants Admitted, Denied for the Class of 2027">Brown-RISD 2027</button>
+                            <button id="risd_ot" class="Brown-RISD Dual Degree Program Acceptance Rate, Applicants Over Time">Brown-RISD Over Time</button>
+                            
+                        </div>
+                    <div class="question-gender-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Breakdown</h2><button id="applicants_gender" class="Applicants Admitted and Denied by Gender Over Time">Applicants by Gender</button>
+                            <button id="gender_ot" class="Applicants, Admitted Students by Gender Over Time">Gender over Time</button>
+                            <button id="gender_applicants_ot" class="Percentage of Applicants Admitted and Denied by Gender">Applicants Over Time</button>
+                            
+                        </div>
+                    <div class="question-concentrations-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Breakdown</h2><button id="concentrations" class="Intended Concentrations of Admitted Applicants for the Class of 2027">Concentration</button>
+                            <button id="concentrations_ot" class="Intended Concentrations of Admitted Applicants Over Time">Conc. Over Time</button>
+                            
+                        </div>
+                    <div class="question-geography-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Breakdown</h2><button id="international" class="International and Domestic Admitted Applicants for the Class of 2027">International Students</button>
+                            <button id="international_domestic" class="International and Domestic Admitted Applicants for the Class of 2027">International vs. Dom.</button>
+                            <button id="countries_map" class="Top Countries of Admitted Applicants Over Time">Countries Map</button>
+                            <button id="countries_graph" class="Top Countries of Admitted Applicants Over Time, Graphed">Countries</button>
+                            <button id="states_ot" class="Top States of Admitted Applicants Over Time">States Over Time</button>
+                            <button id="rural" class="Admitted Rural Applicants for the Class of 2027">Rural</button>
+                            
+                        </div>
+                    <div class="question-hs-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Breakdown</h2><button id="hs" class="Type of High Schools Admitted Students Attended for the Class of 2027">High School</button>
+                            <button id="hs_ot" class="Type of High Schools Admitted Students Attended Over Time">Over Time</button>
+                            
+                        </div>
+                    <div class="question-gen_one-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Breakdown</h2><button id="first_gen" class="First-Generation Admitted Applicants for the Class of 2027">First Gen.</button>
+                            <button id="first_gen_ot" class="Percentage, Total of Admitted Students Who Identify as First-Generation Over Time">Over Time</button>
+                            
+                        </div>
+                    <div class="question-aid-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Breakdown</h2><button id="aid" class="Admitted Applicants Applying for Financial Aid for the Class of 2027">Financial Aid</button>
+                            <button id="aid_ot" class="Admitted Applicants Applying for Financial Aid Over Time">Over Time</button>
+                            <button id="percent_aid_ot" class="Percentage Admitted Applicants Applying for Financial Aid Per Year">Percent Over Time</button>
+                            
+                        </div>
+                    
+                </div>
+
+                <div class="graphics">
+                    
+                        
+                            <div class="image-highlights-acceptance_rate" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13158845"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-highlights-acceptance_rate" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-highlights-applicants_vs_admitted" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13157918"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-highlights-applicants_vs_admitted" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-highlights-SAT_ACT" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13159133"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-highlights-SAT_ACT" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-highlights-intended_concentration" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13159774"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-highlights-intended_concentration" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-highlights-international_countries" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13171966"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-highlights-international_countries" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-highlights-plme" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13172678"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-highlights-plme" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-highlights-risd" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13172739"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-highlights-risd" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-acceptance-admit_pie" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13172802"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-acceptance-admit_pie" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-acceptance-admitted_rate" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13173640"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-acceptance-admitted_rate" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-acceptance-admitted_bar" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13159021"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-acceptance-admitted_bar" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-acceptance-applicants_vs_admitted" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13157918"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-acceptance-applicants_vs_admitted" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-acceptance-acceptance_rate" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13158845"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-acceptance-acceptance_rate" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-test_scores-SAT_ACT" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13159133"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-test_scores-SAT_ACT" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-dual_degree-plme" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13172678"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-dual_degree-plme" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-dual_degree-plme_ot" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13161967"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-dual_degree-plme_ot" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-dual_degree-risd" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13172739"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-dual_degree-risd" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-dual_degree-risd_ot" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13162198"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-dual_degree-risd_ot" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-gender-applicants_gender" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13161110"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-gender-applicants_gender" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-gender-gender_ot" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13159307"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-gender-gender_ot" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-gender-gender_applicants_ot" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13171846"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-gender-gender_applicants_ot" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-concentrations-concentrations" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13173741"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-concentrations-concentrations" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-concentrations-concentrations_ot" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13159774"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-concentrations-concentrations_ot" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-geography-international" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13174653"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-geography-international" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-geography-international_domestic" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13174735"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-geography-international_domestic" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-geography-countries_map" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13162733"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-geography-countries_map" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-geography-countries_graph" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13171966"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-geography-countries_graph" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-geography-states_ot" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13162663"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-geography-states_ot" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-geography-rural" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13174263"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-geography-rural" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-hs-hs" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13175224"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-hs-hs" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-hs-hs_ot" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13172538"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-hs-hs_ot" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-gen_one-first_gen" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13175166"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-gen_one-first_gen" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-gen_one-first_gen_ot" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13172285"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-gen_one-first_gen_ot" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-aid-aid" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13175246"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-aid-aid" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-aid-aid_ot" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13161735"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-aid-aid_ot" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-aid-percent_aid_ot" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/13172118"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-aid-percent_aid_ot" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                </div>
+            </div>
+        </div>
+        <footer><p>Copyright © 2023 The Brown Daily Herald, Inc.</p></footer>
+    </section>
+</div>
+<script>
+    const buttons = document.querySelectorAll('.question-categories button');
+    let subButtons = document.querySelectorAll('.question-subdivisions button');
+    const textSections = document.querySelectorAll('.question-text div');
+    const subSections = document.querySelectorAll('.question-subdivisions div');
+    const graphics = document.querySelectorAll('.graphics div')
+    let selectedButton = buttons[0].id;
+    let selectedSubButton = subButtons[0].id;
+    window.onload = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const questionParam = urlParams.get('question');
+        const breakdownParam = urlParams.get('breakdown');
+        if (questionParam && breakdownParam) {
+            selectedButton = questionParam;
+            selectedSubButton = breakdownParam;
+        } else if (questionParam) {
+            selectedButton = questionParam;
+        } else {
+            buttons[0].classList.add('selected');
+            subButtons[0].classList.add('selected');
+        }
+        for (const button of buttons) {
+            if (button.id === selectedButton) {
+                button.classList.add('selected');
+            }
+        }
+        for (const subButton of subButtons) {
+            if (subButton.id === selectedSubButton) {
+                subButton.classList.add('selected');
+            }
+        }
+        for (const textSection of textSections) {
+            if (textSection.classList.contains(`question-${selectedButton}-text`)) {
+                textSection.style.display = 'block';
+            }
+        }
+        for (const subSection of subSections) {
+            if (subSection.classList.contains(`question-${selectedButton}-subdivisions`)) {
+                subSection.style.display = 'flex';
+            }
+        }
+        for (const graphic of graphics) {
+            if (graphic.classList.contains(`image-${selectedButton}-${selectedSubButton}`)) {
+                graphic.style.display = 'block';
+            }
+            if (graphic.classList.contains(`blurb-${selectedButton}-${selectedSubButton}`)) {
+                graphic.style.display = 'block';
+            }
+        }
+        addButtonsListener();
+        addSubButtonsListener();
+    };
+    addButtonsListener = () => {
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                handleButtonClick(button)
+            });
+        });
+    }
+    addSubButtonsListener = () => {
+            subButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    handleSubButtonClick(button);
+                });
+            });
+    }
+    handleButtonClick = (button) => {
+        selectedButton = button.id;
+        selectName = button.className;
+        console.log(button.className)
+        buttons.forEach((b) => b.classList.remove('selected'));
+        textSections.forEach((section) => section.style.display = 'none');
+        subSections.forEach((section) => section.style.display = 'none');
+        button.classList.add('selected');
+        const target = button.dataset.target;
+        document.querySelector(`.question-${target}-text`).style.display = 'block';
+        document.querySelector(`.question-${target}-subdivisions`).style.display = 'flex';
+        subButtons = document.querySelectorAll(`.question-${target}-subdivisions button`);
+        subButtons.forEach((b) => b.classList.remove('selected'));
+        subButtons[0].classList.add('selected');
+        selectedSubButton = subButtons[0].id;
+        updateImage()
+        updateText(selectName)
+    }
+handleSubButtonClick = (button) => {
+    selectedSubButton = button.id;
+    selectedName = button.className;
+    subButtons.forEach((b) => b.classList.remove('selected'));
+    button.classList.add('selected');
+    updateImage();
+    updateText(selectedName)
+}
+
+    updateImage = () => {
+        graphics.forEach((div) => {
+            div.style.display = 'none'
+        });
+        selectedImage = document.querySelector(`.image-${selectedButton}-${selectedSubButton}`)
+        selectedImage.style.display = 'block';
+
+        selectedEmbed = selectedImage.getElementsByClassName("flourish-embed flourish-chart")[0]
+        selectedEmbed.style.display = "block"
+        document.querySelector(`.blurb-${selectedButton}-${selectedSubButton}`).style.display = 'block';
+    }
+
+    updateText = (title) => {
+        const graphTitles = document.getElementsByClassName('graph-title');
+        for (let i=0; i<graphTitles.length; i++){
+                graphTitles[i].innerHTML = title.replace("selected", "")
+        }
+    }
+
+
+</script>
+
+
+  </body>
+</html>
