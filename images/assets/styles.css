@@ -26,6 +26,11 @@ a {
   text-decoration: none;
 }
 
+#title-start{
+  padding:1rem;
+  text-align:center;
+}
+
 div.about {
   width: 100%;
   display: flex;
