@@ -1,0 +1,50 @@
+:root {
+    --image-section-height: 75vh;
+    --frame-padding-side: max(1rem, calc((100% - 45rem) / 2));
+    --black: #151313;
+    --yellow: #FFFF42;
+    --orange: #FB4933;
+    --purple: #A62586;
+    --green: #2DB23E;
+    --white: #FEFED3;
+  }
+
+* {
+  margin: 0;
+}
+
+@font-face {
+  font-family: Gopher;
+  src: url(../src/fonts/Gopher-Medium.ttf);
+}
+
+@font-face {
+    font-family: DMSans;
+    src: url(../src/fonts/DMSans-Regular.ttf);
+  }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: DMSans, sans-serif;
+}
+
+@media screen and (max-width: 28rem) {
+  :root {
+    --image-section-height: 100vh;
+  }
+}
+
+.sr-only {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
