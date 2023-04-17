@@ -1,1 +1,0 @@
-var s;const e=((s=globalThis.__sveltekit_8p7blk)==null?void 0:s.base)??"/projects/2023/03/05/thayer-street-history";var t;const a=((t=globalThis.__sveltekit_8p7blk)==null?void 0:t.assets)??e;export{a,e as b};
