@@ -16,12 +16,12 @@
 
 @font-face {
   font-family: Gopher;
-  src: url(../src/fonts/Gopher-Medium.ttf);
+  src: url(./fonts/Gopher-Medium.ttf);
 }
 
 @font-face {
     font-family: DMSans;
-    src: url(../src/fonts/DMSans-Regular.ttf);
+    src: url(./fonts/DMSans-Regular.ttf);
   }
 
 * {
