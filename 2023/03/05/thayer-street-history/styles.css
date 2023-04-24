@@ -3,6 +3,7 @@
     --frame-padding-side: max(1rem, calc((100% - 45rem) / 2));
     --black: #151313;
     --yellow: #FFFF42;
+    --no-data: gray;
     --orange: #FB4933;
     --purple: #A62586;
     --green: #2DB23E;
@@ -38,6 +39,10 @@ body {
   :root {
     --image-section-height: 100vh;
   }
+}
+
+a{
+  color: inherit;
 }
 
 .sr-only {
