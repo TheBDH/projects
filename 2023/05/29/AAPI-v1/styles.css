@@ -1,0 +1,163 @@
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0rem;
+  padding-bottom: 0.5rem;
+  margin:0;
+  background: #ffffff;
+  border-bottom: 1px black solid;
+}
+
+.hamburger {
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+  width:1rem;
+}
+
+.logo {
+  cursor: pointer;
+  width:12rem;
+  padding:0;
+  margin:0;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  background: #ffffff;
+  padding: 0;
+  margin:0;
+  border-bottom: black 1px solid;
+  border-right: black 1px solid;
+  border-left: black 1px solid;
+  width:11rem;
+}
+
+.menu a {
+  font-size:0.9rem;
+  text-decoration: none;
+  color: black;
+  margin:0;
+  padding:0;
+  padding-top:0.25rem;
+  padding-bottom:0.25rem;
+  padding-left:0.5rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+#special-issue {
+  font-weight: bold;
+  font-family: "freight-text-pro", "Times", serif;
+  margin:0;
+  padding-left:6rem;
+  padding-top:0.8rem;
+  padding-bottom:0;
+  font-size:1.2rem;
+}
+
+#title {
+  font-weight: bold;
+  font-family: "freight-text-pro", "Times", serif;
+  text-align: center;
+  font-size:2.3rem;
+  padding:0;
+  margin:0;  
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container {
+  font-family: "freight-text-pro", "Times", serif;
+  padding-top:2rem;
+  width: 60%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.main-news {
+  position: relative;
+  padding-bottom:1rem;
+}
+
+.main-news img {
+  width: 100%;
+  height: auto;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+ /* background: rgba(0,0,0,0.5); */
+  color: white;
+  padding: 10px;
+}
+
+.sub-news {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.news-item {
+  flex: 1;
+  margin: 10px 0;
+  text-align: left;
+}
+
+
+.news-item img {
+  width: 100%;
+  height: auto;
+}
+
+.footer {
+  border-top: 1px solid black;
+  font-size:0.9rem;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  padding: 0px;
+  margin:0;
+}
+
+#about-bar{
+  font-family: 'Roboto', sans-serif;
+  font-size:0.9rem;
+}
+
+h2{
+  font-size:1.6rem;
+}
+
+h3{
+  font-size:1.6rem;
+}
+
+
+.mini{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.undec{
+  text-decoration: none;
+  color:black;
+}
+
+.mini2{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
