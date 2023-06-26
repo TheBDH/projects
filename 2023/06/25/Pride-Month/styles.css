@@ -103,16 +103,15 @@
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  padding-top: 100vh;  /* This is equal to the height of the cover photo */
+}
+
 #special-issue {
   font-weight: bold;
   font-family: "freight-text-pro", "Times", serif;
-  margin-left:0;
-  margin-right:0;
-  margin-bottom:0;
-  margin-top:45rem;
-  padding-left:6rem;
-  padding-top:0.8rem;
-  padding-bottom:0;
+  padding: 1rem 0 0 2rem;
+  margin-top: 0rem; /* Add a top margin */
   font-size:1.2rem;
 }
 
@@ -121,8 +120,9 @@
   font-family: "freight-text-pro", "Times", serif;
   text-align: center;
   font-size:2.3rem;
-  padding:0;
-  margin:0;  
+  padding: 0 0 0 2rem;
+  margin-top: 0.5rem; /* Add a top margin */
+  margin-bottom:0;
 }
 
 .text {
