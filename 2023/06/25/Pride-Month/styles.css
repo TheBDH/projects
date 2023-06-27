@@ -15,7 +15,7 @@
 }
 
 #all{
-  width:55rem;
+  width:25rem;
   padding-top:10rem;
 }
 
@@ -45,7 +45,7 @@
   width:13rem;
   cursor: pointer;
   position:relative;
-  bottom: 15%;
+  bottom: -10%;
 }
 
 
