@@ -222,3 +222,16 @@ h3{
 #past{
   padding-top:2rem;
 }
+
+.cover-photo-credit {
+  margin-top: 0;
+  font-size: 0.8rem;
+  text-align: right;
+  font-family: 'Roboto', sans-serif;
+}
+
+.cover-photo-credit a{
+font-weight: bold;
+text-decoration: none;
+color:black;
+}
