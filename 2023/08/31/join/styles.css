@@ -887,6 +887,19 @@ hr {
     border: none;
 }
 
+#smaller-fake {
+    font:'Roboto';
+    font-size:0.8rem;
+    margin-top:0.8rem;
+    display: block;
+    width: 82%;
+    margin-left: 9%;
+    padding: 10px;
+    background-color: white;
+    color: white;
+    border: none;
+}
+
 .card-button-2 {
     font:'Roboto';
     font-size:0.8rem;
@@ -1009,17 +1022,117 @@ hr {
     padding-bottom:2rem;
 }
 
+.join-btn-form{
+    text-decoration: none;
+    color:white;
+    background: #ed1c24;
+    padding: 1rem 2rem;
+    margin:4rem;
+    margin-left:6rem;
+    font-size:0.85rem
+}
+
 @media (max-width: 640px) {
 
     .join-blurb{
-        padding-left:3rem;
-        padding-right:3rem;
+            padding-left:3rem;
+            padding-right:3rem;
     }
+
+    .card-wrapper {
+        padding-top:0.5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 13rem); /* This keeps card width fixed at 200px */
+        width:85%;
+        gap: 2.5rem;
+        margin: 0rem 5rem;
+        justify-content: space-around;
+    }
+
+    
+    .card {
+        flex: 0 0 200px; /* flex-grow, flex-shrink, flex-basis */
+        height:20rem;
+        background-color: white;
+        border: 0.2rem solid black;
+        padding: 0.5rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+}
+
+@media (max-width: 537px) {
+    .card-wrapper{
+        margin-left:3.5rem;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fill, 10rem); /* This keeps card width fixed at 200px */
+    }
+
+    .card{
+        height:15rem;
+    }
+
+    .card-label{
+    font-size:0.8rem;
+    }
+
+    .card-button{
+        font-size: 0.7rem;
+    }
+    .card-button-2{
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 396px) {
+    .card-wrapper{
+        margin-left:3.5rem;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fill, 8rem); /* This keeps card width fixed at 200px */
+    }
+
+    .card{
+        height:12rem;
+    }
+
+    .card-button{
+        margin-top:0.5rem;
+        font-size: 0.55rem;
+    }
+    .card-button-2{
+        font-size: 0.55rem;
+    }
+
+    .btn-fake{
+        margin-top:0.8rem;
+    }
+
+    #smaller-fake{
+        margin-top:0rem;
+    }
+
+    .card-label{
+        font-size:0.61rem;
+    }
+
+    #small-phones{
+        font-size:0.53rem;
+    }
+}
+
+@media (max-width: 509px) {
+    .card-wrapper{
+        margin-left:2.5rem;
+        gap: 1rem;
+    }
+
 }
 
 @media (max-width: 453px) {
     .section-name{
         font-size:1.8rem;
+        padding-left:3.75rem;
     }
 }
 
