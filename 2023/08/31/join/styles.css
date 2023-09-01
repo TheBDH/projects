@@ -1,0 +1,1035 @@
+/* styles.css */
+body {
+    scroll-behavior: smooth;
+    font-family: Roboto;
+    margin:0;
+    padding:0;
+}
+
+.burger{
+    display:none;
+}
+
+#print-hide{
+    display:none;
+}
+
+#date-hide{
+    display:none;
+}
+
+#logo{
+    width:47vw;
+    height:default;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-section, .bottom-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+}
+
+
+.middle img {
+    display: block;
+    margin: 0 auto;
+}
+
+.red-link {
+    color: #ed1c24;
+    text-decoration: none;
+    font-size:0.86em
+}
+
+.red-link:hover {
+    text-decoration: underline;
+}
+
+.left a, .middle a, .right img {
+    margin: 0 10px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid black;
+    width: 100%;
+    padding:0.22rem;
+    margin:0;
+}
+
+#donate-red{
+    color:#ed1c24;
+}
+
+.small-b {
+    display: inline-block; /* Important for block-level nesting */
+    position: relative;  /* Make it a relative container for the dropdown */
+    font-size: 0.7em;
+    text-decoration: none;
+    color: black;
+    margin: 0 0px;
+}
+
+.small-b a{
+    text-decoration: none;
+    color:black;
+}
+
+.bottom-section .left{
+    padding:0;
+    margin:0;
+    max-width: 90%;
+}
+
+.bottom-section .right{
+    display: block;
+    justify-content: space-between;
+    padding:0;
+    margin:0;
+}
+
+.social{
+    width:1.2rem;
+    height:auto;
+}
+
+.big-b{
+    text-decoration: none;
+    color:black;
+    font-size:0.84rem;
+    padding-left:0.2rem;
+    padding-right:0.2rem;
+    position: relative;
+    display: inline-block; /* Important for block-level nesting */
+}
+
+.big-b a{
+    text-decoration: none;
+    color:black;
+}
+
+
+#currentDate{
+    font-size:0.86em
+}
+
+.search-icon {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.left a, .middle a, .right img {
+    margin: 0 0.2rem;  /* Decreased margin */
+}
+
+.bottom-section{
+    max-width: 97%;   /* Add this */
+    padding-top:0;
+    margin-top:0;
+    padding-bottom:0;
+    margin-bottom:0
+}
+
+#donate{
+    width:1.5rem;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0;
+}
+
+.top-section .left, .top-section .right {
+    display: flex;
+    flex: 1;
+}
+
+.top-section .left{
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.top-section .right {
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.top-section .right a{
+    padding-bottom:0.25rem;
+    padding-right:1.7rem;
+}
+
+.top-section .left a{
+    padding-bottom:0.25rem;
+    padding-left:1.5rem;
+}
+
+.top-section .left p{
+    padding-bottom:0.25rem;
+    padding-left:1.7rem;
+    margin:0;
+
+}
+
+#logo-hide{
+    margin:0;
+    padding:0;
+}
+
+.logo-href{
+    margin:0;
+    padding:0;
+}
+
+/* New styles for the dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    border: 1px solid #aaa;
+    z-index: 10;  /* To appear on top of other elements */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Optional shadow for better appearance */
+    width: 10rem;
+    margin-top:0.1rem;
+    border-bottom: 0.15rem solid #ed1c24;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 0.5rem;
+    padding-top:0.25rem;
+    text-decoration: none;
+    color: black;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu a:hover {
+    color: #ed1c24;  /* A subtle hover effect for dropdown links */
+}
+
+.big-b:hover .dropdown-menu {
+    display: block;  /* Display the dropdown when hovering over the parent link */
+}
+
+.small-b:hover .dropdown-menu {
+    display: block;
+}
+
+.menu-hr{
+    width:8.5rem;
+    margin-left:0.5rem;
+}
+
+
+.top-one{
+    padding-top:0.75rem !important;
+}
+
+#science{
+    width:15rem;
+}
+#science hr{
+    width:13.5rem;
+}
+
+#opinion{
+    width:12rem;
+}
+#opinion hr{
+    width:10.5rem;
+}
+
+#project{
+    width:15rem;
+}
+#project hr{
+    width:13.5rem;
+}
+
+#about-dd{
+    width:12rem;
+}
+#about-dd hr{
+    width:10.5rem;
+}
+
+.medium-top{
+    display:none;
+}
+
+@media (max-width: 1179px) {
+    .bottom-section .left{
+        display:none;
+    }
+    
+    .bottom-section .right{
+        display:none;
+    }
+
+    .bottom-section .middle{
+        padding-top:0rem;
+        padding-bottom:0.5rem;
+    }
+
+    .bottom-section{
+        justify-content: center;
+    }
+    
+    .medium-top{
+        display: flex;
+        justify-content: space-between;
+        background-color: #f2f2f2;
+        width:100%;
+        padding:0.5rem;
+        margin:0;
+    }
+
+    .medium-top .left{
+        padding-left:2rem;
+    }
+
+    .medium-top .right{
+        display: block;
+        justify-content: space-between;
+        padding:0;
+        margin:0;
+        padding-right:2rem;
+    }
+
+    .r-social{
+        width:1rem;
+    }
+    .r-donate{
+        width:1.3rem;
+    }
+}
+
+@media (max-width: 787px) {
+    .bottom-section .middle {
+        display:none;
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        left: -47%;
+        padding-bottom: 0.2rem;
+        cursor: pointer;  /* This makes the div look clickable */
+    }
+    
+    .dropdown-content {
+        display: none; /* Hidden by default */
+        position: absolute;
+        width: 10rem; /* Adjust if needed */
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Optional shadow for the dropdown */
+        z-index: 1; /* To ensure the dropdown appears above other content */
+    }
+    
+    .dropdown-content a {
+        color: black; /* Choose a color you like */
+        padding: 12px 16px; 
+        text-decoration: none;
+        display: block;
+    }
+    
+    .dropdown-content a:hover {
+        color: #ed1c24; /* Choose a hover color you like */
+    }
+
+    .dropdown-menu{
+        margin-left:10rem;
+        padding-top:0;
+        margin-top:-3rem;
+    }
+
+    
+}
+
+@media (max-width: 750px) {
+    .top-section .right{
+        display:none;
+    }
+    .top-section .left{
+        display:none;
+    }
+    .top-section {
+        justify-content: center;
+    }
+
+    #print-hide{
+        display:block;
+    }
+    
+    #date-hide{
+        display:block;
+    }
+}
+
+/*---------------------------------------------------*/
+.herald-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem; /* Adjust as needed */
+    width:90vw;
+    padding-left:5rem;
+}
+
+.herald-text-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.herald-image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.herald-main-image {
+    width:38rem;
+    height: auto;
+    padding-top:3rem;
+}
+
+.herald-title {
+    font-size: 2.5rem; /* Adjust as needed */
+    margin-bottom: 2.5rem;
+    font-family: "freight-text-pro", "Times", serif;
+}
+
+.herald-description {
+    margin-bottom: 20px;
+    font-size: 1em; /* Adjust as needed */
+}
+
+.herald-red-btn {
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size:1.0rem;
+}
+
+.herald-outline-btn {
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+    border: 0.3rem solid black;
+    padding: 0.9rem 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Adjust space between text and icon */
+    cursor: pointer;
+    font-size:1.0rem;
+}
+
+.down-arrow-icon {
+    height: 15px; /* Adjust as needed */
+    width: auto;
+}
+
+/* If you need hover effects */
+.herald-red-btn:hover, .herald-outline-btn:hover {
+    opacity: 0.8; /* or any other hover effect */
+}
+
+.herald-buttons {
+    display: flex;
+    gap: 2rem; /* Adjust the space between the buttons as needed */
+    padding-left:2rem;
+    padding-top:3rem;
+}
+
+.herald-container-2{
+    display:none;
+}
+
+@media (max-width: 1357px) {
+    .herald-title {
+        font-size: 2.8vw; /* Adjust as needed */
+        margin-bottom: 2.5rem;
+        font-family: "freight-text-pro", "Times", serif;
+    }
+    .herald-main-image {
+        width:40vw;
+        height: auto;
+        padding-top:3rem;
+    }
+}
+
+@media (max-width: 1300px) {
+    .herald-title {
+        font-size: 2.6vw; /* Adjust as needed */
+        margin-bottom: 2.5rem;
+        font-family: "freight-text-pro", "Times", serif;
+    }
+
+    .herald-description {
+        margin-bottom: 20px;
+        font-size: 0.9rem; /* Adjust as needed */
+    }
+
+    .herald-red-btn {
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        margin-right: 10px;
+        font-size:0.9rem;
+    }
+    
+    .herald-outline-btn {
+        border: 0.3rem solid black;
+        padding: 0.9rem 1.3rem;
+        font-size:0.9rem;
+    }
+
+    .herald-main-image {
+        padding-top:2.5rem;
+    }
+}
+
+@media (max-width: 1171px) {
+    .herald-title {
+        font-size: 2.4vw; /* Adjust as needed */
+        margin-bottom: 2.5rem;
+        font-family: "freight-text-pro", "Times", serif;
+    }
+
+    .herald-description {
+        margin-bottom: 20px;
+        font-size: 0.85rem; /* Adjust as needed */
+    }
+
+    .herald-red-btn {
+        padding: 0.8rem 1.3rem;
+        cursor: pointer;
+        margin-right: 10px;
+        font-size:0.8rem;
+    }
+    
+    .herald-outline-btn {
+        border: 0.3rem solid black;
+        padding: 0.7rem 1.1rem;
+        font-size:0.8rem;
+    }
+
+    .herald-main-image {
+        padding-top:0rem;
+    }
+
+    .herald-buttons {
+        padding-top:0.5rem;
+    }
+    
+}
+
+@media (max-width: 1120px) {
+    .herald-container {
+        display:none;
+    }
+    .herald-container-2 {
+        display:flex;
+        justify-content: center;
+        padding:0rem 10rem;
+    }
+
+    .herald-container-2{
+        text-align: center;
+    }
+    .herald-container-2 .herald-text-section{
+        text-align: left;
+    }
+
+    .herald-container-2 .herald-buttons{
+        justify-content: center;
+        padding:0;
+        margin:0;
+        padding-top:2rem;
+        gap:4rem;
+    }
+    
+    .herald-description{
+        font-size:1rem;
+    }
+    .herald-title{
+        font-size:2.5rem;
+    }
+
+    .herald-red-btn {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        margin-right: 10px;
+        font-size:1.0rem;
+    }
+    
+    .herald-outline-btn {
+        background-color: transparent;
+        color: black;
+        border: 0.3rem solid black;
+        padding: 0.9rem 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 5px; /* Adjust space between text and icon */
+        cursor: pointer;
+        font-size:1.0rem;
+    }
+}
+
+@media (max-width: 797px) {
+    .herald-title{
+        font-size:2rem;
+    }
+
+    .herald-red-btn {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        margin-right: 10px;
+        font-size:0.9rem;
+    }
+    
+    .herald-outline-btn {
+        background-color: transparent;
+        color: black;
+        border: 0.3rem solid black;
+        padding: 0.9rem 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 5px; /* Adjust space between text and icon */
+        cursor: pointer;
+        font-size:0.9rem;
+    }
+
+    .herald-container-2 {
+        padding:0rem 4rem;
+    }
+}
+
+@media (max-width: 582px) {
+    .herald-title{
+        font-size:1.8rem;
+    }
+
+    .herald-red-btn {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 0.9rem 1.4rem;
+        cursor: pointer;
+        margin-right: 10px;
+        font-size:0.8rem;
+    }
+    
+    .herald-outline-btn {
+        background-color: transparent;
+        color: black;
+        border: 0.3rem solid black;
+        padding: 0.8rem 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 5px; /* Adjust space between text and icon */
+        cursor: pointer;
+        font-size:0.8rem;
+    }
+
+    .herald-description{
+        font-size:0.9rem;
+    }
+
+    .herald-container-2 {
+        padding:0rem 4rem;
+    }
+
+    .herald-container-2 .herald-buttons{
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 551px) {
+    .herald-title{
+        font-size:1.7rem;
+    }
+
+    .herald-red-btn {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.3rem;
+        cursor: pointer;
+        margin-right: 10px;
+        font-size:0.7rem;
+    }
+    
+    .herald-outline-btn {
+        background-color: transparent;
+        color: black;
+        border: 0.3rem solid black;
+        padding: 0.7rem 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 5px; /* Adjust space between text and icon */
+        cursor: pointer;
+        font-size:0.7rem;
+    }
+
+    .down-arrow-icon{
+        width:0.7rem;
+        height:auto;
+    }
+
+    .herald-description{
+        font-size:0.87rem;
+    }
+
+    .herald-container-2 {
+        padding:0rem 4rem;
+    }
+
+    .herald-container-2 .herald-buttons{
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 504px) {
+    .herald-title{
+        font-size:1.5rem;
+    }
+
+    .herald-description{
+        font-size:0.8rem;
+    }
+
+    .herald-container-2 {
+        padding:0rem 4rem;
+    }
+
+    .herald-container-2 .herald-buttons{
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 467px) {
+    .herald-container-2{
+        padding: 0rem 2rem;
+    }
+
+    .herald-title{
+        font-size:1.5rem;
+    }
+
+    .herald-description{
+        font-size:0.8rem;
+    }
+
+    .herald-container-2 .herald-buttons{
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .herald-container-2{
+        padding: 0rem 1rem;
+    }
+
+    .herald-title{
+        font-size:1.5rem;
+    }
+
+    .herald-description{
+        font-size:0.8rem;
+    }
+
+    .herald-container-2 .herald-buttons{
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 368px) {
+    .herald-container-2{
+        padding: 0rem 0.25rem;
+    }
+
+    .herald-title{
+        font-size:1.5rem;
+    }
+
+    .herald-description{
+        font-size:0.8rem;
+    }
+
+    .herald-container-2 .herald-buttons{
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 344px) {
+    .herald-container-2{
+        padding: 0rem 0rem;
+    }
+
+    .herald-title{
+        font-size:1.3rem;
+    }
+
+    .herald-description{
+        font-size:0.7rem;
+    }
+
+    .herald-container-2 .herald-buttons{
+        gap: 0.1rem;
+    }
+
+    .herald-red-btn {
+        padding: 0.7rem 1.2rem;
+        font-size:0.6rem;
+    }
+    
+    .herald-outline-btn {
+        padding: 0.6rem 1rem;
+        font-size:0.6rem;
+    }
+
+}
+
+/*------------------------------------------------------*/
+
+.card-wrapper {
+    padding-top:0.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 15rem); /* This keeps card width fixed at 200px */
+    width:85%;
+    gap: 4rem;
+    margin: 0rem 5rem;
+    justify-content: space-around;
+}
+.card:nth-of-type(4n) {
+    margin-right: 0;
+}
+
+.card {
+    flex: 0 0 200px; /* flex-grow, flex-shrink, flex-basis */
+    height:20rem;
+    background-color: white;
+    border: 0.2rem solid black;
+    padding: 0.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* This will center the image */
+    padding:0;
+}
+
+.card-label {
+    margin-top: 0.5rem;
+    font-size:1.2rem;
+    font-weight: normal;
+}
+
+.card-button {
+    font:'Roboto';
+    font-size:0.8rem;
+    margin-top:1.5rem;
+    display: block;
+    width: 82%;
+    margin-left: 9%;
+    padding: 10px;
+    background-color: #4E362A;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-fake {
+    font:'Roboto';
+    font-size:0.8rem;
+    margin-top:2.38rem;
+    display: block;
+    width: 82%;
+    margin-left: 9%;
+    padding: 10px;
+    background-color: white;
+    color: white;
+    border: none;
+}
+
+.card-button-2 {
+    font:'Roboto';
+    font-size:0.8rem;
+    margin-top:0.5rem;
+    display: block;
+    width: 82%;
+    margin-left: 9%;
+    padding: 10px;
+    background-color: #4E362A;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #6A4A3C;
+}
+
+.card-button-2:hover {
+    background-color: #6A4A3C;
+}
+
+.card-button-clicked:hover {
+    background-color: #6A4A3C;
+}
+
+.section-name{
+    padding-top:3rem;
+    font-size:2.2rem;
+    font-family: "freight-text-pro", "Times", serif;
+    padding-left:6rem;
+}
+
+#smaller-label{
+    font-size:1.1rem
+}
+
+.join-blurb{
+    padding-left: 6rem;
+    padding-right: 10rem;
+    padding-bottom:3rem;
+}
+
+#extra-padding-top{
+    padding-top:2rem;
+    padding-bottom:0;
+}
+
+/*-----------------Pop-Ups----------------*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 22rem;
+    padding: 0.5rem;
+    background-color: white;
+    text-align: left;
+    border:black 0.3rem solid;
+}
+
+.modal-image {
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+    padding-left:2.5%;
+}
+
+.modal-label {
+    font-size: 1.2rem;
+    margin-top: 0.75rem;
+    padding-left:1rem;
+}
+
+.modal-blurb {
+    margin-top: 1rem;
+    padding: 1rem;
+    padding-top:0.5rem;
+    font-size:0.75rem;
+    text-align:left;
+}
+
+.modal-exit {
+    font-size: 0.67rem;
+    background-color: #D9D9D9;
+    color: black;
+    border: none;
+    padding: 0.18rem 2.2rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.card-button-clicked {
+    font:'Roboto';
+    font-size:0.8rem;
+    margin-top:0.5rem;
+    display: block;
+    width: 52%;
+    margin-left: 24%;
+    padding: 10px;
+    background-color: #4E362A;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#join-the-herald{
+    padding-bottom:2rem;
+}
+
+@media (max-width: 640px) {
+
+    .join-blurb{
+        padding-left:3rem;
+        padding-right:3rem;
+    }
+}
+
+@media (max-width: 453px) {
+    .section-name{
+        font-size:1.8rem;
+    }
+}
+
+@media (max-width: 390px) {
+    .modal-content{
+        width:20rem
+    }
+}
+@media (max-width: 345px) {
+    .modal-content{
+        width:19rem
+    }
+}
