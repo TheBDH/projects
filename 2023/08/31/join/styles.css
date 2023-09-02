@@ -864,7 +864,7 @@ hr {
     font-size:0.8rem;
     margin-top:1.5rem;
     display: block;
-    width: 82%;
+    width: 72.75%;
     margin-left: 9%;
     padding: 10px;
     background-color: #4E362A;
@@ -872,6 +872,7 @@ hr {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-decoration: none;
 }
 
 .btn-fake {
@@ -1008,14 +1009,15 @@ hr {
     font-size:0.8rem;
     margin-top:0.5rem;
     display: block;
-    width: 52%;
-    margin-left: 24%;
-    padding: 10px;
+    width: 25%;
+    margin-left: 30%;
+    padding: 10px 1.5rem;
     background-color: #4E362A;
     color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-decoration: none;
 }
 
 #join-the-herald{
