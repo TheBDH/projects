@@ -133,6 +133,16 @@ div.home > div.panel > a > div  {
     margin: 0;
 }
 
+.all-site-title{
+  font-family: var(--header-font);
+  padding:1rem;
+  font-size:1.7rem;
+}
+
+#small-title{
+  display:none;
+}
+
 #navbar {
     display: flex;
     align-items: center;
