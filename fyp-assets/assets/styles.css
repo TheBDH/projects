@@ -405,6 +405,33 @@ footer > p {
   color: var(--footer-text-color)
 }
 
+@media (max-width: 880px) {
+#nav-links{
+  display:none;
+}
+}
+
+@media (max-width: 736px) {
+.all-site-title{
+  font-size:1.35rem;
+}
+}
+
+@media (max-width: 601px) {
+  .all-site-title{
+  font-size:1.1rem;
+  padding:0.35rem;
+}
+}
+
+@media (max-width: 478px) {
+#original-title{
+  display:none;
+}
+#small-title{
+  display:block;
+}
+}
 
 @media screen and (max-width: 55rem) {
     .section-wrapper {
