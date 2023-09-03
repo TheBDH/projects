@@ -2,15 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-924YPK1KDJ"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-924YPK1KDJ'); </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First Year Poll</title>
     <link rel="stylesheet" href="https://use.typekit.net/mxr8glf.css">
     <link rel="stylesheet" href="/fyp-assets/assets/styles.css">
-    <link rel="icon" href="/fyp-assets/assets/icon-rel.png" type="image/x-icon"/>
+     <link rel="icon" href="/fyp-assets/assets/icon-rel.png" type="image/x-icon"/>
     <link rel="icon" href="">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WTGQ6EEKTK"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -20,17 +20,800 @@
 </script>
   </head>
   <body>
-    
-<div class="home">
-  <div class="panel">
-    <img style="width:20rem;filter: invert()" class="logo" src="https://d35jcxe8no8yhr.cloudfront.net/25f4d2392ed7cc544e1f8023bbc4d1f5/dist/img/logo-black.png" alt="Logo" />
-    <h1 id='title-start'>Welcome, Class of 2027!</h1>
-    <a href="first-year-poll/">
-      <div>Explore the data</div>
-      <img src="/fyp-assets/assets/white-arrow.svg" />
-    </a>
-  </div>
+    <div class="tool">
+    <nav id="navbar">
+        <div id="navbar-logo">
+            <a href="https://www.browndailyherald.com">
+                <img id="navbar-logo-img" src="/fyp-assets/assets/logo-black.png"/>
+            </a>
+        </div>
+        <h2 class="all-site-title" style="font-family: var(--header-font);padding:1rem;font-size:1.7rem;">Brown University's Class of 2027</h2>
+
+        <div id="nav-links">
+            <a id="story-link" target="_blank" href="https://projects.browndailyherald.com/2023/09/02/fyp/index.html">
+                <div>Read the story</div>
+                <img src="/fyp-assets/assets/white-arrow.svg" />
+            </a>
+        </div>
+    </nav>
+    <section class="section-wrapper"> 
+
+        <div class="question-categories-wrapper">
+            <div class="question-categories"><button class='' data-target="academics" id='academics'>Academics</button><button class='' data-target="admissions" id='admissions'>Admissions</button><button class='' data-target="demographics" id='demographics'>Demographics</button><button class='' data-target="lifestyle" id='lifestyle'>Lifestyle</button><button class='' data-target="political-views" id='political-views'>Political Views</button><button class='' data-target="socioeconomics" id='socioeconomics'>Socioeconomics</button></div>
+        </div>
+        <div class="main-content-wrapper">
+            <div class="question-text"><div class="question-academics-text" style="display: none;">
+                        <h1 class="graph-title"></h1>
+                    </div><div class="question-admissions-text" style="display: none;">
+                        <h1 class="graph-title"></h1>
+                    </div><div class="question-demographics-text" style="display: none;">
+                        <h1 class="graph-title"></h1>
+                    </div><div class="question-lifestyle-text" style="display: none;">
+                        <h1 class="graph-title"></h1>
+                    </div><div class="question-political-views-text" style="display: none;">
+                        <h1 class="graph-title"></h1>
+                    </div><div class="question-socioeconomics-text" style="display: none;">
+                        <h1 class="graph-title"></h1>
+                    </div></div>
+            <div class="subdiv-graph-wrapper">
+                <div class="question-subdivisions"><div class="question-academics-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Topics</h2><button id="double-concentrate-certificate" class="">Double Concentration</button>
+                            <button id="areas-of-study-crossover" class="">Areas of Study Crossover</button>
+                            <button id="top-concentrations" class="">Top Concentrations</button>
+                            <button id="highest-degree-area-of-study" class="">Highest Degree Area of Study</button>
+                            <button id="concentration-certainty" class="">Concentration Certainty</button>
+                            <button id="concentration-crossover" class="">Concentration Crossover</button>
+                            <button id="intended-concentrations-by-highest-degree" class="">Concentration by Highest Degree</button>
+                            <button id="concentration-certificate-crossover" class="">Certificate Crossover</button>
+                            <button id="intended-certificates" class="">Intended Certificate</button>
+                            
+                        </div>
+                    <div class="question-admissions-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Topics</h2><button id="varsity-athlete" class="">Varsity Athlete</button>
+                            <button id="high-school-class-size" class="">High School Class Size</button>
+                            <button id="gap-year" class="">Gap Year</button>
+                            <button id="video-introduction" class="">Video Introduction</button>
+                            <button id="was-brown-top-choice-by-ed-vs-rd-vs-questbridge" class="">Was Brown Top Choice?</button>
+                            <button id="ed-vs-rd" class="">ED v. RD</button>
+                            <button id="submitting-test-scores" class="">Submitting Test Scores</button>
+                            <button id="high-school-type" class="">High School Type</button>
+                            <button id="top-choice-other-than-brown" class="">Top choice other than Brown</button>
+                            <button id="alternate-school-of-attendance" class="">Alternate School of Attendance</button>
+                            <button id="extracurriculars" class="">Extracurriculars</button>
+                            <button id="brown-risd-dual-degree" class="">Brown-RISD Dual Degree</button>
+                            <button id="plme" class="">PLME</button>
+                            <button id="ap-tests-by-hs-fa" class="">AP Tests</button>
+                            <button id="dual-enrollment-classes-by-hs-fa" class="">Dual Enrollment Classes</button>
+                            <button id="ib-classes-by-hs-fa" class="">IB Classes</button>
+                            
+                        </div>
+                    <div class="question-demographics-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Topics</h2><button id="home-state" class="">Home State</button>
+                            <button id="home-country" class="">Home Country</button>
+                            <button id="sexual-orientation" class="">Sexual Orientation</button>
+                            <button id="importance-of-religion" class="">Importance of Religion</button>
+                            <button id="religious-affiliation" class="">Religious Affiliation</button>
+                            <button id="race-ethnicity" class="">Race/Ethnicity</button>
+                            <button id="siblings" class="">Siblings</button>
+                            <button id="age-gender" class="">Age &amp; Gender</button>
+                            <button id="domestic-vs-international" class="">Domestic v. International</button>
+                            
+                        </div>
+                    <div class="question-lifestyle-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Topics</h2><button id="relationship-status" class="">Relationship Status</button>
+                            <button id="sex" class="">Sex</button>
+                            <button id="substance-openness" class="">Substance Openness</button>
+                            <button id="hours-of-sleep" class="">Hours of Sleep</button>
+                            <button id="substance-use" class="">Substance Use</button>
+                            <button id="greek-life" class="">Greek Life</button>
+                            <button id="fake" class="">Fake ID</button>
+                            <button id="license" class="">Drivers License</button>
+                            <button id="laptop" class="">Laptop</button>
+                            <button id="music" class="">Music</button>
+                            <button id="substance-used" class="">Substances Used</button>
+                            <button id="first-time" class="">First Time</button>
+                            
+                        </div>
+                    <div class="question-political-views-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Topics</h2><button id="race-in-admissions" class="">Race in Admissions</button>
+                            <button id="socialism" class="">Socialism</button>
+                            <button id="marijuana" class="">Marijuana</button>
+                            <button id="political-ideology" class="">Political Ideology</button>
+                            <button id="legitimacy-in-supreme-court" class="">Legitimacy in Supreme Court</button>
+                            <button id="abortion" class="">Abortion</button>
+                            <button id="legacy-admissions" class="">Legacy Admissions</button>
+                            <button id="endowment" class="">Endowment</button>
+                            <button id="vaccine-mandate" class="">Vaccine Mandate</button>
+                            <button id="faith-in-media" class="">Faith in Media</button>
+                            <button id="hate-speech" class="">Hate Speech</button>
+                            <button id="lgbtq-curriculum" class="">LGBTQ Curriculum</button>
+                            <button id="death-penalty" class="">Death Penalty</button>
+                            <button id="gun-restrictions" class="">Gun Restrictions</button>
+                            <button id="police-funding" class="">Police Funding</button>
+                            <button id="right-direction" class="">Right Direction</button>
+                            <button id="racism" class="">Racism</button>
+                            <button id="student-loan-forgiveness" class="">Student Loan Forgiveness</button>
+                            
+                        </div>
+                    <div class="question-socioeconomics-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Topics</h2><button id="job" class="">Job</button>
+                            <button id="socioeconomic-status" class="">Socioeconomic Status</button>
+                            <button id="financial-aid" class="">Financial Aid</button>
+                            
+                        </div>
+                    
+                </div>
+
+                <div class="graphics">
+                    
+                        
+                            <div class="image-academics-double-concentrate-certificate" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14731559"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-academics-double-concentrate-certificate" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-academics-areas-of-study-crossover" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14684732"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-academics-areas-of-study-crossover" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-academics-top-concentrations" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14685078"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-academics-top-concentrations" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-academics-highest-degree-area-of-study" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14785562"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-academics-highest-degree-area-of-study" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-academics-concentration-certainty" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14731487"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-academics-concentration-certainty" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-academics-concentration-crossover" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14684890"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-academics-concentration-crossover" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-academics-intended-concentrations-by-highest-degree" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14741389"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-academics-intended-concentrations-by-highest-degree" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-academics-concentration-certificate-crossover" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14742954"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-academics-concentration-certificate-crossover" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-academics-intended-certificates" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14785125"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-academics-intended-certificates" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-admissions-varsity-athlete" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14786112"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-varsity-athlete" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-high-school-class-size" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14786141"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-high-school-class-size" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-gap-year" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14786586"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-gap-year" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-video-introduction" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14786617"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-video-introduction" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-was-brown-top-choice-by-ed-vs-rd-vs-questbridge" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14762720"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-was-brown-top-choice-by-ed-vs-rd-vs-questbridge" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-ed-vs-rd" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14741057"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-ed-vs-rd" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-submitting-test-scores" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14786758"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-submitting-test-scores" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-high-school-type" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14786739"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-high-school-type" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-top-choice-other-than-brown" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14762485"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-top-choice-other-than-brown" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-alternate-school-of-attendance" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14762650"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-alternate-school-of-attendance" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-extracurriculars" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14784999"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-extracurriculars" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-brown-risd-dual-degree" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14786603"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-brown-risd-dual-degree" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-plme" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14786609"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-plme" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-ap-tests-by-hs-fa" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14762065"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-ap-tests-by-hs-fa" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-dual-enrollment-classes-by-hs-fa" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14762118"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-dual-enrollment-classes-by-hs-fa" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-admissions-ib-classes-by-hs-fa" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14762157"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-admissions-ib-classes-by-hs-fa" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-demographics-home-state" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14731643"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-demographics-home-state" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-demographics-home-country" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14733054"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-demographics-home-country" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-demographics-sexual-orientation" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14732343"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-demographics-sexual-orientation" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-demographics-importance-of-religion" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14786639"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-demographics-importance-of-religion" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-demographics-religious-affiliation" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14786699"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-demographics-religious-affiliation" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-demographics-race-ethnicity" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14786863"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-demographics-race-ethnicity" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-demographics-siblings" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14785149"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-demographics-siblings" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-demographics-age-gender" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14785187"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-demographics-age-gender" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-demographics-domestic-vs-international" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14731590"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-demographics-domestic-vs-international" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-lifestyle-relationship-status" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14773589"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-lifestyle-relationship-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-lifestyle-sex" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14732211"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-lifestyle-sex" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-lifestyle-substance-openness" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14785630"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-lifestyle-substance-openness" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-lifestyle-hours-of-sleep" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14785108"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-lifestyle-hours-of-sleep" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-lifestyle-substance-use" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14732980"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-lifestyle-substance-use" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-lifestyle-greek-life" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14731784"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-lifestyle-greek-life" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-lifestyle-fake" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14732233"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-lifestyle-fake" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-lifestyle-license" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14785261"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-lifestyle-license" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-lifestyle-laptop" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14785268"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-lifestyle-laptop" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-lifestyle-music" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14785297"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-lifestyle-music" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-lifestyle-substance-used" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14785342"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-lifestyle-substance-used" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-lifestyle-first-time" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14785381"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-lifestyle-first-time" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-political-views-race-in-admissions" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14743459"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-race-in-admissions" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-socialism" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14743833"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-socialism" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-marijuana" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14744236"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-marijuana" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-political-ideology" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14751397"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-political-ideology" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-legitimacy-in-supreme-court" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14751944"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-legitimacy-in-supreme-court" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-abortion" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14743003"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-abortion" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-legacy-admissions" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14743144"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-legacy-admissions" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-endowment" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14743660"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-endowment" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-vaccine-mandate" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14743794"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-vaccine-mandate" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-faith-in-media" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14743905"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-faith-in-media" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-hate-speech" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14743979"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-hate-speech" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-lgbtq-curriculum" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14744028"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-lgbtq-curriculum" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-death-penalty" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14744113"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-death-penalty" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-gun-restrictions" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14744193"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-gun-restrictions" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-police-funding" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14744293"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-police-funding" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-right-direction" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14744336"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-right-direction" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-racism" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14751808"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-racism" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-political-views-student-loan-forgiveness" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14751866"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-political-views-student-loan-forgiveness" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-socioeconomics-job" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14761687"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-socioeconomics-job" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-socioeconomics-socioeconomic-status" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14786721"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-socioeconomics-socioeconomic-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-socioeconomics-financial-aid" style="display: none;">
+                                <div class="flourish-embed flourish-chart" data-src="visualisation/14732898"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+                            </div>
+                            <div class="blurb-socioeconomics-financial-aid" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                </div>
+            </div>
+        </div>
+        <footer><p>Copyright © 2023 The Brown Daily Herald, Inc.</p></footer>
+    </section>
 </div>
+<script>
+    const buttons = document.querySelectorAll('.question-categories button');
+    let subButtons = document.querySelectorAll('.question-subdivisions button');
+    const textSections = document.querySelectorAll('.question-text div');
+    const subSections = document.querySelectorAll('.question-subdivisions div');
+    const graphics = document.querySelectorAll('.graphics div')
+    let selectedButton = buttons[0].id;
+    let selectedSubButton = subButtons[0].id;
+    window.onload = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const questionParam = urlParams.get('question');
+        const breakdownParam = urlParams.get('breakdown');
+        if (questionParam && breakdownParam) {
+            selectedButton = questionParam;
+            selectedSubButton = breakdownParam;
+        } else if (questionParam) {
+            selectedButton = questionParam;
+        } else {
+            buttons[0].classList.add('selected');
+            subButtons[0].classList.add('selected');
+        }
+        for (const button of buttons) {
+            if (button.id === selectedButton) {
+                button.classList.add('selected');
+            }
+        }
+        for (const subButton of subButtons) {
+            if (subButton.id === selectedSubButton) {
+                subButton.classList.add('selected');
+            }
+        }
+        for (const textSection of textSections) {
+            if (textSection.classList.contains(`question-${selectedButton}-text`)) {
+                textSection.style.display = 'block';
+            }
+        }
+        for (const subSection of subSections) {
+            if (subSection.classList.contains(`question-${selectedButton}-subdivisions`)) {
+                subSection.style.display = 'flex';
+            }
+        }
+        for (const graphic of graphics) {
+            if (graphic.classList.contains(`image-${selectedButton}-${selectedSubButton}`)) {
+                graphic.style.display = 'block';
+            }
+            if (graphic.classList.contains(`blurb-${selectedButton}-${selectedSubButton}`)) {
+                graphic.style.display = 'block';
+            }
+        }
+        addButtonsListener();
+        addSubButtonsListener();
+    };
+    addButtonsListener = () => {
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                handleButtonClick(button)
+            });
+        });
+    }
+    addSubButtonsListener = () => {
+            subButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    handleSubButtonClick(button);
+                });
+            });
+    }
+    handleButtonClick = (button) => {
+        selectedButton = button.id;
+        selectName = button.className;
+        console.log(button.className)
+        buttons.forEach((b) => b.classList.remove('selected'));
+        textSections.forEach((section) => section.style.display = 'none');
+        subSections.forEach((section) => section.style.display = 'none');
+        button.classList.add('selected');
+        const target = button.dataset.target;
+        document.querySelector(`.question-${target}-text`).style.display = 'block';
+        document.querySelector(`.question-${target}-subdivisions`).style.display = 'flex';
+        subButtons = document.querySelectorAll(`.question-${target}-subdivisions button`);
+        subButtons.forEach((b) => b.classList.remove('selected'));
+        subButtons[0].classList.add('selected');
+        selectedSubButton = subButtons[0].id;
+        updateImage()
+        updateText(selectName)
+    }
+handleSubButtonClick = (button) => {
+    selectedSubButton = button.id;
+    selectedName = button.className;
+    subButtons.forEach((b) => b.classList.remove('selected'));
+    button.classList.add('selected');
+    updateImage();
+    updateText(selectedName)
+}
+
+    updateImage = () => {
+        graphics.forEach((div) => {
+            div.style.display = 'none'
+        });
+        selectedImage = document.querySelector(`.image-${selectedButton}-${selectedSubButton}`)
+        selectedImage.style.display = 'block';
+
+        selectedEmbed = selectedImage.getElementsByClassName("flourish-embed flourish-chart")[0]
+        selectedEmbed.style.display = "block"
+        document.querySelector(`.blurb-${selectedButton}-${selectedSubButton}`).style.display = 'block';
+    }
+
+    updateText = (title) => {
+        const graphTitles = document.getElementsByClassName('graph-title');
+        for (let i=0; i<graphTitles.length; i++){
+                graphTitles[i].innerHTML = title.replace("selected", "")
+        }
+    }
+
+
+</script>
 
 
   </body>
