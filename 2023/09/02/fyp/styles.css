@@ -1,0 +1,1223 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    height: 100%;
+    overflow: hidden; /* Prevent scroll on body */
+    background-color: white;
+}
+
+.snap-scroll-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll; /* Allow vertical scroll */
+    scroll-snap-type: y mandatory;
+    scroll-behavior:unset; /* Add smooth scrolling */
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    scroll-snap-align: start;
+    margin-bottom: 0; /* Increase distance between sections */
+    padding:0;
+    margin:0;
+}
+
+.inner {
+    width:40rem;
+    position:relative;
+    top:0.5rem;
+    display: block;
+    position: relative;
+    bottom:0rem;
+    padding:0;
+    margin:0;
+        flex: 0.95;  /* Allow the graph to grow and take up available space */
+        min-height: 0;  /* This might be necessary for certain flexbox behaviors */
+}
+
+
+
+#sex-o-graph {
+    --graph-height:40vw; 
+    width: 38rem;
+    display: block;
+    position: relative;
+    bottom:0rem;
+    padding:0;
+    margin:0;
+}
+
+.blurb{
+    font-size:1.0rem;
+    padding: 0rem 16vw;
+    color:#36454F;
+}
+
+#orientation {
+    --graph-height:40vw; 
+    width: 40vw;
+    display: block;
+    position: relative;
+    bottom:0rem;
+    padding:0;
+    margin:0;
+}
+
+#ideology {
+    --graph-height:40vw; 
+    width: 40vw;
+    display: block;
+    position: relative;
+    bottom:0rem;
+    padding:0;
+    margin:0;
+}
+
+.up-arrow, .down-arrow {
+    position: absolute;
+    cursor: pointer;
+    width: 1.2rem;
+    height: auto;
+}
+
+.up-arrow {
+    top: 0.8rem;
+}
+
+.next-text{
+    cursor: pointer;
+}
+
+.down-arrow {
+    position: absolute;
+    cursor: pointer;
+    width: 1.2rem;
+    height: auto;
+    bottom: 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.graph-embed {
+    /* Example styling - adjust as needed for your graph embeds */
+    width: 70%;
+    height: 60%;
+    background: #ddd; /* Temporary background to visualize it */
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#logo {
+    width: 20rem;
+    position: absolute;  /* Added this line */
+    top: 10px;  /* Adjust this value as needed */
+    left: 50%;  /* Center the logo horizontally */
+    transform: translateX(-50%);  /* Center the logo horizontally */
+}
+
+#welcome{
+    font-family: 'Rubik', sans-serif;
+    color: #36454F;
+    font-size:2.4rem;
+    font-weight: 400;
+    padding-bottom:0;
+    margin-bottom: 0;
+}
+
+#welcome-2{
+    text-align: left;
+    font-family: 'Rubik', sans-serif;
+    color: black;
+    font-size:0.8rem;
+    font-weight: 400;
+}
+
+#cover{
+    width: 29vw;
+    height:auto;
+}
+
+.question-welcome{
+    font-family: 'Rubik', sans-serif;
+    color: black;
+    font-size:1.9rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.question-welcome-pink{
+    font-family: 'Rubik', sans-serif;
+    color: black;
+    font-size:1.5rem;
+    font-weight: 400;
+    text-align:left !important;
+    padding-bottom: 1rem;
+    padding-top:2rem;
+    position:absolute;
+    top:1.5rem;
+    padding-left:12rem;
+    padding-right:12rem;
+}
+
+.question{
+    font-family: "freight-text-pro", "Times", serif;
+    color: #FDB813;
+    font-size:1.9rem;
+    font-weight: 400;
+    text-align:left !important;
+}
+
+.section-content {
+    display: flex; /* Enables horizontal alignment */
+    align-items: center; /* Vertical alignment */
+    justify-content: center; /* Horizontal alignment */
+    gap: 3rem; /* Gap between graph and blurb */
+}
+
+#ideology{
+    max-width: none;
+    width: 40vw;
+}
+
+#id-chart{
+    width:50vw;
+}
+
+#nextQuestion-sx{
+position:absolute;
+bottom:2rem;
+background-color:none;
+color:#FDB813
+}
+
+#nextQuestion-qa1{
+    position:absolute;
+    bottom:2rem;
+    background-color:none;
+    color:#FDB813
+    }
+
+#nextQuestion-so{
+    position:absolute;
+    bottom:2rem;
+    background-color:none;
+    color:#FDB813
+    }
+
+
+#nextQuestion-fa{
+    position:absolute;
+    bottom:2rem;
+    background-color:none;
+    color:#FDB813
+    }
+
+.blurb-2 {
+    max-width: 30%; /* Set the maximum width of the blurb */
+    font-size:1.0rem;
+    text-align: left; /* Left align the blurb text */
+    color:#36454F;
+}
+
+.blurb-3 {
+    font-size:1.0rem;
+    padding: 0rem 27%;
+    color:#36454F;
+}
+
+#actual-sx {
+    display: hidden;
+}
+
+#actualPercentage-sx {
+    display: hidden;
+}
+
+#actualRemainder-sx {
+    display: hidden;
+}
+
+.game-container-sx {
+    padding-top:9rem;
+    max-width: 45rem;
+    width: 100%;
+    margin: 20px auto;
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-bar-sx {
+    cursor: pointer;
+    width: 100%;
+    height: 3.5rem;
+    background-color: #FF6181;
+    position: relative;
+    margin: 10px 0;
+}
+
+.game-slider-sx {
+    width: 50%;
+}
+
+.game-slider-sx,
+.game-actualValue-sx {
+    height: 100%;
+    background-color: #4229E3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.game-slider-sx.disabled::after {
+    display: none;
+}
+
+
+.game-slider-sx::after {
+    content: '';
+    position: absolute;
+    top:-10%;
+    width: 0.3rem;
+    height: 120%;
+    background-color: #333;
+    right: 0;
+    z-index: 1;
+}
+
+.game-button-sx {
+    font-size:0.9rem;
+    display: block;
+    margin: 20px auto;
+    margin-top:5rem;
+    padding: 0.9rem 2rem;
+    background-color: #FDB813;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+}
+
+.game-button-sx:hover {
+    background-color: #ffc02e;
+}
+
+.game-percentage-text-sx {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+.game-instruction-sx {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+
+.info-title{
+position:absolute;
+top:4rem;
+font-weight: normal;
+font-size:2.5rem;
+margin:0.2rem;
+}
+
+.info-sub{
+position:absolute;
+bottom:3rem;
+font-weight: normal;
+font-size:1.5rem;
+}
+
+#dashboard-link{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#dashboard{
+    width:45rem;
+}
+
+@media (max-width: 600px) {
+    .game-container-sx {
+        padding: 2rem;
+    }
+}
+
+
+#yourGuessTitle-sx {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+#actualResultsTitle-sx {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: normal;
+    padding-top:2rem;
+}
+
+#actual-sx, 
+#actualPercentage-sx, 
+#actualRemainder-sx {
+    opacity: 0;
+    transition: opacity 3s;  /* You can adjust the duration to your liking */
+}
+
+#nextQuestion-sx {
+    opacity: 0;
+    transition: opacity 3s;  
+}
+/*--------------------------*/
+#actual-so {
+    display: hidden;
+}
+
+#actualPercentage-so {
+    display: hidden;
+}
+
+#actualRemainder-so {
+    display: hidden;
+}
+
+.game-container-so {
+    padding-top: 9rem;
+    max-width: 45rem;
+    width: 100%;
+    margin: 20px auto;
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-bar-so {
+    cursor: pointer;
+    width: 100%;
+    height: 3.5rem;
+    background-color: #FF6181;
+    position: relative;
+    margin: 10px 0;
+}
+
+.game-slider-so {
+    width: 50%;
+}
+
+.game-slider-so,
+.game-actualValue-so {
+    height: 100%;
+    background-color: #4229E3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.game-slider-so.disabled-so::after {
+    display: none;
+}
+
+.game-slider-so::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    width: 0.3rem;
+    height: 120%;
+    background-color: #333;
+    right: 0;
+    z-index: 1;
+}
+
+.game-button-so {
+    font-size: 0.9rem;
+    display: block;
+    margin: 20px auto;
+    margin-top: 5rem;
+    padding: 0.9rem 2rem;
+    background-color: #FDB813;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+}
+
+.game-button-so:hover {
+    background-color: #ffc02e;
+}
+
+.game-percentage-text-so {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+.game-instruction-so {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+
+@media (max-width: 600px) {
+    .game-container-so {
+        padding: 10px;
+    }
+}
+
+#yourGuessTitle-so {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+#actualResultsTitle-so {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: normal;
+    padding-top: 2rem;
+}
+
+#actual-so,
+#actualPercentage-so,
+#actualRemainder-so,
+#nextQuestion-so {
+    opacity: 0;
+    transition: opacity 3s;
+}
+
+
+#nextQuestion{
+    position:absolute;
+    bottom:2rem;
+    background-color:none;
+    color:#FDB813
+    }
+/*--------------------------*/
+#actual-fa {
+    display: hidden;
+}
+
+#actualPercentage-fa {
+    display: hidden;
+}
+
+#actualRemainder-fa {
+    display: hidden;
+}
+
+.game-container-fa {
+    padding-top: 9rem;
+    max-width: 45rem;
+    width: 100%;
+    margin: 20px auto;
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-bar-fa {
+    cursor: pointer;
+    width: 100%;
+    height: 3.5rem;
+    background-color: #FF6181;
+    position: relative;
+    margin: 10px 0;
+}
+
+.game-slider-fa {
+    width: 50%;
+}
+
+.game-slider-fa,
+.game-actualValue-fa {
+    height: 100%;
+    background-color: #4229E3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.game-slider-fa::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    width: 0.3rem;
+    height: 120%;
+    background-color: #333;
+    right: 0;
+    z-index: 1;
+}
+
+.game-button-fa {
+    font-size: 0.9rem;
+    display: block;
+    margin: 20px auto;
+    margin-top: 5rem;
+    padding: 0.9rem 2rem;
+    background-color: #FDB813;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+}
+
+.game-button-fa:hover {
+    background-color: #ffc02e;
+}
+
+.game-percentage-text-fa {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+.game-instruction-fa {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+
+@media (max-width: 600px) {
+    .game-container-fa {
+        padding: 10px;
+    }
+}
+
+#yourGuessTitle-fa {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+#actualResultsTitle-fa {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: normal;
+    padding-top: 2rem;
+}
+
+#actual-fa,
+#actualPercentage-fa-1,
+#actualPercentage-fa-2,
+#actualPercentage-fa-3,
+#actualRemainder-fa {
+    opacity: 0;
+    transition: opacity 3s; /* You can adjust the duration to your liking */
+}
+
+#nextQuestion-fa {
+    opacity: 0;
+    transition: opacity 3s;
+}
+
+.game-slider-fa {
+    z-index: 2; /* To make sure the sliders are above the background */
+}
+
+.game-bar-fa {
+    background-color: #61ff88;
+}
+
+#game-slider-fa-1 {
+    background-color: #4229E3; /* Color for the first section */
+}
+
+#game-slider-fa-2::after {
+    background-color: black; /* Color for the second handle */
+}
+
+#game-slider-fa-2 {
+    background-color: #FF6181; /* Color for the second section */
+    z-index: 1; /* To make sure the second slider is below the first one */
+}
+
+#game-slider-fa-2.disabled::after {
+    display: none;
+}
+
+#game-slider-fa-1.disabled::after {
+    display: none;
+}
+
+/* Adjust the actual values display */
+
+#actualPercentage-fa-1 {
+    display: hidden;
+}
+
+#actualPercentage-fa-2 {
+    display: hidden;
+}
+
+#actualPercentage-fa-3 {
+    display: hidden;
+}
+
+#actualValue-fa-1 {
+    background-color: #4229E3; /* Color for the first section */
+}
+
+#actualValue-fa-2 {
+    background-color: #FF6181; /* Color for the second section */
+}
+
+#actualValue-fa-3 {
+    background-color: #61ff88; /* Color for the third section */
+}
+
+#nextQuestion-fa {
+    opacity: 0;
+    transition: opacity 3s;  
+}
+/*--------------------------*/
+#actual-su {
+    display: hidden;
+}
+
+#actualPercentage-su {
+    display: hidden;
+}
+
+#actualRemainder-su {
+    display: hidden;
+}
+
+.game-container-su {
+    padding-top: 6rem;
+    max-width: 35rem;
+    width: 100%;
+    margin: 20px auto;
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-bar-su {
+    cursor: pointer;
+    width: 100%;
+    height: 2rem;
+    background-color: #FF6181;
+    position: relative;
+    margin: 10px 0;
+}
+
+.game-slider-su {
+    width: 50%;
+}
+
+.game-slider-su,
+.game-actualValue-su {
+    height: 100%;
+    background-color: #4229E3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.game-slider-su.disabled::after {
+    display: none;
+}
+
+.game-slider-su::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    width: 0.3rem;
+    height: 120%;
+    background-color: #333;
+    right: 0;
+    z-index: 1;
+}
+
+.game-button-su {
+    font-size: 0.9rem;
+    display: block;
+    margin: 20px auto;
+    margin-top: 5rem;
+    padding: 0.9rem 2rem;
+    background-color: #FDB813;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+}
+
+.game-button-su:hover {
+    background-color: #ffc02e;
+}
+
+.game-percentage-text-su {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+.game-instruction-su {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: normal;
+    margin-bottom:0rem;
+}
+
+@media (max-width: 600px) {
+    .game-container-su {
+        padding: 10px;
+    }
+}
+
+#yourGuessTitle-su {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: normal;
+    margin:0.2rem;
+}
+
+#actualResultsTitle-su,
+#actualResultsTitle-bar1-su,
+#actualResultsTitle-bar2-su,
+#guessTitle-bar1-su,
+#guessTitle-bar2-su {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: normal;
+    padding-top: 0rem;
+    margin:0.2rem;
+}
+
+#actual-su,
+#actualPercentage-su,
+#actualRemainder-su {
+    opacity: 0;
+    transition: opacity 3s;
+}
+
+#nextQuestion-su {
+    opacity: 0;
+    transition: opacity 3s;
+}
+
+#nextQuestion-su {
+    position: absolute;
+    bottom: 2rem;
+    background-color: none;
+    color: #FDB813
+}
+
+#actual-bar1-su,
+#actual-bar2-su,
+#actualPercentage-bar1-su,
+#actualPercentage-bar2-su,
+#actualRemainder-bar1-su,
+#actualRemainder-bar2-su {
+    opacity: 0;
+    transition: opacity 3s;
+}
+
+#game-slider-bar1-su {
+    background-color: #4229E3;
+}
+
+#actualValue-bar1-su {
+    background-color: #4229E3;
+}
+
+/* Marijuana Color Scheme */
+#game-slider-bar2-su {
+    background-color: #9654e5;
+}
+
+#actualValue-bar2-su {
+    background-color: #9654e5;
+}
+
+.havent-tried-bar2-su {
+    background-color: #ff8800;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.havent-tried-bar2-su {
+    width: 50%;
+}
+
+.havent-tried-results-bar2-su {
+    background-color: #ff8800;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+/*--------------------------*/
+body {
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#quiz-section {
+    padding-top:4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choice-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Choices will wrap if they don't fit in one line */
+}
+
+.choice {
+    border:0.4rem solid #9653e5;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size:0.9rem;
+    width: 8rem; /* Set fixed width */
+    height: 3rem; /* Set fixed height */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; /* These three lines center the text both vertically and horizontally */
+    text-align: center; /* Ensures text is centered if it wraps to more than one line */
+}
+
+.choice:hover {
+    background-color: #9653e5; /* Amber background when selected */
+    border:0.4rem solid #9653e5;
+    color:white;
+}
+
+.choice.selected {
+    background-color: #9653e5; /* Amber background when selected */
+    border:0.4rem solid #9653e5;
+    color:white;
+}
+
+.submit-button {
+    font-size:0.9rem;
+    display: block;
+    margin: 20px auto;
+    margin-top:5rem;
+    padding: 0.9rem 2rem;
+    background-color: #FDB813;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+}
+
+#submit-button-q1:hover {
+    background-color: #ffc02e;
+}
+
+#nextQuestion-qa1 {
+    opacity: 0;
+    transition: opacity 3s;
+}
+
+.agreement-text{
+flex: 0 0 auto;
+padding-top:1.5rem;
+}
+
+#graph-section-q1{
+position:relative;
+top:2rem;
+}
+
+.graph-section{
+    margin-top: 0rem;
+
+    margin-bottom: 0rem;
+    /* Flexbox to ensure responsive design. The graph will take up the maximum available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center contents vertically */
+    align-items: center; 
+}
+
+#nextQuestion-qa2 {
+    opacity: 0;
+    transition: opacity 3s;
+}
+
+
+#graph-section-q2{
+position:relative;
+top:2rem;
+}
+
+.next-question {
+    opacity: 0;
+    transition: opacity 3s;
+    position: absolute;
+    bottom: 2.75rem;
+    background-color: none;
+    color: #FDB813;
+    cursor: pointer; /* make it clear it's clickable */
+}
+
+
+/*--------------------------*/
+
+.inner-2 {
+    width: 33vw; /* Adjust based on the space available alongside the blurb */
+    display: block;
+    position: relative;
+    bottom: 0rem;
+    padding: 0;
+    margin: 0;
+}
+
+#other-school{width:28vw;}
+
+.bigger{    width: 42vw;
+}
+
+.bigger-2{    width: 40vw;
+
+}
+
+#last{
+    padding-top:2rem;
+}
+
+.university-list ol {
+    padding-left: 0rem;
+    font-size: 1.3rem;
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.6;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly moved down */
+    transition: opacity 4.5s, transform 4.5s; /* Animation settings */
+}
+
+.university-list ol li {
+    list-style-type: decimal;
+    margin-bottom: 10px;
+}
+
+#other-header{
+    font-family: "freight-text-pro", "Times", serif;;
+    padding-left:0;
+    margin-left: 0;
+    font-size:1.3rem;
+}
+
+#political-section-v1{
+    display: none;
+}
+
+#political-section-v2{
+    display: none;
+}
+
+#religion-graph{
+    width:25rem;
+}
+
+#concentration-graph{
+    width:25rem;
+}
+
+.no-arrow {
+    text-decoration: none;   /* Removes underline */
+    color: inherit;          /* Inherits color from parent element */
+    display: inline-block;   /* Treats the anchor as a block while staying inline, which can help with layout issues */
+    background-color: transparent; /* Ensures no background color */
+    border: none;            /* Ensures no border */
+    outline: none;           /* Removes focus outline */
+    padding: 0;              /* Removes padding */
+    margin: 0;               /* Removes margin */
+}
+
+
+#rel-ag{
+    position:relative;
+    top:1rem;
+}
+
+
+@media (min-width: 1470px) {
+    #cover{
+        width:25vw;
+    }
+}
+@media (max-width: 1050px) {
+    #cover{
+        width:30vw;
+    }
+}
+
+@media (max-width: 917px) {
+    #cover{
+        width:34vw;
+    }
+    .question-welcome-pink{
+        font-family: 'Rubik', sans-serif;
+        color: black;
+        font-size:1.2rem;
+        font-weight: 400;
+        text-align:left !important;
+        padding-bottom: 1rem;
+        padding-top:2rem;
+        position:absolute;
+        top:1.5rem;
+        padding-left:6rem;
+        padding-right:6rem;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    #cover{
+        width:70vw;
+    }
+
+    .question-welcome-pink{
+        font-family: 'Rubik', sans-serif;
+        color: black;
+        font-size:1.2rem;
+        font-weight: 400;
+        text-align:left !important;
+        padding-bottom: 1rem;
+        padding-top:2rem;
+        position:absolute;
+        top:3.5rem;
+        padding-left:1rem;
+        padding-right:1rem;
+    }
+
+    .inner{
+        width:20rem;
+    }
+
+    .choice-container{
+        margin-top:8rem;
+    }
+
+
+    #sex-o-graph{
+        width:20rem;
+    }
+
+    #dashboard{
+        width:20rem;
+    }
+
+    .info-title{
+        font-size:1.5rem;
+        padding-top:8rem;
+    }
+
+    .info-sub{
+        font-size: 0.7rem;
+        padding-bottom:8rem;
+    }
+
+    .game-container-sx {
+        width:90%;
+    }
+    .game-container-so{
+        width:90%
+
+    }
+    .game-container-su {
+        width:90%
+
+    }
+        .game-container-fa {
+            width:90%
+
+    }
+
+    @media (max-height: 667px){
+
+        .game-container-su{
+            margin-top:6rem;
+        }
+
+        #concentration-graph {
+            width: 13rem;
+        }
+
+        .inner{
+            width:18rem;
+        }
+        #religion-graph{
+            width:13rem;
+        }
+
+        #socialism-q2{
+            margin-top:4rem;
+        }
+    
+    
+        #lower-submit{
+            margin-top:1rem;
+        }
+    
+        .question-welcome-pink{
+            font-family: 'Rubik', sans-serif;
+            color: black;
+            font-size:1.2rem;
+            font-weight: 400;
+            text-align:left !important;
+            padding-bottom: 1rem;
+            padding-top:2rem;
+            position:absolute;
+            top:1.5rem;
+            padding-left:1rem;
+            padding-right:1rem;
+        }
+    }
+}
+
+.agreement-text {
+    flex-shrink: 0;  /* Caption won't shrink */
+    flex-grow: 0;    /* Caption won't grow either */
+}
+
+@media (max-width: 360px) {
+    .choice{
+        width:7rem;
+        font-size:0.85rem;
+        margin:5px;
+    }
+
+}
+

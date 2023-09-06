@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXCKFG2Z4P"></script> 
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <script> 
+    window.dataLayer = window.dataLayer || []; 
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date()); 
+    
+    gtag('config', 'G-PXCKFG2Z4P'); 
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon-rel.png" type="image/x-icon"/>
+    <title>Snap Scroll App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/mxr8glf.css">
+</head>
+<body>
+
+<div class="snap-scroll-container">
+
+    <section id="section-1">
+        <a href="https://www.browndailyherald.com/" target="_blank"><img src="logo-black 1.png" id="logo"></a>
+        <h2 class="question-welcome">Welcome, Brown University Class of 2027!</h2>
+        <img src="cover-3.png" id="cover">
+        <h2 class="question-welcome">Let's see how well you know your classmates</h2>
+        <img src="down-arrow.png" alt="Down Arrow" class="down-arrow">
+    </section>
+    
+    <section id="section-2">
+        <img src="up-arrow.png" alt="Up Arrow" class="up-arrow">
+        <h2 class="question-welcome-pink">Quiz: What percent of incoming first-years have had sex (prior to coming to Brown)?</h2>
+        <div class="game-container-sx">
+            <h2 class="game-instruction-sx" id="game-instruction-sx">Drag the slider to make your guess</h2>
+            <h2 id="yourGuessTitle-sx" style="display: none;">Your Guess</h2>
+            <div class="game-percentage-text-sx">
+                <span>Have had sex</span>
+                <span>Haven't had sex</span>
+            </div>
+            <div class="game-bar-sx" onmousedown="startDrag(event)" onmouseup="stopDrag()" onmousemove="drag(event)">
+                <div class="game-slider-sx" id="game-slider-sx"></div>
+            </div>
+            <div class="game-percentage-text-sx">
+                <span id="percentage-sx">50%</span>
+                <span id="remainder-sx">50%</span>
+            </div>
+            <button class="game-button-sx" onclick="revealActual()" id="submitButton-sx">Submit Guess</button>
+            <h2 id="actualResultsTitle-sx" style="display: none;">Actual results</h2>
+            <div class="game-bar-sx" id="actual-sx">
+                <div class="game-actualValue-sx" id="actualValue-sx"></div>
+            </div>
+            <div class="game-percentage-text-sx">
+                <span id="actualPercentage-sx">70%</span>
+                <span id="actualRemainder-sx">30%</span>
+            </div>
+            <p id="nextQuestion-sx" class="next-text">Next Question</p>
+        </div>
+        <img src="down-arrow.png" alt="Down Arrow" class="down-arrow">
+    </section>
+
+    <section id="section-3">
+        <img src="up-arrow.png" alt="Up Arrow" class="up-arrow">
+        <h2 class="question-welcome-pink">See how you compare: How strongly do you agree or disagree with the following statement?<br> "Socialism is a preferable economic system to capitalism."</h2>
+        <div class="quiz-container" id="socialism-q2" data-question-id="q2" data-percentages='{"A": 14.22, "B": 23.85, "C": 19.88, "D": 18.81, "E": 13.46, "F": 9.79}'>
+            <div id="quiz-section-q2" class="quiz-section">
+                <div class="choice-container">
+                    <div class="choice" data-choice="A">Strongly agree</div>
+                    <div class="choice" data-choice="B">Somewhat agree</div>
+                    <div class="choice" data-choice="C">Neither agree nor disagree</div>
+                    <div class="choice" data-choice="D">Somewhat disagree</div>
+                    <div class="choice" data-choice="E">Strongly disagree</div>
+                    <div class="choice" data-choice="F">No Opinion</div>
+                </div>            <button id="lower-submit" class="submit-button">Submit</button>
+            </div>
+            <div id="graph-section-q2" class="graph-section" style="display: none;">
+                <div class="inner" id="socialism-graph"><div class="flourish-embed flourish-chart" data-src="visualisation/14939885"><script src="https://public.flourish.studio/resources/embed.js"></script></div></div>
+                <div class="agreement-text"></div>
+            </div>
+        </div>
+        <div class="next-question" data-for-question="q2">Next question</div>
+        <img src="down-arrow.png" alt="Down Arrow" class="down-arrow">
+    </section>
+
+
+    <section id="section-4">
+        <img src="up-arrow.png" alt="Up Arrow" class="up-arrow">
+        <h2 class="question-welcome-pink">Quiz: Prior to coming to Brown, what percentage of first-years have tried...?</h2>
+        <div class="game-container-su">
+            <!-- Guessing Bar 1 -->
+            <h2 class="game-instruction-su" id="game-instruction-bar1-su">Alcohol</h2>
+            <h2 id="guessTitle-bar1-su" style="display: none;">Your Guess (Alcohol)</h2>
+            <div class="game-percentage-text-su">
+                <span>Have Tried</span>
+                <span>Haven't Tried</span>
+            </div>
+            <div class="game-bar-su" onmousedown="startDragSu(event, 'bar1')" onmouseup="stopDragSu('bar1')" onmousemove="dragSu(event, 'bar1')">
+                <div class="game-slider-su" id="game-slider-bar1-su"></div>
+            </div>
+            <div class="game-percentage-text-su">
+                <span id="percentage-bar1-su">50%</span>
+                <span id="remainder-bar1-su">50%</span>
+            </div>
+    
+            <!-- Results Bar 1 -->
+            <h2 id="actualResultsTitle-bar1-su" style="display: none;">Actual results (Alcohol)</h2>
+            <div class="game-bar-su" id="actual-bar1-su">
+                <div class="game-actualValue-su" id="actualValue-bar1-su"></div>
+            </div>
+            <div class="game-percentage-text-su">
+                <span id="actualPercentage-bar1-su">70%</span>
+                <span id="actualRemainder-bar1-su">30%</span>
+            </div>
+    
+            <!-- Guessing Bar 2 -->
+            <h2 class="game-instruction-su" id="game-instruction-bar2-su">Marijuana</h2>
+            <h2 id="guessTitle-bar2-su" style="display: none;">Your Guess (Marijuana)</h2>
+            <div class="game-percentage-text-su">
+                <span>Have Tried</span>
+                <span>Haven't Tried</span>
+            </div>
+            <div class="game-bar-su" onmousedown="startDragSu(event, 'bar2')" onmouseup="stopDragSu('bar2')" onmousemove="dragSu(event, 'bar2')">
+                <div class="game-slider-su" id="game-slider-bar2-su"></div>
+                <div class="havent-tried-bar2-su" id="havent-tried-bar2-su"></div>
+            </div>
+    
+            <div class="game-percentage-text-su">
+                <span id="percentage-bar2-su">50%</span>
+                <span id="remainder-bar2-su">50%</span>
+            </div>
+    
+            <button class="game-button-su" id="submitButton-su" onclick="revealActualSu()">Submit Guesses</button>
+    
+            <!-- Results Bar 2 -->
+            <h2 id="actualResultsTitle-bar2-su" style="display: none;">Actual results (Marijuana)</h2>
+            <div class="game-bar-su" id="actual-bar2-su">
+                <div class="game-actualValue-su" id="actualValue-bar2-su"></div>
+                <div class="havent-tried-results-bar2-su" id="havent-tried-results-bar2-su"></div>
+            </div>
+    
+            <div class="game-percentage-text-su">
+                <span id="actualPercentage-bar2-su">70%</span>
+                <span id="actualRemainder-bar2-su">30%</span>
+            </div>
+    
+            <p class="next-text" id="nextQuestion-su">Next Question</p>
+        </div>
+        <img src="down-arrow.png" alt="Down Arrow" class="down-arrow">
+    </section>
+
+
+    <section id="section-5">
+        <img src="up-arrow.png" alt="Up Arrow" class="up-arrow">
+        <h2 class="question-welcome-pink">Quiz: What percent of incoming first-years are on financial aid?</h2>
+        <div class="game-container-fa">
+            <h2 class="game-instruction-fa" id="game-instruction-fa">Drag the slider to make your guess</h2>
+            <h2 id="yourGuessTitle-fa" style="display: none;">Your Guess</h2>
+            <div class="game-percentage-text-fa">
+                <span>No Financial Aid</span>
+                <span>Some Aid</span>
+                <span>Full Aid</span>
+            </div>
+            <div class="game-bar-fa" onmousedown="startDrag_fa(event)" onmouseup="stopDrag_fa()" onmousemove="drag_fa(event)">
+                <div class="game-slider-fa" id="game-slider-fa-1"></div>
+                <div class="game-slider-fa" id="game-slider-fa-2"></div>
+            </div>
+            <div class="game-percentage-text-fa">
+                <span id="percentage-fa-1">33%</span>
+                <span id="percentage-fa-2">34%</span>
+                <span id="percentage-fa-3">33%</span>
+            </div>
+            <button class="game-button-fa" onclick="revealActual_fa()" id="submitButton-fa">Submit Guess</button>
+            <h2 id="actualResultsTitle-fa" style="display: none;">Actual results</h2>
+    
+            <div class="game-bar-fa" id="actual-fa">
+                <div class="game-actualValue-fa" id="actualValue-fa-1"></div>
+                <div class="game-actualValue-fa" id="actualValue-fa-2"></div>
+                <div class="game-actualValue-fa" id="actualValue-fa-3"></div>
+            </div>
+            <div class="game-percentage-text-fa">
+                <span id="actualPercentage-fa-1">33%</span>
+                <span id="actualPercentage-fa-2">34%</span>
+                <span id="actualPercentage-fa-3">33%</span>
+            </div>
+            <p class="next-text" id="nextQuestion-fa">Next Question</p>
+        </div>
+        <img src="down-arrow.png" alt="Down Arrow" class="down-arrow">
+    </section>
+
+    <section id="section-6">
+        <img src="up-arrow.png" alt="Up Arrow" class="up-arrow">
+        <h2 class="question-welcome-pink">See how you compare: What do you consider your political ideology to be?</h2>
+        <div class="quiz-container" data-question-id="q3" data-percentages='{"A": 29.71, "B": 41.88, "C": 16.67, "D": 5.51, "E": 0.58, "F": 5.65}'>
+            <div id="quiz-section-q3" class="quiz-section">
+                <div class="choice-container">
+                    <div class="choice" data-choice="A">Very liberal</div>
+                    <div class="choice" data-choice="B">Somewhat liberal</div>
+                    <div class="choice" data-choice="C">Moderate</div>
+                    <div class="choice" data-choice="D">Somewhat conservative</div>
+                    <div class="choice" data-choice="E">Very conservative</div>
+                    <div class="choice" data-choice="F">Independent</div>
+                </div>            <button class="submit-button">Submit</button>
+            </div>
+            <div id="graph-section-q3" class="graph-section" style="display: none;">
+                <div class="inner"><div class="flourish-embed flourish-chart" data-src="visualisation/14906125"><script src="https://public.flourish.studio/resources/embed.js"></script></div></div>
+                <div class="agreement-text"></div>
+            </div>
+        </div>
+        <div class="next-question" data-for-question="q3">Next question</div>
+        <img src="down-arrow.png" alt="Down Arrow" class="down-arrow">
+    </section>
+
+    <section id="section-7">
+        <img src="up-arrow.png" alt="Up Arrow" class="up-arrow">
+        <h2 class="question-welcome-pink">Quiz: What percent of incoming first-years consider themselves straight?</h2>
+        <div class="game-container-so">
+            <h2 class="game-instruction-so" id="game-instruction-so">Drag the slider to make your guess</h2>
+            <h2 id="yourGuessTitle-so" style="display: none;">Your Guess</h2>
+            <div class="game-percentage-text-so">
+                <span>Straight</span>
+                <span>Not Straight</span>
+            </div>
+            <div class="game-bar-so" onmousedown="startDragSo(event)" onmouseup="stopDragSo()" onmousemove="dragSo(event)">
+                <div class="game-slider-so" id="game-slider-so"></div>
+            </div>            
+            <div class="game-percentage-text-so">
+                <span id="percentage-so">50%</span>
+                <span id="remainder-so">50%</span>
+            </div>
+            <button class="game-button-so" onclick="revealActualSo()" id="submitButton-so">Submit Guess</button>
+            <h2 id="actualResultsTitle-so" style="display: none;">Actual results</h2>
+            <div class="game-bar-so" id="actual-so">
+                <div class="game-actualValue-so" id="actualValue-so"></div>
+            </div>
+            <div class="game-percentage-text-so">
+                <span id="actualPercentage-so">70%</span>
+                <span id="actualRemainder-so">30%</span>
+            </div>
+            <p class="next-text" id="nextQuestion-so">See full data</p>
+        </div>
+        <img src="down-arrow.png" alt="Down Arrow" class="down-arrow">
+    </section>
+
+    <section id="section-8">
+        <img src="up-arrow.png" alt="Up Arrow" class="up-arrow">
+        <div id="sex-o-graph"><div class="flourish-embed flourish-chart" data-src="visualisation/14939926"><script src="https://public.flourish.studio/resources/embed.js"></script></div></div>
+        <p id="nextQuestion" class="next-text">Next Question</p>
+        <img src="down-arrow.png" alt="Down Arrow" class="down-arrow">
+    </section>
+
+    <section id="section-9">
+        <img src="up-arrow.png" alt="Up Arrow" class="up-arrow">
+        <h2 class="question-welcome-pink">See how you compare: On a scale of one to five, with five being the most important, how important is religion in your life?</h2>
+        <div class="quiz-container" data-question-id="q4" data-percentages='{"A": 40.20, "B": 24.26, "C": 19.75, "D": 8.74, "E": 7.05}'>
+            <div id="quiz-section-q4" class="quiz-section">
+                <div class="choice-container">
+                    <div class="choice" data-choice="A">1</div>
+                    <div class="choice" data-choice="B">2</div>
+                    <div class="choice" data-choice="C">3</div>
+                    <div class="choice" data-choice="D">4</div>
+                    <div class="choice" data-choice="E">5</div>
+                </div>            <button class="submit-button">Submit</button>
+            </div>
+            <div id="graph-section-q4" class="graph-section" style="display: none;">
+                <div class="inner" id="religion-graph"><div class="flourish-embed flourish-chart" data-src="visualisation/14939936"><script src="https://public.flourish.studio/resources/embed.js"></script></div></div>
+                <div class="agreement-text" id="rel-ag"></div>
+            </div>
+        </div>
+        <div class="next-question" data-for-question="q4">Explore Data</div>
+        <img src="down-arrow.png" alt="Down Arrow" class="down-arrow">
+    </section>
+
+    <section id="section-10">
+        <img src="up-arrow.png" alt="Up Arrow" class="up-arrow">
+        <h2 class="question-welcome-pink">See how you compare: How certain are you that you want to pursue your current intended concentration(s) and/or certificate?</h2>
+        <div class="quiz-container" data-question-id="q1" data-percentages='{"A": 6.01, "B": 11.16, "C": 26.61, "D": 41.49, "E": 14.74}'>
+            <div id="quiz-section-q1" class="quiz-section">
+                <div class="choice-container">
+                    <div class="choice" data-choice="A">1</div>
+                    <div class="choice" data-choice="B">2</div>
+                    <div class="choice" data-choice="C">3</div>
+                    <div class="choice" data-choice="D">4</div>
+                    <div class="choice" data-choice="E">5</div>
+                </div>            <button class="submit-button">Submit</button>
+            </div>
+            <div id="graph-section-q1" class="graph-section" style="display: none;">
+                <div class="inner" id="concentration-graph"><div class="flourish-embed flourish-chart" data-src="visualisation/14939940"><script src="https://public.flourish.studio/resources/embed.js"></script></div></div>
+                <div class="agreement-text" id="con-ag"></div>
+            </div>
+        </div>
+        <div class="next-question" data-for-question="q1">Explore Data</div>
+        <img src="down-arrow.png" alt="Down Arrow" class="down-arrow">
+    </section>
+
+    <section id="section-11">
+        <img src="up-arrow.png" alt="Up Arrow" class="up-arrow">
+        <h2 class="info-title">Want to see more?</h2>
+        <img id="dashboard" src="dashboard.png">
+        <h2 class="info-sub">Explore all of the data on our <a id="dashboard-link" target="_blank" href="https://projects.browndailyherald.com/2023/09/01/fyp/first-year-poll/">interactive dashboard</a>!</h2>
+    </section>
+
+</div>
+
+<script>
+//---------------------------------------------------------
+let guessSubmitted = false;
+        let isDragging = false;
+        let slider = document.getElementById("game-slider-sx");
+        let container = slider.parentElement;
+
+        function startDrag(e) {
+            if (!guessSubmitted) {
+                isDragging = true;
+                adjustSlider(e);
+            }
+        }
+
+        function stopDrag() {
+            if (!guessSubmitted) {
+                isDragging = false;
+            }
+        }
+
+        function drag(e) {
+            if (isDragging && !guessSubmitted) {
+                adjustSlider(e);
+            }
+        }
+
+        function adjustSlider(e) {
+            let percentage = ((e.clientX - container.getBoundingClientRect().left) / container.offsetWidth) * 100;
+            percentage = Math.min(Math.max(percentage), 100);
+
+            slider.style.width = `${percentage}%`;
+            document.getElementById("percentage-sx").innerText = `${Math.round(percentage)}%`;
+            document.getElementById("remainder-sx").innerText = `${100 - Math.round(percentage)}%`;
+        }
+
+        function revealActual() {
+    guessSubmitted = true;
+    let actualPercentage = 36.93;
+    document.getElementById("game-instruction-sx").style.display = "none";
+    document.getElementById("submitButton-sx").style.display = "none";
+    document.getElementById("yourGuessTitle-sx").style.display = "block";
+    document.getElementById("actualResultsTitle-sx").style.display = "block";
+
+    document.getElementById("actual-sx").style.display = "block";
+    document.getElementById("actualValue-sx").style.width = `${actualPercentage}%`;
+    document.getElementById("actualPercentage-sx").innerText = `${actualPercentage}%`;
+    document.getElementById("actualPercentage-sx").style.display = "block";
+    document.getElementById("actualRemainder-sx").innerText = `${100 - actualPercentage}%`;
+    document.getElementById("actualRemainder-sx").style.display = "block";
+    document.getElementsByClassName("game-bar-sx")[0].style.cursor = "default";
+    document.getElementsByClassName("game-bar-sx")[1].style.cursor = "default";
+    document.getElementsByClassName("game-container-sx")[0].style['padding-bottom'] = "6rem";
+    
+    document.getElementById("actual-sx").style.opacity = "1";
+    document.getElementById("actualPercentage-sx").style.opacity = "1";
+    document.getElementById("actualRemainder-sx").style.opacity = "1";
+    
+    // Show "Next Question" button
+    document.getElementById("nextQuestion-sx").style.opacity = "1";
+    document.getElementById("nextQuestion-sx").style.display = "block";
+
+    slider.classList.add("disabled");
+        }
+//---------------------------------------------------------
+let guessSubmittedSo = false;
+let isDraggingSo = false;
+let sliderSo = document.getElementById("game-slider-so");
+let containerSo = sliderSo.parentElement;
+
+function startDragSo(e) {
+    if (!guessSubmittedSo) {
+        isDraggingSo = true;
+        adjustSliderSo(e);
+    }
+}
+
+function stopDragSo() {
+    if (!guessSubmittedSo) {
+        isDraggingSo = false;
+    }
+}
+
+function dragSo(e) {
+    if (isDraggingSo && !guessSubmittedSo) {
+        adjustSliderSo(e);
+    }
+}
+
+function adjustSliderSo(e) {
+    let percentageSo = ((e.clientX - containerSo.getBoundingClientRect().left) / containerSo.offsetWidth) * 100;
+    percentageSo = Math.min(Math.max(percentageSo, 0), 100);
+
+    sliderSo.style.width = `${percentageSo}%`;
+    document.getElementById("percentage-so").innerText = `${Math.round(percentageSo)}%`;
+    document.getElementById("remainder-so").innerText = `${100 - Math.round(percentageSo)}%`;
+}
+
+function revealActualSo() {
+    guessSubmittedSo = true;
+    let actualPercentageSo = 62.62;
+    document.getElementById("game-instruction-so").style.display = "none";
+    document.getElementById("submitButton-so").style.display = "none";
+    document.getElementById("yourGuessTitle-so").style.display = "block";
+    document.getElementById("actualResultsTitle-so").style.display = "block";
+
+    document.getElementById("actual-so").style.display = "block";
+    document.getElementById("actualValue-so").style.width = `${actualPercentageSo}%`;
+    document.getElementById("actualPercentage-so").innerText = `${actualPercentageSo}%`;
+    document.getElementById("actualPercentage-so").style.display = "block";
+    document.getElementById("actualRemainder-so").innerText = `${100 - actualPercentageSo}%`;
+    document.getElementById("actualRemainder-so").style.display = "block";
+    document.getElementsByClassName("game-bar-so")[0].style.cursor = "default";
+    document.getElementsByClassName("game-bar-so")[1].style.cursor = "default";
+    document.getElementsByClassName("game-container-so")[0].style['padding-bottom'] = "6rem";
+
+    document.getElementById("actual-so").style.opacity = "1";
+    document.getElementById("actualPercentage-so").style.opacity = "1";
+    document.getElementById("actualRemainder-so").style.opacity = "1";
+    document.getElementById("nextQuestion-so").style.opacity = "1";
+    sliderSo.classList.add("disabled-so");
+}
+
+//---------------------------------------------------------
+let guessSubmitted_fa = false;
+let isDragging_fa = false;
+let sliderA = document.getElementById("game-slider-fa-1");
+let sliderB = document.getElementById("game-slider-fa-2");
+let container_fa = sliderA.parentElement;
+
+function startDrag_fa(e) {
+    if (!guessSubmitted_fa) {
+        isDragging_fa = true;
+        adjustSlider_fa(e);
+    }
+}
+
+function stopDrag_fa() {
+    if (!guessSubmitted_fa) {
+        isDragging_fa = false;
+    }
+}
+
+function drag_fa(e) {
+    if (isDragging_fa && !guessSubmitted_fa) {
+        adjustSlider_fa(e);
+    }
+}
+
+function adjustSlider_fa(e) {
+    let clickPos_fa = e.clientX - container_fa.getBoundingClientRect().left;
+    let totalWidth_fa = container_fa.offsetWidth;
+    let clickPercentage_fa = (clickPos_fa / totalWidth_fa) * 100;
+
+    let distanceToSliderA = Math.abs(parseFloat(sliderA.style.width) - clickPercentage_fa);
+    let distanceToSliderB = Math.abs(parseFloat(sliderB.style.width) - clickPercentage_fa);
+
+    // Check which slider is closer to the click
+    let activeSlider_fa = distanceToSliderA < distanceToSliderB ? sliderA : sliderB;
+    let otherSlider_fa = distanceToSliderA < distanceToSliderB ? sliderB : sliderA;
+
+    let newPercentage_fa = Math.min(Math.max(clickPercentage_fa, 0), 100);
+
+    if (activeSlider_fa === sliderA) {
+        newPercentage_fa = Math.min(newPercentage_fa, parseFloat(otherSlider_fa.style.width) - 1); // -1 to prevent overlap
+    } else {
+        newPercentage_fa = Math.max(newPercentage_fa, parseFloat(otherSlider_fa.style.width) + 1); // +1 to prevent overlap
+    }
+
+    activeSlider_fa.style.width = `${newPercentage_fa}%`;
+
+    updatePercentageTexts_fa();
+}
+
+function updatePercentageTexts_fa() {
+    let percentageA = Math.round(parseFloat(sliderA.style.width));
+    let percentageB = Math.round(parseFloat(sliderB.style.width) - parseFloat(sliderA.style.width));
+    let percentageC = 100 - percentageA - percentageB;
+
+    document.getElementById("percentage-fa-1").innerText = `${percentageA}%`;
+    document.getElementById("percentage-fa-2").innerText = `${percentageB}%`;
+    document.getElementById("percentage-fa-3").innerText = `${percentageC}%`;
+}
+
+function revealActual_fa() {
+    guessSubmitted_fa = true;
+
+    // Set actual values for the three sections
+    let actualPercentageA = 45.98;
+    let actualPercentageB = 41.47;
+    let actualPercentageC = 12.55;
+
+    document.getElementById("game-instruction-fa").style.display = "none";
+    document.getElementById("submitButton-fa").style.display = "none";
+    document.getElementById("yourGuessTitle-fa").style.display = "block";
+    document.getElementById("actualResultsTitle-fa").style.display = "block";
+
+    // Show the results
+    document.getElementById("actual-fa").style.display = "block";
+    document.getElementById("actualValue-fa-1").style.width = `${actualPercentageA}%`;
+    document.getElementById("actualValue-fa-2").style.left = `${actualPercentageA}%`;
+    document.getElementById("actualValue-fa-2").style.width = `${actualPercentageB}%`;
+    document.getElementById("actualValue-fa-3").style.left = `${actualPercentageA + actualPercentageB}%`;
+    document.getElementById("actualValue-fa-3").style.width = `${actualPercentageC}%`;
+
+    document.getElementById("actualPercentage-fa-1").style.display = "block";
+    document.getElementById("actualPercentage-fa-2").style.display = "block";
+    document.getElementById("actualPercentage-fa-3").style.display = "block";
+
+    document.getElementById("actualPercentage-fa-1").innerText = `${actualPercentageA}%`;
+    document.getElementById("actualPercentage-fa-2").innerText = `${actualPercentageB}%`;
+    document.getElementById("actualPercentage-fa-3").innerText = `${actualPercentageC}%`; 
+
+    document.getElementsByClassName("game-bar-fa")[0].style.cursor = "default";
+    document.getElementsByClassName("game-bar-fa")[1].style.cursor = "default";
+    document.getElementsByClassName("game-container-fa")[0].style['padding-bottom'] = "6rem";
+
+    // Show "Next Question" button  
+    document.getElementById("actualPercentage-fa-1").style.opacity = "1";
+    document.getElementById("actualPercentage-fa-2").style.opacity = "1";
+    document.getElementById("actualPercentage-fa-3").style.opacity = "1";
+    document.getElementById("actual-fa").style.opacity = "1";
+    document.getElementById("nextQuestion-fa").style.opacity = "1";
+    document.getElementById("nextQuestion-fa").style.display = "block";
+
+    sliderA.classList.add("disabled");
+    sliderB.classList.add("disabled");
+}
+
+// Initial setup
+sliderA.style.width = "33%";
+sliderB.style.width = "67%";
+updatePercentageTexts_fa();
+//----------------------------------------------------
+let isDraggingSu = {
+            bar1: false,
+            bar2: false
+        };
+        let guessSubmittedSu = false;
+
+        function startDragSu(e, barId) {
+            if (!guessSubmittedSu) {
+                isDraggingSu[barId] = true;
+                adjustSliderSu(e, barId);
+            }
+        }
+
+        function stopDragSu(barId) {
+            if (!guessSubmittedSu) {
+                isDraggingSu[barId] = false;
+            }
+        }
+
+        function dragSu(e, barId) {
+            if (isDraggingSu[barId] && !guessSubmittedSu) {
+                adjustSliderSu(e, barId);
+            }
+        }
+
+        function adjustSliderSu(e, barId) {
+            let slider = document.getElementById(`game-slider-${barId}-su`);
+            let container = slider.parentElement;
+
+            let percentage = ((e.clientX - container.getBoundingClientRect().left) / container.offsetWidth) * 100;
+            percentage = Math.min(Math.max(percentage, 0), 100);
+
+            slider.style.width = `${percentage}%`;
+            document.getElementById(`percentage-${barId}-su`).innerText = `${Math.round(percentage)}%`;
+            document.getElementById(`remainder-${barId}-su`).innerText = `${100 - Math.round(percentage)}%`;
+
+            if (barId === "bar2") {
+                let haventTried = document.getElementById(`havent-tried-${barId}-su`);
+                haventTried.style.width = `${100 - percentage}%`;
+            }
+        }
+
+        function revealActualSu() {
+            guessSubmittedSu = true;
+
+            // Actual percentages for each bar. Adjust as needed.
+            let actualPercentageSu = {
+                bar1: 66.67,
+                bar2: 36.54
+            };
+
+            document.getElementById("submitButton-su").style.display = "none";
+
+            for (let barId in actualPercentageSu) {
+                document.getElementById(`game-instruction-${barId}-su`).style.display = "none";
+                document.getElementById(`game-slider-${barId}-su`).classList.add("disabled");
+                document.getElementById(`actualResultsTitle-${barId}-su`).style.display = "block";
+
+                let actualValue = document.getElementById(`actualValue-${barId}-su`);
+                actualValue.style.width = `${actualPercentageSu[barId]}%`;
+
+                let actualBar = document.getElementById(`actual-${barId}-su`);
+                actualBar.style.display = "block";
+                actualBar.style.opacity = "1";
+
+                let actualPercentageElem = document.getElementById(`actualPercentage-${barId}-su`);
+                actualPercentageElem.innerText = `${actualPercentageSu[barId]}%`;
+                actualPercentageElem.style.display = "block";
+                actualPercentageElem.style.opacity = "1";
+
+                let actualRemainderElem = document.getElementById(`actualRemainder-${barId}-su`);
+                actualRemainderElem.innerText = `${100 - actualPercentageSu[barId]}%`;
+                actualRemainderElem.style.display = "block";
+                actualRemainderElem.style.opacity = "1";
+
+                document.getElementById(`guessTitle-bar1-su`).style.display = "block";
+                document.getElementById(`guessTitle-bar2-su`).style.display = "block";
+
+                document.getElementById("nextQuestion-su").style.opacity = "1";
+    document.getElementById("nextQuestion-su").style.display = "block";
+
+                if (barId === "bar2") {
+                    let haventTriedResults = document.getElementById(`havent-tried-results-${barId}-su`);
+                    haventTriedResults.style.width = `${100 - actualPercentageSu[barId]}%`;
+                }
+            }
+        }
+//-----------------------------------
+document.addEventListener('DOMContentLoaded', function() {
+    const quizContainers = document.querySelectorAll('.quiz-container');
+
+    quizContainers.forEach(container => {
+        const questionId = container.getAttribute('data-question-id');
+        const choices = container.querySelectorAll('.choice');
+        const submitButton = container.querySelector('.submit-button');
+        const quizSection = container.querySelector('.quiz-section');
+        const graphSection = container.querySelector('.graph-section');
+        const agreementText = container.querySelector('.agreement-text');
+
+        // Parse the percentages for the current question
+        const choicePercentages = JSON.parse(container.getAttribute('data-percentages'));
+
+        choices.forEach(choice => {
+            choice.addEventListener('click', function() {
+                choices.forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        submitButton.addEventListener('click', function() {
+            quizSection.style.display = 'none';
+            graphSection.style.display = 'flex';
+            let selectedChoice = container.querySelector('.choice.selected').getAttribute('data-choice');
+            agreementText.innerHTML = `You agree with <b>${choicePercentages[selectedChoice]}%</b> of Brown's class of 2027!`;
+
+            const associatedBlurb = document.querySelector(`.next-question[data-for-question="${questionId}"]`);
+    setTimeout(() => {
+        associatedBlurb.style.opacity = '1';
+    }, 100); // A short delay to ensure the transition effect plays
+        });
+    });
+});
+//-------------------------------------------------
+// Function to handle arrow clicks and the "Next Question" paragraph click
+function scrollToSection(event) {
+    // Get the current section where the element was clicked
+    let currentSection = event.target.closest('section');
+    
+    if (event.target.classList.contains('down-arrow') || event.target.classList.contains('next-text')|| event.target.classList.contains('next-question')) {
+        // Scroll to the next section
+        let nextSection = currentSection.nextElementSibling;
+        if (nextSection) {
+            nextSection.scrollIntoView({behavior: "smooth"});
+        }
+    } else if (event.target.classList.contains('up-arrow')) {
+        // Scroll to the previous section
+        let prevSection = currentSection.previousElementSibling;
+        if (prevSection) {
+            prevSection.scrollIntoView({behavior: "smooth"});
+        }
+    }
+}
+
+// Attach event listener to all down arrows, up arrows, and "Next Question" paragraphs
+document.querySelectorAll('.down-arrow, .up-arrow, .next-text, .next-question').forEach(element => {
+    element.addEventListener('click', scrollToSection);
+});
+
+
+</script>
+
+</body>
+</html>
