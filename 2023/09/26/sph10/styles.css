@@ -1,0 +1,849 @@
+/* styles.css */
+body {
+    scroll-behavior: smooth;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    margin:0;
+    padding:0;
+}
+
+.burger{
+    display:none;
+}
+
+#print-hide{
+    display:none;
+}
+
+#date-hide{
+    display:none;
+}
+
+#logo{
+    width:47vw;
+    height:default;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-section, .bottom-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+}
+
+
+.middle img {
+    display: block;
+    margin: 0 auto;
+}
+
+.red-link {
+    color: #ed1c24;
+    text-decoration: none;
+    font-size:0.86em
+}
+
+.red-link:hover {
+    text-decoration: underline;
+}
+
+.left a, .middle a, .right img {
+    margin: 0 10px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid black;
+    width: 100%;
+    padding:0.22rem;
+    margin:0;
+}
+
+#donate-red{
+    color:#ed1c24;
+}
+
+.small-b {
+    display: inline-block; /* Important for block-level nesting */
+    position: relative;  /* Make it a relative container for the dropdown */
+    font-size: 0.7em;
+    text-decoration: none;
+    color: black;
+    margin: 0 0px;
+}
+
+.small-b a{
+    text-decoration: none;
+    color:black;
+}
+
+.bottom-section .left{
+    padding:0;
+    margin:0;
+    max-width: 90%;
+}
+
+.bottom-section .right{
+    display: block;
+    justify-content: space-between;
+    padding:0;
+    margin:0;
+}
+
+.social{
+    width:1.2rem;
+    height:auto;
+}
+
+.big-b{
+    text-decoration: none;
+    color:black;
+    font-size:0.84rem;
+    padding-left:0.2rem;
+    padding-right:0.2rem;
+    position: relative;
+    display: inline-block; /* Important for block-level nesting */
+}
+
+.big-b a{
+    text-decoration: none;
+    color:black;
+}
+
+
+#currentDate{
+    font-size:0.86em
+}
+
+.search-icon {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.left a, .middle a, .right img {
+    margin: 0 0.2rem;  /* Decreased margin */
+}
+
+.bottom-section{
+    max-width: 97%;   /* Add this */
+    padding-top:0;
+    margin-top:0;
+    padding-bottom:0;
+    margin-bottom:0
+}
+
+#donate{
+    width:1.5rem;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0;
+}
+
+.top-section .left, .top-section .right {
+    display: flex;
+    flex: 1;
+}
+
+.top-section .left{
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.top-section .right {
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.top-section .right a{
+    padding-bottom:0.25rem;
+    padding-right:1.7rem;
+}
+
+.top-section .left a{
+    padding-bottom:0.25rem;
+    padding-left:1.5rem;
+}
+
+.top-section .left p{
+    padding-bottom:0.25rem;
+    padding-left:1.7rem;
+    margin:0;
+
+}
+
+#logo-hide{
+    margin:0;
+    padding:0;
+}
+
+.logo-href{
+    margin:0;
+    padding:0;
+}
+
+/* New styles for the dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    border: 1px solid #aaa;
+    z-index: 10;  /* To appear on top of other elements */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Optional shadow for better appearance */
+    width: 10rem;
+    margin-top:0.1rem;
+    border-bottom: 0.15rem solid #ed1c24;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 0.5rem;
+    padding-top:0.25rem;
+    text-decoration: none;
+    color: black;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu a:hover {
+    color: #ed1c24;  /* A subtle hover effect for dropdown links */
+}
+
+.big-b:hover .dropdown-menu {
+    display: block;  /* Display the dropdown when hovering over the parent link */
+}
+
+.small-b:hover .dropdown-menu {
+    display: block;
+}
+
+.menu-hr{
+    width:8.5rem;
+    margin-left:0.5rem;
+}
+
+
+.top-one{
+    padding-top:0.75rem !important;
+}
+
+#science{
+    width:15rem;
+}
+#science hr{
+    width:13.5rem;
+}
+
+#opinion{
+    width:12rem;
+}
+#opinion hr{
+    width:10.5rem;
+}
+
+#project{
+    width:15rem;
+}
+#project hr{
+    width:13.5rem;
+}
+
+#about-dd{
+    width:12rem;
+}
+#about-dd hr{
+    width:10.5rem;
+}
+
+.medium-top{
+    display:none;
+}
+
+@media (max-width: 1179px) {
+    .bottom-section .left{
+        display:none;
+    }
+    
+    .bottom-section .right{
+        display:none;
+    }
+
+    .bottom-section .middle{
+        padding-top:0rem;
+        padding-bottom:0.5rem;
+    }
+
+    .bottom-section{
+        justify-content: center;
+    }
+    
+    .medium-top{
+        display: flex;
+        justify-content: space-between;
+        background-color: #f2f2f2;
+        width:100%;
+        padding:0.5rem;
+        margin:0;
+    }
+
+    .medium-top .left{
+        padding-left:2rem;
+    }
+
+    .medium-top .right{
+        display: block;
+        justify-content: space-between;
+        padding:0;
+        margin:0;
+        padding-right:2rem;
+    }
+
+    .r-social{
+        width:1rem;
+    }
+    .r-donate{
+        width:1.3rem;
+    }
+}
+
+@media (max-width: 787px) {
+    .bottom-section .middle {
+        display:none;
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        left: -47%;
+        padding-bottom: 0.2rem;
+        cursor: pointer;  /* This makes the div look clickable */
+    }
+    
+    .dropdown-content {
+        display: none; /* Hidden by default */
+        position: absolute;
+        width: 10rem; /* Adjust if needed */
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Optional shadow for the dropdown */
+        z-index: 1; /* To ensure the dropdown appears above other content */
+    }
+    
+    .dropdown-content a {
+        color: black; /* Choose a color you like */
+        padding: 12px 16px; 
+        text-decoration: none;
+        display: block;
+    }
+    
+    .dropdown-content a:hover {
+        color: #ed1c24; /* Choose a hover color you like */
+    }
+
+    .dropdown-menu{
+        margin-left:10rem;
+        padding-top:0;
+        margin-top:-3rem;
+    }
+
+    
+}
+
+@media (max-width: 750px) {
+    .top-section .right{
+        display:none;
+    }
+    .top-section .left{
+        display:none;
+    }
+    .top-section {
+        justify-content: center;
+    }
+
+    #print-hide{
+        display:block;
+    }
+    
+    #date-hide{
+        display:block;
+    }
+}
+
+
+/*--------------------------------------------*/
+
+body {
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar-timeline{
+    font-family: "freight-text-pro", "Times", serif;
+}
+
+.container {
+    font-family: "freight-text-pro", "Times", serif;
+    margin: auto;
+    padding-top:0rem;
+    padding-bottom:1rem;
+    padding-left:0rem;
+    padding-right:2rem;
+    background-color: #fff;
+    max-width: 800px;
+}
+
+.header {
+    text-align: left;
+    padding: 20px 0;
+    padding-top:0;
+}
+
+.header p{
+    color:#333;
+    font-style: italic;
+    font-size: 1.29411765rem;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: default;
+    line-height: 0.5rem;
+    color: #020100;
+    font-weight: 700;
+
+}
+
+.header a{
+    text-decoration: none;
+    color:#444;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.intro, .content {
+    margin-bottom: 20px;
+}
+
+.content h2 {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.content p {
+    text-align: justify;
+    margin: 10px 0;
+    font-size:1.25rem;
+}
+
+#credits p{
+    font-family: "Roboto";
+    font-size:0.85rem;
+    margin:0;
+    padding:0;
+    }
+
+
+.intro p{
+    font-size:1.25rem;
+}
+
+.content p:first-of-type {
+    margin-top: 0;
+}
+
+.content p:last-of-type {
+    margin-bottom: 0;
+}
+
+#article-cover-img{
+    width:50rem;
+}
+
+#navbar-timeline {
+    position: fixed;
+    top: 30%;
+    left: 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#timeline-image {
+    width: 1.6rem;  /* adjust as needed */
+}
+
+#timeline-labels {
+    display: flex;
+    flex-direction: column;
+    margin-left: -11.5rem;  /* negative margin equal to the image width */
+    padding-left: 100px;  /* padding equal to the image width to maintain the text position */
+    position: relative;  /* establish positioning context for year-label divs */
+}
+
+.year-label {
+    position: relative;
+    width: 100%;  /* extend the clickable area across the image and text */
+}
+
+.year-label a {
+    font-size:1.03rem;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding-left: 100px;  /* padding to the left to extend the clickable area over the image */
+    display: block;  /* make the anchor block-level to fill the parent div */
+}
+
+.year-label a.bold {
+    font-weight: bold;
+}
+
+.intro a{
+    text-decoration: none;
+    color:#ed1c24;
+    }
+    
+    .intro a:hover{
+        text-decoration: underline;
+    }
+
+.content a{
+text-decoration: none;
+color:#ed1c24;
+}
+
+.content a:hover{
+    text-decoration: underline;
+}
+
+@media (max-width:1150px){
+    .container {
+        margin: auto;
+        padding-top:0rem;
+        padding-bottom:1rem;
+        padding-left:8rem;
+        padding-right:0rem;
+        background-color: #fff;
+        max-width: 800px;
+    }    
+}
+
+@media (max-width:986px){
+    .container {
+        margin: auto;
+        padding-top:0rem;
+        padding-bottom:1rem;
+        padding-left:10rem;
+        padding-right:2rem;
+        background-color: #fff;
+        max-width: 800px;
+    }   
+
+    .content h2 {
+        margin-top: 20px;
+        font-size: 1.5em;
+    }
+    
+    .content p {
+        text-align: justify;
+        margin: 10px 0;
+        font-size:1.2rem;
+    }
+    
+    .intro p{
+        font-size:1.2rem;
+    }
+    
+    .content p:first-of-type {
+        margin-top: 0;
+    }
+    
+    .content p:last-of-type {
+        margin-bottom: 0;
+    }
+    
+    #article-cover-img{
+        width:45rem;
+    }
+    
+}
+
+#credits{
+font-family: "Roboto";
+font-weight: 500;
+margin:0;
+padding:0;
+padding-top:2rem;
+}
+
+#credits p{
+    font-family: "Roboto";
+    font-size:0.9rem;
+    margin:0;
+    padding:0;
+    }
+
+
+    #media-credits{
+        font-size:0.8rem;
+        font-family: "Roboto";
+        }
+
+.cred-a{
+    color:red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-height:531px){
+    .year-label a {
+        font-size:0.8rem;
+        text-decoration: none;
+        color: black;
+        margin-bottom: 10px;
+        cursor: pointer;
+        padding-left: 100px;  /* padding to the left to extend the clickable area over the image */
+        display: block;  /* make the anchor block-level to fill the parent div */
+    }
+
+    #timeline-image {
+        width: 1.35rem;  /* adjust as needed */
+    }
+}
+
+@media (max-width:900px){
+    #article-cover-img{
+        width:40rem;
+    }
+}
+
+@media (max-width:820px){
+    #article-cover-img{
+        width:35rem;
+    }
+}
+
+@media (max-width:756px){
+    #article-cover-img{
+        width:30rem;
+    }
+}
+
+@media (max-width:658px){
+    #article-cover-img{
+        width:25rem;
+    }
+}
+
+@media (max-width:571px){
+    #article-cover-img{
+        width:20rem;
+    }
+
+    .container {
+        margin: auto;
+        padding-top:0rem;
+        padding-bottom:1rem;
+        padding-left:8rem;
+        padding-right:1rem;
+        background-color: #fff;
+        max-width: 800px;
+    }   
+
+    .content p {
+        text-align: justify;
+        margin: 10px 0;
+        font-size:1.1rem;
+    }
+
+
+    #media-credits{
+        font-size:0.75rem;
+        }
+
+    #credits p{
+        font-family: "Roboto";
+        font-size:0.8rem;
+        margin:0;
+        padding:0;
+        }
+    
+    .intro p{
+        font-size:1.1rem;
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 1.8rem;
+        line-height: 2.23529412rem;
+        color: #020100;
+        font-weight: 700;
+    }
+
+    .header p{
+        color:#333;
+        font-style: italic;
+        font-size: 1.1rem;
+    }
+
+    .year-label a {
+        font-size:0.95rem;
+        text-decoration: none;
+        color: black;
+        margin-bottom: 10px;
+        cursor: pointer;
+        padding-left: 100px;  /* padding to the left to extend the clickable area over the image */
+        display: block;  /* make the anchor block-level to fill the parent div */
+    }
+    #timeline-image {
+        width: 1.51rem;  /* adjust as needed */
+    }
+}
+
+@media (max-width:457px){
+    .container {
+        margin: auto;
+        padding-top:0rem;
+        padding-bottom:1rem;
+        padding-left:8rem;
+        padding-right:1rem;
+        background-color: #fff;
+        max-width: 800px;
+    }   
+    .header h1{
+        font-size: 1.65rem;
+    }
+
+    #article-cover-img{
+        width:18rem;
+    }
+
+    .header a{
+        text-decoration: none;
+        color:#020100;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        font-size:0.8rem;
+    }
+
+    .content h2 {
+        margin-bottom: 20px;
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width:418px){
+    .container {
+        margin: auto;
+        padding-top:0rem;
+        padding-bottom:1rem;
+        padding-left:7rem;
+        padding-right:1rem;
+        background-color: #fff;
+        max-width: 800px;
+    }   
+    .header h1{
+        font-size: 1.6rem;
+    }
+
+    #article-cover-img{
+        width:15rem;
+    }
+    .content p {
+        text-align: justify;
+        margin: 10px 0;
+        font-size:1rem;
+    }
+
+    #media-credits{
+        font-size:0.7rem;
+        }
+
+    #credits p{
+        font-family: "Roboto";
+        font-size:0.75rem;
+        margin:0;
+        padding:0;
+        }
+    
+    .intro p{
+        font-size:1rem;
+    }
+
+    .year-label a {
+        font-size:0.9rem;
+        text-decoration: none;
+        color: black;
+        margin-bottom: 10px;
+        cursor: pointer;
+        padding-left: 100px;  /* padding to the left to extend the clickable area over the image */
+        display: block;  /* make the anchor block-level to fill the parent div */
+    }
+    #timeline-image {
+        width: 1.45rem;  /* adjust as needed */
+    }
+}
+
+@media (max-width:392px){
+    .header h1 {
+        margin: 0;
+        font-size: 1.45rem;
+        line-height: 2.23529412rem;
+        color: #020100;
+        font-weight: 700;
+    }
+
+    .header p{
+        color:#333;
+        font-style: italic;
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width:367px){
+    .header h1 {
+        margin: 0;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        color: #020100;
+        font-weight: 700;
+    }
+
+    .header p{
+        color:#333;
+        font-style: italic;
+        font-size: 0.95rem;
+    }
+
+    #article-cover-img{
+        width:14rem;
+    }
+
+}
+
+
+.footer {
+    border-top: 1px solid black;
+    font-size:0.9rem;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding: 0px;
+    margin:0;
+  }
