@@ -277,6 +277,10 @@ color:black;
   box-sizing: border-box;
 }
 
+#top-l-2{
+  padding-top:2rem;
+}
+
 /* Responsive styles for smaller screens */
 @media (max-width: 1050px) {
   .main-news {
