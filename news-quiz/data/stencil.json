@@ -1,0 +1,26 @@
+{
+  "date": "...",
+  "intro": "...",
+  "questions": [
+    {
+      "question": "...",
+      "type": "MC",
+      "choices": ["A", "B", "C", "D"],
+      "answer": 1,
+      "image": "",
+      "alt": null,
+      "explanation": "",
+      "link": ""
+    },
+    {
+      "question": "...",
+      "type": "Slider",
+      "choices": [],
+      "answer": 50,
+      "image": "",
+      "alt": null,
+      "explanation": "",
+      "link": ""
+    }
+  ]
+}
