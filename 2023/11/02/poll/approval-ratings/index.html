@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDH Spring 2023 Poll</title>
+    <link rel="stylesheet" href="https://use.typekit.net/mxr8glf.css">
+    <link rel="icon" href="../assets/icon-rel.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body>
+    <div class="tool">
+    <nav id="navbar">
+        <div id="navbar-logo">
+            <a href="https://www.browndailyherald.com">
+                <img id="navbar-logo-img" src="https://d35jcxe8no8yhr.cloudfront.net/25f4d2392ed7cc544e1f8023bbc4d1f5/dist/img/logo-black.png"/>
+            </a>
+        </div>
+        <ul id="nav-options"><a
+                    
+                        class="nav-option"
+                    
+                    href="../lifestyle"
+                >
+                    <li>Lifestyle</li>
+                </a><a
+                    
+                        class="nav-option active"
+                    
+                    href="../approval-ratings"
+                >
+                    <li>Approval Ratings</li>
+                </a><a
+                    
+                        class="nav-option"
+                    
+                    href="../academics"
+                >
+                    <li>Academics</li>
+                </a><a
+                    
+                        class="nav-option"
+                    
+                    href="../demographics"
+                >
+                    <li>Demographics</li>
+                </a></ul>
+        <div id="nav-links">
+            <a id="about-link" href="../about">About</a>
+            <a id="story-link" href="https://www.browndailyherald.com/article/2023/11/the-heralds-fall-2023-poll">
+                <div>Read the story</div>
+                <img src="../assets/white-arrow.svg" />
+            </a>
+        </div>
+    </nav>
+    <section class="section-wrapper"> 
+        <div class="question-categories-wrapper">
+            <div class="question-categories"><button data-target="organizations-approval" id='organizations-approval'>Student Organizations Approval</button><button data-target="ucs-approval" id='ucs-approval'>UCS Approval</button><button data-target="ufb-approval" id='ufb-approval'>UFB Approval</button><button data-target="ccb-approval" id='ccb-approval'>CCB Approval</button><button data-target="joe-biden-approval" id='joe-biden-approval'>Joe Biden Approval</button><button data-target="cpax-approval" id='cpax-approval'>Christina Paxson Approval</button></div>
+        </div>
+        <div class="main-content-wrapper">
+            <div class="question-text"><div class="question-organizations-approval-text" style="display: none;">
+                        <h1></h1>
+                    </div><div class="question-ucs-approval-text" style="display: none;">
+                        <h1></h1>
+                    </div><div class="question-ufb-approval-text" style="display: none;">
+                        <h1></h1>
+                    </div><div class="question-ccb-approval-text" style="display: none;">
+                        <h1></h1>
+                    </div><div class="question-joe-biden-approval-text" style="display: none;">
+                        <h1></h1>
+                    </div><div class="question-cpax-approval-text" style="display: none;">
+                        <h1></h1>
+                    </div></div>
+            <div class="subdiv-graph-wrapper">
+                <div class="question-subdivisions"><div class="question-organizations-approval-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Combined</button>
+                            
+                        </div>
+                    <div class="question-ucs-approval-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            <button id="legacy-status">Legacy</button>
+                            <button id="first-generation-status">First-Generation</button>
+                            <button id="class-year">Class Year</button>
+                            
+                        </div>
+                    <div class="question-ufb-approval-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            <button id="legacy-status">Legacy</button>
+                            <button id="first-generation-status">First-Generation</button>
+                            <button id="class-year">Class Year</button>
+                            
+                        </div>
+                    <div class="question-ccb-approval-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            <button id="legacy-status">Legacy</button>
+                            <button id="first-generation-status">First-Generation</button>
+                            <button id="class-year">Class Year</button>
+                            
+                        </div>
+                    <div class="question-joe-biden-approval-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            <button id="first-generation-status">First-Generation</button>
+                            <button id="area-of-study">Area of Study</button>
+                            <button id="class-year">Class Year</button>
+                            <button id="gender-identity">Gender Identity</button>
+                            <button id="sexual-orientation">Sexual Orientation</button>
+                            <button id="financial-aid">Financial Aid</button>
+                            <button id="legacy-status">Legacy</button>
+                            
+                        </div>
+                    <div class="question-cpax-approval-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            <button id="over-time">Over Time</button>
+                            <button id="first-generation-status">First-Generation</button>
+                            <button id="joe-biden-approval">Joe Biden Approval</button>
+                            <button id="class-year">Class Year</button>
+                            <button id="financial-aid">Financial Aid</button>
+                            <button id="legacy-status">Legacy</button>
+                            
+                        </div>
+                    
+                </div>
+
+                <div class="graphics">
+                    
+                        
+                            <div class="image-organizations-approval-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/s28NC/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-organizations-approval-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-ucs-approval-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/hWlPW/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-ucs-approval-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-ucs-approval-legacy-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/aHa62/3/embed.js"></script>
+                            </div>
+                            <div class="blurb-ucs-approval-legacy-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-ucs-approval-first-generation-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/W8lSK/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-ucs-approval-first-generation-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-ucs-approval-class-year" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/lwu4O/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-ucs-approval-class-year" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-ufb-approval-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/KtE6x/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-ufb-approval-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                                    <p class="subdivision-blurbs">Among poll respondents, 22% reported they strongly disapprove of the way the Undergraduate Finance Board is handling its job, a significantly higher percentage than the 3.9% for the Undergraduate Council of Students and 3.2% for the Class Coordinating Board.</p>
+                                
+                                    <p class="subdivision-blurbs">UFB also had the lowest overall approval ratings of the three groups, with 8.8% of respondents reporting they somewhat approve and 2.5% reporting they strongly approve of the group, compared to 23.4% and 4.1% for UCS and 28.1% and 9.3% for CCB, respectively.</p>
+                                
+                                    <p class="subdivision-blurbs">After <a target='_blank' href='https://www.browndailyherald.com/article/2023/09/clubs-face-lowered-budgets-after-ufb-spends-full-surplus'>spending the vast majority of its $1.2 million surplus</a> last year, UFB faced a $1.5 million gap between the funding requested by student groups and the amount it could distribute. Despite an increase in the student activity fee from $286 to $300, clubs have faced lowered budgets, and CCB announced that Spring Weekend 2024 will be a <a target='_blank' href='https://www.browndailyherald.com/article/2023/09/spring-weekend-2024-will-be-one-day-festival'>one-day festival</a>.</p>
+                                
+                            </div>
+                        
+                            <div class="image-ufb-approval-legacy-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/A3Hvn/2/embed.js"></script>
+                            </div>
+                            <div class="blurb-ufb-approval-legacy-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-ufb-approval-first-generation-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/RMlo4/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-ufb-approval-first-generation-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-ufb-approval-class-year" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/1LvM4/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-ufb-approval-class-year" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-ccb-approval-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/dTcuP/2/embed.js"></script>
+                            </div>
+                            <div class="blurb-ccb-approval-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-ccb-approval-legacy-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/jG8Bg/3/embed.js"></script>
+                            </div>
+                            <div class="blurb-ccb-approval-legacy-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-ccb-approval-first-generation-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/Gqr7J/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-ccb-approval-first-generation-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-ccb-approval-class-year" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/Rz0KA/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-ccb-approval-class-year" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-joe-biden-approval-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/iBHRj/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-joe-biden-approval-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                                    <p class="subdivision-blurbs">40.2% of respondents strongly or somewhat approve of the way Joe Biden is handling his job as president of the United States. 20.5% of respondents neither approved nor disapproved, 17.6% somewhat disapproved, 12.7% had no opinion, 5.1% strongly disapproved and 4% strongly approved. In <a target='_blank' href='https://projects.browndailyherald.com/2023/03/06/poll/policy/'>spring 2023</a>, 40.6% of respondents indicated that they did not vote in the 2022 U.S. midterm elections, and 14.2% of respondents were not eligible to vote.</p>
+                                
+                            </div>
+                        
+                            <div class="image-joe-biden-approval-first-generation-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/usfGT/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-joe-biden-approval-first-generation-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-joe-biden-approval-area-of-study" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/srGgN/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-joe-biden-approval-area-of-study" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-joe-biden-approval-class-year" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/2kD4p/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-joe-biden-approval-class-year" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-joe-biden-approval-gender-identity" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/krjrG/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-joe-biden-approval-gender-identity" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-joe-biden-approval-sexual-orientation" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/O8lV1/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-joe-biden-approval-sexual-orientation" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-joe-biden-approval-financial-aid" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/LoBxQ/2/embed.js"></script>
+                            </div>
+                            <div class="blurb-joe-biden-approval-financial-aid" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-joe-biden-approval-legacy-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/kDFYm/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-joe-biden-approval-legacy-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-cpax-approval-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/rwM9R/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-cpax-approval-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                                    <p class="subdivision-blurbs">Just over 28% of respondents reported they neither approve nor disapprove and 20.5% of respondents had no opinion on how President Christina Paxson P’19 P’MD’20 is handling her role at the University.</p>
+                                
+                                    <p class="subdivision-blurbs">Paxson <a target='_blank' href='https://www.browndailyherald.com/article/2022/04/paxson-celebrates-10th-anniversary-as-president'>celebrated her 10th anniversary</a> as University president in 2022 and was <a target='_blank' href='https://www.browndailyherald.com/article/2023/03/president-christina-paxson-elected-to-american-council-on-education-board-of-directors'>elected</a> to the American Council on Education board of directors in spring 2023. The Corporation <a target='_blank' href='https://www.browndailyherald.com/article/2023/03/paxsons-contract-runs-until-2026-one-year-longer-than-previously-announced'>extended</a> her contract to June 30, 2026 in 2021, though the decision was not announced until February 2023.</p>
+                                
+                                    <p class="subdivision-blurbs">Her administration has implemented the <a target='_blank' href='https://distinction.brown.edu/'>Building on Distinction</a> plan, expanded financial aid through the <a target='_blank' href='https://www.browndailyherald.com/article/2023/03/brown-makes-elimination-of-undergraduate-loans-permanent'>Brown Promise</a> and launched a new <a target='_blank' href='https://www.browndailyherald.com/article/2022/10/brown-launches-new-operational-plan-for-investing-in-research'>Operational Plan for Investing in Research</a>.</p>
+                                
+                            </div>
+                        
+                            <div class="image-cpax-approval-over-time" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/7W7e3/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-cpax-approval-over-time" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-cpax-approval-first-generation-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/kiyvF/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-cpax-approval-first-generation-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-cpax-approval-joe-biden-approval" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/Y2OP5/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-cpax-approval-joe-biden-approval" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-cpax-approval-class-year" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/M0tMA/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-cpax-approval-class-year" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-cpax-approval-financial-aid" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/Gvt23/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-cpax-approval-financial-aid" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-cpax-approval-legacy-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/6fYxD/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-cpax-approval-legacy-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                </div>
+            </div>
+        </div>
+        <footer><p>Copyright © 2023 The Brown Daily Herald, Inc.</p></footer>
+    </section>
+</div>
+<script>
+    const buttons = document.querySelectorAll('.question-categories button');
+    let subButtons = document.querySelectorAll('.question-subdivisions button');
+    const textSections = document.querySelectorAll('.question-text div');
+    const subSections = document.querySelectorAll('.question-subdivisions div');
+    const graphics = document.querySelectorAll('.graphics div')
+    let selectedButton = buttons[0].id;
+    let selectedSubButton = subButtons[0].id;
+    window.onload = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const questionParam = urlParams.get('question');
+        const breakdownParam = urlParams.get('breakdown');
+        if (questionParam && breakdownParam) {
+            selectedButton = questionParam;
+            selectedSubButton = breakdownParam;
+        } else if (questionParam) {
+            selectedButton = questionParam;
+        } else {
+            buttons[0].classList.add('selected');
+            subButtons[0].classList.add('selected');
+        }
+        for (const button of buttons) {
+            if (button.id === selectedButton) {
+                button.classList.add('selected');
+            }
+        }
+        for (const subButton of subButtons) {
+            if (subButton.id === selectedSubButton) {
+                subButton.classList.add('selected');
+            }
+        }
+        for (const textSection of textSections) {
+            if (textSection.classList.contains(`question-${selectedButton}-text`)) {
+                textSection.style.display = 'block';
+            }
+        }
+        for (const subSection of subSections) {
+            if (subSection.classList.contains(`question-${selectedButton}-subdivisions`)) {
+                subSection.style.display = 'flex';
+            }
+        }
+        for (const graphic of graphics) {
+            if (graphic.classList.contains(`image-${selectedButton}-${selectedSubButton}`)) {
+                graphic.style.display = 'block';
+            }
+            if (graphic.classList.contains(`blurb-${selectedButton}-${selectedSubButton}`)) {
+                graphic.style.display = 'block';
+            }
+        }
+        addButtonsListener();
+        addSubButtonsListener();
+    };
+    addButtonsListener = () => {
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                handleButtonClick(button)
+            });
+        });
+    }
+    addSubButtonsListener = () => {
+            subButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    handleSubButtonClick(button);
+                });
+            });
+    }
+    handleButtonClick = (button) => {
+        selectedButton = button.id;
+        buttons.forEach((b) => b.classList.remove('selected'));
+        textSections.forEach((section) => section.style.display = 'none');
+        subSections.forEach((section) => section.style.display = 'none');
+        button.classList.add('selected');
+        const target = button.dataset.target;
+        document.querySelector(`.question-${target}-text`).style.display = 'block';
+        document.querySelector(`.question-${target}-subdivisions`).style.display = 'flex';
+        subButtons = document.querySelectorAll(`.question-${target}-subdivisions button`);
+        subButtons.forEach((b) => b.classList.remove('selected'));
+        subButtons[0].classList.add('selected');
+        selectedSubButton = subButtons[0].id;
+        updateImage()
+    }
+    handleSubButtonClick = (button) => {
+        selectedSubButton = button.id;
+        subButtons.forEach((b) => b.classList.remove('selected'));
+        button.classList.add('selected');
+        updateImage()
+    }
+    updateImage = () => {
+        graphics.forEach((div) => {
+            div.style.display = 'none'
+        });
+        selectedImage = document.querySelector(`.image-${selectedButton}-${selectedSubButton}`)
+        selectedImage.style.display = 'block';
+
+        selectedEmbed = selectedImage.getElementsByClassName("datawrapper-script-embed")[0]
+        selectedEmbed.style.display = "block"
+        document.querySelector(`.blurb-${selectedButton}-${selectedSubButton}`).style.display = 'block';
+    }
+</script>
+
+
+  </body>
+</html>

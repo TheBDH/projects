@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDH Spring 2023 Poll</title>
+    <link rel="stylesheet" href="https://use.typekit.net/mxr8glf.css">
+    <link rel="icon" href="../assets/icon-rel.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body>
+    <div class="tool">
+    <nav id="navbar">
+        <div id="navbar-logo">
+            <a href="https://www.browndailyherald.com">
+                <img id="navbar-logo-img" src="https://d35jcxe8no8yhr.cloudfront.net/25f4d2392ed7cc544e1f8023bbc4d1f5/dist/img/logo-black.png"/>
+            </a>
+        </div>
+        <ul id="nav-options"><a
+                    
+                        class="nav-option"
+                    
+                    href="../lifestyle"
+                >
+                    <li>Lifestyle</li>
+                </a><a
+                    
+                        class="nav-option"
+                    
+                    href="../approval-ratings"
+                >
+                    <li>Approval Ratings</li>
+                </a><a
+                    
+                        class="nav-option"
+                    
+                    href="../academics"
+                >
+                    <li>Academics</li>
+                </a><a
+                    
+                        class="nav-option active"
+                    
+                    href="../demographics"
+                >
+                    <li>Demographics</li>
+                </a></ul>
+        <div id="nav-links">
+            <a id="about-link" href="../about">About</a>
+            <a id="story-link" href="https://www.browndailyherald.com/article/2023/11/the-heralds-fall-2023-poll">
+                <div>Read the story</div>
+                <img src="../assets/white-arrow.svg" />
+            </a>
+        </div>
+    </nav>
+    <section class="section-wrapper"> 
+        <div class="question-categories-wrapper">
+            <div class="question-categories"><button data-target="legacy-status" id='legacy-status'>Legacy</button><button data-target="financial-aid" id='financial-aid'>Financial Aid</button><button data-target="varsity-athlete-status" id='varsity-athlete-status'>Varsity Athlete</button><button data-target="class-year" id='class-year'>Class Year</button><button data-target="gender-identity" id='gender-identity'>Gender Identity</button><button data-target="race-ethnicity" id='race-ethnicity'>Race/Ethnicity</button><button data-target="sexual-orientation" id='sexual-orientation'>Sexual Orientation</button><button data-target="first-generation-status" id='first-generation-status'>First-Generation</button></div>
+        </div>
+        <div class="main-content-wrapper">
+            <div class="question-text"><div class="question-legacy-status-text" style="display: none;">
+                        <h1></h1>
+                    </div><div class="question-financial-aid-text" style="display: none;">
+                        <h1></h1>
+                    </div><div class="question-varsity-athlete-status-text" style="display: none;">
+                        <h1></h1>
+                    </div><div class="question-class-year-text" style="display: none;">
+                        <h1></h1>
+                    </div><div class="question-gender-identity-text" style="display: none;">
+                        <h1></h1>
+                    </div><div class="question-race-ethnicity-text" style="display: none;">
+                        <h1></h1>
+                    </div><div class="question-sexual-orientation-text" style="display: none;">
+                        <h1></h1>
+                    </div><div class="question-first-generation-status-text" style="display: none;">
+                        <h1></h1>
+                    </div></div>
+            <div class="subdiv-graph-wrapper">
+                <div class="question-subdivisions"><div class="question-legacy-status-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            <button id="race-ethnicity">Race/Ethnicity</button>
+                            <button id="varsity-athlete-status">Varsity Athlete</button>
+                            <button id="area-of-study">Area of Study</button>
+                            
+                        </div>
+                    <div class="question-financial-aid-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            <button id="varsity-athlete-status">Varsity Athlete</button>
+                            <button id="legacy-status">Legacy</button>
+                            <button id="first-generation-status">First-Generation</button>
+                            <button id="area-of-study">Area of Study</button>
+                            
+                        </div>
+                    <div class="question-varsity-athlete-status-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            <button id="first-generation-status">First-Generation</button>
+                            <button id="area-of-study">Area of Study</button>
+                            <button id="joe-biden-approval">Joe Biden Approval</button>
+                            
+                        </div>
+                    <div class="question-class-year-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            
+                        </div>
+                    <div class="question-gender-identity-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            
+                        </div>
+                    <div class="question-race-ethnicity-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            
+                        </div>
+                    <div class="question-sexual-orientation-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            
+                        </div>
+                    <div class="question-first-generation-status-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            
+                        </div>
+                    
+                </div>
+
+                <div class="graphics">
+                    
+                        
+                            <div class="image-legacy-status-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/nkVEP/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-legacy-status-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                                    <p class="subdivision-blurbs">About 18% of respondents have a relative who attended or is currently attending Brown, similar to spring 2023. In the wake of the Supreme Court’s decision limiting race-conscious admissions, the University has <a target='_blank' href='https://www.browndailyherald.com/article/2023/09/brown-forms-committee-to-reconsider-legacy-early-decision-test-optional-policies'>formed a committee</a> to examine legacy, early decision and test-optional policies.</p>
+                                
+                                    <p class="subdivision-blurbs">During the undergraduate application process, the University “will note when an applicant has a parent who has graduated from Brown,” according to its <a target='_blank' href='https://admission.brown.edu/ask/admission-process'>website</a>.</p>
+                                
+                                    <p class="subdivision-blurbs">The Herald’s fall poll asked students: “Do you have a parent, grandparent or sibling who attended Brown? Check all that apply.” Because the poll allowed respondents to select multiple legacy relationships, these numbers add up to more than 100%. </p>
+                                
+                            </div>
+                        
+                            <div class="image-legacy-status-race-ethnicity" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/HCHlW/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-legacy-status-race-ethnicity" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-legacy-status-varsity-athlete-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/uioNY/2/embed.js"></script>
+                            </div>
+                            <div class="blurb-legacy-status-varsity-athlete-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-legacy-status-area-of-study" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/ebpCN/2/embed.js"></script>
+                            </div>
+                            <div class="blurb-legacy-status-area-of-study" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-financial-aid-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/imHB6/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-financial-aid-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                                    <p class="subdivision-blurbs">Over half of poll respondents indicated that they do not receive financial aid from Brown. The University’s <a target='_blank' href='https://www.browndailyherald.com/article/2023/04/adoch-financial-aid'>financial aid packages</a> for undergraduate students include grants and scholarships but not loans. The elimination of loans from undergraduate financial aid packages was made permanent in <a target='_blank' href='https://www.browndailyherald.com/article/2023/03/brown-makes-elimination-of-undergraduate-loans-permanent'>March 2023</a> following the completion of a fundraising goal as part of the Brown Promise initiative. Last year, Students for Educational Equity <a target='_blank' href='https://www.browndailyherald.com/article/2022/11/students-for-educational-equity-launches-financial-aid-resource-website-for-prospective-students'>launched</a> a <a target='_blank' href='https://sites.google.com/view/brownaidstudentresource'>financial aid resource</a> <a target='_blank' href='https://sites.google.com/view/brownaidstudentresource'>website</a> to help prospective students navigate the financial aid process. According to the University’s 2022-2023 <a target='_blank' href='https://oir.brown.edu/sites/default/files/2020-04/CDS_2022_2023.pdf'>Common Data Set</a>, financial aid was awarded to approximately 45% of full-time undergraduate students, a slight increase from the approximately 42% of students who received aid in<a target='_blank' href='https://oir.brown.edu/sites/default/files/2020-04/CDS_2021_2022_0.pdf'> 2021-2022</a>.</p>
+                                
+                                    <p class="subdivision-blurbs">Since 2022, the University has <a target='_blank' href='https://www.browndailyherald.com/article/2021/10/brown-to-eliminate-tuition-for-families-earning-under-125000-through-financial-aid-expansion'>covered the cost of tuition</a> for most students from families earning less than $125,000 by eliminating home equity from financial aid calculations. The University also announced plans to implement <a target='_blank' href='https://www.browndailyherald.com/article/2021/10/brown-plans-to-move-to-need-blind-admission-for-international-students'>need-blind admissions</a> for international students beginning with the class of 2029. </p>
+                                
+                            </div>
+                        
+                            <div class="image-financial-aid-varsity-athlete-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/MPeQI/4/embed.js"></script>
+                            </div>
+                            <div class="blurb-financial-aid-varsity-athlete-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-financial-aid-legacy-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/4AHKE/3/embed.js"></script>
+                            </div>
+                            <div class="blurb-financial-aid-legacy-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-financial-aid-first-generation-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/0Cbk5/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-financial-aid-first-generation-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-financial-aid-area-of-study" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/sfnx2/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-financial-aid-area-of-study" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-varsity-athlete-status-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/USv2h/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-varsity-athlete-status-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-varsity-athlete-status-first-generation-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/y4fwU/2/embed.js"></script>
+                            </div>
+                            <div class="blurb-varsity-athlete-status-first-generation-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-varsity-athlete-status-area-of-study" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/HuX8T/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-varsity-athlete-status-area-of-study" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-varsity-athlete-status-joe-biden-approval" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/S5CCV/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-varsity-athlete-status-joe-biden-approval" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-class-year-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/uiy7U/2/embed.js"></script>
+                            </div>
+                            <div class="blurb-class-year-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                                    <p class="subdivision-blurbs">Prior to <a target='_blank' href='https://projects.browndailyherald.com/2022/10/23/poll/demographics'>fall 2022</a>, The Herald did not collect specific data on mid-year graduates. The University welcomed 1,699 students as part of the class of 2027, and approximately 40% of them participated in The Herald’s <a target='_blank' href='https://projects.browndailyherald.com/2022/10/23/poll/demographics'>first-ever poll</a> for incoming students. </p>
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-gender-identity-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/JUSeJ/2/embed.js"></script>
+                            </div>
+                            <div class="blurb-gender-identity-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                                    <p class="subdivision-blurbs">Women are more likely than men to complete four years or more of college and earn a bachelor’s degree, according to <a target='_blank' href='https://www.statista.com/statistics/184272/educational-attainment-of-college-diploma-or-higher-by-gender/'> Statista</a>. In the 2022-2023 <a target='_blank' href='https://oir.brown.edu/sites/default/files/2020-04/CDS_2022_2023.pdf'>Common Data Set</a>, the University reported that 50.8% of full-time undergraduate students were women and 49.2% were men. According to the Office of Institutional Research <a target='_blank' href='https://oir.brown.edu/institutional-data/factbooks/diversity-factbook'>website</a>, the University reports gender statistics according to a gender binary consistent with federal requirements.</p>
+                                
+                                    <p class="subdivision-blurbs">In The Herald’s fall 2023 poll, 3% of poll respondents identified as nonbinary, and 1.8% identified as genderqueer, similar to figures from The Herald’s <a target='_blank' href='https://projects.browndailyherald.com/2023/03/06/poll/demographics/'>spring 2023 poll</a>. According to the <a target='_blank' href='https://www.pewresearch.org/fact-tank/2022/06/07/about-5-of-young-adults-in-the-u-s-say-their-gender-is-different-from-their-sex-assigned-at-birth/'>Pew Research Center</a>, about 3% of Americans ages 18 to 29 identify as nonbinary. The Herald’s poll results presented here sum to over 100% because the poll allowed respondents to select multiple gender identities.</p>
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-race-ethnicity-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/PMrIm/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-race-ethnicity-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                                    <p class="subdivision-blurbs">According to the University’s 2022-2023 <a target='_blank' href='https://oir.brown.edu/sites/default/files/2020-04/CDS_2022_2023.pdf'>Common Data Set</a> — which categorizes race and ethnicity differently than The Herald’s poll by excluding race and ethnicity details of international students — just over 44.6% of degree-seeking domestic undergraduate students who identified their race were white and non-Hispanic, 22.2% were Asian, 13.8% were Hispanic or Latino and 9.6% were Black. 0.43% identified as American Indian or Alaskan Native, and 0.21% were Native Hawaiian or Pacific Islander. The University reported the racial identities of 4.8% of all students as unknown in the CDS. The CDS counted students who identify as two or more races and not Hispanic — 7.4% of all students — in a separate category.</p>
+                                
+                                    <p class="subdivision-blurbs">According to the <a target='_blank' href='https://diap.brown.edu/data/diversity-dashboards/student-data/students-hug-status'>University’s Diversity Dashboard</a>, the percentage of students from historically underrepresented racial/ethnic groups — <a target='_blank' href='https://diap.brown.edu/plans-reports/diap-phase-ii-2021#:~:text=U.S.%20citizens%20or%20permanent%20residents,Native%20Hawaiian%2FOther%20Pacific%20Islander.'>defined</a> as “African American/Black, Hispanic/Latinx, American Indian/Alaska Native and Native Hawaiian/Other Pacific Islander” by the University — has increased slightly in recent years.</p>
+                                
+                                    <p class="subdivision-blurbs">The Supreme Court <a target='_blank' href='https://www.browndailyherald.com/article/2023/06/supreme-court-limits-race-conscious-college-admissions'>limited race-conscious admissions</a> this summer, which some student organizations <a target='_blank' href='https://www.browndailyherald.com/article/2023/07/brown-community-condemns-end-of-affirmative-action'>condemned</a>. With college admissions facing an <a target='_blank' href='https://www.browndailyherald.com/article/2023/08/the-landscape-of-college-admissions-in-a-post-affirmative-action-world'>uncertain future</a>, the University is turning to <a target='_blank' href='https://www.browndailyherald.com/article/2023/10/brown-emphasizes-targeted-applicant-recruitment-following-fall-of-affirmative-action'>targeted applicant recruitment</a> and has <a target='_blank' href='https://www.browndailyherald.com/article/2023/10/u-website-provides-resources-to-navigate-activities-programs-after-scotus-ruling-on-race-conscious-admissions'>provided resources</a> on navigating programs and activities following the ruling. </p>
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-sexual-orientation-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/E6311/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-sexual-orientation-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                                    <p class="subdivision-blurbs">In the fall 2023 poll, about 58% of respondents identified as straight, compared to nearly 63% in spring 2023. About 16% of respondents identified as bisexual, 6.4% as gay, 6.4% as queer, 5.3% as questioning or unsure, 2.9% as lesbian, 2.2% as asexual and 1.6% as pansexual.</p>
+                                
+                                    <p class="subdivision-blurbs">Because the poll allowed respondents to select multiple sexual orientations, these numbers add up to more than 100%.</p>
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-first-generation-status-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/NlTNa/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-first-generation-status-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                                    <p class="subdivision-blurbs">Approximately 14% of respondents identified as first-generation college students, similar to the 15% of students from the classes of <a target='_blank' href='https://www.brown.edu/news/2023-09-01/2027-numbers'>2027</a> and <a target='_blank' href='https://www.brown.edu/news/2022-09-02/2026-numbers'>2026</a>, but a slight decrease from the 17% and 18% of students admitted to the class of <a target='_blank' href='https://www.brown.edu/news/2021-04-06/admits'>2025</a> and <a target='_blank' href='https://www.brown.edu/news/2020-03-26/admitted'>2024</a>, respectively.</p>
+                                
+                            </div>
+                        
+                    
+                </div>
+            </div>
+        </div>
+        <footer><p>Copyright © 2023 The Brown Daily Herald, Inc.</p></footer>
+    </section>
+</div>
+<script>
+    const buttons = document.querySelectorAll('.question-categories button');
+    let subButtons = document.querySelectorAll('.question-subdivisions button');
+    const textSections = document.querySelectorAll('.question-text div');
+    const subSections = document.querySelectorAll('.question-subdivisions div');
+    const graphics = document.querySelectorAll('.graphics div')
+    let selectedButton = buttons[0].id;
+    let selectedSubButton = subButtons[0].id;
+    window.onload = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const questionParam = urlParams.get('question');
+        const breakdownParam = urlParams.get('breakdown');
+        if (questionParam && breakdownParam) {
+            selectedButton = questionParam;
+            selectedSubButton = breakdownParam;
+        } else if (questionParam) {
+            selectedButton = questionParam;
+        } else {
+            buttons[0].classList.add('selected');
+            subButtons[0].classList.add('selected');
+        }
+        for (const button of buttons) {
+            if (button.id === selectedButton) {
+                button.classList.add('selected');
+            }
+        }
+        for (const subButton of subButtons) {
+            if (subButton.id === selectedSubButton) {
+                subButton.classList.add('selected');
+            }
+        }
+        for (const textSection of textSections) {
+            if (textSection.classList.contains(`question-${selectedButton}-text`)) {
+                textSection.style.display = 'block';
+            }
+        }
+        for (const subSection of subSections) {
+            if (subSection.classList.contains(`question-${selectedButton}-subdivisions`)) {
+                subSection.style.display = 'flex';
+            }
+        }
+        for (const graphic of graphics) {
+            if (graphic.classList.contains(`image-${selectedButton}-${selectedSubButton}`)) {
+                graphic.style.display = 'block';
+            }
+            if (graphic.classList.contains(`blurb-${selectedButton}-${selectedSubButton}`)) {
+                graphic.style.display = 'block';
+            }
+        }
+        addButtonsListener();
+        addSubButtonsListener();
+    };
+    addButtonsListener = () => {
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                handleButtonClick(button)
+            });
+        });
+    }
+    addSubButtonsListener = () => {
+            subButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    handleSubButtonClick(button);
+                });
+            });
+    }
+    handleButtonClick = (button) => {
+        selectedButton = button.id;
+        buttons.forEach((b) => b.classList.remove('selected'));
+        textSections.forEach((section) => section.style.display = 'none');
+        subSections.forEach((section) => section.style.display = 'none');
+        button.classList.add('selected');
+        const target = button.dataset.target;
+        document.querySelector(`.question-${target}-text`).style.display = 'block';
+        document.querySelector(`.question-${target}-subdivisions`).style.display = 'flex';
+        subButtons = document.querySelectorAll(`.question-${target}-subdivisions button`);
+        subButtons.forEach((b) => b.classList.remove('selected'));
+        subButtons[0].classList.add('selected');
+        selectedSubButton = subButtons[0].id;
+        updateImage()
+    }
+    handleSubButtonClick = (button) => {
+        selectedSubButton = button.id;
+        subButtons.forEach((b) => b.classList.remove('selected'));
+        button.classList.add('selected');
+        updateImage()
+    }
+    updateImage = () => {
+        graphics.forEach((div) => {
+            div.style.display = 'none'
+        });
+        selectedImage = document.querySelector(`.image-${selectedButton}-${selectedSubButton}`)
+        selectedImage.style.display = 'block';
+
+        selectedEmbed = selectedImage.getElementsByClassName("datawrapper-script-embed")[0]
+        selectedEmbed.style.display = "block"
+        document.querySelector(`.blurb-${selectedButton}-${selectedSubButton}`).style.display = 'block';
+    }
+</script>
+
+
+  </body>
+</html>

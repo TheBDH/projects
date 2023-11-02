@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDH Spring 2023 Poll</title>
+    <link rel="stylesheet" href="https://use.typekit.net/mxr8glf.css">
+    <link rel="icon" href="../assets/icon-rel.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body>
+    <div class="tool">
+    <nav id="navbar">
+        <div id="navbar-logo">
+            <a href="https://www.browndailyherald.com">
+                <img id="navbar-logo-img" src="https://d35jcxe8no8yhr.cloudfront.net/25f4d2392ed7cc544e1f8023bbc4d1f5/dist/img/logo-black.png"/>
+            </a>
+        </div>
+        <ul id="nav-options"><a
+                    
+                        class="nav-option"
+                    
+                    href="../lifestyle"
+                >
+                    <li>Lifestyle</li>
+                </a><a
+                    
+                        class="nav-option"
+                    
+                    href="../approval-ratings"
+                >
+                    <li>Approval Ratings</li>
+                </a><a
+                    
+                        class="nav-option active"
+                    
+                    href="../academics"
+                >
+                    <li>Academics</li>
+                </a><a
+                    
+                        class="nav-option"
+                    
+                    href="../demographics"
+                >
+                    <li>Demographics</li>
+                </a></ul>
+        <div id="nav-links">
+            <a id="about-link" href="../about">About</a>
+            <a id="story-link" href="https://www.browndailyherald.com/article/2023/11/the-heralds-fall-2023-poll">
+                <div>Read the story</div>
+                <img src="../assets/white-arrow.svg" />
+            </a>
+        </div>
+    </nav>
+    <section class="section-wrapper"> 
+        <div class="question-categories-wrapper">
+            <div class="question-categories"><button data-target="area-of-study" id='area-of-study'>Area of Study</button><button data-target="chatgpt-use" id='chatgpt-use'>ChatGPT Use</button></div>
+        </div>
+        <div class="main-content-wrapper">
+            <div class="question-text"><div class="question-area-of-study-text" style="display: none;">
+                        <h1></h1>
+                    </div><div class="question-chatgpt-use-text" style="display: none;">
+                        <h1></h1>
+                    </div></div>
+            <div class="subdiv-graph-wrapper">
+                <div class="question-subdivisions"><div class="question-area-of-study-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            <button id="first-generation-status">First-Generation</button>
+                            <button id="class-year">Class Year</button>
+                            
+                        </div>
+                    <div class="question-chatgpt-use-subdivisions" style="display: none;">
+                        <h2 id="breakdown-header">Broken down by</h2><button id="total">Total</button>
+                            <button id="area-of-study">Area of Study</button>
+                            <button id="class-year">Class Year</button>
+                            <button id="varsity-athlete-status">Varsity Athlete</button>
+                            <button id="legacy-status">Legacy</button>
+                            
+                        </div>
+                    
+                </div>
+
+                <div class="graphics">
+                    
+                        
+                            <div class="image-area-of-study-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/R7QSL/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-area-of-study-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                                    <p class="subdivision-blurbs">The Herald’s poll found that 33.5% of respondents study physical sciences, followed by social sciences, humanities and arts, and life sciences, the same order as the results of The Herald’s <a target='_blank' href='https://projects.browndailyherald.com/2022/10/23/poll/demographics#concentration’ target='_blank'> fall 2022 poll</a>. Approximately 3% of respondents were unsure of their concentration. Because the poll allowed respondents to select multiple concentrations, these numbers add up to more than 100%.</p>
+                                
+                            </div>
+                        
+                            <div class="image-area-of-study-first-generation-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/v5jI8/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-area-of-study-first-generation-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-area-of-study-class-year" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/mDckY/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-area-of-study-class-year" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                        
+                            <div class="image-chatgpt-use-total" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/xNXdv/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-chatgpt-use-total" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-chatgpt-use-area-of-study" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/j1v8S/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-chatgpt-use-area-of-study" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-chatgpt-use-class-year" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/1RuzG/2/embed.js"></script>
+                            </div>
+                            <div class="blurb-chatgpt-use-class-year" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-chatgpt-use-varsity-athlete-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/Kz6zl/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-chatgpt-use-varsity-athlete-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                            <div class="image-chatgpt-use-legacy-status" style="display: none;">
+                                <script src="https://datawrapper.dwcdn.net/I2B4q/1/embed.js"></script>
+                            </div>
+                            <div class="blurb-chatgpt-use-legacy-status" style="display: none;">
+                                <!-- this assumes the blurb is written as a list of paragraphs -->
+                                
+                            </div>
+                        
+                    
+                </div>
+            </div>
+        </div>
+        <footer><p>Copyright © 2023 The Brown Daily Herald, Inc.</p></footer>
+    </section>
+</div>
+<script>
+    const buttons = document.querySelectorAll('.question-categories button');
+    let subButtons = document.querySelectorAll('.question-subdivisions button');
+    const textSections = document.querySelectorAll('.question-text div');
+    const subSections = document.querySelectorAll('.question-subdivisions div');
+    const graphics = document.querySelectorAll('.graphics div')
+    let selectedButton = buttons[0].id;
+    let selectedSubButton = subButtons[0].id;
+    window.onload = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const questionParam = urlParams.get('question');
+        const breakdownParam = urlParams.get('breakdown');
+        if (questionParam && breakdownParam) {
+            selectedButton = questionParam;
+            selectedSubButton = breakdownParam;
+        } else if (questionParam) {
+            selectedButton = questionParam;
+        } else {
+            buttons[0].classList.add('selected');
+            subButtons[0].classList.add('selected');
+        }
+        for (const button of buttons) {
+            if (button.id === selectedButton) {
+                button.classList.add('selected');
+            }
+        }
+        for (const subButton of subButtons) {
+            if (subButton.id === selectedSubButton) {
+                subButton.classList.add('selected');
+            }
+        }
+        for (const textSection of textSections) {
+            if (textSection.classList.contains(`question-${selectedButton}-text`)) {
+                textSection.style.display = 'block';
+            }
+        }
+        for (const subSection of subSections) {
+            if (subSection.classList.contains(`question-${selectedButton}-subdivisions`)) {
+                subSection.style.display = 'flex';
+            }
+        }
+        for (const graphic of graphics) {
+            if (graphic.classList.contains(`image-${selectedButton}-${selectedSubButton}`)) {
+                graphic.style.display = 'block';
+            }
+            if (graphic.classList.contains(`blurb-${selectedButton}-${selectedSubButton}`)) {
+                graphic.style.display = 'block';
+            }
+        }
+        addButtonsListener();
+        addSubButtonsListener();
+    };
+    addButtonsListener = () => {
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                handleButtonClick(button)
+            });
+        });
+    }
+    addSubButtonsListener = () => {
+            subButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    handleSubButtonClick(button);
+                });
+            });
+    }
+    handleButtonClick = (button) => {
+        selectedButton = button.id;
+        buttons.forEach((b) => b.classList.remove('selected'));
+        textSections.forEach((section) => section.style.display = 'none');
+        subSections.forEach((section) => section.style.display = 'none');
+        button.classList.add('selected');
+        const target = button.dataset.target;
+        document.querySelector(`.question-${target}-text`).style.display = 'block';
+        document.querySelector(`.question-${target}-subdivisions`).style.display = 'flex';
+        subButtons = document.querySelectorAll(`.question-${target}-subdivisions button`);
+        subButtons.forEach((b) => b.classList.remove('selected'));
+        subButtons[0].classList.add('selected');
+        selectedSubButton = subButtons[0].id;
+        updateImage()
+    }
+    handleSubButtonClick = (button) => {
+        selectedSubButton = button.id;
+        subButtons.forEach((b) => b.classList.remove('selected'));
+        button.classList.add('selected');
+        updateImage()
+    }
+    updateImage = () => {
+        graphics.forEach((div) => {
+            div.style.display = 'none'
+        });
+        selectedImage = document.querySelector(`.image-${selectedButton}-${selectedSubButton}`)
+        selectedImage.style.display = 'block';
+
+        selectedEmbed = selectedImage.getElementsByClassName("datawrapper-script-embed")[0]
+        selectedEmbed.style.display = "block"
+        document.querySelector(`.blurb-${selectedButton}-${selectedSubButton}`).style.display = 'block';
+    }
+</script>
+
+
+  </body>
+</html>
