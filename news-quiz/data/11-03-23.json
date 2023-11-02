@@ -1,0 +1,142 @@
+{
+  "date": "October 29 - November 3, 2023",
+  "intro": "Test your knowledge of this week's Herald news!",
+  "img-folder": "11-03-23",
+  "questions": [
+    {
+      "question": "Which Greek Life organization celebrated its 10-year anniversary last weekend?",
+      "type": "MC",
+      "choices": [
+        "Alpha Chi Omega (AXO)",
+        "Beta Omega Chi (BOX)",
+        "Zeta Delta Xi (Zete)",
+        "Delta Gamma (DG)"
+      ],
+      "answer": 1,
+      "image": "",
+      "alt": null,
+      "explanation": "BOX — a Brown-based Black fraternity founded in September 2013 — welcomed affiliated alumni and current undergraduates to commemorate  its 10-year anniversary on campus during Black Alumni Weekend. BOX is an anti-hazing and philanthropic organization and serves 18 undergraduate members.",
+      "link": "https://www.browndailyherald.com/article/2023/11/beta-omega-chi-fraternity-celebrates-10-years-during-black-alumni-reunion-weekend"
+    },
+    {
+      "question": "What was the final score of the Brown-Penn Football Game last Friday?",
+      "type": "MC",
+      "choices": [
+        "30-26 (Bears Win)",
+        "20-10 (Quakers Win)",
+        "34-31 (Bears Win)",
+        "21-14 (Quakers Win)"
+      ],
+      "answer": 0,
+      "image": "q2.jpg",
+      "alt": "",
+      "explanation": "Last Friday, the Bears (4-3, 2-2 Ivy) beat Penn (5-2, 2-2 Ivy) 30-26 after a late-game interception by defensive back Isaiah Reed ’25. Last year, the Bears also won against the then-undefeated Quakers 34-31. ",
+      "link": "https://www.browndailyherald.com/article/2023/10/playing-fast-and-playing-fun-football-upsets-penn-30-26"
+    },
+    {
+      "question": "What percent of students said they have been rejected from a club or student group at Brown?",
+      "type": "Slider",
+      "choices": [],
+      "answer": 48,
+      "image": null,
+      "alt": null,
+      "explanation": "In The Herald’s fall 2023 poll, 48% of respondents said they’ve been rejected from a club or student group. The poll also asked students about support for student government and politicians, relationship status and more.",
+      "link": "https://www.browndailyherald.com"
+    },
+    {
+      "question": "What undergraduate was recently elected as UCS student activities chair?",
+      "type": "MC",
+      "choices": [
+        "Mina Sarmas ’24",
+        "Sarah Frank ’25",
+        " Eli Sporn ’24",
+        "Ashley Kim ’24"
+      ],
+      "answer": 3,
+      "image": null,
+      "alt": null,
+      "explanation": "Kim was elected near-unanimously as UCS student activities chair after previously serving on the committee. Sarmas currently serves as UCS president; Frank is vice president. Sporn is Student Government Association elections chair.",
+      "link": "https://www.browndailyherald.com/article/2023/11/ashley-kim-24-elected-as-ucs-student-activities-chair"
+    },
+    {
+      "question": "This weekend, the University dedicated the newly-renovated Churchill House. What department does it house?",
+      "type": "MC",
+      "choices": [
+        "Classics",
+        "Africana Studies",
+        "Earth, Environmental and Planetary Sciences",
+        "English"
+      ],
+      "answer": 1,
+      "image": "q5.jpeg",
+      "alt": null,
+      "explanation": "The University dedicated Churchill House, home to the Department of Africana Studies and Rites and Reason Theatre, during Black Alumni Reunion weekend. The building underwent a $20 million renovation that began in July 2022.",
+      "link": "https://www.browndailyherald.com/article/2023/10/brown-dedicates-new-churchill-house-at-black-alumni-reunion"
+    },
+    {
+      "question": "What student group hosted their annual haunted house in Sayles Hall this weekend?",
+      "type": "MC",
+      "choices": [
+        " The Brown Daily Herald",
+        "The College Hill Independent",
+        "Japanese Cultural Association",
+        "Birbs@Brown"
+      ],
+      "answer": 2,
+      "image": null,
+      "alt": null,
+      "explanation": "This weekend, the Japanese Cultural Association transformed Sayles Hall into a haunted train station, as a part of their annual haunted house. The haunted house included a short movie and many decorated rooms filled with costumed JCA members.",
+      "link": "https://www.browndailyherald.com/article/2023/10/nightmare-on-the-main-green-japanese-cultural-association-hosts-annual-haunted-house"
+    },
+    {
+      "question": "A special Rhode Island legislative commission held its second meeting on Oct. 24 to help address which species' population size?",
+      "type": "MC",
+      "choices": ["Quahogs", "Shrimp", "Mussels", "Geoducks"],
+      "answer": 0,
+      "image": "q7.jpg",
+      "alt": null,
+      "explanation": "A new Rhode Island legislative committee has been formed to study the recent decrease in Narragansett Bay’s harvested quahogs, which is a clam species native to Rhode Island. The committee consists of 13 members from a variety of backgrounds.",
+      "link": "https://www.browndailyherald.com/article/2023/11/new-r-i-special-legislative-commission-hopes-to-address-declining-quahog-population"
+    },
+    {
+      "question": "What two teams did women’s hockey beat this weekend at Meehan Stadium?",
+      "type": "MC",
+      "choices": [
+        "Yale; Penn",
+        "Cornell; Yale",
+        "Harvard; Dartmouth",
+        "Dartmouth; Providence College"
+      ],
+      "answer": 2,
+      "image": null,
+      "alt": null,
+      "explanation": "This weekend, women’s hockey (3-3-0, 2-2-0 ECAC) bested Harvard (0-5-0, 0-5-0 ECAC) 2-1 and Dartmouth  (2-3-1, 1-3-1 ECAC) 7-1. The two wins help bring the Bears’ record to .500, giving them additional momentum as the season ramps up.",
+      "link": "https://www.browndailyherald.com/article/2023/11/womens-hockey-sweeps-weekend-match-ups-at-meehan-auditorium"
+    },
+    {
+      "question": "What was the title of the first volume of the Brown Arts Institute’s MOVEMENTS arts journal?",
+      "type": "MC",
+      "choices": ["Dissonance", "Discord", "Dissidence", "Disharmony"],
+      "answer": 0,
+      "image": null,
+      "alt": null,
+      "explanation": "The inaugural volume of MOVEMENTS, entitled “Dissonance” launched online Friday. “Dissonance” seeks to activate “radical theoretical flows that reconnect us with each other, nature and the world” — and serves as a “poetic remixing of freedom movements and their live manifestations in community, experimentation and creativity,” according to the MOVEMENTS website.",
+      "link": "https://www.browndailyherald.com/article/2023/10/movements-journal-seeks-to-create-culture-of-collaboration-bridge-theory-art"
+    },
+    {
+      "question": "What School of Public Health center hosted a screening of the new documentary “Shot in the Arm” on Monday?",
+      "type": "MC",
+      "choices": [
+        "Center for Alcohol and Addiction Studies",
+        "Center for Advancing Health Policy through Research",
+        "Center for Epidemiological Research",
+        "Pandemic Center"
+      ],
+      "answer": 3,
+      "image": null,
+      "alt": null,
+      "explanation": "The Pandemic Center hosted a screening of “Shot in the Arm” as a part of a year-long initiative to explore “storytelling as a public health intervention,” which will include workshops, campus conversations and film screenings.",
+      "link": "https://www.browndailyherald.com/article/2023/10/documentary-on-vaccine-hesitancy-to-kick-off-new-public-health-initiative"
+    }
+  ]
+}
