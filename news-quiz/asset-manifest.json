@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/news-quiz/static/css/main.d07f4dea.css",
-    "main.js": "/news-quiz/static/js/main.b2587fa2.js",
+    "main.js": "/news-quiz/static/js/main.cb0e90b7.js",
     "static/js/787.b0ae43e4.chunk.js": "/news-quiz/static/js/787.b0ae43e4.chunk.js",
     "index.html": "/news-quiz/index.html",
     "main.d07f4dea.css.map": "/news-quiz/static/css/main.d07f4dea.css.map",
-    "main.b2587fa2.js.map": "/news-quiz/static/js/main.b2587fa2.js.map",
+    "main.cb0e90b7.js.map": "/news-quiz/static/js/main.cb0e90b7.js.map",
     "787.b0ae43e4.chunk.js.map": "/news-quiz/static/js/787.b0ae43e4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d07f4dea.css",
-    "static/js/main.b2587fa2.js"
+    "static/js/main.cb0e90b7.js"
   ]
 }
