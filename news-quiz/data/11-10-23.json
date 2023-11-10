@@ -6,13 +6,13 @@
       "question": "Who recently won the special election for Rhode Island’s 1st U.S. Congressional district?",
       "type": "MC",
       "choices": [
-        " Gerry Leonard Jr.",
+        "Gerry Leonard Jr.",
         "David Cicilline",
         "Gabe Amo",
         "Jacob Bissaillon"
       ],
       "answer": 2,
-      "image": "q1.png",
+      "image": "",
       "alt": null,
       "explanation": "Democrat Gabe Amo won the special election for Rhode Island’s 1st Congressional District with 64.8% of the votes, filling the vacancy left by former Rep. David Cicilline ’83 following his resignation in May. His opponent, Republican Gerry Leonard Jr,. lost with 35.2%; Democrat Jacob Bissaillon won the race for a Rhode Island state Senate seat.",
       "link": "https://www.browndailyherald.com/article/2023/11/democrat-gabe-amo-wins-special-election-for-house-seat"
