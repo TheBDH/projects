@@ -18,7 +18,7 @@
       "link": "https://www.browndailyherald.com/article/2023/11/democrat-gabe-amo-wins-special-election-for-house-seat"
     },
     {
-      "question": "On Oct. 8, 20 students were arrested during a sit-in of University Hall calling for Brown to divest from Israel. In 1992, 253 students were arrested for a University Hall sit-in — what was their cause?",
+      "question": "On Nov. 8, 20 students were arrested during a sit-in of University Hall calling for Brown to divest from Israel. In 1992, 253 students were arrested for a University Hall sit-in — what was their cause?",
       "type": "MC",
       "choices": [
         "The establishment of the Third World Center (now the Brown Center for Students of Color)",
@@ -36,15 +36,15 @@
       "question": "Which department recently announced it was revising its concentration requirements?",
       "type": "MC",
       "choices": [
-        "The Department of Computer Science",
-        "The Department of Chemistry",
-        "The Department of Applied Mathematics",
-        "The Department of Neuroscience"
+        "Computer Science",
+        "Chemistry",
+        "Applied Mathematics",
+        "Neuroscience"
       ],
       "answer": 0,
       "image": "",
       "alt": "",
-      "explanation": "On Oct. 23, the Department of Computer Science announced it would reviseits concentration requirements to better prepare students for 1000-level courses. Currently enrolled students planning to concentrate in CS can choose to either continue following the existing requirements or switch to the new ones.",
+      "explanation": "On Oct. 23, the Department of Computer Science announced it would revise its concentration requirements to better prepare students for 1000-level courses. Currently enrolled students planning to concentrate in CS can choose to either continue following the existing requirements or switch to the new ones.",
       "link": "https://www.browndailyherald.com/article/2023/11/cs-department-introduces-revised-concentration-requirements"
     },
     {
@@ -66,7 +66,7 @@
       "question": "A Brown professor recently proved a conjecture about which non-orientable shape?",
       "type": "MC",
       "choices": [
-        " Möbius snail",
+        "Möbius snail",
         "Klein bottle",
         "Möbius strip",
         "Roman surface"
@@ -80,16 +80,11 @@
     {
       "question": "Which Providence mural recently celebrated its five-year anniversary?",
       "type": "MC",
-      "choices": [
-        "“Misty Blue” Mural",
-        "“She Never Came” Mural",
-        "“Still Here” Mural",
-        "“VOTE” Mural"
-      ],
+      "choices": ["“Misty Blue”", "“She Never Came”", "“Still Here”", "“VOTE”"],
       "answer": 2,
       "image": "",
       "alt": "",
-      "explanation": "On Nov. 3, the Rhode Island School of Design hosted a celebration of the five-year anniversary of the “Still Here” mural in downtown Providence. The mural, which was painted by Baltimore-based artist Gaia, depicts Narragansett woman Lynsea Montanari and has been hailed for its modern and genuine portrayal of the Narragansett Indian Tribe.",
+      "explanation": "On Nov. 3, the Rhode Island School of Design hosted a celebration of the five-year anniversary of the “Still Here” mural in downtown Providence. The mural, which was painted by Baltimore-based artist Gaia, depicts Lynsea Montanari, a Narragansett woman, and has been hailed for its modern and genuine portrayal of the Narragansett Indian Tribe.",
       "link": "https://www.browndailyherald.com/article/2023/11/providence-celebrates-five-year-anniversary-of-providences-still-here-mural"
     },
     {
@@ -99,7 +94,7 @@
       "answer": 0,
       "image": "",
       "alt": "",
-      "explanation": "Brown men’s soccer team (5-4-7, 2-0-5 Ivy League) clinched a postseason berth after a 0-0 draw against Yale (8-5-3, 3-1-3). The Bears’ tie earned them a fourth place finish in the Ivy League standings. They will face off against Penn in the semi-final round of the Ivy League tournament on Nov. 11.",
+      "explanation": "Brown men’s soccer team (5-4-7, 2-0-5 Ivy League) clinched a postseason berth after a 0-0 draw against Yale (8-5-3, 3-1-3). The Bears’ tie earned them a fourth place finish in the Ivy League standings. After defeating Penn on Friday, they’ll face Yale on Sunday.",
       "link": "https://www.browndailyherald.com/article/2023/11/mens-soccer-ties-yale-clinches-ivy-league-tournament-spot"
     },
     {
@@ -114,7 +109,7 @@
       "answer": 0,
       "image": "",
       "alt": "",
-      "explanation": "The Bears lost to Columbia 2-1 on Friday night, marking their first loss to an Ivy opponent since 2018. With the defeat, Bruno failed to earn the conference’s automatic bid to the NCAA Tournament, but received a slot as a three seed.",
+      "explanation": "The Bears lost to Columbia 2-1 on Friday night, marking their first loss to an Ivy opponent since 2018. With the defeat, Bruno failed to earn the conference’s automatic bid to the NCAA Tournament, but received a slot as a three seed. They won their opening round game and will face Mississippi State on Friday in the second round.",
       "link": "https://www.browndailyherald.com/article/2023/11/womens-soccer-stumbles-in-ivy-tournament-with-loss-to-columbia"
     },
     {
