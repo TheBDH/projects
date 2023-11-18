@@ -1,0 +1,111 @@
+{
+  "date": "November 12 - November 17, 2023",
+  "intro": "Test your knowledge of this week's Herald news!",
+  "questions": [
+    {
+      "question": "What organisms did Professor Walter H. Snell study?",
+      "type": "MC",
+      "choices": ["Snails", "Fungi", "Bees", "Orchids"],
+      "answer": 1,
+      "image": "",
+      "alt": null,
+      "explanation": "Walter H. Snell was an integral individual in the field of mycology — the scientific study of fungi.",
+      "link": "https://www.browndailyherald.com/article/2023/11/1920s-botany-professors-mycology-samples-return-to-brown"
+    },
+    {
+      "question": "Who will the women’s soccer play in the next round of the NCAA tournament?",
+      "type": "MC",
+      "choices": [
+        "Stanford",
+        "Quinnipiac",
+        "Mississippi State",
+        "Providence College"
+      ],
+      "answer": 2,
+      "image": "",
+      "alt": null,
+      "explanation": "The women’s soccer team will face Mississippi State Nov. 17 at 6:30 PM following their 3-0 victory over Quinnipiac.",
+      "link": "https://www.browndailyherald.com/article/2023/11/womens-soccer-coasts-past-quinnipiac-in-first-round-of-ncaa-tournament"
+    },
+    {
+      "question": "What similarity did Brown researchers find between Venus and Earth?",
+      "type": "MC",
+      "choices": [
+        "Plate tectonics",
+        "Liquid water",
+        "Four seasons",
+        "Living organisms"
+      ],
+      "answer": 0,
+      "image": "",
+      "alt": null,
+      "explanation": "In a recent study, Brown University researchers used atmospheric modeling to show that Venus once had plate tectonics — not entirely unlike present-day Earth.",
+      "link": "https://www.browndailyherald.com/article/2023/11/study-suggests-active-plate-tectonics-existed-on-venus-billions-of-years-ago-not-unlike-earth"
+    },
+    {
+      "question": "Which Ivy opponent did the football team beat on Saturday?",
+      "type": "MC",
+      "choices": ["Yale", "Harvard", "Penn", "Columbia"],
+      "answer": 3,
+      "image": "",
+      "alt": null,
+      "explanation": "Coming off one of their worst losses of the season last week against Yale, the football team responded with a hard-fought 21-14 victory over Columbia.",
+      "link": "https://www.browndailyherald.com/article/2023/11/a-fifteen-round-boxing-match-brown-football-comes-up-clutch-to-beat-columbia-21-14-in-overtime"
+    },
+    {
+      "question": "Who does ResLife’s BLOC program seek to assist?",
+      "type": "MC",
+      "choices": [
+        "Students returning from study abroad",
+        "Students wanting to live off campus",
+        "Graduate students",
+        "Transfer students looking for roommates"
+      ],
+      "answer": 1,
+      "image": "",
+      "alt": null,
+      "explanation": "University students hoping to live off campus can now look to Brunonians Living Off Campus, a three-part educational program created by the Office of Residential Life in partnership with the Undergraduate Council of Students that aims to help undergraduates navigate living outside of dorms.",
+      "link": "https://www.browndailyherald.com/article/2023/11/reslife-launches-off-campus-informational-program-for-undergraduates"
+    },
+    {
+      "question": "The titular character of Sofia Coppola’s “Priscilla” was married to which music legend?",
+      "type": "MC",
+      "choices": [
+        "John Lennon",
+        "Jimi Hendrix",
+        "Elvis Presley",
+        "Mick Jagger"
+      ],
+      "answer": 2,
+      "image": "",
+      "alt": null,
+      "explanation": "The film, produced by Priscilla Presley and based on her 1985 memoir “Elvis and Me” sheds light on Elvis’s stardom from the perspective of his wife, exploring the significant age gap and power imbalance that defined their relationship from its inception in 1959 to its end in 1973.",
+      "link": "https://www.browndailyherald.com/article/2023/11/sofia-coppolas-priscilla-offers-fresh-perspective-on-relationship-between-priscilla-elvis"
+    },
+    {
+      "question": "Which field of study is the most popular at Brown, according to Herald polling data?",
+      "type": "MC",
+      "choices": [
+        "Humanities",
+        "Social sciences",
+        "Performing arts",
+        "Physical sciences"
+      ],
+      "answer": 3,
+      "image": "",
+      "alt": null,
+      "explanation": "The Herald’s fall 2023 poll, which collected over 1,000 responses from undergraduate students, found that approximately one-third of current students are concentrating in the physical sciences, more than any other field of study.",
+      "link": "https://www.browndailyherald.com/article/2023/11/physical-sciences-are-most-popular-field-of-study-at-brown-according-to-herald-polling-data"
+    },
+    {
+      "question": "Rhode Island School of Design students are calling for the school to cut ties with which company?",
+      "type": "MC",
+      "choices": ["Textron", "ExxonMobil", "Boeing", "Lockheed Martin"],
+      "answer": 0,
+      "image": "",
+      "alt": null,
+      "explanation": "Although RISD is not an investor in Textron —  a defense manufacturer whose aircraft are included in the Israeli Air Force arsenal — it has received financial support from the company to support scholarships, studios and exhibitions.",
+      "link": "https://www.browndailyherald.com/article/2023/11/strong-ties-the-history-of-textrons-financial-relationship-with-risd"
+    }
+  ]
+}
