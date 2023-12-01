@@ -1,0 +1,136 @@
+{
+  "date": "November 26 - December 1, 2023",
+  "intro": "Test your knowledge of this week's Herald news!",
+  "questions": [
+    {
+      "question": "What percent of the University’s endowment comprises directly owned, publicly traded securities?",
+      "type": "Slider",
+      "choices": [],
+      "answer": 4,
+      "image": "",
+      "alt": null,
+      "explanation": "4% of the University's endowment are directly owned, publicly traded securities. The seven securities included in this category are asset managers, exchange-traded funds and psychedelic-assisted therapy companies. The remainder of the non-cash portion of the endowment is invested in external management services “across multiple asset classes.” Amid calls for divestment from Israel, University Investment Office officials stressed at a UCS town hall Thursday that Brown has no direct investments in defense manufacturers and that the endowment’s only potential ties to the industry are through these broader funds and indices.",
+      "link": "https://www.browndailyherald.com/article/2023/12/clynes-ucs-town-hall"
+    },
+    {
+      "question": "Which team saw a win following a 17-point deficit this weekend?",
+      "type": "MC",
+      "choices": [
+        "Men’s basketball",
+        "Women’s basketball",
+        "Men’s water polo",
+        "Women’s water polo"
+      ],
+      "answer": 1,
+      "image": "",
+      "alt": null,
+      "explanation": "Women’s basketball defeated Monmouth in a 59-58 victory on Sunday, with Kyla Jones ‘24 named Ivy League Player of the Week after tying career-high scoring record.",
+      "link": "https://www.browndailyherald.com/article/2023/11/womens-basketball-surges-to-victory-against-monmouth"
+    },
+    {
+      "question": "Which former NAACP president was announced to speak at the 2024 Martin Luther King Jr. Lecture?",
+      "type": "MC",
+      "choices": [
+        "Sherillyn Ifill",
+        "Kivie Kaplan",
+        "Benjamin Hooks",
+        "Roy Wilkins"
+      ],
+      "answer": 0,
+      "image": "",
+      "alt": null,
+      "explanation": "Ifill — a civil rights lawyer one of Time Magazine’s 100 Most Influential People in 2021 — will speak to community members in February for the University’s annual MLK Jr. Lecture.",
+      "link": "https://www.browndailyherald.com/article/2023/11/former-naacp-president-to-speak-at-2024-mlk-jr-lecture"
+    },
+    {
+      "question": "Which artist released their album “Heaven knows” this November?",
+      "type": "MC",
+      "choices": ["Ice Spice", "MARINA", "Lil Mabu", "PinkPantheress"],
+      "answer": 3,
+      "image": "",
+      "alt": null,
+      "explanation": "On Nov. 10, PinkPanthress released her debut album — which included a feature from rapper Central Cee and a variety of emotional tracks.",
+      "link": "https://www.browndailyherald.com/article/2023/11/pinkpantheress-establishes-musical-voice-with-debut-album-heaven-knows"
+    },
+    {
+      "question": "Which campus-adjacent site is currently under construction?",
+      "type": "MC",
+      "choices": [
+        "Brassil Memorial Park",
+        "Seven Stars Bakery",
+        "Nostalgia Antiques Store",
+        "East Bay Bike Path"
+      ],
+      "answer": 0,
+      "image": "",
+      "alt": null,
+      "explanation": "The park — located on the corner of Brook St. and Arnold St. — is set to complete its construction in spring to include new playgrounds, seating areas and fencing.",
+      "link": "https://www.browndailyherald.com/article/2023/11/city-to-revamp-brassil-memorial-park"
+    },
+    {
+      "question": "Which Canadian actor-comedian’s newest project features himself alongside Emma Stone?",
+      "type": "MC",
+      "choices": [
+        "Michael Cera",
+        "Will Arnett",
+        "Nathan Fielder",
+        "Martin Short"
+      ],
+      "answer": 1,
+      "image": "",
+      "alt": null,
+      "explanation": "Fielder’s newest series, “The Cure” is a psychological thriller, which places its emphasis less on comedy and more on an unsettling narrative.",
+      "link": "https://www.browndailyherald.com/article/2023/11/nathan-fielder-goes-deeper-down-the-rabbit-hole-in-the-curse"
+    },
+    {
+      "question": "What percentage of Brown students pursue some form of graduate school or professional study within 10 years post-grad?",
+      "type": "Slider",
+      "choices": [],
+      "answer": 80,
+      "image": "",
+      "alt": null,
+      "explanation": "80% of of Brown students pursue some form of graduate school or professional study within 10 years post-grad. Across campus, undergraduates shared differing views on their plans for attending graduate school following their time at Brown.",
+      "link": "https://www.browndailyherald.com/article/2023/11/beyond-the-van-wickle-gates-students-share-views-on-grad-school"
+    },
+    {
+      "question": "This fiscal year, the University saw the largest net assets for the period between 2019 and 2023 excluding which year?",
+      "type": "MC",
+      "choices": ["2019", "2020", "2021", "2022"],
+      "answer": 1,
+      "image": "",
+      "alt": null,
+      "explanation": "The University saw a 2.2% increase in its net assets, which are valued at $7.7 billion, during the 2023 fiscal year, according to the University’s annual financial report",
+      "link": "https://www.browndailyherald.com/article/2023/11/brown-sees-22-increase-in-net-assets-27-return-on-endowment-in-2023-fiscal-year"
+    },
+    {
+      "question": "What is the name of the group that organized the second annual bouldering competition the Rhode Island Ripper?",
+      "type": "MC",
+      "choices": [
+        "Ladies Climbing Coalition",
+        "Rock Spot Climbing",
+        "Brown Climbing Club",
+        "Central Rock Gym"
+      ],
+      "answer": 0,
+      "image": "",
+      "alt": null,
+      "explanation": "On Nov. 21, the Ladies Climbing Coalition hosted Rhode Island Ripper at Lincoln Woods, inviting rock climbing enthusiasts from across the Providence area.",
+      "link": "https://www.browndailyherald.com/article/2023/11/bouldering-competition-rhode-island-ripper-returns-for-second-year"
+    },
+    {
+      "question": "The University’s concurrent degree program allows students to do which of the following?",
+      "type": "MC",
+      "choices": [
+        "Obtain a degree from both Brown and RISD",
+        "Obtain a Bachelor of Arts and Bachelor of Science degree in five years",
+        "Study part-time at another university",
+        "Combine their last year(s) of undergraduate study with graduate study"
+      ],
+      "answer": 3,
+      "image": "",
+      "alt": null,
+      "explanation": "Although undergraduates are not technically eligible to take graduate courses, many opt to take these higher-level classes for various reasons.",
+      "link": "https://www.browndailyherald.com/article/2023/11/undergraduate-students-reflect-on-experience-in-graduate-classes"
+    }
+  ]
+}
