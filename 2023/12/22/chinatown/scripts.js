@@ -215,6 +215,7 @@ function nextSection(){
 
     currentDivIndex += 1;
     document.getElementById("nav").src = srcs[currentDivIndex]
+    console.log(currentDivIndex)
     if (currentDivIndex == 8){
         currentDivIndex = 0;
         document.getElementById("nav").src = srcs[currentDivIndex]
@@ -238,7 +239,21 @@ function nextSection(){
         document.getElementById('coverDiv').style.display = 'block'
         document.getElementById('locationTitle').style.display = 'none';
     });
-    } else {
+    } else if (currentDivIndex == 0){
+        map.flyTo({
+            center: [ -71.40326759970678, 41.82617573088007],
+            zoom: 16,
+            duration: 3000
+            });
+
+    sleep(4000).then(() => { 
+        hidePoint(data[currentDivIndex].point)
+        document.getElementById(currentDiv.div).style.display = 'block'
+        document.getElementById('coverDiv').style.display = 'block'
+        document.getElementById('locationTitle').style.display = 'none';
+    });
+    } else 
+    {
         document.getElementById('locationTitle').textContent = currentDiv.location
         document.getElementById('locationTitle').style.display = 'block';
         map.flyTo({
