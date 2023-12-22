@@ -1,0 +1,318 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#map { 
+  position: fixed; /* Changed from absolute to fixed */
+  top: 0; 
+  bottom: 0; 
+  right: 0;
+  left: 0; 
+  width: 100%;
+  z-index: 1; /* Ensures the map stays behind the content */
+}
+
+.cover {
+  display:none;
+  position: fixed; /* Changed from absolute to fixed */
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2; /* Ensures the cover stays behind the content */
+}
+
+
+
+.intro-cover {
+  position: fixed; /* Changed from absolute to fixed */
+  top: 12.5%;
+  left: 12.5%;
+  width: 75%;
+  height: 75%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2; /* Ensures the cover stays behind the content */
+}
+
+.center-text {
+  display: flex;
+  flex-direction: column; /* To align content vertically */
+  justify-content: center;
+  align-items: flex-start; /* Aligns content to the start (left) */
+}
+
+.content-container {
+  position: relative;
+  z-index: 3; /* Ensures the content is above the map and cover */
+  padding: 1rem;
+  color: white;
+  padding: 25vw;
+  padding-top:8rem;
+  padding-bottom:6vh;
+}
+
+.content-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  margin-top: 0;
+  padding-top:0;
+  text-align: left; /* Aligns the title with the paragraph text */
+}
+
+.content-container p {
+  font-weight: normal;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.explore-btn {
+  margin-top:1.75rem;
+  padding: 0.5rem 4rem;
+  font-size: 1.6rem;
+  background-color: transparent;
+  color: #FFD700;
+  border: #FFD700 0.3rem solid;
+  cursor: pointer;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.explore-btn:hover {
+  color: darkgoldenrod;
+  border: darkgoldenrod 0.3rem solid;
+}
+
+.cover-logo{
+  position:absolute;
+  filter: invert();
+  width:20rem;
+  left:5vw;
+  top:2vw;
+}
+
+.story-img{
+  padding-bottom:0rem;
+  padding-top:1.5rem;
+}
+
+.story-img img{
+  width:50vw;
+}
+
+.story-img a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #FF0000;
+  cursor: pointer;
+}
+
+.story-img p{
+color:white;
+font-size: 0.85rem;
+
+}
+
+.next-section{
+  margin-top:1.75rem;
+  margin-left: auto; /* Centers the button horizontally */
+  margin-right: auto; /* Centers the button horizontally */
+  padding: 0.25rem 2rem;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #FFD700;
+  border: #FFD700 0.2rem solid;
+  cursor: pointer;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  display: block; /* Ensures the button is a block-level element */
+  margin:1rem;
+}
+
+#quote{
+  color:#FFD700;
+  font-size: 1.2rem;
+  padding-bottom:0;
+  margin-bottom: 0;
+}
+
+#under{
+  padding-top: 0;
+  margin-top: 0;
+}
+
+i { 
+  font-size:1.4rem;
+}
+
+#intro {
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  height: 100vh; /* Take full viewport height */
+  position: relative;
+  z-index: 10;
+}
+
+
+  #intro h1{
+    color: white;
+    font-size:3rem;
+    }
+  
+
+    #intro a{
+      text-decoration: none;
+      color:white;
+      font-weight: bold;
+      color: #FF0000;
+    }
+  
+    #intro h4{
+      color: white;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: normal;
+    }
+    #intro h1, #intro h4, #intro p {
+      text-align: center; /* Center-align text */
+      /* Add any other specific styles needed for these elements */
+    }
+    .intro-logo {
+      margin-bottom: 20px; /* Space between logo and title */
+      filter: invert();
+      width:40rem;
+    }
+    
+    .fade-out {
+      transition: opacity 0.5s ease-out;
+      opacity: 0;
+  }
+
+  
+  #locationTitle {
+    display: none; /* Temporarily set to block */
+    font-size:2.3rem;
+    color: #FFD700;
+    position: absolute;
+    bottom: 5vh;
+    left: 5vw;
+    z-index: 1000; /* Increase z-index to bring it to the front */
+}
+
+#returnToArticle{
+  z-index: 10;
+  padding: 0.25rem 2rem;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #FFD700;
+  border: #FFD700 0.2rem solid;
+  cursor: pointer;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  position: absolute;
+  bottom: 2vh;
+  left: 10vw;
+  display:none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; 
+  width:100%
+}
+
+.center-text a{
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+#red {
+  color:red;
+  text-decoration: none;
+  font-weight: bold;
+}
+#red-2 {
+  color:red;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#red-3 {
+  color:red;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#red-4 {
+  color:red;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#red-5 {
+  color:red;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#nav{
+  position: fixed;
+  bottom:3vh;
+  right:3vw;
+  z-index: 6;
+  width:15rem;
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .content-container {
+    padding:10vw;
+  }
+
+  .content-container h1{
+    padding-top:7vw;
+  }
+
+  #nav{
+    display: none;
+  }
+
+  .next-section{
+    font-size:1.3rem;
+    margin: 0.5rem;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .story-img img{
+    width:70vw
+  }
+
+  .intro h1{
+    font-size:2rem;
+  }
+
+  .intro-logo {
+    margin-bottom: 20px; /* Space between logo and title */
+    filter: invert();
+    width:20rem;
+  }
+
+  .intro-cover{
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+  }
+
+  #intro h4{
+    font-size:0.7rem;
+  }
+}

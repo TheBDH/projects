@@ -1,0 +1,572 @@
+<head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NF6XFL5X');</script>
+  <!-- End Google Tag Manager -->
+<link href="styles.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;900&display=swap" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+<script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/mxr8glf.css">
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" class="">
+</head>
+<html>
+  <title>Explore Providence's Chinatown</title>
+  <link rel="icon" href="icon-rel.png">
+  <div id="geocoder" class="geocoder"></div>
+    <body>
+      <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NF6XFL5X"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<div id="map"></div> 
+
+<div id="intro">
+  <h1 id="intro-title-1">Exploring Providence’s historic Chinatown</h1>
+  <a href="https://www.browndailyherald.com/"><img src="logo-black.png" class="intro-logo"></a>
+  <h4 id="intro-title-2">Written by <a href="https://www.browndailyherald.com/staff/jacob-smollen">Jacob Smollen</a>, <a href="https://www.browndailyherald.com/staff/kathy-wang">Kathy Wang</a>, <a href="https://www.browndailyherald.com/staff/julia-vaz">Julia Vaz</a> and <a href="https://www.browndailyherald.com/staff/alexnadirashvili">Alex Nadirashvili</a><br>
+    Web Layout by <a href="https://www.browndailyherald.com/search?a=1&s=&ti=&ts_month=0&ts_day=0&ts_year=0&te_month=0&te_day=0&te_year=0&au=Ty+Pham-Swann&tg=&ty=0&o=date">Ty Pham-Swann</a> and <a href="https://www.browndailyherald.com/search?a=1&s=&ti=&ts_month=0&ts_day=0&ts_year=0&te_month=0&te_day=0&te_year=0&au=calvin+eng&tg=&ty=0&o=date">Calvin Eng</a>
+    </h4>
+
+    <button class="explore-btn" onclick="exitIntro()">Explore</button>
+</div>
+
+<h2 id="locationTitle"></h2>
+<button id="returnToArticle" onclick="showArticle()"></button>
+
+<div class="content-container" id="div-1">
+  <a href="https://www.browndailyherald.com/"><img src="logo-black.png" class="cover-logo"></a>
+
+  <div class="center-text">
+    <h1>Exploring Providence’s historic Chinatown</h1>
+
+    <div class="story-img">
+    <img src="./images/alley.png">
+    <p>The alley between Empire and Walnut streets. Media by <a id="red" href="https://www.browndailyherald.com/staff/julia-vaz">Julia Vaz</a> | The Brown Daily Herald</p>
+  </div>
+
+  <p>When asked to recount the history of Providence’s Chinatown, sources pointed to fixtures that are long gone: restaurants, community centers, apartment buildings and laundromats. But a single physical component of the vibrant Chinese community that once inhabited the heart of Providence remains unchanged after a century: the alley between Empire and Walnut streets. </p>
+
+  <p>The alley is the “only remaining space” from Chinatown’s earliest era, said Jeffrey Yoo Warren, a Providence-based artist and researcher who initiated the <a href="https://unterbahn.com/chinatown/">“Seeing Providence Chinatown”</a> project.</p>
+  
+  <p>Starting in the late 19th century, Providence saw an influx of Chinese immigrants <a href="https://www.pbs.org/opb/historydetectives/feature/chinese-immigration/">escaping economic unrest</a> in search of financial stability overseas. While Chinese immigrants initially hoped to benefit from the <a href="https://www.pbs.org/opb/historydetectives/feature/chinese-immigration/">West Coast gold rush</a> and other ventures, some were pushed to the East Coast amid anti-Chinese sentiments and legislation. </p>
+  
+  <p>Over time, growing Chinese migrant populations across U.S. cities formed Chinatowns — neighborhoods where Chinese immigrants lived and worked, establishing flourishing businesses and cultural spaces.</p>
+  
+  <p>The Herald spoke with several former residents of Providence’s historic Chinatown and researchers who have studied the city’s cultural roots to capture the history, voices and legacy of a once-thriving downtown community.</p>
+  
+  <div class="button-container">
+    <button class="next-section" onclick="nextSection()">Next Section</button>
+  </div>
+</div>
+</div>
+
+<div class="content-container" id="div-2">
+  <a href="https://www.browndailyherald.com/"><img src="logo-black.png" class="cover-logo"></a>
+
+  <div class="center-text">
+    <h1>Chinese immigration to the U.S.</h1>
+
+    <p id="quote"><i>“The nationwide fear and hate towards Chinese people precluded this community from ever becoming something … more than it was.”</i><br> <p> — Robert Yang, author of <a href="https://www.google.com/url?q=https://publications.risdmuseum.org/grad-show-2021-interior-architecture/robert-yang&sa=D&source=docs&ust=1703230103840259&usg=AOvVaw3IXQmaYuLxP8gnGGwMoAF7">“Remembering Chinatown”</a></p>
+
+    <p>According to Professor Emeritus of American Studies Robert Lee, trade with China was one of the “main <a href="https://aapihistorymuseum.org/the-first-chinese-american/">economic anchors</a>” of 18th-century Providence. Local merchants — like the <a href="https://www.brown.edu/Departments/Joukowsky_Institute/courses/archaeologyofcollegehill/6829.html">Brown and <a href="https://www.rihs.org/assetts/files/publications/1990_May.pdf">Nightingale</a> families traded with China among many other areas of investment, such as the transatlantic slave trade or rum industry.</p>
+
+
+   <p>“They were kind of cheek-by-jowl,” Lee said. “You could take money out of the slave trade and invest in underwriting the China trade.”</p>
+    
+    
+    <p>This trade sparked Chinese immigration to Providence, with merchants often bringing immigrants to the city in their “entourage,” said John Eng-Wong, visiting scholar in Ethnic studies and special assistant to American Studies. </p>
+    
+    
+    <p>While there “was a degree of openness” when receiving these immigrants, Eng-Wong said there was also a sense of “discomfort” with the presence of Chinese people in Providence. In 1880, only 40 Chinese immigrants <a href="https://www2.census.gov/library/publications/decennial/1880/vol-01-population/1880_v1-14.pdf">lived</a> in Rhode Island, according to the U.S. census. </p>
+    
+    
+    <p>The history of Providence’s Chinatown can be divided into three phases: from the 1880s to 1914, 1915 to 1965 — and from 1965 on, according to Yuanyuan (Angela) Feng GS MA’18, who co-curated a 2018 <a href="https://richinesehistory.com/">project</a> on Providence Chinatown. </p>
+    
+    
+    <p>In the late 19th century, Providence’s Chinatown was located downtown on Empire Street and was primarily a “bachelor society,” as men often migrated to the U.S. to send money back to their families. This was largely due to racist U.S. immigration policies and gender expectations in China that kept women back home, Feng said.</p>
+    
+    <div class="story-img">
+    <img src="./images/moves.JPG">
+    <p>Chinatown has moved story in The Providence Journal. Media courtesy of Jeffrey Yoo Warren  | The Brown Daily Herald</p>
+  </div>
+  <p>The <a href="https://immigrationhistory.org/item/page-act/">Page Act of 1875</a> prohibited “​​unfree laborers and women brought for ‘<a href="https://www.jstor.org/stable/27500484?seq=1">immoral purposes</a>’” from entering the United States and primarily targeted Chinese workers. “It was demeaning (and) demoralizing,” Eng-Wong said. “No surprise, they didn’t want to come.”</p>
+
+  <p>In 1882, Congress passed the <a href="https://www.neh.gov/humanities/2015/januaryfebruary/feature/the-chinese-exclusion-act-raised-the-price-becoming-american">Chinese Exclusion Act</a> amid a wave of Chinese immigration, barring Chinese laborers from entering the country. But Chinese workers, who faced “turmoil, war and famine” at home continued to find ways to come to the United States — merchants, teachers, students and diplomats were <a href="https://www.neh.gov/humanities/2015/januaryfebruary/feature/the-chinese-exclusion-act-raised-the-price-becoming-american#:~:text=allowing%20only%20diplomats%2C%20teachers%2C%20students%2C%20and%20merchants%20to%20enter%20the%20country.">exempted</a> from the act, Feng explained.</p>
+  <div class="story-img">
+    <img src="./images/exclusion.png">
+    <p>Story on the Exclusion Act in The Providence Journal. Media courtesy of Jeffrey Yoo Warren  | The Brown Daily Herald</p>
+  </div>
+
+  <p>According to Eng-Wong, most of Providence’s Chinese community in the early 20th century moved to the city in search of “a safer haven” from violent anti-Asian racism on the West Coast.</p>
+
+
+  <p>In 1900, Rhode Island’s census <a href="https://www2.census.gov/prod2/decennial/documents/03322287no71-80ch6.pdf">reported</a> 366 Chinese immigrants living in the state, a “sharp increase” in the population and a record high until the 1950s, Feng said.</p>
+
+
+  <p>In 1914, a project that widened Empire Street and tore down Chinese-occupied buildings forced the community to move to Summer Street, according to Yoo Warren.</p>
+
+  <div class="story-img">
+    <img src="./images/summer.JPG">
+    <p>Image of the new headquarters on Summer Street. Media courtesy of Jeffrey Yoo Warren  | The Brown Daily Herald</p>
+  </div>
+
+  <p>By <a href="https://www.providencejournal.com/story/entertainment/events/2018/04/06/exhibit-walking-tour-open-door-on-providences-chinatown/12716360007/">1977</a>, the On Leong Chinese Merchants Association (安良工商会) — a national organization for Chinese merchants that assisted immigrants and became a hub for the Providence Chinatown community — had purchased a new building on Snow Street, bringing Chinatown back downtown until the 2000s. </p>
+
+  <p>The move coincided with the U.S. relaxing immigration policies: The <a href="https://www.lbjlibrary.org/news-and-press/media-kits/immigration-and-nationality-act">1965 Immigration and Naturalization Act</a> abolished immigrant quotas, which previously barred immigrants from Asia, among other regions, from entering the country. </p>
+
+<p>When they immigrated, they were able to purchase and possess properties, Feng explained — contributing to the later dispersion of Chinese residents throughout the rest of the state.</p>
+
+
+<p>In the 21st century, Providence’s Chinese community has dispersed through Rhode Island, with a large population moving to Cranston. </p>
+
+
+<p>“There’s no central place anymore,” Lee said.</p>
+
+<div class="button-container">
+  <button class="next-section" onclick="lastSection()">Back</button>
+  <button class="next-section" onclick="showMap()">Explore Map</button>
+  <button class="next-section" onclick="nextSection()">Next Section</button>
+</div>
+
+</div>
+</div>
+
+<div class="content-container" id="div-3">
+  <a href="https://www.browndailyherald.com/"><img src="logo-black.png" class="cover-logo"></a>
+
+  <div class="center-text">
+    <h1>Empire Street</h1>
+    <div class="story-img">
+      <img src="./images/before.png">
+      <p>Empire Street before demolition. Media courtesy of Jeffrey Yoo Warren  | The Brown Daily Herald</p>
+    </div>  
+    <div class="story-img">
+      <img src="./images/after.JPG">
+      <p>Empire Street after demolition. Media courtesy of Jeffrey Yoo Warren  | The Brown Daily Herald</p>
+    </div>
+
+    <p>“For people who lived before World War II, they would have remembered that there was a dense population of Chinese (people) on Empire Street.” — John Eng-Wong, visiting scholar in ethnic studies and special assistant to American Studies. </p>
+    
+    
+      <p>As early as the 1880s, Chinese immigrants rented American-owned buildings in Chinatown, Feng said. First floors often housed businesses such as grocery and drug stores. Second floors hosted community gatherings and top floors were temporary lodging for single, male laborers.</p>
+    
+    
+        <p>While the community moved away from Empire Street in later years, these floor configurations carried over to new places, Feng said. </p>
+    
+    
+          <p>The two buildings alongside the alley that has remained throughout the phases of Chinatown — Citizens Bank and Cafe La France today — once hosted a grocery store and pharmacy, Yoo Warren told The Herald. A rented building across the street and nearby buildings hosted community members.</p>
+    
+    
+            <p>Although the neighborhood was not big — “pretty much just one block,” according to Yoo Warren — “it really felt like a whole neighborhood that really coalesced.”</p>
+    
+    
+              <p>According to Eng-Wong, the “nucleus” of the initial Providence Chinatown community, which began on Burrill Street in the 1880s, “fed into the restaurants that were founded on Weybosset and Westminster streets, Washington street, (and) all downtown thoroughfares.”</p>
+    
+    
+              <div class="story-img">
+                <img src="./images/west.jpg">
+                <p>Weybosset and Westminster streets. Media courtesy of Jeffrey Yoo Warren  | The Brown Daily Herald</p>
+              </div>
+    
+    
+    <p>Eng-Wong said the Empire Street community was never particularly large, but its visibility grew during the weekends and Chinese New Year when hundreds would celebrate downtown.</p>
+    
+    
+      <p>“For people who lived before World War II, they would have remembered that there was a dense population of Chinese on Empire Street,” as well as in the nearby neighborhood, Eng-Wong said.</p>
+    
+    
+        <p>Anti-Chinese racism was prevalent in Providence as the Chinese community grew downtown. Local papers labeled the neighborhood a “colony” and described residents as immoral criminals — accusing them of “opium smoking” and excessive gambling.</p>
+    
+    
+          <p>Police repeatedly raided community spaces. In one particularly large raid in 1913, U.S. Customs officials seized $12,000 worth of opium and arrested five Chinatown residents on Empire Street.</p>
+    
+    
+            <p>The early 20th century saw the decline of Chinatown on Empire Street. <a href="https://drive.google.com/file/d/15Rpeg5lHZLbnlDd0u7zo-ccvvyKeO5Pc/view">Traffic congestion</a> made cross-town travel in Providence so difficult that city councilors <a href="https://infoweb-newsbank-com.revproxy.brown.edu/apps/readex/doc?p=EANX&t=pubname%3A14728889532D3B69%21Providence%2BJournal&sort=YMD_date%3AA&fld-base-0=alltext&val-base-0=%22Empire%20Street%22%20AND%20%22widening%22&val-database-0=&fld-database-0=database&fld-nav-0=YMD_date&val-nav-0=1910%20-%201913&docref=image/v2%3A14728889532D3B69%40EANX-162B32C1201618A2%402419291-162ABBB24BAC98D0%406-162ABBB24BAC98D0%40&firsthit=yes">proposed</a> widening various streets downtown, including Empire Street. In 1912, the Providence Journal reported that while Empire Street had “blossomed” as a Chinatown, the widening of the street would “open it up to modern business.”</p>
+    
+    
+              <p>The project meant that Providence’s Chinatown — including the Chinese rooming house, Chinese grocery, Merchants Association office and other landmarks — all had to relocate.</p>
+    
+              <div class="story-img">
+                <img src="./images/wiped.jpg">
+                <p>Image of "The Chinatown that is to be wiped out". Media courtesy of Jeffrey Yoo Warren  | The Brown Daily Herald</p>
+              </div>          
+    
+    
+    <p>Some restaurants on Westminster Street remained “because they (catered) to the larger public, not only the Chinese immigrants,” Feng said.</p>
+    
+    
+      <p>“It’s not clear why Empire Street was chosen as the one to widen,” Eng-Wong said. “It could have been outright Chinese removal.” But “there were other populations” living on Empire Street at that time who were displaced as well, he added.</p>
+    
+      <div class="button-container">
+        <button class="next-section" onclick="lastSection()">Back</button>
+        <button class="next-section" onclick="showMap()">Explore Map</button>
+        <button class="next-section" onclick="nextSection()">Next Section</button>
+      </div>
+
+</div>
+</div>
+
+<div class="content-container" id="div-4">
+  <a href="https://www.browndailyherald.com/"><img src="logo-black.png" class="cover-logo"></a>
+
+  <div class="center-text">
+    <h1>Beneficent Congregational Church</h1>
+
+    <div class="story-img">
+      <img src="./images/church.jpg">
+      <p>The Beneficent Congregational Church today. The Brown Daily Herald</p>
+    </div>
+
+    <p id="quote"><i>“That’s where we have been since we were little kids.”</i><br> <p> — Irene Luke Hope, former Providence Chinatown resident</p>
+
+   <p>The Beneficent Congregational Church — one of the <a href="https://beneficentchurch.org/">oldest churches</a> in Providence — was open to a variety of marginalized groups in the city, most notably early Chinese migrants.</p>
+
+
+    <p>Today, the church on Weybosset Street is “the most vital remnant” of Chinatown, Eng-Wong said. </p>
+
+
+      <p>Irene Luke Hope’s family was introduced to the Beneficent Church by chance. </p>
+
+
+        <p>Hope’s father, Tin Cheung Luke, first encountered women from the church while working at one of the earliest Chinese eateries in Providence: Port Arthur Restaurant. The women, who had been looking for dinner before their work for the church, were “excited” when Luke told them about his wife and son, who were Christian and would come to Providence in the next few months.</p>
+
+
+          <p>Hope was born in the U.S. after her mother and brother immigrated, and they joined the Beneficent Congregational Church. “That’s where we have been since we were little kids,” Hope said.</p>
+
+
+            <p>Hope’s “story is a very … typical one,” Feng told The Herald. Between the 1940s and 1960s, “people like Irene were born in the U.S., right after (their) mom joined (their) father,” who was already working in the country.</p>
+
+            <div class="story-img">
+              <img src="./images/children.png">
+              <p>Children on the way home from the church in 1964. Courtesy of Robert Yang | The Brown Daily Herald</p>
+            </div>
+
+            <p>Hope said the church was largely attended by children of Chinese immigrants — who joined the choir and Sunday school — until Marion Dunham, a retired school teacher, began hosting English lessons for Chinese women at the church, who began regularly coming to Beneficent. </p>
+
+              <p>“That’s how the Chinese got to Beneficent,” Hope explained.</p>
+
+              <div class="story-img">
+                <img src="./images/choir.png">
+                <p>Children in the Beneficent Congregational Church Choir. Courtesy of Robert Yang | The Brown Daily Herald</p>
+              </div>
+
+              <p>In the 1960s, Chinese residents in the state began to move into the suburbs and Chinese businesses scattered. The Chinese Christian Church of Rhode Island was established in 1976, initially targeting college students in the state, according to Church Minister Wensong Pan. Feng said that later, the church became the means of serving the increasingly “complex” and “diverse” population.</p>
+
+
+              <p>“That’s why the (Beneficent) church was no longer the center (of Chinatown),” she added. “It had fulfilled its role.”</p>
+
+              <div class="button-container">
+                <button class="next-section" onclick="lastSection()">Back</button>
+                <button class="next-section" onclick="showMap()">Explore Map</button>
+                <button class="next-section" onclick="nextSection()">Next Section</button>
+              </div>
+</div>
+</div>
+
+<div class="content-container" id="div-5">
+  <a href="https://www.browndailyherald.com/"><img src="logo-black.png" class="cover-logo"></a>
+
+  <div class="center-text">
+    <h1>On Leong Chinese Merchants Association</h1>
+
+    <p id="quote"><i>“They are navigating their space in the U.S. during a very difficult time.”</i><br> <p> — Yuanyuan (Angela) Feng MA’18 GS</p>
+
+
+    <p>According to Feng, to find the On Leong’s Merchants Association, start by searching for a room with a golden shrine. </p>
+
+
+    <p>Adorned with a statue of Guan Gong (关公), the shrine was imported from Hong Kong and specially made for the association to provide “protection and prosperity” to Chinese businesses. </p>
+    
+    
+    <p>Every time the association has had to move locations, “they dismantle (the shrine) and redo it,” Feng said. “This is one of (their) legacies.” </p>
+    
+            <div class="story-img">
+              <img src="./images/guan.png">
+              <p>Statue of Guan Gong (关公). Courtesy of Robert Yang | The Brown Daily Herald</p>
+            </div>
+
+            <p>The association’s <a href="https://docs.google.com/document/d/1FqETocf5U5QMx-wBbMEZaHtXxlVOIb-a/edit">Providence chapter opened in 1911</a>. Throughout history, the association has had up to 30 chapters nationally with 13 still active today, Feng said. The organization served as a Chinese chamber of commerce in the country, Feng explained, helping merchants connect with local politicians as a means of getting support to establish or grow their businesses. </p>
+
+
+              <p>Ed Moy, who grew up in Providence in the 1940s and ’50s, said his grandfather served a stint as the association’s president. For Moy’s grandfather, the core of the Chinese community was the association, which at the time was in a “huge brick building” on Summer Street.</p>
+            
+            
+                <p>Moy said the association worked to “make sure that there was equality and fairness in business.” This often meant ensuring that restaurants and laundries were spread out across the neighborhood. For example, laundries had to be 100 numbers apart before another could be opened, Moy said.</p>
+            
+              <div class="story-img">
+                <img src="./images/convention.jpg">
+                <p>Photograph from Angela of Association members and state officials, 1947. The Brown Daily Herald</p>
+              </div>
+             
+             <p>Association presidents were “very influential,” Feng said, and were often called “the mayor of Chinatown.”</p>
+
+
+              <p>The association helped immigrants learn English, navigate the legal system and start businesses — with members training migrants as “disciples” at existing restaurants and then encouraging them to open their own, Feng said.</p>
+              
+              
+              <p>It also arranged funerals, Feng added. In the late 1900s, it purchased a section of the Pocasset Cemetery as a burial site for immigrants who could not return to China, had no family in the U.S. or could not afford burial services. “There are more than 100” tombstones, Feng said.</p>
+              
+              <div class="story-img">
+                <img src="./images/cemetary.JPG">
+                <p>On Leong purchased a section in Pocasset Cemetery, Cranston. The Brown Daily Herald</p>
+              </div>
+
+              <p>Feng described Ye Luo Gui Gen (叶落归根) — returning to one’s roots after death — as a tenet of the cemetery. It allowed Chinese people to “still have a place to rest in the U.S.” after passing away far from home or when home no longer existed for them in China. </p>
+
+
+                <p>The association hosted celebrations of the Chinese New Year and the Mid-Autumn Festival, according to Moy. Restaurant workers’ shifts ended late at night, Moy said, so parties usually began at midnight.</p>
+
+                <div class="story-img">
+                  <img src="./images/new_years.jpg">
+                  <p>New Years celebration. Courtesy of John Eng-Wong | The Brown Daily Herald</p>
+                </div>
+                
+                <p>Today, the association occupies a two-story building at 34 Pontiac Ave. — its first floor is used for business and the second as a senior community center where “people play cards, mahjong or ping pong,” Feng said.</p>
+
+                <p>Although smaller in membership, the association continues to connect Chinese people across the state.</p>
+
+                <div class="button-container">
+                  <button class="next-section" onclick="lastSection()">Back</button>
+                  <button class="next-section" onclick="showMap()">Explore Map</button>
+                  <button class="next-section" onclick="nextSection()">Next Section</button>
+                </div>
+</div>
+</div>
+
+<div class="content-container" id="div-6">
+  <a href="https://www.browndailyherald.com/"><img src="logo-black.png" class="cover-logo"></a>
+
+  <div class="center-text">
+    <h1>Laundries</h1>
+
+    <p id="quote"><i>“And all the filthy things at your house, / Give them to me to wash, give them to me.”</i><br> <p> — Wen Yi-Tuo, Chinese poet and author of “The Laundry Song.” </p>
+
+    <p>When Moy was five, a fire damaged the laundromat where he and his family were living. Hope’s family took them in.</p>
+
+
+      <p>“We kind of grew up together,” Moy said of his relationship with Hope. Years later, as the only Chinese students in their school, Moy and Hope went to senior prom together.</p>
+    
+    
+        <p>Moy’s family owned “probably one of the largest laundries” in Providence: Moy’s High Class Laundry. The business cleaned customers’ shirts for 18 cents at 34 Broad St. The laundry had resources to wash suits and ties as well as priest collars and habits from church members, who were frequent customers.</p>
+    
+            <div class="story-img">
+              <img src="./images/moy.png">
+              <p>Moy's high class laundry. Courtesy of Robert Yang | The Brown Daily Herald</p>
+            </div>
+        
+            <p>Providence’s 1915 businesses directory <a href="https://drive.google.com/file/d/1YNAFRIxjUF0sSCT4ohMGbPz7pDj5YjFt/view">listed</a> over 35 Chinese-owned laundries, reflecting a nationwide prevalence of Chinese-operated hand laundry businesses. As anti-Chinese racist sentiment grew, discrimination <a href="https://asamnews.com/2020/04/30/how-racism-and-discrimination-made-working-in-a-laundry-the-job-of-last-resort-for-chinese-in-america/">impacted</a> the kinds of work nineteenth-century Chinese immigrants could take on.</p>
+
+
+              <p>Laundry service was also viewed as <a href="https://immigrationtounitedstates.org/426-chinese-laundries.html">“undesirable”</a> by white Americans; Chinese migrants taking on the work was non-threatening. </p>
+            
+            
+                <p>As more Chinese women and family members began to migrate to the U.S., laundry businesses became a <a href="https://www.mcny.org/story/laundry-worker-activism-era-chinese-exclusion">distinctly familial affair.</a></p>
+            
+            
+                  <p>In 1955, Moy moved to North Providence, where his father opened up a second laundry business separate from his grandfather’s. While Moy never worked in his grandfather’s laundry, he worked for his father after classes every day during high school. </p>
+            
+              <div class="story-img">
+                <img src="./images/album.png">
+                <p>Ed Moy with his photo albums. The Brown Daily Herald</p>
+              </div>
+             
+              <p>Hope recalled how Chinese families moved away from owning laundry businesses. “All the Chinese families that went to our church were in the restaurant business, none of them were in the laundry business anymore,” she explained. “The laundry business was fading out.”</p>
+
+              <div class="button-container">
+                <button class="next-section" onclick="lastSection()">Back</button>
+                <button class="next-section" onclick="showMap()">Explore Map</button>
+                <button class="next-section" onclick="nextSection()">Next Section</button>
+              </div>
+</div>
+</div>
+
+<div class="content-container" id="div-7">
+  <a href="https://www.browndailyherald.com/"><img src="logo-black.png" class="cover-logo"></a>
+
+  <div class="center-text">
+    <h1>Luke’s Chinese-American Restaurant</h1>
+
+    <div class="story-img">
+      <img src="./images/luke.jpg">
+      <p>Luke's Chinese-American Restaurant. Courtesy of Robert Yang | The Brown Daily Herald</p>
+    </div>
+
+    <p id="quote"><i>“Chinese community existed in these restaurants.” </i><br> <p>  — Robert Yang, author of “Remembering Chinatown.”</p>
+
+    <p>In 1978, Hope was preparing to celebrate Chinese New Year’s Eve at her family business, Luke’s Chinese-American Restaurant, when a <a href="https://www.providencejournal.com/picture-gallery/news/2022/01/06/blizzard-1978-ri-historic-photos-cars-stranded-route-95-sledding-aerials/9104627002/">snowstorm</a> hit Southern New England. </p>
+
+      <p>“Our tradition was that all of the help would invite their families and … gather together and have a big meal,” Hope recalled. But as the storm raged on — with nearly three feet of snow falling across Providence — it quickly became apparent to Hope that the New Year’s festivities wouldn’t begin any time soon. </p>
+    
+        <p>Hope and her family didn’t get home until five days later. </p>
+    
+          <p>But they made good use of their stay at 59 Eddy St. With people stranded in downtown Providence without any other source of food, Luke’s became the place to be. </p>
+    
+            <p>“The only reason we closed (on Friday) is because we ran out of food,” Hope said. </p>
+    
+              <p>Luke’s was just one of many early Chinese eateries across Providence. According to Moy, it was typical for Chinese eateries to take turns hosting a party for Chinese New Year’s and invite everyone from the other restaurants. </p>
+    
+                <p>“Chinese community existed in these restaurants,” said Robert Yang, a former graduate student from the Rhode Island School of Design whose thesis <a href="https://publications.risdmuseum.org/grad-show-2021-interior-architecture/robert-yang">“Remembering Chinatown”</a> focused on Providence Chinatown’s culinary history.</p>
+    
+                  <p>Hope’s father and brother, Tin Cheung Luke and Henry Luke first opened the restaurant in 1951. Growing up, Hope and her three sisters all worked at the restaurant: manning the register, taking orders for takeout and everything in between. “The restaurant was the center of our lives,” Hope said.</p>
+    
+                    <p>Located behind City Hall, Luke’s was a hotspot downtown, frequented by staff at the Providence Journal, City Hall, nearby department stores, hotels and bus stations, Hope said.</p>
+    
+                      <p>Split across two levels of dining, with the lower level designated a lūʻau theme and decorated extravagantly with bamboo and lit-up pictures of palm trees.</p>
+    
+                        <p>Moy, who worked at Luke’s, remembered “the Polynesian drinks were a bigger hit than anything else” at the restaurant.</p>
+    
+                          <p>Hope described the Chinese restaurant scene downtown as competitive. Only three blocks away from Luke’s was Ming Garden on Westminster Street, and Mee Hong and Port Arthur restaurants were on Weybosset Street.</p>
+    
+    
+                            <p>Moy, who also worked at the coat check at Port Arthur, remembered the restaurant as the biggest Chinese eatery around. Decorated with an American diner aesthetic, the restaurant featured a “huge bar” and a dance floor. According to Moy, Port Arthur was known for its live entertainment, including floor shows, emcees, live bands, magicians, dancers and comedians.</p>
+    
+            <div class="story-img">
+              <img src="./images/port.png">
+              <p>Port Arthur Poster. Courtesy of Robert Yang | The Brown Daily Herald</p>
+            </div>
+
+            <p>These restaurants all served staples such as chop suey, chow mein and fried rice, Hope said. Chinese restaurants would also often alter recipes to make the food more Americanized and <a href="https://slate.com/human-interest/2005/04/a-concise-history-of-chinese-takeout.html">incorporate</a> American dishes — Hope’s favorite from Luke’s was the lobster — into their menus, according to Yang. Catering to “Western palates” was a means of surviving financially, he explained.</p>
+
+              <p>According to Quinton Huang ’19, who conducted a <a href="https://scalar.usc.edu/works/chinese-american-food-heritage-restaurants-and-grocery-stores-in-greater-providence/path?path=index">project</a> on the history of Chinese Americans in the state “through the lens of food businesses,” there was often a distinction “between (the) food that (Chinese restaurants) would make for (the) ‘American clientele’ … (and the) food they would make for themselves.”</p>
+            
+                <p>But American tastes were not the only hurdles for Chinese restaurant owners. </p>
+            
+                  <p>In the late 1800s and early 1900s, white Americans channeled a broader, nationwide sense of xenophobia into <a href="https://www.npr.org/sections/codeswitch/2017/06/16/532697303/how-american-unions-tried-to-wage-a-war-against-chinese-restaurants-in-the-u-s">efforts</a> to eliminate Chinese restaurants — with sensationalized media often depicting Chinese-owned businesses as drug dens.</p>
+            
+                    <p>Chinese restaurants experienced a <a href="https://history.howstuffworks.com/historical-events/early-20th-century-america-war-on-chinese-restaurants.htm">resurgence</a> in the U.S. in the mid-20th century, eventually becoming a culinary staple in the United States. And as downtown Providence grew more international, Chinese restaurants found more opportunities to serve more authentic dishes, Huang said.</p>
+            
+                      <p>According to Huang, the 1980s “seemed to be a particularly important point” in Providence’s Chinatown history. </p>
+            
+                        <p>Before then, a Rhode Island law <a href="https://www.csmonitor.com/1981/0826/082648.html">prohibited</a> businesses from opening on Sunday, except for theaters and restaurants. Due to limited leisure options, many people frequented Chinese restaurants downtown, but once the ban was lifted, “Chinese restaurants began struggling to keep afloat,” facing competition from other businesses and big shopping malls.</p>
+            
+                          <p>“Eventually, Chinese restaurants were mostly closed down in the downtown core and they moved to places like Cranston,“ Huang said. </p>
+            
+                            <p>Many of Huang’s sources described “the Chinese food culture in Providence as a ‘lost world’ due to gentrification,” he said. </p>
+            
+                              <p>“How do you preserve the heritage of something that‘s lost, physically as well as generationally?”</p>
+            
+                              <div class="button-container">
+                                <button class="next-section" onclick="lastSection()">Back</button>
+                                <button class="next-section" onclick="showMap()">Explore Map</button>
+                                <button class="next-section" onclick="nextSection()">Next Section</button>
+                              </div>
+</div>
+</div>
+
+<div class="content-container" id="div-8">
+  <a href="https://www.browndailyherald.com/"><img src="logo-black.png" class="cover-logo"></a>
+
+  <div class="center-text">
+    <h1>Chinatown today</h1>
+
+    <p>Wednesday afternoon, Charlie Chin — current president of the On Leong Chinese Merchants Association of Rhode Island — stood at Asia Grille, in Cranston. He stood near collaged photographs of former downtown institutions — Mee Hong Restaurant, Ming Garden, Port Arthur and Luke’s Chinese American Restaurant.</p>
+
+
+      <p>A framed description next to the collage titled “Rhode Island Chinese Restaurant Pioneers,” explains the history behind each location. “This is where we came from,” Chin said, leaning against one of the booths in front of the wall.</p>
+    
+    <div class="story-img">
+      <img src="./images/poster.png">
+      <p>Restaurants poster. Media by <a href="https://www.browndailyherald.com/staff/julia-vaz" id="red-5">Julia Vaz</a> | The Brown Daily Herald</p>
+    </div>
+        
+    <p>Chin arrived in the United States in 1954 at four years old and grew up in Providence’s Chinatown. Chin’s described a childhood attending church with Moy and Hope. He worked at the neighborhood restaurants cutting onions and celery during the weekends and bribed bullies with food on school days.</p>
+
+
+      <p>“Nobody was wealthy, but nobody told us we were poor,” Chin said. </p>
+            
+            
+        <p>According to Chin, children of Chinese immigrants were given two options: go to college for science or inherit the family’s business. But Chin did both, opening Asia Grille in 1982 and then expanding to Cranston in 2020 after attending Northwestern University. </p>
+            
+            
+          <p>“We are busy!” Chin said, showing a bustling kitchen, filled with dumplings, fresh meat and warm aromas. </p>
+            
+            <div class="story-img">
+              <img src="./images/asiagrille.jpeg">
+              <p>Asia Grille. Media by <a href="https://www.browndailyherald.com/staff/jacob-smollen" id="red-4">Jacob Smollen</a> | The Brown Daily Herald</p>
+            </div>
+             
+            <p>While his staff continued to prepare for another busy night at Asia Grille serving a diverse and “intergenerational” clientele, Chin gave The Herald a tour of his community. </p>
+
+
+              <p>Tucked away in a small parking lot is the Chinese American Mini Market, which opened in 1989. Inside the market, shelves nearly overflow with carefully curated produce, spices and household essentials.</p>
+              
+              
+                <p>As soon as Chin walks through the door, workers and customers meet him with smiles and immediate recognition. “I’m here every other day,” he said, often to stock his restaurant. The market is a place for the community to socialize, Chin said, pointing toward the customers chatting and helping cut fruits for the store. “Every day (you) get to meet a friendly face, a familiar face.” </p>
+              
+              <div class="story-img">
+                <img src="./images/mini_market.jpeg">
+                <p>Chinese-American mini market. Media by <a href="https://www.browndailyherald.com/staff/julia-vaz" id="red-2">Julia Vaz</a> | The Brown Daily Herald</p>
+              </div>
+
+              <p>Next up, a tour of the On Leong Merchants Association, now located in Cranston, where older men gathered around an electric mahjong table. The iconic golden shrine of the association stood a few feet away.</p>
+
+
+              <p>“This is irreplaceable,” said one of the men, pointing to the shrine. </p>
+
+
+                <p>People come into the association at all hours of the day, Chin said, often on their days off or after finishing shifts at local restaurants. During the pandemic, the association helped distribute food to the local Chinese community and help them find medical assistance, he noted.</p>
+
+
+                  <p>The association has changed a lot throughout the years, Chin explained. They have shifted their focus to supporting older members of the community, helping them enroll in programs such as Medicare and reach Chinese doctors. </p>
+
+              <div class="story-img">
+                <img src="./images/association.jpeg">
+                <p>Merchants association today. Media by <a href="https://www.browndailyherald.com/staff/alexnadirashvili" id="red-3">Alex Nadirashvili</a> | The Brown Daily Herald</p>
+              </div>
+
+              <p>While Chin happily showed how the Chinese community persisted, he said it’s not centralized anymore. Different communities interact more now — allowing for those of different identities to coexist in the same spaces, he said.</p>
+
+                <p>“We participate in the American experience as we are allowed to,” he said. </p>
+
+
+                  <p>Sarah Wong ’25 has lived in Cranston her whole life. She remembers visiting the mini market frequently growing up. Both of Wong’s parents immigrated to the U.S. from China when they were children.</p>
+
+
+                    <p>While Wong doesn’t think there’s much of a Chinese community in the area of Cranston she grew up in, there are several staple Chinese restaurants — Wai Wai House and King’s Garden — that her family frequently visits. “Now that Good Fortune opened up a few years ago, we go there pretty often too,” she wrote in a message to The Herald. </p>
+
+
+                      <p>According to Wensong Pan, minister at the Chinese Christian Church, while there are “not a lot of connections” between Chinese people in the state, the church serves as a community for Chinese Americans or immigrants, “because there is no Chinatown in Rhode Island,” he said in Chinese, later translated into English by The Herald. </p>
+
+
+                        <p>“Many Chinese people come here, like a big family,” Pan told The Herald.</p>
+
+
+                          <p>While Wong hadn’t heard about Providence’s historic Chinatown community before speaking with The Herald, she thinks having more official information available about this history “would be interesting.”</p>
+
+
+                            <p>“Without a concrete acknowledgment,” she said, “a piece of history like that can easily be forgotten.” </p>
+
+
+                            <div class="button-container">
+                              <button class="next-section" onclick="lastSection()">Back</button>
+                              <button class="next-section" onclick="showMap()">Explore Map</button>
+                                <button class="next-section" onclick="nextSection()">Return to Start</button>
+                            </div>
+
+</div>
+</div>
+
+<div class="intro-cover" id="introCover"></div>
+<div class="cover" id="coverDiv">
+</div>
+<img src="./images/nav/1.png" id="nav">
+
+
+<script src="scripts.js"></script>
+<body>
+
+</html>
