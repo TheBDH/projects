@@ -11,7 +11,7 @@
         "Gabe Amo",
         "Jacob Bissaillon"
       ],
-      "answer": 2,
+      "answer": "c",
       "image": "",
       "alt": null,
       "explanation": "Democrat Gabe Amo won the special election for Rhode Island’s 1st Congressional District with 64.8% of the votes, filling the vacancy left by former Rep. David Cicilline ’83 following his resignation in May. His opponent, Republican Gerry Leonard Jr,. lost with 35.2%; Democrat Jacob Bissaillon won the race for a Rhode Island state Senate seat.",
@@ -26,7 +26,7 @@
         "Divestment from South Africa during its apartheid regime",
         "Against a police commissioner giving a lecture"
       ],
-      "answer": 1,
+      "answer": "b",
       "image": "",
       "alt": "",
       "explanation": "Brown adopted need-blind admissions for domestic students in 2003, and will begin need-blind admissions for international students for the class of 2029. Through sit-ins, fasts and other forms of protest, Brown students have organized for all four answers throughout the years.",
@@ -41,7 +41,7 @@
         "Applied Mathematics",
         "Neuroscience"
       ],
-      "answer": 0,
+      "answer": "a",
       "image": "",
       "alt": "",
       "explanation": "On Oct. 23, the Department of Computer Science announced it would revise its concentration requirements to better prepare students for 1000-level courses. Currently enrolled students planning to concentrate in CS can choose to either continue following the existing requirements or switch to the new ones.",
@@ -56,7 +56,7 @@
         "Class of 2025",
         "Class of 2024"
       ],
-      "answer": 1,
+      "answer": "b",
       "image": "",
       "alt": "",
       "explanation": "The sophomore class had the greatest share of respondents who were single and looking for a relationship, at 28%. More than one-third of respondents who are seniors reported being in a long-term relationship, compared with 30% of juniors, 22% of sophomores and 14% of first-years.",
@@ -71,7 +71,7 @@
         "Möbius strip",
         "Roman surface"
       ],
-      "answer": 2,
+      "answer": "c",
       "image": "q2.png",
       "alt": "",
       "explanation": "Professor of Mathematics Richard Schwartz published a paper proving the Halper-Weaver conjecture nearly 50 years after it was first proposed. The conjecture postulates that the aspect ratio of a Möbius strip must be one to the square root of three.",
@@ -81,7 +81,7 @@
       "question": "Which Providence mural recently celebrated its five-year anniversary?",
       "type": "MC",
       "choices": ["“Misty Blue”", "“She Never Came”", "“Still Here”", "“VOTE”"],
-      "answer": 2,
+      "answer": "c",
       "image": "",
       "alt": "",
       "explanation": "On Nov. 3, the Rhode Island School of Design hosted a celebration of the five-year anniversary of the “Still Here” mural in downtown Providence. The mural, which was painted by Baltimore-based artist Gaia, depicts Lynsea Montanari, a Narragansett woman, and has been hailed for its modern and genuine portrayal of the Narragansett Indian Tribe.",
@@ -91,7 +91,7 @@
       "question": "Which school did Brown men’s soccer tie to qualify for the Ivy League tournament?",
       "type": "MC",
       "choices": ["Yale", "Dartmouth", "Harvard", "Cornell"],
-      "answer": 0,
+      "answer": "a",
       "image": "",
       "alt": "",
       "explanation": "Brown men’s soccer team (5-4-7, 2-0-5 Ivy League) clinched a postseason berth after a 0-0 draw against Yale (8-5-3, 3-1-3). The Bears’ tie earned them a fourth place finish in the Ivy League standings. After defeating Penn on Friday, they’ll face Yale on Sunday.",
@@ -106,7 +106,7 @@
         "Harvard University",
         "Yale University"
       ],
-      "answer": 0,
+      "answer": "a",
       "image": "",
       "alt": "",
       "explanation": "The Bears lost to Columbia 2-1 on Friday night, marking their first loss to an Ivy opponent since 2018. With the defeat, Bruno failed to earn the conference’s automatic bid to the NCAA Tournament, but received a slot as a three seed. They won their opening round game and will face Mississippi State on Friday in the second round.",
@@ -121,7 +121,7 @@
         "Hack@Brown",
         "Premed Career Fair"
       ],
-      "answer": 0,
+      "answer": "a",
       "image": "",
       "alt": "",
       "explanation": "Biology Undergraduate Education held its second-ever BioWeek this past week, featuring academic tips and educational events for students interested in concentrations and careers related to the field of biology.",
@@ -136,7 +136,7 @@
         "King Gizzard & the Lizard Wizard",
         "King Wizard & the Gizzard Blizzard"
       ],
-      "answer": 2,
+      "answer": "c",
       "image": "",
       "alt": "",
       "explanation": "The prolific experimental rock band King Gizzard & the Lizard Wizard recently released their 25th album “The Silver Cord,” a synthesizer-heavy electronic sound that swaps hard rock guitar riffs and energetic drumming with spacey piano lines and digital drum loops.",

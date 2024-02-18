@@ -21,7 +21,7 @@
         "Men’s water polo",
         "Women’s water polo"
       ],
-      "answer": 1,
+      "answer": "b",
       "image": "",
       "alt": null,
       "explanation": "Women’s basketball defeated Monmouth in a 59-58 victory on Sunday, with Kyla Jones ‘24 named Ivy League Player of the Week after tying career-high scoring record.",
@@ -36,7 +36,7 @@
         "Benjamin Hooks",
         "Roy Wilkins"
       ],
-      "answer": 0,
+      "answer": "a",
       "image": "",
       "alt": null,
       "explanation": "Ifill — a civil rights lawyer one of Time Magazine’s 100 Most Influential People in 2021 — will speak to community members in February for the University’s annual MLK Jr. Lecture.",
@@ -46,7 +46,7 @@
       "question": "Which artist released their album “Heaven knows” this November?",
       "type": "MC",
       "choices": ["Ice Spice", "MARINA", "Lil Mabu", "PinkPantheress"],
-      "answer": 3,
+      "answer": "d",
       "image": "",
       "alt": null,
       "explanation": "On Nov. 10, PinkPanthress released her debut album — which included a feature from rapper Central Cee and a variety of emotional tracks.",
@@ -61,7 +61,7 @@
         "Nostalgia Antiques Store",
         "East Bay Bike Path"
       ],
-      "answer": 0,
+      "answer": "a",
       "image": "",
       "alt": null,
       "explanation": "The park — located on the corner of Brook St. and Arnold St. — is set to complete its construction in spring to include new playgrounds, seating areas and fencing.",
@@ -76,7 +76,7 @@
         "Nathan Fielder",
         "Martin Short"
       ],
-      "answer": 2,
+      "answer": "c",
       "image": "q6.png",
       "alt": null,
       "explanation": "Fielder’s newest series, “The Cure,” is a psychological thriller, which places its emphasis less on comedy and more on an unsettling narrative.",
@@ -96,7 +96,7 @@
       "question": "This fiscal year, the University saw the largest net assets for the period between 2019 and 2023 excluding which year?",
       "type": "MC",
       "choices": ["2019", "2020", "2021", "2022"],
-      "answer": 2,
+      "answer": "c",
       "image": "",
       "alt": null,
       "explanation": "The University saw a 2.2% increase in its net assets, which are valued at $7.7 billion, during the 2023 fiscal year, according to the University’s annual financial report",
@@ -111,7 +111,7 @@
         "Brown Climbing Club",
         "Central Rock Gym"
       ],
-      "answer": 0,
+      "answer": "a",
       "image": "q9.png",
       "alt": null,
       "explanation": "On Nov. 21, the Ladies Climbing Coalition hosted Rhode Island Ripper at Lincoln Woods, inviting rock climbing enthusiasts from across the Providence area.",
@@ -126,7 +126,7 @@
         "Study part-time at another university",
         "Combine their last year(s) of undergraduate study with graduate study"
       ],
-      "answer": 3,
+      "answer": "d",
       "image": "",
       "alt": null,
       "explanation": "Although undergraduates are not technically eligible to take graduate courses, many opt to take these higher-level classes for various reasons.",
