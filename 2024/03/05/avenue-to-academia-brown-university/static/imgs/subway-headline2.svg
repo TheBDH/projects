@@ -1,0 +1,27 @@
+<svg width="1404" height="2142" viewBox="0 0 1404 2142" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1404 217H-2" stroke="#DF4D8C" stroke-width="50"/>
+<path d="M1344 0V2142" stroke="#B3C622" stroke-width="50"/>
+<path d="M988.182 0V303.5C985.182 364.167 1018.18 485.5 1174.18 485.5C1330.18 485.5 1449.18 485.5 1489.18 485.5" stroke="#4278A5" stroke-width="50"/>
+<circle cx="889.5" cy="216.5" r="21.5" fill="black"/>
+<circle cx="1343.5" cy="216.5" r="21.5" fill="black"/>
+<circle cx="1343.5" cy="485.5" r="21.5" fill="black"/>
+<path d="M-2.00005 629L530.965 629V629C566.782 629 601.478 616.513 629.08 593.688L913.961 358.12C929.819 345.007 939 325.502 939 304.924V304.924L939 1.53249e-05" stroke="#F17459" stroke-width="50"/>
+<circle cx="938.5" cy="216.5" r="21.5" fill="black"/>
+<circle cx="124.5" cy="629.5" r="21.5" fill="black"/>
+<mask id="mask0_460_5" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="149" y="604" width="201" height="50">
+<rect x="149" y="604" width="201" height="50" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_460_5)">
+<path d="M273.002 850L273.005 -919C273.005 -974.229 317.776 -1019 373.005 -1019L1418.5 -1019" stroke="#A632ED" stroke-width="50" stroke-miterlimit="2.3662" stroke-linecap="square"/>
+<path d="M224.004 -1066L224.005 850" stroke="#4278A5" stroke-width="50" stroke-miterlimit="2.3662" stroke-linecap="square"/>
+<path d="M323 875V-530C323 -571.421 289.421 -605 248 -605H-3" stroke="#FC4720" stroke-width="50"/>
+<path d="M273.002 850L273.005 -919C273.005 -974.229 317.776 -1019 373.005 -1019L1418.5 -1019" stroke="#A632ED" stroke-width="50" stroke-miterlimit="2.3662" stroke-linecap="square"/>
+<path d="M175.013 -1341L175.01 875" stroke="#F17459" stroke-width="50" stroke-miterlimit="2.3662" stroke-linecap="round"/>
+<path d="M224.004 -1066L224.005 850" stroke="#4278A5" stroke-width="50" stroke-miterlimit="2.3662" stroke-linecap="square"/>
+<path d="M323 875V-530C323 -571.421 289.421 -605 248 -605H-3" stroke="#FC4720" stroke-width="50"/>
+<circle cx="175.5" cy="629.5" r="21.5" fill="black"/>
+<circle cx="224.5" cy="629.5" r="21.5" fill="black"/>
+<circle cx="273.5" cy="629.5" r="21.5" fill="black"/>
+<circle cx="322.5" cy="629.5" r="21.5" fill="black"/>
+</g>
+</svg>

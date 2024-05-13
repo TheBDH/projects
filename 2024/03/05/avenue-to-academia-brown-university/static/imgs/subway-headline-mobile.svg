@@ -1,0 +1,28 @@
+<svg width="430" height="1602" viewBox="0 0 430 1602" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M701.5 366L197.5 366" stroke="#DF4D8C" stroke-width="50"/>
+<mask id="mask0_482_76" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="430" height="1646">
+<path d="M0 35C0 15.67 15.67 0 35 0H395C414.33 0 430 15.67 430 35V1646H0V35Z" fill="#262626"/>
+</mask>
+<g mask="url(#mask0_482_76)">
+<path d="M407 0V1602" stroke="#B3C622" stroke-width="50"/>
+</g>
+<circle cx="304.5" cy="365.5" r="21.5" fill="black"/>
+<path d="M357 3.77666e-05L357 396.885V396.885C357 398.467 357 399.258 356.976 400.032C356.691 409.229 353.873 418.169 348.834 425.868C348.409 426.516 347.956 427.164 347.049 428.46L265.018 545.681C262.982 548.59 261.964 550.045 260.91 551.354C252.155 562.23 239.251 568.949 225.321 569.887C223.644 570 221.868 570 218.318 570L-75 570" stroke="#5347DD" stroke-width="50"/>
+<circle cx="356.5" cy="365.5" r="21.5" fill="black"/>
+<mask id="mask1_482_76" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-1" y="545" width="201" height="50">
+<rect x="-1" y="545" width="201" height="50" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask1_482_76)">
+<path d="M123.002 791L123.005 -978C123.005 -1033.23 167.776 -1078 223.005 -1078L1268.5 -1078" stroke="#A632ED" stroke-width="50" stroke-miterlimit="2.3662" stroke-linecap="square"/>
+<path d="M74.0039 -1125L74.0047 791" stroke="#4278A5" stroke-width="50" stroke-miterlimit="2.3662" stroke-linecap="square"/>
+<path d="M173 816V-589C173 -630.421 139.421 -664 98 -664H-153" stroke="#FC4720" stroke-width="50"/>
+<path d="M123.002 791L123.005 -978C123.005 -1033.23 167.776 -1078 223.005 -1078L1268.5 -1078" stroke="#A632ED" stroke-width="50" stroke-miterlimit="2.3662" stroke-linecap="square"/>
+<path d="M25.0132 -1400L25.0099 816" stroke="#F17459" stroke-width="50" stroke-miterlimit="2.3662" stroke-linecap="round"/>
+<path d="M73.5 -1125L73.5007 791" stroke="#4278A5" stroke-width="48.5" stroke-miterlimit="2.3662" stroke-linecap="square"/>
+<path d="M172.5 816V-589C172.5 -630.421 138.921 -664 97.5 -664H-153.5" stroke="#FC4720" stroke-width="50"/>
+<circle cx="25.5" cy="570.5" r="21.5" fill="black"/>
+<circle cx="74.5" cy="570.5" r="21.5" fill="black"/>
+<circle cx="123.5" cy="570.5" r="21.5" fill="black"/>
+<circle cx="172.5" cy="570.5" r="21.5" fill="black"/>
+</g>
+</svg>
