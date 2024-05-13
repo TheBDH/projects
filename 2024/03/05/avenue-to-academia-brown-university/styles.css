@@ -19,11 +19,16 @@ html {
     font-family: "Roboto Serif", Georgia, 'Times New Roman', Times, serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 1.2em;
+    font-size: 1.5em;
     background-color: white;
     color: var(--darker-gray);
     overflow-y: scroll;
     scroll-behavior: smooth;
+}
+@media (max-width: 1500px) {
+    html {
+        font-size: 1.2em;
+    }
 }
 @media (max-width: 1000px) {
     html {
@@ -331,7 +336,7 @@ a {
 }
 @media (max-width: 500px) {
     .after-sankey-section{
-        padding-top: 5vh;
+        padding-top: 2vh;
     }
 }
 
