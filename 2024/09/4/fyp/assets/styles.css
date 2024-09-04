@@ -244,7 +244,7 @@ div.home > div.panel > a > div  {
     display: flex;
     width: 100%;
     flex-direction: column;
-    gap: 2rem;
+    gap: 0rem;
     padding-bottom: 6.25rem;
 }
 
@@ -322,7 +322,7 @@ div.home > div.panel > a > div  {
 }
 
 .question-subdivisions {
-    width: 34%;
+    width: 18%;
     padding: 2rem;
     background-color: var(--section-bg-color);
     border: 1px solid #D7D7D7;
