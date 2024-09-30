@@ -1,0 +1,84 @@
+body {
+    font-family: 'freight-text-pro', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+p, h1, h2, h3 {
+    font-family: 'freight-text-pro', serif;
+}
+
+.document-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+    width: min(90%, 450px);
+}
+
+.page {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.page img {
+    width: 100%;
+    display: block;
+}
+
+.annotation {
+    position: relative;
+    top: 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 182, 0.9); /* semi-transparent yellow */
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1.4;
+    margin-top: 10px;
+    margin-bottom: 20px; /* Add margin to separate annotation boxes */
+    border-left: 5px solid rgba(255, 0, 0, 0.85); /* More yellow stripe on the left */
+}
+
+.annotation-wrapper {
+    position: fixed; /* Fix on desktop for scrolling */
+    top: 0rem;
+    right: 0;
+    width: 250px;
+    max-height: 100vh; /* Set to viewport height for better scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    z-index: 5;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+/* For Webkit browsers (Chrome, Safari) */
+.annotation-wrapper::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
+
+@media screen and (max-width: 1100px) {
+    .annotation {
+        width: 95%;
+        position: relative;
+        display: block;
+        background-color: rgba(253, 253, 161, 0.85);
+        opacity: 1;
+    }
+    .annotation-wrapper {
+        position: relative; /* Allow normal flow on mobile */
+        max-height: none; /* Remove max-height on smaller screens */
+        overflow: visible;
+        width: 100%;
+        background-color: none;
+        box-shadow: none;
+    }
+}
