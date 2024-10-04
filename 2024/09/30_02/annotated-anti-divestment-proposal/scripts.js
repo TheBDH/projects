@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "page": 15,
         "annotations": [
           {
-            "text": "In 2023, the Office of Institutional Equity and Diversity launched the Campus Climate Survey in an attempt to “better understand the living, working and learning environments of students, staff and faculty at Brown,” The Herald previously reported. While the survey did not identify specific religious groups, 26% of undergraduate respondents reported experiencing an incident of bias that they believed was motivated by their religious identity."
+            "text": "In 2023, the Office of Institutional Equity and Diversity launched the Campus Climate Survey in an attempt to “better understand the living, working and learning environments of students, staff and faculty at Brown,” The Herald previously reported. While the survey did not identify specific religious groups, 30% of undergraduate respondents reported experiencing an incident of bias, and 26% of this group believed the incident was motivated by their religious identity."
           }
         ]
       },
