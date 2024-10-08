@@ -454,15 +454,17 @@
         const urlParams = new URLSearchParams(window.location.search);
         const questionParam = urlParams.get('question');
         const breakdownParam = urlParams.get('breakdown');
+        console.log('Question Parameter:', questionParam);
+        console.log('Breakdown Parameter:', breakdownParam);
         if (questionParam && breakdownParam) {
             selectedButton = questionParam;
             selectedSubButton = breakdownParam;
         } else if (questionParam) {
             selectedButton = questionParam;
-        } /*else {
+        } else {
             buttons[0].classList.add('selected');
             subButtons[0].classList.add('selected');
-        }*/
+        }
         for (const button of buttons) {
             if (button.id === selectedButton) {
                 button.classList.add('selected');
