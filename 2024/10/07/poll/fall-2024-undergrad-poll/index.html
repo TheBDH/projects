@@ -70,15 +70,15 @@
                     </div></div>
             <div class="subdiv-graph-wrapper">
                 <div class="question-subdivisions"><div class="question-lifestyle-subdivisions" style="display: none;">
-                        <h2 id="breakdown-header">Topics</h2><button id="" class=""></button>
-                            <button id="course-difficulty" class="Course Difficulty selected">Course Difficulty</button>
+                        <h2 id="breakdown-header">Topics</h2>
+                            <button id="course-difficulty" class="Course Difficulty">Course Difficulty</button>
                             <button id="relationship-status" class="Relationship Status">Relationship Status</button>
                             <button id="sidechat" class="Sidechat">Sidechat</button>
                             
                         </div>
                     <div class="question-politics-subdivisions" style="display: none;">
-                        <h2 id="breakdown-header">Topics</h2><button id="" class=""></button>
-                            <button id="political-ideology" class="Political Ideology selected">Political Ideology</button>
+                        <h2 id="breakdown-header">Topics</h2>
+                            <button id="political-ideology" class="Political Ideology">Political Ideology</button>
                             <button id="voting-plans" class="Voting Plans">Voting Plans</button>
                             <button id="presidential-choice" class="Presidential Choice">Presidential Choice</button>
                             <button id="voter-enthusiasm" class="Voter Enthusiasm">Voter Enthusiasm</button>
@@ -87,14 +87,14 @@
                             
                         </div>
                     <div class="question-university-climate-subdivisions" style="display: none;">
-                        <h2 id="breakdown-header">Topics</h2><button id="" class=""></button>
+                        <h2 id="breakdown-header">Topics</h2>
                             <button id="legacy-preferences" class="Legacy Preferences selected">Legacy Preferences</button>
                             <button id="political-and-social-expression" class="Political and Social Expression">Political and Social Expression</button>
                             <button id="divestment" class="Divestment">Divestment</button>
                             
                         </div>
                     <div class="question-approval-ratings-subdivisions" style="display: none;">
-                        <h2 id="breakdown-header">Topics</h2><button id="" class=""></button>
+                        <h2 id="breakdown-header">Topics</h2>
                             <button id="president-paxson" class="President Paxson selected">President Paxson</button>
                             <button id="president-paxson-over-time" class="President Paxson Over Time">President Paxson Over Time</button>
                             <button id="the-corporation" class="The Corporation">The Corporation</button>
@@ -104,7 +104,7 @@
                             
                         </div>
                     <div class="question-demographics-subdivisions" style="display: none;">
-                        <h2 id="breakdown-header">Topics</h2><button id="" class=""></button>
+                        <h2 id="breakdown-header">Topics</h2>
                             <button id="class-year" class="Class Year selected">Class Year</button>
                             <button id="gender" class="Gender">Gender</button>
                             <button id="race" class="Race">Race</button>
@@ -454,8 +454,6 @@
         const urlParams = new URLSearchParams(window.location.search);
         const questionParam = urlParams.get('question');
         const breakdownParam = urlParams.get('breakdown');
-        console.log('Question Parameter:', questionParam);
-        console.log('Breakdown Parameter:', breakdownParam);
         if (questionParam && breakdownParam) {
             selectedButton = questionParam;
             selectedSubButton = breakdownParam;
