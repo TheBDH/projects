@@ -454,25 +454,31 @@
         const urlParams = new URLSearchParams(window.location.search);
         const questionParam = urlParams.get('question');
         const breakdownParam = urlParams.get('breakdown');
-        if (questionParam && breakdownParam) {
+        selectedButton = buttons[0].id;
+        for (const button of buttons) {
+            if (button.id === selectedButton) {
+                button.classList.add('selected');
+            }
+        }
+        /*if (questionParam && breakdownParam) {
             selectedButton = questionParam;
             selectedSubButton = breakdownParam;
         } else if (questionParam) {
             selectedButton = questionParam;
         } else {
-            //buttons[0].classList.add('selected');
-            //subButtons[0].classList.add('selected');
+            buttons[0].classList.add('selected');
+            subButtons[0].classList.add('selected');
         }
         for (const button of buttons) {
             if (button.id === selectedButton) {
-                //button.classList.add('selected');
+                button.classList.add('selected');
             }
         }
         for (const subButton of subButtons) {
             if (subButton.id === selectedSubButton) {
-                //subButton.classList.add('selected');
+                subButton.classList.add('selected');
             }
-        }
+        }*/
         for (const textSection of textSections) {
             if (textSection.classList.contains(`question-${selectedButton}-text`)) {
                 textSection.style.display = 'block';
