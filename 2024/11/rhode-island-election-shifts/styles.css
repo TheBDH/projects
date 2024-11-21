@@ -253,7 +253,26 @@ select option {
         font-family: Roboto, sans-serif;
         position: absolute;
         z-index: 1;
+        animation: fadeIn 0.3s;
+        /*transition: transform 0.3s ease; /* Smooth transition for transform */
     }
+
+    .legend.hidden {
+        
+        animation: fadeOut 0.3s;
+        opacity: 0;
+        /*transform: translateX(+110%); /* Move the sidebar out of the screen */
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+    @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+      }
     
     .legendLine {
         font-size: 11px;

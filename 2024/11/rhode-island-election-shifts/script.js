@@ -9,11 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Get the button and the element you want to hide/show
     const toggleButton = document.getElementById('hideButton');
     const sidebar = document.getElementById('mySideBar'); // Replace with the ID of your sidebar
+    const legend = document.getElementById('legendBar'); // Replace with the ID of your sidebar
+    legend.classList.toggle('hidden');
 
     // Add an event listener for the button click
     toggleButton.addEventListener('click', function () {
         //console.log("BUTTON PRESSED");
         sidebar.classList.toggle('hidden');
+        legend.classList.toggle('hidden');
         if (sidebar.classList.contains('hidden')) {
             toggleButton.textContent = 'Show Settings';  // Sidebar is hidden
         } else {
