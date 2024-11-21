@@ -123,37 +123,8 @@ const initializeMapCounty20_24 = () => {
         },
             'waterway'
         );
-        /*
-        mapCounties.addLayer({
-            id: 'counties-borders',
-            type: 'line',
-            source: 'counties',
-            paint: {
-                'line-color': '#000000',
-                'line-width': 3,
-                'line-opacity': 1
-            }
-        });*/
 
     });
-    /*
-    mapCounties.on('click', 'counties-layer', (e) => {
-        new mapboxgl.Popup()
-            .setLngLat(e.lngLat)
-            .setHTML(e.features[0].properties.NAME + " County")
-            .addTo(mapCounties);
-        mapCounties.flyTo({ center: e.lngLat, zoom: 9.2 });
-    }); 
-    // Change the cursor to a pointer when the mouse is over the places layer.
-    mapCounties.on('mouseenter', 'counties-layer', () => {
-        mapCounties.getCanvas().style.cursor = 'pointer';
-    });
-
-    // Change it back to a pointer when it leaves.
-    mapCounties.on('mouseleave', 'counties-layer', () => {
-        mapCounties.getCanvas().style.cursor = '';
-    });
-    */
     // Create a tooltip element
     const tooltip = new mapboxgl.Popup({
         closeButton: false,
@@ -437,34 +408,6 @@ const initializeMapMunicipal20_24 = () => {
             type: 'geojson',
             data: dataLinkLocal
         });
-
-        // Add a layer showing the state polygons.
-        // mapMunicipal.addLayer({
-        //     'id': 'municipals-layer',
-        //     'type': 'fill',
-        //     'source': 'municipals',
-        //     'paint': {
-        //         'color': 'white',
-        //         'fill-color': {
-        //             property: 'VOTER_SWING_20_24_SHIFT_WEIGHTED',
-        //             stops: [
-        //                 [-0.1, 'rgba(192,80,222,0.7)'],
-        //                 [-0.08, 'rgba(211,100,241,0.7)'],
-        //                 [-0.06, 'rgba(201,127,240,0.7)'],
-        //                 [-0.04, 'rgba(199,153,240,0.7)'],
-        //                 [-0.02, 'rgba(203,178,241,0.7)'],
-        //                 [-0.00001, 'rgba(212,201,243,0.7)'],
-        //                 // [0, 'rgba(234,217,192,0.7)'],
-        //                 // [0.00001, 'rgba(229,217,95,0.7)'],
-        //                 // [0.02, 'rgba(197,215,90,0.7)'],
-        //                 // [0.04, 'rgba(158,202,85,0.7)'],
-        //                 // [0.06, 'rgba(123,189,80,0.7)'],
-        //                 // [0.08, 'rgba(92,176,75,0.7)'],
-        //                 // [0.1, 'rgba(70,163,76,0.7)']
-        //             ],
-        //         }
-        //     }
-        // });
 
         mapMunicipal.addLayer({
             'id': 'municipals-layer',
