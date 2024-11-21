@@ -418,35 +418,6 @@ const initializeMapCounty16_20 = () => {
 
 }
 
-// initializes map municipality with 2024 election results
-const addLayerMunicipalWonStates_16_20 = () => {
-    mapMunicipal.addLayer({
-        'id': 'municipals-layer',
-        'type': 'fill',
-        'source': 'municipals',
-        'paint': {
-            'color': 'white',
-            'fill-color': {
-                property: 'VOTER_SWING_20_24_SHIFT_WEIGHTED',
-                stops: [
-                    [-0.1, 'rgba(192,80,222,0.7)'],
-                    [-0.08, 'rgba(211,100,241,0.7)'],
-                    [-0.06, 'rgba(201,127,240,0.7)'],
-                    [-0.04, 'rgba(199,153,240,0.7)'],
-                    [-0.02, 'rgba(203,178,241,0.7)'],
-                    [-0.00001, 'rgba(212,201,243,0.7)'],
-                    // [0, 'rgba(234,217,192,0.7)'],
-                    // [0.00001, 'rgba(229,217,95,0.7)'],
-                    // [0.02, 'rgba(197,215,90,0.7)'],
-                    // [0.04, 'rgba(158,202,85,0.7)'],
-                    // [0.06, 'rgba(123,189,80,0.7)'],
-                    // [0.08, 'rgba(92,176,75,0.7)'],
-                    // [0.1, 'rgba(70,163,76,0.7)']
-                ],
-            }
-        }
-    })
-}
 const initializeMapMunicipal20_24 = () => {
     mapMunicipal = new mapboxgl.Map({
         container: 'map',
@@ -500,7 +471,6 @@ const initializeMapMunicipal20_24 = () => {
             'type': 'fill',
             'source': 'municipals',
             'paint': {
-                'color': 'white',
                 'fill-color': {
                     property: "VOTE_PERCENT_SWING_20_24",
                     stops: [
@@ -615,7 +585,6 @@ const initializeMapMunicipal16_24 = () => {
             'type': 'fill',
             'source': 'municipals',
             'paint': {
-                'color': 'white',
                 'fill-color': {
                     property: "VOTE_PERCENT_SWING_16_24",
                     stops: [
@@ -717,7 +686,6 @@ const initializeMapMunicipal16_20 = () => {
             'type': 'fill',
             'source': 'municipals',
             'paint': {
-                'color': 'white',
                 'fill-color': {
                     property: "VOTE_PERCENT_SWING_16_20",
                     stops: [
