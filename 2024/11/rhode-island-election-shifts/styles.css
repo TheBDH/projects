@@ -244,6 +244,7 @@ select option {
     }
 
     .legend {
+        opacity: 0;
         top: 10px;
         right: 10px;
         width: 65px;
@@ -253,14 +254,19 @@ select option {
         font-family: Roboto, sans-serif;
         position: absolute;
         z-index: 1;
-        animation: fadeIn 0.3s;
+        animation: fadeOut 0.3s;
+        opacity: 0;
         /*transition: transform 0.3s ease; /* Smooth transition for transform */
     }
 
-    .legend.hidden {
-        
-        animation: fadeOut 0.3s;
-        opacity: 0;
+    .legend.shown {
+        animation: fadeIn 0.3s;
+        opacity: 1;
+        /*transform: translateX(+110%); /* Move the sidebar out of the screen */
+    }
+
+    .legend.hide-mobile {
+        display: none;
         /*transform: translateX(+110%); /* Move the sidebar out of the screen */
     }
 

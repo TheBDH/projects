@@ -10,13 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.getElementById('hideButton');
     const sidebar = document.getElementById('mySideBar'); // Replace with the ID of your sidebar
     const legend = document.getElementById('legendBar'); // Replace with the ID of your sidebar
-    legend.classList.toggle('hidden');
-
     // Add an event listener for the button click
     toggleButton.addEventListener('click', function () {
         //console.log("BUTTON PRESSED");
         sidebar.classList.toggle('hidden');
-        legend.classList.toggle('hidden');
+        legend.classList.remove('hide-mobile');
+        legend.classList.toggle('shown');
         if (sidebar.classList.contains('hidden')) {
             toggleButton.textContent = 'Show Settings';  // Sidebar is hidden
         } else {
