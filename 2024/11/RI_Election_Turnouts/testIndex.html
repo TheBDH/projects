@@ -1,0 +1,210 @@
+<head>
+    <meta charset="utf-8">
+    <title>A map using a bounding box</title>
+    <meta name="viewport"
+        content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css"
+        rel="stylesheet">
+    <script
+        src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js"></script>
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="comparison-container">
+        <div id="county" class="map"></div>
+        <div id="municipality" class="map"></div>
+        <style>
+            .mapboxgl-popup {
+                max-width: 400px;
+                font:
+                    12px/20px 'Helvetica Neue',
+                    Arial,
+                    Helvetica,
+                    sans-serif;
+            }
+        </style>
+        <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+    </style>
+    </body>
+
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoidHlwcyIsImEiOiJjbDh4YXRyZmkwNHQ1M3Bvd25vNjdrMWkyIn0.HpGJaaIrWfLkmx8MiFKX9A';
+    let mapCounties;
+    let mapMunicipal;
+    const initializeMapCounty = () => {
+        mapCounties = new mapboxgl.Map({
+            container: 'county',
+            style: 'mapbox://styles/typs/cm3dl8bkr003y01nu30qs73wg',
+            center: [-71.897884, 41.585243],
+            zoom: 8.7,
+            // bounding box (southwest corner, northeast corner)
+            fitBoundsOptions: {
+                padding: 15 // padding to keep the bounds away from the edge of the map
+            }
+        });
+        // Fetch and add the local GeoJSON file
+                // Add GeoJSON as a source
+                mapCounties.on('load', () => {
+                    mapCounties.addSource('counties', {
+                        type: 'geojson',
+                        data: 'RI_Counties_GeoJSON.geojson'
+                    });
+
+                    // Add a layer showing the state polygons.
+                    mapCounties.addLayer({
+                        'id': 'counties-layer',
+                        'type': 'fill',
+                        'source': 'counties',
+                        'paint': {
+                            'fill-color': {
+                                property: 'VOTE_CHANGE',
+                                stops: [[-10000, 'rgba(212,201,243,0.7)'],
+                                    [-8000, 'rgba(203,178,241,0.7)'],
+                                    [-6000, 'rgba(199,153,240,0.7)'],
+                                    [-4000, 'rgba(201,127,240,0.7)'],
+                                    [-2000, 'rgba(211,100,241,0.7)'],
+                                    [0, 'rgba(255,255,255,0.7)'],
+                                    [2000, 'rgba(192,226,204,0.7)'],
+                                    [4000, 'rgba(166,216,190,0.7)'],
+                                    [6000, 'rgba(139,207,181,0.7)'],
+                                    [8000, 'rgba(110,200,177,0.7)'],
+                                    [10000, 'rgba(81,193,179,0.7)']],
+                            }
+                        }
+                    });
+
+                    mapCounties.addLayer({
+                        id: 'counties-borders',
+                        type: 'line',
+                        source: 'counties',
+                        paint: {
+                            'line-color': '#3386C0',
+                            'line-width': 3,
+                            'line-opacity': 1
+                        }
+                    });
+
+                });
+
+                mapCounties.on('click', 'counties-layer', (e) => {
+                    new mapboxgl.Popup()
+                        .setLngLat(e.lngLat)
+                        .setHTML(e.features[0].properties.NAME)
+                        .addTo(mapCounties);
+                });
+
+                // Change the cursor to a pointer when the mouse is over the places layer.
+                mapCounties.on('mouseenter', 'counties-layer', () => {
+                    mapCounties.getCanvas().style.cursor = 'pointer';
+                });
+
+                // Change it back to a pointer when it leaves.
+                mapCounties.on('mouseleave', 'counties-layer', () => {
+                    mapCounties.getCanvas().style.cursor = '';
+                });
+    }
+    const initializeMapMunicipal = () => {
+        mapMunicipal = new mapboxgl.Map({
+            container: 'municipality',
+            style: 'mapbox://styles/typs/cm3dl8bkr003y01nu30qs73wg',
+            center: [-71.897884, 41.585243],
+            zoom: 8.7,
+            // bounding box (southwest corner, northeast corner)
+            fitBoundsOptions: {
+                padding: 15 // padding to keep the bounds away from the edge of the map
+            }
+        });
+
+        // add a geojson line layer with a polygon representing the bounds
+        mapMunicipal.on('load', () => {
+
+            mapMunicipal.addSource('municipals', {
+                type: 'geojson',
+                data: 'RI_Municipality_GeoJSON.geojson'
+            });
+
+            // Add a layer showing the state polygons.
+            mapMunicipal.addLayer({
+                'id': 'municipals-layer',
+                'type': 'fill',
+                'source': 'municipals',
+                'paint': {
+                    'color': 'white',
+                    'fill-color': {
+                        property: 'VOTE_CHANGE',
+                        stops: [[-10000, 'rgba(212,201,243,0.7)'],
+                            [-8000, 'rgba(203,178,241,0.7)'],
+                            [-6000, 'rgba(199,153,240,0.7)'],
+                            [-4000, 'rgba(201,127,240,0.7)'],
+                            [-2000, 'rgba(211,100,241,0.7)'],
+                            [0, 'rgba(255,255,255,0.7)'],
+                            [2000, 'rgba(192,226,204,0.7)'],
+                            [4000, 'rgba(166,216,190,0.7)'],
+                            [6000, 'rgba(139,207,181,0.7)'],
+                            [8000, 'rgba(110,200,177,0.7)'],
+                            [10000, 'rgba(81,193,179,0.7)']],
+                    }
+                }
+            });
+
+            mapMunicipal.addLayer({
+                id: 'line-bounding-box',
+                type: 'line',
+                source: 'municipals',
+                paint: {
+                    'line-color': '#3386C0',
+                    'line-width': 3,
+                    'line-opacity': 0.9
+                }
+            });
+        });
+
+        mapMunicipal.on('click', 'municipals-layer', (e) => {
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(e.features[0].properties.NAME20)
+                .addTo(mapMunicipal)
+        })
+
+        // Change the cursor to a pointer when the mouse is over the places layer.
+        mapMunicipal.on('mouseenter', 'municipals-layer', () => {
+            mapMunicipal.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change it back to a pointer when it leaves.
+        mapMunicipal.on('mouseleave', 'municipals-layer', () => {
+            mapMunicipal.getCanvas().style.cursor = '';
+        });
+
+    };
+    initializeMapCounty();
+    initializeMapMunicipal();
+
+    const container = '#comparison-container';
+    const map = new mapboxgl.Compare(mapCounties, mapMunicipal, container, {
+        mousemove: true
+    })
+</script>

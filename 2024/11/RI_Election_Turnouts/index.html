@@ -1,0 +1,146 @@
+<head>
+    <meta charset="utf-8">
+    <title>Rhode Island Election Shifts</title>
+    <meta name="viewport"
+        content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" sizes="57x57"
+        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114"
+        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"
+        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/favicon-16x16.png">
+    <link rel="manifest"
+        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage"
+        content="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/ms-icon-144x144.png">
+    <script
+        src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="mySideBar">
+            <div style="text-align: center; padding-left: 13px; padding-bottom: 7px;"><a
+                    href="https://www.browndailyherald.com/"><img
+                        src="logo-black.png" alt="Daily Herald Logo" width="250"
+                        height="44" class="center-text-no-padding"></a></div>
+            <h1 id="headerText" , class="center-text-no-padding">Rhode
+                Island<br>Election Shifts</h1>
+            <style>
+                .center-text-no-padding {
+                    text-align: center; /* Centers the text horizontally */
+                    margin: 0;         /* Removes default margins */
+                    padding-left: 0px;
+                    padding-right: 14px;
+                    /*width: 100%;*/
+                }
+            </style>
+            <div class="dropdown-container", style="text-align: center;">
+                <!-- Dropdown for Municipality/County -->
+                <label for="municipality">Select
+                    Municipality/County:</label><br>
+                <select id="municipality" name="municipality">
+                    <option value="County">County</option>
+                    <option value="Municipality" selected>Municipality</option>
+                </select>
+
+                <br><br>
+
+                <!-- Dropdown for Year 1 -->
+                <label for="year1">Select Year 1:</label><br>
+                <select id="year1" name="year1">
+                    <option value="2016">2016</option>
+                    <option value="2020" selected>2020</option>
+                    <option value="2024">2024</option>
+                </select>
+
+                <br><br>
+
+                <!-- Dropdown for Year 2 -->
+                <label for="year2">Select Year 2:</label><br>
+                <select id="year2" name="year2">
+                    <option value="2016">2016</option>
+                    <option value="2020">2020</option>
+                    <option value="2024" selected>2024</option>
+                </select>
+
+                <br><br>
+            </div>
+
+        </div>
+        <div id="legend_16_20_shift_weight" class="legend">
+            <div id="legendHeader" class="center-bold-text">
+                Shift<br>Legend
+            </div>
+            <div id="R+15" class="legendLine">
+                >R+15
+                <div class="box r5"></div>
+            </div>
+            <div id="R+12" class="legendLine">
+                R+12
+                <div class="box r4"></div>
+            </div>
+            <div id="R+9" class="legendLine">
+                R+9
+                <div class="box r3"></div>
+            </div>
+            <div id="R+6" class="legendLine">
+                R+6
+                <div class="box r2"></div>
+            </div>
+            <div id="R+3" class="legendLine">
+                R+3
+                <div class="box r1"></div>
+            </div>
+            <div id="+0" class="legendLine">
+                +0
+                <div class="box n"></div>
+            </div>
+            <div id="D+3" class="legendLine">
+                D+3
+                <div class="box d1"></div>
+            </div>
+            <div id="D+6" class="legendLine">
+                D+6
+                <div class="box d2"></div>
+            </div>
+            <div id="D+9" class="legendLine">
+                D+9
+                <div class="box d3"></div>
+            </div>
+            <div id="D+12" class="legendLine">
+                D+12
+                <div class="box d4"></div>
+            </div>
+            <div id="D+15" class="legendLine">
+                >D+15
+                <div class="box d5"></div>
+            </div>
+        </div>
+        <div id='map'></div>
+    </div>
+</body>

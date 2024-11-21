@@ -1,0 +1,204 @@
+body {
+    margin:0; padding:0;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+#map {
+    position: absolute;
+    top: 0; right: 0;
+    bottom: 0; left: 0;
+    width:100%;
+    height:100%;
+}
+
+html, body, #map{
+    height:100%;
+    margin: 0px;
+}
+
+
+#mySideBar {
+    top: 20px;
+    left: 20px;
+    width: 350px;
+    height: 495px;
+    position: absolute;
+    background: rgba(245, 245, 245, 0.71);
+    z-index: 1;
+}
+
+#headerText {
+    margin-left: 12px;
+}
+
+.legend {
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    padding: 10px;
+    background: rgba(245, 245, 245, 0.71);
+    font-family: Roboto, sans-serif;
+    position: absolute;
+    z-index: 1;
+}
+
+.legendLine {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.center-bold-text {
+    font-size: 18px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.box {
+    float: right;
+    height: 20px;
+    width: 20px;
+    border-radius: 4px;
+    clear: both;
+}
+
+.mapboxgl-popup {
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    color: #333;
+    max-width: 200px;
+}
+.mapboxgl-popup-content {
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.dropdown-container {
+    font-family: Roboto, sans-serif;
+    max-width: 250px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Style the labels for better spacing and font size */
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+/* Style the select dropdowns */
+select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+/* Change background color and border on hover */
+select:hover {
+    background-color: #f1f1f1;
+    border-color: #aaa;
+}
+
+/* Style the dropdown when focused (clicked or tabbed into) */
+select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Style the options in the dropdown */
+select option {
+    padding: 8px;
+    font-size: 1rem;
+}
+
+.r5 {
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
+.r4 {
+    background-color: rgba(255,25,25,0.7);
+}
+
+.r3 {
+    background-color: rgba(255,50,50,0.7);
+}
+
+.r2 {
+    background-color: rgba(255,100,100,0.7);
+}
+
+.r1 {
+    background-color: rgba(255,150,150,0.7);
+}
+
+.n {
+    background-color: rgba(210,210,210,0.7);
+}
+
+.d1 {
+    background-color: rgba(0,150,255,0.7);
+}
+
+.d2 {
+    background-color: rgba(0,100,255,0.7);
+}
+
+.d3 {
+    background-color: rgba(0,50,255,0.7);
+}
+
+.d4 {
+    background-color: rgba(0,25,255,0.7);
+}
+
+.d5 {
+    background-color: rgba(0,0,255,0.7);
+}
+
+#mySideBar #headerText {
+    font-family: Roboto, sans-serif;
+}
+
+#main:hover #mySideBar {
+    display: block;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.button-choices {
+    width: 40%;
+    background: white;
+
+}
+
+.button-choices:hover {
+    background: #e3e2e2;
+}
+
+.button-attach {
+    display: flex;
+    align-items: center;
+}
+
+#buttonCounty {
+    border-right: 0;
+}
+
+#buttonResults {
+    border-right: 0;
+}
