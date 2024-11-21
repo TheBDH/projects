@@ -82,7 +82,7 @@ const initializeMapCounty20_24 = () => {
     mapCounties = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/typs/cm3dl8bkr003y01nu30qs73wg',
-        center: [-71.897884, 41.585243],
+        center: [-71.54, 41.68],
         zoom: 8.4,
         // bounding box (southwest corner, northeast corner)
         fitBoundsOptions: {
@@ -186,7 +186,7 @@ const initializeMapCounty16_24 = () => {
     mapCounties = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/typs/cm3dl8bkr003y01nu30qs73wg',
-        center: [-71.897884, 41.585243],
+        center: [-71.54, 41.68],
         zoom: 8.4,
         // bounding box (southwest corner, northeast corner)
         fitBoundsOptions: {
@@ -290,7 +290,7 @@ const initializeMapCounty16_20 = () => {
     mapCounties = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/typs/cm3dl8bkr003y01nu30qs73wg',
-        center: [-71.897884, 41.585243],
+        center: [-71.54, 41.68],
         zoom: 8.4,
         // bounding box (southwest corner, northeast corner)
         fitBoundsOptions: {
@@ -393,7 +393,7 @@ const initializeMapMunicipal20_24 = () => {
     mapMunicipal = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/typs/cm3dl8bkr003y01nu30qs73wg',
-        center: [-71.897884, 41.54243],
+        center: [-71.54, 41.68],
         zoom: 8.5,
         // bounding box (southwest corner, northeast corner)
         fitBoundsOptions: {
@@ -507,7 +507,7 @@ const initializeMapMunicipal16_24 = () => {
     mapMunicipal = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/typs/cm3dl8bkr003y01nu30qs73wg',
-        center: [-71.897884, 41.54243],
+        center: [-71.54, 41.68],
         zoom: 8.5,
         // bounding box (southwest corner, northeast corner)
         fitBoundsOptions: {
@@ -608,7 +608,7 @@ const initializeMapMunicipal16_20 = () => {
     mapMunicipal = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/typs/cm3dl8bkr003y01nu30qs73wg',
-        center: [-71.897884, 41.54243],
+        center: [-71.54, 41.68],
         zoom: 8.5,
         // bounding box (southwest corner, northeast corner)
         fitBoundsOptions: {
