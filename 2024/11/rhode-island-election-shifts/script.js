@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
         //console.log("BUTTON PRESSED");
         sidebar.classList.toggle('hidden');
         if (sidebar.classList.contains('hidden')) {
-            toggleButton.textContent = 'Show Sidebar';  // Sidebar is hidden
+            toggleButton.textContent = 'Show Settings';  // Sidebar is hidden
         } else {
-            toggleButton.textContent = 'Hide Sidebar';  // Sidebar is visible
+            toggleButton.textContent = 'Hide Settings';  // Sidebar is visible
         }
     });
 
@@ -208,9 +208,6 @@ const initializeMapCounty20_24 = () => {
     });
 
 
-}
-const addLayerMunicipalWonStates_20_24 = () => {
-    mapMunicipal
 }
 
 // initializes map county with 2016 -> 2024 shift election results
@@ -590,23 +587,6 @@ const initializeMapMunicipal20_24 = () => {
         //
         // });
     });
-    //TODO DECIDE WHETHER TO ELIMINATE THIS FEATURE
-    mapMunicipal.on('click', 'municipals-layer', (e) => {
-        new mapboxgl.Popup()
-            .setLngLat(e.lngLat)
-            .setHTML("The " + e.features[0].properties.NAME20 + " Municipality || " + returnValue(e.features[0].properties.VOTE_MARGIN_24, "Harris", "Trump"))
-            .addTo(mapMunicipal)
-    })
-
-    // Change the cursor to a pointer when the mouse is over the places layer.
-    mapMunicipal.on('mouseenter', 'municipals-layer', () => {
-        mapMunicipal.getCanvas().style.cursor = 'pointer';
-    });
-
-    // Change it back to a pointer when it leaves.
-    mapMunicipal.on('mouseleave', 'municipals-layer', () => {
-        mapMunicipal.getCanvas().style.cursor = '';
-    });
 
 };
 
@@ -708,23 +688,6 @@ const initializeMapMunicipal16_24 = () => {
         mapMunicipal.on('mouseleave', 'municipals-layer', () => {
             tooltip.remove();
         });
-    });
-
-    mapMunicipal.on('click', 'municipals-layer', (e) => {
-        new mapboxgl.Popup()
-            .setLngLat(e.lngLat)
-            .setHTML("The " + e.features[0].properties.NAME20 + " Municipality || " + returnValue(e.features[0].properties.VOTE_MARGIN_24, "Harris", "Trump"))
-            .addTo(mapMunicipal)
-    })
-
-    // Change the cursor to a pointer when the mouse is over the places layer.
-    mapMunicipal.on('mouseenter', 'municipals-layer', () => {
-        mapMunicipal.getCanvas().style.cursor = 'pointer';
-    });
-
-    // Change it back to a pointer when it leaves.
-    mapMunicipal.on('mouseleave', 'municipals-layer', () => {
-        mapMunicipal.getCanvas().style.cursor = '';
     });
 
 };
@@ -829,84 +792,6 @@ const initializeMapMunicipal16_20 = () => {
         });
     });
 
-    mapMunicipal.on('click', 'municipals-layer', (e) => {
-        new mapboxgl.Popup()
-            .setLngLat(e.lngLat)
-            .setHTML("The " + e.features[0].properties.NAME20 + " Municipality || " + returnValue(e.features[0].properties.VOTE_MARGIN_24, "Harris", "Trump"))
-            .addTo(mapMunicipal)
-    })
-
-    // Change the cursor to a pointer when the mouse is over the places layer.
-    mapMunicipal.on('mouseenter', 'municipals-layer', () => {
-        mapMunicipal.getCanvas().style.cursor = 'pointer';
-    });
-
-    // Change it back to a pointer when it leaves.
-    mapMunicipal.on('mouseleave', 'municipals-layer', () => {
-        mapMunicipal.getCanvas().style.cursor = '';
-    });
-
-};
-
-const addLayer2020ElectionsMunicipal = () => {
-    mapMunicipal.addLayer({
-        'id': 'municipals-layer',
-        'type': 'fill',
-        'source': 'municipals',
-        'paint': {
-            'color': 'white',
-            'fill-color': {
-                property: "VOTE_WIN_WEIGHTED_20",
-                stops: [
-                    [-0.60, 'rgba(143,29,0,0.7)'],
-                    [-0.50, 'rgba(162,13,0,0.7)'],
-                    [-0.40, 'rgba(180,0,8,0.7)'],
-                    [-0.30, 'rgba(199,0,33,0.7)'],
-                    [-0.20, '#DA003F'],
-                    [-0.10, 'rgba(236,0,97,0.7)'],
-                    [-0.00001, 'rgba(246,57,130,0.7)'],
-                    [0, 'rgba(234,217,192,0.7)'],
-                    [0.00001, 'rgba(27,164,251,0.7)'],
-                    [0.10, 'rgba(22,136,252,0.7)'],
-                    [0.20, 'rgba(16,106,253,0.7)'],
-                    [0.30, 'rgba(11,76,253,0.7)'],
-                    [0.40, 'rgba(6,44,254,0.7)'],
-                    [0.50, 'rgba(0,10,255,0.7)'],
-                    [0.60, 'rgba(0,12,236,0.7)']
-                ],
-            }
-        }
-    });
-};
-const addLayer2016ElectionsMunicipal = () => {
-    mapMunicipal.addLayer({
-        'id': 'municipals-layer',
-        'type': 'fill',
-        'source': 'municipals',
-        'paint': {
-            'color': 'white',
-            'fill-color': {
-                property: "VOTE_WIN_WEIGHTED_16",
-                stops: [
-                    [-0.60, 'rgba(143,29,0,0.7)'],
-                    [-0.50, 'rgba(162,13,0,0.7)'],
-                    [-0.40, 'rgba(180,0,8,0.7)'],
-                    [-0.30, 'rgba(199,0,33,0.7)'],
-                    [-0.20, '#DA003F'],
-                    [-0.10, 'rgba(236,0,97,0.7)'],
-                    [-0.00001, 'rgba(246,57,130,0.7)'],
-                    [0, 'rgba(234,217,192,0.7)'],
-                    [0.00001, 'rgba(27,164,251,0.7)'],
-                    [0.10, 'rgba(22,136,252,0.7)'],
-                    [0.20, 'rgba(16,106,253,0.7)'],
-                    [0.30, 'rgba(11,76,253,0.7)'],
-                    [0.40, 'rgba(6,44,254,0.7)'],
-                    [0.50, 'rgba(0,10,255,0.7)'],
-                    [0.60, 'rgba(0,12,236,0.7)']
-                ],
-            }
-        }
-    });
 };
 
 

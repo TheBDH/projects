@@ -21,6 +21,7 @@ html, body, #map{
     left: 20px;
     width: 350px;
     height: 495px;
+    border-radius: 4px;
     position: absolute;
     background: rgba(245, 245, 245, 0.71);
     z-index: 1;
@@ -35,6 +36,7 @@ html, body, #map{
     right: 20px;
     width: 100px;
     padding: 10px;
+    border-radius: 4px;
     background: rgba(245, 245, 245, 0.71);
     font-family: Roboto, sans-serif;
     position: absolute;
@@ -207,14 +209,18 @@ select option {
     display: none;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
     .hide-button {
         display: block;
         position: fixed;
-        top: 500px;
-        left: 140px;
+        bottom: 20px;
+        left: 130px;
         z-index: 10;
-        background-color: #f44336; /* Red button */
+        min-width: 130px;
+        font-family: Roboto, sans-serif;
+        font-size: 14px;
+        /*background-color: #f44336; Red button */
+        background-color: #e9262f;
         color: white;
         border: none;
         padding: 10px 20px;
@@ -225,7 +231,8 @@ select option {
         top: 20px;
         left: 20px;
         width: 350px;
-        height: 530px;
+        height: 495px;
+        border-radius: 4px;
         position: absolute;
         background: rgba(245, 245, 245, 0.9);
         z-index: 1;
@@ -241,6 +248,7 @@ select option {
         right: 10px;
         width: 65px;
         padding: 5px;
+        border-radius: 2px;
         background: rgba(245, 245, 245, 0.71);
         font-family: Roboto, sans-serif;
         position: absolute;
