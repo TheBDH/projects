@@ -43,55 +43,7 @@
 </head>
 <body>
     <div id="main">
-        <div id="mySideBar">
-            <div style="text-align: center; padding-left: 13px; padding-bottom: 7px;"><a
-                    href="https://www.browndailyherald.com/"><img
-                        src="logo-black.png" alt="Daily Herald Logo" width="250"
-                        height="44" class="center-text-no-padding"></a></div>
-            <h1 id="headerText" , class="center-text-no-padding">Rhode
-                Island<br>Election Shifts</h1>
-            <style>
-                .center-text-no-padding {
-                    text-align: center; /* Centers the text horizontally */
-                    margin: 0;         /* Removes default margins */
-                    padding-left: 0px;
-                    padding-right: 14px;
-                    /*width: 100%;*/
-                }
-            </style>
-            <div class="dropdown-container", style="text-align: center;">
-                <!-- Dropdown for Municipality/County -->
-                <label for="municipality">Select
-                    Municipality/County:</label><br>
-                <select id="municipality" name="municipality">
-                    <option value="County">County</option>
-                    <option value="Municipality" selected>Municipality</option>
-                </select>
-
-                <br><br>
-
-                <!-- Dropdown for Year 1 -->
-                <label for="year1">Select Year 1:</label><br>
-                <select id="year1" name="year1">
-                    <option value="2016">2016</option>
-                    <option value="2020" selected>2020</option>
-                    <option value="2024">2024</option>
-                </select>
-
-                <br><br>
-
-                <!-- Dropdown for Year 2 -->
-                <label for="year2">Select Year 2:</label><br>
-                <select id="year2" name="year2">
-                    <option value="2016">2016</option>
-                    <option value="2020">2020</option>
-                    <option value="2024" selected>2024</option>
-                </select>
-
-                <br><br>
-            </div>
-
-        </div>
+        <button id="hideButton" class="hide-button">Hide Settings</button>
         <div id="legend_16_20_shift_weight" class="legend">
             <div id="legendHeader" class="center-bold-text">
                 Shift<br>Legend
@@ -139,6 +91,54 @@
             <div id="D+15" class="legendLine">
                 >D+15
                 <div class="box d5"></div>
+            </div>
+        </div>
+        <div id="mySideBar">
+            <div style="text-align: center; padding-left: 13px; padding-bottom: 7px;"><a
+                    href="https://www.browndailyherald.com/"><img
+                        src="logo-black.png" alt="Daily Herald Logo" width="250"
+                        height="44" class="center-text-no-padding"></a></div>
+            <h1 id="headerText" , class="center-text-no-padding">Rhode
+                Island<br>Election Shifts</h1>
+            <style>
+                .center-text-no-padding {
+                    text-align: center; /* Centers the text horizontally */
+                    margin: 0;         /* Removes default margins */
+                    padding-left: 0px;
+                    padding-right: 14px;
+                    /*width: 100%;*/
+                }
+            </style>
+            <div class="dropdown-container", style="text-align: center;">
+                <!-- Dropdown for Municipality/County -->
+                <label for="municipality">Select
+                    Municipality/County:</label><br>
+                <select id="municipality" name="municipality">
+                    <option value="County">County</option>
+                    <option value="Municipality" selected>Municipality</option>
+                </select>
+
+                <br><br>
+
+                <!-- Dropdown for Year 1 -->
+                <label for="year1">Select Year 1:</label><br>
+                <select id="year1" name="year1">
+                    <option value="2016">2016</option>
+                    <option value="2020" selected>2020</option>
+                    <option value="2024">2024</option>
+                </select>
+
+                <br><br>
+
+                <!-- Dropdown for Year 2 -->
+                <label for="year2">Select Year 2:</label><br>
+                <select id="year2" name="year2">
+                    <option value="2016">2016</option>
+                    <option value="2020">2020</option>
+                    <option value="2024" selected>2024</option>
+                </select>
+
+                <br><br>
             </div>
         </div>
         <div id='map'></div>

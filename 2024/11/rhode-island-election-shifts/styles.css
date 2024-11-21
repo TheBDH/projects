@@ -202,3 +202,68 @@ select option {
 #buttonResults {
     border-right: 0;
 }
+
+.hide-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hide-button {
+        display: block;
+        position: fixed;
+        top: 500px;
+        left: 140px;
+        z-index: 10;
+        background-color: #f44336; /* Red button */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #mySideBar {
+        top: 20px;
+        left: 20px;
+        width: 350px;
+        height: 530px;
+        position: absolute;
+        background: rgba(245, 245, 245, 0.9);
+        z-index: 1;
+        transition: transform 0.3s ease; /* Smooth transition for transform */
+    }
+
+    #mySideBar.hidden {
+        transform: translateX(-110%); /* Move the sidebar out of the screen */
+    }
+
+    .legend {
+        top: 10px;
+        right: 10px;
+        width: 65px;
+        padding: 5px;
+        background: rgba(245, 245, 245, 0.71);
+        font-family: Roboto, sans-serif;
+        position: absolute;
+        z-index: 1;
+    }
+    
+    .legendLine {
+        font-size: 11px;
+        padding: 5px;
+    }
+    
+    .center-bold-text {
+        font-size: 14px;
+        padding-bottom: 5px;
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    .box {
+        float: right;
+        height: 15px;
+        width: 15px;
+        border-radius: 3px;
+        clear: both;
+    }
+}

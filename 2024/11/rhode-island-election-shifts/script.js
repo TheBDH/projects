@@ -6,6 +6,21 @@ let dataLink = 'https://github.com/TheBDH/projects-wip/blob/main/2024/11/11/RI_E
 let dataLinkLocal = 'RI_Municipality_PERCENT_MARGINS_ADDED_GeoJSON.geojson'
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Get the button and the element you want to hide/show
+    const toggleButton = document.getElementById('hideButton');
+    const sidebar = document.getElementById('mySideBar'); // Replace with the ID of your sidebar
+
+    // Add an event listener for the button click
+    toggleButton.addEventListener('click', function () {
+        //console.log("BUTTON PRESSED");
+        sidebar.classList.toggle('hidden');
+        if (sidebar.classList.contains('hidden')) {
+            toggleButton.textContent = 'Show Sidebar';  // Sidebar is hidden
+        } else {
+            toggleButton.textContent = 'Hide Sidebar';  // Sidebar is visible
+        }
+    });
+
     // Get the elements by ID
     const municipalityDropdown = document.getElementById('municipality');
     const year1Dropdown = document.getElementById('year1');
