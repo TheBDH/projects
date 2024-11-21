@@ -279,9 +279,9 @@ const initializeMapCounty16_24 = () => {
         var voteMargin24HTML = "";
         var voteShift16_24HTML = "";
         if (voteMargin16 > 0) {
-            voteMargin16HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: blue; border-radius: 2px; margin-right: 5px;"></span>2020: D+${Math.round(voteMargin16)}`;
+            voteMargin16HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: blue; border-radius: 2px; margin-right: 5px;"></span>2016: D+${Math.round(voteMargin16)}`;
         } else {
-            voteMargin16HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: red; border-radius: 2px; margin-right: 5px;"></span>2020: R+${-1 * Math.round(voteMargin16)}`;
+            voteMargin16HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: red; border-radius: 2px; margin-right: 5px;"></span>2016: R+${-1 * Math.round(voteMargin16)}`;
         }
         if (voteMargin24 > 0) {
             voteMargin24HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: blue; border-radius: 2px; margin-right: 5px;"></span>2024: D+${Math.round(voteMargin24)}`;
@@ -383,14 +383,14 @@ const initializeMapCounty16_20 = () => {
         var voteMargin20HTML = "";
         var voteShift16_20HTML = "";
         if (voteMargin16 > 0) {
-            voteMargin16HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: blue; border-radius: 2px; margin-right: 5px;"></span>2020: D+${Math.round(voteMargin16)}`;
+            voteMargin16HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: blue; border-radius: 2px; margin-right: 5px;"></span>2016: D+${Math.round(voteMargin16)}`;
         } else {
-            voteMargin16HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: red; border-radius: 2px; margin-right: 5px;"></span>2020: R+${-1 * Math.round(voteMargin16)}`;
+            voteMargin16HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: red; border-radius: 2px; margin-right: 5px;"></span>2016: R+${-1 * Math.round(voteMargin16)}`;
         }
         if (voteMargin20 > 0) {
-            voteMargin20HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: blue; border-radius: 2px; margin-right: 5px;"></span>2024: D+${Math.round(voteMargin20)}`;
+            voteMargin20HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: blue; border-radius: 2px; margin-right: 5px;"></span>2020: D+${Math.round(voteMargin20)}`;
         } else {
-            voteMargin20HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: red; border-radius: 2px; margin-right: 5px;"></span>2024: R+${-1 * Math.round(voteMargin20)}`;
+            voteMargin20HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: red; border-radius: 2px; margin-right: 5px;"></span>2020: R+${-1 * Math.round(voteMargin20)}`;
         }
         if (voteShift16_20 > 0) {
             voteShift16_20HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: blue; border-radius: 2px; margin-right: 5px;"></span>Shift: D+${Math.round(voteShift16_20)}`;
@@ -732,9 +732,9 @@ const initializeMapMunicipal16_20 = () => {
                 voteMargin16HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: red; border-radius: 2px; margin-right: 5px;"></span>2016: R+${-1 * Math.round(voteMargin16)}`;
             }
             if (voteMargin20 > 0) {
-                voteMargin20HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: blue; border-radius: 2px; margin-right: 5px;"></span>2024: D+${Math.round(voteMargin20)}`;
+                voteMargin20HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: blue; border-radius: 2px; margin-right: 5px;"></span>2020: D+${Math.round(voteMargin20)}`;
             } else {
-                voteMargin20HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: red; border-radius: 2px; margin-right: 5px;"></span>2024: R+${-1 * Math.round(voteMargin20)}`;
+                voteMargin20HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: red; border-radius: 2px; margin-right: 5px;"></span>2020: R+${-1 * Math.round(voteMargin20)}`;
             }
             if (voteShift16_20 > 0) {
                 voteShift16_20HTML = `<span style="display: inline-block; width: 10px; height: 10px; background-color: blue; border-radius: 2px; margin-right: 5px;"></span>Shift: D+${Math.round(voteShift16_20)}`;
