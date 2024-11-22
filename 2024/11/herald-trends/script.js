@@ -71,21 +71,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function raiseUnknownWord(wordsUnknown, originalWords) {
-        const word0 = originalWords.find(item => wordsUnknown[0] === item.clean).og
-        const word1 = originalWords.find(item => wordsUnknown[1] === item.clean).og
-        const word2 = originalWords.find(item => wordsUnknown[2] === item.clean).og
-        const word3 = originalWords.find(item => wordsUnknown[3] === item.clean).og
+        const word0 = originalWords.find(item => wordsUnknown[0] === item.clean)
+        const word1 = originalWords.find(item => wordsUnknown[1] === item.clean)
+        const word2 = originalWords.find(item => wordsUnknown[2] === item.clean)
+        const word3 = originalWords.find(item => wordsUnknown[3] === item.clean)
         if (wordsUnknown.length == 1) {
-            warningMessage.textContent = "Sorry—we haven't yet indexed the word \"" + word0 + "\".";
+            warningMessage.textContent = "Sorry—we haven't yet indexed the word \"" + word0.og + "\".";
         } else if (wordsUnknown.length == 2) {
-            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + word0
-                + "\" and \"" + word1 + "\".";
+            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + word0.og
+                + "\" and \"" + word1.og + "\".";
         } else if (wordsUnknown.length == 3) {
-            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + word0
-                + "\", \"" + word1 + "\", and \"" + word2 + "\".";
+            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + word0.og
+                + "\", \"" + word1.og + "\", and \"" + word2.og + "\".";
         } else if (wordsUnknown.length == 4) {
-            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + word0
-                + "\", \"" + word1 + "\", \"" + word2 + "\", and \"" + word3 + "\".";
+            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + word0.og
+                + "\", \"" + word1.og + "\", \"" + word2.og + "\", and \"" + word3.og + "\".";
         }
         warningMessage.style.display = 'block';
     }
