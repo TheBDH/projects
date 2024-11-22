@@ -41,6 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         if (wordList.length == 0) {
             raiseNoWords()
+        } else if (alldata == undefined) {
+            raiseStillDownloading()
         } else {
             hideWarnings()
             var unknownWordsList = unknownWords(wordList)
@@ -55,6 +57,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function raiseNoWords() {
         warningMessage.textContent = "Please enter at least 1 word."
+        warningMessage.style.display = 'block';
+    }
+
+    function raiseStillDownloading() {
+        warningMessage.textContent = "Sorry—frequency data is still downloading."
         warningMessage.style.display = 'block';
     }
 
