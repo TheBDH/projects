@@ -35,6 +35,10 @@ input {
     font-size: 12px;
 }
 
+input:hover {
+    cursor: text;
+}
+
 /* Default: 1x4 Layout (Large Screens) */
 .input-row > .input-group {
     flex: 1 1 calc(25% - 20px); /* Four items per row */

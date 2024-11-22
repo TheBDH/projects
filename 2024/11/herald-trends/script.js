@@ -1,81 +1,79 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let alldata;
-    let foundYearsList;
-
-    // Create a loading bar element
-    // Create a loading bar element
-const loadingBar = document.getElementById('loading-bar');
-loadingBar.style.width = '40%';
-loadingBar.style.background = '#f3f3f3';
-loadingBar.style.border = '0px solid #6e6d6d';
-loadingBar.style.height = '15px';
-loadingBar.style.position = 'relative';
-loadingBar.style.marginLeft = '30%';
-loadingBar.style.marginTop = '15';
-loadingBar.style.borderRadius = '4px';
-
-const progress = document.createElement('div');
-progress.style.width = '0%';
-progress.style.height = '100%';
-progress.style.background = '#f53b3b';
-progress.style.borderRadius = '4px';
-progress.style.transition = 'width 0.2s ease';
-loadingBar.appendChild(progress);
-
-fetch('https://dl.dropboxusercontent.com/scl/fi/eebzxfqgz67x59c2idzba/wordfreq.json?rlkey=0q4fbnnneo3gy8prbat67ov58&st=cr5951v6&dl=0')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-
-        const reader = response.body.getReader();
-        const estimatedTotal = 110 * 1024 * 1024; // Estimate 5MB as total size
-        let loaded = 0;
-
-        return new Response(
-            new ReadableStream({
-                start(controller) {
-                    function read() {
-                        reader.read().then(({ done, value }) => {
-                            if (done) {
-                                controller.close();
-                                return;
-                            }
-                            loaded += value.length;
-                            const percent = Math.min((loaded / estimatedTotal) * 100, 100);
-                            progress.style.width = `${percent.toFixed(2)}%`;
-                            controller.enqueue(value);
-                            read();
-                        }).catch(err => {
-                            console.error('Error reading stream:', err);
-                            controller.error(err);
-                        });
-                    }
-                    read();
-                }
-            })
-        ).json();
-    })
-    .then(data => {
-        alldata = processData(data);
-        console.log('Data loaded successfully');
-        progress.style.width = '100%'; // Ensure progress bar completes
-        setTimeout(() => (loadingBar.style.display = 'none'), 500); // Hide the loading bar after a delay
-    })
-    .catch(error => console.error('Error loading JSON:', error));
-    /*
-    fetch('https://dl.dropboxusercontent.com/scl/fi/eebzxfqgz67x59c2idzba/wordfreq.json?rlkey=0q4fbnnneo3gy8prbat67ov58&st=cr5951v6&dl=0')
-        .then(response => response.json())
-        .then(data => {
-            alldata = processData(data)
-        })
-        .catch(error => console.error('Error loading JSON:', error));*/
     const processButton = document.getElementById('process-button');
     const warningMessage = document.getElementById('warning-message');
+    const loadingBar = document.getElementById('loading-bar');
     const word1 = document.getElementById('word1');
     const word2 = document.getElementById('word2');
     const word3 = document.getElementById('word3');
     const word4 = document.getElementById('word4');
+    let alldata;
+    let foundYearsList;
+
+    // Create a loading bar element
+    loadingBar.style.width = '40%';
+    loadingBar.style.background = '#f3f3f3';
+    loadingBar.style.border = '0px solid #6e6d6d';
+    loadingBar.style.height = '15px';
+    loadingBar.style.position = 'relative';
+    loadingBar.style.marginLeft = '30%';
+    loadingBar.style.marginTop = '15';
+    loadingBar.style.borderRadius = '4px';
+
+    const progress = document.createElement('div');
+    progress.style.width = '0%';
+    progress.style.height = '100%';
+    progress.style.background = '#f53b3b';
+    progress.style.borderRadius = '4px';
+    progress.style.transition = 'width 0.2s ease';
+    loadingBar.appendChild(progress);
+
+    warningMessage.textContent = "Loading word frequency data...";
+    warningMessage.style.display = 'block';
+
+    fetch('https://dl.dropboxusercontent.com/scl/fi/eebzxfqgz67x59c2idzba/wordfreq.json?rlkey=0q4fbnnneo3gy8prbat67ov58&st=cr5951v6&dl=0')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const reader = response.body.getReader();
+            const estimatedTotal = 110 * 1024 * 1024; // Estimate 5MB as total size
+            let loaded = 0;
+
+            return new Response(
+                new ReadableStream({
+                    start(controller) {
+                        function read() {
+                            reader.read().then(({ done, value }) => {
+                                if (done) {
+                                    controller.close();
+                                    return;
+                                }
+                                loaded += value.length;
+                                const percent = Math.min((loaded / estimatedTotal) * 100, 100);
+                                progress.style.width = `${percent.toFixed(2)}%`;
+                                controller.enqueue(value);
+                                read();
+                            }).catch(err => {
+                                console.error('Error reading stream:', err);
+                                controller.error(err);
+                            });
+                        }
+                        read();
+                    }
+                })
+            ).json();
+        })
+        .then(data => {
+            alldata = processData(data);
+            console.log('Data loaded successfully');
+            progress.style.width = '100%'; // Ensure progress bar completes
+            setTimeout(() => {
+                loadingBar.style.display = 'none'; // Hide the loading bar after a delay
+                warningMessage.style.display = 'none'; // Hide the warning message after the same delay
+            }, 200);
+        })
+        .catch(error => console.error('Error loading JSON:', error));
     const colorPalette = [
         'red', 'blue', 'green', 'orange', 'purple', 'pink', 'cyan', 'yellow', 'brown', 'grey'
     ];
@@ -192,23 +190,6 @@ fetch('https://dl.dropboxusercontent.com/scl/fi/eebzxfqgz67x59c2idzba/wordfreq.j
         return processedData
     }
 
-    function lookupWord(word, alldata) {
-        const wordData = alldata.find(item => item.word === word);  // Find the word data
-        if (wordData) {
-            console.log(`Frequencies for ${word}:`, wordData.frequencies);
-            // Do something with wordData.frequencies, e.g., plot or display it
-            return wordData.frequencies
-        } else {
-            console.log(`Word not found: ${word}`);
-            return []
-        }
-    }
-
-    function processWords(listOfWords) {
-        console.log("BAD")
-        return listOfWords
-    }
-
     let currentChart = null; // Keep track of the current chart instance
 
     function plotGraph(wordsToPlot, originalWords) {
@@ -249,16 +230,7 @@ fetch('https://dl.dropboxusercontent.com/scl/fi/eebzxfqgz67x59c2idzba/wordfreq.j
         filteredData.forEach((item, index) => {
             const frequencies = Object.values(item.frequencies);
             console.log(`Processing word: ${item.word}, frequencies: ${frequencies}`);
-            /*
-            // Ensure frequencies array has data for all years in the yearsList
-            const yearData = yearsList.map(year => {
-                const idx = years.indexOf(year.toString()); // Make sure to match string-based years
-                console.log(idx)
-                return idx !== -1 ? frequencies[idx] : 0; // Use 0 if the year is missing from the data
-            });*/
             const lineColor = colorPalette[index];
-            // Debug: Log the yearData to check if it aligns with the expected data
-            //console.log(`Year data for ${item.word}:`, yearData);
 
             // Add this word's data to the chartData
             chartData.datasets.push({
