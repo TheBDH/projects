@@ -1,12 +1,75 @@
 document.addEventListener('DOMContentLoaded', function () {
     let alldata;
     let foundYearsList;
+
+    // Create a loading bar element
+    // Create a loading bar element
+const loadingBar = document.getElementById('loading-bar');
+loadingBar.style.width = '40%';
+loadingBar.style.background = '#f3f3f3';
+loadingBar.style.border = '0px solid #6e6d6d';
+loadingBar.style.height = '15px';
+loadingBar.style.position = 'relative';
+loadingBar.style.marginLeft = '30%';
+loadingBar.style.marginTop = '15';
+loadingBar.style.borderRadius = '4px';
+
+const progress = document.createElement('div');
+progress.style.width = '0%';
+progress.style.height = '100%';
+progress.style.background = '#f53b3b';
+progress.style.borderRadius = '4px';
+progress.style.transition = 'width 0.2s ease';
+loadingBar.appendChild(progress);
+
+fetch('https://dl.dropboxusercontent.com/scl/fi/eebzxfqgz67x59c2idzba/wordfreq.json?rlkey=0q4fbnnneo3gy8prbat67ov58&st=cr5951v6&dl=0')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const reader = response.body.getReader();
+        const estimatedTotal = 110 * 1024 * 1024; // Estimate 5MB as total size
+        let loaded = 0;
+
+        return new Response(
+            new ReadableStream({
+                start(controller) {
+                    function read() {
+                        reader.read().then(({ done, value }) => {
+                            if (done) {
+                                controller.close();
+                                return;
+                            }
+                            loaded += value.length;
+                            const percent = Math.min((loaded / estimatedTotal) * 100, 100);
+                            progress.style.width = `${percent.toFixed(2)}%`;
+                            controller.enqueue(value);
+                            read();
+                        }).catch(err => {
+                            console.error('Error reading stream:', err);
+                            controller.error(err);
+                        });
+                    }
+                    read();
+                }
+            })
+        ).json();
+    })
+    .then(data => {
+        alldata = processData(data);
+        console.log('Data loaded successfully');
+        progress.style.width = '100%'; // Ensure progress bar completes
+        setTimeout(() => (loadingBar.style.display = 'none'), 500); // Hide the loading bar after a delay
+    })
+    .catch(error => console.error('Error loading JSON:', error));
+    /*
     fetch('https://dl.dropboxusercontent.com/scl/fi/eebzxfqgz67x59c2idzba/wordfreq.json?rlkey=0q4fbnnneo3gy8prbat67ov58&st=cr5951v6&dl=0')
         .then(response => response.json())
         .then(data => {
             alldata = processData(data)
         })
-        .catch(error => console.error('Error loading JSON:', error));
+        .catch(error => console.error('Error loading JSON:', error));*/
     const processButton = document.getElementById('process-button');
     const warningMessage = document.getElementById('warning-message');
     const word1 = document.getElementById('word1');
@@ -30,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         word2val = cleanWord(word2ogval)
         word3val = cleanWord(word3ogval)
         word4val = cleanWord(word4ogval)
-        const ogvals = [{clean: word1val, og: word1ogval}, {clean: word2val, og: word2ogval}, {clean: word3val, og: word3ogval}, {clean: word4val, og: word4ogval}];
+        const ogvals = [{ clean: word1val, og: word1ogval }, { clean: word2val, og: word2ogval }, { clean: word3val, og: word3ogval }, { clean: word4val, og: word4ogval }];
         wordList = []
         if (word1val != "") {
             wordList.push(word1val)
@@ -150,12 +213,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function plotGraph(wordsToPlot, originalWords) {
         // Filter the alldata to only include the specified words
-        
+
         const filteredData = []
         wordsToPlot.forEach((word, index) => {
             const match = alldata.find(item => word === item.word);
             ogword = originalWords.find(item => word === item.clean).og
-            if (match) filteredData.push({word: ogword, frequencies: match.frequencies});
+            if (match) filteredData.push({ word: ogword, frequencies: match.frequencies });
         });
         console.log(filteredData);
 
@@ -224,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Set minimum and maximum y-axis values
         const suggestedMax = maxFreq; // Set the max value a bit higher than maxFreq
         const suggestedMin = 0; // Never allow negative values
-        
+
         var axisFontSize;
         if (isMobile()) {
             axisFontSize = 10;
