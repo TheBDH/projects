@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     let alldata;
     let foundYearsList;
-    fetch('wordfreq.json')
+    fetch('https://dl.dropboxusercontent.com/1/view/u2y6gg8nlenuyqt/wordfreq.json')
         .then(response => response.json())
         .then(data => {
             alldata = processData(data)
