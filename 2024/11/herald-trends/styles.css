@@ -85,7 +85,7 @@ button:hover {
     word-wrap: break-word;
 }
 
-#wordFrequencyChart {
-    
+#myGraph {
+    margin-top: 15px;
 }
 
