@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     let alldata;
     let foundYearsList;
-    fetch('https://dl.dropboxusercontent.com/1/view/u2y6gg8nlenuyqt/wordfreq.json')
+    fetch('https://dl.dropboxusercontent.com/scl/fi/eebzxfqgz67x59c2idzba/wordfreq.json?rlkey=0q4fbnnneo3gy8prbat67ov58&st=cr5951v6&dl=0')
         .then(response => response.json())
         .then(data => {
             alldata = processData(data)
@@ -133,7 +133,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function plotGraph(wordsToPlot) {
         // Filter the alldata to only include the specified words
-        const filteredData = alldata.filter(item => wordsToPlot.includes(item.word));
+        
+        const filteredData = []
+        wordsToPlot.forEach(word => {
+            const match = alldata.find(item => word === item.word);
+            if (match) filteredData.push(match);
+        });
         console.log(filteredData);
 
         // Check if filteredData is empty or not
@@ -158,12 +163,11 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         let allFrequencies = []; // Store all frequencies for y-axis scaling
-
+        console.log(filteredData);
         // Prepare the data for plotting each word
         filteredData.forEach((item, index) => {
-            const years = Object.keys(item.frequencies);
             const frequencies = Object.values(item.frequencies);
-            console.log(`Processing word: ${item.word}, years: ${years}, frequencies: ${frequencies}`);
+            console.log(`Processing word: ${item.word}, frequencies: ${frequencies}`);
             /*
             // Ensure frequencies array has data for all years in the yearsList
             const yearData = yearsList.map(year => {
@@ -171,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log(idx)
                 return idx !== -1 ? frequencies[idx] : 0; // Use 0 if the year is missing from the data
             });*/
-            const lineColor = colorPalette[index % colorPalette.length]; // Ensure it wraps around if more than 10 lines
+            const lineColor = colorPalette[index];
             // Debug: Log the yearData to check if it aligns with the expected data
             //console.log(`Year data for ${item.word}:`, yearData);
 
