@@ -1,0 +1,91 @@
+body {
+    margin:0; padding:0;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+.image-header {
+    margin-top: 10px;
+    margin-bottom: 6px;
+    width: 300px;
+}
+
+.word-input-group {
+    display: flex;
+    flex-direction: column; /* Stack the label above the input */
+    align-items: center; /* Optional: Center-align the content */
+    margin-right: 10px; /* Space between input groups */
+}
+
+.word-input-zone {
+    display: flex; /* Arrange input groups in a row */
+    flex-wrap: wrap; /* Enable wrapping to the next line */
+    justify-content: center;
+    gap: 15px; /* Add consistent spacing between groups */
+}
+
+label {
+    margin-bottom: 3px; /* Space between label and input */
+    font-size: 14px;
+}
+
+input {
+    padding: 5px;
+    width: 150px; /* Adjust width as needed */
+    font-size: 12px;
+}
+
+/* Default: 1x4 Layout (Large Screens) */
+.input-row > .input-group {
+    flex: 1 1 calc(25% - 20px); /* Four items per row */
+    max-width: calc(25% - 20px); /* Prevent items from growing unevenly */
+}
+
+/* 2x2 Layout (Medium Screens) */
+@media (max-width: 800px) {
+    .input-row > .input-group {
+        flex: 1 1 calc(50% - 20px); /* Two items per row */
+        max-width: calc(50% - 20px);
+    }
+}
+
+/* 4x1 Layout (Small Screens) */
+@media (max-width: 400px) {
+    .input-row > .input-group {
+        flex: 1 1 100%; /* Full width for stacked items */
+        max-width: 100%;
+    }
+}
+
+/* Submit Button Styling */
+.button-container {
+    width: 100%; /* Make sure button spans full width row */
+    text-align: center; /* Center-align the button */
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: white;
+    background-color: #ff2121; /* Blue color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d62020; /* Darker blue on hover */
+}
+
+#warning-message {
+    width: 100%; /* Make sure button spans full width row */
+    text-align: center; /* Center-align the button */
+    font-size: 14px;
+    margin-top: 15px;
+    word-wrap: break-word;
+}
+
+#wordFrequencyChart {
+    
+}
+
