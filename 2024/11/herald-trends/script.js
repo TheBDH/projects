@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(unknownWordsList)
             if (unknownWordsList.length == 0) {
                 plotGraph(wordList, ogvals);
+                currentChart.update()
             } else {
                 raiseUnknownWord(unknownWordsList, ogvals);
             }

@@ -20,6 +20,7 @@ body {
     display: flex; /* Arrange input groups in a row */
     flex-wrap: wrap; /* Enable wrapping to the next line */
     justify-content: center;
+    padding-left: 10px;
     gap: 15px; /* Add consistent spacing between groups */
 }
 
