@@ -185,7 +185,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 data: frequencies, // The frequency data for the word
                 borderColor: lineColor, // Set the color for this line
                 backgroundColor: `rgba(${hexToRgb(lineColor)}, 0.2)`, // Light color fill for the area under the line
-                fill: false // Fill the area under the line
+                fill: false, // Fill the area under the line
+                borderCapStyle: "round",
+                tension: 0.01,
+                pointRadius: 0,
+                pointHitRadius: 6
             });
 
             // Collect all frequencies for scaling the y-axis
@@ -214,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     x: {
                         title: {
                             display: true,
-                            text: 'Years' // Label for the x-axis
+                            text: 'Years (1891-2024)' // Label for the x-axis
                         },
                         ticks: {
                             autoSkip: true, // Automatically skip ticks to avoid overlap
@@ -224,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     y: {
                         title: {
                             display: true,
-                            text: 'Frequency' // Label for the y-axis
+                            text: 'Frequency (per 10,000 words)' // Label for the y-axis
                         },
                         suggestedMin: suggestedMin, // Never allow negative values
                         suggestedMax: suggestedMax, // Dynamic max value
