@@ -245,6 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         title: {
                             display: true,
                             text: 'Years (1891-2024)', // Label for the x-axis
+                            color: 'rgba(51, 51, 51, 1)',
                             font: {
                                 size: axisFontSize,
                                 family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
@@ -253,6 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         ticks: {
                             autoSkip: true, // Automatically skip ticks to avoid overlap
                             maxTicksLimit: 20, // Limit number of ticks to fit the graph nicely
+                            color: 'rgba(51, 51, 51, 1)',
                             font: {
                                 size: axisFontSize - 4,
                                 family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
@@ -263,12 +265,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         title: {
                             display: true,
                             text: 'Frequency (per 10,000 words)', // Label for the y-axis
+                            color: 'rgba(51, 51, 51, 1)',
                             font: {
                                 size: axisFontSize,
                                 family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
                             }
                         },
                         ticks: {
+                            color: 'rgba(51, 51, 51, 1)',
                             font: {
                                 size: axisFontSize - 4,
                                 family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
@@ -283,6 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     legend: {
                         labels: {
                             // This more specific font property overrides the global property
+                            color: 'rgba(51, 51, 51, 1)',
                             font: {
                                 size: axisFontSize - 2,
                                 family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
