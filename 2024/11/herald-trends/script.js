@@ -22,10 +22,15 @@ document.addEventListener('DOMContentLoaded', function () {
     var word4val = ""
     processButton.addEventListener('click', function () {
         console.log("Processing...");
-        word1val = word1.value
-        word2val = word2.value
-        word3val = word3.value
-        word4val = word4.value
+        const word1ogval = word1.value
+        const word2ogval = word2.value
+        const word3ogval = word3.value
+        const word4ogval = word4.value
+        word1val = cleanWord(word1ogval)
+        word2val = cleanWord(word2ogval)
+        word3val = cleanWord(word3ogval)
+        word4val = cleanWord(word4ogval)
+        const ogvals = [{clean: word1val, og: word1ogval}, {clean: word2val, og: word2ogval}, {clean: word3val, og: word3ogval}, {clean: word4val, og: word4ogval}];
         wordList = []
         if (word1val != "") {
             wordList.push(word1val)
@@ -48,9 +53,9 @@ document.addEventListener('DOMContentLoaded', function () {
             var unknownWordsList = unknownWords(wordList)
             console.log(unknownWordsList)
             if (unknownWordsList.length == 0) {
-                plotGraph(wordList);
+                plotGraph(wordList, ogvals);
             } else {
-                raiseUnknownWord(unknownWordsList);
+                raiseUnknownWord(unknownWordsList, ogvals);
             }
         }
     });
@@ -65,18 +70,22 @@ document.addEventListener('DOMContentLoaded', function () {
         warningMessage.style.display = 'block';
     }
 
-    function raiseUnknownWord(wordsUnknown) {
+    function raiseUnknownWord(wordsUnknown, originalWords) {
+        const word0 = originalWords.find(item => wordsUnknown[0] === item.clean).og
+        const word1 = originalWords.find(item => wordsUnknown[1] === item.clean).og
+        const word2 = originalWords.find(item => wordsUnknown[2] === item.clean).og
+        const word3 = originalWords.find(item => wordsUnknown[3] === item.clean).og
         if (wordsUnknown.length == 1) {
-            warningMessage.textContent = "Sorry—we haven't yet indexed the word \"" + wordsUnknown[0] + "\".";
+            warningMessage.textContent = "Sorry—we haven't yet indexed the word \"" + word0 + "\".";
         } else if (wordsUnknown.length == 2) {
-            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + wordsUnknown[0]
-                + "\" and \"" + wordsUnknown[1] + "\".";
+            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + word0
+                + "\" and \"" + word1 + "\".";
         } else if (wordsUnknown.length == 3) {
-            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + wordsUnknown[0]
-                + "\", \"" + wordsUnknown[1] + "\", and \"" + wordsUnknown[2] + "\".";
+            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + word0
+                + "\", \"" + word1 + "\", and \"" + word2 + "\".";
         } else if (wordsUnknown.length == 4) {
-            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + wordsUnknown[0]
-                + "\", \"" + wordsUnknown[1] + "\", \"" + wordsUnknown[2] + "\", and \"" + wordsUnknown[3] + "\".";
+            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + word0
+                + "\", \"" + word1 + "\", \"" + word2 + "\", and \"" + word3 + "\".";
         }
         warningMessage.style.display = 'block';
     }
@@ -87,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function unknownWords(listOfWords) {
         var wordsNotFound = []
-        listOfWords.forEach(word => {
+        listOfWords.forEach((word) => {
             if (alldata.some(item => item.word === word)) {
                 console.log(`${word} is in the json.`);
             } else {
@@ -96,6 +105,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
         return wordsNotFound
+    }
+
+    function cleanWord(word) {
+        return word
+            .toLowerCase() // Convert to lowercase
+            .replace(/[.\-]/g, '') // Remove periods and dashes
+            .trim(); // Remove spaces at the start and end
     }
 
     function processData(data) {
@@ -131,13 +147,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let currentChart = null; // Keep track of the current chart instance
 
-    function plotGraph(wordsToPlot) {
+    function plotGraph(wordsToPlot, originalWords) {
         // Filter the alldata to only include the specified words
         
         const filteredData = []
-        wordsToPlot.forEach(word => {
+        wordsToPlot.forEach((word, index) => {
             const match = alldata.find(item => word === item.word);
-            if (match) filteredData.push(match);
+            ogword = originalWords.find(item => word === item.clean).og
+            if (match) filteredData.push({word: ogword, frequencies: match.frequencies});
         });
         console.log(filteredData);
 
@@ -206,6 +223,15 @@ document.addEventListener('DOMContentLoaded', function () {
         // Set minimum and maximum y-axis values
         const suggestedMax = maxFreq; // Set the max value a bit higher than maxFreq
         const suggestedMin = 0; // Never allow negative values
+        
+        var axisFontSize;
+        if (isMobile()) {
+            axisFontSize = 10;
+            console.log("User is on a mobile device.");
+        } else {
+            axisFontSize = 14;
+            console.log("User is not on a mobile device.");
+        };
 
         // Create the new chart
         const ctx = document.getElementById('myGraph').getContext('2d');
@@ -218,21 +244,50 @@ document.addEventListener('DOMContentLoaded', function () {
                     x: {
                         title: {
                             display: true,
-                            text: 'Years (1891-2024)' // Label for the x-axis
+                            text: 'Years (1891-2024)', // Label for the x-axis
+                            font: {
+                                size: axisFontSize,
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                            }
                         },
                         ticks: {
                             autoSkip: true, // Automatically skip ticks to avoid overlap
-                            maxTicksLimit: 20 // Limit number of ticks to fit the graph nicely
+                            maxTicksLimit: 20, // Limit number of ticks to fit the graph nicely
+                            font: {
+                                size: axisFontSize - 4,
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                            }
                         }
                     },
                     y: {
                         title: {
                             display: true,
-                            text: 'Frequency (per 10,000 words)' // Label for the y-axis
+                            text: 'Frequency (per 10,000 words)', // Label for the y-axis
+                            font: {
+                                size: axisFontSize,
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                            }
+                        },
+                        ticks: {
+                            font: {
+                                size: axisFontSize - 4,
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                            }
                         },
                         suggestedMin: suggestedMin, // Never allow negative values
                         suggestedMax: suggestedMax, // Dynamic max value
                         stepSize: stepSize // Set the interval based on data range
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            // This more specific font property overrides the global property
+                            font: {
+                                size: axisFontSize - 2,
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                            }
+                        }
                     }
                 }
             }
@@ -263,4 +318,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
+
+function isMobile() {
+    return window.innerWidth <= 768; // Adjust threshold as needed
+}
 
