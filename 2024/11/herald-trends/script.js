@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error loading JSON:', error));
     const colorPalette = [
-        'red', 'blue', 'green', 'orange', 'purple', 'pink', 'cyan', 'yellow', 'brown', 'grey'
+        '#e74c3c', '#3498db', '#2ecc71', '#f1c40f', 'red', 'blue', 'green', 'orange', 'purple', 'pink', 'cyan', 'yellow', 'brown', 'grey'
     ];
     var word1val = ""
     var word2val = ""
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 label: item.word, // Set the label to the word
                 data: frequencies, // The frequency data for the word
                 borderColor: lineColor, // Set the color for this line
-                backgroundColor: `rgba(${hexToRgb(lineColor)}, 0.2)`, // Light color fill for the area under the line
+                backgroundColor: hexToRGBA(lineColor, 1), // Light color fill for the area under the line
                 fill: false, // Fill the area under the line
                 borderCapStyle: "round",
                 tension: 0.01,
@@ -260,12 +260,15 @@ document.addEventListener('DOMContentLoaded', function () {
         const suggestedMax = maxFreq; // Set the max value a bit higher than maxFreq
         const suggestedMin = 0; // Never allow negative values
 
+        var showScales;
         var axisFontSize;
         if (isMobile()) {
             axisFontSize = 10;
+            showScales = false;
             console.log("User is on a mobile device.");
         } else {
             axisFontSize = 14;
+            showScales = true
             console.log("User is not on a mobile device.");
         };
 
@@ -288,6 +291,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             }
                         },
                         ticks: {
+                            display: showScales,
                             autoSkip: true, // Automatically skip ticks to avoid overlap
                             maxTicksLimit: 20, // Limit number of ticks to fit the graph nicely
                             color: 'rgba(51, 51, 51, 1)',
@@ -300,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     y: {
                         title: {
                             display: true,
-                            text: 'Frequency (per 10,000 words)', // Label for the y-axis
+                            text: 'Frequency per 10K words', // Label for the y-axis
                             color: 'rgba(51, 51, 51, 1)',
                             font: {
                                 size: axisFontSize,
@@ -308,6 +312,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             }
                         },
                         ticks: {
+                            display: showScales,
                             color: 'rgba(51, 51, 51, 1)',
                             font: {
                                 size: axisFontSize - 4,
@@ -324,6 +329,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         labels: {
                             // This more specific font property overrides the global property
                             color: 'rgba(51, 51, 51, 1)',
+                            boxWidth: 8,
+                            boxHeight: 8,
+                            borderRadius: 0.5,
+                            useBorderRadius: true,
+                            padding: 15,
                             font: {
                                 size: axisFontSize - 2,
                                 family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
@@ -351,6 +361,31 @@ document.addEventListener('DOMContentLoaded', function () {
             grey: '128, 128, 128'
         };
         return colors[hex] || '0, 0, 0'; // Fallback to black if unknown color
+    }
+
+    function makeColorTransparent(color, transparency) {
+        // Match RGB(A) color format
+        const rgbaMatch = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/);
+        if (rgbaMatch) {
+            const r = rgbaMatch[1];
+            const g = rgbaMatch[2];
+            const b = rgbaMatch[3];
+            const a = transparency; // Apply the new transparency
+            return `rgba(${r}, ${g}, ${b}, ${a})`;
+        }
+        throw new Error('Invalid color format');
+    }
+
+    function hexToRGBA(hex, transparency) {
+        // Ensure valid hex format
+        const validHex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
+        const result = validHex.exec(hex);
+        if (!result) throw new Error('Invalid hex color');
+    
+        const r = parseInt(result[1], 16);
+        const g = parseInt(result[2], 16);
+        const b = parseInt(result[3], 16);
+        return `rgba(${r}, ${g}, ${b}, ${transparency})`;
     }
 
 
