@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const processButton = document.getElementById('process-button');
+    const smoothingBox = document.getElementById('smoothing-checkbox');
     const warningMessage = document.getElementById('warning-message');
     const loadingBar = document.getElementById('loading-bar');
     const word1 = document.getElementById('word1');
@@ -8,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const word4 = document.getElementById('word4');
     let alldata;
     let foundYearsList;
+    
+    // handling smoothing
+    var smoothing = false
 
     // Create a loading bar element
     loadingBar.style.width = '40%';
@@ -81,7 +85,31 @@ document.addEventListener('DOMContentLoaded', function () {
     var word2val = ""
     var word3val = ""
     var word4val = ""
-    processButton.addEventListener('click', function () {
+    processButton.addEventListener('click', processGraph)
+
+    function anyWords() {
+        const word1val = word1.value
+        const word2val = word2.value
+        const word3val = word3.value
+        const word4val = word4.value
+        const wordList = []
+        if (word1val != "") {
+            wordList.push(word1val)
+        }
+        if (word2val != "") {
+            wordList.push(word2val)
+        }
+        if (word3val != "") {
+            wordList.push(word3val)
+        }
+        if (word4val != "") {
+            wordList.push(word4val)
+        }
+        console.log(wordList)
+        return (wordList.length != 0)
+    }
+
+    function processGraph() {
         console.log("Processing...");
         const word1ogval = word1.value
         const word2ogval = word2.value
@@ -119,6 +147,19 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 raiseUnknownWord(unknownWordsList, ogvals);
             }
+        }
+    };
+
+    document.getElementById('smoothing-checkbox').addEventListener('change', (event) => {
+        if (event.target.checked) {
+            console.log("Smoothing enabled");
+            smoothing = true
+        } else {
+            console.log("Smoothing disabled");
+            smoothing = false
+        }
+        if (anyWords()) {
+            processGraph()
         }
     });
 
@@ -176,6 +217,48 @@ document.addEventListener('DOMContentLoaded', function () {
             .trim(); // Remove spaces at the start and end
     }
 
+    document.getElementById('inspiration-1').onclick = makeFromPreview1;
+
+    function makeFromPreview1() {
+        makeFromPreview(["Ratty", "Sharpe Refectory"])
+    }
+
+    document.getElementById('inspiration-2').onclick = makeFromPreview2;
+
+    function makeFromPreview2() {
+        makeFromPreview(["Political Science", "Psychology", "Computer Science"])
+    }
+
+    document.getElementById('inspiration-3').onclick = makeFromPreview3;
+
+    function makeFromPreview3() {
+        makeFromPreview(["Bear", "Bruin", "Bruno", "Brunonian"])
+    }
+
+    function makeFromPreview(words) {
+        if (words.length > 0) {
+            word1.value = words[0]
+        } else {
+            word1.value = ""
+        }
+        if (words.length > 1) {
+            word2.value = words[1]
+        } else {
+            word2.value = ""
+        }
+        if (words.length > 2) {
+            word3.value = words[2]
+        } else {
+            word3.value = ""
+        }
+        if (words.length > 3) {
+            word4.value = words[3]
+        } else {
+            word4.value = ""
+        }
+        processGraph()
+    }
+
     function processData(data) {
         // Initialize an array to hold word data for graphing
         let processedData = [];
@@ -228,7 +311,13 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(filteredData);
         // Prepare the data for plotting each word
         filteredData.forEach((item, index) => {
-            const frequencies = Object.values(item.frequencies);
+            const in_frequencies = Object.values(item.frequencies);
+            var frequencies;
+            if (smoothing) {
+                frequencies = smoothFrequencies(in_frequencies)
+            } else {
+                frequencies = in_frequencies
+            }
             console.log(`Processing word: ${item.word}, frequencies: ${frequencies}`);
             const lineColor = colorPalette[index];
 
@@ -343,6 +432,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
+    }
+
+    function smoothFrequencies(frequencies) {
+        const smoothed_frequencies = []
+        frequencies.forEach((item, index) => {
+            var smoothed_frequency;
+            if (index == 0) {
+                smoothed_frequency = (item + (frequencies[1] * 0.4) + (frequencies[2] * 0.2)) / 1.6;
+            } else if (index == 1) {
+                smoothed_frequency = ((frequencies[0] * 0.4) + item + (frequencies[1] * 0.4) + (frequencies[2] * 0.2)) / 2;
+            } else if (index == (frequencies.length - 2)) {
+                smoothed_frequency = ((frequencies[index - 2] * 0.2) + (frequencies[index - 1] * 0.4) + item + (frequencies[index + 1] * 0.4)) / 2;
+            } else if (index == (frequencies.length - 1)) {
+                smoothed_frequency = ((frequencies[index - 2] * 0.2) + (frequencies[index - 1] * 0.4) + item) / 1.6;
+            } else {
+                smoothed_frequency = ((frequencies[index - 2] * 0.2) + (frequencies[index - 1] * 0.4) + item + (frequencies[index + 1] * 0.4) + (frequencies[index + 2] * 0.2)) / 2.2;
+            }
+            smoothed_frequencies.push(smoothed_frequency)
+        });
+        return smoothed_frequencies;
     }
 
     // Helper function to convert color name to rgba for backgroundColor
