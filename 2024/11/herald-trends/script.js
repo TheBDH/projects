@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let foundYearsList;
     
     // handling smoothing
-    var smoothing = false
+    var smoothing;
 
     // Create a loading bar element
     loadingBar.style.width = '40%';
@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             alldata = processData(data);
             console.log('Data loaded successfully');
+            smoothing = false;
             progress.style.width = '100%'; // Ensure progress bar completes
             setTimeout(() => {
                 loadingBar.style.display = 'none'; // Hide the loading bar after a delay
