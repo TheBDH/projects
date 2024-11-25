@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const processButton = document.getElementById('process-button');
+    const clearButton = document.getElementById('clear-button');
     const smoothingBox = document.getElementById('smoothing-checkbox');
     const warningMessage = document.getElementById('warning-message');
     const loadingBar = document.getElementById('loading-bar');
@@ -151,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    document.getElementById('smoothing-checkbox').addEventListener('change', (event) => {
+    smoothingBox.addEventListener('change', (event) => {
         if (event.target.checked) {
             console.log("Smoothing enabled");
             smoothing = true
@@ -161,7 +162,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         if (anyWords()) {
             processGraph()
+        } else {
+            currentChart.destroy()
         }
+    });
+
+    clearButton.addEventListener('click', () => {
+        word1.value = "";
+        word2.value = "";
+        word3.value = "";
+        word4.value = "";
+        currentChart.destroy()
     });
 
     function raiseNoWords() {

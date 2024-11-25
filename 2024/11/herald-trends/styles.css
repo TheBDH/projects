@@ -182,11 +182,11 @@ input:hover {
 }
 
 #graph-container {
-    width: 80%;
+    width: 84%;
 }
 
 /* 2x2 Layout (Medium Screens) */
-@media (max-width: 800px) {
+@media (max-width: 955px) {
     .input-row>.input-group {
         flex: 1 1 calc(50% - 20px);
         /* Two items per row */
@@ -205,7 +205,7 @@ input:hover {
 }
 
 /* 4x1 Layout (Small Screens) */
-@media (max-width: 400px) {
+@media (max-width: 425px) {
     .input-row>.input-group {
         flex: 1 1 100%;
         /* Full width for stacked items */
@@ -215,13 +215,22 @@ input:hover {
         align-items: center;
         gap: 10px;
     }
-    .button-container {
+    #clear-container {
+        width: 90px;
+    }
+    #clear-button {
+        margin-left: 20%;
+    }
+    #process-container {
+        width: 105px;
+    }
+    #process-button {
         margin-left: 5%;
         width: 100px;
     }
     .smoothing-settings {
         margin-right: 5%;
-        width: 140px;
+        width: 100px;
     }
 }
 
@@ -255,6 +264,25 @@ button {
 
 button:hover {
     background-color: #d62020;
+}
+
+button:active {
+    background-color: #ff2121;
+}
+
+#clear-button {
+    background-color: #000000;
+    border-width: 2px;
+    border-color: #ff2121;
+}
+
+#clear-button:hover {
+    background-color: #3b3b3b;
+    /* Darker blue on hover */
+}
+
+#clear-button:active {
+    background-color: #000000;
     /* Darker blue on hover */
 }
 
@@ -274,6 +302,7 @@ button:hover {
 .red-checkbox:checked {
     background-color: red;
     /*border-color: darkred;*/
+    border: 1px #121212;
     border-color: #121212;
 }
 
@@ -295,7 +324,7 @@ button:hover {
 .smoothing-settings {
     display: flex;
     align-items: center;
-    gap: 8px; /* Space between checkbox and label */
+    gap: 4px; /* Space between checkbox and label */
     font-size: 14px;
     color: #000000;
 }
