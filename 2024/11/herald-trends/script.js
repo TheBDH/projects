@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('inspiration-3').onclick = makeFromPreview3;
 
     function makeFromPreview3() {
-        makeFromPreview(["Bear", "Bruin", "Bruno", "Brunonian"])
+        makeFromPreview(["Bears", "Bruins", "Bruno", "Brunonian"])
     }
 
     function makeFromPreview(words) {
@@ -294,14 +294,14 @@ document.addEventListener('DOMContentLoaded', function () {
         function findNthOccurrence(list, item, n) {
             let count = 0;
             for (let i = 0; i < list.length; i++) {
-              if (list[i].clean == item) {
-                if (count == n) return list[i]; // Return index of nth occurrence
-                count++;
-              }
+                if (list[i].clean == item) {
+                    if (count == n) return list[i]; // Return index of nth occurrence
+                    count++;
+                }
             }
             return -1; // Not found
         };
-    
+
         const countOccurrencesFiltered = (list, item) =>
             list.reduce((count, current) => count + (current.clean == item ? 1 : 0), 0);
 
@@ -396,6 +396,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Set label color based on dark mode
         const labelColor = isDarkMode ? 'rgba(238, 238, 238, 1)' : 'rgba(51, 51, 51, 1)';
+        const tooltipBorderColor = isDarkMode ? 'rgba(238, 238, 238, 0.4)' : 'rgba(51, 51, 51, 0.4)';
+        const tooltipFillColor = isDarkMode ? 'rgba(0, 0, 0, 0.85)' : 'rgba(0, 0, 0, 0.78)';
 
         // Create the new chart
         const ctx = document.getElementById('myGraph').getContext('2d');
@@ -462,6 +464,36 @@ document.addEventListener('DOMContentLoaded', function () {
                             font: {
                                 size: axisFontSize - 2,
                                 family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                            }
+                        }
+                    },
+                    tooltip: {
+                        enabled: true, // Enable/disable the tooltip
+                        backgroundColor: tooltipFillColor, // Background color
+                        titleColor: '#ffffff', // Title font color
+                        bodyColor: '#ffffff', // Body font color
+                        borderColor: tooltipBorderColor, // Border color
+                        borderWidth: 2, // Border width
+                        titleFont: {
+                            family: "'Roboto', 'Helvetica', 'Arial', sans-serif", // Title font family
+                            size: 12, // Title font size
+                            style: 'bold' // Title font style
+                        },
+                        bodyFont: {
+                            family: "'Roboto', 'Helvetica', 'Arial', sans-serif", // Body font family
+                            size: 12, // Body font size
+                        },
+                        padding: 8, // Padding around tooltip
+                        caretSize: 6, // Size of the caret (triangle pointer)
+                        cornerRadius: 6, // Tooltip corner radius
+                        displayColors: true, // Show dataset color box
+                        usePointStyle: true,
+                        callbacks: {
+                            labelPointStyle: function (context) {
+                                return {
+                                    pointStyle: 'rectRounded', // Use rounded rectangle for the color box
+                                    rotation: 0, // Ensure no rotation
+                                };
                             }
                         }
                     }
