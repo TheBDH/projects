@@ -308,6 +308,7 @@ button:active {
 
 .red-checkbox:checked::before {
     content: "✔"; /* Unicode check mark */
+    -webkit-text-fill-color: #ffffff;
     color: white;
     font-size: 12px;
     font-weight: bold;
@@ -338,3 +339,59 @@ button:active {
     margin-top: 15px;
     word-wrap: break-word;
 }
+
+#herald-trends-logo {
+    min-height: 100px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+      color: #eee;
+      background: #121212;
+    }
+    .image-header {
+        background-image: url('darkmodelowqualheader.png');
+    }
+    .smoothing-settings {
+        color: #eee;
+    }
+    button {
+        background-color: #e12626;
+    }
+    button:hover {
+        background-color: #af1a1a;
+    }
+    
+    button:active {
+        background-color: #e12626;
+    }
+    #clear-button {
+        background-color: #363636;
+        border-width: 2px;
+    }
+    #clear-button:hover {
+        background-color: #2d2d2d;
+    }
+    #clear-button:active {
+        background-color: #363636;
+        border-width: 2px;
+    }
+    .input-box {
+        border-color: #eee;
+        background-color: rgb(26, 26, 26);
+        color: #eee;
+    }
+    .input-box::placeholder {
+        color: #aaa; /* Placeholder text color */
+    }
+    .input-box:focus {
+        border-color: #2e93ff; /* Blue border for focus state */
+        outline: none; /* Remove the default outline */
+    }
+    .red-checkbox {
+        border: 2px solid white;
+        border-color: #ffffff;
+        border-radius: 3px; /* Optional: rounded corners */
+        background-color: black;
+    }
+  }

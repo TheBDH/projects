@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const word4 = document.getElementById('word4');
     let alldata;
     let foundYearsList;
-    
+
     // handling smoothing
     var smoothing;
 
@@ -502,7 +502,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const validHex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
         const result = validHex.exec(hex);
         if (!result) throw new Error('Invalid hex color');
-    
+
         const r = parseInt(result[1], 16);
         const g = parseInt(result[2], 16);
         const b = parseInt(result[3], 16);
@@ -512,7 +512,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+    const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const heraldTrendsLogo = document.getElementById("herald-trends-logo");
 
+    // Initial check
+    console.log(darkModeQuery.matches ? "Dark mode is enabled" : "Light mode is enabled");
+    const setThemeImage = (isDarkMode) => {
+        heraldTrendsLogo.src = isDarkMode ? 'darkmodelowqualheader.png' : 'lowqualheader.png';
+    };
+    setThemeImage(darkModeQuery)
+
+    // Listen for changes
+    darkModeQuery.addEventListener('change', (e) => {
+        updateHeaderImage(e)
+    });
+
+    function updateHeaderImage(e) {
+        const darkImage = new Image();
+        darkImage.src = 'darkmodelowqualheader.png';
+        const lightImage = new Image();
+        lightImage.src = 'lowqualheader.png';
+        if (e.matches) {
+            console.log("Switched to dark mode");
+            heraldTrendsLogo.src = darkImage.src; // Change the image
+        } else {
+            console.log("Switched to light mode");
+            heraldTrendsLogo.src = lightImage.src;
+        }
+    }
 
 });
 
