@@ -530,10 +530,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Listen for changes
     darkModeQuery.addEventListener('change', (e) => {
-        updateHeaderImage(e)
+        updateHeader(e)
+        const newColor = e.matches ? 'rgba(255, 255, 255, 1)' : 'rgba(51, 51, 51, 1)';
+        currentChart.options.scales.x.title.color = newColor;
+        currentChart.options.scales.x.ticks.color = newColor;
+        currentChart.options.scales.y.title.color = newColor;
+        currentChart.options.scales.y.ticks.color = newColor;
+        currentChart.options.plugins.legend.labels.color = newColor;
+        currentChart.update(); // Update the chart to apply the new color
     });
 
-    function updateHeaderImage(e) {
+    function updateHeader(e) {
         const darkImage = new Image();
         darkImage.src = 'darkmodelowqualheader.png';
         const lightImage = new Image();
@@ -541,19 +548,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.matches) {
             console.log("Switched to dark mode");
             heraldTrendsLogo.src = darkImage.src; // Change the image
-            if (anyWords()) {
-                processGraph()
-            } else {
-                currentChart.destroy()
-            }
         } else {
             console.log("Switched to light mode");
             heraldTrendsLogo.src = lightImage.src;
-            if (anyWords()) {
-                processGraph()
-            } else {
-                currentChart.destroy()
-            }
         }
     }
 
