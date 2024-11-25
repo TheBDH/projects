@@ -394,4 +394,28 @@ button:active {
         border-radius: 3px; /* Optional: rounded corners */
         background-color: black;
     }
+    #side-bar-box::before {
+        background-color: rgba(255, 255, 255, 0.12); /* White with 8% transparency */
+    }
+    .inspiration-box {
+        border: 2px solid #262626;
+        background-color: #0b0b0b;
+    }
+    
+    .inspiration-box:hover {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .preview-graph {
+        background-color: #0b0b0b;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    .preview-words {
+        color: #eee;
+    }
   }
