@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             const reader = response.body.getReader();
-            const estimatedTotal = 110 * 1024 * 1024; // Estimate 5MB as total size
+            const estimatedTotal = 110 * 1024 * 1024; // Estimate 110MB as total size
             let loaded = 0;
 
             return new Response(
@@ -526,7 +526,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const setThemeImage = (isDarkMode) => {
         heraldTrendsLogo.src = isDarkMode ? 'darkmodelowqualheader.png' : 'lowqualheader.png';
     };
-    setThemeImage(darkModeQuery)
+    updateHeader(darkModeQuery)
 
     // Listen for changes
     darkModeQuery.addEventListener('change', (e) => {
