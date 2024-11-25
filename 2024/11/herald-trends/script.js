@@ -373,6 +373,12 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("User is not on a mobile device.");
         };
 
+        // Check for dark mode
+        const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Set label color based on dark mode
+        const labelColor = isDarkMode ? 'rgba(238, 238, 238, 1)' : 'rgba(51, 51, 51, 1)';
+
         // Create the new chart
         const ctx = document.getElementById('myGraph').getContext('2d');
         currentChart = new Chart(ctx, {
@@ -385,7 +391,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         title: {
                             display: true,
                             text: 'Years (1891-2024)', // Label for the x-axis
-                            color: 'rgba(51, 51, 51, 1)',
+                            color: labelColor,
                             font: {
                                 size: axisFontSize,
                                 family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
@@ -395,7 +401,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             display: showScales,
                             autoSkip: true, // Automatically skip ticks to avoid overlap
                             maxTicksLimit: 20, // Limit number of ticks to fit the graph nicely
-                            color: 'rgba(51, 51, 51, 1)',
+                            color: labelColor,
                             font: {
                                 size: axisFontSize - 4,
                                 family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
@@ -405,8 +411,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     y: {
                         title: {
                             display: true,
-                            text: 'Frequency per 10K words', // Label for the y-axis
-                            color: 'rgba(51, 51, 51, 1)',
+                            text: 'Frequency Per 10K Words', // Label for the y-axis
+                            color: labelColor,
                             font: {
                                 size: axisFontSize,
                                 family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
@@ -414,7 +420,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         ticks: {
                             display: showScales,
-                            color: 'rgba(51, 51, 51, 1)',
+                            color: labelColor,
                             font: {
                                 size: axisFontSize - 4,
                                 family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
@@ -429,7 +435,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     legend: {
                         labels: {
                             // This more specific font property overrides the global property
-                            color: 'rgba(51, 51, 51, 1)',
+                            color: labelColor,
                             boxWidth: 8,
                             boxHeight: 8,
                             borderRadius: 0.5,
@@ -535,9 +541,19 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.matches) {
             console.log("Switched to dark mode");
             heraldTrendsLogo.src = darkImage.src; // Change the image
+            if (anyWords()) {
+                processGraph()
+            } else {
+                currentChart.destroy()
+            }
         } else {
             console.log("Switched to light mode");
             heraldTrendsLogo.src = lightImage.src;
+            if (anyWords()) {
+                processGraph()
+            } else {
+                currentChart.destroy()
+            }
         }
     }
 
