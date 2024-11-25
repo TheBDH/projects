@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
         word2val = cleanWord(word2ogval)
         word3val = cleanWord(word3ogval)
         word4val = cleanWord(word4ogval)
-        const ogvals = [{ clean: word1val, og: word1ogval }, { clean: word2val, og: word2ogval }, { clean: word3val, og: word3ogval }, { clean: word4val, og: word4ogval }];
+        const ogvals = [{ clean: word1val, og: word1ogval, index: 0 }, { clean: word2val, og: word2ogval, index: 1 }, { clean: word3val, og: word3ogval, index: 2 }, { clean: word4val, og: word4ogval, index: 3 }];
         wordList = []
         if (word1val != "") {
             wordList.push(word1val)
@@ -223,10 +223,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function cleanWord(word) {
-        return word
+        const normalizeApostrophes = (str) => str.replace(/[\u2018\u2019\u201B\u2032\u02BC]/g, "'");
+        return normalizeApostrophes(word
             .toLowerCase() // Convert to lowercase
             .replace(/[.\-]/g, '') // Remove periods and dashes
-            .trim(); // Remove spaces at the start and end
+            .trim()); // Remove spaces at the start and end
     }
 
     document.getElementById('inspiration-1').onclick = makeFromPreview1;
@@ -290,11 +291,28 @@ document.addEventListener('DOMContentLoaded', function () {
     function plotGraph(wordsToPlot, originalWords) {
         // Filter the alldata to only include the specified words
 
+        function findNthOccurrence(list, item, n) {
+            let count = 0;
+            for (let i = 0; i < list.length; i++) {
+              if (list[i].clean == item) {
+                if (count == n) return list[i]; // Return index of nth occurrence
+                count++;
+              }
+            }
+            return -1; // Not found
+        };
+    
+        const countOccurrencesFiltered = (list, item) =>
+            list.reduce((count, current) => count + (current.clean == item ? 1 : 0), 0);
+
         const filteredData = []
-        wordsToPlot.forEach((word, index) => {
+        wordsToPlot.forEach((word) => {
             const match = alldata.find(item => word === item.word);
-            ogword = originalWords.find(item => word === item.clean).og
-            if (match) filteredData.push({ word: ogword, frequencies: match.frequencies });
+            /*
+            const ogword = originalWords.find(item => word === item.clean).og
+            const ogindex = originalWords.find(item => word === item.clean).index*/
+            const ogItem = findNthOccurrence(originalWords, word, countOccurrencesFiltered(filteredData, word));
+            if (match) filteredData.push({ word: ogItem.og, frequencies: match.frequencies, index: ogItem.index, clean: word });
         });
         console.log(filteredData);
 
@@ -322,7 +340,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let allFrequencies = []; // Store all frequencies for y-axis scaling
         console.log(filteredData);
         // Prepare the data for plotting each word
-        filteredData.forEach((item, index) => {
+        filteredData.forEach((item) => {
             const in_frequencies = Object.values(item.frequencies);
             var frequencies;
             if (smoothing) {
@@ -331,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 frequencies = in_frequencies
             }
             console.log(`Processing word: ${item.word}, frequencies: ${frequencies}`);
-            const lineColor = colorPalette[index];
+            const lineColor = colorPalette[item.index];
 
             // Add this word's data to the chartData
             chartData.datasets.push({
@@ -470,37 +488,6 @@ document.addEventListener('DOMContentLoaded', function () {
             smoothed_frequencies.push(smoothed_frequency)
         });
         return smoothed_frequencies;
-    }
-
-    // Helper function to convert color name to rgba for backgroundColor
-    function hexToRgb(hex) {
-        // Simple conversion for common colors (you can extend this function for more colors)
-        const colors = {
-            red: '255, 0, 0',
-            blue: '0, 0, 255',
-            green: '0, 255, 0',
-            orange: '255, 165, 0',
-            purple: '128, 0, 128',
-            pink: '255, 192, 203',
-            cyan: '0, 255, 255',
-            yellow: '255, 255, 0',
-            brown: '139, 69, 19',
-            grey: '128, 128, 128'
-        };
-        return colors[hex] || '0, 0, 0'; // Fallback to black if unknown color
-    }
-
-    function makeColorTransparent(color, transparency) {
-        // Match RGB(A) color format
-        const rgbaMatch = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/);
-        if (rgbaMatch) {
-            const r = rgbaMatch[1];
-            const g = rgbaMatch[2];
-            const b = rgbaMatch[3];
-            const a = transparency; // Apply the new transparency
-            return `rgba(${r}, ${g}, ${b}, ${a})`;
-        }
-        throw new Error('Invalid color format');
     }
 
     function hexToRGBA(hex, transparency) {
