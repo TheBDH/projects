@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     warningMessage.textContent = "Loading word frequency data...";
     warningMessage.style.display = 'block';
-
+    // save to local storage (ask jacob if you can't figure out how)
     fetch('https://dl.dropboxusercontent.com/scl/fi/eebzxfqgz67x59c2idzba/wordfreq.json?rlkey=0q4fbnnneo3gy8prbat67ov58&st=cr5951v6&dl=0')
         .then(response => {
             if (!response.ok) {
@@ -398,6 +398,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const labelColor = isDarkMode ? 'rgba(238, 238, 238, 1)' : 'rgba(51, 51, 51, 1)';
         const tooltipBorderColor = isDarkMode ? 'rgba(238, 238, 238, 0.4)' : 'rgba(51, 51, 51, 0.4)';
         const tooltipFillColor = isDarkMode ? 'rgba(0, 0, 0, 0.85)' : 'rgba(0, 0, 0, 0.78)';
+        const gridLineColor = isDarkMode ? 'rgba(230, 230, 230, 0.15)' : Chart.defaults.borderColor;
 
         // Create the new chart
         const ctx = document.getElementById('myGraph').getContext('2d');
@@ -426,6 +427,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                 size: axisFontSize - 4,
                                 family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
                             }
+                        },
+                        grid: {
+                            color: gridLineColor, // X-axis grid line color
                         }
                     },
                     y: {
@@ -445,6 +449,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                 size: axisFontSize - 4,
                                 family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
                             }
+                        },
+                        grid: {
+                            color: gridLineColor, // Y-axis grid line color
                         },
                         suggestedMin: suggestedMin, // Never allow negative values
                         suggestedMax: suggestedMax, // Dynamic max value
@@ -476,8 +483,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         borderWidth: 2, // Border width
                         titleFont: {
                             family: "'Roboto', 'Helvetica', 'Arial', sans-serif", // Title font family
-                            size: 12, // Title font size
-                            style: 'bold' // Title font style
+                            size: 12 // Title font size
                         },
                         bodyFont: {
                             family: "'Roboto', 'Helvetica', 'Arial', sans-serif", // Body font family
@@ -551,11 +557,22 @@ document.addEventListener('DOMContentLoaded', function () {
     darkModeQuery.addEventListener('change', (e) => {
         updateHeader(e)
         const newColor = e.matches ? 'rgba(255, 255, 255, 1)' : 'rgba(51, 51, 51, 1)';
+        const gridLineColor = e.matches ? 'rgba(230, 230, 230, 0.15)' : Chart.defaults.borderColor;
+        const tooltipBorderColor = e.matches ? 'rgba(238, 238, 238, 0.4)' : 'rgba(51, 51, 51, 0.4)';
+        const tooltipFillColor = e.matches ? 'rgba(0, 0, 0, 0.85)' : 'rgba(0, 0, 0, 0.78)';
+
         currentChart.options.scales.x.title.color = newColor;
         currentChart.options.scales.x.ticks.color = newColor;
+        currentChart.options.scales.x.grid.color = gridLineColor;
         currentChart.options.scales.y.title.color = newColor;
         currentChart.options.scales.y.ticks.color = newColor;
+        currentChart.options.scales.y.grid.color = gridLineColor;
         currentChart.options.plugins.legend.labels.color = newColor;
+
+        currentChart.options.plugins.tooltip.backgroundColor = tooltipFillColor;
+        currentChart.options.plugins.tooltip.borderColor = tooltipBorderColor;
+        
+
         currentChart.update(); // Update the chart to apply the new color
     });
 
