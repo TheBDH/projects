@@ -47,6 +47,7 @@ body {
 
 #about-link {
     color: #ff2121;
+    display: block;
 }
 
 .inspiration-box {
