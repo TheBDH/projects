@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     warningMessage.textContent = "Loading word frequency data...";
     warningMessage.style.display = 'block';
-    // save to local storage (ask jacob if you can't figure out how)
+
     fetch('https://dl.dropboxusercontent.com/scl/fi/eebzxfqgz67x59c2idzba/wordfreq.json?rlkey=0q4fbnnneo3gy8prbat67ov58&st=cr5951v6&dl=0')
         .then(response => {
             if (!response.ok) {
@@ -88,6 +88,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var word3val = ""
     var word4val = ""
     processButton.addEventListener('click', processGraph)
+
+    // Execute a function when the user presses a key on the keyboard
+    document.addEventListener("keypress", function (event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === "Enter") {
+            processGraph()
+        }
+    });
 
     function anyWords() {
         const word1val = word1.value
@@ -571,7 +579,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         currentChart.options.plugins.tooltip.backgroundColor = tooltipFillColor;
         currentChart.options.plugins.tooltip.borderColor = tooltipBorderColor;
-        
+
 
         currentChart.update(); // Update the chart to apply the new color
     });
