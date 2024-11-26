@@ -2,6 +2,13 @@
     width: 100%;
 }
 
+#about-text {
+    width: 80%;
+    margin-left: 10%;
+    text-align: justify;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
 .image-header {
     margin-top: 0px;
     margin-bottom: 8px;
