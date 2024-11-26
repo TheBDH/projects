@@ -15,6 +15,39 @@
     width: 300px;
 }
 
+#process-button {
+    width: 100px;
+}
+
+.button-container {
+    /* Make sure button spans full width row */
+    text-align: center;
+    height: 50px;
+    margin-top: 30px; /* Adds space between the text and the button */
+    /* Center-align the button */
+}
+
+.button {
+    padding: 10px 20px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    background-color: #ff2121;
+    /* Blue color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #d62020;
+}
+
+.button:active {
+    background-color: #ff2121;
+}
+
 @media (prefers-color-scheme: dark) {
     body {
       color: #eee;
