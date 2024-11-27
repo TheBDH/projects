@@ -393,9 +393,10 @@ button:active {
     text-align: center;
     /* Center-align the button */
     font-size: 14px;
-    margin-top: 15px;
+    margin-top: 8px;
     word-wrap: break-word;
     color: red;
+    line-height: 1.4em;
 }
 
 #herald-trends-logo {

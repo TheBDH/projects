@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // handling smoothing
     var smoothing;
+    var fullDataLoaded = false;
 
     // Create a loading bar element
     loadingBar.style.width = '40%';
@@ -35,14 +36,14 @@ document.addEventListener('DOMContentLoaded', function () {
     warningMessage.textContent = "Loading word frequency data...";
     warningMessage.style.display = 'block';
 
-    fetch('https://dl.dropboxusercontent.com/scl/fi/eebzxfqgz67x59c2idzba/wordfreq.json?rlkey=0q4fbnnneo3gy8prbat67ov58&st=cr5951v6&dl=0')
+    fetch('https://dl.dropboxusercontent.com/scl/fi/quvvmhte7g31nancfrfoh/top_1_2_freq_dict.json?rlkey=d9g942sm3g5lweoh57tk2ltkl&st=w7olpuap&dl=0')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
 
             const reader = response.body.getReader();
-            const estimatedTotal = 110 * 1024 * 1024; // Estimate 110MB as total size
+            const estimatedTotal = 25 * 1024 * 1024; // Estimate 110MB as total size
             let loaded = 0;
 
             return new Response(
@@ -71,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(data => {
             alldata = processData(data);
-            console.log('Data loaded successfully');
+            console.log('Smaller top data file loaded successfully');
             smoothing = false;
             progress.style.width = '100%'; // Ensure progress bar completes
             setTimeout(() => {
@@ -80,6 +81,49 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 200);
         })
         .catch(error => console.error('Error loading JSON:', error));
+    // fetching the larger file
+    fetch('https://dl.dropboxusercontent.com/scl/fi/9sf2ix127e7gki71sh2xf/1_2_freq_dict.json?rlkey=qt31zi54fouqi9k7f351x1lmv&st=nhouqyub&dl=0')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const reader = response.body.getReader();
+            const estimatedTotal = 200 * 1024 * 1024; // Estimate 110MB as total size
+            let loaded = 0;
+
+            return new Response(
+                new ReadableStream({
+                    start(controller) {
+                        function read() {
+                            reader.read().then(({ done, value }) => {
+                                if (done) {
+                                    controller.close();
+                                    return;
+                                }
+                                loaded += value.length;
+                                const percent = Math.min((loaded / estimatedTotal) * 100, 100);
+                                // progress.style.width = `${percent.toFixed(2)}%`;
+                                controller.enqueue(value);
+                                read();
+                            }).catch(err => {
+                                console.error('Error reading stream:', err);
+                                controller.error(err);
+                            });
+                        }
+                        read();
+                    }
+                })
+            ).json();
+        })
+        .then(data => {
+            alldata = processData(data);
+            console.log('Full data loaded successfully');
+            smoothing = false;
+            fullDataLoaded = true;
+        })
+        .catch(error => console.error('Error loading JSON:', error));
+
     const colorPalette = [
         '#e74c3c', '#3498db', '#2ecc71', '#f1c40f', 'red', 'blue', 'green', 'orange', 'purple', 'pink', 'cyan', 'yellow', 'brown', 'grey'
     ];
@@ -198,17 +242,23 @@ document.addEventListener('DOMContentLoaded', function () {
         const word1 = originalWords.find(item => wordsUnknown[1] === item.clean)
         const word2 = originalWords.find(item => wordsUnknown[2] === item.clean)
         const word3 = originalWords.find(item => wordsUnknown[3] === item.clean)
+        let addition;
+        if (fullDataLoaded) {
+            addition = "";
+        } else {
+            addition = "<br>The full data is still loading. Try again in a minute or two!";
+        }
         if (wordsUnknown.length == 1) {
-            warningMessage.textContent = "Sorry—we haven't yet indexed the word \"" + word0.og + "\".";
+            warningMessage.innerHTML = "Sorry—we haven't yet indexed the word \"" + word0.og + "\"." + addition;
         } else if (wordsUnknown.length == 2) {
-            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + word0.og
-                + "\" and \"" + word1.og + "\".";
+            warningMessage.innerHTML = "Sorry—we haven't yet indexed the words \"" + word0.og
+                + "\" and \"" + word1.og + "\"." + addition;
         } else if (wordsUnknown.length == 3) {
-            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + word0.og
-                + "\", \"" + word1.og + "\", and \"" + word2.og + "\".";
+            warningMessage.innerHTML = "Sorry—we haven't yet indexed the words \"" + word0.og
+                + "\", \"" + word1.og + "\", and \"" + word2.og + "\"." + addition;
         } else if (wordsUnknown.length == 4) {
-            warningMessage.textContent = "Sorry—we haven't yet indexed the words \"" + word0.og
-                + "\", \"" + word1.og + "\", \"" + word2.og + "\", and \"" + word3.og + "\".";
+            warningMessage.innerHTML = "Sorry—we haven't yet indexed the words \"" + word0.og
+                + "\", \"" + word1.og + "\", \"" + word2.og + "\", and \"" + word3.og + "\"." + addition;
         }
         warningMessage.style.display = 'block';
     }
