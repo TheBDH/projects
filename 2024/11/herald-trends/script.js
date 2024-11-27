@@ -169,7 +169,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // If the user presses the "Enter" key on the keyboard
         if (event.key === "Enter") {
             processGraph()
-            document.activeElement.blur();
+            if (isMobile()) {
+                word1.blur();
+                word2.blur();
+                word3.blur();
+                word4.blur();
+            }
         }
     });
 
