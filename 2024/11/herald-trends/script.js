@@ -35,15 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     warningMessage.textContent = "Loading word frequency data...";
     warningMessage.style.display = 'block';
-
-    fetch('https://dl.dropboxusercontent.com/scl/fi/quvvmhte7g31nancfrfoh/top_1_2_freq_dict.json?rlkey=d9g942sm3g5lweoh57tk2ltkl&st=w7olpuap&dl=0')
+    fetch('https://dl.dropboxusercontent.com/scl/fi/g8lrj4ng8az0bodgv9n16/top_1_2_freq_dict.zip?rlkey=3ku8x83zd7rccgxwxwgi7rk8p&st=a2crejdo&dl=0')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
 
             const reader = response.body.getReader();
-            const estimatedTotal = 25 * 1024 * 1024; // Estimate 110MB as total size
+            const estimatedTotal = 10 * 1024 * 1024; // Estimate 110MB as total size
             let loaded = 0;
 
             return new Response(
@@ -68,9 +67,25 @@ document.addEventListener('DOMContentLoaded', function () {
                         read();
                     }
                 })
-            ).json();
+            ).blob();
         })
-        .then(data => {
+        .then(blob => {
+            // Step 2: Use JSZip to process the ZIP file
+            console.log("Unzipping small file...");
+            return JSZip.loadAsync(blob);
+        })
+        .then(zip => {
+            // Step 3: Find and extract the JSON file
+            console.log("Processing unzipped file");
+            const jsonFileName = Object.keys(zip.files).find(name => name.endsWith('.json'));
+            if (!jsonFileName) {
+                throw new Error('No JSON file found in the ZIP.');
+            }
+            return zip.files[jsonFileName].async('string');
+        })
+        .then(jsonContent => {
+            // Step 4: Parse and process the JSON data
+            const data = JSON.parse(jsonContent);
             alldata = processData(data);
             console.log('Smaller top data file loaded successfully');
             smoothing = false;
@@ -81,15 +96,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 200);
         })
         .catch(error => console.error('Error loading JSON:', error));
-    // fetching the larger file
-    fetch('https://dl.dropboxusercontent.com/scl/fi/9sf2ix127e7gki71sh2xf/1_2_freq_dict.json?rlkey=qt31zi54fouqi9k7f351x1lmv&st=nhouqyub&dl=0')
+        
+    fetch('https://dl.dropboxusercontent.com/scl/fi/xicyhvg2fe726geimpkqk/1_2_freq_dict.zip?rlkey=6rcrd8tgyajvloor8djttzfa2&st=xbu7x0w0&dl=0')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
 
             const reader = response.body.getReader();
-            const estimatedTotal = 200 * 1024 * 1024; // Estimate 110MB as total size
+            const estimatedTotal = 60 * 1024 * 1024; // Estimate 60MB as total size
             let loaded = 0;
 
             return new Response(
@@ -114,9 +129,25 @@ document.addEventListener('DOMContentLoaded', function () {
                         read();
                     }
                 })
-            ).json();
+            ).blob();
         })
-        .then(data => {
+        .then(blob => {
+            // Step 2: Use JSZip to process the ZIP file
+            console.log("Unzipping large file...");
+            return JSZip.loadAsync(blob);
+        })
+        .then(zip => {
+            // Step 3: Find and extract the JSON file
+            console.log("Processing unzipped file");
+            const jsonFileName = Object.keys(zip.files).find(name => name.endsWith('.json'));
+            if (!jsonFileName) {
+                throw new Error('No JSON file found in the ZIP.');
+            }
+            return zip.files[jsonFileName].async('string');
+        })
+        .then(jsonContent => {
+            // Step 4: Parse and process the JSON data
+            const data = JSON.parse(jsonContent);
             alldata = processData(data);
             console.log('Full data loaded successfully');
             smoothing = false;
