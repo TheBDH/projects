@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 200);
         })
         .catch(error => console.error('Error loading JSON:', error));
-        
+
     fetch('https://dl.dropboxusercontent.com/scl/fi/xicyhvg2fe726geimpkqk/1_2_freq_dict.zip?rlkey=6rcrd8tgyajvloor8djttzfa2&st=xbu7x0w0&dl=0')
         .then(response => {
             if (!response.ok) {
@@ -169,6 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // If the user presses the "Enter" key on the keyboard
         if (event.key === "Enter") {
             processGraph()
+            inputField.blur();
         }
     });
 
