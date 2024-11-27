@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // If the user presses the "Enter" key on the keyboard
         if (event.key === "Enter") {
             processGraph()
-            inputField.blur();
+            document.activeElement.blur();
         }
     });
 
