@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     warningMessage.textContent = "Loading word frequency data...";
     warningMessage.style.display = 'block';
-    fetch('https://dl.dropboxusercontent.com/scl/fi/g8lrj4ng8az0bodgv9n16/top_1_2_freq_dict.zip?rlkey=3ku8x83zd7rccgxwxwgi7rk8p&st=a2crejdo&dl=0')
+    fetch('https://dl.dropboxusercontent.com/scl/fi/6qu680m0ilmd5jggiezvx/top_1_2_3_4_freq_dict.zip?rlkey=7acd15z42q4tk4q4gwbtklk2e&st=zz85j811&dl=0')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -96,8 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 200);
         })
         .catch(error => console.error('Error loading JSON:', error));
-
-    fetch('https://dl.dropboxusercontent.com/scl/fi/xicyhvg2fe726geimpkqk/1_2_freq_dict.zip?rlkey=6rcrd8tgyajvloor8djttzfa2&st=xbu7x0w0&dl=0')
+    fetch('https://dl.dropboxusercontent.com/scl/fi/sp6m67kju7albi4pu031y/1_2_3_4_freq_dict.zip?rlkey=js3m8c34mesln7wna03aak4xs&st=8ezr2bbr&dl=0')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
