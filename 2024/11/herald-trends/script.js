@@ -734,15 +734,54 @@ document.addEventListener('DOMContentLoaded', function () {
     // Export the chart as an image
     document.getElementById('share-button').addEventListener('click', () => {
         if (currentChart != null) {
-            const image = currentChart.canvas.toDataURL('image/png');
-            // Create a link to download the image
-            const link = document.createElement('a');
-            link.href = image;
-            link.download = 'chart.png';
-            link.click();
+            if (navigator.share) {
+
+                // Convert base64 string to a Blob object
+                // Get the chart image as a base64 string using toDataURL()
+                const base64Image = currentChart.canvas.toDataURL(); // Default is PNG format
+
+                // Check if the Web Share API is supported
+                // Convert base64 string to a Blob object
+                const byteCharacters = atob(base64Image.split(',')[1]);
+                const byteArrays = [];
+
+                for (let offset = 0; offset < byteCharacters.length; offset += 1024) {
+                    const slice = byteCharacters.slice(offset, offset + 1024);
+                    const byteNumbers = new Array(slice.length);
+                    for (let i = 0; i < slice.length; i++) {
+                        byteNumbers[i] = slice.charCodeAt(i);
+                    }
+                    byteArrays.push(new Uint8Array(byteNumbers));
+                }
+
+                // Create a Blob from the byteArrays
+                const blob = new Blob(byteArrays, { type: 'image/png' });
+
+                // Create a File object from the Blob
+                const file = new File([blob], 'chart.png', { type: 'image/png' });
+
+                // Share the image using the Web Share API
+                navigator.share({
+                    title: 'My Chart',
+                    text: 'Check out this chart!',
+                    files: [file], // Pass the image file
+                })
+                    .then(() => {
+                        console.log('Successfully shared');
+                    })
+                    .catch((error) => {
+                        console.error('Error sharing:', error);
+                    });
+            } else {
+                const image = currentChart.canvas.toDataURL('image/png');
+                // Create a link to download the image
+                const link = document.createElement('a');
+                link.href = image;
+                link.download = 'chart.png';
+                link.click();
+            }
         }
     });
-
 });
 
 function isMobile() {

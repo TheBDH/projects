@@ -350,8 +350,11 @@ button:active {
 #share-button-container {
     width: 100%;
     text-align: center;
+    left: 0;
+    right: 0;
     bottom: 50;
     padding: 10px;
+    position: absolute;
 }
 
 .red-checkbox {
@@ -511,13 +514,5 @@ button:active {
 
     #about-link {
         color: rgb(232, 38, 38);
-    }
-    #share-button-container {
-        position: absolute;
-        bottom: 50;
-        left: 0;
-        right: 0;
-        text-align: center;
-        padding: 10px;
     }
 }
