@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error loading CSV:', error));
 
-    fetch('https://dl.dropboxusercontent.com/scl/fi/6qu680m0ilmd5jggiezvx/top_1_2_3_4_freq_dict.zip?rlkey=7acd15z42q4tk4q4gwbtklk2e&st=zz85j811&dl=0')
+    fetch('Top Frequency Dictionary.zip')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 200);
         })
         .catch(error => console.error('Error loading JSON:', error));
-    fetch('https://dl.dropboxusercontent.com/scl/fi/sp6m67kju7albi4pu031y/1_2_3_4_freq_dict.zip?rlkey=js3m8c34mesln7wna03aak4xs&st=8ezr2bbr&dl=0')
+    fetch('Frequency Dictionary.zip')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
