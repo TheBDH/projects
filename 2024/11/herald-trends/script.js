@@ -853,8 +853,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.body.appendChild(anchor);
                     anchor.click();
                     document.body.removeChild(anchor);
-
-                    console.error('Web Share API does not support file sharing on this device.');
+                    if (tryToShare) {
+                        console.error('Web Share API does not support file sharing on this device.');
+                    }
                 }
             };
         } catch (error) {
