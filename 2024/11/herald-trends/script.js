@@ -551,7 +551,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     x: {
                         title: {
                             display: true,
-                            text: 'Years (1891-2024)', // Label for the x-axis
+                            text: 'Year (1891-2024)', // Label for the x-axis
                             color: labelColor,
                             font: {
                                 size: axisFontSize,
@@ -764,9 +764,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Create a new canvas with additional height for the logo, caption, and chart
                 const canvas = document.createElement('canvas');
                 const ctx = canvas.getContext('2d');
+                let logoHeight;
 
                 const padding = 10; // Padding between elements
-                const logoHeight = 100; // Adjust based on logo dimensions
+                if (isMobile()) {
+                    logoHeight = 70; // Adjust based on logo dimensions
+                } else {
+                    logoHeight = 100; // Adjust based on logo dimensions
+                }
                 const captionHeight = 0; // Space for the caption text
 
                 // Define padding for the chart
@@ -786,10 +791,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 ctx.drawImage(logoImage, logoX, logoY, logoImage.width * (logoHeight / logoImage.height), logoHeight);
 
                 // Add the caption below the logo
+                let captionY
+                let chartY
                 ctx.fillStyle = isDarkMode ? 'white' : 'black';
-                ctx.font = 'italic 24px Roboto, Arial, sans-serif';
+                if (isMobile()) {
+                    ctx.font = 'italic 16px Roboto, Arial, sans-serif';
+                    captionY = logoY + logoHeight + padding + 16;
+                    chartY = captionY + captionHeight + padding - 16; // Position below the caption with existing padding
+                } else {
+                    ctx.font = 'italic 24px Roboto, Arial, sans-serif';
+                    captionY = logoY + logoHeight + padding + 18;
+                    chartY = captionY + captionHeight + padding - 18; // Position below the caption with existing padding
+                }
                 ctx.textAlign = 'center';
-                const captionY = logoY + logoHeight + padding + 20;
                 ctx.fillText(
                     'User-generated content through The Brown Daily Herald',
                     canvas.width / 2,
@@ -798,7 +812,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Draw the chart with the padding applied
                 const chartX = chartPadding.left; // Start drawing the chart with left padding
-                const chartY = captionY + captionHeight + padding - 20; // Position below the caption with existing padding
                 ctx.drawImage(chartCanvas, chartX, chartY);
 
                 // Get the updated image as a base64 string
