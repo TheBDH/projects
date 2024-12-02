@@ -268,6 +268,10 @@ input:hover {
         max-width: 100%;
     }
 
+    #save-button {
+        display: none;
+    }
+
     #submit-container {
         align-items: center;
         gap: 10px;
@@ -352,12 +356,30 @@ button:active {
     /* Darker blue on hover */
 }
 
+#save-button {
+    background-color: #000000;
+    border-width: 2px;
+    border-color: #ff2121;
+}
+
+#save-button:hover {
+    background-color: #3b3b3b;
+    /* Darker blue on hover */
+}
+
+#save-button:active {
+    background-color: #000000;
+    /* Darker blue on hover */
+}
+
 #share-button-container {
     width: 100%;
     margin-top: 7px;
     text-align: center;
     position: relative;
-    display: none;
+    display: none; /* Make it a flexbox */
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 20px; /* Add space between the buttons */
 }
 
 .red-checkbox {
@@ -459,6 +481,20 @@ button:active {
     }
 
     #clear-button:active {
+        background-color: #363636;
+        border-width: 2px;
+    }
+
+    #save-button {
+        background-color: #363636;
+        border-width: 2px;
+    }
+
+    #save-button:hover {
+        background-color: #2d2d2d;
+    }
+
+    #save-button:active {
         background-color: #363636;
         border-width: 2px;
     }

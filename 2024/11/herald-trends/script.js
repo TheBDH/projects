@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const warningMessage = document.getElementById('warning-message');
     const loadingBar = document.getElementById('loading-bar');
     const shareButton = document.getElementById('share-button');
+    const saveButton = document.getElementById('save-button');
     const shareButtonContainer = document.getElementById('share-button-container');
     const word1 = document.getElementById('word1');
     const word2 = document.getElementById('word2');
@@ -646,7 +647,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
-        shareButtonContainer.style.display = 'block';
+        shareButtonContainer.style.display = 'flex';
     }
 
     function smoothFrequencies(frequencies) {
@@ -734,20 +735,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // Export the chart as an image
     shareButton.addEventListener('click', () => {
         if (currentChart != null) {
-            if (navigator.share) {
-                triggerShareDialogue()
-            } else {
-                const image = currentChart.canvas.toDataURL('image/png');
-                // Create a link to download the image
-                const link = document.createElement('a');
-                link.href = image;
-                link.download = 'My Chart.png';
-                link.click();
-            }
+            triggerShareDialogue(true)
         }
     });
 
-    function triggerShareDialogue() {
+    saveButton.addEventListener('click', () => {
+        if (currentChart != null) {
+            triggerShareDialogue(false)
+        }
+    });
+
+    function triggerShareDialogue(tryToShare) {
         try {
             const chartCanvas = currentChart.canvas;
             const logoImage = new Image();
@@ -768,9 +766,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const padding = 10; // Padding between elements
                 if (isMobile()) {
-                    logoHeight = 70; // Adjust based on logo dimensions
+                    logoHeight = 80; // Adjust based on logo dimensions
                 } else {
-                    logoHeight = 100; // Adjust based on logo dimensions
+                    logoHeight = 128; // Adjust based on logo dimensions
                 }
                 const captionHeight = 0; // Space for the caption text
 
@@ -837,7 +835,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const file = new File([blob], 'MyChart.png', { type: 'image/png' });
 
                 // Check if the Web Share API is supported
-                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                if (tryToShare && navigator.canShare && navigator.canShare({ files: [file] })) {
                     navigator.share({
                         title: 'Shared Chart',
                         text: 'Check out this chart from the Brown Daily Herald!',
