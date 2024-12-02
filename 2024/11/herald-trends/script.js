@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             const reader = response.body.getReader();
-            const estimatedTotal = 10 * 1024 * 1024; // Estimate 110MB as total size
+            const estimatedTotal = 10 * 1024 * 1024; // Estimate 10MB as total size
             let loaded = 0;
 
             return new Response(
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             const reader = response.body.getReader();
-            const estimatedTotal = 60 * 1024 * 1024; // Estimate 60MB as total size
+            const estimatedTotal = 70 * 1024 * 1024; // Estimate 70MB as total size
             let loaded = 0;
 
             return new Response(
