@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error loading CSV:', error));
 
-    fetch('Top Frequency Dictionary.zip')
+    fetch('FrequencyData/Top Frequency Dictionary.zip')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 200);
         })
         .catch(error => console.error('Error loading JSON:', error));
-    fetch('Frequency Dictionary.zip')
+    fetch('FrequencyData/Frequency Dictionary.zip')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -691,7 +691,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initial check
     console.log(darkModeQuery.matches ? "Dark mode is enabled" : "Light mode is enabled");
     const setThemeImage = (isDarkMode) => {
-        heraldTrendsLogo.src = isDarkMode ? 'darkmodelowqualheader.png' : 'lowqualheader.png';
+        heraldTrendsLogo.src = isDarkMode ? 'ImageAssets/darkmodelowqualheader.png' : 'ImageAssets/lowqualheader.png';
     };
     updateHeader(darkModeQuery)
 
@@ -720,9 +720,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateHeader(e) {
         const darkImage = new Image();
-        darkImage.src = 'darkmodelowqualheader.png';
+        darkImage.src = 'ImageAssets/darkmodelowqualheader.png';
         const lightImage = new Image();
-        lightImage.src = 'lowqualheader.png';
+        lightImage.src = 'ImageAssets/lowqualheader.png';
         if (e.matches) {
             console.log("Switched to dark mode");
             heraldTrendsLogo.src = darkImage.src; // Change the image
@@ -753,9 +753,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Load the appropriate logo based on the color scheme
             if (isDarkMode) {
-                logoImage.src = 'darkmodelowqualheader.png';
+                logoImage.src = 'ImageAssets/darkmodelowqualheader.png';
             } else {
-                logoImage.src = 'lowqualheader.png';
+                logoImage.src = 'ImageAssets/lowqualheader.png';
             }
 
             logoImage.onload = () => {
