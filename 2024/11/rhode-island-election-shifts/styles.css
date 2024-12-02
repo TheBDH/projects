@@ -126,47 +126,47 @@ select option {
 }
 
 .r5 {
-    background-color: rgba(255, 0, 0, 0.7);
+    background-color: rgba(255, 0, 0, 0.8);
 }
 
 .r4 {
-    background-color: rgba(255,25,25,0.7);
+    background-color: rgba(255,25,25,0.8);
 }
 
 .r3 {
-    background-color: rgba(255,50,50,0.7);
+    background-color: rgba(255,50,50,0.8);
 }
 
 .r2 {
-    background-color: rgba(255,100,100,0.7);
+    background-color: rgba(255,100,100,0.8);
 }
 
 .r1 {
-    background-color: rgba(255,150,150,0.7);
+    background-color: rgba(255,150,150,0.8);
 }
 
 .n {
-    background-color: rgba(210,210,210,0.7);
+    background-color: rgba(210,210,210,0.8);
 }
 
 .d1 {
-    background-color: rgba(0,150,255,0.7);
+    background-color: rgba(0,150,255,0.8);
 }
 
 .d2 {
-    background-color: rgba(0,100,255,0.7);
+    background-color: rgba(0,100,255,0.8);
 }
 
 .d3 {
-    background-color: rgba(0,50,255,0.7);
+    background-color: rgba(0,50,255,0.8);
 }
 
 .d4 {
-    background-color: rgba(0,25,255,0.7);
+    background-color: rgba(0,25,255,0.8);
 }
 
 .d5 {
-    background-color: rgba(0,0,255,0.7);
+    background-color: rgba(0,0,255,0.8);
 }
 
 #mySideBar #headerText {
