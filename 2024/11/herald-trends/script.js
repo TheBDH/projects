@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const smoothingBox = document.getElementById('smoothing-checkbox');
     const warningMessage = document.getElementById('warning-message');
     const loadingBar = document.getElementById('loading-bar');
+    const shareButton = document.getElementById('share-button');
+    const shareButtonContainer = document.getElementById('share-button-container');
     const word1 = document.getElementById('word1');
     const word2 = document.getElementById('word2');
     const word3 = document.getElementById('word3');
@@ -283,6 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
         word3.value = "";
         word4.value = "";
         warningMessage.style.display = 'none';
+        shareButtonContainer.style.display = 'none';
         warningMessage.textContent = ""
         if (currentChart != null) {
             currentChart.destroy()
@@ -538,7 +541,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const curCanvas = document.getElementById('myGraph');
 
         // Create the new chart
-        curCanvas.style.visibility = 'hidden';
         const ctx = document.getElementById('myGraph').getContext('2d');
         currentChart = new Chart(ctx, {
             type: 'line', // Set the graph type to line chart
@@ -644,9 +646,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
-        setTimeout(() => {
-            curCanvas.style.visibility = 'visible';
-        }, 10);
+        shareButtonContainer.style.display = 'block';
     }
 
     function smoothFrequencies(frequencies) {
@@ -732,15 +732,78 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Export the chart as an image
-    document.getElementById('share-button').addEventListener('click', () => {
+    shareButton.addEventListener('click', () => {
         if (currentChart != null) {
             if (navigator.share) {
+                triggerShareDialogue()
+            } else {
+                const image = currentChart.canvas.toDataURL('image/png');
+                // Create a link to download the image
+                const link = document.createElement('a');
+                link.href = image;
+                link.download = 'My Chart.png';
+                link.click();
+            }
+        }
+    });
 
-                // Convert base64 string to a Blob object
-                // Get the chart image as a base64 string using toDataURL()
-                const base64Image = currentChart.canvas.toDataURL(); // Default is PNG format
+    function triggerShareDialogue() {
+        try {
+            const chartCanvas = currentChart.canvas;
+            const logoImage = new Image();
+            const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-                // Check if the Web Share API is supported
+            // Load the appropriate logo based on the color scheme
+            if (isDarkMode) {
+                logoImage.src = 'darkmodelowqualheader.png';
+            } else {
+                logoImage.src = 'lowqualheader.png';
+            }
+
+            logoImage.onload = () => {
+                // Create a new canvas with additional height for the logo, caption, and chart
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+
+                const padding = 10; // Padding between elements
+                const logoHeight = 100; // Adjust based on logo dimensions
+                const captionHeight = 0; // Space for the caption text
+
+                // Define padding for the chart
+                const chartPadding = { left: 20, right: 20, bottom: 20 };
+
+                // Adjust the canvas size to include the chart padding
+                canvas.width = chartCanvas.width + chartPadding.left + chartPadding.right;
+                canvas.height = chartCanvas.height + captionHeight + logoHeight + padding * 3 + chartPadding.bottom;
+
+                // Fill the background with black or white
+                ctx.fillStyle = isDarkMode ? 'black' : 'white';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // Draw the logo at the top
+                const logoX = (canvas.width - logoImage.width * (logoHeight / logoImage.height)) / 2;
+                const logoY = padding;
+                ctx.drawImage(logoImage, logoX, logoY, logoImage.width * (logoHeight / logoImage.height), logoHeight);
+
+                // Add the caption below the logo
+                ctx.fillStyle = isDarkMode ? 'white' : 'black';
+                ctx.font = 'italic 24px Roboto, Arial, sans-serif';
+                ctx.textAlign = 'center';
+                const captionY = logoY + logoHeight + padding + 20;
+                ctx.fillText(
+                    'User-generated content through The Brown Daily Herald',
+                    canvas.width / 2,
+                    captionY
+                );
+
+                // Draw the chart with the padding applied
+                const chartX = chartPadding.left; // Start drawing the chart with left padding
+                const chartY = captionY + captionHeight + padding - 20; // Position below the caption with existing padding
+                ctx.drawImage(chartCanvas, chartX, chartY);
+
+                // Get the updated image as a base64 string
+                const base64Image = canvas.toDataURL('image/png');
+
                 // Convert base64 string to a Blob object
                 const byteCharacters = atob(base64Image.split(',')[1]);
                 const byteArrays = [];
@@ -757,31 +820,38 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Create a Blob from the byteArrays
                 const blob = new Blob(byteArrays, { type: 'image/png' });
 
-                // Create a File object from the Blob
-                const file = new File([blob], 'chart.png', { type: 'image/png' });
+                // Create a File object with the correct name and metadata
+                const file = new File([blob], 'MyChart.png', { type: 'image/png' });
 
-                // Share the image using the Web Share API
-                navigator.share({
-                    title: 'My Chart',
-                    text: 'Check out this chart!',
-                    files: [file], // Pass the image file
-                })
-                    .then(() => {
-                        console.log('Successfully shared');
+                // Check if the Web Share API is supported
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    navigator.share({
+                        title: 'Shared Chart',
+                        text: 'Check out this chart from the Brown Daily Herald!',
+                        files: [file], // Pass the image file
                     })
-                    .catch((error) => {
-                        console.error('Error sharing:', error);
-                    });
-            } else {
-                const image = currentChart.canvas.toDataURL('image/png');
-                // Create a link to download the image
-                const link = document.createElement('a');
-                link.href = image;
-                link.download = 'chart.png';
-                link.click();
-            }
+                        .then(() => console.log('Successfully shared'))
+                        .catch((error) => console.error('Error sharing:', error));
+                } else {
+                    // Fallback: Provide a download link
+                    const blobURL = URL.createObjectURL(blob);
+                    const anchor = document.createElement('a');
+                    anchor.href = blobURL;
+                    anchor.download = 'MyChart.png';
+                    anchor.textContent = 'Download the chart';
+                    document.body.appendChild(anchor);
+                    anchor.click();
+                    document.body.removeChild(anchor);
+
+                    console.error('Web Share API does not support file sharing on this device.');
+                }
+            };
+        } catch (error) {
+            console.error('Error in sharing:', error);
         }
-    });
+    }
+
+
 });
 
 function isMobile() {

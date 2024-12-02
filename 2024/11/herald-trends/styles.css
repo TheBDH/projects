@@ -210,13 +210,18 @@ input:hover {
 }
 
 #graph-container {
-    width: 84%;
-    height: 55%;
+    width: 73%;
     display: flex;           /* Enable Flexbox */
     justify-content: center; /* Center horizontally */
     align-items: center;     /* Center vertically */
     text-align: center;      /* Optional, aligns inline content */
     margin: auto;            /* Center within parent */
+}
+
+@media (max-width: 1300px) {
+    #graph-container {
+        width: 85%;
+    }
 }
 
 /* 2x2 Layout (Medium Screens) */
@@ -349,12 +354,10 @@ button:active {
 
 #share-button-container {
     width: 100%;
+    margin-top: 7px;
     text-align: center;
-    left: 0;
-    right: 0;
-    bottom: 50;
-    padding: 10px;
-    position: absolute;
+    position: relative;
+    display: none;
 }
 
 .red-checkbox {
