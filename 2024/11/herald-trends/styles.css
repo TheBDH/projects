@@ -11,6 +11,7 @@ body {
 #center-box {
     flex: 1;
     min-height: 100%;
+    position: relative;
     /* Takes up remaining space */
 }
 
@@ -210,6 +211,12 @@ input:hover {
 
 #graph-container {
     width: 84%;
+    height: 55%;
+    display: flex;           /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    text-align: center;      /* Optional, aligns inline content */
+    margin: auto;            /* Center within parent */
 }
 
 /* 2x2 Layout (Medium Screens) */
@@ -338,6 +345,13 @@ button:active {
 #clear-button:active {
     background-color: #000000;
     /* Darker blue on hover */
+}
+
+#share-button-container {
+    width: 100%;
+    text-align: center;
+    bottom: 50;
+    padding: 10px;
 }
 
 .red-checkbox {
@@ -497,5 +511,13 @@ button:active {
 
     #about-link {
         color: rgb(232, 38, 38);
+    }
+    #share-button-container {
+        position: absolute;
+        bottom: 50;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 10px;
     }
 }

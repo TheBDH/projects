@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const word4 = document.getElementById('word4');
     let alldata;
     let foundYearsList;
+    let disclaimerWords
 
     // handling smoothing
     var smoothing;
@@ -35,6 +36,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     warningMessage.textContent = "Loading word frequency data...";
     warningMessage.style.display = 'block';
+
+    fetch('disclaimer_words.csv')
+        .then(response => response.text())
+        .then(data => {
+            const rows = data.split('\n'); // Split by newlines
+            disclaimerWords = rows.map(row => row.split(',')); // Split each row by commas
+            console.log(disclaimerWords);
+        })
+        .catch(error => console.error('Error loading CSV:', error));
+
     fetch('https://dl.dropboxusercontent.com/scl/fi/6qu680m0ilmd5jggiezvx/top_1_2_3_4_freq_dict.zip?rlkey=7acd15z42q4tk4q4gwbtklk2e&st=zz85j811&dl=0')
         .then(response => {
             if (!response.ok) {
@@ -232,6 +243,17 @@ document.addEventListener('DOMContentLoaded', function () {
             var unknownWordsList = unknownWords(wordList)
             console.log(unknownWordsList)
             if (unknownWordsList.length == 0) {
+                var showDisclaimer = false;
+                for (const word of wordList) {
+                    console.log("word to check: " + word);
+                    console.log(disclaimerWords[0]);
+                    if (disclaimerWords[0].includes(word)) {
+                        showDisclaimer = true;
+                    }
+                }
+                if (showDisclaimer) {
+                    raiseDisclaimer();
+                }
                 plotGraph(wordList, ogvals);
                 currentChart.update()
             } else {
@@ -260,7 +282,11 @@ document.addEventListener('DOMContentLoaded', function () {
         word2.value = "";
         word3.value = "";
         word4.value = "";
-        currentChart.destroy()
+        warningMessage.style.display = 'none';
+        warningMessage.textContent = ""
+        if (currentChart != null) {
+            currentChart.destroy()
+        }
     });
 
     function raiseNoWords() {
@@ -278,24 +304,39 @@ document.addEventListener('DOMContentLoaded', function () {
         const word1 = originalWords.find(item => wordsUnknown[1] === item.clean)
         const word2 = originalWords.find(item => wordsUnknown[2] === item.clean)
         const word3 = originalWords.find(item => wordsUnknown[3] === item.clean)
-        let addition;
         if (fullDataLoaded) {
-            addition = "";
+            if (wordsUnknown.length == 1) {
+                warningMessage.innerHTML = "Sorry—we haven't yet indexed the word \"" + word0.og + "\".";
+            } else if (wordsUnknown.length == 2) {
+                warningMessage.innerHTML = "Sorry—we haven't yet indexed the words \"" + word0.og
+                    + "\" and \"" + word1.og + "\".";
+            } else if (wordsUnknown.length == 3) {
+                warningMessage.innerHTML = "Sorry—we haven't yet indexed the words \"" + word0.og
+                    + "\", \"" + word1.og + "\", and \"" + word2.og + "\".";
+            } else if (wordsUnknown.length == 4) {
+                warningMessage.innerHTML = "Sorry—we haven't yet indexed the words \"" + word0.og
+                    + "\", \"" + word1.og + "\", \"" + word2.og + "\", and \"" + word3.og + "\".";
+            }
         } else {
-            addition = "<br>The full data is still loading. Try again in a minute or two!";
+            if (wordsUnknown.length == 1) {
+                warningMessage.innerHTML = "The word \"" + word0.og + "\"" + " is less common—try again in a few moments and we may have it!";
+            } else if (wordsUnknown.length == 2) {
+                warningMessage.innerHTML = "The words \"" + word0.og
+                    + "\" and \"" + word1.og + "\" are less common—try again in a few moments and we may have them!";
+            } else if (wordsUnknown.length == 3) {
+                warningMessage.innerHTML = "The words \"" + word0.og
+                    + "\", \"" + word1.og + "\", and \"" + word2.og + "\" are less common—try again in a few moments and we may have them!";
+            } else if (wordsUnknown.length == 4) {
+                warningMessage.innerHTML = "The words \"" + word0.og
+                    + "\", \"" + word1.og + "\", \"" + word2.og + "\", and \"" + word3.og + "\" are less common—try again in a few moments and we may have them!";
+            }
         }
-        if (wordsUnknown.length == 1) {
-            warningMessage.innerHTML = "Sorry—we haven't yet indexed the word \"" + word0.og + "\"." + addition;
-        } else if (wordsUnknown.length == 2) {
-            warningMessage.innerHTML = "Sorry—we haven't yet indexed the words \"" + word0.og
-                + "\" and \"" + word1.og + "\"." + addition;
-        } else if (wordsUnknown.length == 3) {
-            warningMessage.innerHTML = "Sorry—we haven't yet indexed the words \"" + word0.og
-                + "\", \"" + word1.og + "\", and \"" + word2.og + "\"." + addition;
-        } else if (wordsUnknown.length == 4) {
-            warningMessage.innerHTML = "Sorry—we haven't yet indexed the words \"" + word0.og
-                + "\", \"" + word1.og + "\", \"" + word2.og + "\", and \"" + word3.og + "\"." + addition;
-        }
+        warningMessage.style.display = 'block';
+    }
+
+    function raiseDisclaimer() {
+        console.log("Raising disclaimer.")
+        warningMessage.textContent = "Insert official disclaimer here."
         warningMessage.style.display = 'block';
     }
 
@@ -494,7 +535,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const tooltipFillColor = isDarkMode ? 'rgba(0, 0, 0, 0.85)' : 'rgba(0, 0, 0, 0.78)';
         const gridLineColor = isDarkMode ? 'rgba(230, 230, 230, 0.15)' : Chart.defaults.borderColor;
 
+        const curCanvas = document.getElementById('myGraph');
+
         // Create the new chart
+        curCanvas.style.visibility = 'hidden';
         const ctx = document.getElementById('myGraph').getContext('2d');
         currentChart = new Chart(ctx, {
             type: 'line', // Set the graph type to line chart
@@ -600,6 +644,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
+        setTimeout(() => {
+            curCanvas.style.visibility = 'visible';
+        }, 10);
     }
 
     function smoothFrequencies(frequencies) {
@@ -683,6 +730,18 @@ document.addEventListener('DOMContentLoaded', function () {
             heraldTrendsLogo.src = lightImage.src;
         }
     }
+
+    // Export the chart as an image
+    document.getElementById('share-button').addEventListener('click', () => {
+        if (currentChart != null) {
+            const image = currentChart.canvas.toDataURL('image/png');
+            // Create a link to download the image
+            const link = document.createElement('a');
+            link.href = image;
+            link.download = 'chart.png';
+            link.click();
+        }
+    });
 
 });
 
