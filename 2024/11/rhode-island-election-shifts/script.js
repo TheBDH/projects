@@ -5,6 +5,20 @@ let currentLayer;
 let dataLink = 'https://github.com/TheBDH/projects-wip/blob/main/2024/11/11/RI_Election_Turnouts/RI_Municipality_Sorted_Added_Data_GeoJSON.geojson'
 let dataLinkLocal = 'RI_Municipality_PERCENT_MARGINS_ADDED_GeoJSON.geojson'
 
+const colorStops = [
+    [-15, 'rgba(255, 0, 0, 0.8)'],    // Very saturated red
+    [-12, 'rgba(255,25,25,0.8)'],    // Pure red
+    [-9, 'rgba(255,50,50,0.8)'],     // Pure red
+    [-6, 'rgba(255,100,100,0.8)'],   // Lighter red with saturation
+    [-3, 'rgba(255,150,150,0.8)'], // Very light red, still saturated
+    [0, 'rgba(240,240,240,0.8)'],  // Neutral beige (midpoint)
+    [3, 'rgba(0,150,255,0.8)'],    // Bright light blue
+    [6, 'rgba(0,100,255,0.8)'],     // Rich blue
+    [9, 'rgba(0,50,255,0.8)'],     // Deep blue
+    [12, 'rgba(0,25,255,0.8)'],    // Darker blue
+    [15, 'rgba(0,0,255,0.8)']      // Very saturated blue
+]
+
 document.addEventListener('DOMContentLoaded', function () {
     // Get the button and the element you want to hide/show
     const toggleButton = document.getElementById('hideButton');
@@ -107,19 +121,7 @@ const initializeMapCounty20_24 = () => {
             'paint': {
                 'fill-color': {
                     property: 'SHIFT_20_24',
-                    stops: [
-                        [-15, 'rgba(255, 0, 0, 0.7)'],    // Very saturated red
-                        [-12, 'rgba(255,25,25,0.7)'],    // Pure red
-                        [-9, 'rgba(255,50,50,0.7)'],     // Pure red
-                        [-6, 'rgba(255,100,100,0.7)'],   // Lighter red with saturation
-                        [-3, 'rgba(255,150,150,0.7)'], // Very light red, still saturated
-                        [0, 'rgba(240,240,240,0.7)'],  // Neutral beige (midpoint)
-                        [3, 'rgba(0,150,255,0.7)'],    // Bright light blue
-                        [6, 'rgba(0,100,255,0.7)'],     // Rich blue
-                        [9, 'rgba(0,50,255,0.7)'],     // Deep blue
-                        [12, 'rgba(0,25,255,0.7)'],    // Darker blue
-                        [15, 'rgba(0,0,255,0.7)']      // Very saturated blue
-                    ]
+                    stops: colorStops
                 }
             }
         },
@@ -211,19 +213,7 @@ const initializeMapCounty16_24 = () => {
             'paint': {
                 'fill-color': {
                     property: 'SHIFT_16_24',
-                    stops: [
-                        [-15, 'rgba(255, 0, 0, 0.7)'],    // Very saturated red
-                        [-12, 'rgba(255,25,25,0.7)'],    // Pure red
-                        [-9, 'rgba(255,50,50,0.7)'],     // Pure red
-                        [-6, 'rgba(255,100,100,0.7)'],   // Lighter red with saturation
-                        [-3, 'rgba(255,150,150,0.7)'], // Very light red, still saturated
-                        [0, 'rgba(240,240,240,0.7)'],  // Neutral beige (midpoint)
-                        [3, 'rgba(0,150,255,0.7)'],    // Bright light blue
-                        [6, 'rgba(0,100,255,0.7)'],     // Rich blue
-                        [9, 'rgba(0,50,255,0.7)'],     // Deep blue
-                        [12, 'rgba(0,25,255,0.7)'],    // Darker blue
-                        [15, 'rgba(0,0,255,0.7)']      // Very saturated blue
-                    ]
+                    stops: colorStops
                 }
             }
         },
@@ -315,19 +305,7 @@ const initializeMapCounty16_20 = () => {
             'paint': {
                 'fill-color': {
                     property: 'SHIFT_16_20',
-                    stops: [
-                        [-15, 'rgba(255, 0, 0, 0.7)'],    // Very saturated red
-                        [-12, 'rgba(255,25,25,0.7)'],    // Pure red
-                        [-9, 'rgba(255,50,50,0.7)'],     // Pure red
-                        [-6, 'rgba(255,100,100,0.7)'],   // Lighter red with saturation
-                        [-3, 'rgba(255,150,150,0.7)'], // Very light red, still saturated
-                        [0, 'rgba(240,240,240,0.7)'],  // Neutral beige (midpoint)
-                        [3, 'rgba(0,150,255,0.7)'],    // Bright light blue
-                        [6, 'rgba(0,100,255,0.7)'],     // Rich blue
-                        [9, 'rgba(0,50,255,0.7)'],     // Deep blue
-                        [12, 'rgba(0,25,255,0.7)'],    // Darker blue
-                        [15, 'rgba(0,0,255,0.7)']      // Very saturated blue
-                    ]
+                    stops: colorStops
                 }
             }
         },
@@ -418,19 +396,7 @@ const initializeMapMunicipal20_24 = () => {
             'paint': {
                 'fill-color': {
                     property: "VOTE_PERCENT_SWING_20_24",
-                    stops: [
-                        [-15, 'rgba(255, 0, 0, 0.7)'],    // Very saturated red
-                        [-12, 'rgba(255,25,25,0.7)'],    // Pure red
-                        [-9, 'rgba(255,50,50,0.7)'],     // Pure red
-                        [-6, 'rgba(255,100,100,0.7)'],   // Lighter red with saturation
-                        [-3, 'rgba(255,150,150,0.7)'], // Very light red, still saturated
-                        [0, 'rgba(240,240,240,0.7)'],  // Neutral beige (midpoint)
-                        [3, 'rgba(0,150,255,0.7)'],    // Bright light blue
-                        [6, 'rgba(0,100,255,0.7)'],     // Rich blue
-                        [9, 'rgba(0,50,255,0.7)'],     // Deep blue
-                        [12, 'rgba(0,25,255,0.7)'],    // Darker blue
-                        [15, 'rgba(0,0,255,0.7)']      // Very saturated blue
-                    ]
+                    stops: colorStops
                 }
             }
         },
@@ -532,19 +498,7 @@ const initializeMapMunicipal16_24 = () => {
             'paint': {
                 'fill-color': {
                     property: "VOTE_PERCENT_SWING_16_24",
-                    stops: [
-                        [-15, 'rgba(255, 0, 0, 0.7)'],    // Very saturated red
-                        [-12, 'rgba(255,25,25,0.7)'],    // Pure red
-                        [-9, 'rgba(255,50,50,0.7)'],     // Pure red
-                        [-6, 'rgba(255,100,100,0.7)'],   // Lighter red with saturation
-                        [-3, 'rgba(255,150,150,0.7)'], // Very light red, still saturated
-                        [0, 'rgba(240,240,240,0.7)'],  // Neutral beige (midpoint)
-                        [3, 'rgba(0,150,255,0.7)'],    // Bright light blue
-                        [6, 'rgba(0,100,255,0.7)'],     // Rich blue
-                        [9, 'rgba(0,50,255,0.7)'],     // Deep blue
-                        [12, 'rgba(0,25,255,0.7)'],    // Darker blue
-                        [15, 'rgba(0,0,255,0.7)']      // Very saturated blue
-                    ]
+                    stops: colorStops
                 }
             }
         },
@@ -633,19 +587,7 @@ const initializeMapMunicipal16_20 = () => {
             'paint': {
                 'fill-color': {
                     property: "VOTE_PERCENT_SWING_16_20",
-                    stops: [
-                        [-15, 'rgba(255, 0, 0, 0.7)'],    // Very saturated red
-                        [-12, 'rgba(255,25,25,0.7)'],    // Pure red
-                        [-9, 'rgba(255,50,50,0.7)'],     // Pure red
-                        [-6, 'rgba(255,100,100,0.7)'],   // Lighter red with saturation
-                        [-3, 'rgba(255,150,150,0.7)'], // Very light red, still saturated
-                        [0, 'rgba(240,240,240,0.7)'],  // Neutral beige (midpoint)
-                        [3, 'rgba(0,150,255,0.7)'],    // Bright light blue
-                        [6, 'rgba(0,100,255,0.7)'],     // Rich blue
-                        [9, 'rgba(0,50,255,0.7)'],     // Deep blue
-                        [12, 'rgba(0,25,255,0.7)'],    // Darker blue
-                        [15, 'rgba(0,0,255,0.7)']      // Very saturated blue
-                    ]
+                    stops: colorStops
                 }
             }
         },
