@@ -8,6 +8,17 @@ body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
 #center-box {
     flex: 1;
     min-height: 100%;
