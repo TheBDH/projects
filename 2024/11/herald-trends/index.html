@@ -1,151 +1,165 @@
-<head>
-    <meta charset="utf-8">
-    <title>Herald Trends</title>
-    <meta name="viewport"
-        content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="apple-touch-icon" sizes="57x57"
-        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60"
-        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72"
-        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76"
-        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114"
-        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120"
-        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144"
-        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152"
-        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180"
-        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"
-        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96"
-        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/favicon-16x16.png">
-    <link rel="manifest"
-        href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage"
-        content="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/ms-icon-144x144.png">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script src="script.js"></script>
-</head>
-<body>
-    <div id="side-bar">
-        <div id="side-bar-box">
-            <div id="side-bar-title">Looking for inspiration?</div>
-            <div id="inspiration-1" class="inspiration-box">
-                <div class="preview-graph">
-                    <img src="ImageAssets/ratty_refectory_new_preview.png"
-                        alt="Ratty Refectory Preview" class="preview-image"
-                        style="zoom: 0.344">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Herald Trends</title>
+        <meta name="viewport"
+            content="initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="apple-touch-icon" sizes="57x57"
+            href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60"
+            href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72"
+            href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76"
+            href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114"
+            href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120"
+            href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144"
+            href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152"
+            href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180"
+            href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"
+            href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32"
+            href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96"
+            href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16"
+            href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/favicon-16x16.png">
+        <link rel="manifest"
+            href="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage"
+            content="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/ms-icon-144x144.png">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="side-bar">
+            <div id="side-bar-box">
+                <div id="side-bar-title">Looking for inspiration?</div>
+                <div id="inspiration-1" class="inspiration-box">
+                    <div class="preview-graph">
+                        <img src="ImageAssets/ratty_refectory_new_preview.png"
+                            alt="Ratty Refectory Preview" class="preview-image"
+                            style="zoom: 0.344">
+                    </div>
+                    <div class="preview-words">
+                        <p><strong>Words:</strong> Ratty, <br>Sharpe
+                            Refectory</p>
+                    </div>
                 </div>
-                <div class="preview-words">
-                    <p><strong>Words:</strong> Ratty, <br>Sharpe Refectory</p>
+                <div id="inspiration-2" class="inspiration-box">
+                    <div class="preview-graph">
+                        <img src="ImageAssets/polisci_psych_compsci_preview.png"
+                            alt="Political Science Psychology Computer Science Preview"
+                            class="preview-image" style="zoom: 0.245">
+                    </div>
+                    <div class="preview-words">
+                        <p><strong>Words:</strong> Political Science,
+                            <br>Psychology, Computer Science</p>
+                    </div>
                 </div>
-            </div>
-            <div id="inspiration-2" class="inspiration-box">
-                <div class="preview-graph">
-                    <img src="ImageAssets/polisci_psych_compsci_preview.png"
-                        alt="Political Science Psychology Computer Science Preview"
-                        class="preview-image" style="zoom: 0.245">
+                <div id="inspiration-3" class="inspiration-box">
+                    <div class="preview-graph">
+                        <img
+                            src="ImageAssets/bears_bruins_bruno_brunonian_preview.png"
+                            alt="Bears BRUINS Bruno Brunonian Preview"
+                            class="preview-image" style="zoom: 0.245">
+                    </div>
+                    <div class="preview-words">
+                        <p><strong>Words:</strong> Bears, Bruins, <br>Bruno,
+                            Brunonian</p>
+                    </div>
                 </div>
-                <div class="preview-words">
-                    <p><strong>Words:</strong> Political Science,
-                        <br>Psychology, Computer Science</p>
+                <div id="about-box">
+                    <a href="about.html" id="about-link">Learn about the
+                        project!</a>
                 </div>
-            </div>
-            <div id="inspiration-3" class="inspiration-box">
-                <div class="preview-graph">
-                    <img src="ImageAssets/bears_bruins_bruno_brunonian_preview.png"
-                        alt="Bears BRUINS Bruno Brunonian Preview"
-                        class="preview-image" style="zoom: 0.245">
-                </div>
-                <div class="preview-words">
-                    <p><strong>Words:</strong> Bears, Bruins, <br>Bruno,
-                        Brunonian</p>
-                </div>
-            </div>
-            <div id="about-box">
-                <a href="about.html" id="about-link">Learn about the project!</a>
             </div>
         </div>
-    </div>
-    <div id="center-box">
-        <div id="main">
-            <div style="text-align: center;"><a
-                    href="https://www.browndailyherald.com/">
-                    <img src="ImageAssets/lowqualheader.png" alt="Herald Trends Logo"
-                        class="image-header", id="herald-trends-logo">
-                </a></div>
-        </div>
-        <div class="word-input-zone">
-            <div class="word-input-group">
-                <div class="square-and-label">
-                    <span class="color-square red-square"></span>
-                    <label for="word1">Word 1:</label>
-                </div>
-                <input type="text" id="word1" class="input-box" name placeholder="Enter word" autocomplete="off">
+        <div id="center-box">
+            <div id="main">
+                <div style="text-align: center;"><a
+                        href="https://www.browndailyherald.com/">
+                        <img src="ImageAssets/lowqualheader.png"
+                            alt="Herald Trends Logo"
+                            class="image-header" , id="herald-trends-logo">
+                    </a></div>
             </div>
+            <div class="word-input-zone">
+                <div class="word-input-group">
+                    <div class="square-and-label">
+                        <span class="color-square red-square"></span>
+                        <label for="word1">Word 1:</label>
+                    </div>
+                    <input type="text" id="word1" class="input-box" name
+                        placeholder="Enter word" autocomplete="off">
+                </div>
 
-            <div class="word-input-group">
-                <div class="square-and-label">
-                    <span class="color-square blue-square"></span>
-                    <label for="word2">Word 2:</label>
+                <div class="word-input-group">
+                    <div class="square-and-label">
+                        <span class="color-square blue-square"></span>
+                        <label for="word2">Word 2:</label>
+                    </div>
+                    <input type="text" id="word2" class="input-box" name
+                        placeholder="Enter word" autocomplete="off">
                 </div>
-                <input type="text" id="word2" class="input-box" name placeholder="Enter word" autocomplete="off">
-            </div>
 
-            <div class="word-input-group">
-                <div class="square-and-label">
-                    <span class="color-square green-square"></span>
-                    <label for="word3">Word 3:</label>
+                <div class="word-input-group">
+                    <div class="square-and-label">
+                        <span class="color-square green-square"></span>
+                        <label for="word3">Word 3:</label>
+                    </div>
+                    <input type="text" id="word3" class="input-box" name
+                        placeholder="Enter word" autocomplete="off">
                 </div>
-                <input type="text" id="word3" class="input-box" name placeholder="Enter word" autocomplete="off">
-            </div>
 
-            <div class="word-input-group">
-                <div class="square-and-label">
-                    <span class="color-square orange-square"></span>
-                    <label for="word4">Word 4:</label>
+                <div class="word-input-group">
+                    <div class="square-and-label">
+                        <span class="color-square orange-square"></span>
+                        <label for="word4">Word 4:</label>
+                    </div>
+                    <input type="text" id="word4" class="input-box" name
+                        placeholder="Enter word" autocomplete="off">
                 </div>
-                <input type="text" id="word4" class="input-box" name placeholder="Enter word" autocomplete="off">
+            </div>
+            <div id="submit-container">
+                <div class="button-container" id="clear-container">
+                    <button type="submit" id="clear-button">Clear</button>
+                </div>
+                <div class="button-container" id="process-container">
+                    <button type="submit" id="process-button">Process
+                        Words</button>
+                </div>
+                <div class="smoothing-settings">
+                    <input type="checkbox" id="smoothing-checkbox"
+                        class="red-checkbox">
+                    <label for="smoothing-checkbox"
+                        id="smoothing-checkbox-label">Enable Smoothing</label>
+                </div>
+            </div>
+            <div id="loading-bar"></div>
+            <div id="warning-message" style="display: none;"></div>
+            <div id="graph-container"
+                style="padding: 5px;">
+                <canvas id="myGraph"></canvas>
+            </div>
+            <div class="button-container" id="share-button-container">
+                <button type="submit" id="share-button">Share!</button>
+                <button type="submit" id="save-button">Save!</button>
+            </div>
+            <div id="about-box-mobile">
+                <a href="about.html" id="about-link-mobile">Learn about the
+                    project!</a>
             </div>
         </div>
-        <div id="submit-container">
-            <div class="button-container" id="clear-container">
-                <button type="submit" id="clear-button">Clear</button>
-            </div>
-            <div class="button-container" id="process-container">
-                <button type="submit" id="process-button">Process Words</button>
-            </div>
-            <div class="smoothing-settings">
-                <input type="checkbox" id="smoothing-checkbox"
-                    class="red-checkbox">
-                <label for="smoothing-checkbox" id="smoothing-checkbox-label">Enable Smoothing</label>
-            </div>
-        </div>
-        <div id="loading-bar"></div>
-        <div id="warning-message" style="display: none;"></div>
-        <div id="graph-container"
-            style="padding: 5px;">
-            <canvas id="myGraph"></canvas>
-        </div>
-        <div class="button-container" id="share-button-container">
-            <button type="submit" id="share-button">Share!</button>
-            <button type="submit" id="save-button">Save!</button>
-        </div>
-        <div id="about-box-mobile">
-            <a href="about.html" id="about-link-mobile">Learn about the project!</a>
-        </div>
-    </div>
-</body>
+    </body>
+</html>

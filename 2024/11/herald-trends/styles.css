@@ -256,7 +256,7 @@ input:hover {
 
     #about-link-mobile {
         display: block;
-        color: rgb(232, 38, 38);
+        color: #e31f1f;
     }
 }
 
@@ -325,7 +325,7 @@ button {
     padding: 10px 20px;
     font-size: 14px;
     color: white;
-    background-color: #ff2121;
+    background-color: #e42323;
     /* Blue color */
     border: none;
     border-radius: 5px;
@@ -337,7 +337,7 @@ button:hover {
 }
 
 button:active {
-    background-color: #ff2121;
+    background-color: #e32222;
 }
 
 #clear-button {
