@@ -17,7 +17,7 @@ body {
     clip-path: inset(50%);
     white-space: nowrap;
     border: 0;
-  }
+}
 
 #center-box {
     flex: 1;
@@ -70,6 +70,19 @@ body {
 #about-link {
     color: rgb(220, 35, 35);
     display: block;
+}
+
+#disclaimer-link {
+    color: rgb(220, 35, 35);
+}
+
+#disclaimer {
+    padding-top: 14px;
+    text-align: center;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #about-link-mobile {
@@ -222,11 +235,16 @@ input:hover {
 
 #graph-container {
     width: 73%;
-    display: flex;           /* Enable Flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
-    text-align: center;      /* Optional, aligns inline content */
-    margin: auto;            /* Center within parent */
+    display: flex;
+    /* Enable Flexbox */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    text-align: center;
+    /* Optional, aligns inline content */
+    margin: auto;
+    /* Center within parent */
 }
 
 @media (max-width: 1300px) {
@@ -263,6 +281,7 @@ input:hover {
         right: 0;
         text-align: center;
         padding: 10px;
+        position: fixed;
     }
 
     #about-link-mobile {
@@ -388,9 +407,12 @@ button:active {
     margin-top: 7px;
     text-align: center;
     position: relative;
-    display: none; /* Make it a flexbox */
-    justify-content: center; /* Center the buttons horizontally */
-    gap: 20px; /* Add space between the buttons */
+    display: none;
+    /* Make it a flexbox */
+    justify-content: center;
+    /* Center the buttons horizontally */
+    gap: 20px;
+    /* Add space between the buttons */
 }
 
 .red-checkbox {
@@ -563,6 +585,10 @@ button:active {
     }
 
     #about-link {
+        color: rgb(232, 38, 38);
+    }
+
+    #disclaimer-link {
         color: rgb(232, 38, 38);
     }
 }

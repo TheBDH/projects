@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const clearButton = document.getElementById('clear-button');
     const smoothingBox = document.getElementById('smoothing-checkbox');
     const warningMessage = document.getElementById('warning-message');
+    const disclaimer = document.getElementById('disclaimer');
     const loadingBar = document.getElementById('loading-bar');
     const shareButton = document.getElementById('share-button');
     const saveButton = document.getElementById('save-button');
     const shareButtonContainer = document.getElementById('share-button-container');
+    const aboutBoxMobile = document.getElementById('about-box-mobile');
     const word1 = document.getElementById('word1');
     const word2 = document.getElementById('word2');
     const word3 = document.getElementById('word3');
@@ -256,6 +258,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 if (showDisclaimer) {
                     raiseDisclaimer();
+                    if (isMobile()) {
+                        aboutBoxMobile.style.display = "none";
+                    }
+                } else {
+                    disclaimer.style.display = "none";
+                    if (isMobile()) {
+                        aboutBoxMobile.style.display = "block";
+                    }
                 }
                 plotGraph(wordList, ogvals);
                 currentChart.update()
@@ -286,8 +296,12 @@ document.addEventListener('DOMContentLoaded', function () {
         word3.value = "";
         word4.value = "";
         warningMessage.style.display = 'none';
+        disclaimer.style.display = "none";
         shareButtonContainer.style.display = 'none';
         warningMessage.textContent = ""
+        if (isMobile()) {
+            aboutBoxMobile.style.display = "block";
+        }
         if (currentChart != null) {
             currentChart.destroy()
         }
@@ -339,9 +353,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function raiseDisclaimer() {
-        console.log("Raising disclaimer.")
-        warningMessage.textContent = "Insert official disclaimer here."
-        warningMessage.style.display = 'block';
+        console.log("Raising disclaimer.");
+        disclaimer.style.display = "none";
+        disclaimer.style.display = 'block';
     }
 
     function hideWarnings() {
