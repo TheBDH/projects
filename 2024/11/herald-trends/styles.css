@@ -267,7 +267,7 @@ input:hover {
     }
 
     #graph-container {
-        width: 95%;
+        width: 90%;
     }
 
     #side-bar {
@@ -276,16 +276,17 @@ input:hover {
 
     #about-box-mobile {
         position: absolute;
-        bottom: 15;
+        bottom: 25;
         left: 0;
         right: 0;
+        width: 100%;
         text-align: center;
-        padding: 10px;
         position: fixed;
     }
 
     #about-link-mobile {
         display: block;
+        text-align: center;
         color: #e31f1f;
     }
 }
@@ -296,6 +297,10 @@ input:hover {
         flex: 1 1 100%;
         /* Full width for stacked items */
         max-width: 100%;
+    }
+
+    #graph-container {
+        width: 95%;
     }
 
     #save-button {
@@ -405,6 +410,7 @@ button:active {
 #share-button-container {
     width: 100%;
     margin-top: 7px;
+    padding-bottom: 40px;
     text-align: center;
     position: relative;
     display: none;

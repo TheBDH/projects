@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const warningMessage = document.getElementById('warning-message');
     const disclaimer = document.getElementById('disclaimer');
     const loadingBar = document.getElementById('loading-bar');
+    const sideBar = document.getElementById('side-bar-box');
     const shareButton = document.getElementById('share-button');
     const saveButton = document.getElementById('save-button');
     const shareButtonContainer = document.getElementById('share-button-container');
@@ -258,13 +259,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 if (showDisclaimer) {
                     raiseDisclaimer();
-                    if (isMobile()) {
-                        aboutBoxMobile.style.display = "none";
+                    if (isScreenSmall()) {
+                        aboutBoxMobile.style.display = "flex"; // Part of the flex stack
+                        aboutBoxMobile.style.position = "relative"; // Make it move with the flow
+                        aboutBoxMobile.style.justifyContent = "center"; // Center the content
+                        aboutBoxMobile.style.alignItems = "center"; // Vertically align the content
                     }
                 } else {
                     disclaimer.style.display = "none";
-                    if (isMobile()) {
-                        aboutBoxMobile.style.display = "block";
+                    if (isScreenSmall()) {
+                        aboutBoxMobile.style.display = "block"; // Default block behavior
+                        aboutBoxMobile.style.position = "fixed"; // Keep it at the bottom of the screen
                     }
                 }
                 plotGraph(wordList, ogvals);
@@ -299,8 +304,9 @@ document.addEventListener('DOMContentLoaded', function () {
         disclaimer.style.display = "none";
         shareButtonContainer.style.display = 'none';
         warningMessage.textContent = ""
-        if (isMobile()) {
-            aboutBoxMobile.style.display = "block";
+        if (isScreenSmall()) {
+            aboutBoxMobile.style.display = "block"; // Default block behavior
+            aboutBoxMobile.style.position = "fixed"; // Keep it at the bottom of the screen
         }
         if (currentChart != null) {
             currentChart.destroy()
@@ -882,5 +888,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function isMobile() {
     return window.innerWidth <= 768; // Adjust threshold as needed
+}
+
+function isScreenSmall() {
+    return window.matchMedia('(max-width: 955px)').matches;
 }
 
