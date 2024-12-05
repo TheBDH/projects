@@ -264,12 +264,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         aboutBoxMobile.style.position = "relative"; // Make it move with the flow
                         aboutBoxMobile.style.justifyContent = "center"; // Center the content
                         aboutBoxMobile.style.alignItems = "center"; // Vertically align the content
+                        aboutBoxMobile.style.paddingBottom = "25px"; // Vertically align the content
                     }
                 } else {
                     disclaimer.style.display = "none";
                     if (isScreenSmall()) {
                         aboutBoxMobile.style.display = "block"; // Default block behavior
                         aboutBoxMobile.style.position = "fixed"; // Keep it at the bottom of the screen
+                        aboutBoxMobile.style.paddingBottom = "0px"; // Vertically align the content
                     }
                 }
                 plotGraph(wordList, ogvals);
@@ -307,6 +309,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (isScreenSmall()) {
             aboutBoxMobile.style.display = "block"; // Default block behavior
             aboutBoxMobile.style.position = "fixed"; // Keep it at the bottom of the screen
+            aboutBoxMobile.style.paddingBottom = "0px"; // Vertically align the content
         }
         if (currentChart != null) {
             currentChart.destroy()
