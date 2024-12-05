@@ -11,8 +11,9 @@
 
 .image-header {
     margin-top: 0px;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
     width: 300px;
+    background-image: url('ImageAssets/lowqualheader.png');
 }
 
 #process-button {
@@ -48,12 +49,25 @@
     background-color: #ff2121;
 }
 
+.link {
+    color: rgb(220, 35, 35);
+}
+
+@media (max-width: 425px) {
+    #about-text {
+        font-size: 15px;
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     body {
       color: #eee;
       background: #121212;
     }
     .image-header {
-        background-image: url('darkmodelowqualheader.png');
+        background-image: url('ImageAssets/darkmodelowqualheader.png');
+    }
+    .link {
+        color: rgb(232, 38, 38);
     }
 }

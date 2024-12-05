@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     console.log(darkModeQuery.matches ? "Dark mode is enabled" : "Light mode is enabled");
     const setThemeImage = (isDarkMode) => {
-        heraldTrendsLogo.src = isDarkMode ? 'darkmodelowqualheader.png' : 'lowqualheader.png';
+        heraldTrendsLogo.src = isDarkMode ? 'ImageAssets/darkmodelowqualheader.png' : 'ImageAssets/lowqualheader.png';
     };
     updateHeader(darkModeQuery)
     darkModeQuery.addEventListener('change', (e) => {
@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateHeader(e) {
         const darkImage = new Image();
-        darkImage.src = 'darkmodelowqualheader.png';
+        darkImage.src = 'ImageAssets/darkmodelowqualheader.png';
         const lightImage = new Image();
-        lightImage.src = 'lowqualheader.png';
+        lightImage.src = 'ImageAssets/lowqualheader.png';
         if (e.matches) {
             console.log("Switched to dark mode");
             heraldTrendsLogo.src = darkImage.src; // Change the image
