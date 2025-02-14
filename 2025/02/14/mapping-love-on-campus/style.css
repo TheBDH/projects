@@ -188,7 +188,7 @@ a {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   body {
     background-color: #222222;
   }
@@ -216,4 +216,4 @@ a {
       color: #e19299;
     }
   }
-}
+} */
