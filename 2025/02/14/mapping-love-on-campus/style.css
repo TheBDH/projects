@@ -14,8 +14,8 @@ body {
 .marker {
   background-image: url("./images/heart.png");
   background-size: cover;
-  width: 25px;
-  height: 25px;
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
 }
 
@@ -121,7 +121,8 @@ a {
 }
 
 @keyframes beat {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {

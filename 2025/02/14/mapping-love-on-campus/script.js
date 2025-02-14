@@ -7,10 +7,14 @@ mapboxgl.accessToken =
 
 const map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/mapbox/dark-v11",
-  zoom: 16.6,
+  style: "mapbox://styles/asing122/cm74bpo6k00f401s3dqf74dxt",
+  zoom: 15,
   center: BrownCoordsBeginning,
   bearing: 90,
+  // maxBounds: [
+  //   [-71.40519285312371, 41.83069108094094],
+  //   [-71.39741843436299, 41.82282128532509],
+  // ],
 });
 
 map.on("load", () => {
@@ -33,7 +37,7 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-71.40083175061355, 41.82508003456195],
+        coordinates: [-71.40027239249866, 41.82473332443459],
       },
       properties: {
         description: "Ratty",
@@ -43,7 +47,7 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-71.40385458241934, 41.82613018601265],
+        coordinates: [-71.40288330513596, 41.826374120464266],
       },
       properties: {
         description: "UHall",
@@ -53,7 +57,7 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-71.40171574274655, 41.826273606884996],
+        coordinates: [-71.40079619350865, 41.826463413887694],
       },
       properties: {
         description: "Ruth Simmons Quad",
@@ -83,7 +87,7 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-71.39961131061196, 41.82700880500494],
+        coordinates: [-71.39915869298555, 41.8269123359905],
       },
       properties: {
         description: "CIT",
@@ -93,7 +97,7 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-71.40130531756294, 41.826021410709956],
+        coordinates: [-71.4002582357146, 41.82590430472584],
       },
       properties: {
         description: "Lincoln Field 120",
@@ -103,7 +107,7 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-71.40390671252526, 41.827450961647145],
+        coordinates: [-71.40362685522855, 41.82758819499841],
       },
       properties: {
         description: "Fones Alley",
@@ -113,7 +117,7 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-71.39844959608999, 41.82655778713132],
+        coordinates: [-71.39801279257316, 41.826643299219654],
       },
       properties: {
         description: "ERC",
@@ -123,7 +127,7 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-71.40102898321881, 41.82516709489491],
+        coordinates: [-71.40027239249866, 41.82531881725728],
       },
       properties: {
         description: "Ratty",
@@ -185,9 +189,9 @@ function handleStepEnter(response) {
     .split(",")
     .map(Number);
   if (coords[0] == 0 && coords[1] == 0) {
-    map.flyTo({ center: BrownCoordsBeginning, zoom: 16.6 });
+    map.flyTo({ center: BrownCoordsBeginning, zoom: 16.5 });
   } else if (coords[0] == 1 && coords[1] == 1) {
-    map.flyTo({ center: BrownCoordsEnd, zoom: 15.5 });
+    map.flyTo({ center: BrownCoordsEnd, zoom: 16.5 });
   } else {
     map.flyTo({ center: coords, zoom: 17.5, duration: 2400 });
   }
@@ -213,7 +217,7 @@ function init() {
   scroller
     .setup({
       step: ".scrolly article .step",
-      offset: 0.6,
+      offset: 0.4,
       debug: false,
     })
     .onStepEnter(handleStepEnter);
