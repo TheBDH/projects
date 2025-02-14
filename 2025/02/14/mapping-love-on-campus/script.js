@@ -8,7 +8,7 @@ mapboxgl.accessToken =
 const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/asing122/cm74bpo6k00f401s3dqf74dxt",
-  zoom: 15,
+  zoom: 16.55,
   center: BrownCoordsBeginning,
   bearing: 90,
   // maxBounds: [
@@ -189,9 +189,9 @@ function handleStepEnter(response) {
     .split(",")
     .map(Number);
   if (coords[0] == 0 && coords[1] == 0) {
-    map.flyTo({ center: BrownCoordsBeginning, zoom: 16.55 });
+    map.flyTo({ center: BrownCoordsBeginning, zoom: 16.55, duration: 2400 });
   } else if (coords[0] == 1 && coords[1] == 1) {
-    map.flyTo({ center: BrownCoordsBeginning, zoom: 16.55 });
+    map.flyTo({ center: BrownCoordsBeginning, zoom: 16.55, duration: 2400 });
   } else {
     map.flyTo({ center: coords, zoom: 17.5, duration: 2400 });
   }
@@ -217,7 +217,7 @@ function init() {
   scroller
     .setup({
       step: ".scrolly article .step",
-      offset: 0.4,
+      offset: 0.5,
       debug: false,
     })
     .onStepEnter(handleStepEnter);
