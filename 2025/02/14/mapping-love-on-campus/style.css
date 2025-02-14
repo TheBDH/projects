@@ -93,6 +93,7 @@ article {
   border-radius: 0.5rem;
   font-weight: bold;
   line-height: 1.5rem;
+  white-space: nowrap;
 }
 
 .profile-img {
@@ -120,12 +121,12 @@ a {
 /* mobile formatting */
 @media (max-width: 900px) {
   .profile-img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
   }
 
   #herald-logo {
-    max-width: 150px;
+    max-width: 200px;
     display: block;
     margin: 0 auto;
   }
@@ -152,7 +153,6 @@ a {
   }
 
   #herald-logo {
-    max-width: 150px;
     display: block;
     margin: 0 auto;
   }
@@ -185,5 +185,9 @@ a {
 
   #heading h3 {
     color: #eee;
+  }
+
+  #byline .author {
+    background-color: #e95c56;
   }
 }
