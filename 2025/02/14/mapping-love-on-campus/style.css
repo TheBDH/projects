@@ -71,6 +71,7 @@ article {
   font-weight: 800;
   font-style: normal;
   padding: 0;
+  margin-top: 18px;
 }
 
 #heading p {
@@ -102,10 +103,22 @@ a {
   text-decoration: inherit;
 }
 
+#herald-logo {
+  max-width: 250px;
+  display: block;
+  margin: 0 auto;
+}
+
 /* mobile formatting */
 @media (max-width: 600px) {
   .profile-img {
     width: 80px;
     height: 80px;
+  }
+
+  #herald-logo {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto;
   }
 }
