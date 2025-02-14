@@ -189,6 +189,13 @@ a {
   }
 
   #love {
-    color: #e19299;
+    color: white;
+    animation: fadeToPink 2s forwards;
+  }
+
+  @keyframes fadeToPink {
+    to {
+      color: #e19299;
+    }
   }
 }
