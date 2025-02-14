@@ -10,6 +10,21 @@ const map = new mapboxgl.Map({
   center: BrownCoordsBeginning,
 });
 
+function updateMapStyle() {
+  const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (isDarkMode) {
+    map.setStyle('mapbox://styles/mapbox/dark-v11');
+  } else {
+    map.setStyle('mapbox://styles/mapbox/light-v11');
+  }
+}
+
+// Initial check
+updateMapStyle();
+
+// Check periodically
+setInterval(updateMapStyle, 1000); // Check every 60 seconds
+
 // map.addControl(new mapboxgl.NavigationControl());
 map.scrollZoom.disable();
 
