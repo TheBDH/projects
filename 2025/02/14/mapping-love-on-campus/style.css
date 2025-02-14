@@ -45,7 +45,7 @@ article {
 
 .step p {
   display: inline;
-  font-size: 1rem;
+  font-size: 1.1rem;
   padding: 0;
   vertical-align: text-top;
   /* font-family: "Inconsolata", serif; */
@@ -53,6 +53,7 @@ article {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  line-height: 1.3rem;
 }
 
 #home {
