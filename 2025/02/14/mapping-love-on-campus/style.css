@@ -73,6 +73,7 @@ article {
   font-style: normal;
   padding: 0;
   margin-top: 16px;
+  margin-bottom: 22px;
 }
 
 #heading p {
@@ -166,6 +167,10 @@ a {
     max-width: 70%;
     margin: 0 auto;
     left: 0;
+  }
+
+  #heading {
+    text-align: center;
   }
 }
 
