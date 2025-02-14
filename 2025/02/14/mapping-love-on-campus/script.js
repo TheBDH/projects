@@ -189,7 +189,7 @@ function handleStepEnter(response) {
     .split(",")
     .map(Number);
   if (coords[0] == 0 && coords[1] == 0) {
-    map.flyTo({ center: BrownCoordsBeginning, zoom: 16.5 });
+    map.flyTo({ center: BrownCoordsBeginning, zoom: 16.55 });
   } else if (coords[0] == 1 && coords[1] == 1) {
     map.flyTo({ center: BrownCoordsEnd, zoom: 16.5 });
   } else {
