@@ -37,7 +37,6 @@ article {
   padding: 1.2rem;
   font-size: 1rem;
   background-color: #fefefe;
-  /* color: #e19299; */
   color: #e95c56;
   font-family: "Tahoma";
   min-height: 10rem;
@@ -112,6 +111,10 @@ a {
   max-width: 250px;
   display: block;
   margin: 0 auto;
+}
+
+#love {
+  color: #e19299;
 }
 
 /* mobile formatting */
