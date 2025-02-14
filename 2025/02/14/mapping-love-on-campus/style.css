@@ -149,7 +149,7 @@ a {
   }
 
   #herald-logo {
-    max-width: 150px;
+    max-width: 200px;
     display: block;
     margin: 0 auto;
   }
@@ -182,5 +182,9 @@ a {
 
   #heading h3 {
     color: #eee;
+  }
+
+  #byline .author {
+    background-color: #e95c56;
   }
 }
