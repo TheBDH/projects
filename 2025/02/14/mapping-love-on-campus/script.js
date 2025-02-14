@@ -22,10 +22,10 @@ function updateMapStyle() {
 }
 
 // Initial check
-// updateMapStyle();
+updateMapStyle();
 
 // Check periodically
-// setInterval(updateMapStyle, 1000); // Check every 60 seconds
+setInterval(updateMapStyle, 1000); // Check every second
 
 // map.addControl(new mapboxgl.NavigationControl());
 map.scrollZoom.disable();

@@ -169,7 +169,7 @@ a {
   }
 }
 
-/* dark mode formatting
+/* dark mode formatting */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #333;
@@ -183,4 +183,4 @@ a {
   #heading h3 {
     color: #eee;
   }
-} */
+}
