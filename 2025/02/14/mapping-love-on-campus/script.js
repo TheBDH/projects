@@ -67,7 +67,7 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-71.40229678472065, 41.82818610362983],
+        coordinates: [-71.40129678472065, 41.82775910462983],
       },
       properties: {
         description: "Lindemann",
@@ -77,7 +77,7 @@ const geojson = {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [-71.40253718349301, 41.830570587684576],
+        coordinates: [-71.40237718349301, 41.830440587684576],
       },
       properties: {
         description: "Andrews",
