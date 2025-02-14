@@ -73,6 +73,7 @@ article {
   font-style: normal;
   padding: 0;
   margin-top: 16px;
+  margin-bottom: 22px;
 }
 
 #heading p {
@@ -98,8 +99,8 @@ article {
 }
 
 .profile-img {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
 }
 
@@ -113,6 +114,19 @@ a {
   max-width: 250px;
   display: block;
   margin: 0 auto;
+}
+
+.inline-heart {
+  animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
 }
 
 /* mobile formatting */
@@ -145,8 +159,8 @@ a {
 /* mobile formatting */
 @media (max-width: 600px) {
   .profile-img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
   }
 
   #herald-logo {
@@ -155,7 +169,7 @@ a {
   }
 
   #heading h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .step p {
@@ -166,6 +180,10 @@ a {
     max-width: 70%;
     margin: 0 auto;
     left: 0;
+  }
+
+  #heading {
+    text-align: center;
   }
 }
 
@@ -189,6 +207,13 @@ a {
   }
 
   #love {
-    color: #e19299;
+    color: white;
+    animation: fadeToPink 2s forwards;
+  }
+
+  @keyframes fadeToPink {
+    to {
+      color: #e19299;
+    }
   }
 } */
