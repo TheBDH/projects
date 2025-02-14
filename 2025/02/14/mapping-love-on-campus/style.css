@@ -38,7 +38,7 @@ article {
   font-size: 1rem;
   background-color: #fefefe;
   color: #e95c56;
-  font-family: "Tahoma";
+  /* font-family: "Tahoma"; */
   min-height: 10rem;
   border-radius: 0.5rem;
 }
@@ -48,7 +48,8 @@ article {
   font-size: 1rem;
   padding: 0;
   vertical-align: text-top;
-  font-family: "Inconsolata", serif;
+  /* font-family: "Inconsolata", serif; */
+  font-family: "freight-text-pro", "Times", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -112,10 +113,6 @@ a {
   max-width: 250px;
   display: block;
   margin: 0 auto;
-}
-
-#love {
-  color: #e19299;
 }
 
 /* mobile formatting */
@@ -189,5 +186,9 @@ a {
 
   #byline .author {
     background-color: #e95c56;
+  }
+
+  #love {
+    color: #e19299;
   }
 }
