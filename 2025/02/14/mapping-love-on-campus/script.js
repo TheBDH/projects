@@ -11,26 +11,28 @@ const map = new mapboxgl.Map({
 });
 
 function updateMapStyle() {
-  const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDarkMode =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
   if (isDarkMode) {
-    map.setStyle('mapbox://styles/mapbox/dark-v11');
+    map.setStyle("mapbox://styles/mapbox/dark-v11");
   } else {
-    map.setStyle('mapbox://styles/mapbox/light-v11');
+    map.setStyle("mapbox://styles/mapbox/light-v11");
   }
 }
 
 // Initial check
-updateMapStyle();
+// updateMapStyle();
 
 // Check periodically
-setInterval(updateMapStyle, 1000); // Check every 60 seconds
+// setInterval(updateMapStyle, 1000); // Check every 60 seconds
 
 // map.addControl(new mapboxgl.NavigationControl());
 map.scrollZoom.disable();
 
-// map.on("click", (e) => {
-//   console.log(`${e.lngLat.lng}, ${e.lngLat.lat}`);
-// });
+map.on("click", (e) => {
+  console.log(`${e.lngLat.lng}, ${e.lngLat.lat}`);
+});
 
 const geojson = {
   type: "FeatureCollection",
@@ -123,6 +125,16 @@ const geojson = {
       },
       properties: {
         description: "ERC",
+      },
+    },
+    {
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: [-71.40102898321881, 41.82516709489491],
+      },
+      properties: {
+        description: "Ratty",
       },
     },
   ],
