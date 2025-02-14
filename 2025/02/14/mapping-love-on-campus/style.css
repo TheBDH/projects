@@ -169,7 +169,7 @@ a {
   }
 }
 
-/* dark mode formatting */
+/* 
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #333;
@@ -191,4 +191,4 @@ a {
   #love {
     color: #e19299;
   }
-}
+} */

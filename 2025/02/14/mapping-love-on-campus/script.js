@@ -1,37 +1,29 @@
 const BrownCoordsEnd = [-71.40112003525219, 41.827891918876645];
-const BrownCoordsBeginning = [-71.4048525453158, 41.827790163948436];
+// const BrownCoordsBeginning = [-71.4048525453158, 41.827790163948436];
+const BrownCoordsBeginning = [-71.40152533474269, 41.82698260697566];
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYXNpbmcxMjIiLCJhIjoiY2x1MXV6Z29lMHFzMTJrcHBsMDgwYzRjeiJ9.XOdMvSBM5o_sG4IwTVhTwA";
+
 const map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/mapbox/light-v11",
-  zoom: 15.5,
+  style: "mapbox://styles/mapbox/dark-v11",
+  zoom: 16.6,
   center: BrownCoordsBeginning,
+  bearing: 90,
 });
 
-function updateMapStyle() {
-  const isDarkMode =
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-  if (isDarkMode) {
-    map.setStyle("mapbox://styles/mapbox/dark-v11");
-  } else {
-    map.setStyle("mapbox://styles/mapbox/light-v11");
-  }
-}
+map.on("load", () => {
+  map.addSource("illo", {
+    type: "raster",
+    url: "mapbox://asing122.b2sacxrd",
+  });
 
-// Initial check
-updateMapStyle();
-
-// Check periodically
-setInterval(updateMapStyle, 1000); // Check every second
-
-// map.addControl(new mapboxgl.NavigationControl());
-map.scrollZoom.disable();
-
-map.on("click", (e) => {
-  console.log(`${e.lngLat.lng}, ${e.lngLat.lat}`);
+  map.addLayer({
+    id: "illo",
+    source: "illo",
+    type: "raster",
+  });
 });
 
 const geojson = {
@@ -153,6 +145,30 @@ for (const feature of geojson.features) {
     .addTo(map);
 }
 
+// function updateMapStyle() {
+//   const isDarkMode =
+//     window.matchMedia &&
+//     window.matchMedia("(prefers-color-scheme: dark)").matches;
+//   if (isDarkMode) {
+//     map.setStyle("mapbox://styles/mapbox/dark-v11");
+//   } else {
+//     map.setStyle("mapbox://styles/mapbox/light-v11");
+//   }
+// }
+
+// // Initial check
+// updateMapStyle();
+
+// // Check periodically
+// setInterval(updateMapStyle, 1000); // Check every second
+
+// map.addControl(new mapboxgl.NavigationControl());
+map.scrollZoom.disable();
+
+map.on("click", (e) => {
+  console.log(`${e.lngLat.lng}, ${e.lngLat.lat}`);
+});
+
 var main = d3.select("main");
 var scrolly = main.select(".scrolly");
 var article = scrolly.select("article");
@@ -169,11 +185,11 @@ function handleStepEnter(response) {
     .split(",")
     .map(Number);
   if (coords[0] == 0 && coords[1] == 0) {
-    map.flyTo({ center: BrownCoordsBeginning, zoom: 15.5 });
+    map.flyTo({ center: BrownCoordsBeginning, zoom: 16.6 });
   } else if (coords[0] == 1 && coords[1] == 1) {
     map.flyTo({ center: BrownCoordsEnd, zoom: 15.5 });
   } else {
-    map.flyTo({ center: coords, zoom: 19, duration: 2400 });
+    map.flyTo({ center: coords, zoom: 17.5, duration: 2400 });
   }
 }
 
