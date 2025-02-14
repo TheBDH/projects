@@ -111,6 +111,33 @@ a {
 }
 
 /* mobile formatting */
+@media (max-width: 900px) {
+  .profile-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  #herald-logo {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #heading h3 {
+    font-size: 1.5rem;
+  }
+
+  .step p {
+    font-size: 1rem;
+  }
+
+  article {
+    max-width: 40%;
+    left: 5%;
+  }
+}
+
+/* mobile formatting */
 @media (max-width: 600px) {
   .profile-img {
     width: 80px;
