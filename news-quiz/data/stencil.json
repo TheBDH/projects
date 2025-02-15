@@ -5,7 +5,12 @@
     {
       "question": "...",
       "type": "MC",
-      "choices": ["A", "B", "C", "D"],
+      "choices": [
+        "Choice A",
+        "B here's another choice",
+        "C ccc",
+        "D 4th answer"
+      ],
       "answer": "b",
       "image": "",
       "alt": null,
