@@ -1,0 +1,156 @@
+{
+    "date": "February 9 - February 16, 2024",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+      {
+        "question": "What genre is the film “The Substance”?",
+        "type": "MC",
+        "choices": [
+          "Slasher",
+          "Body-horror",
+          "Psychological-horror",
+          "Vampire"
+        ],
+        "answer": "b",
+        "image": null,
+        "alt": null,
+        "explanation": "Tbd",
+        "link": "https://www.browndailyherald.com/article/2025/02/the-substance-contrasts-grotesque-visuals-with-the-temporal-nature-of-beauty"
+      },
+        {
+        "question": "How many Brown students are studying abroad this semester?",
+        "type": "MC",
+        "choices": [
+            "420",
+            "128",
+            "255",
+            "369"
+        ],
+        "answer": "c",
+        "image": null,
+        "alt": null,
+        "explanation": "Tbd",
+        "link": "https://www.browndailyherald.com/article/2025/02/this-semester-255-brunonians-are-hitting-the-books-abroad"
+        },
+        {
+            "question": "By how much will undergraduate tuition and fees increase next school year?",
+            "type": "MC",
+            "choices": [
+                "4.85%",
+                "6.70%",
+                "3.25%",
+                "5.65%"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Tbd",
+            "link": "https://www.browndailyherald.com/article/2025/02/corporation-approves-485-increase-in-undergraduate-tuition-and-fees"
+        },
+        {
+            "question": "Who won 3-0 against Dartmouth on Senior Day this week?",
+            "type": "MC",
+            "choices": [
+                "Men’s Water Polo",
+                "Women’s Lacrosse",
+                "Baseball",
+                "Women’s Ice Hockey"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Tbd",
+            "link": "https://www.browndailyherald.com/article/2025/02/womens-ice-hockey-cruises-past-dartmouth-with-a-3-0-senior-day-win"
+        },
+        {
+            "question": "How many housing units does Providence’s first temporary pallet shelter, ECHO Village, hold?",
+            "type": "MC",
+            "choices": [
+                "25",
+                "35",
+                "45",
+                "55"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "Tbd",
+            "link": "https://www.browndailyherald.com/article/2025/02/first-ri-temporary-pallet-shelter-opens-doors-following-months-long-delays"
+        },
+        {
+            "question": "What third-party alternative did Andrew Yang ’96 form in 2021?",
+            "type": "MC",
+            "choices": [
+                "Freedom Party",
+                "Democratic Party",
+                "Green Party",
+                "Forward Party"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Tbd",
+            "link": "https://www.browndailyherald.com/article/2025/02/andrew-yang-96-advocates-for-new-political-path-outside-two-party-system-at-brown-event"
+        },
+        {
+            "question": "Which of the following is one of Brown’s two literary societies?",
+            "type": "MC",
+            "choices": [
+                "Delta Tau",
+                "Lantern",
+                "Delta Phi",
+                "Alpha Delta Phi"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Tbd",
+            "link": "https://www.browndailyherald.com/article/2025/02/browns-literary-societies-depart-from-their-humanities-origins-centering-community-and-reinventing-tradition"
+        },
+        {
+            "question": "What kind of free community exercise event was held in Providence on Feb. 8?",
+            "type": "MC",
+            "choices": [
+                "Yoga",
+                "Pilates",
+                "Tai chi",
+                "HIIT"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Tbd",
+            "link": "https://www.browndailyherald.com/article/2025/02/hot-yoga-no-cold-yoga-providence-yogis-brave-frigid-temperatures-for-snowga"
+        },
+        {
+            "question": "How many universities, along with Brown, are suing the NIH for federal funding cuts?",
+            "type": "MC",
+            "choices": [
+                "25",
+                "12",
+                "7",
+                "3"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Tbd",
+            "link": "https://www.browndailyherald.com/article/2025/02/brown-among-universities-suing-nih-over-flagrantly-unlawful-federal-funding-cut"
+        },
+        {
+            "question": "How much did the National Endowment for the Arts grant art initiatives across Rhode Island?",
+            "type": "MC",
+            "choices": [
+                "$300,000",
+                "$1500",
+                "$450,000",
+                "$200,000"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Tbd",
+            "link": "https://www.browndailyherald.com/article/2025/02/ri-organizations-artists-win-300000-in-national-arts-grants"
+        }
+        ]
+    }
