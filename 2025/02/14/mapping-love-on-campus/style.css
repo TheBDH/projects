@@ -43,6 +43,12 @@ article {
   border-radius: 0.5rem;
 }
 
+
+#photo-credit {
+  font-size: 1rem;
+  font-style: italic;
+}
+
 .step p {
   display: inline;
   font-size: 1.2rem;
@@ -103,6 +109,7 @@ article {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
+  margin-bottom: 0.4rem;
 }
 
 /* override all link formatting */
