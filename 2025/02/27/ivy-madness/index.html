@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ivy League Playoffs Predictor</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1>The Road to Ivy Madness</h1>
+        <div>
+            <label for="genderSelect">Select Gender:</label>
+            <select id="genderSelect">
+                <option value="mens">Men's</option>
+                <option value="womens">Women's</option>
+            </select>
+        </div>
+        <p>Select the results of the remaining games to project the final
+            standings:</p>
+        <div style="display: flex; flex-direction: row; gap: 20px;">
+            <div>
+                <table id="gamesTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Away</th>
+                            <th>Home</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Game rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- <button type="button" id="projectStandings">Project Standings</button> -->
+            <div>
+                <h2>Projected Final Standings</h2>
+                <table id="standingsTable">
+                    <thead>
+                        <tr>
+                            <th>Team</th>
+                            <th>Wins</th>
+                            <th>Losses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Standings rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
