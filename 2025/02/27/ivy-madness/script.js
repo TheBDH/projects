@@ -130,11 +130,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const genderSelect = document.querySelector('#genderSelect');
     let curDB = db.games;
+    let curGender = 'mens';
     let gamesPlayed = 0;
 
     if (genderSelect) {
         genderSelect.addEventListener('change', () => {
             curDB = genderSelect.value === 'womens' ? db.womenGames : db.games;
+            curGender = genderSelect.value;
             console.log("updated:");
             updateGamesTable();
         });
@@ -393,16 +395,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function getNetRanking(team) {
             // update after each game from https://www.ncaa.com/rankings/basketball-men/d1/ncaa-mens-basketball-net-rankings
-            const rankings = {
-                'Yale': 70,
-                'Princeton': 151,
-                'Cornell': 162,
-                'Brown': 198,
-                'Dartmouth': 225,
-                'Columbia': 252,
-                'Harvard': 269,
-                'Penn': 303
+            const menRankings = {
+                'Yale': 68,
+                'Cornell': 157,
+                'Princeton': 167,
+                'Brown': 208,
+                'Dartmouth': 209,
+                'Columbia': 256,
+                'Harvard': 267,
+                'Penn': 304
             };
+            const womenRankings = {
+                'Harvard': 35,
+                'Columbia': 42,
+                'Princeton': 50,
+                'Penn': 167,
+                'Brown': 179,
+                'Cornell': 235,
+                'Dartmouth': 310,
+                'Yale': 334
+            };
+            const rankings = curGender === 'mens' ? menRankings : womenRankings;
             return rankings[team] || 999; // Return a high number if team is not found
         }
 

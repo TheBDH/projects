@@ -8,47 +8,159 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <h1>The Road to Ivy Madness</h1>
-        <div>
-            <label for="genderSelect">Select Gender:</label>
-            <select id="genderSelect">
-                <option value="mens">Men's</option>
-                <option value="womens">Women's</option>
-            </select>
+        <div id="heading">
+            <a href="https://www.browndailyherald.com" target="_blank">
+                <img
+                    src="images/logo-black.png"
+                    id="herald-logo"
+                    alt="Brown Daily Herald Logo" />
+            </a>
+            <h3>The Road to <span id="ivy">Ivy</span> Madness</h3>
+            <p>
+                Can Brown's Basketball Teams Make the Tournament?
+            </p>
+            <h6 id="byline">
+                Reporting and web design by
+                <span class="author"><a
+                        href="https://www.browndailyherald.com/staff/caleb-ellenberg"
+                        target="_blank">Caleb Ellenberg</a></span>
+            </h6>
         </div>
-        <p>Select the results of the remaining games to project the final
-            standings:</p>
-        <div style="display: flex; flex-direction: row; gap: 20px;">
+        <div style="height: 100vh;"></div>
+        <div class="article" id="intro">
+            <p>
+                On March 15th and 16th, Ivy Madness, the Ivy League championship
+                basketball tournament, will come to the Pizzitola Sports Center
+                here in Providence for the first time since the tournament was
+                created in 2017. However, it remains to be seen whether either
+                of Brown’s basketball teams will be playing on home court.
+                <br><br>
+                The Ivy League basketball season is entering its final stretch,
+                and as of Friday, both Brown’s men’s and women’s basketball
+                teams are on the outside looking in. The men sit in 6th place
+                after their 3-game win streak was broken this Saturday night in
+                a crushing loss to Cornell at the Pizzitola. The women’s team
+                was also at home this weekend, and endured a similarly down to
+                the wire defeat to Harvard. The women now sit in 5th place.
+                <br><br>
+                But neither team’s hopes are over. The men travel to Harvard and
+                Dartmouth this weekend, playing two teams they hope to pass in
+                order to qualify for Ivy Madness. The women are away at Columbia
+                and Cornell. Although neither opponent is especially relevant to
+                Brown’s position, those are also must-win games due to the
+                dwindling opportunities to make up ground in the standings.
+                <br><br>
+                At the bottom of this website, The Herald data desk has built an
+                interactive tool to explore the standings scenarios based on the
+                outcomes of the final 12 games in each league, complex
+                tiebreakers and all (those curious about the Ivy League tie
+                breaking protocol can read more <a
+                    href="https://ivyleague.com/sports/2022/2/17/MBB_0217222638.aspx"
+                    target="_blank">here</a>).
+
+            </p>
+        </div>
+        <div style="height: 30vh;"></div>
+        <img class="background-img" src="images/arnolie.jpg"
+            alt="Grace Arnolie">
+        <div style="height: 30vh;"></div>
+        <div class="article" id="intro">
+            <p>
+                The women’s team is looking to end an up-down season on an up
+                and take that momentum into the tournament. Following Saturday’s
+                loss, the women are on a 5-game losing streak and have only one
+                more chance to avoid a winless month of February. Still, the
+                women’s team showed early in the season that they are capable of
+                playing at a high level. They went on a 3-game win streak in
+                late January, defeating Cornell, Dartmouth, and Penn. The win
+                against Penn was especially crucial, as Penn now holds the
+                elusive 4th spot in Ivy Madness. Since Columbia, Harvard, and
+                Princeton have already clinched the top 3 seeds in the
+                tournament, Brown will have to pass Penn to get in.
+                <br><br>
+                Fortunately for Brown, there are a few ways to do this. Brown
+                faces Columbia, who sit at the top of the standings, but also
+                Cornell and Yale, who rest near the bottom. A 2-1 record looks
+                reasonable, and a 3-0 record is possible, although it would
+                require Brown to take down a 1-loss Columbia team.
+                <br><br>
+                Still, no matter how many games Brown wins, they will need help
+                from Penn. The Penn women face Dartmouth, currently a 2-win
+                team, but also Harvard and Princeton, who currently sit in
+                second and third place in the Ivy with 9 wins.
+                <br><br>
+                If all games are won by the team with more wins, Brown will go
+                2-1, beating Cornell and Yale, while Penn will go 1-2, beating
+                just Dartmouth. This would put Penn ahead of Brown by third
+                tiebreaker, NCAA NET ranking, since the team’s would have an
+                even head-to-head record and identical records against every
+                other Ivy team (the second tiebreaker). However, NET rankings
+                are updated by the NCAA after every game. Penn currently
+                outranks Brown by just 13 places, 166 to 179, so Brown could
+                conceivably gain the advantage on the NET ranking tiebreaker by
+                season’s end.
+                <br><br>
+                Of course, all of this is moot if Brown defeats Columbia, or if
+                Brown fails to do that and Penn defeats either Harvard or
+                Princeton. You can explore all the other ways the standings
+                might shake out with the interactive tool below!
+            </p>
+        </div>
+        <div style="height: 30vh;"></div>
+        <img class="background-img" src="images/kino.jpg" alt="Kino Lilly Jr.">
+        <div style="height: 30vh;"></div>
+        <div class="article" id="intro">
+            <p>
+                Brown’s men’s team has had a similarly varied season.
+                <br><br>
+                To be finished writing.
+
+            </p>
+        </div>
+        <div style="height: 30vh;"></div>
+        <div class="article" id="build-standings">
             <div>
-                <table id="gamesTable">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Away</th>
-                            <th>Home</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Game rows will be dynamically inserted here -->
-                    </tbody>
-                </table>
+                <label for="genderSelect">Select Gender:</label>
+                <select id="genderSelect">
+                    <option value="mens">Men's</option>
+                    <option value="womens">Women's</option>
+                </select>
             </div>
-            <!-- <button type="button" id="projectStandings">Project Standings</button> -->
-            <div>
-                <h2>Projected Final Standings</h2>
-                <table id="standingsTable">
-                    <thead>
-                        <tr>
-                            <th>Team</th>
-                            <th>Wins</th>
-                            <th>Losses</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Standings rows will be dynamically inserted here -->
-                    </tbody>
-                </table>
+            <p>Select the results of the remaining games to project the final
+                standings:</p>
+            <div style="display: flex; flex-direction: row; gap: 80px;">
+                <div>
+                    <table id="gamesTable">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Away</th>
+                                <th>Home</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Game rows will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <button type="button" id="projectStandings">Project Standings</button> -->
+                <div>
+                    <h2>Projected Final Standings</h2>
+                    <table id="standingsTable">
+                        <thead>
+                            <tr>
+                                <th>Team</th>
+                                <th>Wins</th>
+                                <th>Losses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Standings rows will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+        <div style="height: 10vh;"></div>
     </body>
 </html>
