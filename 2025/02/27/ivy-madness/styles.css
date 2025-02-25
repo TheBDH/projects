@@ -27,7 +27,7 @@ table {
 
 th,
 td {
-    /* border: 1px solid #ddd; */
+    border: 2px solid #ddd;
     padding: 0px;
     text-align: center;
     background-color: black;
@@ -35,6 +35,12 @@ td {
 
 th {
     padding: 8px;
+}
+
+#games-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
 }
 
 .date {
@@ -264,8 +270,23 @@ a {
     table {
         font-size: 0.9rem;
     }
-    
+
     .background-img {
         width: 80vw;
+    }
+
+    #games-flex {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    .article {
+        max-width: 80%;
+    }
+
+    .team {
+        padding: 10px;
+        text-align: center;
     }
 }
