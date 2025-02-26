@@ -278,7 +278,8 @@ a {
     #games-flex {
         display: flex;
         flex-direction: column;
-        gap: 80px;
+        gap: 20px;
+        margin-bottom: 20px;
     }
 
     .article {

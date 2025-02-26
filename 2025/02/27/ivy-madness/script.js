@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
+
     function parseDate(dateStr) {
         const [month, day] = dateStr.split(' ');
         const monthIndex = new Date(`${month} 1, 2000`).getMonth();
@@ -137,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
         genderSelect.addEventListener('change', () => {
             curDB = genderSelect.value === 'womens' ? db.womenGames : db.games;
             curGender = genderSelect.value;
-            console.log("updated:");
             updateGamesTable();
         });
     } else {
@@ -153,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
         today.setHours(0, 0, 0, 0);
 
         updateGamesPlayed();
-        console.log(`Games already played: ${gamesPlayed}`);
 
         gamesTableBody.innerHTML = '';
         curDB.filter(game => parseDate(game.date) >= today).forEach((game, index) => {
@@ -200,7 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gamesTableBody.addEventListener('click', (event) => {
         if (event.target.classList.contains('team') || event.target.classList.contains('team-checkbox')) {
-            console.log("CLICK");
             const gameId = event.target.getAttribute('data-game-id');
             const team = event.target.getAttribute('data-team');
             const gameIndex = parseInt(gameId.replace('game', '')) - 1;
@@ -233,7 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
         projectStandings();
     });
 
-    console.log(curDB);
 
     // function updateWinnersFromTable() {
     //     const gamesTableBody = document.querySelector('#gamesTable tbody');
@@ -283,152 +280,245 @@ document.addEventListener('DOMContentLoaded', () => {
                 i++;
             }
             if (tieGroup.length > 1) {
-                const resolvedTieGroup = breakTie(tieGroup, standings, curDB);
+                const resolvedTieGroup = breakTie(tieGroup, standings, curDB, true);
+                sortedTeams.splice(i - tieGroup.length + 1, tieGroup.length, ...resolvedTieGroup);
+            }
+        }
+        const start = performance.now();
+        simulateStandings();
+        const end = performance.now();
+        const timeTaken = end - start;
+        const simulationsPerSecond = 1000 / timeTaken;
+        const numSimulations = Math.min(Math.floor(simulationsPerSecond * 10), 1000); // Cap at 1000 simulations
+
+        console.log(`Running ${numSimulations} simulations based on processor speed.`);
+        const simulationResults = runSimulations(numSimulations);
+
+        for (let team of sortedTeams) {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td class="standingTeam">${team}</td><td>${standings[team].wins}</td><td>${standings[team].losses}</td><td>${simulationResults[team]}</td>`;
+            standingsTableBody.appendChild(row);
+        }
+    }
+
+    function simulateStandings() {
+        const standings = {
+            'Harvard': { wins: 0, losses: 0 },
+            'Yale': { wins: 0, losses: 0 },
+            'Princeton': { wins: 0, losses: 0 },
+            'Columbia': { wins: 0, losses: 0 },
+            'Cornell': { wins: 0, losses: 0 },
+            'Brown': { wins: 0, losses: 0 },
+            'Dartmouth': { wins: 0, losses: 0 },
+            'Penn': { wins: 0, losses: 0 }
+        };
+
+        curDB.forEach(game => {
+            const [team1, team2] = game.teams;
+            const winner = game.winner;
+            if (winner === team1) {
+                standings[team1].wins++;
+                standings[team2].losses++;
+            } else if (winner === team2) {
+                standings[team2].wins++;
+                standings[team1].losses++;
+            }
+        });
+
+        curDB.forEach(game => {
+            const [team1, team2] = game.teams;
+            const winner = game.winner;
+            if (winner === '') {
+                odds = standings[team1].wins / (standings[team1].wins + standings[team2].wins);
+                const simulatedWinner = Math.random() < odds ? team1 : team2;
+                standings[simulatedWinner].wins++;
+                standings[simulatedWinner === team1 ? team2 : team1].losses++;
+            }
+        });
+
+        const sortedTeams = Object.keys(standings).sort((a, b) => standings[b].wins - standings[a].wins);
+
+        for (let i = 0; i < sortedTeams.length - 1; i++) {
+            let tieGroup = [sortedTeams[i]];
+            while (i < sortedTeams.length - 1 && standings[sortedTeams[i]].wins === standings[sortedTeams[i + 1]].wins) {
+                tieGroup.push(sortedTeams[i + 1]);
+                i++;
+            }
+            if (tieGroup.length > 1) {
+                const resolvedTieGroup = breakTie(tieGroup, standings, curDB, false);
                 sortedTeams.splice(i - tieGroup.length + 1, tieGroup.length, ...resolvedTieGroup);
             }
         }
 
-        function breakTie(tiedTeams, standings, games) {
-            // Cumulative record against all other teams in the tie
-            const records = tiedTeams.map(team => {
-                return {
-                    team,
-                    record: tiedTeams.reduce((acc, opponent) => {
-                        if (team !== opponent) {
-                            const headToHead = games.filter(game =>
-                                (game.teams.includes(team) && game.teams.includes(opponent)) && game.winner !== ''
-                            );
-                            const wins = headToHead.filter(game => game.winner === team).length;
-                            acc += wins;
-                        }
-                        return acc;
-                    }, 0)
-                };
+        return sortedTeams;
+    }
+
+    function runSimulations(num) {
+        const simulationResults = {
+            'Harvard': 0,
+            'Yale': 0,
+            'Princeton': 0,
+            'Columbia': 0,
+            'Cornell': 0,
+            'Brown': 0,
+            'Dartmouth': 0,
+            'Penn': 0
+        };
+    
+        for (let i = 0; i < num; i++) {
+            const standings = simulateStandings();
+            standings.slice(0, 4).forEach(team => {
+                simulationResults[team]++;
+            });
+        }
+
+        const results = {};
+        Object.keys(simulationResults).forEach(team => {
+            const percentage = ((simulationResults[team] / num) * 100).toFixed(1) + '%';
+            results[team] = percentage;
+        });
+
+        return results;
+    }
+
+    function breakTie(tiedTeams, standings, games, log) {
+        // Cumulative record against all other teams in the tie
+        const records = tiedTeams.map(team => {
+            return {
+                team,
+                record: tiedTeams.reduce((acc, opponent) => {
+                    if (team !== opponent) {
+                        const headToHead = games.filter(game =>
+                            (game.teams.includes(team) && game.teams.includes(opponent)) && game.winner !== ''
+                        );
+                        const wins = headToHead.filter(game => game.winner === team).length;
+                        acc += wins;
+                    }
+                    return acc;
+                }, 0)
+            };
+        });
+
+        records.sort((a, b) => b.record - a.record);
+        if (!records.every(record => record.record === records[0].record)) {
+            const groupedRecords = [];
+            let currentGroup = [records[0]];
+
+            for (let i = 1; i < records.length; i++) {
+                if (records[i].record === records[i - 1].record) {
+                    currentGroup.push(records[i]);
+                } else {
+                    groupedRecords.push(currentGroup);
+                    currentGroup = [records[i]];
+                }
+            }
+            groupedRecords.push(currentGroup);
+
+            const resolvedGroups = Object.values(groupedRecords).flatMap(group => {
+                if (group.length > 1) {
+                    return breakTie(group.map(item => item.team), standings, games, log);
+                }
+                return group.map(item => item.team);
+            });
+            if (log) {
+                console.log("Tie broken by head-to-head record against tie group.");
+                console.log(groupedRecords);
+            }
+            return resolvedGroups;
+        }
+
+        // Record against highest seeded team not in the tie
+        const otherTeams = Object.keys(standings)
+            .filter(team => !tiedTeams.includes(team))
+            .sort((a, b) => standings[b].wins - standings[a].wins);
+        for (let team of otherTeams) {
+            if (log) {
+                console.log(team);
+            }
+            const teamRecords = tiedTeams.map(tiedTeam => {
+                const wins = games.filter(game =>
+                    game.teams.includes(tiedTeam) && game.teams.includes(team) && game.winner !== ''
+                ).filter(game => game.winner === tiedTeam).length;
+                return { team: tiedTeam, wins };
             });
 
-            records.sort((a, b) => b.record - a.record);
-            console.log(records);
-            if (!records.every(record => record.record === records[0].record)) {
+            teamRecords.sort((a, b) => b.wins - a.wins);
+            if (!teamRecords.every(record => record.wins === teamRecords[0].wins)) {
                 const groupedRecords = [];
-                let currentGroup = [records[0]];
+                let currentGroup = [teamRecords[0]];
 
-                for (let i = 1; i < records.length; i++) {
-                    if (records[i].record === records[i - 1].record) {
-                        currentGroup.push(records[i]);
+                for (let i = 1; i < teamRecords.length; i++) {
+                    if (teamRecords[i].wins === teamRecords[i - 1].wins) {
+                        currentGroup.push(teamRecords[i]);
                     } else {
                         groupedRecords.push(currentGroup);
-                        currentGroup = [records[i]];
+                        currentGroup = [teamRecords[i]];
                     }
                 }
                 groupedRecords.push(currentGroup);
 
                 const resolvedGroups = Object.values(groupedRecords).flatMap(group => {
                     if (group.length > 1) {
-                        return breakTie(group.map(item => item.team), standings, games);
+                        return breakTie(group.map(item => item.team), standings, games, log);
                     }
                     return group.map(item => item.team);
                 });
-
-                console.log("Tie broken by head-to-head record against tie group.");
-                console.log(groupedRecords);
-                return resolvedGroups;
-            }
-
-            // Record against highest seeded team not in the tie
-            const otherTeams = Object.keys(standings)
-                .filter(team => !tiedTeams.includes(team))
-                .sort((a, b) => standings[b].wins - standings[a].wins);
-            console.log(otherTeams);
-            for (let team of otherTeams) {
-                console.log(team);
-                const teamRecords = tiedTeams.map(tiedTeam => {
-                    const wins = games.filter(game =>
-                        game.teams.includes(tiedTeam) && game.teams.includes(team) && game.winner !== ''
-                    ).filter(game => game.winner === tiedTeam).length;
-                    return { team: tiedTeam, wins };
-                });
-
-                teamRecords.sort((a, b) => b.wins - a.wins);
-                if (!teamRecords.every(record => record.wins === teamRecords[0].wins)) {
-                    const groupedRecords = [];
-                    let currentGroup = [teamRecords[0]];
-
-                    for (let i = 1; i < teamRecords.length; i++) {
-                        if (teamRecords[i].wins === teamRecords[i - 1].wins) {
-                            currentGroup.push(teamRecords[i]);
-                        } else {
-                            groupedRecords.push(currentGroup);
-                            currentGroup = [teamRecords[i]];
-                        }
-                    }
-                    groupedRecords.push(currentGroup);
-
-                    const resolvedGroups = Object.values(groupedRecords).flatMap(group => {
-                        if (group.length > 1) {
-                            return breakTie(group.map(item => item.team), standings, games);
-                        }
-                        return group.map(item => item.team);
-                    });
-
+                if (log) {
                     console.log(groupedRecords);
                     console.log("Tie broken by record against top team not in tie.");
-                    return resolvedGroups;
                 }
+                return resolvedGroups;
             }
+        }
 
-            // If still tied, use NCAA NET rankings
-            const netRankings = tiedTeams.map(team => ({
-                team,
-                ranking: getNetRanking(team)
-            }));
+        // If still tied, use NCAA NET rankings
+        const netRankings = tiedTeams.map(team => ({
+            team,
+            ranking: getNetRanking(team)
+        }));
 
-            netRankings.sort((a, b) => a.ranking - b.ranking);
-            if (netRankings[0].ranking !== netRankings[1].ranking) {
+        netRankings.sort((a, b) => a.ranking - b.ranking);
+        if (netRankings[0].ranking !== netRankings[1].ranking) {
+            if (log) {
                 console.log(netRankings);
                 console.log("Tie broken by net rankings");
-                return netRankings.map(record => record.team);
             }
-
-            // If still tied, conduct a draw
-            return tiedTeams.sort((a, b) => draw(a, b));
+            return netRankings.map(record => record.team);
         }
 
-        function getNetRanking(team) {
-            // update after each game from https://www.ncaa.com/rankings/basketball-men/d1/ncaa-mens-basketball-net-rankings
-            const menRankings = {
-                'Yale': 68,
-                'Cornell': 157,
-                'Princeton': 167,
-                'Brown': 208,
-                'Dartmouth': 209,
-                'Columbia': 256,
-                'Harvard': 267,
-                'Penn': 304
-            };
-            const womenRankings = {
-                'Harvard': 35,
-                'Columbia': 42,
-                'Princeton': 50,
-                'Penn': 167,
-                'Brown': 179,
-                'Cornell': 235,
-                'Dartmouth': 310,
-                'Yale': 334
-            };
-            const rankings = curGender === 'mens' ? menRankings : womenRankings;
-            return rankings[team] || 999; // Return a high number if team is not found
-        }
+        // If still tied, conduct a draw
+        return tiedTeams.sort((a, b) => draw(a, b));
+    }
 
-        function draw(teamA, teamB) {
-            // Placeholder function for conducting a draw
-            // Replace with actual implementation
-            return Math.random() - 0.5;
-        }
+    function getNetRanking(team) {
+        // update after each game from https://www.ncaa.com/rankings/basketball-men/d1/ncaa-mens-basketball-net-rankings
+        const menRankings = {
+            'Yale': 68,
+            'Cornell': 157,
+            'Princeton': 167,
+            'Brown': 208,
+            'Dartmouth': 209,
+            'Columbia': 256,
+            'Harvard': 267,
+            'Penn': 304
+        };
+        const womenRankings = {
+            'Harvard': 35,
+            'Columbia': 42,
+            'Princeton': 50,
+            'Penn': 167,
+            'Brown': 179,
+            'Cornell': 235,
+            'Dartmouth': 310,
+            'Yale': 334
+        };
+        const rankings = curGender === 'mens' ? menRankings : womenRankings;
+        return rankings[team] || 999; // Return a high number if team is not found
+    }
 
-        for (let team of sortedTeams) {
-            const row = document.createElement('tr');
-            row.innerHTML = `<td class="standingTeam">${team}</td><td>${standings[team].wins}</td><td>${standings[team].losses}</td>`;
-            standingsTableBody.appendChild(row);
-        }
+    function draw(teamA, teamB) {
+        // Placeholder function for conducting a draw
+        // Replace with actual implementation
+        return Math.random() - 0.5;
     }
 });
