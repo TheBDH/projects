@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
-    const today = new Date();
+    const today = new Date('2025-02-27');
     today.setHours(0, 0, 0, 0);
 
     //TODO RESET THE GAMES WHEN GENDER SWITCHED
@@ -297,9 +297,13 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Running ${numSimulations} simulations based on processor speed.`);
         const simulationResults = runSimulations(numSimulations);
 
-        for (let team of sortedTeams) {
+        for (let i = 0; i < sortedTeams.length; i++) {
+            const team = sortedTeams[i];
             const row = document.createElement('tr');
             row.innerHTML = `<td class="standingTeam">${team}</td><td>${standings[team].wins}</td><td>${standings[team].losses}</td><td>${simulationResults[team]}</td>`;
+            if (i === 4) {
+            row.style.borderTop = '6px solid white'; // Thicker line between fourth and fifth row
+            }
             standingsTableBody.appendChild(row);
         }
     }
