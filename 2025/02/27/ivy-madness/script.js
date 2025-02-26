@@ -118,6 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
     //TODO RESET THE GAMES WHEN GENDER SWITCHED
     function parseDate(dateStr) {
         const [month, day] = dateStr.split(' ');
@@ -137,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (genderSelect) {
         genderSelect.addEventListener('change', () => {
             curDB = genderSelect.value === 'womens' ? db.womenGames : db.games;
+            console.log(curDB);
             curGender = genderSelect.value;
             updateGamesTable();
         });
@@ -145,13 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateGamesPlayed() {
-        gamesPlayed = curDB.filter(game => game.winner !== '').length;
+        //gamesPlayed = curDB.filter(game => game.winner !== '').length;
+        gamesPlayed = curDB.filter(game => parseDate(game.date) < today).length;
     }
 
     function updateGamesTable() {
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-
         updateGamesPlayed();
 
         gamesTableBody.innerHTML = '';
@@ -161,13 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
             row.innerHTML = `
                 <td><div class="date">${game.date}</div></td>
                 <td>
-                    <button class="team" data-game-id="${gameId}" data-team="${game.teams[0]}">${game.teams[0]}
-                        <input type="checkbox" class="team-checkbox" data-game-id="${gameId}" data-team="${game.teams[0]}">
+                    <button class="team ${game.winner === game.teams[0] ? 'winner selected' : game.winner === game.teams[1] ? 'loser' : ''}" data-game-id="${gameId}" data-team="${game.teams[0]}">${game.teams[0]}
+                        <input type="checkbox" class="team-checkbox ${game.winner === game.teams[0] ? 'winner-checkbox' : game.winner === game.teams[1] ? 'loser-checkbox' : ''}" data-game-id="${gameId}" data-team="${game.teams[0]}" ${game.winner === game.teams[0] ? 'checked' : ''}>
                     </button>
                 </td>
                 <td>
-                    <button class="team" data-game-id="${gameId}" data-team="${game.teams[1]}">${game.teams[1]}
-                        <input type="checkbox" class="team-checkbox" data-game-id="${gameId}" data-team="${game.teams[1]}">
+                    <button class="team ${game.winner === game.teams[1] ? 'winner selected' : game.winner === game.teams[0] ? 'loser' : ''}" data-game-id="${gameId}" data-team="${game.teams[1]}">${game.teams[1]}
+                        <input type="checkbox" class="team-checkbox ${game.winner === game.teams[1] ? 'winner-checkbox' : game.winner === game.teams[0] ? 'loser-checkbox' : ''}" data-game-id="${gameId}" data-team="${game.teams[1]}" ${game.winner === game.teams[1] ? 'checked' : ''}>
                     </button>
                 </td>
             `;
@@ -198,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // });
 
     gamesTableBody.addEventListener('click', (event) => {
+        console.log(curDB);
         if (event.target.classList.contains('team') || event.target.classList.contains('team-checkbox')) {
             const gameId = event.target.getAttribute('data-game-id');
             const team = event.target.getAttribute('data-team');
