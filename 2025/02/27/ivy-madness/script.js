@@ -49,12 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
             { date: 'February 28th', teams: ['Yale', 'Dartmouth'], winner: '' },
             { date: 'February 28th', teams: ['Penn', 'Cornell'], winner: '' },
             { date: 'February 28th', teams: ['Princeton', 'Columbia'], winner: '' },
-            { date: 'March 1st', teams: ['Yale', 'Harvard'], winner: '' },
             { date: 'March 1st', teams: ['Brown', 'Dartmouth'], winner: '' },
+            { date: 'March 1st', teams: ['Yale', 'Harvard'], winner: '' },
             { date: 'March 1st', teams: ['Penn', 'Columbia'], winner: '' },
             { date: 'March 2nd', teams: ['Princeton', 'Cornell'], winner: '' },
-            { date: 'March 8th', teams: ['Columbia', 'Cornell'], winner: '' },
             { date: 'March 8th', teams: ['Yale', 'Brown'], winner: '' },
+            { date: 'March 8th', teams: ['Columbia', 'Cornell'], winner: '' },
             { date: 'March 8th', teams: ['Penn', 'Princeton'], winner: '' },
             { date: 'March 8th', teams: ['Dartmouth', 'Harvard'], winner: '' }
         ],
@@ -303,6 +303,13 @@ document.addEventListener('DOMContentLoaded', () => {
             row.innerHTML = `<td class="standingTeam">${team}</td><td>${standings[team].wins}</td><td>${standings[team].losses}</td><td>${simulationResults[team]}</td>`;
             if (i === 4) {
             row.style.borderTop = '6px solid white'; // Thicker line between fourth and fifth row
+            }
+            if (team === 'Brown') {
+                console.log("BROOOWN");
+                row.querySelectorAll('td').forEach(cell => {
+                    //cell.style.backgroundColor = i < 4 ? '#90ee90' : '#ffcccb';
+                    cell.style.backgroundColor = i < 4 ? '#00a600' : '#e52d2d';
+                });
             }
             standingsTableBody.appendChild(row);
         }

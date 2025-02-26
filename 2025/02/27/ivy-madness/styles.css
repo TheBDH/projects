@@ -87,7 +87,7 @@ th {
 .winner {
     background-color: #90ee90;
     /* Light green */
-    border: 4px solid #006400;
+    border: 4px solid #00a600;
     /* Dark green */
     color: black;
 }
@@ -95,7 +95,7 @@ th {
 .loser {
     background-color: #ffcccb;
     /* Light red */
-    border: 4px solid #ca1616;
+    border: 4px solid #e52d2d;
     /* Dark red */
     color: black;
 }
@@ -115,7 +115,7 @@ th {
 .team-checkbox:checked {
     background-color: #90ee90;
     /* Light green */
-    border-color: #006400;
+    border-color: #00a600;
     /* Dark green */
 }
 
@@ -125,7 +125,7 @@ th {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #006400;
+    color: #00a600;
     /* Dark green */
     font-size: 14px;
 }
@@ -133,7 +133,7 @@ th {
 .loser-checkbox {
     background-color: #ffcccb;
     /* Light red */
-    border-color: #ca1616;
+    border-color: #e52d2d;
     /* Dark red */
 }
 
