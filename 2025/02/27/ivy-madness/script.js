@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
-
+    //TODO RESET THE GAMES WHEN GENDER SWITCHED
     function parseDate(dateStr) {
         const [month, day] = dateStr.split(' ');
         const monthIndex = new Date(`${month} 1, 2000`).getMonth();
