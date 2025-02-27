@@ -53,6 +53,11 @@
                         href="https://www.browndailyherald.com/staff/caleb-ellenberg"
                         target="_blank">Caleb Ellenberg</a></span>
             </h6>
+            <div style="text-align: center;">
+                <button id="jump-button" onclick="scrollToBottom()">
+                    Explore Standings Scenarios Now
+                </button>
+            </div>
             <div class="down-arrow" style="text-align: center;">
                 &#x2193;
             </div>
@@ -94,8 +99,7 @@
                 opportunity to collect another win and make up ground in the
                 standings.
                 <br><br>
-                The Herald’s Data Desk has built an <a
-                    href="#standings-jump">interactive tool</a> to explore
+                The Herald’s Data Desk has built an <a class="jump-link" onclick="scrollToBottom()">interactive tool</a> to explore
                 the standings scenarios based on the outcomes of the final 12
                 games across both the men’s and the women’s teams. Those
                 interested in the Ivy League’s tiebreakers can read more
@@ -118,14 +122,16 @@
                 the first tournament in 2017, are looking to flip the narrative
                 this year. Following Saturday’s loss, the women are on a
                 five-game <a
-                    href="https://www.browndailyherald.com/article/2025/02/womens-basketball-drops-two-games-extends-losing-streak-to-four" target="_blank">losing
+                    href="https://www.browndailyherald.com/article/2025/02/womens-basketball-drops-two-games-extends-losing-streak-to-four"
+                    target="_blank">losing
                     streak</a> and have only one more chance to avoid a
                 winless February. Still, the team’s early season success has
                 shown that they are capable of playing at a high level.
                 <br><br>
                 In late January, Bruno went on a three-game win streak,
                 defeating Cornell, <a
-                    href="https://www.browndailyherald.com/article/2025/01/womens-basketball-launches-comeback-victory-against-dartmouth" target="_blank">Dartmouth</a>
+                    href="https://www.browndailyherald.com/article/2025/01/womens-basketball-launches-comeback-victory-against-dartmouth"
+                    target="_blank">Dartmouth</a>
                 and Penn. The win against Penn was
                 especially crucial, as the Quakers now hold the elusive fourth
                 spot in Ivy standings. Columbia, Harvard and Princeton have
@@ -162,8 +168,7 @@
                 Of course, all of this is moot if Brown defeats Columbia, or if
                 Brown fails to do that and Penn defeats either Harvard or
                 Princeton. You can explore all the other ways the standings
-                might shake out with the interactive tool <a
-                    href="#standings-jump">below</a>.
+                might shake out with the interactive tool <a class="jump-link" onclick="scrollToBottom()">below</a>.
 
             </p>
         </div>
@@ -177,7 +182,8 @@
             <p>
                 The men’s team has had a similarly varied season. After a
                 disappointing 2-5 start to Ivy play, Brown secured a <a
-                    href="https://www.browndailyherald.com/article/2025/02/the-hardest-playing-team-on-the-floor-mens-basketball-fights-for-ivy-madness-spot" target="_blank">signature
+                    href="https://www.browndailyherald.com/article/2025/02/the-hardest-playing-team-on-the-floor-mens-basketball-fights-for-ivy-madness-spot"
+                    target="_blank">signature
                     double-digit win</a>
                 over Princeton. Following the Princeton win,
                 the team won two more games to bring their record to 5-5 and
@@ -205,7 +211,8 @@
                 many more teams in contention than on the women’s side,
                 tiebreakers get more complex and many multi-team tie scenarios
                 are possible — you can explore all those possibilities in the
-                interactive tool <a href="#standings-jump">below</a>. The overall
+                interactive tool <a class="jump-link" onclick="scrollToBottom()">below</a>. The
+                overall
                 outlook is that Brown will
                 probably need one of the bottom-feeders of Ivy basketball to
                 knock off one of Brown’s competitors. Penn and Columbia each
@@ -217,10 +224,15 @@
                 the final game against Yale. Win, and they’re probably in. Lose,
                 and the team is more likely than not left haunted by their
                 last-second January loss to Dartmouth and their Feb. 8 <a
-                    href="https://www.browndailyherald.com/article/2025/02/mens-basketball-drops-double-digit-lead-in-74-72-loss-to-columbia" target="_blank">collapse
-                    in the final minutes against Columbia</a>. Will the team be left
+                    href="https://www.browndailyherald.com/article/2025/02/mens-basketball-drops-double-digit-lead-in-74-72-loss-to-columbia"
+                    target="_blank">collapse
+                    in the final minutes against Columbia</a>. Will the team be
+                left
                 asking “what if?” or will they have a chance to redeem their
-                <a href="https://www.browndailyherald.com/article/2024/03/brutal-buzzer-beater-keeps-brown-from-march-madness" target="_blank">painful loss</a> to Yale in last year’s Ivy Madness? We can only
+                <a
+                    href="https://www.browndailyherald.com/article/2024/03/brutal-buzzer-beater-keeps-brown-from-march-madness"
+                    target="_blank">painful loss</a> to Yale in last year’s Ivy
+                Madness? We can only
                 wait and see.
                 <br><br>
                 And play out all the scenarios on this site, of course.
@@ -286,5 +298,15 @@
             </div>
         </div>
         <div style="height: 5vh;"></div>
+        <script>
+            function scrollToBottom() {
+                const element = document.getElementById('standings-jump');
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    console.error('Element with id "standings-jump" not found');
+                }
+            }
+        </script>
     </body>
 </html>

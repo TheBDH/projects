@@ -214,6 +214,22 @@ a {
     color: #00b167;
 }
 
+#jump-button {
+    border-radius: 12px; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    color: black;
+    background-color: #f7f7f7;
+    border: rgb(59, 59, 59) 2px solid;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.jump-link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 #herald-logo {
     max-width: 300px;
     display: block;
