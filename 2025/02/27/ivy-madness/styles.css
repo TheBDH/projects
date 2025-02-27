@@ -370,4 +370,9 @@ a {
     .image-credit {
         width: 150px;
     }
+
+    body {
+        background-size: cover;
+        background-position: center;
+    }
 }
