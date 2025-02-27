@@ -359,6 +359,9 @@ a {
         font-size: 0.9rem;
     }
 
+    .background-img {
+        width: 80vw;
+    }
 
     .article {
         max-width: 80%;
