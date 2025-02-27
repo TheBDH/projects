@@ -10,9 +10,10 @@ body {
 }
 
 .down-arrow {
-    animation: bounce 2s infinite, fadeToGreen 2s forwards;
+    animation: bounce 2s infinite;
     font-size: 2rem; /* Increase the size of the down arrow */
     font-weight: bold; /* Make the arrow bold */
+    color: #00a35f; /* Change the color to a shade of green */
 }
 
 @keyframes bounce {
