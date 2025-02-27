@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Google tag (gtag.js) -->
+        <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-321HPHTJEX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-321HPHTJEX');
+        </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>The Road to Ivy Madness</title>
-        <link rel="icon" href="images/IvyMadnessIconGreen.png" type="image/x-icon">
+        <link rel="icon" href="images/IvyMadnessIconGreen.png"
+            type="image/x-icon">
         <link rel="stylesheet" href="styles.css">
         <script src="script.js"></script>
     </head>
@@ -67,7 +77,10 @@
         <div style="height: 30vh;"></div>
         <img class="background-img" src="images/arnolie.jpg"
             alt="Grace Arnolie">
-        <div style="height: 30vh;"></div>
+        <div class="image-credit" style="text-align: center;">
+            <p>Photo Courtesy of Brown Athletics</p>
+        </div>
+        <div style="height: 35vh;"></div>
         <div class="article" id="intro">
             <p>
                 The women’s team is looking to end an up-down season on an up
@@ -110,9 +123,12 @@
                 might shake out with the interactive tool below!
             </p>
         </div>
-        <div style="height: 30vh;"></div>
+        <div style="height: 35vh;"></div>
         <img class="background-img" src="images/kino.jpg" alt="Kino Lilly Jr.">
-        <div style="height: 30vh;"></div>
+        <div class="image-credit" style="text-align: center;">
+            <p>Photo Courtesy of Brown Athletics</p>
+        </div>
+        <div style="height: 35vh;"></div>
         <div class="article" id="intro">
             <p>
                 Brown’s men’s team has had a similarly varied season. After a
@@ -161,10 +177,11 @@
                 And play out all the scenarios on this site, of course.
             </p>
         </div>
-        <div style="height: 30vh;"></div>
+        <div style="height: 35vh;"></div>
         <div class="article" id="build-standings">
             <div>
-                <label for="genderSelect" style="margin-right: 10px;">Select Team:</label>
+                <label for="genderSelect" style="margin-right: 10px;">Select
+                    Team:</label>
                 <select id="genderSelect">
                     <option value="mens">Men's</option>
                     <option value="womens">Women's</option>
@@ -190,9 +207,12 @@
                 <!-- <button type="button" id="projectStandings">Project Standings</button> -->
                 <div>
                     <div>
-                        <h2 style="text-align: center; margin: 0;">Projected Final
+                        <h2 style="text-align: center; margin: 0;">Projected
+                            Final
                             Standings</h2>
-                        <p class="description" style="margin-top: 0; margin-bottom: 10px;">Top 4 Make Ivy Madness</p>
+                        <p class="description"
+                            style="margin-top: 0; margin-bottom: 10px;">Top 4
+                            Make Ivy Madness</p>
                         <table id="standingsTable">
                             <thead>
                                 <tr>
@@ -207,7 +227,10 @@
                             </tbody>
                         </table>
                     </div>
-                    <p class="description">Playoff chances are calculated by running 1,000 simulations of the remaining schedule and are approximate. Probabilities consider past wins and losses.</p>
+                    <p class="description">Playoff chances are calculated by
+                        running 1,000 simulations of the remaining schedule and
+                        are approximate. Probabilities consider past wins and
+                        losses.</p>
                 </div>
             </div>
         </div>
