@@ -309,12 +309,21 @@ a {
         gap: 20px;
     }
 
+    #heading {
+        width: 50%;
+        max-width: 50%;
+    }
+
     #heading h3 {
         font-size: 2rem;
     }
 
     #herald-logo {
         width: 300px;
+    }
+
+    #article {
+        max-width: 70%;
     }
 
 }
@@ -372,7 +381,6 @@ a {
     }
 
     body {
-        background-size: cover;
-        background-position: center;
+        background-image: none;
     }
 }
