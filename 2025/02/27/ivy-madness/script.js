@@ -305,7 +305,6 @@ document.addEventListener('DOMContentLoaded', () => {
             row.style.borderTop = '6px solid white'; // Thicker line between fourth and fifth row
             }
             if (team === 'Brown') {
-                console.log("BROOOWN");
                 row.querySelectorAll('td').forEach(cell => {
                     //cell.style.backgroundColor = i < 4 ? '#90ee90' : '#ffcccb';
                     cell.style.backgroundColor = i < 4 ? '#00a600' : '#e52d2d';
@@ -507,24 +506,24 @@ document.addEventListener('DOMContentLoaded', () => {
     function getNetRanking(team) {
         // update after each game from https://www.ncaa.com/rankings/basketball-men/d1/ncaa-mens-basketball-net-rankings
         const menRankings = {
-            'Yale': 68,
-            'Cornell': 157,
-            'Princeton': 167,
-            'Brown': 208,
-            'Dartmouth': 209,
-            'Columbia': 256,
-            'Harvard': 267,
-            'Penn': 304
+            'Yale': 66,
+            'Cornell': 146,
+            'Princeton': 162,
+            'Brown': 197,
+            'Dartmouth': 205,
+            'Columbia': 258,
+            'Harvard': 270,
+            'Penn': 309
         };
         const womenRankings = {
-            'Harvard': 35,
-            'Columbia': 42,
-            'Princeton': 50,
-            'Penn': 167,
-            'Brown': 179,
-            'Cornell': 235,
-            'Dartmouth': 310,
-            'Yale': 334
+            'Harvard': 36,
+            'Columbia': 41,
+            'Princeton': 49,
+            'Penn': 163,
+            'Brown': 183,
+            'Cornell': 247,
+            'Dartmouth': 313,
+            'Yale': 328
         };
         const rankings = curGender === 'mens' ? menRankings : womenRankings;
         return rankings[team] || 999; // Return a high number if team is not found
