@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { date: 'March 1st', teams: ['Brown', 'Dartmouth'], winner: 'Dartmouth' },
             { date: 'March 1st', teams: ['Yale', 'Harvard'], winner: 'Harvard' },
             { date: 'March 1st', teams: ['Penn', 'Columbia'], winner: 'Penn' },
-            { date: 'March 2nd', teams: ['Princeton', 'Cornell'], winner: '' },
+            { date: 'March 2nd', teams: ['Princeton', 'Cornell'], winner: 'Cornell' },
             { date: 'March 8th', teams: ['Yale', 'Brown'], winner: '' },
             { date: 'March 8th', teams: ['Columbia', 'Cornell'], winner: '' },
             { date: 'March 8th', teams: ['Penn', 'Princeton'], winner: '' },
@@ -344,6 +344,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (winner === '') {
                 odds = standings[team1].wins / (standings[team1].wins + standings[team2].wins);
                 const simulatedWinner = Math.random() < odds ? team1 : team2;
+                if (team1 == "Yale" && team2 == "Brown") {
+                    console.log(simulatedWinner);
+                }
                 standings[simulatedWinner].wins++;
                 standings[simulatedWinner === team1 ? team2 : team1].losses++;
             }
