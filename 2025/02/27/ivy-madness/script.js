@@ -506,24 +506,24 @@ document.addEventListener('DOMContentLoaded', () => {
     function getNetRanking(team) {
         // update after each game from https://www.ncaa.com/rankings/basketball-men/d1/ncaa-mens-basketball-net-rankings
         const menRankings = {
-            'Yale': 66,
-            'Cornell': 146,
+            'Yale': 74,
+            'Cornell': 149,
             'Princeton': 162,
-            'Brown': 197,
-            'Dartmouth': 205,
-            'Columbia': 258,
-            'Harvard': 270,
-            'Penn': 309
+            'Dartmouth': 194,
+            'Brown': 210,
+            'Harvard': 260,
+            'Columbia': 265,
+            'Penn': 300
         };
         const womenRankings = {
             'Harvard': 36,
             'Columbia': 41,
             'Princeton': 49,
-            'Penn': 163,
+            'Penn': 162,
             'Brown': 183,
-            'Cornell': 247,
-            'Dartmouth': 313,
-            'Yale': 328
+            'Cornell': 245,
+            'Dartmouth': 311,
+            'Yale': 329
         };
         const rankings = curGender === 'mens' ? menRankings : womenRankings;
         return rankings[team] || 999; // Return a high number if team is not found
