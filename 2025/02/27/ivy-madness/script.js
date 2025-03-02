@@ -315,6 +315,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function simulateStandings() {
+        const tempDB = JSON.parse(JSON.stringify(curDB));
+
         const standings = {
             'Harvard': { wins: 0, losses: 0 },
             'Yale': { wins: 0, losses: 0 },
@@ -326,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'Penn': { wins: 0, losses: 0 }
         };
 
-        curDB.forEach(game => {
+        tempDB.forEach(game => {
             const [team1, team2] = game.teams;
             const winner = game.winner;
             if (winner === team1) {
@@ -338,17 +340,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        curDB.forEach(game => {
+        tempDB.forEach(game => {
             const [team1, team2] = game.teams;
             const winner = game.winner;
             if (winner === '') {
                 odds = standings[team1].wins / (standings[team1].wins + standings[team2].wins);
-                const simulatedWinner = Math.random() < odds ? team1 : team2;
-                if (team1 == "Yale" && team2 == "Brown") {
-                    console.log(simulatedWinner);
-                }
+                let simulatedWinner = Math.random() < odds ? team1 : team2;
                 standings[simulatedWinner].wins++;
                 standings[simulatedWinner === team1 ? team2 : team1].losses++;
+                game.winner = simulatedWinner;
             }
         });
 
@@ -361,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 i++;
             }
             if (tieGroup.length > 1) {
-                const resolvedTieGroup = breakTie(tieGroup, standings, curDB, false);
+                const resolvedTieGroup = breakTie(tieGroup, standings, tempDB, false);
                 sortedTeams.splice(i - tieGroup.length + 1, tieGroup.length, ...resolvedTieGroup);
             }
         }
