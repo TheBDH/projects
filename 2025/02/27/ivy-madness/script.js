@@ -111,10 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
             { date: 'March 1st', teams: ['Brown', 'Cornell'], winner: 'Brown' },
             { date: 'March 1st', teams: ['Penn', 'Harvard'], winner: 'Harvard' },
             { date: 'March 1st', teams: ['Princeton', 'Dartmouth'], winner: 'Princeton' },
-            { date: 'March 8th', teams: ['Brown', 'Yale'], winner: '' },
-            { date: 'March 8th', teams: ['Princeton', 'Penn'], winner: '' },
-            { date: 'March 8th', teams: ['Cornell', 'Columbia'], winner: '' },
-            { date: 'March 8th', teams: ['Harvard', 'Dartmouth'], winner: '' }
+            { date: 'March 8th', teams: ['Brown', 'Yale'], winner: 'Brown' },
+            { date: 'March 8th', teams: ['Princeton', 'Penn'], winner: 'Princeton' },
+            { date: 'March 8th', teams: ['Cornell', 'Columbia'], winner: 'Columbia' },
+            { date: 'March 8th', teams: ['Harvard', 'Dartmouth'], winner: 'Harvard' }
         ]
     };
 
