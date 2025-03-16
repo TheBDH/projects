@@ -1,0 +1,156 @@
+{
+    "date": "March 10 - March 14, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+        {
+            "question": "Which group held a demonstration in support of postdoctoral researchers and library workers on Tuesday?",
+            "type": "MC",
+            "choices": [
+                "Students for Unions",
+                "Students for Fair Wages",
+                "Student Labor Alliance",
+                "Student Union Activists"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "The demonstration, held by the Student Labor Alliance, featured speakers from campus unions and local activists.",
+            "link": "https://www.browndailyherald.com/article/2025/03/campus-unions-labor-activists-protest-in-support-of-postdocs-library-workers"
+        },
+        {
+            "question": "What was the theme of this year’s Brown China Summit?",
+            "type": "MC",
+            "choices": [
+                "Silk Roads and Cyber Paths",
+                "US and China Relations",
+                "Great Wall and Immigration",
+                "Tariffs and Canada"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "The theme of this year’s summit was “Silk Roads and Cyber Paths.” It aimed to explore “the intersection of tradition and modernity in shaping China’s global influence,” according to the event’s signup form.",
+            "link": "https://www.browndailyherald.com/article/2025/03/brown-china-summit-panelists-reflect-on-future-of-us-china-relations"
+        },
+        {
+            "question": "What do incoming students request in order to take a gap year before their freshman year?",
+            "type": "MC",
+            "choices": [
+                "Deferred enrollment",
+                "Delayed enrollment",
+                "Gap year",
+                "Year abroad"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Brown allows most students who are admitted to request “to request a deferred enrollment” though it is not guaranteed that the request will be granted. Only students who were admitted through the early and regular decision rounds are allowed to request deferred enrollment, and they must do so by May 15 of the year they are accepted.",
+            "link": "https://www.browndailyherald.com/article/2025/03/canvassing-traveling-teaching-how-three-students-filled-their-gap-year"
+        },
+        {
+            "question": "Where is the 45th Annual Student Exhibition held this year?",
+            "type": "MC",
+            "choices": [
+                "List Art Building",
+                "Lindemann Performing Arts Center",
+                "Lyman Hall",
+                "Granoff Center for the Creative Arts"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Artists Abdu Ali GS and Falaks Vasa MFA’23 have curated a selection of student artworks that “embody artistic experimentation, risk-taking and personal expression.” They will be displayed in Granoff until April 6.",
+            "link": "https://www.browndailyherald.com/article/2025/03/45th-annual-student-exhibition-showcases-bold-experimental-works-in-granoff-center"
+        },
+        {
+            "question": "When was the last time Brown students placed in the top 10 at the William Lowell Putnam Mathematical Competition?",
+            "type": "MC",
+            "choices": [
+                "2003",
+                "2004",
+                "2005",
+                "2006"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "For the first time since 2006, Brown students placed in the top 10 at the William Lowell Putnam Mathematical Competition — one of the world’s most prestigious collegiate math contests.",
+            "link": "https://www.browndailyherald.com/article/2025/03/brown-places-top-10-in-putnam-competition-for-first-time-in-nearly-two-decades"
+        },
+        {
+            "question": "How many graduates has the medieval cultures concentration had in the past nine years?",
+            "type": "MC",
+            "choices": [
+                "10",
+                "30",
+                "20",
+                "14"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "The medieval cultures concentration, for example, has had just 20 graduates in the past nine years.",
+            "link": "https://www.browndailyherald.com/article/2025/03/meet-the-students-in-some-of-browns-smallest-concentrations"
+        },
+        {
+            "question": "Who teaches a new course that allows students hands-on experience with stem cells?",
+            "type": "MC",
+            "choices": [
+                "Matthew Guterl",
+                "Chuck Toth",
+                "Jonathan Kim",
+                "Jennifer Nuzzo"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Toth, who is in his first year of teaching at Brown, taught a stem cell class for 11 years as a biology professor at Providence College. He began developing the course structure for BIOL 0610 from scratch when he arrived at Brown just under two years ago.",
+            "link": "https://www.browndailyherald.com/article/2025/03/new-course-offers-undergraduates-rare-hands-on-experience-with-human-stem-cells"
+        },
+        {
+            "question": "How many universities received a letter from the Department of Education about potential enforcement actions on Monday?",
+            "type": "MC",
+            "choices": [
+                "40",
+                "50",
+                "60",
+                "70"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "Brown and 59 other universities could face “enforcement actions” if they fail to “protect Jewish students on campus,” according to a letter sent to the universities Monday.",
+            "link": "https://www.browndailyherald.com/article/2025/03/education-dept-warns-brown-may-face-enforcement-actions-amid-antisemitism-concerns"
+        },
+        {
+            "question": "How many inches of snow has the Providence region received this year so far?",
+            "type": "MC",
+            "choices": [
+                "12.8",
+                "15.6",
+                "17.1",
+                "19.9"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "For the past three decades, Providence has received an average of 32.6 inches of snow by this point in the year. But over the past 20 years, the city has seen a notable decline in snowfall.",
+            "link": "https://www.browndailyherald.com/article/2025/03/traditional-snow-days-have-fallen-following-falls-in-snowfall"
+        },
+        {
+            "question": "Which University won the tie-breaker situation and took the Bears’ spot in Ivy Madness?",
+            "type": "MC",
+            "choices": [
+                "Harvard",
+                "Penn",
+                "Yale",
+                "Dartmouth"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Saturday’s win in New Haven left Bruno with a 6-8 Ivy League record, putting the Bears in a tie-breaker situation with Penn (15-12, 6-8). But Brown’s hopes of securing the final Ivy Madness spot were crushed, as Penn — against whom the Bears are 1-1 this season — remained above Brown in NCAA NET rankings.",
+            "link": "https://www.browndailyherald.com/article/2025/03/womens-basketball-finishes-season-with-win-over-yale"
+        }
+        ]
+    }
