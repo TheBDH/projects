@@ -11,13 +11,17 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 const container = document.getElementById('senators');
                 container.innerHTML = ''; // Clear previous data
-                const scores = {};
+                const scores = { 0: [], 2: [], 4: [], 6: [], 8: [] };
 
                 for (const senator in data) {
                     const issueData = data[senator][selectedIssue];
                     if (issueData && typeof issueData === 'object') {
-                        const totalScore = parseInt(issueData.Total || 0);
-
+                        let totalScore = parseFloat(issueData.Total || 0);
+                        if (isNaN(totalScore)) continue; // Skip if totalScore is not a number
+                        if (totalScore == 1) {
+                            totalScore = 0.99;
+                        }
+                        totalScore = Math.floor(totalScore * 10 / 2) * 2; // Multiply by 10, divide by 2, and ceil to the next even number
                         if (!scores[totalScore]) {
                             scores[totalScore] = [];
                         }
@@ -34,12 +38,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     const scoreLabel = document.createElement('div');
                     scoreLabel.className = 'score-label';
-                    scoreLabel.textContent = score;
+                    scoreLabel.textContent = `${score} - ${parseInt(score) + 2}`;
                     scoreLabel.style.width = '100%';
                     scoreLabel.style.textAlign = 'center';
                     scoreLabel.style.marginBottom = '10px';
                     scoreLabel.style.fontSize = '1.5em'; // Make the text larger
                     scoreLabel.style.fontWeight = 'bold'; // Make the text bold
+
+                    if (scores[score].length === 0) {
+                        scoreLabel.style.paddingRight = '73px'; // Add right padding
+                    }
+
                     scoreContainer.appendChild(scoreLabel);
 
                     const senatorContainer = document.createElement('div');

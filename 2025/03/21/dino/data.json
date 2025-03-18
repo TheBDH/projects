@@ -3,1520 +3,1482 @@
         "Name": "Jacob Bissaillon",
         "Party": "D",
         "District": "1",
+        "Total Average": "0.56",
         "Reproductive Health": {
-            "Total": "5",
+            "Total": "0.80",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "2",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "",
+            "Total": "0.50",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "",
             "Vote on S2202": "1",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "2",
+            "Total": "1.00",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "",
-            "Economic justice/labor": "1",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "1"
         },
         "Environment": {
-            "Total": "0",
+            "Total": "0.00",
             "ECRI Scorecard": "",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "1",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.50",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": ""
+            "Vote on S0121": ""
         }
     },
     "Ana Quezada": {
         "Name": "Ana Quezada",
         "Party": "D",
         "District": "2",
+        "Total Average": "0.76",
         "Reproductive Health": {
-            "Total": "5",
+            "Total": "0.80",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "4",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "2.8",
+            "Total": "0.93",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.8",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.8"
         },
         "Environment": {
-            "Total": "2",
-            "ECRI Scorecard": "1",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": ""
+            "Total": "0.40",
+            "ECRI Scorecard": "0.2",
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Samuel Zurier": {
         "Name": "Samuel Zurier",
         "Party": "D",
         "District": "3",
+        "Total Average": "0.89",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "4",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "6",
-            "ECRI Scorecard": "2",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": "2"
+            "Total": "0.80",
+            "ECRI Scorecard": "0.4",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Dominick Ruggerio": {
         "Name": "Dominick Ruggerio",
         "Party": "D",
         "District": "4",
+        "Total Average": "0.73",
         "Reproductive Health": {
-            "Total": "2",
+            "Total": "0.50",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "",
-            "ACLU Reproductive and Trans Rights": "1",
+            "ACLU Reproductive & Trans Rights": "1",
             "Bodily Freedom Index": "0",
-            "Right to Life (not endorsed)": "1"
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "4",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "4",
-            "ECRI Scorecard": "3",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Total": "0.53",
+            "ECRI Scorecard": "0.6",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Samuel Bell": {
         "Name": "Samuel Bell",
         "Party": "D",
         "District": "5",
+        "Total Average": "0.94",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "4",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "4",
-            "ECRI Scorecard": "1",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": "1"
+            "Total": "0.73",
+            "ECRI Scorecard": "0.2",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "3",
-            "LGBTQ+ Victory Fund Endorsement": "1",
+            "Total": "1.00",
+            "LGBTQ+ Victory Fund Endorsed": "1",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Tiara Mack": {
         "Name": "Tiara Mack",
         "Party": "D",
         "District": "6",
+        "Total Average": "0.99",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "4",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "2.89",
+            "Total": "0.96",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.89",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.89"
         },
         "Environment": {
-            "Total": "9",
-            "ECRI Scorecard": "5",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": "2"
+            "Total": "1.00",
+            "ECRI Scorecard": "1",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "3",
-            "LGBTQ+ Victory Fund Endorsement": "1",
+            "Total": "1.00",
+            "LGBTQ+ Victory Fund Endorsed": "1",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Frank Ciccone": {
         "Name": "Frank Ciccone",
         "Party": "D",
         "District": "7",
+        "Total Average": "0.42",
         "Reproductive Health": {
-            "Total": "2",
+            "Total": "0.30",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "0",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "1",
-            "Right to Life (not endorsed)": "0"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "0.5",
+            "Right to Life Non-Endorsed": "0"
         },
         "Guns": {
-            "Total": "0.08",
-            "RICAGV Endorsement": "0",
-            "NRA Non-Endorsement": "0.08",
+            "Total": "0.02",
+            "RICAGV Endorsed": "0",
+            "NRA Non-Endorsed": "0.08",
             "Vote on S2202": "0",
             "Vote on H6614": "0"
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "2",
-            "ECRI Scorecard": "2",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Total": "0.13",
+            "ECRI Scorecard": "0.4",
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Lori Urso": {
         "Name": "Lori Urso",
         "Party": "D",
         "District": "8",
+        "Total Average": "0.50",
         "Reproductive Health": {
-            "Total": "4",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "",
-            "ACLU Reproductive and Trans Rights": "",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "0",
-            "RICAGV Endorsement": "",
-            "NRA Non-Endorsement": "",
+            "Total": "NO DATA",
+            "RICAGV Endorsed": "",
+            "NRA Non-Endorsed": "",
             "Vote on S2202": "",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "2",
+            "Total": "1.00",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": ""
         },
         "Environment": {
-            "Total": "0",
+            "Total": "0.00",
             "ECRI Scorecard": "",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "0",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.00",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": ""
+            "Vote on S0121": ""
         }
     },
     "John Burke": {
         "Name": "John Burke",
         "Party": "D",
         "District": "9",
+        "Total Average": "0.60",
         "Reproductive Health": {
-            "Total": "5",
+            "Total": "0.80",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "2",
-            "RICAGV Endorsement": "0",
-            "NRA Non-Endorsement": "1",
+            "Total": "0.50",
+            "RICAGV Endorsed": "0",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "0"
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "1",
-            "ECRI Scorecard": "1",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Total": "0.07",
+            "ECRI Scorecard": "0.2",
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Walter Felag Jr.": {
         "Name": "Walter Felag Jr.",
         "Party": "D",
         "District": "10",
+        "Total Average": "0.64",
         "Reproductive Health": {
-            "Total": "3",
+            "Total": "0.50",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "0",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "1",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "0.5",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "3",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "2.86",
+            "Total": "0.95",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.86",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.86"
         },
         "Environment": {
-            "Total": "3",
-            "ECRI Scorecard": "1",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": "2"
+            "Total": "0.07",
+            "ECRI Scorecard": "0.2",
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Linda Ujifusa": {
         "Name": "Linda Ujifusa",
         "Party": "D",
         "District": "11",
+        "Total Average": "0.91",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "3",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "2",
+            "Total": "1.00",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": ""
         },
         "Environment": {
-            "Total": "7",
-            "ECRI Scorecard": "3",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": "2"
+            "Total": "0.87",
+            "ECRI Scorecard": "0.6",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Louis DiPalma": {
         "Name": "Louis DiPalma",
         "Party": "D",
         "District": "12",
+        "Total Average": "0.66",
         "Reproductive Health": {
-            "Total": "2",
+            "Total": "0.40",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "0",
-            "ACLU Reproductive and Trans Rights": "1",
+            "ACLU Reproductive & Trans Rights": "1",
             "Bodily Freedom Index": "0",
-            "Right to Life (not endorsed)": "1"
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "4",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "4",
-            "ECRI Scorecard": "4",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Total": "0.27",
+            "ECRI Scorecard": "0.8",
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Dawn Euer": {
         "Name": "Dawn Euer",
         "Party": "D",
         "District": "13",
+        "Total Average": "0.93",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "4",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "3.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": "1"
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "9",
-            "ECRI Scorecard": "5",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": "2"
+            "Total": "1.00",
+            "ECRI Scorecard": "1",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Valarie Lawson": {
         "Name": "Valarie Lawson",
         "Party": "D",
         "District": "14",
+        "Total Average": "0.91",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "4",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "3.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": "1"
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "8",
-            "ECRI Scorecard": "4",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": "2"
+            "Total": "0.93",
+            "ECRI Scorecard": "0.8",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Meghan Kallman": {
         "Name": "Meghan Kallman",
         "Party": "D",
         "District": "15",
+        "Total Average": "0.93",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "4",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "3.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": "1"
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "9",
-            "ECRI Scorecard": "5",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": "2"
+            "Total": "1.00",
+            "ECRI Scorecard": "1",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Jonathon Acosta": {
         "Name": "Jonathon Acosta",
         "Party": "D",
         "District": "16",
+        "Total Average": "0.90",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "4",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "5",
-            "ECRI Scorecard": "3",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": ""
+            "Total": "0.87",
+            "ECRI Scorecard": "0.6",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Thomas Paolino": {
         "Name": "Thomas Paolino",
         "Party": "R",
         "District": "17",
+        "Total Average": "0.17",
         "Reproductive Health": {
-            "Total": "0",
+            "Total": "0.00",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "0",
-            "ACLU Reproductive and Trans Rights": "0",
+            "ACLU Reproductive & Trans Rights": "0",
             "Bodily Freedom Index": "0",
-            "Right to Life (not endorsed)": "0"
+            "Right to Life Non-Endorsed": "0"
         },
         "Guns": {
-            "Total": "0.08",
-            "RICAGV Endorsement": "0",
-            "NRA Non-Endorsement": "0.08",
+            "Total": "0.02",
+            "RICAGV Endorsed": "0",
+            "NRA Non-Endorsed": "0.08",
             "Vote on S2202": "0",
             "Vote on H6614": "0"
         },
         "Labor": {
-            "Total": "1.5",
+            "Total": "0.50",
             "ACLU Economic Justice": "0",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.5",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.5"
         },
         "Environment": {
-            "Total": "0",
+            "Total": "0.00",
             "ECRI Scorecard": "0",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "1",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.33",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "0",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Robert Britto": {
         "Name": "Robert Britto",
         "Party": "D",
         "District": "18",
+        "Total Average": "0.67",
         "Reproductive Health": {
-            "Total": "5",
+            "Total": "0.80",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "2",
-            "RICAGV Endorsement": "0",
-            "NRA Non-Endorsement": "1",
+            "Total": "0.67",
+            "RICAGV Endorsed": "0",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "4",
-            "ECRI Scorecard": "4",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Total": "0.27",
+            "ECRI Scorecard": "0.8",
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Ryan Pearson": {
         "Name": "Ryan Pearson",
         "Party": "D",
         "District": "19",
+        "Total Average": "0.83",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "4",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "2.89",
+            "Total": "0.96",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.89",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.89"
         },
         "Environment": {
-            "Total": "3",
-            "ECRI Scorecard": "3",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Total": "0.20",
+            "ECRI Scorecard": "0.6",
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "3",
-            "LGBTQ+ Victory Fund Endorsement": "1",
+            "Total": "1.00",
+            "LGBTQ+ Victory Fund Endorsed": "1",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Brian Thompson": {
         "Name": "Brian Thompson",
         "Party": "D",
         "District": "20",
+        "Total Average": "0.56",
         "Reproductive Health": {
-            "Total": "3",
+            "Total": "0.67",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "",
-            "ACLU Reproductive and Trans Rights": "",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "0",
-            "RICAGV Endorsement": "",
-            "NRA Non-Endorsement": "",
+            "Total": "NO DATA",
+            "RICAGV Endorsed": "",
+            "NRA Non-Endorsed": "",
             "Vote on S2202": "",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "0",
+            "Total": "NO DATA",
             "ACLU Economic Justice": "",
             "Fair Employment Practices": "",
-            "Economic justice/labor": "",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": ""
         },
         "Environment": {
-            "Total": "2",
+            "Total": "1.00",
             "ECRI Scorecard": "",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": ""
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "0",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.00",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": ""
+            "Vote on S0121": ""
         }
     },
     "Gordon Rogers": {
         "Name": "Gordon Rogers",
         "Party": "R",
         "District": "21",
+        "Total Average": "0.20",
         "Reproductive Health": {
-            "Total": "1",
+            "Total": "0.20",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "0",
-            "ACLU Reproductive and Trans Rights": "0",
+            "ACLU Reproductive & Trans Rights": "0",
             "Bodily Freedom Index": "0",
-            "Right to Life (not endorsed)": "1"
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "0.08",
-            "RICAGV Endorsement": "0",
-            "NRA Non-Endorsement": "0.08",
+            "Total": "0.02",
+            "RICAGV Endorsed": "0",
+            "NRA Non-Endorsed": "0.08",
             "Vote on S2202": "0",
             "Vote on H6614": "0"
         },
         "Labor": {
-            "Total": "1.3",
+            "Total": "0.43",
             "ACLU Economic Justice": "0",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.3",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.3"
         },
         "Environment": {
-            "Total": "0",
+            "Total": "0.00",
             "ECRI Scorecard": "0",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "1",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.33",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "0",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "David Tikoian": {
         "Name": "David Tikoian",
         "Party": "D",
         "District": "22",
+        "Total Average": "0.51",
         "Reproductive Health": {
-            "Total": "1",
+            "Total": "0.20",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "0",
-            "ACLU Reproductive and Trans Rights": "1",
+            "ACLU Reproductive & Trans Rights": "1",
             "Bodily Freedom Index": "0",
-            "Right to Life (not endorsed)": "0"
+            "Right to Life Non-Endorsed": "0"
         },
         "Guns": {
-            "Total": "2",
-            "RICAGV Endorsement": "0",
-            "NRA Non-Endorsement": "1",
+            "Total": "0.67",
+            "RICAGV Endorsed": "0",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "1",
-            "ECRI Scorecard": "1",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Total": "0.07",
+            "ECRI Scorecard": "0.2",
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Jessica de la Cruz": {
         "Name": "Jessica de la Cruz",
         "Party": "R",
         "District": "23",
+        "Total Average": "0.14",
         "Reproductive Health": {
-            "Total": "0",
+            "Total": "0.00",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "0",
-            "ACLU Reproductive and Trans Rights": "0",
+            "ACLU Reproductive & Trans Rights": "0",
             "Bodily Freedom Index": "0",
-            "Right to Life (not endorsed)": "0"
+            "Right to Life Non-Endorsed": "0"
         },
         "Guns": {
-            "Total": "0",
-            "RICAGV Endorsement": "0",
-            "NRA Non-Endorsement": "0",
+            "Total": "0.00",
+            "RICAGV Endorsed": "0",
+            "NRA Non-Endorsed": "0",
             "Vote on S2202": "0",
             "Vote on H6614": "0"
         },
         "Labor": {
-            "Total": "1.1",
+            "Total": "0.37",
             "ACLU Economic Justice": "0",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.1",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.1"
         },
         "Environment": {
-            "Total": "0",
+            "Total": "0.00",
             "ECRI Scorecard": "0",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "1",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.33",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "0",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Melissa Murray": {
         "Name": "Melissa Murray",
         "Party": "D",
         "District": "24",
+        "Total Average": "0.91",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "4",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "3.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": "1"
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "8",
-            "ECRI Scorecard": "4",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": "2"
+            "Total": "0.93",
+            "ECRI Scorecard": "0.8",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Andrew Dimitri": {
         "Name": "Andrew Dimitri",
         "Party": "D",
         "District": "25",
+        "Total Average": "0.15",
         "Reproductive Health": {
-            "Total": "1",
+            "Total": "0.50",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "",
-            "ACLU Reproductive and Trans Rights": "",
+            "ACLU Reproductive & Trans Rights": "",
             "Bodily Freedom Index": "",
-            "Right to Life (not endorsed)": "1"
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
             "Total": "0.08",
-            "RICAGV Endorsement": "",
-            "NRA Non-Endorsement": "0.08",
+            "RICAGV Endorsed": "",
+            "NRA Non-Endorsed": "0.08",
             "Vote on S2202": "",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "0",
+            "Total": "NO DATA",
             "ACLU Economic Justice": "",
             "Fair Employment Practices": "",
-            "Economic justice/labor": "",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": ""
         },
         "Environment": {
-            "Total": "0",
+            "Total": "0.00",
             "ECRI Scorecard": "",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "0",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.00",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": ""
+            "Vote on S0121": ""
         }
     },
     "Todd Patalano": {
         "Name": "Todd Patalano",
         "Party": "D",
         "District": "26",
+        "Total Average": "0.17",
         "Reproductive Health": {
-            "Total": "1",
+            "Total": "0.50",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "",
-            "ACLU Reproductive and Trans Rights": "",
+            "ACLU Reproductive & Trans Rights": "",
             "Bodily Freedom Index": "",
-            "Right to Life (not endorsed)": "1"
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "0",
-            "RICAGV Endorsement": "",
-            "NRA Non-Endorsement": "",
+            "Total": "NO DATA",
+            "RICAGV Endorsed": "",
+            "NRA Non-Endorsed": "",
             "Vote on S2202": "",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "0",
+            "Total": "NO DATA",
             "ACLU Economic Justice": "",
             "Fair Employment Practices": "",
-            "Economic justice/labor": "",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": ""
         },
         "Environment": {
-            "Total": "0",
+            "Total": "0.00",
             "ECRI Scorecard": "",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "0",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.00",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": ""
+            "Vote on S0121": ""
         }
     },
     "Hanna Gallo": {
         "Name": "Hanna Gallo",
         "Party": "D",
         "District": "27",
+        "Total Average": "0.66",
         "Reproductive Health": {
-            "Total": "5",
+            "Total": "0.80",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "3",
-            "RICAGV Endorsement": "0",
-            "NRA Non-Endorsement": "1",
+            "Total": "0.75",
+            "RICAGV Endorsed": "0",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "2",
-            "ECRI Scorecard": "2",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Total": "0.13",
+            "ECRI Scorecard": "0.4",
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Lammis Vargas": {
         "Name": "Lammis Vargas",
         "Party": "D",
         "District": "28",
+        "Total Average": "0.50",
         "Reproductive Health": {
-            "Total": "4",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "",
-            "ACLU Reproductive and Trans Rights": "",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "1",
-            "RICAGV Endorsement": "",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "0",
+            "Total": "NO DATA",
             "ACLU Economic Justice": "",
             "Fair Employment Practices": "",
-            "Economic justice/labor": "",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": ""
         },
         "Environment": {
-            "Total": "2",
+            "Total": "0.00",
             "ECRI Scorecard": "",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": "2"
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "0",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.00",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": ""
+            "Vote on S0121": ""
         }
     },
     "Peter Appollonio Jr.": {
         "Name": "Peter Appollonio Jr.",
         "Party": "D",
         "District": "29",
+        "Total Average": "0.17",
         "Reproductive Health": {
-            "Total": "1",
+            "Total": "0.50",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "",
-            "ACLU Reproductive and Trans Rights": "",
+            "ACLU Reproductive & Trans Rights": "",
             "Bodily Freedom Index": "",
-            "Right to Life (not endorsed)": "1"
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "0",
-            "RICAGV Endorsement": "",
-            "NRA Non-Endorsement": "",
+            "Total": "NO DATA",
+            "RICAGV Endorsed": "",
+            "NRA Non-Endorsed": "",
             "Vote on S2202": "",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "0",
+            "Total": "NO DATA",
             "ACLU Economic Justice": "",
             "Fair Employment Practices": "",
-            "Economic justice/labor": "",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": ""
         },
         "Environment": {
-            "Total": "0",
+            "Total": "0.00",
             "ECRI Scorecard": "",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "0",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.00",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": ""
+            "Vote on S0121": ""
         }
     },
     "Mark McKenney": {
         "Name": "Mark McKenney",
         "Party": "D",
         "District": "30",
+        "Total Average": "0.79",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "3",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "5",
-            "ECRI Scorecard": "2",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": "2"
+            "Total": "0.47",
+            "ECRI Scorecard": "0.4",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "1",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.50",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Matthew LaMountain": {
         "Name": "Matthew LaMountain",
         "Party": "D",
         "District": "31",
+        "Total Average": "0.83",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "3",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "6",
-            "ECRI Scorecard": "3",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": "2"
+            "Total": "0.53",
+            "ECRI Scorecard": "0.6",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Pamela Lauria": {
         "Name": "Pamela Lauria",
         "Party": "D",
         "District": "32",
+        "Total Average": "0.90",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "3",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "7",
-            "ECRI Scorecard": "3",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": "2"
+            "Total": "0.87",
+            "ECRI Scorecard": "0.6",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Leonidas Raptakis": {
         "Name": "Leonidas Raptakis",
         "Party": "D",
         "District": "33",
+        "Total Average": "0.32",
         "Reproductive Health": {
-            "Total": "1",
+            "Total": "0.10",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "0",
-            "ACLU Reproductive and Trans Rights": "0",
-            "Bodily Freedom Index": "1",
-            "Right to Life (not endorsed)": "0"
+            "ACLU Reproductive & Trans Rights": "0",
+            "Bodily Freedom Index": "0.5",
+            "Right to Life Non-Endorsed": "0"
         },
         "Guns": {
-            "Total": "0.08",
-            "RICAGV Endorsement": "0",
-            "NRA Non-Endorsement": "0.08",
+            "Total": "0.02",
+            "RICAGV Endorsed": "0",
+            "NRA Non-Endorsed": "0.08",
             "Vote on S2202": "0",
             "Vote on H6614": "0"
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "0",
+            "Total": "0.00",
             "ECRI Scorecard": "0",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "1",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.50",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Elaine Morgan": {
         "Name": "Elaine Morgan",
         "Party": "R",
         "District": "34",
+        "Total Average": "0.08",
         "Reproductive Health": {
-            "Total": "0",
+            "Total": "0.00",
             "Planned Parenthood": "0",
             "ACLU Reproductive Health": "0",
-            "ACLU Reproductive and Trans Rights": "0",
+            "ACLU Reproductive & Trans Rights": "0",
             "Bodily Freedom Index": "0",
-            "Right to Life (not endorsed)": "0"
+            "Right to Life Non-Endorsed": "0"
         },
         "Guns": {
-            "Total": "0.08",
-            "RICAGV Endorsement": "0",
-            "NRA Non-Endorsement": "0.08",
+            "Total": "0.02",
+            "RICAGV Endorsed": "0",
+            "NRA Non-Endorsed": "0.08",
             "Vote on S2202": "0",
             "Vote on H6614": "0"
         },
         "Labor": {
-            "Total": "0.11",
+            "Total": "0.04",
             "ACLU Economic Justice": "0",
             "Fair Employment Practices": "0",
-            "Economic justice/labor": "0.11",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.11"
         },
         "Environment": {
-            "Total": "0",
+            "Total": "0.00",
             "ECRI Scorecard": "0",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "0",
-            "Save the Bay Questionnaire": ""
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "0"
         },
         "LGBTQ": {
-            "Total": "1",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.33",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "0",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Bridget Valverde": {
         "Name": "Bridget Valverde",
         "Party": "D",
         "District": "35",
+        "Total Average": "0.93",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "4",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "3.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": "1"
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "7",
-            "ECRI Scorecard": "5",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": ""
+            "Total": "1.00",
+            "ECRI Scorecard": "1",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Alana DiMario": {
         "Name": "Alana DiMario",
         "Party": "D",
         "District": "36",
+        "Total Average": "0.93",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "4",
-            "RICAGV Endorsement": "1",
-            "NRA Non-Endorsement": "1",
+            "Total": "1.00",
+            "RICAGV Endorsed": "1",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "2",
+            "Total": "1.00",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": ""
         },
         "Environment": {
-            "Total": "9",
-            "ECRI Scorecard": "5",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": "2"
+            "Total": "1.00",
+            "ECRI Scorecard": "1",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "V. Susan Sosnowski": {
         "Name": "V. Susan Sosnowski",
         "Party": "D",
         "District": "37",
+        "Total Average": "0.80",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "3",
-            "RICAGV Endorsement": "0",
-            "NRA Non-Endorsement": "1",
+            "Total": "0.75",
+            "RICAGV Endorsed": "0",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": "1"
         },
         "Labor": {
-            "Total": "2.9",
+            "Total": "0.97",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.9",
-            "Working Families Party Endorsement (2020)": ""
+            "NFIB Voting Record": "0.9"
         },
         "Environment": {
-            "Total": "7",
-            "ECRI Scorecard": "4",
-            "Clean Water Action R.I. Endorsements": "0",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": "2"
+            "Total": "0.60",
+            "ECRI Scorecard": "0.8",
+            "Clean Water Action R.I. Endorsed": "0",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     },
     "Victoria Gu": {
         "Name": "Victoria Gu",
         "Party": "D",
         "District": "38",
+        "Total Average": "0.85",
         "Reproductive Health": {
-            "Total": "6",
+            "Total": "1.00",
             "Planned Parenthood": "1",
             "ACLU Reproductive Health": "1",
-            "ACLU Reproductive and Trans Rights": "1",
-            "Bodily Freedom Index": "2",
-            "Right to Life (not endorsed)": "1"
+            "ACLU Reproductive & Trans Rights": "1",
+            "Bodily Freedom Index": "1",
+            "Right to Life Non-Endorsed": "1"
         },
         "Guns": {
-            "Total": "2",
-            "RICAGV Endorsement": "0",
-            "NRA Non-Endorsement": "1",
+            "Total": "0.67",
+            "RICAGV Endorsed": "0",
+            "NRA Non-Endorsed": "1",
             "Vote on S2202": "1",
             "Vote on H6614": ""
         },
         "Labor": {
-            "Total": "3.8",
+            "Total": "0.93",
             "ACLU Economic Justice": "1",
             "Fair Employment Practices": "1",
-            "Economic justice/labor": "0.8",
-            "Working Families Party Endorsement (2020)": "1"
+            "NFIB Voting Record": "0.8"
         },
         "Environment": {
-            "Total": "9",
-            "ECRI Scorecard": "5",
-            "Clean Water Action R.I. Endorsements": "1",
-            "Climate Action R.I. Endorsements": "1",
-            "Save the Bay Questionnaire": "2"
+            "Total": "1.00",
+            "ECRI Scorecard": "1",
+            "Clean Water Action R.I. Endorsed": "1",
+            "Climate Action R.I. Endorsed": "1"
         },
         "LGBTQ": {
-            "Total": "2",
-            "LGBTQ+ Victory Fund Endorsement": "0",
+            "Total": "0.67",
+            "LGBTQ+ Victory Fund Endorsed": "0",
             "Vote on Healthcare Provider Shield Act": "1",
-            "Vote on Security for Families Through Confirmatory Adoption in Rhode Island (S0121)": "1"
+            "Vote on S0121": "1"
         }
     }
 }

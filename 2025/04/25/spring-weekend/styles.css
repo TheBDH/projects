@@ -1,0 +1,202 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0px;
+    background-image: url('images/basketballBackground.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-color: #000;
+    color: white;
+}
+
+#images {
+    position: relative;
+    height: 100vh;
+}
+
+#logo {
+    width: 300px;
+    height: auto;
+}
+
+.flash-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.flash-image.visible {
+    opacity: 1;
+}
+
+#heading {
+    min-height: 15rem;
+    text-align: center;
+    padding: 2rem 2.2rem 2.2rem 2.2rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Light grey background */
+    max-width: 40%;
+    /* Limit the width */
+    margin: 0 auto;
+    /* Center the element horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /* Center the element vertically and horizontally */
+}
+
+#heading h3 {
+    font-size: 2.5rem;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    padding: 0;
+    margin-top: 16px;
+    margin-bottom: 22px;
+    text-align: center;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+}
+
+#herald-logo {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.description {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 400;
+    max-width: 350px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+#heading p {
+    text-align: left;
+    font-style: italic;
+}
+
+#byline {
+    font-size: 0.7rem;
+}
+
+#byline .author {
+    background-color: #c76ac7;
+    padding: 0.2rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    white-space: nowrap;
+}
+
+.author a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a {
+    color: #c76ac7;
+}
+
+#purple-data {
+    color: white;
+    animation: fadeToPurple 2s forwards;
+}
+
+@keyframes fadeToPurple {
+    to {
+        color: #c76ac7;
+    }
+}
+
+#jump-button {
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    background-color: #f7f7f7;
+    border: rgb(59, 59, 59) 2px solid;
+    cursor: pointer;
+    margin-bottom: 22px;
+}
+
+.down-arrow {
+    animation: bounce 2s infinite;
+    font-size: 2rem;
+    /* Increase the size of the down arrow */
+    font-weight: bold;
+    /* Make the arrow bold */
+    color: #c76ac7;
+    /* Change the color to a shade of green */
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-5px);
+    }
+
+    60% {
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 768px) {
+    #title {
+        width: 80%;
+        padding: 10px;
+    }
+
+    #title h1 {
+        font-size: 2em;
+        padding-top: 10px;
+    }
+
+    #title h2 {
+        font-size: 0.8em;
+    }
+
+    #logo {
+        width: 200px;
+    }
+}
+
+.question {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    color: black;
+    text-align: center;
+
+}
+
+.quiz-box {
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 1em;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
