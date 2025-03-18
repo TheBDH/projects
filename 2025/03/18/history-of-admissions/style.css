@@ -231,7 +231,7 @@ a {
 /* mobile formatting */
 @media (max-width: 600px) {
   .scrolly {
-    width: 90%;
+    width: 95%;
   }
 
   .background {
@@ -243,7 +243,7 @@ a {
   }
 
   .step {
-    width: 60%;
+    width: 65%;
   }
 
   .article-photo img {

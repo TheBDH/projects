@@ -60,8 +60,6 @@ scroller
     //     return i === response.index - 2;
     //   })
     //   .classed("is-visible", true);
-
-    console.log(response.index);
   });
 
 const timelineDots = document.querySelectorAll(".timeline-step");
