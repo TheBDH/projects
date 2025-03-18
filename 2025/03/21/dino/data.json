@@ -3,7 +3,9 @@
         "Name": "Jacob Bissaillon",
         "Party": "D",
         "District": "1",
-        "Total Average": "0.56",
+        "Total Average": {
+            "Total": "0.56"
+        },
         "Reproductive Health": {
             "Total": "0.80",
             "Planned Parenthood": "1",
@@ -42,7 +44,9 @@
         "Name": "Ana Quezada",
         "Party": "D",
         "District": "2",
-        "Total Average": "0.76",
+        "Total Average": {
+            "Total": "0.76"
+        },
         "Reproductive Health": {
             "Total": "0.80",
             "Planned Parenthood": "0",
@@ -81,7 +85,9 @@
         "Name": "Samuel Zurier",
         "Party": "D",
         "District": "3",
-        "Total Average": "0.89",
+        "Total Average": {
+            "Total": "0.89"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -120,7 +126,9 @@
         "Name": "Dominick Ruggerio",
         "Party": "D",
         "District": "4",
-        "Total Average": "0.73",
+        "Total Average": {
+            "Total": "0.73"
+        },
         "Reproductive Health": {
             "Total": "0.50",
             "Planned Parenthood": "0",
@@ -159,7 +167,9 @@
         "Name": "Samuel Bell",
         "Party": "D",
         "District": "5",
-        "Total Average": "0.94",
+        "Total Average": {
+            "Total": "0.94"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -198,7 +208,9 @@
         "Name": "Tiara Mack",
         "Party": "D",
         "District": "6",
-        "Total Average": "0.99",
+        "Total Average": {
+            "Total": "0.99"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -237,7 +249,9 @@
         "Name": "Frank Ciccone",
         "Party": "D",
         "District": "7",
-        "Total Average": "0.42",
+        "Total Average": {
+            "Total": "0.42"
+        },
         "Reproductive Health": {
             "Total": "0.30",
             "Planned Parenthood": "0",
@@ -276,7 +290,9 @@
         "Name": "Lori Urso",
         "Party": "D",
         "District": "8",
-        "Total Average": "0.50",
+        "Total Average": {
+            "Total": "0.50"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -315,7 +331,9 @@
         "Name": "John Burke",
         "Party": "D",
         "District": "9",
-        "Total Average": "0.60",
+        "Total Average": {
+            "Total": "0.60"
+        },
         "Reproductive Health": {
             "Total": "0.80",
             "Planned Parenthood": "0",
@@ -354,7 +372,9 @@
         "Name": "Walter Felag Jr.",
         "Party": "D",
         "District": "10",
-        "Total Average": "0.64",
+        "Total Average": {
+            "Total": "0.64"
+        },
         "Reproductive Health": {
             "Total": "0.50",
             "Planned Parenthood": "0",
@@ -393,7 +413,9 @@
         "Name": "Linda Ujifusa",
         "Party": "D",
         "District": "11",
-        "Total Average": "0.91",
+        "Total Average": {
+            "Total": "0.91"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -432,7 +454,9 @@
         "Name": "Louis DiPalma",
         "Party": "D",
         "District": "12",
-        "Total Average": "0.66",
+        "Total Average": {
+            "Total": "0.66"
+        },
         "Reproductive Health": {
             "Total": "0.40",
             "Planned Parenthood": "0",
@@ -471,7 +495,9 @@
         "Name": "Dawn Euer",
         "Party": "D",
         "District": "13",
-        "Total Average": "0.93",
+        "Total Average": {
+            "Total": "0.93"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -510,7 +536,9 @@
         "Name": "Valarie Lawson",
         "Party": "D",
         "District": "14",
-        "Total Average": "0.91",
+        "Total Average": {
+            "Total": "0.91"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -549,7 +577,9 @@
         "Name": "Meghan Kallman",
         "Party": "D",
         "District": "15",
-        "Total Average": "0.93",
+        "Total Average": {
+            "Total": "0.93"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -588,7 +618,9 @@
         "Name": "Jonathon Acosta",
         "Party": "D",
         "District": "16",
-        "Total Average": "0.90",
+        "Total Average": {
+            "Total": "0.90"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -627,7 +659,9 @@
         "Name": "Thomas Paolino",
         "Party": "R",
         "District": "17",
-        "Total Average": "0.17",
+        "Total Average": {
+            "Total": "0.17"
+        },
         "Reproductive Health": {
             "Total": "0.00",
             "Planned Parenthood": "0",
@@ -666,7 +700,9 @@
         "Name": "Robert Britto",
         "Party": "D",
         "District": "18",
-        "Total Average": "0.67",
+        "Total Average": {
+            "Total": "0.67"
+        },
         "Reproductive Health": {
             "Total": "0.80",
             "Planned Parenthood": "0",
@@ -705,7 +741,9 @@
         "Name": "Ryan Pearson",
         "Party": "D",
         "District": "19",
-        "Total Average": "0.83",
+        "Total Average": {
+            "Total": "0.83"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -744,7 +782,9 @@
         "Name": "Brian Thompson",
         "Party": "D",
         "District": "20",
-        "Total Average": "0.56",
+        "Total Average": {
+            "Total": "0.56"
+        },
         "Reproductive Health": {
             "Total": "0.67",
             "Planned Parenthood": "0",
@@ -783,7 +823,9 @@
         "Name": "Gordon Rogers",
         "Party": "R",
         "District": "21",
-        "Total Average": "0.20",
+        "Total Average": {
+            "Total": "0.20"
+        },
         "Reproductive Health": {
             "Total": "0.20",
             "Planned Parenthood": "0",
@@ -822,7 +864,9 @@
         "Name": "David Tikoian",
         "Party": "D",
         "District": "22",
-        "Total Average": "0.51",
+        "Total Average": {
+            "Total": "0.51"
+        },
         "Reproductive Health": {
             "Total": "0.20",
             "Planned Parenthood": "0",
@@ -861,7 +905,9 @@
         "Name": "Jessica de la Cruz",
         "Party": "R",
         "District": "23",
-        "Total Average": "0.14",
+        "Total Average": {
+            "Total": "0.14"
+        },
         "Reproductive Health": {
             "Total": "0.00",
             "Planned Parenthood": "0",
@@ -900,7 +946,9 @@
         "Name": "Melissa Murray",
         "Party": "D",
         "District": "24",
-        "Total Average": "0.91",
+        "Total Average": {
+            "Total": "0.91"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -939,7 +987,9 @@
         "Name": "Andrew Dimitri",
         "Party": "D",
         "District": "25",
-        "Total Average": "0.15",
+        "Total Average": {
+            "Total": "0.15"
+        },
         "Reproductive Health": {
             "Total": "0.50",
             "Planned Parenthood": "0",
@@ -978,7 +1028,9 @@
         "Name": "Todd Patalano",
         "Party": "D",
         "District": "26",
-        "Total Average": "0.17",
+        "Total Average": {
+            "Total": "0.17"
+        },
         "Reproductive Health": {
             "Total": "0.50",
             "Planned Parenthood": "0",
@@ -1017,7 +1069,9 @@
         "Name": "Hanna Gallo",
         "Party": "D",
         "District": "27",
-        "Total Average": "0.66",
+        "Total Average": {
+            "Total": "0.66"
+        },
         "Reproductive Health": {
             "Total": "0.80",
             "Planned Parenthood": "0",
@@ -1056,7 +1110,9 @@
         "Name": "Lammis Vargas",
         "Party": "D",
         "District": "28",
-        "Total Average": "0.50",
+        "Total Average": {
+            "Total": "0.50"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -1095,7 +1151,9 @@
         "Name": "Peter Appollonio Jr.",
         "Party": "D",
         "District": "29",
-        "Total Average": "0.17",
+        "Total Average": {
+            "Total": "0.17"
+        },
         "Reproductive Health": {
             "Total": "0.50",
             "Planned Parenthood": "0",
@@ -1134,7 +1192,9 @@
         "Name": "Mark McKenney",
         "Party": "D",
         "District": "30",
-        "Total Average": "0.79",
+        "Total Average": {
+            "Total": "0.79"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -1173,7 +1233,9 @@
         "Name": "Matthew LaMountain",
         "Party": "D",
         "District": "31",
-        "Total Average": "0.83",
+        "Total Average": {
+            "Total": "0.83"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -1212,7 +1274,9 @@
         "Name": "Pamela Lauria",
         "Party": "D",
         "District": "32",
-        "Total Average": "0.90",
+        "Total Average": {
+            "Total": "0.90"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -1251,7 +1315,9 @@
         "Name": "Leonidas Raptakis",
         "Party": "D",
         "District": "33",
-        "Total Average": "0.32",
+        "Total Average": {
+            "Total": "0.32"
+        },
         "Reproductive Health": {
             "Total": "0.10",
             "Planned Parenthood": "0",
@@ -1290,7 +1356,9 @@
         "Name": "Elaine Morgan",
         "Party": "R",
         "District": "34",
-        "Total Average": "0.08",
+        "Total Average": {
+            "Total": "0.08"
+        },
         "Reproductive Health": {
             "Total": "0.00",
             "Planned Parenthood": "0",
@@ -1329,7 +1397,9 @@
         "Name": "Bridget Valverde",
         "Party": "D",
         "District": "35",
-        "Total Average": "0.93",
+        "Total Average": {
+            "Total": "0.93"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -1368,7 +1438,9 @@
         "Name": "Alana DiMario",
         "Party": "D",
         "District": "36",
-        "Total Average": "0.93",
+        "Total Average": {
+            "Total": "0.93"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -1407,7 +1479,9 @@
         "Name": "V. Susan Sosnowski",
         "Party": "D",
         "District": "37",
-        "Total Average": "0.80",
+        "Total Average": {
+            "Total": "0.80"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",
@@ -1446,7 +1520,9 @@
         "Name": "Victoria Gu",
         "Party": "D",
         "District": "38",
-        "Total Average": "0.85",
+        "Total Average": {
+            "Total": "0.85"
+        },
         "Reproductive Health": {
             "Total": "1.00",
             "Planned Parenthood": "1",

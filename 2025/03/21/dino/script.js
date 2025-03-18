@@ -100,6 +100,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                 subscoreElement.textContent = `${subscore}: ${senator.issueData[subscore]}`;
                                 tooltip.appendChild(subscoreElement);
                             }
+                            if (subscore == 'Total' && selectedIssue === 'Total Average') {
+                                const subscoreElement = document.createElement('p');
+                                subscoreElement.textContent = `Overall: ${(senator.issueData[subscore] * 10).toFixed(1)}`;
+                                tooltip.appendChild(subscoreElement);
+                            }
                         }
 
                         div.appendChild(tooltip);
