@@ -8,6 +8,20 @@ body {
     color: white;
 }
 
+.caption {
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 0.5rem;
+    z-index: 300; /* Increased z-index */
+    background-color: rgba(0, 0, 0, 0.9); /* Added black background */
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%; /* Make the background full width */
+    padding: 0.5rem; /* Add padding for better readability */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
 #images {
     position: relative;
     height: 100vh;
@@ -27,10 +41,15 @@ body {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+    z-index: -1; /* Decreased z-index */
 }
 
 .flash-image.visible {
     opacity: 1;
+}
+
+#collage {
+    z-index: -1;
 }
 
 #heading {
@@ -90,7 +109,7 @@ body {
 }
 
 #byline .author {
-    background-color: #c76ac7;
+    background-color: #ec2027;
     padding: 0.2rem;
     padding-left: 0.4rem;
     padding-right: 0.4rem;
@@ -106,17 +125,17 @@ body {
 }
 
 a {
-    color: #c76ac7;
+    color: #f63939;
 }
 
-#purple-data {
+#red-photos {
     color: white;
-    animation: fadeToPurple 2s forwards;
+    animation: fadeToRed 2s forwards;
 }
 
-@keyframes fadeToPurple {
+@keyframes fadeToRed {
     to {
-        color: #c76ac7;
+        color: #f63939;
     }
 }
 
@@ -137,7 +156,7 @@ a {
     /* Increase the size of the down arrow */
     font-weight: bold;
     /* Make the arrow bold */
-    color: #c76ac7;
+    color: #f63939;
     /* Change the color to a shade of green */
 }
 
@@ -162,6 +181,12 @@ a {
 
 @media (max-width: 768px) {
 
+    #heading {
+        max-width: 80%;
+        width: 70%;
+        padding: 1.2rem;
+    }
+
     #title {
         width: 80%;
         padding: 10px;
@@ -179,24 +204,8 @@ a {
     #herald-logo {
         width: 200px;
     }
-}
 
-.question {
-    font-size: 1.2em;
-    margin-bottom: 1em;
-    color: black;
-    text-align: center;
-
-}
-
-.quiz-box {
-    max-width: 600px;
-    margin: 2em auto;
-    padding: 1em;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    background-color: #ccc;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 10;
+    .caption {
+        width: 70%;
+    }
 }

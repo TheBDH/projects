@@ -138,8 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial display
     displayIssueData();
     issueSelect.addEventListener('change', displayIssueData);
-
-
+    
     // scrollMagic shenanigans
 
     const illo = document.getElementById('illo-container');
