@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // heatmap code
   const boxWidth = document.getElementById("heatmap").clientWidth;
   const boxHeight = document.getElementById("heatmap").clientHeight;
-  const margin = { top: 0, right: 0, bottom: 20, left: boxWidth * 0.25 };
+  const margin = { top: 0, right: 0, bottom: 20, left: boxWidth * 0.15 };
   const width = boxWidth - margin.left - margin.right;
   const height = boxHeight - margin.top - margin.bottom;
 
@@ -234,6 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .attr("width", xScale.bandwidth())
         .attr("height", yScale.bandwidth())
         .attr("data-column", (d) => d.issue)
+        .attr("data-row", (d) => d.name)
         .attr("fill", (d) =>
           d.score == "NO DATA" ? "#eee" : colorScale(d.score)
         )
@@ -247,8 +248,9 @@ document.addEventListener("DOMContentLoaded", function () {
             )
             .style("left", event.pageX + 10 + "px")
             .style("top", event.pageY - 10 + "px");
-          d3.selectAll("rect").style("opacity", 0.3);
+          d3.selectAll("rect").style("opacity", 0.2);
           d3.selectAll(`rect[data-column='${d.issue}']`).style("opacity", 1);
+          d3.selectAll(`rect[data-row='${d.name}']`).style("opacity", 1);
         })
         .on("mouseout", () => {
           tooltip.style("display", "none");

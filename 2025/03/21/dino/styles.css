@@ -308,16 +308,16 @@ a {
 
   #heatmap {
     width: 200px;
-    height: 600px;
+    height: 30rem;
+    padding: 1rem;
     margin: auto;
     font-size: 8px;
   }
 }
 
 #heatmap {
-  width: 100%;
-  max-width: 800px;
-  max-height: 600px;
+  width: 40rem;
+  height: 30rem;
   margin: auto;
 }
 
