@@ -40,7 +40,7 @@ body {
     transition: opacity 0.2s ease-in-out;
     width: 100vw;
     height: 100vh;
-    object-fit: cover;
+    object-fit: contain;
     z-index: -1; /* Decreased z-index */
 }
 
