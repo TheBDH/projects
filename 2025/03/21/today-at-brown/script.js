@@ -5,17 +5,27 @@ document.addEventListener("DOMContentLoaded", function () {
     var images = document.querySelectorAll(".flash-image");
 
     captions.forEach(function (caption, index) {
-        new ScrollMagic.Scene({
+        var scene = new ScrollMagic.Scene({
             triggerElement: caption,
             triggerHook: 1,
             duration: "100%"
         })
         .on("enter", function () {
             images[index].style.opacity = 1;
-        })
-        .on("leave", function () {
-            images[index].style.opacity = 0;
-        })
-        .addTo(controller);
+        });
+
+        if (index < captions.length - 1) {
+            scene.on("leave", function () {
+                images[index].style.opacity = 0;
+            });
+        } else {
+            scene.on("leave", function (event) {
+                if (event.scrollDirection === "REVERSE") {
+                    images[index].style.opacity = 0;
+                }
+            });
+        }
+
+        scene.addTo(controller);
     });
 });
