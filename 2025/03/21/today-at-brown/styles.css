@@ -8,6 +8,10 @@ body {
     color: white;
 }
 
+.rotate-mobile {
+    display: none;
+}
+
 .caption {
     font-size: 1rem;
     font-style: italic;
@@ -207,5 +211,9 @@ a {
 
     .caption {
         width: 70%;
+    }
+
+    .rotate-mobile {
+        display: block;
     }
 }

@@ -2,11 +2,21 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async
+        src="https://www.googletagmanager.com/gtag/js?id=G-321HPHTJEX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-321HPHTJEX');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Today at Brown in Photos</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
+    <link rel="icon" href="assets/favicon-64x64.png" sizes="64x64">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <script src="script.js"></script>
@@ -17,11 +27,11 @@
     <div id="spacer"></div>
     <div id="heading">
         <a href="https://www.browndailyherald.com" target="_blank">
-            <img src="images/logo-white.png" id="herald-logo" alt="Brown Daily Herald Logo" />
+            <img src="assets/logo-white.png" id="herald-logo" alt="Brown Daily Herald Logo" />
         </a>
         <h3 style="text-align: center;">Today at Brown in <span id="red-photos">Photos</span></h3>
         <p style="text-align: center;">
-            24 hours in Brunonia
+            24 hours in Brunonia. March 19th - March 20th, 2025.
         </p>
         <h6 id="byline" style="text-align: center;">
             Produced by the <span class="author">Brown Daily Herald Photo Team</span>
@@ -31,14 +41,20 @@
             <span class="author"><a href="https://www.browndailyherald.com/staff/caleb-ellenberg" target="_blank">Caleb
                     Ellenberg</a></span>
         </h6>
+        <div class="rotate-mobile">
+            <p style="text-align: center;">
+                Rotate your device for the best experience.
+            </p>
+        </div>
         <div class="down-arrow" style="text-align: center;">
             &#x2193;
         </div>
     </div>
-    <div style="height: 50vh;"></div>
+    <div style="height: 65vh;"></div>
     <div class="captions">
+        <div class="caption" style="width: 0px;"></div>
         <div class="spacer" style="height: 95vh;"></div>
-        <div class="caption">Caption for Image 1</div>
+        <div class="caption">12 p.m. to 1 p.m.</div>
         <div class="spacer" style="height: 95vh;"></div>
         <div class="caption">Caption for Image 2</div>
         <div class="spacer" style="height: 95vh;"></div>
@@ -46,41 +62,48 @@
         <div class="spacer" style="height: 95vh;"></div>
         <div class="caption">Caption for Image 4</div>
         <div class="spacer" style="height: 95vh;"></div>
-        <div class="caption">Caption for Image 5</div>
+        <div class="caption">5 p.m. to 6 p.m.</div>
         <div class="spacer" style="height: 95vh;"></div>
-        <div class="caption">Caption for Image 6</div>
+        <div class="caption">6 p.m. to 7 p.m.</div>
         <div class="spacer" style="height: 95vh;"></div>
         <div class="caption">Caption for Image 7</div>
         <div class="spacer" style="height: 95vh;"></div>
-        <div class="caption">Caption for Image 8</div>
+        <div class="caption">8 p.m. to 9 p.m.</div>
         <div class="spacer" style="height: 95vh;"></div>
-        <div class="caption">Caption for Image 9</div>
+        <div class="caption">9 p.m. to 10 p.m.</div>
         <div class="spacer" style="height: 95vh;"></div>
-        <div class="caption">Caption for Image 10</div>
+        <div class="caption">10 p.m. to 11 p.m.</div>
         <div class="spacer" style="height: 95vh;"></div>
-        <div class="caption">Caption for Image 11</div>
+        <div class="caption">11 p.m. to 12 a.m.</div>
         <div class="spacer" style="height: 95vh;"></div>
-        <div class="caption">Caption for Image 12</div>
+        <div class="caption">12 a.m. to 1 a.m.</div>
         <div class="spacer" style="height: 95vh;"></div>
-        <div class="caption">Caption for Image 13</div>
+        <div class="caption">12 a.m. to 1 a.m.</div>
+        <div class="spacer" style="height: 95vh;"></div>
+        <div class="caption">1 a.m. to 2 a.m.</div>
+        <div class="spacer" style="height: 95vh;"></div>
+        <div class="caption">3 a.m. to 4 a.m.</div>
     </div>
     <div class="spacer" style="height: 105vh;"></div>
     <div>
         <!-- Your content goes here -->
         <div id="collage" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;">
-            <img src="images/1960BDR1.jpeg" class="flash-image" id="image1" alt="Image 1">
+            <img src="images/pageTitle.jpg" class="flash-image" id="image0" alt="Image 0">
+            <img src="images/12pm-1pmCollage.jpg" class="flash-image" id="image1" alt="Image 1">
             <img src="images/1966BDR1.jpeg" class="flash-image" id="image2" alt="Image 2">
             <img src="images/1966BDR2.jpeg" class="flash-image" id="image3" alt="Image 3">
             <img src="images/1973BDR1.jpeg" class="flash-image" id="image4" alt="Image 4">
-            <img src="images/1980BDR1.jpeg" class="flash-image" id="image5" alt="Image 5">
-            <img src="images/1980BDR2.jpeg" class="flash-image" id="image6" alt="Image 6">
-            <img src="images/1986BDR1.jpeg" class="flash-image" id="image7" alt="Image 7">
-            <img src="images/2000BDR1.jpeg" class="flash-image" id="image8" alt="Image 8">
-            <img src="images/2000BDR2.jpeg" class="flash-image" id="image9" alt="Image 9">
-            <img src="images/2000BDR3.jpeg" class="flash-image" id="image10" alt="Image 10">
-            <img src="images/2000BDR4.jpeg" class="flash-image" id="image11" alt="Image 11">
-            <img src="images/2000BDR5.jpeg" class="flash-image" id="image12" alt="Image 12">
-            <img src="images/2013BDHKendrick.jpg" class="flash-image" id="image13" alt="Image 13">
+            <img src="images/5pm-6pm.jpg" class="flash-image" id="image5" alt="Image 5">
+            <img src="images/6pm-7pmCOLLAGE.jpg" class="flash-image" id="image6" alt="Image 6">
+            <img src="images/1980BDR2.jpeg" class="flash-image" id="image7" alt="Image 7">
+            <img src="images/8pm-9pm.jpg" class="flash-image" id="image8" alt="Image 8">
+            <img src="images/9pm-10pm.jpg" class="flash-image" id="image9" alt="Image 9">
+            <img src="images/10pm-11pmCollage.jpg" class="flash-image" id="image10" alt="Image 10">
+            <img src="images/11pm-12amCollage.jpg" class="flash-image" id="image11" alt="Image 11">
+            <img src="images/12am-1amFull.jpg" class="flash-image" id="extra12am-1amFull" alt="EXTRA">
+            <img src="images/12am-1amCollage.jpg" class="flash-image" id="image12" alt="Image 12">
+            <img src="images/1am-2amCollage.jpg" class="flash-image" id="image13" alt="Image 13">
+            <img src="images/3am-4amFull.jpg" class="flash-image" id="image13" alt="Image 13">
         </div>
     </div>
 </body>
