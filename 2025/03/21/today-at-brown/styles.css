@@ -99,6 +99,19 @@ body {
     font-family: "freight-text-pro", "Georgia", "Times", serif;
 }
 
+.date-change {
+    font-size: 2.5rem;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    padding: 0;
+    margin-top: 16px;
+    margin-bottom: 22px;
+    text-align: center;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+}
+
 #herald-logo {
     max-width: 300px;
     display: block;
