@@ -245,10 +245,11 @@ a {
     }
 
     .caption {
-        width: 70%;
+        width: 80%;
     }
 
     .rotate-mobile {
         display: block;
+        font-family: "freight-text-pro", "Georgia", "Times", serif;
     }
 }
