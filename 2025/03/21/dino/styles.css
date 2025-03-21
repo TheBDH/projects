@@ -307,17 +307,19 @@ a {
   }
 
   #heatmap {
-    width: 200px;
-    height: 30rem;
-    padding: 1rem;
+    /* width: 200px; */
+    /* height: 600px; */
     margin: auto;
+  }
+
+  #heatmap svg g {
     font-size: 8px;
   }
 }
 
 #heatmap {
   width: 40rem;
-  height: 30rem;
+  /* height: 30rem; */
   margin: auto;
 }
 

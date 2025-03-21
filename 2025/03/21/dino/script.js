@@ -169,100 +169,146 @@ document.addEventListener("DOMContentLoaded", function () {
     .addTo(controller);
 
   // heatmap code
-  const boxWidth = document.getElementById("heatmap").clientWidth;
-  const boxHeight = document.getElementById("heatmap").clientHeight;
-  const margin = { top: 0, right: 0, bottom: 20, left: boxWidth * 0.15 };
-  const width = boxWidth - margin.left - margin.right;
-  const height = boxHeight - margin.top - margin.bottom;
-
-  const svg = d3
-    .select("#heatmap")
-    .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", `translate(${margin.left},${margin.top})`);
-
   const colorScale = d3
     .scaleLinear()
     .domain([0, 0.25, 0.5, 0.75, 1])
     .range(["#B93F3C", "#E58A78", "#E8DCB2", "#75A2CF", "#3673B2"]); // red to blue don't forget! :)
 
-  fetch("./data.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const categories = Object.keys(data[Object.keys(data)[0]]).filter(
-        (k) => k !== "Name" && k !== "Party" && k !== "District"
-      );
+  function makeHeatmap() {
+    d3.select("#heatmap").select("svg").remove();
+    fetch("./data.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const categories = Object.keys(data[Object.keys(data)[0]]).filter(
+          (k) => k !== "Name" && k !== "Party" && k !== "District"
+        );
 
-      const politicians = Object.entries(data).map(([name, values]) => ({
-        name,
-        scores: values,
-        total: values["Total Average"]?.Total || 0,
-        party: values["Party"],
-      }));
+        const politicians = Object.entries(data).map(([name, values]) => ({
+          name,
+          scores: values,
+          total: values["Total Average"]?.Total || 0,
+          party: values["Party"],
+        }));
 
-      politicians.sort((a, b) => b.total - a.total);
+        const boxWidth = document.getElementById("heatmap").clientWidth;
+        const boxHeight = document.getElementById("heatmap").clientHeight;
+        const margin = {
+          top: 30,
+          right: boxWidth * 0.1,
+          bottom: 0,
+          left: boxWidth * 0.2,
+        };
+        //   let width = Math.min(window.innerWidth - margin.left - margin.right, 600); // Responsive width
+        //   const height = boxHeight - margin.top - margin.bottom;
+        const height = politicians.length * 30;
+        const width =
+          window.innerWidth > boxWidth
+            ? boxWidth - margin.left - margin.right
+            : height / 3.5;
+        document.getElementById("heatmap").clientHeight = height;
 
-      const xScale = d3
-        .scaleBand()
-        .domain(categories)
-        .range([0, width])
-        .padding(0.01);
-      const yScale = d3
-        .scaleBand()
-        .domain(politicians.map((d) => d.name))
-        .range([0, height])
-        .padding(0.01);
+        d3.select("#heatmap")
+          .attr("height", height + margin.top + margin.bottom)
+          .attr("width", width + margin.left);
 
-      svg
-        .selectAll("rect")
-        .data(
-          politicians.flatMap((d) =>
-            categories.map((issue) => ({
-              name: d.name,
-              issue,
-              score: d.scores[issue]?.Total || 0,
-              party: d.party,
-            }))
-          )
-        )
-        .enter()
-        .append("rect")
-        .attr("x", (d) => xScale(d.issue))
-        .attr("y", (d) => yScale(d.name))
-        .attr("width", xScale.bandwidth())
-        .attr("height", yScale.bandwidth())
-        .attr("data-column", (d) => d.issue)
-        .attr("data-row", (d) => d.name)
-        .attr("fill", (d) =>
-          d.score == "NO DATA" ? "#eee" : colorScale(d.score)
-        )
-        .on("mouseover", (event, d) => {
-          tooltip
-            .style("display", "block")
-            .html(
-              `<span id="rep">${d.name} (${d.party})</span><br>${d.issue}: ${
-                d.score == "NO DATA" ? "Data unavailable" : d.score
-              }`
+        const svg = d3
+          .select("#heatmap")
+          .append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+          .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        politicians.sort((a, b) => b.total - a.total);
+
+        const xScale = d3.scaleBand().domain(categories).range([0, width]);
+        const yScale = d3
+          .scaleBand()
+          .domain(politicians.map((d) => d.name))
+          .range([0, height]);
+
+        svg
+          .selectAll("rect")
+          .data(
+            politicians.flatMap((d) =>
+              categories.map((issue) => ({
+                name: d.name,
+                issue,
+                score: d.scores[issue]?.Total || 0,
+                party: d.party,
+              }))
             )
-            .style("left", event.pageX + 10 + "px")
-            .style("top", event.pageY - 10 + "px");
-          d3.selectAll("rect").style("opacity", 0.2);
-          d3.selectAll(`rect[data-column='${d.issue}']`).style("opacity", 1);
-          d3.selectAll(`rect[data-row='${d.name}']`).style("opacity", 1);
-        })
-        .on("mouseout", () => {
-          tooltip.style("display", "none");
-          d3.selectAll("rect").style("opacity", 1);
-        });
+          )
+          .enter()
+          .append("rect")
+          .attr("x", (d) => xScale(d.issue))
+          .attr("y", (d) => yScale(d.name))
+          .attr("width", xScale.bandwidth())
+          .attr("height", yScale.bandwidth())
+          .attr("data-column", (d) => d.issue)
+          .attr("data-row", (d) => d.name)
+          .attr("fill", (d) =>
+            d.score == "NO DATA" ? "#eee" : colorScale(d.score)
+          )
+          .on("mouseover", (event, d) => {
+            tooltip
+              .style("display", "block")
+              .html(
+                `<span id="rep">${d.name} (${d.party})</span><br>${d.issue}: ${
+                  d.score == "NO DATA" ? "Data unavailable" : d.score
+                }`
+              )
+              .style("left", event.pageX + 10 + "px")
+              .style("top", event.pageY - 10 + "px");
+            d3.selectAll("rect").style("opacity", 0.2);
+            d3.selectAll(`rect[data-column='${d.issue}']`).style("opacity", 1);
+            d3.selectAll(`rect[data-row='${d.name}']`).style("opacity", 1);
+          })
+          .on("mouseout", () => {
+            tooltip.style("display", "none");
+            d3.selectAll("rect").style("opacity", 1);
+          });
 
-      svg
-        .append("g")
-        .call(d3.axisBottom(xScale))
-        .attr("transform", `translate(0,${height})`);
-      svg.append("g").call(d3.axisLeft(yScale));
+        svg
+          .append("g")
+          .call(d3.axisBottom(xScale).tickSize(0))
+          .attr("transform", `translate(0,-20)`)
+          .select("path")
+          .style("display", "none");
 
-      const tooltip = d3.select("body").append("div").attr("id", "tooltip");
-    });
+        svg
+          .selectAll("text")
+          .filter((d) => d === "Total Average")
+          .text("Average");
+
+        svg
+          .append("g")
+          .call(d3.axisLeft(yScale).tickSize(0))
+          .selectAll("text")
+          .each(function (d) {
+            const party = Object.values(data).find((a) => a.Name === d)?.Party;
+            const bbox = this.getBBox();
+            if (party === "D") {
+              d3.select(this.parentNode)
+                .insert("circle", "text")
+                .attr("cx", bbox.x - 10)
+                .attr("cy", bbox.y + bbox.height / 2)
+                .attr("r", 4)
+                .attr("fill", "#3673B2");
+            } else if (party === "R") {
+              d3.select(this.parentNode)
+                .insert("circle", "text")
+                .attr("cx", bbox.x - 10)
+                .attr("cy", bbox.y + bbox.height / 2)
+                .attr("r", 4)
+                .attr("fill", "#B93F3C");
+            }
+          });
+
+        const tooltip = d3.select("body").append("div").attr("id", "tooltip");
+      });
+  }
+  makeHeatmap();
+
+  window.addEventListener("resize", makeHeatmap);
 });
