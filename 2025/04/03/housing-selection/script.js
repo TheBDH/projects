@@ -145,6 +145,15 @@ document.addEventListener('DOMContentLoaded', function () {
                             pointStyle: 'rect',
                             color: '#f0f0f0' // Set legend text color to white
                         }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                const value = Math.round(context.raw);
+                                const viewType = document.getElementById('data-toggle').value;
+                                return viewType === 'available-beds' ? `${value}%` : `${value} beds`;
+                            }
+                        }
                     }
                 },
                 elements: {
@@ -215,6 +224,29 @@ document.addEventListener('DOMContentLoaded', function () {
             parseCSV('2024_Clean', '09APR_0930.csv', roomType, housingPool).then(startRooms => {
                 const totalCurrent = curRooms["Total"];
                 const totalStart = startRooms["Total"];
+                const percent = ((totalCurrent / totalStart) * 100).toFixed(2);
+                const percentElement = document.createElement('div');
+                percentElement.style.fontSize = '2em';
+                percentElement.style.fontWeight = 'bold';
+                percentElement.style.textAlign = 'center';
+                percentElement.style.marginBottom = '20px';
+
+                if (percent >= 80) {
+                    percentElement.style.color = '#00933C'; // Dark green
+                } else if (percent >= 60) {
+                    percentElement.style.color = '#6CBE45'; // Light green
+                } else if (percent >= 40) {
+                    percentElement.style.color = '#FCCC0A'; // Yellow
+                } else if (percent >= 20) {
+                    percentElement.style.color = '#FF6319'; // Orange
+                } else {
+                    percentElement.style.color = '#EE352E'; // Red
+                }
+
+                percentElement.textContent = `${percent}% Available`;
+                const percentOutput = document.getElementById('percent-output');
+                percentOutput.innerHTML = ''; // Clear previous content
+                percentOutput.appendChild(percentElement);
                 let output = `${totalCurrent}/${totalStart} total matching rooms available<br><br>`;
 
                 // Sort buildings by the number of current matching rooms in descending order
@@ -225,7 +257,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 sortedBuildings.forEach(building => {
                     const current = curRooms[building]["Matching Rooms"];
                     const start = startRooms[building] ? startRooms[building]["Matching Rooms"] : 0;
-                    output += `${current}/${start} matching rooms at ${building} available<br><br>`;
+                    const titleCaseBuilding = building.split(' ')
+                        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                        .join(' ');
+                    output += `${titleCaseBuilding}: ${current}/${start}<br><br>`;
                 });
 
                 document.getElementById('filter-output').innerHTML = output;
