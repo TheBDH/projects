@@ -1,0 +1,1714 @@
+{
+    "April 9, 9:30 AM": {
+        "BARBOUR HALL": {
+            "Total Beds": 186,
+            "Suite (3)": 1,
+            "Suite (4)": 10,
+            "Triple": 15,
+            "Double": 18,
+            "Suite (5)": 12,
+            "Suite (2)": 1
+        },
+        "BUXTON HOUSE": {
+            "Total Beds": 73,
+            "Double": 34,
+            "Single": 5
+        },
+        "CASWELL HALL": {
+            "Total Beds": 184,
+            "Double": 92
+        },
+        "CHAPIN HOUSE": {
+            "Total Beds": 158,
+            "Single": 10,
+            "Double": 74
+        },
+        "CHEN FAMILY HALL": {
+            "Total Beds": 110,
+            "Suite (4)": 24,
+            "Suite (2)": 7
+        },
+        "DANOFF HALL": {
+            "Total Beds": 90,
+            "Suite (4)": 21,
+            "Suite (2)": 3
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 131,
+            "Double": 48,
+            "Triple": 9,
+            "Single": 8
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 101,
+            "Double": 42,
+            "Single": 17
+        },
+        "GRAD CENTER A": {
+            "Total Beds": 86,
+            "Single": 86
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 95,
+            "Single": 95
+        },
+        "GRAD CENTER C": {
+            "Total Beds": 65,
+            "Single": 65
+        },
+        "GRAD CENTER D": {
+            "Total Beds": 84,
+            "Single": 84
+        },
+        "GREGORIAN QUAD A": {
+            "Total Beds": 492,
+            "Suite (9)": 5,
+            "Suite (4)": 38,
+            "Suite (5)": 30,
+            "Double": 26,
+            "Single": 3,
+            "Triple": 30
+        },
+        "GREGORIAN QUAD B": {
+            "Total Beds": 103,
+            "Suite (4)": 8,
+            "Suite (5)": 10,
+            "Double": 6,
+            "Single": 9
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 116,
+            "Double": 52,
+            "Single": 12
+        },
+        "HEGEMAN HALL": {
+            "Total Beds": 320,
+            "Suite (3)": 97,
+            "Single": 3,
+            "Double": 12,
+            "Suite (2)": 1
+        },
+        "HOPE COLLEGE": {
+            "Total Beds": 79,
+            "Single": 3,
+            "Double": 38
+        },
+        "KING HOUSE": {
+            "Total Beds": 21,
+            "Double": 10,
+            "Single": 1
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 130,
+            "Double": 64,
+            "Single": 2
+        },
+        "MACHADO HOUSE": {
+            "Total Beds": 9,
+            "Single": 5,
+            "Double": 2
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 146,
+            "Triple": 12,
+            "Double": 48,
+            "Single": 14
+        },
+        "MINDEN HALL": {
+            "Total Beds": 302,
+            "Triple": 24,
+            "Suite (3)": 25,
+            "Double": 29,
+            "Quad": 24,
+            "Single": 1
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 106,
+            "Double": 50,
+            "Single": 6
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 131,
+            "Single": 11,
+            "Double": 60
+        },
+        "SLATER HALL": {
+            "Total Beds": 146,
+            "Quad": 20,
+            "Double": 18,
+            "Triple": 9,
+            "Single": 3
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 261,
+            "Single": 101,
+            "Suite (4)": 40
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 249,
+            "Double": 108,
+            "Single": 6,
+            "Triple": 9
+        },
+        "YOUNG ORCHARD 10": {
+            "Total Beds": 44,
+            "Suite (4)": 11
+        },
+        "YOUNG ORCHARD 2": {
+            "Total Beds": 36,
+            "Suite (4)": 9
+        },
+        "YOUNG ORCHARD 4": {
+            "Total Beds": 32,
+            "Suite (4)": 8
+        }
+    },
+    "April 9, 10:25 AM": {
+        "BARBOUR HALL": {
+            "Total Beds": 156,
+            "Suite (3)": 1,
+            "Triple": 15,
+            "Double": 16,
+            "Suite (5)": 12,
+            "Suite (4)": 4
+        },
+        "BUXTON HOUSE": {
+            "Total Beds": 73,
+            "Double": 34,
+            "Single": 5
+        },
+        "CASWELL HALL": {
+            "Total Beds": 184,
+            "Double": 92
+        },
+        "CHAPIN HOUSE": {
+            "Total Beds": 158,
+            "Single": 10,
+            "Double": 74
+        },
+        "DANOFF HALL": {
+            "Total Beds": 8,
+            "Suite (4)": 2
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 131,
+            "Double": 48,
+            "Triple": 9,
+            "Single": 8
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 101,
+            "Double": 42,
+            "Single": 17
+        },
+        "GRAD CENTER A": {
+            "Total Beds": 83,
+            "Single": 83
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 94,
+            "Single": 94
+        },
+        "GRAD CENTER C": {
+            "Total Beds": 54,
+            "Single": 54
+        },
+        "GRAD CENTER D": {
+            "Total Beds": 83,
+            "Single": 83
+        },
+        "GREGORIAN QUAD A": {
+            "Total Beds": 296,
+            "Suite (9)": 4,
+            "Suite (4)": 11,
+            "Suite (5)": 15,
+            "Double": 24,
+            "Single": 3,
+            "Triple": 30
+        },
+        "GREGORIAN QUAD B": {
+            "Total Beds": 46,
+            "Suite (5)": 5,
+            "Double": 6,
+            "Single": 9
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 116,
+            "Double": 52,
+            "Single": 12
+        },
+        "HEGEMAN HALL": {
+            "Total Beds": 295,
+            "Suite (3)": 91,
+            "Double": 10,
+            "Suite (2)": 1
+        },
+        "HOPE COLLEGE": {
+            "Total Beds": 73,
+            "Double": 36,
+            "Single": 1
+        },
+        "KING HOUSE": {
+            "Total Beds": 21,
+            "Double": 10,
+            "Single": 1
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 130,
+            "Double": 64,
+            "Single": 2
+        },
+        "MACHADO HOUSE": {
+            "Total Beds": 7,
+            "Single": 3,
+            "Double": 2
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 145,
+            "Triple": 12,
+            "Double": 48,
+            "Single": 13
+        },
+        "MINDEN HALL": {
+            "Total Beds": 282,
+            "Triple": 21,
+            "Suite (3)": 23,
+            "Double": 27,
+            "Quad": 24
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 106,
+            "Double": 50,
+            "Single": 6
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 130,
+            "Single": 10,
+            "Double": 60
+        },
+        "SLATER HALL": {
+            "Total Beds": 128,
+            "Quad": 16,
+            "Double": 18,
+            "Triple": 9,
+            "Single": 1
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 183,
+            "Single": 87,
+            "Suite (4)": 24
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 248,
+            "Double": 108,
+            "Single": 5,
+            "Triple": 9
+        },
+        "YOUNG ORCHARD 10": {
+            "Total Beds": 12,
+            "Suite (4)": 3
+        },
+        "YOUNG ORCHARD 2": {
+            "Total Beds": 4,
+            "Suite (4)": 1
+        }
+    },
+    "April 9, 11:25 AM": {
+        "BARBOUR HALL": {
+            "Total Beds": 100,
+            "Suite (3)": 1,
+            "Triple": 15,
+            "Double": 14,
+            "Suite (5)": 4,
+            "Suite (4)": 1
+        },
+        "BUXTON HOUSE": {
+            "Total Beds": 73,
+            "Double": 34,
+            "Single": 5
+        },
+        "CASWELL HALL": {
+            "Total Beds": 184,
+            "Double": 92
+        },
+        "CHAPIN HOUSE": {
+            "Total Beds": 157,
+            "Single": 9,
+            "Double": 74
+        },
+        "DANOFF HALL": {
+            "Total Beds": 8,
+            "Suite (4)": 2
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 131,
+            "Double": 48,
+            "Triple": 9,
+            "Single": 8
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 96,
+            "Double": 40,
+            "Single": 16
+        },
+        "GRAD CENTER A": {
+            "Total Beds": 67,
+            "Single": 67
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 92,
+            "Single": 92
+        },
+        "GRAD CENTER C": {
+            "Total Beds": 48,
+            "Single": 48
+        },
+        "GRAD CENTER D": {
+            "Total Beds": 79,
+            "Single": 79
+        },
+        "GREGORIAN QUAD A": {
+            "Total Beds": 164,
+            "Suite (9)": 3,
+            "Suite (4)": 2,
+            "Double": 24,
+            "Triple": 27
+        },
+        "GREGORIAN QUAD B": {
+            "Total Beds": 8,
+            "Double": 4
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 113,
+            "Double": 52,
+            "Single": 9
+        },
+        "HEGEMAN HALL": {
+            "Total Beds": 255,
+            "Suite (3)": 79,
+            "Double": 8,
+            "Suite (2)": 1
+        },
+        "HOPE COLLEGE": {
+            "Total Beds": 72,
+            "Double": 36
+        },
+        "KING HOUSE": {
+            "Total Beds": 21,
+            "Double": 10,
+            "Single": 1
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 121,
+            "Double": 60,
+            "Single": 1
+        },
+        "MACHADO HOUSE": {
+            "Total Beds": 7,
+            "Single": 3,
+            "Double": 2
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 139,
+            "Triple": 12,
+            "Double": 46,
+            "Single": 11
+        },
+        "MINDEN HALL": {
+            "Total Beds": 194,
+            "Triple": 21,
+            "Suite (3)": 15,
+            "Double": 19,
+            "Quad": 12
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 106,
+            "Double": 50,
+            "Single": 6
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 129,
+            "Single": 9,
+            "Double": 60
+        },
+        "SLATER HALL": {
+            "Total Beds": 63,
+            "Double": 18,
+            "Triple": 9
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 137,
+            "Single": 73,
+            "Suite (4)": 16
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 245,
+            "Double": 108,
+            "Single": 2,
+            "Triple": 9
+        },
+        "YOUNG ORCHARD 2": {
+            "Total Beds": 4,
+            "Suite (4)": 1
+        }
+    },
+    "April 9, 12:50 PM": {
+        "BARBOUR HALL": {
+            "Total Beds": 78,
+            "Suite (3)": 1,
+            "Triple": 15,
+            "Double": 10,
+            "Suite (5)": 2
+        },
+        "BUXTON HOUSE": {
+            "Total Beds": 72,
+            "Double": 34,
+            "Single": 4
+        },
+        "CASWELL HALL": {
+            "Total Beds": 184,
+            "Double": 92
+        },
+        "CHAPIN HOUSE": {
+            "Total Beds": 155,
+            "Double": 74,
+            "Single": 7
+        },
+        "DANOFF HALL": {
+            "Total Beds": 8,
+            "Suite (4)": 2
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 131,
+            "Double": 48,
+            "Triple": 9,
+            "Single": 8
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 94,
+            "Double": 40,
+            "Single": 14
+        },
+        "GRAD CENTER A": {
+            "Total Beds": 58,
+            "Single": 58
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 90,
+            "Single": 90
+        },
+        "GRAD CENTER C": {
+            "Total Beds": 43,
+            "Single": 43
+        },
+        "GRAD CENTER D": {
+            "Total Beds": 77,
+            "Single": 77
+        },
+        "GREGORIAN QUAD A": {
+            "Total Beds": 129,
+            "Suite (4)": 1,
+            "Double": 22,
+            "Triple": 27
+        },
+        "GREGORIAN QUAD B": {
+            "Total Beds": 4,
+            "Double": 2
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 112,
+            "Double": 52,
+            "Single": 8
+        },
+        "HEGEMAN HALL": {
+            "Total Beds": 253,
+            "Suite (3)": 79,
+            "Double": 8
+        },
+        "HOPE COLLEGE": {
+            "Total Beds": 72,
+            "Double": 36
+        },
+        "KING HOUSE": {
+            "Total Beds": 21,
+            "Double": 10,
+            "Single": 1
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 120,
+            "Double": 60
+        },
+        "MACHADO HOUSE": {
+            "Total Beds": 7,
+            "Single": 3,
+            "Double": 2
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 138,
+            "Triple": 12,
+            "Double": 46,
+            "Single": 10
+        },
+        "MINDEN HALL": {
+            "Total Beds": 178,
+            "Triple": 21,
+            "Suite (3)": 11,
+            "Double": 17,
+            "Quad": 12
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 105,
+            "Double": 50,
+            "Single": 5
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 129,
+            "Single": 9,
+            "Double": 60
+        },
+        "SLATER HALL": {
+            "Total Beds": 64,
+            "Double": 18,
+            "Triple": 9,
+            "Single": 1
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 129,
+            "Single": 65,
+            "Suite (4)": 16
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 243,
+            "Double": 108,
+            "Triple": 9
+        }
+    },
+    "April 9, 1:30 PM": {
+        "BARBOUR HALL": {
+            "Total Beds": 65,
+            "Triple": 15,
+            "Double": 10
+        },
+        "BUXTON HOUSE": {
+            "Total Beds": 72,
+            "Double": 34,
+            "Single": 4
+        },
+        "CASWELL HALL": {
+            "Total Beds": 184,
+            "Double": 92
+        },
+        "CHAPIN HOUSE": {
+            "Total Beds": 155,
+            "Double": 74,
+            "Single": 7
+        },
+        "DANOFF HALL": {
+            "Total Beds": 8,
+            "Suite (4)": 2
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 131,
+            "Double": 48,
+            "Triple": 9,
+            "Single": 8
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 92,
+            "Double": 40,
+            "Single": 12
+        },
+        "GRAD CENTER A": {
+            "Total Beds": 46,
+            "Single": 46
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 84,
+            "Single": 84
+        },
+        "GRAD CENTER C": {
+            "Total Beds": 40,
+            "Single": 40
+        },
+        "GRAD CENTER D": {
+            "Total Beds": 71,
+            "Single": 71
+        },
+        "GREGORIAN QUAD A": {
+            "Total Beds": 117,
+            "Double": 18,
+            "Triple": 27
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 110,
+            "Double": 52,
+            "Single": 6
+        },
+        "HEGEMAN HALL": {
+            "Total Beds": 190,
+            "Suite (3)": 58,
+            "Double": 8
+        },
+        "HOPE COLLEGE": {
+            "Total Beds": 72,
+            "Double": 36
+        },
+        "KING HOUSE": {
+            "Total Beds": 21,
+            "Double": 10,
+            "Single": 1
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 120,
+            "Double": 60
+        },
+        "MACHADO HOUSE": {
+            "Total Beds": 6,
+            "Single": 2,
+            "Double": 2
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 136,
+            "Triple": 12,
+            "Double": 46,
+            "Single": 8
+        },
+        "MINDEN HALL": {
+            "Total Beds": 130,
+            "Triple": 21,
+            "Suite (3)": 3,
+            "Double": 13,
+            "Quad": 8
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 105,
+            "Double": 50,
+            "Single": 5
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 129,
+            "Single": 9,
+            "Double": 60
+        },
+        "SLATER HALL": {
+            "Total Beds": 63,
+            "Double": 18,
+            "Triple": 9
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 122,
+            "Single": 58,
+            "Suite (4)": 16
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 243,
+            "Double": 108,
+            "Triple": 9
+        }
+    },
+    "April 9, 2:30 PM": {
+        "BARBOUR HALL": {
+            "Total Beds": 61,
+            "Triple": 15,
+            "Double": 8
+        },
+        "BUXTON HOUSE": {
+            "Total Beds": 71,
+            "Double": 34,
+            "Single": 3
+        },
+        "CASWELL HALL": {
+            "Total Beds": 176,
+            "Double": 88
+        },
+        "CHAPIN HOUSE": {
+            "Total Beds": 154,
+            "Double": 74,
+            "Single": 6
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 130,
+            "Double": 48,
+            "Triple": 9,
+            "Single": 7
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 91,
+            "Double": 40,
+            "Single": 11
+        },
+        "GRAD CENTER A": {
+            "Total Beds": 28,
+            "Single": 28
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 69,
+            "Single": 69
+        },
+        "GRAD CENTER C": {
+            "Total Beds": 35,
+            "Single": 35
+        },
+        "GRAD CENTER D": {
+            "Total Beds": 61,
+            "Single": 61
+        },
+        "GREGORIAN QUAD A": {
+            "Total Beds": 113,
+            "Double": 16,
+            "Triple": 27
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 108,
+            "Double": 52,
+            "Single": 4
+        },
+        "HEGEMAN HALL": {
+            "Total Beds": 119,
+            "Suite (3)": 37,
+            "Double": 4
+        },
+        "HOPE COLLEGE": {
+            "Total Beds": 72,
+            "Double": 36
+        },
+        "KING HOUSE": {
+            "Total Beds": 21,
+            "Double": 10,
+            "Single": 1
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 120,
+            "Double": 60
+        },
+        "MACHADO HOUSE": {
+            "Total Beds": 5,
+            "Single": 1,
+            "Double": 2
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 133,
+            "Triple": 12,
+            "Double": 46,
+            "Single": 5
+        },
+        "MINDEN HALL": {
+            "Total Beds": 88,
+            "Triple": 15,
+            "Suite (3)": 1,
+            "Double": 4,
+            "Quad": 8
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 104,
+            "Double": 50,
+            "Single": 4
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 125,
+            "Single": 5,
+            "Double": 60
+        },
+        "SLATER HALL": {
+            "Total Beds": 59,
+            "Double": 16,
+            "Triple": 9
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 103,
+            "Single": 55,
+            "Suite (4)": 12
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 243,
+            "Double": 108,
+            "Triple": 9
+        }
+    },
+    "April 9, 3:30 PM": {
+        "BARBOUR HALL": {
+            "Total Beds": 44,
+            "Triple": 12,
+            "Double": 4
+        },
+        "BUXTON HOUSE": {
+            "Total Beds": 70,
+            "Double": 34,
+            "Single": 2
+        },
+        "CASWELL HALL": {
+            "Total Beds": 168,
+            "Double": 84
+        },
+        "CHAPIN HOUSE": {
+            "Total Beds": 150,
+            "Double": 74,
+            "Single": 2
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 130,
+            "Double": 48,
+            "Triple": 9,
+            "Single": 7
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 86,
+            "Double": 40,
+            "Single": 6
+        },
+        "GRAD CENTER A": {
+            "Total Beds": 23,
+            "Single": 23
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 59,
+            "Single": 59
+        },
+        "GRAD CENTER C": {
+            "Total Beds": 32,
+            "Single": 32
+        },
+        "GRAD CENTER D": {
+            "Total Beds": 50,
+            "Single": 50
+        },
+        "GREGORIAN QUAD A": {
+            "Total Beds": 92,
+            "Double": 10,
+            "Triple": 24
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 106,
+            "Double": 52,
+            "Single": 2
+        },
+        "HEGEMAN HALL": {
+            "Total Beds": 29,
+            "Suite (3)": 7,
+            "Double": 4
+        },
+        "HOPE COLLEGE": {
+            "Total Beds": 72,
+            "Double": 36
+        },
+        "KING HOUSE": {
+            "Total Beds": 21,
+            "Double": 10,
+            "Single": 1
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 120,
+            "Double": 60
+        },
+        "MACHADO HOUSE": {
+            "Total Beds": 5,
+            "Single": 1,
+            "Double": 2
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 124,
+            "Triple": 12,
+            "Double": 44
+        },
+        "MINDEN HALL": {
+            "Total Beds": 48,
+            "Triple": 3,
+            "Suite (3)": 1,
+            "Quad": 8,
+            "Double": 2
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 102,
+            "Double": 50,
+            "Single": 2
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 114,
+            "Double": 56,
+            "Single": 2
+        },
+        "SLATER HALL": {
+            "Total Beds": 46,
+            "Double": 14,
+            "Triple": 6
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 67,
+            "Single": 51,
+            "Suite (4)": 4
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 243,
+            "Double": 108,
+            "Triple": 9
+        }
+    },
+    "April 10, 9:20 AM": {
+        "BARBOUR HALL": {
+            "Total Beds": 40,
+            "Triple": 12,
+            "Double": 2
+        },
+        "BUXTON HOUSE": {
+            "Total Beds": 68,
+            "Double": 34
+        },
+        "CASWELL HALL": {
+            "Total Beds": 152,
+            "Double": 76
+        },
+        "CHAPIN HOUSE": {
+            "Total Beds": 148,
+            "Double": 74
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 123,
+            "Double": 48,
+            "Triple": 9
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 76,
+            "Double": 38
+        },
+        "GRAD CENTER A": {
+            "Total Beds": 9,
+            "Single": 9
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 29,
+            "Single": 29
+        },
+        "GRAD CENTER C": {
+            "Total Beds": 22,
+            "Single": 22
+        },
+        "GRAD CENTER D": {
+            "Total Beds": 2,
+            "Single": 2
+        },
+        "GREGORIAN QUAD A": {
+            "Total Beds": 80,
+            "Double": 4,
+            "Triple": 24
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 104,
+            "Double": 52
+        },
+        "HEGEMAN HALL": {
+            "Total Beds": 6,
+            "Suite (3)": 2
+        },
+        "HOPE COLLEGE": {
+            "Total Beds": 68,
+            "Double": 34
+        },
+        "KING HOUSE": {
+            "Total Beds": 20,
+            "Double": 10
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 120,
+            "Double": 60
+        },
+        "MACHADO HOUSE": {
+            "Total Beds": 4,
+            "Double": 2
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 124,
+            "Triple": 12,
+            "Double": 44
+        },
+        "MINDEN HALL": {
+            "Total Beds": 32,
+            "Quad": 8
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 96,
+            "Double": 48
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 112,
+            "Double": 56
+        },
+        "SLATER HALL": {
+            "Total Beds": 33,
+            "Double": 12,
+            "Triple": 3
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 52,
+            "Single": 36,
+            "Suite (4)": 4
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 243,
+            "Double": 108,
+            "Triple": 9
+        }
+    },
+    "April 10, 10:30 AM": {
+        "BARBOUR HALL": {
+            "Total Beds": 36,
+            "Triple": 12
+        },
+        "BUXTON HOUSE": {
+            "Total Beds": 68,
+            "Double": 34
+        },
+        "CASWELL HALL": {
+            "Total Beds": 148,
+            "Double": 74
+        },
+        "CHAPIN HOUSE": {
+            "Total Beds": 140,
+            "Double": 70
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 128,
+            "Triple": 12,
+            "Double": 46
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 72,
+            "Double": 36
+        },
+        "GRAD CENTER A": {
+            "Total Beds": 3,
+            "Single": 3
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 24,
+            "Single": 24
+        },
+        "GRAD CENTER C": {
+            "Total Beds": 20,
+            "Single": 20
+        },
+        "GREGORIAN QUAD A": {
+            "Total Beds": 62,
+            "Suite (4)": 2,
+            "Triple": 18
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 92,
+            "Double": 46
+        },
+        "HEGEMAN HALL": {
+            "Total Beds": 6,
+            "Suite (3)": 2
+        },
+        "HOPE COLLEGE": {
+            "Total Beds": 64,
+            "Double": 32
+        },
+        "KING HOUSE": {
+            "Total Beds": 12,
+            "Double": 6
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 116,
+            "Double": 58
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 120,
+            "Triple": 12,
+            "Double": 42
+        },
+        "MINDEN HALL": {
+            "Total Beds": 32,
+            "Quad": 8
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 96,
+            "Double": 48
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 112,
+            "Double": 56
+        },
+        "SLATER HALL": {
+            "Total Beds": 29,
+            "Double": 10,
+            "Triple": 3
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 44,
+            "Single": 28,
+            "Suite (4)": 4
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 243,
+            "Double": 108,
+            "Triple": 9
+        }
+    },
+    "April 10, 11:30 AM": {
+        "BARBOUR HALL": {
+            "Total Beds": 36,
+            "Triple": 12
+        },
+        "BUXTON HOUSE": {
+            "Total Beds": 64,
+            "Double": 32
+        },
+        "CASWELL HALL": {
+            "Total Beds": 140,
+            "Double": 70
+        },
+        "CHAPIN HOUSE": {
+            "Total Beds": 140,
+            "Double": 70
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 116,
+            "Triple": 12,
+            "Double": 40
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 64,
+            "Double": 32
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 19,
+            "Single": 19
+        },
+        "GRAD CENTER C": {
+            "Total Beds": 15,
+            "Single": 15
+        },
+        "GREGORIAN QUAD A": {
+            "Total Beds": 36,
+            "Triple": 12
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 88,
+            "Double": 44
+        },
+        "HEGEMAN HALL": {
+            "Total Beds": 6,
+            "Suite (3)": 2
+        },
+        "HOPE COLLEGE": {
+            "Total Beds": 60,
+            "Double": 30
+        },
+        "KING HOUSE": {
+            "Total Beds": 12,
+            "Double": 6
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 116,
+            "Double": 58
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 120,
+            "Triple": 12,
+            "Double": 42
+        },
+        "MINDEN HALL": {
+            "Total Beds": 32,
+            "Quad": 8
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 96,
+            "Double": 48
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 112,
+            "Double": 56
+        },
+        "SLATER HALL": {
+            "Total Beds": 12,
+            "Double": 6
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 36,
+            "Single": 20,
+            "Suite (4)": 4
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 231,
+            "Double": 102,
+            "Triple": 9
+        }
+    },
+    "April 10, 12:45 PM": {
+        "BARBOUR HALL": {
+            "Total Beds": 36,
+            "Triple": 12
+        },
+        "BUXTON HOUSE": {
+            "Total Beds": 60,
+            "Double": 30
+        },
+        "CASWELL HALL": {
+            "Total Beds": 136,
+            "Double": 68
+        },
+        "CHAPIN HOUSE": {
+            "Total Beds": 140,
+            "Double": 70
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 116,
+            "Triple": 12,
+            "Double": 40
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 64,
+            "Double": 32
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 13,
+            "Single": 13
+        },
+        "GRAD CENTER C": {
+            "Total Beds": 11,
+            "Single": 11
+        },
+        "GREGORIAN QUAD A": {
+            "Total Beds": 36,
+            "Triple": 12
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 84,
+            "Double": 42
+        },
+        "HOPE COLLEGE": {
+            "Total Beds": 56,
+            "Double": 28
+        },
+        "KING HOUSE": {
+            "Total Beds": 12,
+            "Double": 6
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 112,
+            "Double": 56
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 112,
+            "Triple": 12,
+            "Double": 38
+        },
+        "MINDEN HALL": {
+            "Total Beds": 32,
+            "Quad": 8
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 96,
+            "Double": 48
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 108,
+            "Double": 54
+        },
+        "SLATER HALL": {
+            "Total Beds": 8,
+            "Double": 4
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 30,
+            "Single": 14,
+            "Suite (4)": 4
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 215,
+            "Double": 94,
+            "Triple": 9
+        }
+    },
+    "April 10, 2:30 PM": {
+        "BARBOUR HALL": {
+            "Total Beds": 9,
+            "Triple": 3
+        },
+        "BUXTON HOUSE": {
+            "Total Beds": 48,
+            "Double": 24
+        },
+        "CASWELL HALL": {
+            "Total Beds": 80,
+            "Double": 40
+        },
+        "CHAPIN HOUSE": {
+            "Total Beds": 116,
+            "Double": 58
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 79,
+            "Triple": 9,
+            "Double": 26
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 60,
+            "Double": 30
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 5,
+            "Single": 5
+        },
+        "GRAD CENTER C": {
+            "Total Beds": 3,
+            "Single": 3
+        },
+        "GREGORIAN QUAD A": {
+            "Total Beds": 18,
+            "Triple": 6
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 68,
+            "Double": 34
+        },
+        "HOPE COLLEGE": {
+            "Total Beds": 36,
+            "Double": 18
+        },
+        "KING HOUSE": {
+            "Total Beds": 8,
+            "Double": 4
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 80,
+            "Double": 40
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 100,
+            "Triple": 12,
+            "Double": 32
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 72,
+            "Double": 36
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 100,
+            "Double": 50
+        },
+        "SLATER HALL": {
+            "Total Beds": 4,
+            "Double": 2
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 23,
+            "Single": 7,
+            "Suite (4)": 4
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 175,
+            "Double": 74,
+            "Triple": 9
+        }
+    },
+    "April 10, 3:35 PM": {
+        "BUXTON HOUSE": {
+            "Total Beds": 20,
+            "Double": 10
+        },
+        "CASWELL HALL": {
+            "Total Beds": 24,
+            "Double": 12
+        },
+        "CHAPIN HOUSE": {
+            "Total Beds": 84,
+            "Double": 42
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 45,
+            "Double": 18,
+            "Triple": 3
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 52,
+            "Double": 26
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 4,
+            "Single": 4
+        },
+        "GRAD CENTER C": {
+            "Total Beds": 3,
+            "Single": 3
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 44,
+            "Double": 22
+        },
+        "KING HOUSE": {
+            "Total Beds": 8,
+            "Double": 4
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 60,
+            "Double": 30
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 50,
+            "Triple": 6,
+            "Double": 16
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 64,
+            "Double": 32
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 96,
+            "Double": 48
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 23,
+            "Single": 7,
+            "Suite (4)": 4
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 89,
+            "Double": 40,
+            "Triple": 3
+        }
+    },
+    "April 10, 4:35 PM": {
+        "BUXTON HOUSE": {
+            "Total Beds": 12,
+            "Double": 6
+        },
+        "CASWELL HALL": {
+            "Total Beds": 24,
+            "Double": 12
+        },
+        "CHAPIN HOUSE": {
+            "Total Beds": 44,
+            "Double": 22
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 37,
+            "Triple": 3,
+            "Double": 14
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 32,
+            "Double": 16
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 3,
+            "Single": 3
+        },
+        "GRAD CENTER C": {
+            "Total Beds": 3,
+            "Single": 3
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 28,
+            "Double": 14
+        },
+        "KING HOUSE": {
+            "Total Beds": 8,
+            "Double": 4
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 16,
+            "Double": 8
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 38,
+            "Triple": 6,
+            "Double": 10
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 40,
+            "Double": 20
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 92,
+            "Double": 46
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 7,
+            "Single": 7
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 53,
+            "Double": 22,
+            "Triple": 3
+        }
+    },
+    "April 11, 10:15 AM": {
+        "BUXTON HOUSE": {
+            "Total Beds": 4,
+            "Double": 2
+        },
+        "CASWELL HALL": {
+            "Total Beds": 24,
+            "Double": 12
+        },
+        "DIMAN HOUSE": {
+            "Total Beds": 4,
+            "Double": 2
+        },
+        "GODDARD HOUSE": {
+            "Total Beds": 20,
+            "Double": 10
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 2,
+            "Single": 2
+        },
+        "HARKNESS HOUSE": {
+            "Total Beds": 12,
+            "Double": 6
+        },
+        "KING HOUSE": {
+            "Total Beds": 8,
+            "Double": 4
+        },
+        "LITTLEFIELD HALL": {
+            "Total Beds": 4,
+            "Double": 2
+        },
+        "MARCY HOUSE": {
+            "Total Beds": 25,
+            "Double": 8,
+            "Triple": 3
+        },
+        "OLNEY HOUSE": {
+            "Total Beds": 16,
+            "Double": 8
+        },
+        "PERKINS HALL": {
+            "Total Beds": 328,
+            "Double": 164
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 80,
+            "Double": 40
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 6,
+            "Single": 6
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 13,
+            "Triple": 3,
+            "Double": 2
+        }
+    },
+    "April 11, 11:30 AM": {
+        "CASWELL HALL": {
+            "Total Beds": 24,
+            "Double": 12
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 2,
+            "Single": 2
+        },
+        "PERKINS HALL": {
+            "Total Beds": 296,
+            "Double": 148
+        },
+        "SEARS HOUSE": {
+            "Total Beds": 4,
+            "Double": 2
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 6,
+            "Single": 6
+        },
+        "WAYLAND HOUSE": {
+            "Total Beds": 9,
+            "Triple": 3
+        }
+    },
+    "April 11, 12:35 PM": {
+        "CASWELL HALL": {
+            "Total Beds": 24,
+            "Double": 12
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 2,
+            "Single": 2
+        },
+        "PERKINS HALL": {
+            "Total Beds": 228,
+            "Double": 114
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 6,
+            "Single": 6
+        }
+    },
+    "April 11, 1:45 PM": {
+        "CASWELL HALL": {
+            "Total Beds": 24,
+            "Double": 12
+        },
+        "GRAD CENTER B": {
+            "Total Beds": 1,
+            "Single": 1
+        },
+        "PERKINS HALL": {
+            "Total Beds": 168,
+            "Double": 84
+        },
+        "STERNLICHT COMMONS": {
+            "Total Beds": 6,
+            "Single": 6
+        }
+    }
+}
