@@ -149,9 +149,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     tooltip: {
                         callbacks: {
                             label: function (context) {
-                                const value = Math.round(context.raw);
+                                const value = parseFloat(context.raw).toFixed(1);
+                                const building = context.dataset.label;
                                 const viewType = document.getElementById('data-toggle').value;
-                                return viewType === 'available-beds' ? `${value}%` : `${value} beds`;
+                                return viewType === 'available-beds' 
+                                    ? `${building}: ${value}% available` 
+                                    : `${building}: ${value} beds available`;
                             }
                         }
                     }
@@ -224,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
             parseCSV('2024_Clean', '09APR_0930.csv', roomType, housingPool).then(startRooms => {
                 const totalCurrent = curRooms["Total"];
                 const totalStart = startRooms["Total"];
-                const percent = ((totalCurrent / totalStart) * 100).toFixed(2);
+                const percent = ((totalCurrent / totalStart) * 100).toFixed(1);
                 const percentElement = document.createElement('div');
                 percentElement.style.fontSize = '2em';
                 percentElement.style.fontWeight = 'bold';
