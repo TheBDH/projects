@@ -227,6 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
             parseCSV('2024_Clean', '09APR_0930.csv', roomType, housingPool).then(startRooms => {
                 const totalCurrent = curRooms["Total"];
                 const totalStart = startRooms["Total"];
+                const totalSuites = curRooms["Total Suites"];
                 const percent = ((totalCurrent / totalStart) * 100).toFixed(1);
                 const percentElement = document.createElement('div');
                 percentElement.style.fontSize = '2em';
@@ -250,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const percentOutput = document.getElementById('percent-output');
                 percentOutput.innerHTML = ''; // Clear previous content
                 percentOutput.appendChild(percentElement);
-                let output = `${totalCurrent}/${totalStart} total matching rooms available<br><br>`;
+                let output = `${totalCurrent}/${totalStart} total matching rooms available (including ${totalSuites} suites)<br><br>`;
 
                 // Sort buildings by the number of current matching rooms in descending order
                 const sortedBuildings = Object.keys(curRooms)
@@ -260,16 +261,158 @@ document.addEventListener('DOMContentLoaded', function () {
                 sortedBuildings.forEach(building => {
                     const current = curRooms[building]["Matching Rooms"];
                     const start = startRooms[building] ? startRooms[building]["Matching Rooms"] : 0;
+                    const suites = curRooms[building]["Matching Suites"] || 0;
                     const titleCaseBuilding = building.split(' ')
                         .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
                         .join(' ');
-                    output += `${titleCaseBuilding}: ${current}/${start}<br><br>`;
+                    output += `${titleCaseBuilding}: ${current}/${start}`;
+                    if (suites > 0) {
+                        output += ` (${suites} suites)`;
+                    }
+                    output += `<br><br>`;
                 });
 
                 document.getElementById('filter-output').innerHTML = output;
             });
         });
+        
+        generateGraphData();
 
+    }
+
+    function generateGraphData() {
+        const roomType = document.getElementById('room-type').value;
+        const housingPool = document.getElementById('housing-pool').value;
+
+        const csvFiles = [
+            "09APR_0930.csv", "09APR_1025.csv", "09APR_1125.csv", "09APR_1250.csv",
+            "09APR_1330.csv", "09APR_1430.csv", "09APR_1530.csv", "10APR_0920.csv",
+            "10APR_1030.csv", "10APR_1130.csv", "10APR_1245.csv", "10APR_1430.csv",
+            "10APR_1535.csv", "10APR_1635.csv", "11APR_1015.csv", "11APR_1130.csv",
+            "11APR_1235.csv", "11APR_1345.csv"
+        ];
+
+        const timeMap = {
+            "09APR_0930.csv": "April 9, 9:30 AM",
+            "09APR_1025.csv": "April 9, 10:25 AM",
+            "09APR_1125.csv": "April 9, 11:25 AM",
+            "09APR_1250.csv": "April 9, 12:50 PM",
+            "09APR_1330.csv": "April 9, 1:30 PM",
+            "09APR_1430.csv": "April 9, 2:30 PM",
+            "09APR_1530.csv": "April 9, 3:30 PM",
+            "10APR_0920.csv": "April 10, 9:20 AM",
+            "10APR_1030.csv": "April 10, 10:30 AM",
+            "10APR_1130.csv": "April 10, 11:30 AM",
+            "10APR_1245.csv": "April 10, 12:45 PM",
+            "10APR_1430.csv": "April 10, 2:30 PM",
+            "10APR_1535.csv": "April 10, 3:35 PM",
+            "10APR_1635.csv": "April 10, 4:35 PM",
+            "11APR_1015.csv": "April 11, 10:15 AM",
+            "11APR_1130.csv": "April 11, 11:30 AM",
+            "11APR_1235.csv": "April 11, 12:35 PM",
+            "11APR_1345.csv": "April 11, 1:45 PM"
+        };
+
+        const graphData = {};
+
+        Promise.all(csvFiles.map(file => parseCSV('2024_Clean', file, roomType, housingPool)))
+            .then(results => {
+                results.forEach((curRooms, index) => {
+                    const fileName = csvFiles[index];
+                    const time = timeMap[fileName];
+                    graphData[time] = {
+                        total: curRooms["Total"],
+                        totalSuites: curRooms["Total Suites"],
+                        buildings: {}
+                    };
+
+                    Object.keys(curRooms).forEach(building => {
+                        if (building !== "Total" && building !== "Total Suites") {
+                            graphData[time].buildings[building] = {
+                                matchingRooms: curRooms[building]["Matching Rooms"] || 0,
+                                matchingSuites: curRooms[building]["Matching Suites"] || 0
+                            };
+                        }
+                    });
+                });
+                renderFilterGraph(graphData);
+                console.log(graphData); // Output the graph data for debugging or further use
+            })
+            .catch(error => console.error('Error generating graph data:', error));
+    }
+
+    function renderFilterGraph(graphData) {
+        const filterGraphBox = document.getElementById('filter-graph-box');
+        filterGraphBox.innerHTML = ''; // Clear any existing content
+        const canvas = document.createElement('canvas');
+        canvas.height = 400; // Set canvas height explicitly
+        filterGraphBox.appendChild(canvas);
+        console.log(graphData);
+        if (!graphData || Object.keys(graphData).length === 0) {
+            console.error('Invalid or empty graphData provided to renderFilterGraph.');
+            return;
+        }
+        const labels = Object.keys(graphData);
+        const datasets = Object.keys(graphData[labels[0]].buildings).map(building => {
+            const vibrantColors = [
+                '#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#A133FF',
+                '#33FFF5', '#F5FF33', '#FF8C33', '#33FF8C', '#8C33FF',
+                '#FF3333', '#33FF33', '#3333FF', '#FF33FF', '#33FFFF',
+                '#FFFF33', '#FF6633', '#33FF66', '#6633FF', '#FF3366',
+                '#66FF33', '#3366FF', '#FF9933', '#33FF99', '#9933FF'
+            ];
+            const color = vibrantColors[Object.keys(graphData[labels[0]].buildings).indexOf(building) % vibrantColors.length];
+            return {
+                label: building,
+                data: labels.map(label => graphData[label].buildings[building]?.matchingRooms || 0),
+                fill: false,
+                backgroundColor: color,
+                borderColor: color,
+                tension: 0.1
+            };
+        });
+
+        new Chart(canvas, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Time',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Matching Rooms',
+                            font: {
+                                size: 14
+                            }
+                        },
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 12
+                            }
+                        }
+                    }
+                }
+            }
+        });
     }
 
     function parseCSV(inputDir, file, size, pool) {
@@ -277,7 +420,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const countedSuites = new Set();
         const countedRooms = new Set();
         const housingData = {};
-        const matchingRooms = {"Total": 0};
+        const matchingRooms = {"Total": 0, "Total Suites": 0};
 
         return fetch(csvFile)
             .then(response => {
@@ -315,7 +458,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         // Check for matching
                         if ((size === "any" || parseInt(capacity) === parseInt(size))  && (columns[8].includes(pool)) && !countedRooms.has(suiteID)) {
-                            console.log(suiteID)
                             countedRooms.add(suiteID);
                             if (suiteID.includes("GREG A 125")) {
                                 countedRooms.add("GREG A 125 126");
@@ -325,10 +467,23 @@ document.addEventListener('DOMContentLoaded', function () {
                                 countedRooms.add("GREG A 125 132");
                             }
                             matchingRooms["Total"] += 1;
+                            if (roomType.includes('Suite')) {
+                                matchingRooms["Total Suites"] += 1;
+                            }
                             if (!matchingRooms[building]) {
                                 matchingRooms[building] = { "Matching Rooms": 1 };
+                                if (roomType.includes('Suite')) {
+                                    matchingRooms[building]["Matching Suites"] = 1;
+                                }
                             } else {
                                 matchingRooms[building]["Matching Rooms"] += 1;
+                                if (roomType.includes('Suite')) {
+                                    if (!matchingRooms[building]["Matching Suites"]) {
+                                        matchingRooms[building]["Matching Suites"] = 1;
+                                    } else {
+                                        matchingRooms[building]["Matching Suites"] += 1;
+                                    }
+                                }
                             }
                         }
 
@@ -353,7 +508,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     }
                 });
-                console.log(matchingRooms);
                 return matchingRooms; // Output the summarized data
             })
             .catch(error => console.error('Error parsing the CSV file:', error));
