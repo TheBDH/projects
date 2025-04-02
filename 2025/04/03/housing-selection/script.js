@@ -97,79 +97,91 @@ document.addEventListener('DOMContentLoaded', function () {
         const chart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: labels,
-                datasets: datasets
+            labels: labels,
+            datasets: datasets
             },
             options: {
-                responsive: true,
-                maintainAspectRatio: false, // Allow the chart to fill the canvas
-                indexAxis: 'y', // Rotate the chart by swapping x and y axes
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        position: 'top', // Move x-axis label to the top
-                        ticks: {
-                            color: '#f0f0f0' // Set x-axis labels color to white
-                        },
-                        title: {
-                            display: true,
-                            text: document.getElementById('data-toggle').value === 'available-beds'
-                                ? 'Percent of Beds Available'
-                                : 'Total Beds Available',
-                            color: '#f0f0f0', // Set x-axis title color to white
-                            font: {
-                                size: 14,
-                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
-                            }
-                        }
-                    },
-                    y: {
-                        type: 'category',
-                        ticks: {
-                            color: '#f0f0f0' // Set y-axis labels color to white
-                        }
-                    }
+            responsive: true,
+            maintainAspectRatio: false, // Allow the chart to fill the canvas
+            indexAxis: 'y', // Rotate the chart by swapping x and y axes
+            scales: {
+                x: {
+                beginAtZero: true,
+                position: 'top', // Move x-axis label to the top
+                ticks: {
+                    color: '#f0f0f0' // Set x-axis labels color to white
                 },
-                plugins: {
-                    legend: {
-                        labels: {
-                            boxWidth: 8,
-                            boxHeight: 8,
-                            borderRadius: 0.5,
-                            useBorderRadius: true,
-                            padding: 15,
-                            font: {
-                                size: 12,
-                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
-                            },
-                            pointStyle: 'rect',
-                            color: '#f0f0f0' // Set legend text color to white
-                        }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function (context) {
-                                const value = parseFloat(context.raw).toFixed(1);
-                                const building = context.dataset.label;
-                                const viewType = document.getElementById('data-toggle').value;
-                                return viewType === 'available-beds' 
-                                    ? `${building}: ${value}% available` 
-                                    : `${building}: ${value} beds available`;
-                            }
-                        }
-                    }
-                },
-                elements: {
-                    line: {
-                        borderWidth: window.innerWidth <= 768 ? 5 : 8 // Make lines thinner on mobile
-                    },
-                    point: {
-                        radius: window.innerWidth <= 768 ? 4 : 6, // Make points smaller on mobile
-                        hoverRadius: window.innerWidth <= 768 ? 4 : 6 // Adjust hover size on mobile
+                title: {
+                    display: true,
+                    text: document.getElementById('data-toggle').value === 'available-beds'
+                    ? 'Percent of Beds Available'
+                    : 'Total Beds Available',
+                    color: '#f0f0f0', // Set x-axis title color to white
+                    font: {
+                    size: 14,
+                    family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
                     }
                 }
+                },
+                y: {
+                type: 'category',
+                ticks: {
+                    color: '#f0f0f0' // Set y-axis labels color to white
+                }
+                }
+            },
+            plugins: {
+                legend: {
+                labels: {
+                    boxWidth: 8,
+                    boxHeight: 8,
+                    borderRadius: 0.5,
+                    useBorderRadius: true,
+                    padding: 15,
+                    font: {
+                    size: 12,
+                    family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                    },
+                    pointStyle: 'rect',
+                    color: '#f0f0f0' // Set legend text color to white
+                }
+                },
+                tooltip: {
+                callbacks: {
+                    label: function (context) {
+                    const value = parseFloat(context.raw).toFixed(1);
+                    const building = context.dataset.label;
+                    const viewType = document.getElementById('data-toggle').value;
+                    return viewType === 'available-beds' 
+                        ? `${building}: ${value}% available` 
+                        : `${building}: ${value} beds available`;
+                    }
+                }
+                }
+            },
+            elements: {
+                line: {
+                borderWidth: window.innerWidth <= 768 ? 5 : 8 // Make lines thinner on mobile
+                },
+                point: {
+                radius: window.innerWidth <= 768 ? 4 : 6, // Make points smaller on mobile
+                hoverRadius: window.innerWidth <= 768 ? 4 : 6 // Adjust hover size on mobile
+                }
+            }
             }
         });
+
+        // Function to toggle visibility of all lines
+        function toggleAllLinesVisibility() {
+            chart.data.datasets.forEach(dataset => {
+                dataset.hidden = !dataset.hidden; // Toggle the hidden property
+            });
+            chart.update(); // Update the chart to reflect changes
+        }
+
+        // Fetch the toggle button from the HTML
+        const toggleButton = document.getElementById('toggle-lines-button');
+        toggleButton.addEventListener('click', toggleAllLinesVisibility);
 
         document.getElementById('data-toggle').addEventListener('change', function () {
             const viewType = this.value;
