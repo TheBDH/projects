@@ -7,7 +7,19 @@ Chart.register(annotationPlugin);
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Initialize ScrollMagic controller
+    const controller = new ScrollMagic.Controller();
 
+    // Create a ScrollMagic scene for the background effect
+    new ScrollMagic.Scene({
+        triggerElement: '#BACKGROUND', // Ensure the correct ID selector is used
+        triggerHook: 0, // Start the animation when the element is at the middle of the viewport
+        duration: 0 // Infinite duration (no specific scroll distance)
+    })
+    .setClassToggle('body', 'hidden-background') // Add a class to the body to change the background
+    .on('enter', () => console.log('ScrollMagic scene triggered: background effect applied')) // Log when the scene is triggered
+    .addTo(controller); // Add the scene to the ScrollMagic controller
+        
     Promise.all([
         fetch('summaryHousingData.json').then(response => {
             if (!response.ok) {

@@ -104,6 +104,23 @@
         </div>
         <div style="height: 30vh;"></div>
         <div id="data-jump-1"></div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const blackCover = document.createElement("div");
+                blackCover.id = "black-cover";
+                blackCover.style.position = "absolute";
+                blackCover.style.left = "0";
+                blackCover.style.width = "100%";
+                blackCover.style.height = "500vh";
+                blackCover.style.backgroundColor = "black";
+                blackCover.style.zIndex = "-1";
+
+                const distanceFromTop = document.getElementById('data-jump-1').offsetTop;
+                blackCover.style.top = `${distanceFromTop}px`;
+
+                document.body.appendChild(blackCover);
+            });
+        </script>
         <div style="height: 2vh;"></div>
         <h2>Beds available over Time</h2>
         <div style="text-align: center;">
@@ -113,6 +130,7 @@
                 <option value="total-beds">Total Available</option>
             </select>
         </div>
+        <div id="BACKGROUND"></div>
         <div style="text-align: center; margin-top: 20px;">
             <button id="toggle-lines-button" class="enter-button" style="margin: 10px;" onclick="toggleAllLinesVisibility()">
                 Toggle All Dorms

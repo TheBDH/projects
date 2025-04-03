@@ -1,8 +1,17 @@
 body {
+    background-image: url('images/Ellis Rougeou.JPG'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     margin: 0px;
     background-color: #000000;
     color: white;
+    background-attachment: fixed; /* Reset to default when background-active is removed */
+}
+
+.hidden-background {
+    background-image: none;
+    background-color: #000000; /* Fallback color */
 }
 
 .text-box {
