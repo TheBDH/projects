@@ -82,8 +82,12 @@ h2 {
 }
 
 #heading p {
-    text-align: left;
+    text-align: center;
     font-style: italic;
+}
+
+p {
+    font-family: "freight-text-pro", "Georgia", "Times", serif;;
 }
 
 #byline {
