@@ -171,6 +171,23 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     },
                     tooltip: {
+                        enabled: true, // Enable/disable the tooltip
+                        titleColor: '#ffffff', // Title font color
+                        bodyColor: '#ffffff', // Body font color
+                        borderWidth: 2, // Border width
+                        titleFont: {
+                            family: "'Roboto', 'Helvetica', 'Arial', sans-serif", // Title font family
+                            size: 12 // Title font size
+                        },
+                        bodyFont: {
+                            family: "'Roboto', 'Helvetica', 'Arial', sans-serif", // Body font family
+                            size: 12, // Body font size
+                        },
+                        padding: 8, // Padding around tooltip
+                        caretSize: 6, // Size of the caret (triangle pointer)
+                        cornerRadius: 6, // Tooltip corner radius
+                        displayColors: true, // Show dataset color box
+                        usePointStyle: true,
                         callbacks: {
                             label: function (context) {
                                 const value = parseFloat(context.raw).toFixed(1);
@@ -179,6 +196,12 @@ document.addEventListener('DOMContentLoaded', function () {
                                 return viewType === 'available-beds'
                                     ? `${building}: ${value}% available`
                                     : `${building}: ${value} beds available`;
+                            },
+                            labelPointStyle: function (context) {
+                                return {
+                                    pointStyle: 'rectRounded', // Use rounded rectangle for the color box
+                                    rotation: 0, // Ensure no rotation
+                                };
                             }
                         }
                     }
@@ -555,6 +578,33 @@ document.addEventListener('DOMContentLoaded', function () {
                                         family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
                                     }
                                 }
+                            }
+                        }
+                    },
+                    tooltip: {
+                        enabled: true, // Enable/disable the tooltip
+                        titleColor: '#ffffff', // Title font color
+                        bodyColor: '#ffffff', // Body font color
+                        borderWidth: 2, // Border width
+                        titleFont: {
+                            family: "'Roboto', 'Helvetica', 'Arial', sans-serif", // Title font family
+                            size: 12 // Title font size
+                        },
+                        bodyFont: {
+                            family: "'Roboto', 'Helvetica', 'Arial', sans-serif", // Body font family
+                            size: 12, // Body font size
+                        },
+                        padding: 8, // Padding around tooltip
+                        caretSize: 6, // Size of the caret (triangle pointer)
+                        cornerRadius: 6, // Tooltip corner radius
+                        displayColors: true, // Show dataset color box
+                        usePointStyle: true,
+                        callbacks: {
+                            labelPointStyle: function (context) {
+                                return {
+                                    pointStyle: 'rectRounded', // Use rounded rectangle for the color box
+                                    rotation: 0, // Ensure no rotation
+                                };
                             }
                         }
                     }
