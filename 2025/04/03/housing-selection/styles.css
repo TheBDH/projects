@@ -48,6 +48,8 @@ h2 {
     text-align: center;
     font-family: 'freight-text-pro', 'Georgia', 'Times', serif;
     font-size: 2rem;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #heading h3 {
@@ -231,6 +233,7 @@ table tr:nth-child(even) {
 }
 
 @media (max-width: 750px) {
+
     #herald-logo {
         max-width: 200px;
     }
@@ -249,8 +252,8 @@ table tr:nth-child(even) {
         font-size: 0.9rem;
     }
 
-    #jump-button {
-        padding: 8px 16px;
+    .enter-button {
+        padding: 8px 14px;
         font-size: 14px;
     }
 
