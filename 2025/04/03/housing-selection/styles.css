@@ -239,4 +239,7 @@ table tr:nth-child(even) {
     .down-arrow {
         font-size: 1.5rem;
     }
+    #graph-box {
+        padding: 3%;
+    }
 }

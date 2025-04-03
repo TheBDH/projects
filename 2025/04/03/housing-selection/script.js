@@ -102,10 +102,18 @@ document.addEventListener('DOMContentLoaded', function () {
             };
         });
 
+        const formattedLabels = labels.map(label => {
+            const [date, time] = label.split(', ');
+            return [date, time];
+        });
+
+        const isMobile = window.innerWidth <= 768;
+        const fontSize = isMobile ? 11 : 14;
+
         const chart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: labels,
+                labels: formattedLabels,
                 datasets: datasets
             },
             options: {
@@ -117,7 +125,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         beginAtZero: true,
                         position: 'top', // Move x-axis label to the top
                         ticks: {
-                            color: '#f0f0f0' // Set x-axis labels color to white
+                            color: '#f0f0f0', // Set x-axis labels color to white
+                            font: {
+                                size: fontSize, // Change font size of x-axis value labels
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif" // Set font to Roboto
+                            }
                         },
                         title: {
                             display: true,
@@ -126,15 +138,19 @@ document.addEventListener('DOMContentLoaded', function () {
                                 : 'Total Beds Available',
                             color: '#f0f0f0', // Set x-axis title color to white
                             font: {
-                                size: 14,
-                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                                size: fontSize + 4,
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif" // Set font to Roboto
                             }
                         }
                     },
                     y: {
                         type: 'category',
                         ticks: {
-                            color: '#f0f0f0' // Set y-axis labels color to white
+                            color: '#f0f0f0', // Set y-axis labels color to white
+                            font: {
+                                size: fontSize, // Change font size of y-axis value labels
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif" // Set font to Roboto
+                            }
                         }
                     }
                 },
@@ -147,8 +163,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             useBorderRadius: true,
                             padding: 15,
                             font: {
-                                size: 12,
-                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                                size: fontSize - 1,
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif" // Set font to Roboto
                             },
                             pointStyle: 'rect',
                             color: '#f0f0f0' // Set legend text color to white
@@ -256,15 +272,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 percentElement.style.marginBottom = '20px';
 
                 if (percent >= 80) {
-                    percentElement.style.color = '#00933C'; // Dark green
+                    percentElement.style.color = '#33FF57'; // Vibrant green
                 } else if (percent >= 60) {
-                    percentElement.style.color = '#6CBE45'; // Light green
+                    percentElement.style.color = '#FFD700'; // Vibrant gold
                 } else if (percent >= 40) {
-                    percentElement.style.color = '#FCCC0A'; // Yellow
+                    percentElement.style.color = '#FF8C33'; // Vibrant orange
                 } else if (percent >= 20) {
-                    percentElement.style.color = '#FF6319'; // Orange
+                    percentElement.style.color = '#FF5733'; // Vibrant red-orange
                 } else {
-                    percentElement.style.color = '#EE352E'; // Red
+                    percentElement.style.color = '#FF3333'; // Vibrant red
                 }
 
                 percentElement.textContent = isNaN(percent) ? "No Matching Rooms" : `${percent}% Available`;
@@ -379,7 +395,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const matchingRoomsData = labels.map(label => graphData[label].total || 0);
         const matchingSuitesData = labels.map(label => graphData[label].totalSuites || 0);
 
-        const vibrantColors = ['#FF5733', '#33FF57']; // Colors for the two datasets
+        const vibrantColors = ['#33FF57', '#FF3333']; // Green and Red colors for the two datasets
 
         const datasets = [
             {
@@ -448,8 +464,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(labels[Math.floor(isValidTimeLabel)]);
         console.log(Chart.defaults.plugins.annotation);
 
-
-
         new Chart(canvas, {
             type: 'line',
             data: {
@@ -465,12 +479,16 @@ document.addEventListener('DOMContentLoaded', function () {
                             display: true,
                             text: 'Time',
                             font: {
-                                size: 14
+                                size: 14,
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
                             },
                             color: '#f0f0f0' // Set x-axis title color to white
                         },
                         ticks: {
-                            color: '#f0f0f0' // Set x-axis labels color to white
+                            color: '#f0f0f0', // Set x-axis labels color to white
+                            font: {
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                            }
                         },
                         grid: {
                             color: 'rgba(240, 240, 240, 0.2)', // Set grid line color
@@ -481,14 +499,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     y: {
                         title: {
                             display: true,
-                            text: 'Count',
+                            text: 'Available Rooms',
                             font: {
-                                size: 14
+                                size: 14,
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
                             },
                             color: '#f0f0f0' // Set y-axis title color to white
                         },
                         ticks: {
-                            color: '#f0f0f0' // Set y-axis labels color to white
+                            color: '#f0f0f0', // Set y-axis labels color to white
+                            font: {
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                            }
                         },
                         beginAtZero: true,
                         grid: {
@@ -529,7 +551,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                     color: '#ffffff',
                                     backgroundColor: 'rgba(0, 0, 0, 0.7)',
                                     font: {
-                                        size: 12
+                                        size: 12,
+                                        family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
                                     }
                                 }
                             }
