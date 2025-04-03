@@ -568,7 +568,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 borderColor: 'rgba(255, 255, 255, 0.8)',
                                 borderWidth: 2,
                                 label: {
-                                    content: 'Selected Time',
+                                    content: 'Selection Time',
                                     enabled: true,
                                     position: 'start', // Other options: 'center', 'end'
                                     color: '#ffffff',
