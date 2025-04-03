@@ -220,6 +220,16 @@ table tr:nth-child(even) {
     background-color: #252525; /* Darker grey for even rows */
 }
 
+#room-details-output {
+    display: none;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+#all-rooms {
+    display: none;
+}
+
 @media (max-width: 750px) {
     #herald-logo {
         max-width: 200px;
@@ -249,5 +259,9 @@ table tr:nth-child(even) {
     }
     #graph-box {
         padding: 3%;
+    }
+    #room-details-output {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }

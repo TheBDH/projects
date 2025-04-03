@@ -283,6 +283,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function handleFiltering() {
+        const allRoomsElement = document.getElementById('all-rooms');
+        if (allRoomsElement) {
+            console.log('ID "all-rooms" found:', allRoomsElement);
+            allRoomsElement.style.display = 'block'; // Make the element visible
+        } else {
+            console.error('ID "all-rooms" not found.');
+        }
         const roomType = document.getElementById('room-type').value;
         const classYear = document.getElementById('class-year').value;
         const selectionTime = document.getElementById('selection-time').value;
@@ -318,6 +325,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         parseCSV('2024_Clean', csvLink, roomType, housingPool).then(curRooms => {
             parseCSV('2024_Clean', '09APR_0930.csv', roomType, housingPool).then(startRooms => {
+                console.log(curRooms["Matching Room Details"]);
                 const totalCurrent = curRooms["Total"];
                 const totalStart = startRooms["Total"];
                 const totalSuites = curRooms["Total Suites"];
@@ -344,7 +352,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const percentOutput = document.getElementById('percent-output');
                 percentOutput.innerHTML = ''; // Clear previous content
                 percentOutput.appendChild(percentElement);
-                let output = `${totalCurrent}/${totalStart} total matching rooms available (including ${totalSuites} suites)<br><br>`;
+                let output = `${totalCurrent}/${totalStart} total matching rooms available (including ${totalSuites} suite${totalSuites === 1 ? '' : 's'})<br><br>`;
 
                 // Sort buildings by the number of current matching rooms in descending order
                 const sortedBuildings = Object.keys(curRooms)
@@ -360,12 +368,49 @@ document.addEventListener('DOMContentLoaded', function () {
                         .join(' ');
                     output += `${titleCaseBuilding}: ${current}/${start}`;
                     if (suites > 0) {
-                        output += ` (${suites} suites)`;
+                        output += ` (${suites} suite${suites === 1 ? '' : 's'})`;
                     }
                     output += `<br><br>`;
                 });
 
                 document.getElementById('filter-output').innerHTML = output;
+
+                const roomDetailsOutput = document.getElementById('room-details-output');
+                roomDetailsOutput.innerHTML = ''; // Clear previous content
+
+                const detailsTable = document.createElement('table');
+                detailsTable.style.width = '100%';
+                detailsTable.style.borderCollapse = 'collapse';
+
+                const headerRow = detailsTable.insertRow();
+                ['Room Name', 'Room Type', 'Capacity'].forEach(header => {
+                    const cell = headerRow.insertCell();
+                    cell.textContent = header;
+                    cell.style.fontWeight = 'bold';
+                    cell.style.border = '1px solid #ddd';
+                    cell.style.padding = '8px';
+                });
+
+                curRooms["Matching Room Details"].forEach(room => {
+                    const row = detailsTable.insertRow();
+                    ['roomName', 'roomType', 'capacity'].forEach(key => {
+                        const cell = row.insertCell();
+                        if (key === 'roomName') {
+                            cell.textContent = room[key]
+                                .split(' ')
+                                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                                .join(' ');
+                        } else if (key === 'roomType' && room[key].includes('Suite')) {
+                            cell.textContent = room[key].split(' (')[0]; // Remove the parenthesis part
+                        } else {
+                            cell.textContent = room[key];
+                        }
+                        cell.style.border = '1px solid #ddd';
+                        cell.style.padding = '8px';
+                    });
+                });
+
+                roomDetailsOutput.appendChild(detailsTable);
             });
         });
 
@@ -651,8 +696,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const csvFile = `${inputDir}/${file}`;
         const countedSuites = new Set();
         const countedRooms = new Set();
-        const housingData = {};
-        const matchingRooms = { "Total": 0, "Total Suites": 0 };
+        const matchingRooms = { 
+            "Total": 0, 
+            "Total Suites": 0,
+            "Matching Room Details": [] // New element to store info on every matching room
+        };
 
         return fetch(csvFile)
             .then(response => {
@@ -669,7 +717,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         const building = columns[0];
                         let roomType = columns[5];
                         let capacity = columns[6];
-                        const suiteID = columns[3];
+                        const suiteID = columns[2];
+                        const roomName = columns[2];
 
                         // Parsing room type
                         if (roomType.includes('Suite') && !building.includes('GRAD CENTER')) {
@@ -717,22 +766,15 @@ document.addEventListener('DOMContentLoaded', function () {
                                     }
                                 }
                             }
-                        }
 
-                        // Adding to JSON
-                        if (capacity === '') {
-                            console.log(suiteID);
-                        }
-                        if ((!roomType.includes('Suite') || !countedSuites.has(suiteID)) && building !== '') {
-                            if (!housingData[building]) {
-                                housingData[building] = { "Total Beds": parseInt(capacity), [roomType]: 1 };
-                            } else if (!housingData[building][roomType]) {
-                                housingData[building][roomType] = 1;
-                                housingData[building]["Total Beds"] += parseInt(capacity);
-                            } else {
-                                housingData[building][roomType] += 1;
-                                housingData[building]["Total Beds"] += parseInt(capacity);
-                            }
+                            // Add room details to the new element
+                            matchingRooms["Matching Room Details"].push({
+                                building: building,
+                                roomType: roomType,
+                                capacity: capacity,
+                                suiteID: suiteID,
+                                roomName: roomName
+                            });
                         }
 
                         if (roomType.includes('Suite')) {

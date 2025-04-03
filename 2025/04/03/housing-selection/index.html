@@ -20,7 +20,8 @@
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
@@ -44,10 +45,12 @@
                         target="_blank">Caleb Ellenberg</a></span>
             </h6>
             <div style="display: flex; justify-content: center; gap: 10px;">
-                <button class="enter-button" id="jump-button" onclick="scrollToBottom('data-jump-1')">
+                <button class="enter-button" id="jump-button"
+                    onclick="scrollToBottom('data-jump-1')">
                     Explore the Data
                 </button>
-                <button class="enter-button" id="jump-button-2" onclick="scrollToBottom('data-jump-2')">
+                <button class="enter-button" id="jump-button-2"
+                    onclick="scrollToBottom('data-jump-2')">
                     Find your Room
                 </button>
             </div>
@@ -66,7 +69,8 @@
                 help. The Herald’s data desk analyzed hour-by-hour data of how
                 last year’s selection process played out. The bad news? You
                 probably aren’t getting into Chen or Danoff. The good news?
-                Unless you sleep through your time slot, you probably aren’t going to be
+                Unless you sleep through your time slot, you probably aren’t
+                going to be
                 forced into Perkins either.
             </p>
             <p>
@@ -130,14 +134,16 @@
         <h2>Beds available over Time</h2>
         <div style="text-align: center;">
             <label for="data-toggle">View:</label>
-            <select class="dropdown" id="data-toggle" onchange="toggleDataView()">
+            <select class="dropdown" id="data-toggle"
+                onchange="toggleDataView()">
                 <option value="available-beds">Percent Available</option>
                 <option value="total-beds">Total Available</option>
             </select>
         </div>
         <div id="BACKGROUND"></div>
         <div style="text-align: center; margin-top: 20px;">
-            <button id="toggle-lines-button" class="enter-button" style="margin: 10px;">
+            <button id="toggle-lines-button" class="enter-button"
+                style="margin: 10px;">
                 Toggle All Dorms
             </button>
         </div>
@@ -146,63 +152,86 @@
         <div id="data-jump-2"></div>
         <div style="height: 5vh;"></div>
         <div id="filter-zone">
-            <h2 style="margin-bottom: 0px;">What to expect at selection time</h2>
+            <h2 style="margin-bottom: 0px;">What to expect at selection
+                time</h2>
             <p style="text-align: center; font-size: 14px; font-style: italic;">
                 Data from 2024 selection process
             </p>
-                <h3 style="text-align: center;">Enter info about your selection options:</h3>
-                <div style="text-align: center;">
-                    <label for="room-type">Housing Group Size:</label>
-                    <select class="dropdown" id="room-type">
-                        <option value="any">Any</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="9">9</option>
-                    </select>
-                </div>
-                <div style="text-align: center; margin-top: 10px;">
-                    <label for="class-year">Class Year:</label>
-                    <select class="dropdown" id="class-year">
-                        <option value="sophomore">Sophomore</option>
-                        <option value="junior">Junior</option>
-                    </select>
-                </div>
-                <div style="text-align: center; margin-top: 10px;">
-                    <label for="selection-time">Approximate selection time:</label>
-                    <select class="dropdown" id="selection-time">
-                        <option value="10">10:00 AM</option>
-                        <option value="11">11:00 AM</option>
-                        <option value="12">12:00 PM</option>
-                        <option value="13">1:00 PM</option>
-                        <option value="14">2:00 PM</option>
-                        <option value="15">3:00 PM</option>
-                        <option value="16">4:00 PM</option>
-                        <option value="17">5:00 PM</option>
-                    </select>
-                </div>
-                <div style="text-align: center; margin-top: 10px;">
-                    <label for="housing-pool">Housing Pool:</label>
-                    <select class="dropdown" id="housing-pool">
-                        <option value="General">General</option>
-                        <option value="Quiet Housing">Quiet Housing</option>
-                        <option value="Substance Free">Substance Free</option>
-                        <option value="Same Sex (Male)">Same Sex (Male)</option>
-                        <option value="Same Sex (Female)">Same Sex (Female)</option>
-                        <option value="Wellness">Wellness</option>
-                    </select>
-                </div>
-                <div style="text-align: center; margin-top: 20px;">
-                    <button class="enter-button" id="filter-button">Apply Filters</button>
-                </div>
+            <h3 style="text-align: center;">Enter info about your selection
+                options:</h3>
+            <div style="text-align: center;">
+                <label for="room-type">Housing Group Size:</label>
+                <select class="dropdown" id="room-type">
+                    <option value="any">Any</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="9">9</option>
+                </select>
+            </div>
+            <div style="text-align: center; margin-top: 10px;">
+                <label for="class-year">Class Year:</label>
+                <select class="dropdown" id="class-year">
+                    <option value="sophomore">Sophomore</option>
+                    <option value="junior">Junior</option>
+                </select>
+            </div>
+            <div style="text-align: center; margin-top: 10px;">
+                <label for="selection-time">Approximate selection time:</label>
+                <select class="dropdown" id="selection-time">
+                    <option value="10">10:00 AM</option>
+                    <option value="11">11:00 AM</option>
+                    <option value="12">12:00 PM</option>
+                    <option value="13">1:00 PM</option>
+                    <option value="14">2:00 PM</option>
+                    <option value="15">3:00 PM</option>
+                    <option value="16">4:00 PM</option>
+                    <option value="17">5:00 PM</option>
+                </select>
+            </div>
+            <div style="text-align: center; margin-top: 10px;">
+                <label for="housing-pool">Housing Pool:</label>
+                <select class="dropdown" id="housing-pool">
+                    <option value="General">General</option>
+                    <option value="Quiet Housing">Quiet Housing</option>
+                    <option value="Substance Free">Substance Free</option>
+                    <option value="Same Sex (Male)">Same Sex (Male)</option>
+                    <option value="Same Sex (Female)">Same Sex (Female)</option>
+                    <option value="Wellness">Wellness</option>
+                </select>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="enter-button" id="filter-button">Apply
+                    Filters</button>
+            </div>
         </div>
         <div id="filter-output-zone" class="text-box">
             <div id="percent-output"></div>
             <div id="filter-graph-box"></div>
             <div id="filter-output">
                 Select filters to see availible rooms!
+            </div>
+            <div id="all-rooms">
+                <div style="text-align: center; margin-top: 20px;">
+                    <button class="enter-button" id="show-rooms-button"
+                        onclick="toggleRoomDetails()">Show available rooms</button>
+                </div>
+                <script>
+                function toggleRoomDetails() {
+                    const roomDetails = document.getElementById('room-details-output');
+                    const button = document.getElementById('show-rooms-button');
+                    if (roomDetails.style.display === 'none' || roomDetails.style.display === '') {
+                        roomDetails.style.display = 'block';
+                        button.textContent = 'Hide available rooms';
+                    } else {
+                        roomDetails.style.display = 'none';
+                        button.textContent = 'Show available rooms';
+                    }
+                }
+                </script>
+                <div id="room-details-output"></div>
             </div>
         </div>
         <div style="height: 10vh;"></div>
