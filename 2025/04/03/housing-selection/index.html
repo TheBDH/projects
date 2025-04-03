@@ -16,9 +16,11 @@
         <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" href="images/icon.png" sizes="96x96">
-        <script src="script.js"></script>
+        <script type="module" src="script.js"></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
@@ -41,9 +43,12 @@
                         href="https://www.browndailyherald.com/staff/caleb-ellenberg"
                         target="_blank">Caleb Ellenberg</a></span>
             </h6>
-            <div style="text-align: center;">
-                <button class="enter-button" id="jump-button" onclick="scrollToBottom()">
+            <div style="display: flex; justify-content: center; gap: 10px;">
+                <button class="enter-button" id="jump-button" onclick="scrollToBottom('data-jump-1')">
                     Explore the Data
+                </button>
+                <button class="enter-button" id="jump-button-2" onclick="scrollToBottom('data-jump-2')">
+                    Find your Room
                 </button>
             </div>
             <div class="down-arrow" style="text-align: center;">
@@ -98,7 +103,7 @@
             </p>
         </div>
         <div style="height: 30vh;"></div>
-        <div id="data-jump"></div>
+        <div id="data-jump-1"></div>
         <div style="height: 2vh;"></div>
         <h2>Beds available over Time</h2>
         <div style="text-align: center;">
@@ -114,7 +119,9 @@
             </button>
         </div>
         <div id="graph-box"></div>
-        <div style="height: 50vh;"></div>
+        <div style="height: 45vh;"></div>
+        <div id="data-jump-2"></div>
+        <div style="height: 5vh;"></div>
         <div id="filter-zone">
             <h2 style="margin-bottom: 0px;">What to expect at selection time</h2>
             <p style="text-align: center; font-size: 14px; font-style: italic;">
@@ -178,12 +185,12 @@
         <div style="height: 10vh;"></div>
 
         <script>
-        function scrollToBottom() {
-            const element = document.getElementById('data-jump');
+        function scrollToBottom(jumpID) {
+            const element = document.getElementById(jumpID);
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({ behavior: 'smooth' });
             } else {
-                console.error('Element with id "data-jump" not found');
+            console.error(`Element with id "${jumpID}" not found`);
             }
         }
     </script>

@@ -1,3 +1,11 @@
+const annotationPlugin = window['chartjs-plugin-annotation'];
+
+const script = document.createElement('script');
+script.src = "https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0";
+document.head.appendChild(script);
+Chart.register(annotationPlugin);
+
+
 document.addEventListener('DOMContentLoaded', function () {
 
     Promise.all([
@@ -97,77 +105,77 @@ document.addEventListener('DOMContentLoaded', function () {
         const chart = new Chart(ctx, {
             type: 'line',
             data: {
-            labels: labels,
-            datasets: datasets
+                labels: labels,
+                datasets: datasets
             },
             options: {
-            responsive: true,
-            maintainAspectRatio: false, // Allow the chart to fill the canvas
-            indexAxis: 'y', // Rotate the chart by swapping x and y axes
-            scales: {
-                x: {
-                beginAtZero: true,
-                position: 'top', // Move x-axis label to the top
-                ticks: {
-                    color: '#f0f0f0' // Set x-axis labels color to white
-                },
-                title: {
-                    display: true,
-                    text: document.getElementById('data-toggle').value === 'available-beds'
-                    ? 'Percent of Beds Available'
-                    : 'Total Beds Available',
-                    color: '#f0f0f0', // Set x-axis title color to white
-                    font: {
-                    size: 14,
-                    family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
-                    }
-                }
-                },
-                y: {
-                type: 'category',
-                ticks: {
-                    color: '#f0f0f0' // Set y-axis labels color to white
-                }
-                }
-            },
-            plugins: {
-                legend: {
-                labels: {
-                    boxWidth: 8,
-                    boxHeight: 8,
-                    borderRadius: 0.5,
-                    useBorderRadius: true,
-                    padding: 15,
-                    font: {
-                    size: 12,
-                    family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                responsive: true,
+                maintainAspectRatio: false, // Allow the chart to fill the canvas
+                indexAxis: 'y', // Rotate the chart by swapping x and y axes
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        position: 'top', // Move x-axis label to the top
+                        ticks: {
+                            color: '#f0f0f0' // Set x-axis labels color to white
+                        },
+                        title: {
+                            display: true,
+                            text: document.getElementById('data-toggle').value === 'available-beds'
+                                ? 'Percent of Beds Available'
+                                : 'Total Beds Available',
+                            color: '#f0f0f0', // Set x-axis title color to white
+                            font: {
+                                size: 14,
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                            }
+                        }
                     },
-                    pointStyle: 'rect',
-                    color: '#f0f0f0' // Set legend text color to white
-                }
+                    y: {
+                        type: 'category',
+                        ticks: {
+                            color: '#f0f0f0' // Set y-axis labels color to white
+                        }
+                    }
                 },
-                tooltip: {
-                callbacks: {
-                    label: function (context) {
-                    const value = parseFloat(context.raw).toFixed(1);
-                    const building = context.dataset.label;
-                    const viewType = document.getElementById('data-toggle').value;
-                    return viewType === 'available-beds' 
-                        ? `${building}: ${value}% available` 
-                        : `${building}: ${value} beds available`;
+                plugins: {
+                    legend: {
+                        labels: {
+                            boxWidth: 8,
+                            boxHeight: 8,
+                            borderRadius: 0.5,
+                            useBorderRadius: true,
+                            padding: 15,
+                            font: {
+                                size: 12,
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                            },
+                            pointStyle: 'rect',
+                            color: '#f0f0f0' // Set legend text color to white
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                const value = parseFloat(context.raw).toFixed(1);
+                                const building = context.dataset.label;
+                                const viewType = document.getElementById('data-toggle').value;
+                                return viewType === 'available-beds'
+                                    ? `${building}: ${value}% available`
+                                    : `${building}: ${value} beds available`;
+                            }
+                        }
+                    }
+                },
+                elements: {
+                    line: {
+                        borderWidth: window.innerWidth <= 768 ? 5 : 8 // Make lines thinner on mobile
+                    },
+                    point: {
+                        radius: window.innerWidth <= 768 ? 4 : 6, // Make points smaller on mobile
+                        hoverRadius: window.innerWidth <= 768 ? 4 : 6 // Adjust hover size on mobile
                     }
                 }
-                }
-            },
-            elements: {
-                line: {
-                borderWidth: window.innerWidth <= 768 ? 5 : 8 // Make lines thinner on mobile
-                },
-                point: {
-                radius: window.innerWidth <= 768 ? 4 : 6, // Make points smaller on mobile
-                hoverRadius: window.innerWidth <= 768 ? 4 : 6 // Adjust hover size on mobile
-                }
-            }
             }
         });
 
@@ -259,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     percentElement.style.color = '#EE352E'; // Red
                 }
 
-                percentElement.textContent = `${percent}% Available`;
+                percentElement.textContent = isNaN(percent) ? "No Matching Rooms" : `${percent}% Available`;
                 const percentOutput = document.getElementById('percent-output');
                 percentOutput.innerHTML = ''; // Clear previous content
                 percentOutput.appendChild(percentElement);
@@ -287,7 +295,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('filter-output').innerHTML = output;
             });
         });
-        
+
         generateGraphData();
 
     }
@@ -359,30 +367,88 @@ document.addEventListener('DOMContentLoaded', function () {
         const canvas = document.createElement('canvas');
         canvas.height = 400; // Set canvas height explicitly
         filterGraphBox.appendChild(canvas);
-        console.log(graphData);
+
         if (!graphData || Object.keys(graphData).length === 0) {
             console.error('Invalid or empty graphData provided to renderFilterGraph.');
             return;
         }
+
         const labels = Object.keys(graphData);
-        const datasets = Object.keys(graphData[labels[0]].buildings).map(building => {
-            const vibrantColors = [
-                '#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#A133FF',
-                '#33FFF5', '#F5FF33', '#FF8C33', '#33FF8C', '#8C33FF',
-                '#FF3333', '#33FF33', '#3333FF', '#FF33FF', '#33FFFF',
-                '#FFFF33', '#FF6633', '#33FF66', '#6633FF', '#FF3366',
-                '#66FF33', '#3366FF', '#FF9933', '#33FF99', '#9933FF'
-            ];
-            const color = vibrantColors[Object.keys(graphData[labels[0]].buildings).indexOf(building) % vibrantColors.length];
-            return {
-                label: building,
-                data: labels.map(label => graphData[label].buildings[building]?.matchingRooms || 0),
+
+        // Prepare datasets for matching rooms and matching suites
+        const matchingRoomsData = labels.map(label => graphData[label].total || 0);
+        const matchingSuitesData = labels.map(label => graphData[label].totalSuites || 0);
+
+        const vibrantColors = ['#FF5733', '#33FF57']; // Colors for the two datasets
+
+        const datasets = [
+            {
+                label: 'Matching Rooms',
+                data: matchingRoomsData,
                 fill: false,
-                backgroundColor: color,
-                borderColor: color,
+                backgroundColor: vibrantColors[0],
+                borderColor: vibrantColors[0],
                 tension: 0.1
-            };
-        });
+            },
+            {
+                label: 'Matching Suites',
+                data: matchingSuitesData,
+                fill: false,
+                backgroundColor: vibrantColors[1],
+                borderColor: vibrantColors[1],
+                tension: 0.1
+            }
+        ];
+
+        // Get the currently selected time and class year from the dropdowns
+        const selectedClassYear = document.getElementById('class-year').value;
+        const selectedTime = document.getElementById('selection-time').value;
+        console.log(selectedTime);
+
+        // Determine the corresponding date based on the class year
+        const selectedDate = selectedClassYear === 'junior' ? 'April 9' : 'April 10';
+
+        // Combine the date and time to match the labels in the graph data
+        const selectedTimeLabel = `${selectedDate}, ${selectedTime}:00 AM`;
+
+        // Check if the selected time label exists in the graph data
+        let isValidTimeLabel = labels.includes(selectedTimeLabel) ? selectedTimeLabel : null;
+
+        // If the selected time label is not found, calculate its approximate position
+        if (!isValidTimeLabel) {
+            const selectedTimeDate = new Date(`${selectedDate} ${selectedTime}:00`);
+            const labelTimes = labels.map(label => new Date(label));
+
+            // Find the closest two labels to the selected time
+            let closestBefore = null;
+            let closestAfter = null;
+
+            for (let i = 0; i < labelTimes.length; i++) {
+                if (labelTimes[i] <= selectedTimeDate) {
+                    closestBefore = i;
+                } else if (labelTimes[i] > selectedTimeDate && closestAfter === null) {
+                    closestAfter = i;
+                }
+            }
+
+            // Calculate the approximate position between the closest labels
+            if (closestBefore !== null && closestAfter !== null) {
+                const beforeTime = labelTimes[closestBefore];
+                const afterTime = labelTimes[closestAfter];
+                const positionRatio = (selectedTimeDate - beforeTime) / (afterTime - beforeTime);
+                isValidTimeLabel = closestBefore + positionRatio;
+            } else if (closestBefore !== null) {
+                isValidTimeLabel = closestBefore; // Use the last label if no "after" label exists
+            } else if (closestAfter !== null) {
+                isValidTimeLabel = closestAfter; // Use the first label if no "before" label exists
+            }
+            console.log(isValidTimeLabel);
+        }
+
+        console.log(labels[Math.floor(isValidTimeLabel)]);
+        console.log(Chart.defaults.plugins.annotation);
+
+
 
         new Chart(canvas, {
             type: 'line',
@@ -400,25 +466,72 @@ document.addEventListener('DOMContentLoaded', function () {
                             text: 'Time',
                             font: {
                                 size: 14
-                            }
+                            },
+                            color: '#f0f0f0' // Set x-axis title color to white
+                        },
+                        ticks: {
+                            color: '#f0f0f0' // Set x-axis labels color to white
+                        },
+                        grid: {
+                            color: 'rgba(240, 240, 240, 0.2)', // Set grid line color
+                            lineWidth: 1, // Set grid line width
+                            drawBorder: false // Remove border lines
                         }
                     },
                     y: {
                         title: {
                             display: true,
-                            text: 'Matching Rooms',
+                            text: 'Count',
                             font: {
                                 size: 14
-                            }
+                            },
+                            color: '#f0f0f0' // Set y-axis title color to white
                         },
-                        beginAtZero: true
+                        ticks: {
+                            color: '#f0f0f0' // Set y-axis labels color to white
+                        },
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(240, 240, 240, 0.2)', // Set grid line color
+                            lineWidth: 1, // Set grid line width
+                            drawBorder: false // Remove border lines
+                        }
                     }
                 },
                 plugins: {
                     legend: {
                         labels: {
+                            boxWidth: 10,
+                            boxHeight: 10,
+                            borderRadius: 0.5,
+                            useBorderRadius: true,
+                            padding: 15,
                             font: {
-                                size: 12
+                                size: 12,
+                                family: "'Roboto', 'Helvetica', 'Arial', sans-serif"
+                            },
+                            pointStyle: 'rect',
+                            color: '#f0f0f0' // Set legend text color to white
+                        }
+                    },
+                    annotation: {
+                        annotations: {
+                            line1: {
+                                type: 'line',
+                                xMin: isValidTimeLabel, // Set the line to be vertical at the calculated position
+                                xMax: isValidTimeLabel,
+                                borderColor: 'rgba(255, 255, 255, 0.8)',
+                                borderWidth: 2,
+                                label: {
+                                    content: 'Selected Time',
+                                    enabled: true,
+                                    position: 'start', // Other options: 'center', 'end'
+                                    color: '#ffffff',
+                                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                                    font: {
+                                        size: 12
+                                    }
+                                }
                             }
                         }
                     }
@@ -432,7 +545,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const countedSuites = new Set();
         const countedRooms = new Set();
         const housingData = {};
-        const matchingRooms = {"Total": 0, "Total Suites": 0};
+        const matchingRooms = { "Total": 0, "Total Suites": 0 };
 
         return fetch(csvFile)
             .then(response => {
@@ -469,7 +582,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
 
                         // Check for matching
-                        if ((size === "any" || parseInt(capacity) === parseInt(size))  && (columns[8].includes(pool)) && !countedRooms.has(suiteID)) {
+                        if ((size === "any" || parseInt(capacity) === parseInt(size)) && (columns[8].includes(pool)) && !countedRooms.has(suiteID)) {
                             countedRooms.add(suiteID);
                             if (suiteID.includes("GREG A 125")) {
                                 countedRooms.add("GREG A 125 126");
@@ -523,7 +636,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return matchingRooms; // Output the summarized data
             })
             .catch(error => console.error('Error parsing the CSV file:', error));
-    }  
+    }
     // Add event listener to trigger filtering when the button is clicked
     document.getElementById('filter-button').addEventListener('click', handleFiltering);
 });
