@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const matchingRoomsData = labels.map(label => graphData[label].total || 0);
         const matchingSuitesData = labels.map(label => graphData[label].totalSuites || 0);
 
-        const vibrantColors = ['#33FF57', '#FF3333']; // Green and Red colors for the two datasets
+        const vibrantColors = ['#FF33FF', '#3366FF'];
 
         const datasets = [
             {
