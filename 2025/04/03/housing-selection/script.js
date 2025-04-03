@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
         triggerHook: 0, // Start the animation when the element is at the middle of the viewport
         duration: 0 // Infinite duration (no specific scroll distance)
     })
-    .setClassToggle('body', 'hidden-background') // Add a class to the body to change the background
-    .on('enter', () => console.log('ScrollMagic scene triggered: background effect applied')) // Log when the scene is triggered
-    .addTo(controller); // Add the scene to the ScrollMagic controller
-        
+        .setClassToggle('body', 'hidden-background') // Add a class to the body to change the background
+        .on('enter', () => console.log('ScrollMagic scene triggered: background effect applied')) // Log when the scene is triggered
+        .addTo(controller); // Add the scene to the ScrollMagic controller
+
     Promise.all([
         fetch('summaryHousingData.json').then(response => {
             if (!response.ok) {
@@ -232,9 +232,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Function to toggle visibility of all lines
         function toggleAllLinesVisibility() {
+            let allHidden = true;
+
+            // Toggle the hidden property for each dataset
             chart.data.datasets.forEach(dataset => {
-                dataset.hidden = !dataset.hidden; // Toggle the hidden property
+                dataset.hidden = !dataset.hidden;
+                if (!dataset.hidden) {
+                    allHidden = false;
+                }
             });
+
+            // If all datasets are hidden, set the y-axis range to 0-100
+            if (allHidden) {
+                const viewType = document.getElementById('data-toggle').value;
+                if (viewType === 'total-beds') {
+                    chart.options.scales.x.min = 0;
+                    chart.options.scales.x.max = 600; // Set max to 600 for total beds mode
+                } else {
+                    chart.options.scales.x.min = 0;
+                    chart.options.scales.x.max = 100;
+                }
+            } else {
+                chart.options.scales.x.min = undefined;
+                chart.options.scales.x.max = undefined;
+            }
+
             chart.update(); // Update the chart to reflect changes
         }
 
@@ -512,7 +534,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     x: {
                         title: {
                             display: true,
-                            text: 'Time',
+                            text: 'Time (2024)',
                             font: {
                                 size: 14,
                                 family: "'Roboto', 'Helvetica', 'Arial', sans-serif"

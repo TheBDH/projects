@@ -11,7 +11,6 @@ body {
 
 .hidden-background {
     background-image: none;
-    background-color: #000000; /* Fallback color */
 }
 
 .text-box {

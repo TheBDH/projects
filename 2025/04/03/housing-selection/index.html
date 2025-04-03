@@ -115,8 +115,13 @@
                 blackCover.style.backgroundColor = "black";
                 blackCover.style.zIndex = "-1";
 
-                const distanceFromTop = document.getElementById('data-jump-1').offsetTop;
-                blackCover.style.top = `${distanceFromTop}px`;
+                const updateTopDistance = () => {
+                    const distanceFromTop = document.getElementById('data-jump-1').offsetTop;
+                    blackCover.style.top = `${distanceFromTop}px`;
+                };
+
+                updateTopDistance();
+                window.addEventListener("resize", updateTopDistance);
 
                 document.body.appendChild(blackCover);
             });
@@ -132,7 +137,7 @@
         </div>
         <div id="BACKGROUND"></div>
         <div style="text-align: center; margin-top: 20px;">
-            <button id="toggle-lines-button" class="enter-button" style="margin: 10px;" onclick="toggleAllLinesVisibility()">
+            <button id="toggle-lines-button" class="enter-button" style="margin: 10px;">
                 Toggle All Dorms
             </button>
         </div>
