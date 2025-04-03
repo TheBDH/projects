@@ -87,7 +87,8 @@ h2 {
 }
 
 p {
-    font-family: "freight-text-pro", "Georgia", "Times", serif;;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+    font-size: 1.15rem;
 }
 
 #byline {
