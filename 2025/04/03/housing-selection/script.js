@@ -750,6 +750,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 capacity = 9;
                             }
                             roomType = `Suite (${capacity})`;
+                            console.log(`Suite ID: ${suiteID}, Room Type: ${roomType}`);
                         } else if (roomType.includes('Single')) {
                             roomType = 'Single';
                             capacity = 1;
