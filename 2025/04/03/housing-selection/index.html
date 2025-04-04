@@ -47,13 +47,13 @@
                             target="_blank">Caleb Ellenberg</a></span>
                 </h6>
                 <div style="display: flex; justify-content: center; gap: 10px;">
-                    <button class="enter-button" id="jump-button"
-                        onclick="scrollToBottom('data-jump-1')">
-                        Explore the Data
-                    </button>
                     <button class="enter-button" id="jump-button-2"
-                        onclick="scrollToBottom('data-jump-2')">
+                        onclick="scrollToBottom('data-jump-1')">
                         Find your Room
+                    </button>
+                    <button class="enter-button" id="jump-button"
+                        onclick="scrollToBottom('data-jump-2')">
+                        Explore the Data
                     </button>
                 </div>
                 <div class="down-arrow" style="text-align: center;">
@@ -113,7 +113,6 @@
             </p>
         </div>
         <div style="height: 30vh;"></div>
-        <div id="data-jump-1"></div>
         <script>
             document.addEventListener("DOMContentLoaded", () => {
                 const blackCover = document.createElement("div");
@@ -136,30 +135,11 @@
                 document.body.appendChild(blackCover);
             });
         </script>
-        <div style="height: 2vh;"></div>
-        <h2>Beds available over Time</h2>
-        <div style="text-align: center;">
-            <label for="data-toggle">View:</label>
-            <select class="dropdown" id="data-toggle"
-                onchange="toggleDataView()">
-                <option value="available-beds">Percent Available</option>
-                <option value="total-beds">Total Available</option>
-            </select>
-        </div>
-        <div id="BACKGROUND"></div>
-        <div style="text-align: center; margin-top: 20px;">
-            <button id="toggle-lines-button" class="enter-button"
-                style="margin: 10px;">
-                Toggle All Dorms
-            </button>
-        </div>
-        <div id="graph-box"></div>
-        <div style="height: 20vh;"></div>
-        <div id="data-jump-2"></div>
+        <div style="height: 4vh;"></div>
+        <div id="data-jump-1"></div>
         <div style="height: 5vh;"></div>
         <div id="filter-zone">
-            <h2 style="margin-bottom: 0px;">What to expect at selection
-                time</h2>
+            <h2 style="margin-bottom: 0px;">How you would have fared in 2024</h2>
             <p style="text-align: center; font-size: 14px; font-style: italic;">
                 Data from 2024 selection process
             </p>
@@ -241,7 +221,29 @@
                 <div id="room-details-output"></div>
             </div>
         </div>
-        <div style="height: 10vh;"></div>
+        <div style="height: 18vh;"></div>
+        <div id="data-jump-2"></div>
+        <div style="height: 2vh;"></div>
+        <h2 style="margin-bottom: 0px">Beds available over time</h2>
+        <p style="text-align: center; font-size: 14px; font-style: italic; margin-bottom: 20px;">
+            Data from 2024 selection process
+        </p>
+        <div style="text-align: center;">
+            <label for="data-toggle">View:</label>
+            <select class="dropdown" id="data-toggle"
+                onchange="toggleDataView()">
+                <option value="available-beds">Percent Available</option>
+                <option value="total-beds">Total Available</option>
+            </select>
+        </div>
+        <div id="BACKGROUND"></div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button id="toggle-lines-button" class="enter-button"
+                style="margin: 10px;">
+                Toggle All Dorms
+            </button>
+        </div>
+        <div id="graph-box"></div>
 
         <script>
         function scrollToBottom(jumpID) {
