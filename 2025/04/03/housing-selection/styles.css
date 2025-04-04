@@ -252,6 +252,10 @@ table tr:nth-child(even) {
 
 @media (max-width: 750px) {
 
+    body {
+        background-image: none;
+    }
+
     #herald-logo {
         max-width: 200px;
     }
