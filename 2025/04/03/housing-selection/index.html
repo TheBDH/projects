@@ -27,38 +27,44 @@
             src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
     </head>
     <body>
-        <div id="heading">
-            <a href="https://www.browndailyherald.com" target="_blank">
-                <img
-                    src="images/logo-white.png"
-                    id="herald-logo"
-                    alt="Brown Daily Herald Logo" />
-            </a>
-            <h3>The <span id="housing">Housing</span> Process</h3>
-            <p style="text-align: center; font-family: 'freight-text-pro', 'Georgia', 'Times', serif; font-style: normal;">
-                Which dorms are available when?
-            </p>
-            <h6 id="byline" style="text-align: center;">
-                Reporting and web design by
-                <span class="author"><a
-                        href="https://www.browndailyherald.com/staff/caleb-ellenberg"
-                        target="_blank">Caleb Ellenberg</a></span>
-            </h6>
-            <div style="display: flex; justify-content: center; gap: 10px;">
-                <button class="enter-button" id="jump-button"
-                    onclick="scrollToBottom('data-jump-1')">
-                    Explore the Data
-                </button>
-                <button class="enter-button" id="jump-button-2"
-                    onclick="scrollToBottom('data-jump-2')">
-                    Find your Room
-                </button>
+        <div id="heading-box">
+            <div id="heading">
+                <a href="https://www.browndailyherald.com" target="_blank">
+                    <img
+                        src="images/logo-white.png"
+                        id="herald-logo"
+                        alt="Brown Daily Herald Logo" />
+                </a>
+                <h3>The <span id="housing">Housing</span> Process</h3>
+                <p
+                    style="text-align: center; font-family: 'freight-text-pro', 'Georgia', 'Times', serif; font-style: normal;">
+                    Which dorms are available when?
+                </p>
+                <h6 id="byline" style="text-align: center;">
+                    Reporting and web design by
+                    <span class="author"><a
+                            href="https://www.browndailyherald.com/staff/caleb-ellenberg"
+                            target="_blank">Caleb Ellenberg</a></span>
+                </h6>
+                <div style="display: flex; justify-content: center; gap: 10px;">
+                    <button class="enter-button" id="jump-button"
+                        onclick="scrollToBottom('data-jump-1')">
+                        Explore the Data
+                    </button>
+                    <button class="enter-button" id="jump-button-2"
+                        onclick="scrollToBottom('data-jump-2')">
+                        Find your Room
+                    </button>
+                </div>
+                <div class="down-arrow" style="text-align: center;">
+                    &#x2193;
+                </div>
             </div>
-            <div class="down-arrow" style="text-align: center;">
-                &#x2193;
+            <div id="media-credit">
+                Media by Ellis Rougeou
             </div>
         </div>
-        <div style="height: 100vh;"></div>
+        <div style="height: 115vh;"></div>
         <div class="text-box">
             <p>
                 On April 8th, most rising sophomores and juniors will make one
@@ -148,7 +154,7 @@
             </button>
         </div>
         <div id="graph-box"></div>
-        <div style="height: 45vh;"></div>
+        <div style="height: 20vh;"></div>
         <div id="data-jump-2"></div>
         <div style="height: 5vh;"></div>
         <div id="filter-zone">
@@ -216,7 +222,8 @@
             <div id="all-rooms">
                 <div style="text-align: center; margin-top: 20px;">
                     <button class="enter-button" id="show-rooms-button"
-                        onclick="toggleRoomDetails()">Show available rooms</button>
+                        onclick="toggleRoomDetails()">Show available
+                        rooms</button>
                 </div>
                 <script>
                 function toggleRoomDetails() {

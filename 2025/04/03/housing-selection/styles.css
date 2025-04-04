@@ -81,6 +81,19 @@ h2 {
     margin-top: 10px;
 }
 
+#media-credit {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    text-align: center;
+    width: fit-content;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+    font-size: 1.1rem;
+}
+
 #heading p {
     text-align: center;
     font-style: italic;
@@ -88,7 +101,7 @@ h2 {
 
 p {
     font-family: "freight-text-pro", "Georgia", "Times", serif;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
 }
 
 #byline {
@@ -241,6 +254,10 @@ table tr:nth-child(even) {
 
     #herald-logo {
         max-width: 200px;
+    }
+
+    #media-credit {
+        display: none;
     }
 
     #heading {
