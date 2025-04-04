@@ -291,13 +291,13 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('ID "all-rooms" not found.');
         }
         const roomType = document.getElementById('room-type').value;
-        const classYear = document.getElementById('class-year').value;
+        const day = document.getElementById('day').value;
         const selectionTime = document.getElementById('selection-time').value;
         const housingPool = document.getElementById('housing-pool').value;
 
         // Construct the CSV link based on the selected filters
         let csvLink;
-        if (classYear === "sophomore") {
+        if (day === "day2") {
             const map = {
                 "10": "0920",
                 "11": "1030",
@@ -309,6 +309,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 "17": "1635",
             };
             csvLink = "10APR_" + map[selectionTime] + ".csv";
+        } else if (day === "day3") {
+            const map = {
+                "10": "1015",
+                "11": "1015",
+                "12": "1130",
+                "13": "1235",
+                "14": "1345",
+                "15": "1345",
+                "16": "1345",
+                "17": "1345"
+            }
+            if (selectionTime === "10") {
+                csvLink = "10APR_1635.csv";
+            } else {
+                csvLink = "11APR_" + map[selectionTime] + ".csv";
+            }
         } else {
             const map = {
                 "10": "0930",
@@ -519,12 +535,12 @@ document.addEventListener('DOMContentLoaded', function () {
         ];
 
         // Get the currently selected time and class year from the dropdowns
-        const selectedClassYear = document.getElementById('class-year').value;
+        const selectedDay = document.getElementById('day').value;
         const selectedTime = document.getElementById('selection-time').value;
         console.log(selectedTime);
 
         // Determine the corresponding date based on the class year
-        const selectedDate = selectedClassYear === 'junior' ? 'April 9' : 'April 10';
+        const selectedDate = selectedDay === 'day1' ? 'April 9' : selectedDay === 'day2' ? 'April 10' : 'April 11';
 
         // Combine the date and time to match the labels in the graph data
         const selectedTimeLabel = `${selectedDate}, ${selectedTime}:00 AM`;
