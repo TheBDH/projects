@@ -145,9 +145,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         title: {
                             display: true,
-                            text: document.getElementById('data-toggle').value === 'available-beds'
-                                ? 'Percent of Beds Available'
-                                : 'Total Beds Available',
+                            text: function () {
+                                const viewType = document.getElementById('data-toggle').value;
+                                return viewType === 'available-beds'
+                                    ? 'Percent of Beds Available'
+                                    : 'Total Beds Available';
+                            },
                             color: '#f0f0f0', // Set x-axis title color to white
                             font: {
                                 size: fontSize + 4,
@@ -207,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 const viewType = document.getElementById('data-toggle').value;
                                 return viewType === 'available-beds'
                                     ? `${building}: ${value}% available`
-                                    : `${building}: ${value} beds available`;
+                                    : `${building}: ${Math.round(value)} beds available`;
                             },
                             labelPointStyle: function (context) {
                                 return {
@@ -247,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const viewType = document.getElementById('data-toggle').value;
                 if (viewType === 'total-beds') {
                     chart.options.scales.x.min = 0;
-                    chart.options.scales.x.max = 600; // Set max to 600 for total beds mode
+                    chart.options.scales.x.max = 350; // Set max to 350 for total beds mode
                 } else {
                     chart.options.scales.x.min = 0;
                     chart.options.scales.x.max = 100;
@@ -733,8 +736,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         const building = columns[0];
                         let roomType = columns[5];
                         let capacity = columns[6];
-                        const suiteID = columns[2];
-                        const roomName = columns[2];
+                        let suiteID;
+                        let roomName = columns[2];
+                        if (building.includes('GRAD CENTER')) {
+                            suiteID = columns[3];
+                        } else {
+                            suiteID = columns[2];
+                        }
 
                         // Parsing room type
                         if (roomType.includes('Suite') && !building.includes('GRAD CENTER')) {

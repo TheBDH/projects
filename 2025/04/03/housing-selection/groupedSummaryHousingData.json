@@ -1,47 +1,47 @@
 {
     "April 9, 9:30 AM": {
         "Barbour Hall": {
-            "Total Beds": 186,
+            "Total Beds": 87,
             "Suite (3)": 1,
-            "Suite (4)": 10,
-            "Triple": 15,
-            "Double": 18,
-            "Suite (5)": 12,
+            "Suite (4)": 6,
+            "Triple": 5,
+            "Double": 9,
+            "Suite (5)": 5,
             "Suite (2)": 1
         },
         "Buxton House": {
-            "Total Beds": 73,
-            "Double": 34,
+            "Total Beds": 39,
+            "Double": 17,
             "Single": 5
         },
         "Caswell Hall": {
-            "Total Beds": 184,
-            "Double": 92
+            "Total Beds": 92,
+            "Double": 46
         },
         "Chapin House": {
-            "Total Beds": 158,
+            "Total Beds": 84,
             "Single": 10,
-            "Double": 74
+            "Double": 37
         },
         "Chen Family Hall": {
-            "Total Beds": 110,
-            "Suite (4)": 24,
-            "Suite (2)": 7
+            "Total Beds": 44,
+            "Suite (4)": 9,
+            "Suite (2)": 4
         },
         "Danoff Hall": {
-            "Total Beds": 90,
-            "Suite (4)": 21,
-            "Suite (2)": 3
+            "Total Beds": 36,
+            "Suite (4)": 8,
+            "Suite (2)": 2
         },
         "Diman House": {
-            "Total Beds": 131,
-            "Double": 48,
-            "Triple": 9,
+            "Total Beds": 65,
+            "Double": 24,
+            "Triple": 3,
             "Single": 8
         },
         "Goddard House": {
-            "Total Beds": 101,
-            "Double": 42,
+            "Total Beds": 59,
+            "Double": 21,
             "Single": 17
         },
         "Grad Center": {
@@ -49,133 +49,133 @@
             "Single": 330
         },
         "Gregorian": {
-            "Total Beds": 595,
-            "Suite (9)": 5,
-            "Suite (4)": 46,
-            "Suite (5)": 40,
-            "Double": 32,
+            "Total Beds": 191,
+            "Suite (9)": 1,
+            "Suite (4)": 17,
+            "Suite (5)": 8,
+            "Double": 16,
             "Single": 12,
-            "Triple": 30
+            "Triple": 10
         },
         "Harkness House": {
-            "Total Beds": 116,
-            "Double": 52,
+            "Total Beds": 64,
+            "Double": 26,
             "Single": 12
         },
         "Hegeman Hall": {
-            "Total Beds": 320,
-            "Suite (3)": 97,
+            "Total Beds": 116,
+            "Suite (3)": 33,
             "Single": 3,
-            "Double": 12,
+            "Double": 6,
             "Suite (2)": 1
         },
         "Hope College": {
-            "Total Beds": 79,
+            "Total Beds": 41,
             "Single": 3,
-            "Double": 38
+            "Double": 19
         },
         "King House": {
-            "Total Beds": 21,
-            "Double": 10,
+            "Total Beds": 11,
+            "Double": 5,
             "Single": 1
         },
         "Littlefield Hall": {
-            "Total Beds": 130,
-            "Double": 64,
+            "Total Beds": 66,
+            "Double": 32,
             "Single": 2
         },
         "Machado House": {
-            "Total Beds": 9,
+            "Total Beds": 7,
             "Single": 5,
-            "Double": 2
+            "Double": 1
         },
         "Marcy House": {
-            "Total Beds": 146,
-            "Triple": 12,
-            "Double": 48,
+            "Total Beds": 74,
+            "Triple": 4,
+            "Double": 24,
             "Single": 14
         },
         "Minden Hall": {
-            "Total Beds": 302,
-            "Triple": 24,
-            "Suite (3)": 25,
-            "Double": 29,
-            "Quad": 24,
+            "Total Beds": 118,
+            "Triple": 8,
+            "Suite (3)": 13,
+            "Double": 15,
+            "Quad": 6,
             "Single": 1
         },
         "Olney House": {
-            "Total Beds": 106,
-            "Double": 50,
+            "Total Beds": 56,
+            "Double": 25,
             "Single": 6
         },
         "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
+            "Total Beds": 164,
+            "Double": 82
         },
         "Sears House": {
-            "Total Beds": 131,
+            "Total Beds": 71,
             "Single": 11,
-            "Double": 60
+            "Double": 30
         },
         "Slater Hall": {
-            "Total Beds": 146,
-            "Quad": 20,
-            "Double": 18,
-            "Triple": 9,
+            "Total Beds": 50,
+            "Quad": 5,
+            "Double": 9,
+            "Triple": 3,
             "Single": 3
         },
         "Sternlicht Commons": {
-            "Total Beds": 261,
+            "Total Beds": 141,
             "Single": 101,
-            "Suite (4)": 40
+            "Suite (4)": 10
         },
         "Wayland House": {
-            "Total Beds": 249,
-            "Double": 108,
+            "Total Beds": 123,
+            "Double": 54,
             "Single": 6,
-            "Triple": 9
+            "Triple": 3
         },
         "Young Orchard": {
-            "Total Beds": 112,
-            "Suite (4)": 28
+            "Total Beds": 36,
+            "Suite (4)": 9
         }
     },
     "April 9, 10:25 AM": {
         "Barbour Hall": {
-            "Total Beds": 156,
+            "Total Beds": 71,
             "Suite (3)": 1,
-            "Triple": 15,
-            "Double": 16,
-            "Suite (5)": 12,
-            "Suite (4)": 4
+            "Triple": 5,
+            "Double": 8,
+            "Suite (5)": 5,
+            "Suite (4)": 3
         },
         "Buxton House": {
-            "Total Beds": 73,
-            "Double": 34,
+            "Total Beds": 39,
+            "Double": 17,
             "Single": 5
         },
         "Caswell Hall": {
-            "Total Beds": 184,
-            "Double": 92
+            "Total Beds": 92,
+            "Double": 46
         },
         "Chapin House": {
-            "Total Beds": 158,
+            "Total Beds": 84,
             "Single": 10,
-            "Double": 74
+            "Double": 37
         },
         "Danoff Hall": {
-            "Total Beds": 8,
-            "Suite (4)": 2
+            "Total Beds": 4,
+            "Suite (4)": 1
         },
         "Diman House": {
-            "Total Beds": 131,
-            "Double": 48,
-            "Triple": 9,
+            "Total Beds": 65,
+            "Double": 24,
+            "Triple": 3,
             "Single": 8
         },
         "Goddard House": {
-            "Total Beds": 101,
-            "Double": 42,
+            "Total Beds": 59,
+            "Double": 21,
             "Single": 17
         },
         "Grad Center": {
@@ -183,131 +183,131 @@
             "Single": 314
         },
         "Gregorian": {
-            "Total Beds": 342,
-            "Suite (9)": 4,
-            "Suite (4)": 11,
-            "Suite (5)": 20,
-            "Double": 30,
+            "Total Beds": 129,
+            "Suite (9)": 1,
+            "Suite (4)": 7,
+            "Suite (5)": 4,
+            "Double": 15,
             "Single": 12,
-            "Triple": 30
+            "Triple": 10
         },
         "Harkness House": {
-            "Total Beds": 116,
-            "Double": 52,
+            "Total Beds": 64,
+            "Double": 26,
             "Single": 12
         },
         "Hegeman Hall": {
-            "Total Beds": 295,
-            "Suite (3)": 91,
-            "Double": 10,
+            "Total Beds": 105,
+            "Suite (3)": 31,
+            "Double": 5,
             "Suite (2)": 1
         },
         "Hope College": {
-            "Total Beds": 73,
-            "Double": 36,
+            "Total Beds": 37,
+            "Double": 18,
             "Single": 1
         },
         "King House": {
-            "Total Beds": 21,
-            "Double": 10,
+            "Total Beds": 11,
+            "Double": 5,
             "Single": 1
         },
         "Littlefield Hall": {
-            "Total Beds": 130,
-            "Double": 64,
+            "Total Beds": 66,
+            "Double": 32,
             "Single": 2
         },
         "Machado House": {
-            "Total Beds": 7,
+            "Total Beds": 5,
             "Single": 3,
-            "Double": 2
+            "Double": 1
         },
         "Marcy House": {
-            "Total Beds": 145,
-            "Triple": 12,
-            "Double": 48,
+            "Total Beds": 73,
+            "Triple": 4,
+            "Double": 24,
             "Single": 13
         },
         "Minden Hall": {
-            "Total Beds": 282,
-            "Triple": 21,
-            "Suite (3)": 23,
-            "Double": 27,
-            "Quad": 24
+            "Total Beds": 109,
+            "Triple": 7,
+            "Suite (3)": 12,
+            "Double": 14,
+            "Quad": 6
         },
         "Olney House": {
-            "Total Beds": 106,
-            "Double": 50,
+            "Total Beds": 56,
+            "Double": 25,
             "Single": 6
         },
         "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
+            "Total Beds": 164,
+            "Double": 82
         },
         "Sears House": {
-            "Total Beds": 130,
+            "Total Beds": 70,
             "Single": 10,
-            "Double": 60
+            "Double": 30
         },
         "Slater Hall": {
-            "Total Beds": 128,
-            "Quad": 16,
-            "Double": 18,
-            "Triple": 9,
+            "Total Beds": 44,
+            "Quad": 4,
+            "Double": 9,
+            "Triple": 3,
             "Single": 1
         },
         "Sternlicht Commons": {
-            "Total Beds": 183,
+            "Total Beds": 111,
             "Single": 87,
-            "Suite (4)": 24
+            "Suite (4)": 6
         },
         "Wayland House": {
-            "Total Beds": 248,
-            "Double": 108,
+            "Total Beds": 122,
+            "Double": 54,
             "Single": 5,
-            "Triple": 9
+            "Triple": 3
         },
         "Young Orchard": {
-            "Total Beds": 16,
-            "Suite (4)": 4
+            "Total Beds": 8,
+            "Suite (4)": 2
         }
     },
     "April 9, 11:25 AM": {
         "Barbour Hall": {
-            "Total Beds": 100,
+            "Total Beds": 46,
             "Suite (3)": 1,
-            "Triple": 15,
-            "Double": 14,
-            "Suite (5)": 4,
+            "Triple": 5,
+            "Double": 7,
+            "Suite (5)": 2,
             "Suite (4)": 1
         },
         "Buxton House": {
-            "Total Beds": 73,
-            "Double": 34,
+            "Total Beds": 39,
+            "Double": 17,
             "Single": 5
         },
         "Caswell Hall": {
-            "Total Beds": 184,
-            "Double": 92
+            "Total Beds": 92,
+            "Double": 46
         },
         "Chapin House": {
-            "Total Beds": 157,
+            "Total Beds": 83,
             "Single": 9,
-            "Double": 74
+            "Double": 37
         },
         "Danoff Hall": {
-            "Total Beds": 8,
-            "Suite (4)": 2
+            "Total Beds": 4,
+            "Suite (4)": 1
         },
         "Diman House": {
-            "Total Beds": 131,
-            "Double": 48,
-            "Triple": 9,
+            "Total Beds": 65,
+            "Double": 24,
+            "Triple": 3,
             "Single": 8
         },
         "Goddard House": {
-            "Total Beds": 96,
-            "Double": 40,
+            "Total Beds": 56,
+            "Double": 20,
             "Single": 16
         },
         "Grad Center": {
@@ -315,84 +315,84 @@
             "Single": 286
         },
         "Gregorian": {
-            "Total Beds": 172,
-            "Suite (9)": 3,
+            "Total Beds": 72,
+            "Suite (9)": 1,
             "Suite (4)": 2,
-            "Double": 28,
-            "Triple": 27
+            "Double": 14,
+            "Triple": 9
         },
         "Harkness House": {
-            "Total Beds": 113,
-            "Double": 52,
+            "Total Beds": 61,
+            "Double": 26,
             "Single": 9
         },
         "Hegeman Hall": {
-            "Total Beds": 255,
-            "Suite (3)": 79,
-            "Double": 8,
+            "Total Beds": 91,
+            "Suite (3)": 27,
+            "Double": 4,
             "Suite (2)": 1
         },
         "Hope College": {
-            "Total Beds": 72,
-            "Double": 36
+            "Total Beds": 36,
+            "Double": 18
         },
         "King House": {
-            "Total Beds": 21,
-            "Double": 10,
+            "Total Beds": 11,
+            "Double": 5,
             "Single": 1
         },
         "Littlefield Hall": {
-            "Total Beds": 121,
-            "Double": 60,
+            "Total Beds": 61,
+            "Double": 30,
             "Single": 1
         },
         "Machado House": {
-            "Total Beds": 7,
+            "Total Beds": 5,
             "Single": 3,
-            "Double": 2
+            "Double": 1
         },
         "Marcy House": {
-            "Total Beds": 139,
-            "Triple": 12,
-            "Double": 46,
+            "Total Beds": 69,
+            "Triple": 4,
+            "Double": 23,
             "Single": 11
         },
         "Minden Hall": {
-            "Total Beds": 194,
-            "Triple": 21,
-            "Suite (3)": 15,
-            "Double": 19,
-            "Quad": 12
+            "Total Beds": 77,
+            "Triple": 7,
+            "Suite (3)": 8,
+            "Double": 10,
+            "Quad": 3
         },
         "Olney House": {
-            "Total Beds": 106,
-            "Double": 50,
+            "Total Beds": 56,
+            "Double": 25,
             "Single": 6
         },
         "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
+            "Total Beds": 164,
+            "Double": 82
         },
         "Sears House": {
-            "Total Beds": 129,
+            "Total Beds": 69,
             "Single": 9,
-            "Double": 60
+            "Double": 30
         },
         "Slater Hall": {
-            "Total Beds": 63,
-            "Double": 18,
-            "Triple": 9
+            "Total Beds": 27,
+            "Double": 9,
+            "Triple": 3
         },
         "Sternlicht Commons": {
-            "Total Beds": 137,
+            "Total Beds": 89,
             "Single": 73,
-            "Suite (4)": 16
+            "Suite (4)": 4
         },
         "Wayland House": {
-            "Total Beds": 245,
-            "Double": 108,
+            "Total Beds": 119,
+            "Double": 54,
             "Single": 2,
-            "Triple": 9
+            "Triple": 3
         },
         "Young Orchard": {
             "Total Beds": 4,
@@ -401,39 +401,39 @@
     },
     "April 9, 12:50 PM": {
         "Barbour Hall": {
-            "Total Beds": 78,
+            "Total Beds": 33,
             "Suite (3)": 1,
-            "Triple": 15,
-            "Double": 10,
-            "Suite (5)": 2
+            "Triple": 5,
+            "Double": 5,
+            "Suite (5)": 1
         },
         "Buxton House": {
-            "Total Beds": 72,
-            "Double": 34,
+            "Total Beds": 38,
+            "Double": 17,
             "Single": 4
         },
         "Caswell Hall": {
-            "Total Beds": 184,
-            "Double": 92
+            "Total Beds": 92,
+            "Double": 46
         },
         "Chapin House": {
-            "Total Beds": 155,
-            "Double": 74,
+            "Total Beds": 81,
+            "Double": 37,
             "Single": 7
         },
         "Danoff Hall": {
-            "Total Beds": 8,
-            "Suite (4)": 2
+            "Total Beds": 4,
+            "Suite (4)": 1
         },
         "Diman House": {
-            "Total Beds": 131,
-            "Double": 48,
-            "Triple": 9,
+            "Total Beds": 65,
+            "Double": 24,
+            "Triple": 3,
             "Single": 8
         },
         "Goddard House": {
-            "Total Beds": 94,
-            "Double": 40,
+            "Total Beds": 54,
+            "Double": 20,
             "Single": 14
         },
         "Grad Center": {
@@ -441,116 +441,116 @@
             "Single": 268
         },
         "Gregorian": {
-            "Total Beds": 133,
+            "Total Beds": 55,
             "Suite (4)": 1,
-            "Double": 24,
-            "Triple": 27
+            "Double": 12,
+            "Triple": 9
         },
         "Harkness House": {
-            "Total Beds": 112,
-            "Double": 52,
+            "Total Beds": 60,
+            "Double": 26,
             "Single": 8
         },
         "Hegeman Hall": {
-            "Total Beds": 253,
-            "Suite (3)": 79,
-            "Double": 8
+            "Total Beds": 89,
+            "Suite (3)": 27,
+            "Double": 4
         },
         "Hope College": {
-            "Total Beds": 72,
-            "Double": 36
+            "Total Beds": 36,
+            "Double": 18
         },
         "King House": {
-            "Total Beds": 21,
-            "Double": 10,
+            "Total Beds": 11,
+            "Double": 5,
             "Single": 1
         },
         "Littlefield Hall": {
-            "Total Beds": 120,
-            "Double": 60
+            "Total Beds": 60,
+            "Double": 30
         },
         "Machado House": {
-            "Total Beds": 7,
+            "Total Beds": 5,
             "Single": 3,
-            "Double": 2
+            "Double": 1
         },
         "Marcy House": {
-            "Total Beds": 138,
-            "Triple": 12,
-            "Double": 46,
+            "Total Beds": 68,
+            "Triple": 4,
+            "Double": 23,
             "Single": 10
         },
         "Minden Hall": {
-            "Total Beds": 178,
-            "Triple": 21,
-            "Suite (3)": 11,
-            "Double": 17,
-            "Quad": 12
+            "Total Beds": 69,
+            "Triple": 7,
+            "Suite (3)": 6,
+            "Double": 9,
+            "Quad": 3
         },
         "Olney House": {
-            "Total Beds": 105,
-            "Double": 50,
+            "Total Beds": 55,
+            "Double": 25,
             "Single": 5
         },
         "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
+            "Total Beds": 164,
+            "Double": 82
         },
         "Sears House": {
-            "Total Beds": 129,
+            "Total Beds": 69,
             "Single": 9,
-            "Double": 60
+            "Double": 30
         },
         "Slater Hall": {
-            "Total Beds": 64,
-            "Double": 18,
-            "Triple": 9,
+            "Total Beds": 28,
+            "Double": 9,
+            "Triple": 3,
             "Single": 1
         },
         "Sternlicht Commons": {
-            "Total Beds": 129,
+            "Total Beds": 81,
             "Single": 65,
-            "Suite (4)": 16
+            "Suite (4)": 4
         },
         "Wayland House": {
-            "Total Beds": 243,
-            "Double": 108,
-            "Triple": 9
+            "Total Beds": 117,
+            "Double": 54,
+            "Triple": 3
         }
     },
     "April 9, 1:30 PM": {
         "Barbour Hall": {
-            "Total Beds": 65,
-            "Triple": 15,
-            "Double": 10
+            "Total Beds": 25,
+            "Triple": 5,
+            "Double": 5
         },
         "Buxton House": {
-            "Total Beds": 72,
-            "Double": 34,
+            "Total Beds": 38,
+            "Double": 17,
             "Single": 4
         },
         "Caswell Hall": {
-            "Total Beds": 184,
-            "Double": 92
+            "Total Beds": 92,
+            "Double": 46
         },
         "Chapin House": {
-            "Total Beds": 155,
-            "Double": 74,
+            "Total Beds": 81,
+            "Double": 37,
             "Single": 7
         },
         "Danoff Hall": {
-            "Total Beds": 8,
-            "Suite (4)": 2
+            "Total Beds": 4,
+            "Suite (4)": 1
         },
         "Diman House": {
-            "Total Beds": 131,
-            "Double": 48,
-            "Triple": 9,
+            "Total Beds": 65,
+            "Double": 24,
+            "Triple": 3,
             "Single": 8
         },
         "Goddard House": {
-            "Total Beds": 92,
-            "Double": 40,
+            "Total Beds": 52,
+            "Double": 20,
             "Single": 12
         },
         "Grad Center": {
@@ -558,110 +558,110 @@
             "Single": 241
         },
         "Gregorian": {
-            "Total Beds": 117,
-            "Double": 18,
-            "Triple": 27
+            "Total Beds": 45,
+            "Double": 9,
+            "Triple": 9
         },
         "Harkness House": {
-            "Total Beds": 110,
-            "Double": 52,
+            "Total Beds": 58,
+            "Double": 26,
             "Single": 6
         },
         "Hegeman Hall": {
-            "Total Beds": 190,
-            "Suite (3)": 58,
-            "Double": 8
+            "Total Beds": 68,
+            "Suite (3)": 20,
+            "Double": 4
         },
         "Hope College": {
-            "Total Beds": 72,
-            "Double": 36
+            "Total Beds": 36,
+            "Double": 18
         },
         "King House": {
-            "Total Beds": 21,
-            "Double": 10,
+            "Total Beds": 11,
+            "Double": 5,
             "Single": 1
         },
         "Littlefield Hall": {
-            "Total Beds": 120,
-            "Double": 60
+            "Total Beds": 60,
+            "Double": 30
         },
         "Machado House": {
-            "Total Beds": 6,
+            "Total Beds": 4,
             "Single": 2,
-            "Double": 2
+            "Double": 1
         },
         "Marcy House": {
-            "Total Beds": 136,
-            "Triple": 12,
-            "Double": 46,
+            "Total Beds": 66,
+            "Triple": 4,
+            "Double": 23,
             "Single": 8
         },
         "Minden Hall": {
-            "Total Beds": 130,
-            "Triple": 21,
-            "Suite (3)": 3,
-            "Double": 13,
-            "Quad": 8
+            "Total Beds": 49,
+            "Triple": 7,
+            "Suite (3)": 2,
+            "Double": 7,
+            "Quad": 2
         },
         "Olney House": {
-            "Total Beds": 105,
-            "Double": 50,
+            "Total Beds": 55,
+            "Double": 25,
             "Single": 5
         },
         "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
+            "Total Beds": 164,
+            "Double": 82
         },
         "Sears House": {
-            "Total Beds": 129,
+            "Total Beds": 69,
             "Single": 9,
-            "Double": 60
+            "Double": 30
         },
         "Slater Hall": {
-            "Total Beds": 63,
-            "Double": 18,
-            "Triple": 9
+            "Total Beds": 27,
+            "Double": 9,
+            "Triple": 3
         },
         "Sternlicht Commons": {
-            "Total Beds": 122,
+            "Total Beds": 74,
             "Single": 58,
-            "Suite (4)": 16
+            "Suite (4)": 4
         },
         "Wayland House": {
-            "Total Beds": 243,
-            "Double": 108,
-            "Triple": 9
+            "Total Beds": 117,
+            "Double": 54,
+            "Triple": 3
         }
     },
     "April 9, 2:30 PM": {
         "Barbour Hall": {
-            "Total Beds": 61,
-            "Triple": 15,
-            "Double": 8
+            "Total Beds": 23,
+            "Triple": 5,
+            "Double": 4
         },
         "Buxton House": {
-            "Total Beds": 71,
-            "Double": 34,
+            "Total Beds": 37,
+            "Double": 17,
             "Single": 3
         },
         "Caswell Hall": {
-            "Total Beds": 176,
-            "Double": 88
+            "Total Beds": 88,
+            "Double": 44
         },
         "Chapin House": {
-            "Total Beds": 154,
-            "Double": 74,
+            "Total Beds": 80,
+            "Double": 37,
             "Single": 6
         },
         "Diman House": {
-            "Total Beds": 130,
-            "Double": 48,
-            "Triple": 9,
+            "Total Beds": 64,
+            "Double": 24,
+            "Triple": 3,
             "Single": 7
         },
         "Goddard House": {
-            "Total Beds": 91,
-            "Double": 40,
+            "Total Beds": 51,
+            "Double": 20,
             "Single": 11
         },
         "Grad Center": {
@@ -669,110 +669,110 @@
             "Single": 193
         },
         "Gregorian": {
-            "Total Beds": 113,
-            "Double": 16,
-            "Triple": 27
+            "Total Beds": 43,
+            "Double": 8,
+            "Triple": 9
         },
         "Harkness House": {
-            "Total Beds": 108,
-            "Double": 52,
+            "Total Beds": 56,
+            "Double": 26,
             "Single": 4
         },
         "Hegeman Hall": {
-            "Total Beds": 119,
-            "Suite (3)": 37,
-            "Double": 4
+            "Total Beds": 43,
+            "Suite (3)": 13,
+            "Double": 2
         },
         "Hope College": {
-            "Total Beds": 72,
-            "Double": 36
+            "Total Beds": 36,
+            "Double": 18
         },
         "King House": {
-            "Total Beds": 21,
-            "Double": 10,
+            "Total Beds": 11,
+            "Double": 5,
             "Single": 1
         },
         "Littlefield Hall": {
-            "Total Beds": 120,
-            "Double": 60
+            "Total Beds": 60,
+            "Double": 30
         },
         "Machado House": {
-            "Total Beds": 5,
+            "Total Beds": 3,
             "Single": 1,
-            "Double": 2
+            "Double": 1
         },
         "Marcy House": {
-            "Total Beds": 133,
-            "Triple": 12,
-            "Double": 46,
+            "Total Beds": 63,
+            "Triple": 4,
+            "Double": 23,
             "Single": 5
         },
         "Minden Hall": {
-            "Total Beds": 88,
-            "Triple": 15,
+            "Total Beds": 30,
+            "Triple": 5,
             "Suite (3)": 1,
-            "Double": 4,
-            "Quad": 8
+            "Double": 2,
+            "Quad": 2
         },
         "Olney House": {
-            "Total Beds": 104,
-            "Double": 50,
+            "Total Beds": 54,
+            "Double": 25,
             "Single": 4
         },
         "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
+            "Total Beds": 164,
+            "Double": 82
         },
         "Sears House": {
-            "Total Beds": 125,
+            "Total Beds": 65,
             "Single": 5,
-            "Double": 60
+            "Double": 30
         },
         "Slater Hall": {
-            "Total Beds": 59,
-            "Double": 16,
-            "Triple": 9
+            "Total Beds": 25,
+            "Double": 8,
+            "Triple": 3
         },
         "Sternlicht Commons": {
-            "Total Beds": 103,
+            "Total Beds": 67,
             "Single": 55,
-            "Suite (4)": 12
+            "Suite (4)": 3
         },
         "Wayland House": {
-            "Total Beds": 243,
-            "Double": 108,
-            "Triple": 9
+            "Total Beds": 117,
+            "Double": 54,
+            "Triple": 3
         }
     },
     "April 9, 3:30 PM": {
         "Barbour Hall": {
-            "Total Beds": 44,
-            "Triple": 12,
-            "Double": 4
+            "Total Beds": 16,
+            "Triple": 4,
+            "Double": 2
         },
         "Buxton House": {
-            "Total Beds": 70,
-            "Double": 34,
+            "Total Beds": 36,
+            "Double": 17,
             "Single": 2
         },
         "Caswell Hall": {
-            "Total Beds": 168,
-            "Double": 84
+            "Total Beds": 84,
+            "Double": 42
         },
         "Chapin House": {
-            "Total Beds": 150,
-            "Double": 74,
+            "Total Beds": 76,
+            "Double": 37,
             "Single": 2
         },
         "Diman House": {
-            "Total Beds": 130,
-            "Double": 48,
-            "Triple": 9,
+            "Total Beds": 64,
+            "Double": 24,
+            "Triple": 3,
             "Single": 7
         },
         "Goddard House": {
-            "Total Beds": 86,
-            "Double": 40,
+            "Total Beds": 46,
+            "Double": 20,
             "Single": 6
         },
         "Grad Center": {
@@ -780,756 +780,756 @@
             "Single": 164
         },
         "Gregorian": {
-            "Total Beds": 92,
-            "Double": 10,
-            "Triple": 24
-        },
-        "Harkness House": {
-            "Total Beds": 106,
-            "Double": 52,
-            "Single": 2
-        },
-        "Hegeman Hall": {
-            "Total Beds": 29,
-            "Suite (3)": 7,
-            "Double": 4
-        },
-        "Hope College": {
-            "Total Beds": 72,
-            "Double": 36
-        },
-        "King House": {
-            "Total Beds": 21,
-            "Double": 10,
-            "Single": 1
-        },
-        "Littlefield Hall": {
-            "Total Beds": 120,
-            "Double": 60
-        },
-        "Machado House": {
-            "Total Beds": 5,
-            "Single": 1,
-            "Double": 2
-        },
-        "Marcy House": {
-            "Total Beds": 124,
-            "Triple": 12,
-            "Double": 44
-        },
-        "Minden Hall": {
-            "Total Beds": 48,
-            "Triple": 3,
-            "Suite (3)": 1,
-            "Quad": 8,
-            "Double": 2
-        },
-        "Olney House": {
-            "Total Beds": 102,
-            "Double": 50,
-            "Single": 2
-        },
-        "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
-        },
-        "Sears House": {
-            "Total Beds": 114,
-            "Double": 56,
-            "Single": 2
-        },
-        "Slater Hall": {
-            "Total Beds": 46,
-            "Double": 14,
-            "Triple": 6
-        },
-        "Sternlicht Commons": {
-            "Total Beds": 67,
-            "Single": 51,
-            "Suite (4)": 4
-        },
-        "Wayland House": {
-            "Total Beds": 243,
-            "Double": 108,
-            "Triple": 9
-        }
-    },
-    "April 10, 9:20 AM": {
-        "Barbour Hall": {
-            "Total Beds": 40,
-            "Triple": 12,
-            "Double": 2
-        },
-        "Buxton House": {
-            "Total Beds": 68,
-            "Double": 34
-        },
-        "Caswell Hall": {
-            "Total Beds": 152,
-            "Double": 76
-        },
-        "Chapin House": {
-            "Total Beds": 148,
-            "Double": 74
-        },
-        "Diman House": {
-            "Total Beds": 123,
-            "Double": 48,
-            "Triple": 9
-        },
-        "Goddard House": {
-            "Total Beds": 76,
-            "Double": 38
-        },
-        "Grad Center": {
-            "Total Beds": 62,
-            "Single": 62
-        },
-        "Gregorian": {
-            "Total Beds": 80,
-            "Double": 4,
-            "Triple": 24
-        },
-        "Harkness House": {
-            "Total Beds": 104,
-            "Double": 52
-        },
-        "Hegeman Hall": {
-            "Total Beds": 6,
-            "Suite (3)": 2
-        },
-        "Hope College": {
-            "Total Beds": 68,
-            "Double": 34
-        },
-        "King House": {
-            "Total Beds": 20,
-            "Double": 10
-        },
-        "Littlefield Hall": {
-            "Total Beds": 120,
-            "Double": 60
-        },
-        "Machado House": {
-            "Total Beds": 4,
-            "Double": 2
-        },
-        "Marcy House": {
-            "Total Beds": 124,
-            "Triple": 12,
-            "Double": 44
-        },
-        "Minden Hall": {
-            "Total Beds": 32,
-            "Quad": 8
-        },
-        "Olney House": {
-            "Total Beds": 96,
-            "Double": 48
-        },
-        "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
-        },
-        "Sears House": {
-            "Total Beds": 112,
-            "Double": 56
-        },
-        "Slater Hall": {
-            "Total Beds": 33,
-            "Double": 12,
-            "Triple": 3
-        },
-        "Sternlicht Commons": {
-            "Total Beds": 52,
-            "Single": 36,
-            "Suite (4)": 4
-        },
-        "Wayland House": {
-            "Total Beds": 243,
-            "Double": 108,
-            "Triple": 9
-        }
-    },
-    "April 10, 10:30 AM": {
-        "Barbour Hall": {
-            "Total Beds": 36,
-            "Triple": 12
-        },
-        "Buxton House": {
-            "Total Beds": 68,
-            "Double": 34
-        },
-        "Caswell Hall": {
-            "Total Beds": 148,
-            "Double": 74
-        },
-        "Chapin House": {
-            "Total Beds": 140,
-            "Double": 70
-        },
-        "Diman House": {
-            "Total Beds": 128,
-            "Triple": 12,
-            "Double": 46
-        },
-        "Goddard House": {
-            "Total Beds": 72,
-            "Double": 36
-        },
-        "Grad Center": {
-            "Total Beds": 47,
-            "Single": 47
-        },
-        "Gregorian": {
-            "Total Beds": 62,
-            "Suite (4)": 2,
-            "Triple": 18
-        },
-        "Harkness House": {
-            "Total Beds": 92,
-            "Double": 46
-        },
-        "Hegeman Hall": {
-            "Total Beds": 6,
-            "Suite (3)": 2
-        },
-        "Hope College": {
-            "Total Beds": 64,
-            "Double": 32
-        },
-        "King House": {
-            "Total Beds": 12,
-            "Double": 6
-        },
-        "Littlefield Hall": {
-            "Total Beds": 116,
-            "Double": 58
-        },
-        "Marcy House": {
-            "Total Beds": 120,
-            "Triple": 12,
-            "Double": 42
-        },
-        "Minden Hall": {
-            "Total Beds": 32,
-            "Quad": 8
-        },
-        "Olney House": {
-            "Total Beds": 96,
-            "Double": 48
-        },
-        "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
-        },
-        "Sears House": {
-            "Total Beds": 112,
-            "Double": 56
-        },
-        "Slater Hall": {
-            "Total Beds": 29,
-            "Double": 10,
-            "Triple": 3
-        },
-        "Sternlicht Commons": {
-            "Total Beds": 44,
-            "Single": 28,
-            "Suite (4)": 4
-        },
-        "Wayland House": {
-            "Total Beds": 243,
-            "Double": 108,
-            "Triple": 9
-        }
-    },
-    "April 10, 11:30 AM": {
-        "Barbour Hall": {
-            "Total Beds": 36,
-            "Triple": 12
-        },
-        "Buxton House": {
-            "Total Beds": 64,
-            "Double": 32
-        },
-        "Caswell Hall": {
-            "Total Beds": 140,
-            "Double": 70
-        },
-        "Chapin House": {
-            "Total Beds": 140,
-            "Double": 70
-        },
-        "Diman House": {
-            "Total Beds": 116,
-            "Triple": 12,
-            "Double": 40
-        },
-        "Goddard House": {
-            "Total Beds": 64,
-            "Double": 32
-        },
-        "Grad Center": {
             "Total Beds": 34,
-            "Single": 34
-        },
-        "Gregorian": {
-            "Total Beds": 36,
-            "Triple": 12
+            "Double": 5,
+            "Triple": 8
         },
         "Harkness House": {
-            "Total Beds": 88,
-            "Double": 44
+            "Total Beds": 54,
+            "Double": 26,
+            "Single": 2
         },
         "Hegeman Hall": {
-            "Total Beds": 6,
-            "Suite (3)": 2
-        },
-        "Hope College": {
-            "Total Beds": 60,
-            "Double": 30
-        },
-        "King House": {
-            "Total Beds": 12,
-            "Double": 6
-        },
-        "Littlefield Hall": {
-            "Total Beds": 116,
-            "Double": 58
-        },
-        "Marcy House": {
-            "Total Beds": 120,
-            "Triple": 12,
-            "Double": 42
-        },
-        "Minden Hall": {
-            "Total Beds": 32,
-            "Quad": 8
-        },
-        "Olney House": {
-            "Total Beds": 96,
-            "Double": 48
-        },
-        "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
-        },
-        "Sears House": {
-            "Total Beds": 112,
-            "Double": 56
-        },
-        "Slater Hall": {
-            "Total Beds": 12,
-            "Double": 6
-        },
-        "Sternlicht Commons": {
-            "Total Beds": 36,
-            "Single": 20,
-            "Suite (4)": 4
-        },
-        "Wayland House": {
-            "Total Beds": 231,
-            "Double": 102,
-            "Triple": 9
-        }
-    },
-    "April 10, 12:45 PM": {
-        "Barbour Hall": {
-            "Total Beds": 36,
-            "Triple": 12
-        },
-        "Buxton House": {
-            "Total Beds": 60,
-            "Double": 30
-        },
-        "Caswell Hall": {
-            "Total Beds": 136,
-            "Double": 68
-        },
-        "Chapin House": {
-            "Total Beds": 140,
-            "Double": 70
-        },
-        "Diman House": {
-            "Total Beds": 116,
-            "Triple": 12,
-            "Double": 40
-        },
-        "Goddard House": {
-            "Total Beds": 64,
-            "Double": 32
-        },
-        "Grad Center": {
-            "Total Beds": 24,
-            "Single": 24
-        },
-        "Gregorian": {
-            "Total Beds": 36,
-            "Triple": 12
-        },
-        "Harkness House": {
-            "Total Beds": 84,
-            "Double": 42
-        },
-        "Hope College": {
-            "Total Beds": 56,
-            "Double": 28
-        },
-        "King House": {
-            "Total Beds": 12,
-            "Double": 6
-        },
-        "Littlefield Hall": {
-            "Total Beds": 112,
-            "Double": 56
-        },
-        "Marcy House": {
-            "Total Beds": 112,
-            "Triple": 12,
-            "Double": 38
-        },
-        "Minden Hall": {
-            "Total Beds": 32,
-            "Quad": 8
-        },
-        "Olney House": {
-            "Total Beds": 96,
-            "Double": 48
-        },
-        "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
-        },
-        "Sears House": {
-            "Total Beds": 108,
-            "Double": 54
-        },
-        "Slater Hall": {
-            "Total Beds": 8,
-            "Double": 4
-        },
-        "Sternlicht Commons": {
-            "Total Beds": 30,
-            "Single": 14,
-            "Suite (4)": 4
-        },
-        "Wayland House": {
-            "Total Beds": 215,
-            "Double": 94,
-            "Triple": 9
-        }
-    },
-    "April 10, 2:30 PM": {
-        "Barbour Hall": {
-            "Total Beds": 9,
-            "Triple": 3
-        },
-        "Buxton House": {
-            "Total Beds": 48,
-            "Double": 24
-        },
-        "Caswell Hall": {
-            "Total Beds": 80,
-            "Double": 40
-        },
-        "Chapin House": {
-            "Total Beds": 116,
-            "Double": 58
-        },
-        "Diman House": {
-            "Total Beds": 79,
-            "Triple": 9,
-            "Double": 26
-        },
-        "Goddard House": {
-            "Total Beds": 60,
-            "Double": 30
-        },
-        "Grad Center": {
-            "Total Beds": 8,
-            "Single": 8
-        },
-        "Gregorian": {
-            "Total Beds": 18,
-            "Triple": 6
-        },
-        "Harkness House": {
-            "Total Beds": 68,
-            "Double": 34
+            "Total Beds": 13,
+            "Suite (3)": 3,
+            "Double": 2
         },
         "Hope College": {
             "Total Beds": 36,
             "Double": 18
         },
         "King House": {
-            "Total Beds": 8,
-            "Double": 4
-        },
-        "Littlefield Hall": {
-            "Total Beds": 80,
-            "Double": 40
-        },
-        "Marcy House": {
-            "Total Beds": 100,
-            "Triple": 12,
-            "Double": 32
-        },
-        "Olney House": {
-            "Total Beds": 72,
-            "Double": 36
-        },
-        "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
-        },
-        "Sears House": {
-            "Total Beds": 100,
-            "Double": 50
-        },
-        "Slater Hall": {
-            "Total Beds": 4,
-            "Double": 2
-        },
-        "Sternlicht Commons": {
-            "Total Beds": 23,
-            "Single": 7,
-            "Suite (4)": 4
-        },
-        "Wayland House": {
-            "Total Beds": 175,
-            "Double": 74,
-            "Triple": 9
-        }
-    },
-    "April 10, 3:35 PM": {
-        "Buxton House": {
-            "Total Beds": 20,
-            "Double": 10
-        },
-        "Caswell Hall": {
-            "Total Beds": 24,
-            "Double": 12
-        },
-        "Chapin House": {
-            "Total Beds": 84,
-            "Double": 42
-        },
-        "Diman House": {
-            "Total Beds": 45,
-            "Double": 18,
-            "Triple": 3
-        },
-        "Goddard House": {
-            "Total Beds": 52,
-            "Double": 26
-        },
-        "Grad Center": {
-            "Total Beds": 7,
-            "Single": 7
-        },
-        "Harkness House": {
-            "Total Beds": 44,
-            "Double": 22
-        },
-        "King House": {
-            "Total Beds": 8,
-            "Double": 4
+            "Total Beds": 11,
+            "Double": 5,
+            "Single": 1
         },
         "Littlefield Hall": {
             "Total Beds": 60,
             "Double": 30
         },
+        "Machado House": {
+            "Total Beds": 3,
+            "Single": 1,
+            "Double": 1
+        },
         "Marcy House": {
-            "Total Beds": 50,
-            "Triple": 6,
-            "Double": 16
+            "Total Beds": 56,
+            "Triple": 4,
+            "Double": 22
+        },
+        "Minden Hall": {
+            "Total Beds": 16,
+            "Triple": 1,
+            "Suite (3)": 1,
+            "Quad": 2,
+            "Double": 1
         },
         "Olney House": {
-            "Total Beds": 64,
-            "Double": 32
+            "Total Beds": 52,
+            "Double": 25,
+            "Single": 2
         },
         "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
+            "Total Beds": 164,
+            "Double": 82
         },
         "Sears House": {
-            "Total Beds": 96,
-            "Double": 48
+            "Total Beds": 58,
+            "Double": 28,
+            "Single": 2
+        },
+        "Slater Hall": {
+            "Total Beds": 20,
+            "Double": 7,
+            "Triple": 2
         },
         "Sternlicht Commons": {
-            "Total Beds": 23,
-            "Single": 7,
-            "Suite (4)": 4
+            "Total Beds": 55,
+            "Single": 51,
+            "Suite (4)": 1
         },
         "Wayland House": {
-            "Total Beds": 89,
-            "Double": 40,
+            "Total Beds": 117,
+            "Double": 54,
             "Triple": 3
         }
     },
-    "April 10, 4:35 PM": {
+    "April 10, 9:20 AM": {
+        "Barbour Hall": {
+            "Total Beds": 14,
+            "Triple": 4,
+            "Double": 1
+        },
         "Buxton House": {
-            "Total Beds": 12,
-            "Double": 6
+            "Total Beds": 34,
+            "Double": 17
         },
         "Caswell Hall": {
-            "Total Beds": 24,
-            "Double": 12
+            "Total Beds": 76,
+            "Double": 38
         },
         "Chapin House": {
-            "Total Beds": 44,
-            "Double": 22
+            "Total Beds": 74,
+            "Double": 37
         },
         "Diman House": {
-            "Total Beds": 37,
-            "Triple": 3,
-            "Double": 14
+            "Total Beds": 57,
+            "Double": 24,
+            "Triple": 3
+        },
+        "Goddard House": {
+            "Total Beds": 38,
+            "Double": 19
+        },
+        "Grad Center": {
+            "Total Beds": 62,
+            "Single": 62
+        },
+        "Gregorian": {
+            "Total Beds": 28,
+            "Double": 2,
+            "Triple": 8
+        },
+        "Harkness House": {
+            "Total Beds": 52,
+            "Double": 26
+        },
+        "Hegeman Hall": {
+            "Total Beds": 3,
+            "Suite (3)": 1
+        },
+        "Hope College": {
+            "Total Beds": 34,
+            "Double": 17
+        },
+        "King House": {
+            "Total Beds": 10,
+            "Double": 5
+        },
+        "Littlefield Hall": {
+            "Total Beds": 60,
+            "Double": 30
+        },
+        "Machado House": {
+            "Total Beds": 2,
+            "Double": 1
+        },
+        "Marcy House": {
+            "Total Beds": 56,
+            "Triple": 4,
+            "Double": 22
+        },
+        "Minden Hall": {
+            "Total Beds": 8,
+            "Quad": 2
+        },
+        "Olney House": {
+            "Total Beds": 48,
+            "Double": 24
+        },
+        "Perkins Hall": {
+            "Total Beds": 164,
+            "Double": 82
+        },
+        "Sears House": {
+            "Total Beds": 56,
+            "Double": 28
+        },
+        "Slater Hall": {
+            "Total Beds": 15,
+            "Double": 6,
+            "Triple": 1
+        },
+        "Sternlicht Commons": {
+            "Total Beds": 40,
+            "Single": 36,
+            "Suite (4)": 1
+        },
+        "Wayland House": {
+            "Total Beds": 117,
+            "Double": 54,
+            "Triple": 3
+        }
+    },
+    "April 10, 10:30 AM": {
+        "Barbour Hall": {
+            "Total Beds": 12,
+            "Triple": 4
+        },
+        "Buxton House": {
+            "Total Beds": 34,
+            "Double": 17
+        },
+        "Caswell Hall": {
+            "Total Beds": 74,
+            "Double": 37
+        },
+        "Chapin House": {
+            "Total Beds": 70,
+            "Double": 35
+        },
+        "Diman House": {
+            "Total Beds": 58,
+            "Triple": 4,
+            "Double": 23
+        },
+        "Goddard House": {
+            "Total Beds": 36,
+            "Double": 18
+        },
+        "Grad Center": {
+            "Total Beds": 47,
+            "Single": 47
+        },
+        "Gregorian": {
+            "Total Beds": 22,
+            "Suite (4)": 1,
+            "Triple": 6
+        },
+        "Harkness House": {
+            "Total Beds": 46,
+            "Double": 23
+        },
+        "Hegeman Hall": {
+            "Total Beds": 3,
+            "Suite (3)": 1
+        },
+        "Hope College": {
+            "Total Beds": 32,
+            "Double": 16
+        },
+        "King House": {
+            "Total Beds": 6,
+            "Double": 3
+        },
+        "Littlefield Hall": {
+            "Total Beds": 58,
+            "Double": 29
+        },
+        "Marcy House": {
+            "Total Beds": 54,
+            "Triple": 4,
+            "Double": 21
+        },
+        "Minden Hall": {
+            "Total Beds": 8,
+            "Quad": 2
+        },
+        "Olney House": {
+            "Total Beds": 48,
+            "Double": 24
+        },
+        "Perkins Hall": {
+            "Total Beds": 164,
+            "Double": 82
+        },
+        "Sears House": {
+            "Total Beds": 56,
+            "Double": 28
+        },
+        "Slater Hall": {
+            "Total Beds": 13,
+            "Double": 5,
+            "Triple": 1
+        },
+        "Sternlicht Commons": {
+            "Total Beds": 32,
+            "Single": 28,
+            "Suite (4)": 1
+        },
+        "Wayland House": {
+            "Total Beds": 117,
+            "Double": 54,
+            "Triple": 3
+        }
+    },
+    "April 10, 11:30 AM": {
+        "Barbour Hall": {
+            "Total Beds": 12,
+            "Triple": 4
+        },
+        "Buxton House": {
+            "Total Beds": 32,
+            "Double": 16
+        },
+        "Caswell Hall": {
+            "Total Beds": 70,
+            "Double": 35
+        },
+        "Chapin House": {
+            "Total Beds": 70,
+            "Double": 35
+        },
+        "Diman House": {
+            "Total Beds": 52,
+            "Triple": 4,
+            "Double": 20
         },
         "Goddard House": {
             "Total Beds": 32,
             "Double": 16
         },
         "Grad Center": {
-            "Total Beds": 6,
-            "Single": 6
+            "Total Beds": 34,
+            "Single": 34
+        },
+        "Gregorian": {
+            "Total Beds": 12,
+            "Triple": 4
         },
         "Harkness House": {
+            "Total Beds": 44,
+            "Double": 22
+        },
+        "Hegeman Hall": {
+            "Total Beds": 3,
+            "Suite (3)": 1
+        },
+        "Hope College": {
+            "Total Beds": 30,
+            "Double": 15
+        },
+        "King House": {
+            "Total Beds": 6,
+            "Double": 3
+        },
+        "Littlefield Hall": {
+            "Total Beds": 58,
+            "Double": 29
+        },
+        "Marcy House": {
+            "Total Beds": 54,
+            "Triple": 4,
+            "Double": 21
+        },
+        "Minden Hall": {
+            "Total Beds": 8,
+            "Quad": 2
+        },
+        "Olney House": {
+            "Total Beds": 48,
+            "Double": 24
+        },
+        "Perkins Hall": {
+            "Total Beds": 164,
+            "Double": 82
+        },
+        "Sears House": {
+            "Total Beds": 56,
+            "Double": 28
+        },
+        "Slater Hall": {
+            "Total Beds": 6,
+            "Double": 3
+        },
+        "Sternlicht Commons": {
+            "Total Beds": 24,
+            "Single": 20,
+            "Suite (4)": 1
+        },
+        "Wayland House": {
+            "Total Beds": 111,
+            "Double": 51,
+            "Triple": 3
+        }
+    },
+    "April 10, 12:45 PM": {
+        "Barbour Hall": {
+            "Total Beds": 12,
+            "Triple": 4
+        },
+        "Buxton House": {
+            "Total Beds": 30,
+            "Double": 15
+        },
+        "Caswell Hall": {
+            "Total Beds": 68,
+            "Double": 34
+        },
+        "Chapin House": {
+            "Total Beds": 70,
+            "Double": 35
+        },
+        "Diman House": {
+            "Total Beds": 52,
+            "Triple": 4,
+            "Double": 20
+        },
+        "Goddard House": {
+            "Total Beds": 32,
+            "Double": 16
+        },
+        "Grad Center": {
+            "Total Beds": 24,
+            "Single": 24
+        },
+        "Gregorian": {
+            "Total Beds": 12,
+            "Triple": 4
+        },
+        "Harkness House": {
+            "Total Beds": 42,
+            "Double": 21
+        },
+        "Hope College": {
             "Total Beds": 28,
             "Double": 14
         },
         "King House": {
-            "Total Beds": 8,
-            "Double": 4
+            "Total Beds": 6,
+            "Double": 3
         },
         "Littlefield Hall": {
-            "Total Beds": 16,
-            "Double": 8
+            "Total Beds": 56,
+            "Double": 28
         },
         "Marcy House": {
-            "Total Beds": 38,
-            "Triple": 6,
-            "Double": 10
+            "Total Beds": 50,
+            "Triple": 4,
+            "Double": 19
+        },
+        "Minden Hall": {
+            "Total Beds": 8,
+            "Quad": 2
         },
         "Olney House": {
+            "Total Beds": 48,
+            "Double": 24
+        },
+        "Perkins Hall": {
+            "Total Beds": 164,
+            "Double": 82
+        },
+        "Sears House": {
+            "Total Beds": 54,
+            "Double": 27
+        },
+        "Slater Hall": {
+            "Total Beds": 4,
+            "Double": 2
+        },
+        "Sternlicht Commons": {
+            "Total Beds": 18,
+            "Single": 14,
+            "Suite (4)": 1
+        },
+        "Wayland House": {
+            "Total Beds": 103,
+            "Double": 47,
+            "Triple": 3
+        }
+    },
+    "April 10, 2:30 PM": {
+        "Barbour Hall": {
+            "Total Beds": 3,
+            "Triple": 1
+        },
+        "Buxton House": {
+            "Total Beds": 24,
+            "Double": 12
+        },
+        "Caswell Hall": {
             "Total Beds": 40,
             "Double": 20
         },
+        "Chapin House": {
+            "Total Beds": 58,
+            "Double": 29
+        },
+        "Diman House": {
+            "Total Beds": 35,
+            "Triple": 3,
+            "Double": 13
+        },
+        "Goddard House": {
+            "Total Beds": 30,
+            "Double": 15
+        },
+        "Grad Center": {
+            "Total Beds": 8,
+            "Single": 8
+        },
+        "Gregorian": {
+            "Total Beds": 6,
+            "Triple": 2
+        },
+        "Harkness House": {
+            "Total Beds": 34,
+            "Double": 17
+        },
+        "Hope College": {
+            "Total Beds": 18,
+            "Double": 9
+        },
+        "King House": {
+            "Total Beds": 4,
+            "Double": 2
+        },
+        "Littlefield Hall": {
+            "Total Beds": 40,
+            "Double": 20
+        },
+        "Marcy House": {
+            "Total Beds": 44,
+            "Triple": 4,
+            "Double": 16
+        },
+        "Olney House": {
+            "Total Beds": 36,
+            "Double": 18
+        },
         "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
+            "Total Beds": 164,
+            "Double": 82
         },
         "Sears House": {
-            "Total Beds": 92,
-            "Double": 46
+            "Total Beds": 50,
+            "Double": 25
+        },
+        "Slater Hall": {
+            "Total Beds": 2,
+            "Double": 1
+        },
+        "Sternlicht Commons": {
+            "Total Beds": 11,
+            "Single": 7,
+            "Suite (4)": 1
+        },
+        "Wayland House": {
+            "Total Beds": 83,
+            "Double": 37,
+            "Triple": 3
+        }
+    },
+    "April 10, 3:35 PM": {
+        "Buxton House": {
+            "Total Beds": 10,
+            "Double": 5
+        },
+        "Caswell Hall": {
+            "Total Beds": 12,
+            "Double": 6
+        },
+        "Chapin House": {
+            "Total Beds": 42,
+            "Double": 21
+        },
+        "Diman House": {
+            "Total Beds": 21,
+            "Double": 9,
+            "Triple": 1
+        },
+        "Goddard House": {
+            "Total Beds": 26,
+            "Double": 13
+        },
+        "Grad Center": {
+            "Total Beds": 7,
+            "Single": 7
+        },
+        "Harkness House": {
+            "Total Beds": 22,
+            "Double": 11
+        },
+        "King House": {
+            "Total Beds": 4,
+            "Double": 2
+        },
+        "Littlefield Hall": {
+            "Total Beds": 30,
+            "Double": 15
+        },
+        "Marcy House": {
+            "Total Beds": 22,
+            "Triple": 2,
+            "Double": 8
+        },
+        "Olney House": {
+            "Total Beds": 32,
+            "Double": 16
+        },
+        "Perkins Hall": {
+            "Total Beds": 164,
+            "Double": 82
+        },
+        "Sears House": {
+            "Total Beds": 48,
+            "Double": 24
+        },
+        "Sternlicht Commons": {
+            "Total Beds": 11,
+            "Single": 7,
+            "Suite (4)": 1
+        },
+        "Wayland House": {
+            "Total Beds": 43,
+            "Double": 20,
+            "Triple": 1
+        }
+    },
+    "April 10, 4:35 PM": {
+        "Buxton House": {
+            "Total Beds": 6,
+            "Double": 3
+        },
+        "Caswell Hall": {
+            "Total Beds": 12,
+            "Double": 6
+        },
+        "Chapin House": {
+            "Total Beds": 22,
+            "Double": 11
+        },
+        "Diman House": {
+            "Total Beds": 17,
+            "Triple": 1,
+            "Double": 7
+        },
+        "Goddard House": {
+            "Total Beds": 16,
+            "Double": 8
+        },
+        "Grad Center": {
+            "Total Beds": 6,
+            "Single": 6
+        },
+        "Harkness House": {
+            "Total Beds": 14,
+            "Double": 7
+        },
+        "King House": {
+            "Total Beds": 4,
+            "Double": 2
+        },
+        "Littlefield Hall": {
+            "Total Beds": 8,
+            "Double": 4
+        },
+        "Marcy House": {
+            "Total Beds": 16,
+            "Triple": 2,
+            "Double": 5
+        },
+        "Olney House": {
+            "Total Beds": 20,
+            "Double": 10
+        },
+        "Perkins Hall": {
+            "Total Beds": 164,
+            "Double": 82
+        },
+        "Sears House": {
+            "Total Beds": 46,
+            "Double": 23
         },
         "Sternlicht Commons": {
             "Total Beds": 7,
             "Single": 7
         },
         "Wayland House": {
-            "Total Beds": 53,
-            "Double": 22,
-            "Triple": 3
+            "Total Beds": 25,
+            "Double": 11,
+            "Triple": 1
         }
     },
     "April 11, 10:15 AM": {
         "Buxton House": {
-            "Total Beds": 4,
-            "Double": 2
+            "Total Beds": 2,
+            "Double": 1
         },
         "Caswell Hall": {
-            "Total Beds": 24,
-            "Double": 12
+            "Total Beds": 12,
+            "Double": 6
         },
         "Diman House": {
-            "Total Beds": 4,
-            "Double": 2
+            "Total Beds": 2,
+            "Double": 1
         },
         "Goddard House": {
-            "Total Beds": 20,
-            "Double": 10
+            "Total Beds": 10,
+            "Double": 5
         },
         "Grad Center": {
             "Total Beds": 2,
             "Single": 2
         },
         "Harkness House": {
-            "Total Beds": 12,
-            "Double": 6
+            "Total Beds": 6,
+            "Double": 3
         },
         "King House": {
-            "Total Beds": 8,
-            "Double": 4
-        },
-        "Littlefield Hall": {
             "Total Beds": 4,
             "Double": 2
         },
+        "Littlefield Hall": {
+            "Total Beds": 2,
+            "Double": 1
+        },
         "Marcy House": {
-            "Total Beds": 25,
-            "Double": 8,
-            "Triple": 3
+            "Total Beds": 11,
+            "Double": 4,
+            "Triple": 1
         },
         "Olney House": {
-            "Total Beds": 16,
-            "Double": 8
+            "Total Beds": 8,
+            "Double": 4
         },
         "Perkins Hall": {
-            "Total Beds": 328,
-            "Double": 164
+            "Total Beds": 164,
+            "Double": 82
         },
         "Sears House": {
-            "Total Beds": 80,
-            "Double": 40
+            "Total Beds": 40,
+            "Double": 20
         },
         "Sternlicht Commons": {
             "Total Beds": 6,
             "Single": 6
         },
         "Wayland House": {
-            "Total Beds": 13,
-            "Triple": 3,
-            "Double": 2
+            "Total Beds": 5,
+            "Triple": 1,
+            "Double": 1
         }
     },
     "April 11, 11:30 AM": {
         "Caswell Hall": {
-            "Total Beds": 24,
-            "Double": 12
+            "Total Beds": 12,
+            "Double": 6
         },
         "Grad Center": {
             "Total Beds": 2,
             "Single": 2
         },
         "Perkins Hall": {
-            "Total Beds": 296,
-            "Double": 148
+            "Total Beds": 148,
+            "Double": 74
         },
         "Sears House": {
-            "Total Beds": 4,
-            "Double": 2
+            "Total Beds": 2,
+            "Double": 1
         },
         "Sternlicht Commons": {
             "Total Beds": 6,
             "Single": 6
         },
         "Wayland House": {
-            "Total Beds": 9,
-            "Triple": 3
+            "Total Beds": 3,
+            "Triple": 1
         }
     },
     "April 11, 12:35 PM": {
         "Caswell Hall": {
-            "Total Beds": 24,
-            "Double": 12
+            "Total Beds": 12,
+            "Double": 6
         },
         "Grad Center": {
             "Total Beds": 2,
             "Single": 2
         },
         "Perkins Hall": {
-            "Total Beds": 228,
-            "Double": 114
+            "Total Beds": 114,
+            "Double": 57
         },
         "Sternlicht Commons": {
             "Total Beds": 6,
@@ -1538,16 +1538,16 @@
     },
     "April 11, 1:45 PM": {
         "Caswell Hall": {
-            "Total Beds": 24,
-            "Double": 12
+            "Total Beds": 12,
+            "Double": 6
         },
         "Grad Center": {
             "Total Beds": 1,
             "Single": 1
         },
         "Perkins Hall": {
-            "Total Beds": 168,
-            "Double": 84
+            "Total Beds": 84,
+            "Double": 42
         },
         "Sternlicht Commons": {
             "Total Beds": 6,
