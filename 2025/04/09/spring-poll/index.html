@@ -48,31 +48,33 @@
         <meta name="msapplication-TileImage"
             content="https://d35jcxe8no8yhr.cloudfront.net/1054f24d72785fb7b6a4e1283656e2ab/dist/img/favicons/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
-</script>
-    </head>
-    <body>
-        <div class="tool">
-            <nav id="navbar">
-                <div id="navbar-logo">
-                    <a href="https://www.browndailyherald.com" target="_blank" aria-label="Visit Brown Daily Herald">
-                        <img id="navbar-logo-img" src="assets/logo-black.png" alt="Brown Daily Herald Logo" />
-                    </a>
-                </div>
-                <h2 class="all-site-title"
-                    style="font-family: var(--header-font);padding:1rem;font-size:1.7rem;">
-                    <span class="desktop-title">Brown University's Admitted
-                        Class of 2029</span>
-                    <span class="mobile-title" style="display:none;">Class of
-                        2029</span>
-                </h2>
-                <div id="nav-links">
-                    <a id="story-link"
-                        href="https://www.browndailyherald.com/article/2025/03/brown-admits-565-of-applicants-to-class-of-2029", target="_blank">
-                        <div>Read the story</div>
-                        <img src="assets/white-arrow.svg" alt="White arrow icon" />
-                    </a>
-                </div>
-                <script>
+    </script>
+</head>
+<body>
+    <div class="tool">
+        <nav id="navbar">
+            <div id="navbar-logo">
+                <a href="https://www.browndailyherald.com" target="_blank"
+                    aria-label="Visit Brown Daily Herald">
+                    <img id="navbar-logo-img" src="assets/logo-black.png"
+                        alt="Brown Daily Herald Logo" />
+                </a>
+            </div>
+            <h2 class="all-site-title"
+                style="font-family: var(--header-font);padding:1rem;font-size:1.7rem;">
+                <span class="desktop-title">Spring 2025 Poll</span>
+                <span class="mobile-title" style="display:none;">Spring Poll</span>
+            </h2>
+            <!--TODO update link -->
+            <div id="nav-links">
+                <a id="story-link"
+                    href="https://www.browndailyherald.com"
+                    , target="_blank">
+                    <div>Read the story</div>
+                    <img src="assets/white-arrow.svg" alt="White arrow icon" />
+                </a>
+            </div>
+            <script>
             window.addEventListener('resize', function() {
                 const desktopTitle = document.querySelector('.desktop-title');
                 const mobileTitle = document.querySelector('.mobile-title');
@@ -89,125 +91,126 @@
             });
             window.dispatchEvent(new Event('resize'));
         </script>
-            </nav>
-            <section class="section-wrapper">
+        </nav>
+        <section class="section-wrapper">
 
-                <div class="question-categories-wrapper">
-                    <div class="question-categories"><button class
-                            data-target="acceptance-rate"
-                            id='acceptance-rate'>Acceptance Rate</button><button class
-                            data-target="student-backgrounds"
-                            id='student-backgrounds'>Student
-                            Backgrounds</button>
-                            <!-- <button class
-                            data-target="concentration"
-                            id='concentration'>Concentration</button> -->
-                            <button
-                            class data-target="financial-aid"
-                            id='financial-aid'>Financial Aid</button></div>
-                </div>
-                <div class="main-content-wrapper">
-                    <div class="question-text"><div
-                            class="question-acceptance-rate-text"
+            <div class="question-categories-wrapper">
+                <div class="question-categories"><button class
+                        data-target="university-climate"
+                        id='university-climate'>University Climate</button><button
+                        class
+                        data-target="student-backgrounds"
+                        id='student-backgrounds'>Student
+                        Backgrounds</button>
+                    <button class
+                        data-target="demographics"
+                        id='demographics'>INSERT CATEGORY</button>
+                    <button
+                        class data-target="approval-ratings"
+                        id='approval-ratings'>Approval Ratings</button></div>
+            </div>
+            <div class="main-content-wrapper">
+                <div class="question-text"><div
+                        class="question-university-climate-text"
+                        style="display: none;">
+                    </div><div class="question-dual-degree-programs-text"
+                        style="display: none;">
+                    </div><div class="question-student-backgrounds-text"
+                        style="display: none;">
+                    </div><div class="question-demographics-text"
+                        style="display: none;">
+                    </div><div class="question-approval-ratings-text"
+                        style="display: none;">
+                    </div></div>
+                <div class="subdiv-graph-wrapper">
+                    <div class="question-subdivisions"><div
+                            class="question-university-climate-subdivisions"
                             style="display: none;">
-                        </div><div class="question-dual-degree-programs-text"
-                            style="display: none;">
-                        </div><div class="question-student-backgrounds-text"
-                            style="display: none;">
-                        </div><div class="question-concentration-text"
-                            style="display: none;">
-                        </div><div class="question-financial-aid-text"
-                            style="display: none;">
-                        </div></div>
-                    <div class="subdiv-graph-wrapper">
-                        <div class="question-subdivisions"><div
-                                class="question-acceptance-rate-subdivisions"
-                                style="display: none;">
-                                <h2 id="breakdown-header">Topics</h2>
-                                <button id="applicants-offered-admission"
-                                    class="Applicants Offered Admission">Applicants
-                                    Offered Admission</button>
-                                <button id="rd-versus-ed"
-                                    class="RD versus ED">RD versus ED</button>
-                                <button id="applicants-ot"
-                                    class="Applicants Over Time">Applicants Over
-                                    Time</button>
-                                <button id="acceptance-rate-ot"
-                                    class="Acceptance Rate Over Time">Acceptance
-                                    Rate Over Time</button>
-
-                            </div>
-
-                            <div
-                                class="question-student-backgrounds-subdivisions"
-                                style="display: none;">
-                                <h2 id="breakdown-header">Topics</h2>
-                                <!-- <button id="gender"
-                                    class="Gender">Gender</button> -->
-                                <button id="countries-ot"
-                                    class="countries Over Time selected">Countries
-                                    Over Time</button>
-                                <button id="states-ot"
-                                    class="states Over Time">States Over
-                                    Time</button>
-                                <button id="first-gen"
-                                    class="first gen">First Gen</button>
-                                <!-- <button id="rural-ot"
-                                    class="rural Over Time">Rural Over
-                                    Time</button> -->
-                                <button id="first-gen-ot"
-                                    class="first gen Over Time">First Gen Over
-                                    Time</button>
-                                <button id="hs-type" class="HS type">High School
-                                    Type</button>
-                                <button id="hs-type-ot"
-                                    class="HS type Over Time">High School Type
-                                    Over Time</button>
-                            </div>
-
-                            <div class="question-concentration-subdivisions"
-                                style="display: none;">
-                                <h2 id="breakdown-header">Topics</h2>
-                                <button id="concentration"
-                                    class="Concentration">Concentration</button>
-                            </div>
-                            <div class="question-financial-aid-subdivisions"
-                                style="display: none;">
-                                <h2 id="breakdown-header">Topics</h2>
-                                <button id="fin-aid"
-                                    class="Financial Aid">Financial Aid</button>
-                                <button id="fin-aid-ot"
-                                    class="Financial Aid Over Time">Financial
-                                    Aid Over Time</button>
-                            </div>
+                            <h2 id="breakdown-header">Topics</h2>
+                            <button id="applicants-offered-admission"
+                                class="Applicants Offered Admission">Applicants
+                                Offered Admission</button>
+                            <button id="rd-versus-ed"
+                                class="RD versus ED">RD versus ED</button>
+                            <button id="applicants-ot"
+                                class="Applicants Over Time">Applicants Over
+                                Time</button>
+                            <button id="university-climate-ot"
+                                class="Acceptance Rate Over Time">Acceptance
+                                Rate Over Time</button>
 
                         </div>
 
-                        <div class="graphics">
+                        <div
+                            class="question-student-backgrounds-subdivisions"
+                            style="display: none;">
+                            <h2 id="breakdown-header">Topics</h2>
+                            <!-- <button id="gender"
+                                    class="Gender">Gender</button> -->
+                            <button id="countries-ot"
+                                class="countries Over Time selected">Countries
+                                Over Time</button>
+                            <button id="states-ot"
+                                class="states Over Time">States Over
+                                Time</button>
+                            <button id="first-gen"
+                                class="first gen">First Gen</button>
+                            <!-- <button id="rural-ot"
+                                    class="rural Over Time">Rural Over
+                                    Time</button> -->
+                            <button id="first-gen-ot"
+                                class="first gen Over Time">First Gen Over
+                                Time</button>
+                            <button id="hs-type" class="HS type">High School
+                                Type</button>
+                            <button id="hs-type-ot"
+                                class="HS type Over Time">High School Type
+                                Over Time</button>
+                        </div>
 
-                            <div
-                                class="image-acceptance-rate-applicants-offered-admission"
-                                style="display: none;">
-                                <iframe title="Applicants Offered Admission"
-                                    aria-label="Stacked Bars"
-                                    id=" datawrapper-chart-PozW9 "
-                                    src="https://datawrapper.dwcdn.net/PozW9/1/"
-                                    scrolling="no" frameborder="0"
-                                    style="width: 0; min-width: 100% !important; border: none;"
-                                    height="909"
-                                    data-external="1"></iframe><script
-                                    type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+                        <div class="question-demographics-subdivisions"
+                            style="display: none;">
+                            <h2 id="breakdown-header">Topics</h2>
+                            <button id="demographics"
+                                class="Concentration">Concentration</button>
+                        </div>
+                        <div class="question-approval-ratings-subdivisions"
+                            style="display: none;">
+                            <h2 id="breakdown-header">Topics</h2>
+                            <button id="fin-aid"
+                                class="Financial Aid">Financial Aid</button>
+                            <button id="fin-aid-ot"
+                                class="Financial Aid Over Time">Financial
+                                Aid Over Time</button>
+                        </div>
+
+                    </div>
+
+                    <div class="graphics">
+
+                        <div
+                            class="image-university-climate-applicants-offered-admission"
+                            style="display: none;">
+                            <iframe title="Applicants Offered Admission"
+                                aria-label="Stacked Bars"
+                                id=" datawrapper-chart-PozW9 "
+                                src="https://datawrapper.dwcdn.net/PozW9/1/"
+                                scrolling="no" frameborder="0"
+                                style="width: 0; min-width: 100% !important; border: none;"
+                                height="909"
+                                data-external="1"></iframe><script
+                                type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>                              </div>
                         
-                            <div class="image-acceptance-rate-rd-versus-ed" style="display: none;">
+                            <div class="image-university-climate-rd-versus-ed" style="display: none;">
 <iframe title="RD versus ED" aria-label="Stacked Bars" id=" datawrapper-chart-5njVW " src="https://datawrapper.dwcdn.net/5njVW/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>                              </div>
                         
-                            <div class="image-acceptance-rate-applicants-ot" style="display: none;">
+                            <div class="image-university-climate-applicants-ot" style="display: none;">
 <iframe title="Applicants Over Time" aria-label="Stacked Bars" id="datawrapper-chart-6OKAp" src="https://datawrapper.dwcdn.net/6OKAp/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>                              </div>
 
-<div class="image-acceptance-rate-acceptance-rate-ot" style="display: none;">
+<div class="image-university-climate-university-climate-ot" style="display: none;">
     <iframe title="Acceptance Rate Over Time" aria-label="Stacked Bars" id="datawrapper-chart-dfvRA " src="https://datawrapper.dwcdn.net/dfvRA/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
     </script>                              </div>
                             
@@ -252,16 +255,16 @@
 
 
                         
-                            <div class="image-concentration-concentration" style="display: none;">
+                            <div class="image-demographics-demographics" style="display: none;">
 <iframe title="Concentration" aria-label="Stacked Bars" id="datawrapper-chart-yptCf" src="https://datawrapper.dwcdn.net/yptCf/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>                              </div>
                     
                         
-                            <div class="image-financial-aid-fin-aid" style="display: none;">
+                            <div class="image-approval-ratings-fin-aid" style="display: none;">
 <iframe title="Financial Aid" aria-label="Stacked Bars" id="datawrapper-chart-4hcqE" src="https://datawrapper.dwcdn.net/4hcqE/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>                              </div>
                         
-                            <div class="image-financial-aid-fin-aid-ot" style="display: none;">
+                            <div class="image-approval-ratings-fin-aid-ot" style="display: none;">
 <iframe title="Financial Aid Over Time" aria-label="Stacked Bars" id="datawrapper-chart-12i1O" src="https://datawrapper.dwcdn.net/12i1O/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>                              </div>
                         
