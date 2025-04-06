@@ -110,18 +110,6 @@
                         id='approval-ratings'>Approval Ratings</button></div>
             </div>
             <div class="main-content-wrapper">
-                <div class="question-text"><div
-                        class="question-university-climate-text"
-                        style="display: none;">
-                    </div><div class="question-dual-degree-programs-text"
-                        style="display: none;">
-                    </div><div class="question-student-backgrounds-text"
-                        style="display: none;">
-                    </div><div class="question-demographics-text"
-                        style="display: none;">
-                    </div><div class="question-approval-ratings-text"
-                        style="display: none;">
-                    </div></div>
                 <div class="subdiv-graph-wrapper">
                     <div class="question-subdivisions"><div
                             class="question-university-climate-subdivisions"
@@ -145,8 +133,6 @@
                             class="question-student-backgrounds-subdivisions"
                             style="display: none;">
                             <h2 id="breakdown-header">Topics</h2>
-                            <!-- <button id="gender"
-                                    class="Gender">Gender</button> -->
                             <button id="countries-ot"
                                 class="countries Over Time selected">Countries
                                 Over Time</button>
@@ -155,9 +141,6 @@
                                 Time</button>
                             <button id="first-gen"
                                 class="first gen">First Gen</button>
-                            <!-- <button id="rural-ot"
-                                    class="rural Over Time">Rural Over
-                                    Time</button> -->
                             <button id="first-gen-ot"
                                 class="first gen Over Time">First Gen Over
                                 Time</button>
@@ -278,7 +261,7 @@
 <script>
     const buttons = document.querySelectorAll('.question-categories button');
     let subButtons = document.querySelectorAll('.question-subdivisions button');
-    const textSections = document.querySelectorAll('.question-text div');
+    //const textSections = document.querySelectorAll('.question-text div');
     const subSections = document.querySelectorAll('.question-subdivisions div');
     const graphics = document.querySelectorAll('.graphics div')
     let selectedButton = buttons[0].id;
@@ -306,11 +289,11 @@
                 subButton.classList.add('selected');
             }
         }
-        for (const textSection of textSections) {
-            if (textSection.classList.contains(`question-${selectedButton}-text`)) {
-                textSection.style.display = 'block';
-            }
-        }
+        // for (const textSection of textSections) {
+        //     if (textSection.classList.contains(`question-${selectedButton}-text`)) {
+        //         textSection.style.display = 'block';
+        //     }
+        // }
         for (const subSection of subSections) {
             if (subSection.classList.contains(`question-${selectedButton}-subdivisions`)) {
                 subSection.style.display = 'flex';
@@ -346,11 +329,11 @@
         selectName = button.className;
         console.log(button.className)
         buttons.forEach((b) => b.classList.remove('selected'));
-        textSections.forEach((section) => section.style.display = 'none');
+        //textSections.forEach((section) => section.style.display = 'none');
         subSections.forEach((section) => section.style.display = 'none');
         button.classList.add('selected');
         const target = button.dataset.target;
-        document.querySelector(`.question-${target}-text`).style.display = 'block';
+        //document.querySelector(`.question-${target}-text`).style.display = 'block';
         document.querySelector(`.question-${target}-subdivisions`).style.display = 'flex';
         subButtons = document.querySelectorAll(`.question-${target}-subdivisions button`);
         subButtons.forEach((b) => b.classList.remove('selected'));
