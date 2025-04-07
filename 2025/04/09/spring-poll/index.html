@@ -63,7 +63,8 @@
             <h2 class="all-site-title"
                 style="font-family: var(--header-font);padding:1rem;font-size:1.7rem;">
                 <span class="desktop-title">Spring 2025 Poll</span>
-                <span class="mobile-title" style="display:none;">Spring Poll</span>
+                <span class="mobile-title" style="display:none;">Spring
+                    Poll</span>
             </h2>
             <!--TODO update link -->
             <div id="nav-links">
@@ -95,76 +96,145 @@
         <section class="section-wrapper">
 
             <div class="question-categories-wrapper">
-                <div class="question-categories"><button class
-                        data-target="university-climate"
-                        id='university-climate'>University Climate</button><button
-                        class
-                        data-target="student-backgrounds"
-                        id='student-backgrounds'>Student
-                        Backgrounds</button>
+                <div class="question-categories">
                     <button class
-                        data-target="demographics"
-                        id='demographics'>INSERT CATEGORY</button>
+                        data-target="lifestyle"
+                        id='lifestyle'>Lifestyle</button>
+                    <button
+                        class
+                        data-target="rhode-island-politics"
+                        id='rhode-island-politics'>Rhode Island politics</button>
+                    <button
+                        class
+                        data-target="trump-administration"
+                        id='trump-administration'>Trump Administration</button>
+                        <button
+                        class
+                        data-target="campus-issues"
+                        id='campus-issues'>Campus issues</button>
                     <button
                         class data-target="approval-ratings"
-                        id='approval-ratings'>Approval Ratings</button></div>
+                        id='approval-ratings'>Approval ratings</button>
+                    <button class
+                        data-target="demographics"
+                        id='demographics'>Demographics</button>
+                    <button class
+                    data-target="area-of-study"
+                    id='area-of-study'>Area of study</button>
+                </div>
             </div>
             <div class="main-content-wrapper">
                 <div class="subdiv-graph-wrapper">
-                    <div class="question-subdivisions"><div
-                            class="question-university-climate-subdivisions"
+                    <div class="question-subdivisions">
+                        <div
+                            class="question-lifestyle-subdivisions"
                             style="display: none;">
                             <h2 id="breakdown-header">Topics</h2>
-                            <button id="applicants-offered-admission"
-                                class="Applicants Offered Admission">Applicants
-                                Offered Admission</button>
-                            <button id="rd-versus-ed"
-                                class="RD versus ED">RD versus ED</button>
-                            <button id="applicants-ot"
-                                class="Applicants Over Time">Applicants Over
-                                Time</button>
-                            <button id="university-climate-ot"
-                                class="Acceptance Rate Over Time">Acceptance
-                                Rate Over Time</button>
-
+                            <button id="course-difficulty"
+                                class="Course difficulty">Course difficulty</button>
+                            <button id="relationship-status"
+                                class="Relationship status">Relationship status</button>
+                            <button id="kids-attending-brown"
+                                class="Kids attending Brown">Kids attending Brown</button>
+                            <button id="psychiatric-medication-usage"
+                                class="Psychiatric medication usage">Psychiatric medication usage</button>
+                            <button id="relative-intelligence"
+                            class="Relative intelligence">Relative intelligence</button>
+                            <button id="support-for-brown-athletics"
+                            class="Support for Brown Athletics">Support for Brown Athletics</button>
+                            <button id="summer-plans"
+                            class="Summer plans">Summer plans</button>
                         </div>
 
                         <div
-                            class="question-student-backgrounds-subdivisions"
+                            class="question-rhode-island-politics-subdivisions"
                             style="display: none;">
                             <h2 id="breakdown-header">Topics</h2>
-                            <button id="countries-ot"
-                                class="countries Over Time selected">Countries
-                                Over Time</button>
-                            <button id="states-ot"
-                                class="states Over Time">States Over
-                                Time</button>
-                            <button id="first-gen"
-                                class="first gen">First Gen</button>
-                            <button id="first-gen-ot"
-                                class="first gen Over Time">First Gen Over
-                                Time</button>
-                            <button id="hs-type" class="HS type">High School
-                                Type</button>
-                            <button id="hs-type-ot"
-                                class="HS type Over Time">High School Type
-                                Over Time</button>
+                            <button id="dan-mckee"
+                                class="Dan McKee">Dan McKee</button>
+                            <button id="brett-smiley"
+                                class="Brett Smiley">Brett Smiley</button>
+                            <button id="jack-reed"
+                                class="Jack Reed">Jack Reed</button>
+                            <button id="sheldon-whitehouse"
+                                class="Sheldon Whitehouse">Sheldon Whitehouse</button>
+                        </div>
+
+                        <div
+                            class="question-trump-administration-subdivisions"
+                            style="display: none;">
+                            <h2 id="breakdown-header">Topics</h2>
+                            <button id="presidential-approval"
+                                class="Presidential approval">Presidential approval</button>
+                            <button id="presidential-issues"
+                                class="Presidential issues">Presidential issues</button>
+                        </div>
+
+                        <div
+                            class="question-campus-issues-subdivisions"
+                            style="display: none;">
+                            <h2 id="breakdown-header">Topics</h2>
+                            <button id="legacy-admissions"
+                                class="Legacy admissions">Legacy admissions</button>
+                            <button id="browns-response-to-trump"
+                                class="Browns response to Trump">Browns response to Trump</button>
+                        </div>
+
+                        <div class="question-approval-ratings-subdivisions"
+                            style="display: none;">
+                            <h2 id="breakdown-header">Topics</h2>
+                            <button id="paxson"
+                                class="Paxson">Paxson</button>
+                            <button id="corporation"
+                                class="Corporation">Corporation</button>
+                            <button id="ucs"
+                                class="UCS">UCS</button>
+                            <button id="ufb"
+                                class="UFB">UFB</button>
+                            <button id="ccb"
+                            class="CCB">CCB</button>
+                            <button id="caps-&-health-services"
+                            class="CAPS & Health Services">CAPS & Health Services</button>
+                            <button id="dps"
+                            class="DPS">DPS</button>
+                            <button id="residential-life"
+                            class="Residential Life">Residential Life</button>
                         </div>
 
                         <div class="question-demographics-subdivisions"
                             style="display: none;">
                             <h2 id="breakdown-header">Topics</h2>
-                            <button id="demographics"
-                                class="Concentration">Concentration</button>
+                            <button id="class-year"
+                                class="Class year">Class year</button>
+                            <button id="gender"
+                                class="Gender">Gender</button>
+                            <button id="race"
+                            class="Race">Race</button>
+                            <button id="sexual-orientation"
+                            class="Sexual orientation">Sexual orientation</button>
+                            <button id="financial-aid"
+                            class="Financial aid">Financial aid</button>
+                            <button id="loans"
+                            class="Loans">Loans</button>
+                            <button id="varsity-athletics"
+                            class="Varsity athletics">Varsity athletics</button>
+                            <button id="legacy-status"
+                            class="Legacy status">Legacy status</button>
+                            <button id="religion"
+                            class="Religion">Religion</button>
+                            <button id="first-generation-status"
+                            class="First generation status">First generation status</button>
                         </div>
-                        <div class="question-approval-ratings-subdivisions"
+
+                        <div class="question-area-of-study-subdivisions"
                             style="display: none;">
                             <h2 id="breakdown-header">Topics</h2>
-                            <button id="fin-aid"
-                                class="Financial Aid">Financial Aid</button>
-                            <button id="fin-aid-ot"
-                                class="Financial Aid Over Time">Financial
-                                Aid Over Time</button>
+                            <button id="primary-concentration"
+                                class="Primary concentration">Primary concentration</button>
+                            <button id="secondary-concentration"
+                                class="Secondary concentration">Secondary concentration</button>
+                            <button id="category-of-study"
+                                class="Category of study">Category of study</button>
                         </div>
 
                     </div>
@@ -172,7 +242,7 @@
                     <div class="graphics">
 
                         <div
-                            class="image-university-climate-applicants-offered-admission"
+                            class="image-lifestyle-applicants-offered-admission"
                             style="display: none;">
                             <iframe title="Applicants Offered Admission"
                                 aria-label="Stacked Bars"
@@ -185,15 +255,15 @@
                                 type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>                              </div>
                         
-                            <div class="image-university-climate-rd-versus-ed" style="display: none;">
+                            <div class="image-lifestyle-rd-versus-ed" style="display: none;">
 <iframe title="RD versus ED" aria-label="Stacked Bars" id=" datawrapper-chart-5njVW " src="https://datawrapper.dwcdn.net/5njVW/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>                              </div>
                         
-                            <div class="image-university-climate-applicants-ot" style="display: none;">
+                            <div class="image-lifestyle-applicants-ot" style="display: none;">
 <iframe title="Applicants Over Time" aria-label="Stacked Bars" id="datawrapper-chart-6OKAp" src="https://datawrapper.dwcdn.net/6OKAp/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>                              </div>
 
-<div class="image-university-climate-university-climate-ot" style="display: none;">
+<div class="image-lifestyle-lifestyle-ot" style="display: none;">
     <iframe title="Acceptance Rate Over Time" aria-label="Stacked Bars" id="datawrapper-chart-dfvRA " src="https://datawrapper.dwcdn.net/dfvRA/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
     </script>                              </div>
                             
@@ -201,36 +271,36 @@
                         
                     
 
-<div class="image-student-backgrounds-gender" style="display: none;">
+<div class="image-trump-administration-gender" style="display: none;">
     <iframe title="Gender" aria-label="Stacked Bars" id="datawrapper-chart-l5dPO" src="https://datawrapper.dwcdn.net/l5dPO/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
     </script>                              </div>
 
-    <div class="image-student-backgrounds-countries-ot" style="display: none;">
+    <div class="image-trump-administration-countries-ot" style="display: none;">
 <iframe title="Countries Over Time" aria-label="Stacked Bars" id="datawrapper-chart-jufgb" src="https://datawrapper.dwcdn.net/jufgb/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>                              </div>
 
-    <div class="image-student-backgrounds-states-ot" style="display: none;">
+    <div class="image-trump-administration-states-ot" style="display: none;">
 <iframe title="States Over Time" aria-label="Stacked Bars" id="datawrapper-chart-RP5tS" src="https://datawrapper.dwcdn.net/RP5tS/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>                              </div>
 
-<div class="image-student-backgrounds-first-gen" style="display: none;">
+<div class="image-trump-administration-first-gen" style="display: none;">
     <iframe title="First Gen" aria-label="Stacked Bars" id="datawrapper-chart-lT4YH" src="https://datawrapper.dwcdn.net/lT4YH/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
     </script>                              </div>
                             
-<div class="image-student-backgrounds-rural-ot" style="display: none;">
+<div class="image-trump-administration-rural-ot" style="display: none;">
 <iframe title="Rural over Time" aria-label="Stacked Bars" id="datawrapper-chart-O797N" src="https://datawrapper.dwcdn.net/O797N/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>                              </div>
 
-<div class="image-student-backgrounds-first-gen-ot" style="display: none;">
+<div class="image-trump-administration-first-gen-ot" style="display: none;">
     <iframe title="First Gen Over Time" aria-label="Stacked Bars" id="datawrapper-chart-1bCiV" src="https://datawrapper.dwcdn.net/1bCiV/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
     </script>                              </div>
                             
-<div class="image-student-backgrounds-hs-type" style="display: none;">
+<div class="image-trump-administration-hs-type" style="display: none;">
 <iframe title="High School Type" aria-label="Stacked Bars" id="datawrapper-chart-GNUdu" src="https://datawrapper.dwcdn.net/GNUdu/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 </script>                              </div>
                     
 
-<div class="image-student-backgrounds-hs-type-ot" style="display: none;">
+<div class="image-trump-administration-hs-type-ot" style="display: none;">
     <iframe title="High School Type Over Time" aria-label="Stacked Bars" id="datawrapper-chart-QntFV" src="https://datawrapper.dwcdn.net/QntFV/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="909" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
     </script>                              </div>
 
