@@ -372,6 +372,7 @@ div.home > div.panel > a > div  {
     align-items: center;
     background-color: var(--section-bg-color);
     border: 1px solid #D7D7D7;
+    gap: 1.5rem; /* Added gap between flex items */
 }
 
 .graphics > div {
