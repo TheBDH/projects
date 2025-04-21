@@ -1,210 +1,210 @@
-Genre,Decade,Popularity,Location,Band,Year,Artists
-Alternative & Folk,20s,0,US,FALSE,2024,Elyanna
-Alternative & Folk,20s,0,US,TRUE,2024,Yves Tumor
-Alternative & Folk,20s,0,US,FALSE,2023,Jordan Ward
-Alternative & Folk,20s,0+,US,FALSE,2021,Weston Estate
-Alternative & Folk,10s,0+,Other,FALSE,2019,JID
-Alternative & Folk,10s,0+,Canada,TRUE,2016,Doechii
-Alternative & Folk,10s,0,NY,TRUE,2015,070 Shake
-Alternative & Folk,10s,0+,US,TRUE,2015,Ethel Cain
-Alternative & Folk,10s,0,NY,FALSE,2013,Remi Wolf
-Alternative & Folk,10s,0,NY,TRUE,2012,Alice Longyu Gao
-Alternative & Folk,10s,0,NY,TRUE,2011,Maye
-Alternative & Folk,10s,0+,US,FALSE,2010,Tems
-Alternative & Folk,00s,0,US,TRUE,2009,Flo Milli
-Alternative & Folk,00s,0,NY,TRUE,2008,Ari Lennox
-Alternative & Folk,00s,0,US,TRUE,2007,Amaarae
-Alternative & Folk,00s,0,US,TRUE,2007,Smino
-Alternative & Folk,00s,0+,US,TRUE,2007,Phoebe Bridgers
-Alternative & Folk,00s,0+,US,TRUE,2006,KAYTRANADA
-Alternative & Folk,00s,0+,US,TRUE,2006,Daniel Caesar
-Alternative & Folk,00s,0+,US,TRUE,2005,Mitski
-Alternative & Folk,00s,0,US,TRUE,2004,Aminé
-Alternative & Folk,00s,0,US,TRUE,2002,Nao
-Alternative & Folk,00s,0,NY,TRUE,2001,Rico Nasty
-Alternative & Folk,90s,0,US,FALSE,1999,Anderson .Paak & The Free Nationals
-Alternative & Folk,90s,0,US,TRUE,1998,Rina Sawayama
-Alternative & Folk,90s,0,NY,TRUE,1998,DRAM
-Alternative & Folk,90s,0+,NY,TRUE,1998,Young Thug
-Alternative & Folk,90s,50+,US,FALSE,1997,Erykah Badu
-Alternative & Folk,90s,0,US,TRUE,1996,Empress Of
-Alternative & Folk,90s,0,US,TRUE,1995,Princess Nokia
-Alternative & Folk,90s,0+,US,TRUE,1995,Fetty Wap
-Alternative & Folk,90s,0,US,TRUE,1994,Tinashe
-Alternative & Folk,90s,0,US,TRUE,1994,The Roots
-Alternative & Folk,90s,50+,US,TRUE,1993,Mac DeMarco
-Alternative & Folk,90s,0+,US,TRUE,1992,Thundercat
-Alternative & Folk,80s,0+,US,FALSE,1989,Pusha T
-Alternative & Folk,80s,200+,US,TRUE,1985,Waka Flocka Flame
-Alternative & Folk,80s,0,US,TRUE,1985,Modest Mouse
-Alternative & Folk,80s,0+,NY,FALSE,1984,Hudson Mohawke
-Alternative & Folk,80s,0,US,TRUE,1983,Kelela
-Alternative & Folk,80s,0,Other,FALSE,1981,Yeasayer
-Alternative & Folk,80s,0+,US,TRUE,1981,Diplo
-Alternative & Folk,60s & 70s,0,US,FALSE,1977,Lauryn Hill
-Alternative & Folk,60s & 70s,0,NY,TRUE,1976,Chance the Rapper
-Alternative & Folk,60s & 70s,0+,NY,FALSE,1975,Kendrick Lamar
-Alternative & Folk,60s & 70s,50+,NY,FALSE,1975,A-Trak
-Alternative & Folk,60s & 70s,0,US,FALSE,1974,Dirty Projectors
-Alternative & Folk,60s & 70s,0+,US,FALSE,1973,Big Freedia
-Alternative & Folk,60s & 70s,0+,US,FALSE,1973,Childish Gambino
-Alternative & Folk,60s & 70s,0+,US,FALSE,1973,Cam'ron
-Alternative & Folk,60s & 70s,0,US,FALSE,1972,The Glitch Mob
-Alternative & Folk,60s & 70s,0,US,FALSE,1972,The Walkmen
-Alternative & Folk,60s & 70s,50+,Canada,FALSE,1971,Wyclef Jean
-Alternative & Folk,60s & 70s,0+,NY,FALSE,1970,Nicolas Jaar
-Alternative & Folk,60s & 70s,0,NY,TRUE,1967,TV on the Radio
-Alternative & Folk,60s & 70s,50+,US,FALSE,1964,Snoop Dogg
-Electronic,20s,0,Canada,FALSE,2021,Major Lazer
-Electronic,10s,0,Europe,FALSE,2015,The Black Keys
-Electronic,10s,50+,US,FALSE,2014,MGMT
-Electronic,10s,0,US,TRUE,2012,Nas
-Electronic,10s,0,NY,FALSE,2011,Santigold
-Electronic,10s,50+,US,TRUE,2010,of Montreal
-Jazz & R&B,20s,0+,Other,FALSE,2024,Lupe Fiasco
-Jazz & R&B,20s,0,US,FALSE,2024,M.I.A.
-Jazz & R&B,20s,50+,Other,FALSE,2022,Vampire Weekend
-Jazz & R&B,20s,0+,Other,FALSE,2022,Girl Talk
-Jazz & R&B,20s,0+,US,FALSE,2022,The Roots
-Jazz & R&B,10s,50+,Canada,FALSE,2019,The Flaming Lips
-Jazz & R&B,10s,0,Europe,TRUE,2018,Yo La Tengo
-Jazz & R&B,10s,0,US,TRUE,2018,Mission of Burma
-Jazz & R&B,10s,50+,US,FALSE,2017,Common
-Jazz & R&B,10s,0+,US,TRUE,2016,OK Go
-Jazz & R&B,10s,50+,US,FALSE,2016,Wilco
-Jazz & R&B,10s,0,US,FALSE,2015,Talib Kweli
-Jazz & R&B,10s,50+,US,FALSE,2014,Ben Folds
-Jazz & R&B,10s,50+,US,FALSE,2012,The Shins
-Jazz & R&B,00s,50+,NY,FALSE,2000,Jurassic 5
-Jazz & R&B,90s,0,US,TRUE,1996,Sleater-Kinney
-Jazz & R&B,90s,0,US,FALSE,1994,Reel Big Fish
-Jazz & R&B,90s,0,NY,FALSE,1991,Lisa Loeb
-Jazz & R&B,60s & 70s,0,US,FALSE,1979,The Wallflowers
-Jazz & R&B,60s & 70s,0,NY,FALSE,1979,The Donnas
-Jazz & R&B,60s & 70s,0,US,FALSE,1979,The Roots
-Jazz & R&B,60s & 70s,0+,US,FALSE,1978,Rufus Wainwright
-Jazz & R&B,60s & 70s,0,US,TRUE,1978,Saves the Day
-Jazz & R&B,60s & 70s,0,US,TRUE,1977,They Might Be Giants
-Jazz & R&B,60s & 70s,0,US,FALSE,1976,Jurassic 5
-Jazz & R&B,60s & 70s,0,US,FALSE,1976,Wyclef Jean
-Jazz & R&B,60s & 70s,0,US,TRUE,1976,Kelis
-Jazz & R&B,60s & 70s,0,NY,FALSE,1972,G. Love & Special Sauce
-Jazz & R&B,60s & 70s,50+,US,FALSE,1972,Busta Rhymes
-Jazz & R&B,60s & 70s,50+,US,FALSE,1971,Common
-Jazz & R&B,60s & 70s,0,Europe,FALSE,1969,Wilco
-Jazz & R&B,60s & 70s,50+,NY,FALSE,1969,Black Star
-Jazz & R&B,60s & 70s,200+,US,FALSE,1969,Maseo
-Jazz & R&B,60s & 70s,0,US,TRUE,1968,Vic Chesnutt
-Jazz & R&B,60s & 70s,200+,US,TRUE,1968,Luna
-Jazz & R&B,60s & 70s,200+,US,FALSE,1968,Rakim
-Jazz & R&B,60s & 70s,0+,US,FALSE,1965,KRS-One
-Jazz & R&B,60s & 70s,200+,US,FALSE,1962,Grandmaster Flash
-Pop,20s,0,Other,FALSE,2023,Sonic Youth
-Pop,20s,0,US,FALSE,2023,Yo La Tengo
-Pop,20s,0,US,FALSE,2022,Bob Dylan
-Pop,10s,0,Other,FALSE,2018,Bo Diddley
-Pop,10s,0+,US,FALSE,2017,The Toasters
-Pop,00s,0+,US,FALSE,2009,The Slip
-Pop,00s,0+,US,FALSE,2005,Coolio
-Pop,00s,50+,US,FALSE,2003,Fugees
-Pop,00s,0,US,FALSE,2002,George Clinton and The P-Funk Allstars
-Pop,80s,50+,Europe,FALSE,1984,Chucklehead
-Pop,80s,50+,Europe,FALSE,1984,Digable Planets
-Pop,60s & 70s,0+,NY,FALSE,1971,Indigo Girls
-Rap & Reggae/Ska,20s,0+,US,FALSE,2023,Morphine
-Rap & Reggae/Ska,20s,50+,US,TRUE,2023,Bim Skala Bim
-Rap & Reggae/Ska,20s,0+,US,FALSE,2023,Violent Femmes
-Rap & Reggae/Ska,20s,0+,US,FALSE,2022,Buddy Guy
-Rap & Reggae/Ska,20s,0,US,FALSE,2022,Buffalo Tom
-Rap & Reggae/Ska,10s,0,US,FALSE,2019,"10,000 Maniacs"
-Rap & Reggae/Ska,10s,0,US,FALSE,2018,Black Sheep
-Rap & Reggae/Ska,10s,0,US,FALSE,2018,A Tribe Called Quest
-Rap & Reggae/Ska,10s,200+,US,FALSE,2017,De La Soul
-Rap & Reggae/Ska,10s,0,NY,FALSE,2017,Mary Chapin Carpenter
-Rap & Reggae/Ska,10s,200+,US,FALSE,2016,Tito Puente
-Rap & Reggae/Ska,10s,0+,US,TRUE,2016,Boogie Down Productions
-Rap & Reggae/Ska,10s,50+,NY,FALSE,2015,Shinehead
-Rap & Reggae/Ska,10s,50+,NY,FALSE,2015,Ziggy Marley and the Melody Makers
-Rap & Reggae/Ska,10s,50+,US,FALSE,2014,24-7 Spyz
-Rap & Reggae/Ska,10s,0+,Canada,FALSE,2013,Tom Tom Club
-Rap & Reggae/Ska,10s,200+,US,FALSE,2013,Toots and the Maytals
-Rap & Reggae/Ska,10s,0,US,FALSE,2013,Little Feat
-Rap & Reggae/Ska,10s,0+,NY,FALSE,2012,NRBQ
-Rap & Reggae/Ska,10s,50+,Other,FALSE,2011,The Wailers Band
-Rap & Reggae/Ska,10s,200+,US,FALSE,2010,Elvis Costello
-Rap & Reggae/Ska,00s,200+,NY,FALSE,2009,Nick Lowe
-Rap & Reggae/Ska,00s,0+,Europe,FALSE,2008,Los Lobos
-Rap & Reggae/Ska,00s,50+,US,FALSE,2008,Trouble Funk
-Rap & Reggae/Ska,00s,0,US,FALSE,2008,R.E.M.
-Rap & Reggae/Ska,00s,0+,US,TRUE,2007,Afrika Bambaataa
-Rap & Reggae/Ska,00s,0+,NY,TRUE,2005,Pablo Moses
-Rap & Reggae/Ska,00s,0,US,TRUE,2004,The Neats
-Rap & Reggae/Ska,00s,0,US,TRUE,2004,Paul Young
-Rap & Reggae/Ska,00s,0+,US,TRUE,2002,Howard Jones
-Rap & Reggae/Ska,00s,0,US,TRUE,2001,Arlo Guthrie
-Rap & Reggae/Ska,00s,50+,Other,FALSE,2000,U2
-Rap & Reggae/Ska,90s,50+,US,FALSE,1999,NRBQ
-Rap & Reggae/Ska,90s,50+,US,FALSE,1999,The Roches
-Rap & Reggae/Ska,90s,0,NY,FALSE,1999,Graham Parker
-Rap & Reggae/Ska,90s,0+,NY,TRUE,1999,Toots and the Maytals
-Rap & Reggae/Ska,90s,200+,NY,FALSE,1999,Mary Chapin Carpenter
-Rap & Reggae/Ska,90s,0+,Other,FALSE,1998,John Hall Band
-Rap & Reggae/Ska,90s,0+,US,FALSE,1998,NRBQ
-Rap & Reggae/Ska,90s,0+,NY,FALSE,1998,John Acheson
-Rap & Reggae/Ska,90s,0,NY,TRUE,1997,Jorma Kaukonen & Vital Parts
-Rap & Reggae/Ska,90s,0+,US,TRUE,1996,Robin Lane & the Chartbusters
-Rap & Reggae/Ska,90s,50+,US,FALSE,1996,Atlanta Rhythm Section
-Rap & Reggae/Ska,90s,0+,US,TRUE,1995,Pousette-Dart Band
-Rap & Reggae/Ska,90s,0,US,TRUE,1995,Sun Ra
-Rap & Reggae/Ska,90s,0+,NY,TRUE,1993,John P. Hammond
-Rap & Reggae/Ska,90s,0+,US,FALSE,1992,Albert Collins
-Rap & Reggae/Ska,90s,0+,NY,TRUE,1992,Bonnie Raitt
-Rap & Reggae/Ska,90s,0,NY,TRUE,1991,Dave Brubeck
-Rap & Reggae/Ska,90s,0,Europe,TRUE,1991,Tower of Power
-Rap & Reggae/Ska,90s,0,Other,TRUE,1990,Pousette-Dart Band
-Rap & Reggae/Ska,80s,0,Other,TRUE,1989,Roomful of Blues
-Rap & Reggae/Ska,80s,0,Other,TRUE,1988,Leo Kottke
-Rap & Reggae/Ska,80s,0,US,TRUE,1986,Firefall
-Rap & Reggae/Ska,80s,0+,NY,FALSE,1985,Buddy Guy and Junior Wells
-Rap & Reggae/Ska,80s,0,Other,FALSE,1985,Roy Buchanan
-Rap & Reggae/Ska,80s,0,Other,TRUE,1982,Gary Burton
-Rock,10s,0+,US,TRUE,2010,JD Souther
-Rock,00s,0+,US,TRUE,2006,The Holy Modal Rounders
-Rock,00s,0,US,TRUE,2003,Roomful of Blues
-Rock,00s,0+,US,TRUE,2003,Harry Chapin
-Rock,00s,0,US,TRUE,2000,Richie Havens
-Rock,90s,0,US,TRUE,1997,John Mayall
-Rock,90s,0+,US,FALSE,1997,Bruce Springsteen
-Rock,90s,0,NY,TRUE,1990,Phil Ochs
-Rock,80s,0,US,TRUE,1989,Todd Rundgren
-Rock,80s,0+,US,FALSE,1988,Livingston Taylor
-Rock,80s,0+,Europe,TRUE,1987,Fanny
-Rock,80s,0+,Europe,FALSE,1987,Jonathan Edwards
-Rock,80s,0+,US,TRUE,1986,Country Joe McDonald
-Rock,80s,200+,Europe,TRUE,1983,Billy Preston
-Rock,80s,0+,US,FALSE,1983,The Youngbloods
-Rock,80s,0+,Europe,FALSE,1982,Blue Öyster Cult
-Rock,80s,0+,US,FALSE,1981,Mahavishnu Orchestra
-Rock,80s,0+,US,TRUE,1981,New Riders of the Purple Sage
-Rock,80s,0,US,TRUE,1980,David Bromberg
-Rock,80s,0,US,TRUE,1980,Boz Scaggs
-Rock,60s & 70s,50+,US,TRUE,1979,Bonnie Raitt
-Rock,60s & 70s,0+,US,TRUE,1979,Gordon Lightfoot
-Rock,60s & 70s,50+,US,FALSE,1978,Laura Nyro
-Rock,60s & 70s,0+,US,TRUE,1977,The Band
-Rock,60s & 70s,0,US,FALSE,1976,Jefferson Airplane
-Rock,60s & 70s,50+,US,TRUE,1976,John Sebastian
-Rock,60s & 70s,0,US,FALSE,1976,John Mayall
-Rock,60s & 70s,0+,Europe,FALSE,1975,Smokey Robinson
-Rock,60s & 70s,200+,US,FALSE,1974,Herbie Mann
-Rock,60s & 70s,0+,US,TRUE,1973,Janis Joplin
-Rock,60s & 70s,50+,US,FALSE,1973,Carlos Montoya
-Rock,60s & 70s,0,US,TRUE,1972,James Brown
-Rock,60s & 70s,0+,NY,TRUE,1972,Dionne Warwick
-Rock,60s & 70s,50+,US,FALSE,1971,The Yardbirds
-Rock,60s & 70s,50+,Canada,FALSE,1970,Procol Harum
-Rock,60s & 70s,0+,Europe,FALSE,1970,Dizzy Gillespie
-Rock,60s & 70s,50+,US,FALSE,1970,"Peter, Paul and Mary"
-Rock,60s & 70s,0+,US,FALSE,1969,Ella Fitzgerald
-Rock,60s & 70s,0+,Europe,TRUE,1968,Bob Dylan
-Rock,60s & 70s,50+,Europe,TRUE,1968,Ray Charles
+Genre,Decade,Popularity,Location,Band,Year,Artist
+Alternative,20s,0,US,FALSE,2024,Elyanna
+Alternative,20s,0,US,TRUE,2024,Yves Tumor
+R&B,20s,0+,Other,FALSE,2024,Jordan Ward
+R&B,20s,0,US,FALSE,2024,Weston Estate
+Alternative,20s,0,US,FALSE,2023,JID
+Pop,20s,0,Other,FALSE,2023,Doechii
+Pop,20s,0,US,FALSE,2023,070 Shake
+Rap,20s,0+,US,FALSE,2023,Ethel Cain
+Rap,20s,50+,US,TRUE,2023,Remi Wolf
+Rap,20s,0+,US,FALSE,2023,Alice Longyu Gao
+Pop,20s,0,US,FALSE,2022,Maye
+R&B,20s,50+,Other,FALSE,2022,Tems
+R&B,20s,0+,Other,FALSE,2022,Flo Milli
+R&B,20s,0+,US,FALSE,2022,Ari Lennox
+Rap,20s,0+,US,FALSE,2022,Amaarae
+Rap,20s,0,US,FALSE,2022,Smino
+Alternative,20s,0+,US,FALSE,2021,Phoebe Bridgers
+Electronic,20s,0,Canada,FALSE,2021,KAYTRANADA
+Alternative,10s,0+,Other,FALSE,2019,Daniel Caesar
+R&B,10s,50+,Canada,FALSE,2019,Mitski
+Rap,10s,0,US,FALSE,2019,Aminé
+Pop,10s,0,Other,FALSE,2018,Nao
+R&B,10s,0,Europe,TRUE,2018,Rico Nasty
+R&B,10s,0,US,TRUE,2018,Anderson .Paak & The Free Nationals
+Rap,10s,0,US,FALSE,2018,Rina Sawayama
+Rap,10s,0,US,FALSE,2018,DRAM
+Pop,10s,0+,US,FALSE,2017,Young Thug
+R&B,10s,50+,US,FALSE,2017,Erykah Badu
+Rap,10s,200+,US,FALSE,2017,Empress Of
+Rap,10s,0,NY,FALSE,2017,Princess Nokia
+Alternative,10s,0+,Canada,TRUE,2016,Fetty Wap
+R&B,10s,0+,US,TRUE,2016,Tinashe
+R&B,10s,50+,US,FALSE,2016,The Roots
+Rap,10s,200+,US,FALSE,2016,Mac DeMarco
+Rap,10s,0+,US,TRUE,2016,Thundercat
+Alternative,10s,0,NY,TRUE,2015,Pusha T
+Alternative,10s,0+,US,TRUE,2015,Waka Flocka Flame
+Electronic,10s,0,Europe,FALSE,2015,Modest Mouse
+R&B,10s,0,US,FALSE,2015,Hudson Mohawke
+Rap,10s,50+,NY,FALSE,2015,Kelela
+Rap,10s,50+,NY,FALSE,2015,Yeasayer
+Electronic,10s,50+,US,FALSE,2014,Diplo
+R&B,10s,50+,US,FALSE,2014,Lauryn Hill
+Rap,10s,50+,US,FALSE,2014,Chance the Rapper
+Alternative,10s,0,NY,FALSE,2013,Kendrick Lamar
+Rap,10s,0+,Canada,FALSE,2013,A-Trak
+Rap,10s,200+,US,FALSE,2013,Dirty Projectors
+Rap,10s,0,US,FALSE,2013,Big Freedia
+Alternative,10s,0,NY,TRUE,2012,Childish Gambino
+Electronic,10s,0,US,TRUE,2012,Cam'ron
+R&B,10s,50+,US,FALSE,2012,The Glitch Mob
+Rap,10s,0+,NY,FALSE,2012,The Walkmen
+Alternative,10s,0,NY,TRUE,2011,Wyclef Jean
+Electronic,10s,0,NY,FALSE,2011,Nicolas Jaar
+Rap,10s,50+,Other,FALSE,2011,TV on the Radio
+Alternative,10s,0+,US,FALSE,2010,Snoop Dogg
+Electronic,10s,50+,US,TRUE,2010,Major Lazer
+Rap,10s,200+,US,FALSE,2010,The Black Keys
+Rock,10s,0+,US,TRUE,2010,MGMT
+Alternative,00s,0,US,TRUE,2009,Nas
+Pop,00s,0+,US,FALSE,2009,Santigold
+Rap,00s,200+,NY,FALSE,2009,of Montreal
+Alternative,00s,0,NY,TRUE,2008,Lupe Fiasco
+Rap,00s,0+,Europe,FALSE,2008,M.I.A.
+Rap,00s,50+,US,FALSE,2008,Vampire Weekend
+Rap,00s,0,US,FALSE,2008,Girl Talk
+Alternative,00s,0,US,TRUE,2007,The Roots
+Alternative,00s,0,US,TRUE,2007,The Flaming Lips
+Alternative,00s,0+,US,TRUE,2007,Yo La Tengo
+Rap,00s,0+,US,TRUE,2007,Mission of Burma
+Alternative,00s,0+,US,TRUE,2006,Common
+Alternative,00s,0+,US,TRUE,2006,OK Go
+Rock,00s,0+,US,TRUE,2006,Wilco
+Alternative,00s,0+,US,TRUE,2005,Talib Kweli
+Pop,00s,0+,US,FALSE,2005,Ben Folds
+Rap,00s,0+,NY,TRUE,2005,The Shins
+Alternative,00s,0,US,TRUE,2004,Jurassic 5
+Rap,00s,0,US,TRUE,2004,Sleater-Kinney
+Reggae/ska,00s,0,US,TRUE,2004,Reel Big Fish
+Pop,00s,50+,US,FALSE,2003,Lisa Loeb
+Rock,00s,0,US,TRUE,2003,The Wallflowers
+Rock,00s,0+,US,TRUE,2003,The Donnas
+Alternative,00s,0,US,TRUE,2002,The Roots
+Pop,00s,0,US,FALSE,2002,Rufus Wainwright
+Rap,00s,0+,US,TRUE,2002,Saves the Day
+Alternative,00s,0,NY,TRUE,2001,They Might Be Giants
+Rap,00s,0,US,TRUE,2001,Jurassic 5
+R&B,00s,50+,NY,FALSE,2000,Wyclef Jean
+Rap,00s,50+,Other,FALSE,2000,Kelis
+Rock,00s,0,US,TRUE,2000,G. Love & Special Sauce
+Alternative,90s,0,US,FALSE,1999,Busta Rhymes
+Rap,90s,50+,US,FALSE,1999,Common
+Rap,90s,50+,US,FALSE,1999,Wilco
+Rap,90s,0,NY,FALSE,1999,Black Star
+Rap,90s,0+,NY,TRUE,1999,Maseo
+Rap,90s,200+,NY,FALSE,1999,Vic Chesnutt
+Alternative,90s,0,US,TRUE,1998,Luna
+Alternative,90s,0,NY,TRUE,1998,Rakim
+Alternative,90s,0+,NY,TRUE,1998,KRS-One
+Rap,90s,0+,Other,FALSE,1998,Grandmaster Flash
+Rap,90s,0+,US,FALSE,1998,Sonic Youth
+Rap,90s,0+,NY,FALSE,1998,Yo La Tengo
+Folk,90s,50+,US,FALSE,1997,Bob Dylan
+Reggae/ska,90s,0,NY,TRUE,1997,Bo Diddley
+Rock,90s,0,US,TRUE,1997,The Toasters
+Rock,90s,0+,US,FALSE,1997,The Slip
+Alternative,90s,0,US,TRUE,1996,Coolio
+R&B,90s,0,US,TRUE,1996,Fugees
+Rap,90s,0+,US,TRUE,1996,George Clinton and The P-Funk Allstars
+Rap,90s,50+,US,FALSE,1996,Chucklehead
+Alternative,90s,0,US,TRUE,1995,Digable Planets
+Folk,90s,0+,US,TRUE,1995,Indigo Girls
+Rap,90s,0+,US,TRUE,1995,Morphine
+Reggae/ska,90s,0,US,TRUE,1995,Bim Skala Bim
+Alternative,90s,0,US,TRUE,1994,Violent Femmes
+Alternative,90s,0,US,TRUE,1994,Buddy Guy
+R&B,90s,0,US,FALSE,1994,Buffalo Tom
+Alternative,90s,50+,US,TRUE,1993,"10,000 Maniacs"
+Rap,90s,0+,NY,TRUE,1993,Black Sheep
+Folk,90s,0+,US,TRUE,1992,A Tribe Called Quest
+Rap,90s,0+,US,FALSE,1992,De La Soul
+Rap,90s,0+,NY,TRUE,1992,Mary Chapin Carpenter
+Jazz,90s,0,NY,FALSE,1991,Tito Puente
+Rap,90s,0,NY,TRUE,1991,Boogie Down Productions
+Reggae/ska,90s,0,Europe,TRUE,1991,Shinehead
+Reggae/ska,90s,0,Other,TRUE,1990,Ziggy Marley and the Melody Makers
+Rock,90s,0,NY,TRUE,1990,24-7 Spyz
+Alternative,80s,0+,US,FALSE,1989,Tom Tom Club
+Reggae/ska,80s,0,Other,TRUE,1989,Toots and the Maytals
+Rock,80s,0,US,TRUE,1989,Little Feat
+Reggae/ska,80s,0,Other,TRUE,1988,NRBQ
+Rock,80s,0+,US,FALSE,1988,The Wailers Band
+Rock,80s,0+,Europe,TRUE,1987,Elvis Costello
+Rock,80s,0+,Europe,FALSE,1987,Nick Lowe
+Rap,80s,0,US,TRUE,1986,Los Lobos
+Rock,80s,0+,US,TRUE,1986,Trouble Funk
+Alternative,80s,200+,US,TRUE,1985,R.E.M.
+Alternative,80s,0,US,TRUE,1985,Afrika Bambaataa
+Rap,80s,0+,NY,FALSE,1985,Pablo Moses
+Reggae/ska,80s,0,Other,FALSE,1985,The Neats
+Folk,80s,0+,NY,FALSE,1984,Paul Young
+Pop,80s,50+,Europe,FALSE,1984,Howard Jones
+Pop,80s,50+,Europe,FALSE,1984,Arlo Guthrie
+Folk,80s,0,US,TRUE,1983,U2
+Rock,80s,200+,Europe,TRUE,1983,NRBQ
+Rock,80s,0+,US,FALSE,1983,The Roches
+Reggae/ska,80s,0,Other,TRUE,1982,Graham Parker
+Rock,80s,0+,Europe,FALSE,1982,Toots and the Maytals
+Folk,80s,0,Other,FALSE,1981,Mary Chapin Carpenter
+Folk,80s,0+,US,TRUE,1981,John Hall Band
+Rock,80s,0+,US,FALSE,1981,NRBQ
+Rock,80s,0+,US,TRUE,1981,John Acheson
+Rock,80s,0,US,TRUE,1980,Jorma Kaukonen & Vital Parts
+Rock,80s,0,US,TRUE,1980,Robin Lane & the Chartbusters
+Jazz,70s,0,US,FALSE,1979,Atlanta Rhythm Section
+R&B,70s,0,NY,FALSE,1979,Pousette-Dart Band
+R&B,70s,0,US,FALSE,1979,Sun Ra
+Rock,70s,50+,US,TRUE,1979,John P. Hammond
+Rock,70s,0+,US,TRUE,1979,Albert Collins
+Jazz,70s,0+,US,FALSE,1978,Bonnie Raitt
+R&B,70s,0,US,TRUE,1978,Dave Brubeck
+Rock,70s,50+,US,FALSE,1978,Tower of Power
+Folk,70s,0,US,FALSE,1977,Pousette-Dart Band
+R&B,70s,0,US,TRUE,1977,Roomful of Blues
+Rock,70s,0+,US,TRUE,1977,Leo Kottke
+Folk,70s,0,NY,TRUE,1976,Firefall
+Jazz,70s,0,US,FALSE,1976,Buddy Guy and Junior Wells
+R&B,70s,0,US,FALSE,1976,Roy Buchanan
+R&B,70s,0,US,TRUE,1976,Gary Burton
+Rock,70s,0,US,FALSE,1976,JD Souther
+Rock,70s,50+,US,TRUE,1976,The Holy Modal Rounders
+Rock,70s,0,US,FALSE,1976,Roomful of Blues
+Folk,70s,0+,NY,FALSE,1975,Harry Chapin
+Folk,70s,50+,NY,FALSE,1975,Richie Havens
+Rock,70s,0+,Europe,FALSE,1975,John Mayall
+Folk,70s,0,US,FALSE,1974,Bruce Springsteen
+Rock,70s,200+,US,FALSE,1974,Phil Ochs
+Folk,70s,0+,US,FALSE,1973,Todd Rundgren
+Folk,70s,0+,US,FALSE,1973,Livingston Taylor
+Folk,70s,0+,US,FALSE,1973,Fanny
+Rock,70s,0+,US,TRUE,1973,Jonathan Edwards
+Rock,70s,50+,US,FALSE,1973,Country Joe McDonald
+Folk,70s,0,US,FALSE,1972,Billy Preston
+Folk,70s,0,US,FALSE,1972,The Youngbloods
+Jazz,70s,0,NY,FALSE,1972,Blue Öyster Cult
+R&B,70s,50+,US,FALSE,1972,Mahavishnu Orchestra
+Rock,70s,0,US,TRUE,1972,New Riders of the Purple Sage
+Rock,70s,0+,NY,TRUE,1972,David Bromberg
+Folk,70s,50+,Canada,FALSE,1971,Boz Scaggs
+Pop,70s,0+,NY,FALSE,1971,Bonnie Raitt
+R&B,70s,50+,US,FALSE,1971,Gordon Lightfoot
+Rock,70s,50+,US,FALSE,1971,Laura Nyro
+Folk,70s,0+,NY,FALSE,1970,The Band
+Rock,70s,50+,Canada,FALSE,1970,Jefferson Airplane
+Rock,70s,0+,Europe,FALSE,1970,John Sebastian
+Rock,70s,50+,US,FALSE,1970,John Mayall
+Jazz,60s,0,Europe,FALSE,1969,Smokey Robinson
+Jazz,60s,50+,NY,FALSE,1969,Herbie Mann
+R&B,60s,200+,US,FALSE,1969,Janis Joplin
+Rock,60s,0+,US,FALSE,1969,Carlos Montoya
+Jazz,60s,0,US,TRUE,1968,James Brown
+R&B,60s,200+,US,TRUE,1968,Dionne Warwick
+R&B,60s,200+,US,FALSE,1968,The Yardbirds
+Rock,60s,0+,Europe,TRUE,1968,Procol Harum
+Rock,60s,50+,Europe,TRUE,1968,Dizzy Gillespie
+Folk,60s,0,NY,TRUE,1967,"Peter, Paul and Mary"
+Jazz,60s,0+,US,FALSE,1965,Ella Fitzgerald
+Folk,60s,50+,US,FALSE,1964,Bob Dylan
+R&B,60s,200+,US,FALSE,1962,Ray Charles

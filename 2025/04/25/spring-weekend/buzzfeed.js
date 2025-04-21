@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const buzzQuizQuestions = [
         {
             attribute: "Genre",
-            question: "Which music genre do you vibe with the most?",
+            question: "Pick your door!",
             options: ["Alternative & Folk", "Electric", "Jazz & R&B", "Pop", "Rap & Reggae/ska", "Rock"],
             captions: ["LIW Hs Rock House door 2 by Doncram, via Wikimedia Commons, CC BY 4.0",
                 "Glowing Doorway by Graufeder, via Wikimedia Commons, CC BY 4.0",
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             attribute: "Decade",
-            question: "What is your favorite decade?",
+            question: "Pick your wallpaper",
             options: ["60s & 70s", "80s", "90s", "00s", "10s", "20s"],
             captions: ["FILL OUT",
                 "FILL OUT",
@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
         header: true,   // Treat the first row as headers
         dynamicTyping: true, // Automatically convert numeric values
         complete: function (results) {
+            console.log(results.data);
             treeBuilt = true; // Mark the data as ready
             buzzDecisionTree = results.data; // Store the parsed data for scoring
         },
@@ -88,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Error parsing CSV:", err); // Log any errors during CSV parsing
         }
     });
+
 
     // ---------------------------
     // 2. Scoring and Decision Functions
@@ -177,7 +179,20 @@ document.addEventListener("DOMContentLoaded", function () {
             const scores = scoreRows(buzzDecisionTree, buzzResponses);
             // Determine the best year
             const bestYear = getBestYear(scores);
-            buzzDecisionDiv.innerText = "You matched to " + bestYear + "'s Spring Weekend!"; // Display the best year
+            const buzzYear = document.getElementById("buzz-year");
+            buzzYear.innerText = "You matched to " + bestYear + "'s Spring Weekend!"; // Display the best year
+            
+            // Scrape all artists from the best year
+            const artists = buzzDecisionTree
+                .filter(row => String(row["Year"]) === String(bestYear)) // Ensure type-safe comparison
+                .map(row => row["Artist"])
+                .filter((artist, index, self) => self.indexOf(artist) === index) // Remove duplicates
+                .join(", ")
+                .replace(/, ([^,]*)$/, " and $1"); // Add "and" at the end without an Oxford comma
+            
+            console.log(artists);
+            buzzDecisionDiv.innerText = "\nArtists: " + artists; // Append the artists to the result
+            
             buzzResultDiv.style.display = "block"; // Show the result
         }
     });

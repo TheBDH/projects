@@ -366,7 +366,7 @@ a {
 /* Buzz Quiz Box with updated styling */
 .buzz-quiz {
     position: relative;
-    max-width: 600px;
+    max-width: 80%;
     margin: 2em auto;
     padding: 2em;
     box-shadow: black;
@@ -411,6 +411,10 @@ a {
     color: white;
     transition: background-color 0.3s ease;
     margin-top: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 #buzz-start-btn:hover,
@@ -428,14 +432,13 @@ a {
 
 .buzz-answers {
     display: grid;
-    /* was block by default */
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
     gap: 1rem;
-    /* spacing between cards */
     padding: 0;
-    /* remove any default padding */
     margin: 0;
-    /* align flush with parent */
+    justify-content: center;
+    max-height: 50vh;
+    overflow-y: auto;
 }
 
 
