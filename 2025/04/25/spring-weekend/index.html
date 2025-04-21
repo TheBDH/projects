@@ -7,52 +7,274 @@
     <title>The Data Behind Spring Weekend</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <script src="script.js"></script>
+    <script src="quiz.js"></script>
+    <script src="buzzfeed.js"></script>
 </head>
 
 <body>
-    <div id="trigger"></div>
     <div id="spacer"></div>
+    <div id="trigger1"></div>
     <div id="heading">
         <a href="https://www.browndailyherald.com" target="_blank">
-            <img src="images/logo-white.png" id="herald-logo" alt="Brown Daily Herald Logo" />
+            <img src="images/logo-black.png" id="herald-logo" alt="Brown Daily Herald Logo" />
         </a>
         <h3 style="text-align: center;">The <span id="purple-data">Data</span> Behind Spring Weekend</h3>
-        <p style="text-align: center;">
+        <p style="text-align: center; font-family: 'freight-text-pro', 'Georgia', 'Times', serif; font-style: normal;">
             Quantifying 75 Years of Music at Brown
         </p>
         <h6 id="byline" style="text-align: center;">
+            Reporting by
+            <span class="author">Someone!</span>
+            <br>
+            <br>
+            Data analysis by
+            <span class="author">Elina Coutlakis</span>
+            <span class="author"><a href="https://www.browndailyherald.com/staff/manav-musunuru" target="_blank">Manav
+                    Musunuru</a></span>
+            <span class="author"><a href="https://www.browndailyherald.com/staff/tiffany-xiao" target="_blank">Tiffany
+                    Xiao</a></span>
+            <br>
             <br>
             Web design by
             <span class="author"><a href="https://www.browndailyherald.com/staff/caleb-ellenberg" target="_blank">Caleb
-                    Ellenberg</a></span> and <span class="author">Brandon Kim</span>
+                    Ellenberg</a></span> <span class="author">Brandon
+                Kim</span>
         </h6>
-        <div style="text-align: center;">
-            <button id="jump-button" onclick="scrollToBottom()">
-                Explore The Data
-            </button>
-        </div>
+        <p style="text-align: center; font-family: 'freight-text-pro', 'Georgia', 'Times', serif;">
+            Images courtesy of the Brown Digital Repository
+        </p>
+        <!-- <div style="text-align: center;">
+                <button id="jump-button" onclick="scrollToBottom()">
+                    Explore The Data
+                </button>
+            </div> -->
         <div class="down-arrow" style="text-align: center;">
             &#x2193;
         </div>
     </div>
-    <div style="height: 600vh;"></div>
+    <div style="height: 130vh;"></div>
+    <div id="trigger2"></div>
+    <div style="height: 10vh;"></div>
+    <div class="text-box">
+        <h2>Mysterious Visitors and Pumpkin Pie Highlight Brown University's
+            Spring Weekend</h2>
+        <p>PROVIDENCE, RI — Brown University's annual Spring Weekend took an
+            unexpected turn this year, featuring a peculiar series of
+            incidents involving extraterrestrial visitors, oversized pumpkin
+            pies, and an elusive tennis racket.</p>
+        <p>The weekend's festivities began normally, with students eagerly
+            anticipating performances by musical artists and enjoying food
+            trucks lining the Main Green. However, events quickly escalated
+            Saturday evening when attendees reported sightings of
+            unidentified flying objects hovering above University Hall.
+            Eyewitness accounts described the crafts as resembling giant
+            metallic Frisbees, quietly emitting disco lights and gentle hums
+            resembling EDM beats.</p>
+        <p>Jessie Langevin '26 expressed amazement rather than fear.
+            "At first, I thought it was just part of the lighting effects from the stage,"
+            she said.
+            "But then, a creature stepped out and asked if anyone had spare pumpkin pie."</p>
+        <p>The extraterrestrial visitors, described by attendees as friendly
+            and approximately four feet tall, made an unusual demand upon
+            landing: a slice of homemade pumpkin pie. In an unprecedented
+            demonstration of community spirit, the student body rapidly
+            organized a pie-baking contest in the Sharpe Refectory kitchens.
+            Over 200 pies were produced, with students frantically sourcing
+            pumpkins from local farms.</p>
+        <p>"It was surreal," said Luis Patel '26, a baking participant.
+            "I never thought my grandmother’s pumpkin pie recipe would become an interstellar diplomatic asset."</p>
+        <p>The aliens, after sampling pies from the contest, awarded first
+            place to a recipe from Maya Thompson '25, praising its subtle
+            blend of nutmeg and cinnamon. As a gesture of goodwill, they
+            gifted the student body a golden tennis racket, reportedly
+            capable of improving any player's backhand exponentially.
+            Unfortunately, the racket mysteriously disappeared within hours,
+            leading to widespread speculation about its whereabouts.</p>
+        <p>University officials issued a statement acknowledging the bizarre
+            turn of events but insisted that Spring Weekend had been a
+            success.
+            "While unusual, this experience exemplifies Brown's commitment to embracing diverse perspectives, even
+            extraterrestrial ones,"
+            remarked Dean Vanessa Jorgensen.
+            "We do request, however, that whoever borrowed the golden tennis racket return it promptly."</p>
+        <p>Campus police are currently investigating the disappearance of
+            the racket. Witnesses report last seeing it used in an impromptu
+            doubles match involving two philosophy professors and an alien
+            duo, which resulted in a decisive victory for the
+            extraterrestrials.</p>
+        <p>Despite the strange happenings, students agreed the weekend would
+            be remembered fondly. "I mean, aliens are one thing," said
+            Theo Kim '28.
+            "But a really good pumpkin pie? That’s unforgettable."</p>
+    </div>
+    <div style="height: 40vh;"></div>
+    <div id="trigger3"></div>
+    <div class="data-box">
+        <iframe title="Number of Performers in Each Genre Over Time" aria-label="Grouped Columns"
+            id="datawrapper-chart-3yvzJ" src="https://datawrapper.dwcdn.net/3yvzJ/1/" scrolling="no" frameborder="0"
+            style="width: 0; min-width: 100% !important; border: none; color:#ffffff;" height="447"
+            data-external="1"></iframe>
+        <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
+        </script>
+    </div>
+    <div style="height: 40vh;"></div>
+    <div id="trigger4"></div>
+    <div class="data-box big-numbers">
+        <h2 style="text-align: center;">Spring Weekend at the Grammys</h2>
+        <div class="number-container">
+            <div class="number-item">
+                <h3>193</h3>
+                <p>Recorded Performers</p>
+            </div>
+            <div class="number-item">
+                <h3>108</h3>
+                <p>Performers with Grammy Nominations</p>
+            </div>
+            <div class="number-item">
+                <h3>255</h3>
+                <p>Grammy Awards</p>
+            </div>
+        </div>
+    </div>
+    <div style="height: 40vh;"></div>
+    <div id="trigger5"></div>
+    <div class="data-box">
+        <iframe title="Which countries do Spring Weekend performers come from?" aria-label="Map"
+            id="datawrapper-chart-6JoKN" src="https://datawrapper.dwcdn.net/6JoKN/1/" scrolling="no" frameborder="0"
+            style="width: 0; min-width: 100% !important; border: none;" height="421" data-external="1"></iframe>
+        <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
+        </script>
+    </div>
+    <div style="height: 40vh;"></div>
+    <div id="trigger6"></div>
+    <div class="text-box">
+        <h2>Alien Bands Rock Brown University's Spring Weekend</h2>
+        <p>PROVIDENCE, RI — Following the bizarre yet delightful events
+            involving extraterrestrial visitors at Brown University's Spring
+            Weekend, students were treated to another surprise: musical
+            performances by alien bands that dazzled audiences with
+            out-of-this-world sounds.</p>
+        <p>After their successful pumpkin pie negotiations, the friendly
+            visitors offered an encore of sorts by introducing two bands
+            from their home planet. The first group, "The Cosmic Muffins,"
+            immediately captivated the crowd with their unique blend of
+            intergalactic jazz and rhythmic alien chants. Their front-alien,
+            known simply as Zorb, impressed attendees with a glowing crystal
+            instrument emitting melodies described by Rebecca Foster '25
+            as "what a shooting star might sound like if it could sing."</p>
+        <p>"I've never heard anything like it," said Marcus Diaz '28.
+            "It’s like if jazz met electronic music, but also whales, somehow."</p>
+        <p>Next up was "Saturn Rings," whose energetic set had students
+            dancing late into the night. Band members performed using
+            instruments resembling glowing tennis rackets, which immediately
+            sparked renewed rumors about the whereabouts of the previously
+            vanished golden racket gifted by the aliens.</p>
+        <p>University officials, while initially puzzled, confirmed that the
+            racket used by "Saturn Rings" was not the missing golden racket,
+            but a remarkably similar alien-made instrument that resonated at
+            frequencies capable of inducing pure joy.</p>
+        <p>The aliens concluded their performance by thanking the Brown
+            community for their hospitality and exceptional pie. As their
+            spaceship ascended amidst enthusiastic cheers, student
+            representatives publicly invited them back for next year’s
+            Spring Weekend.</p>
+        <p>Dean Vanessa Jorgensen praised the aliens' performances, stating,
+            "These interstellar artists brought exactly the creative energy and cosmic diversity that Brown cherishes.
+            We hope they’ll become regulars on our Spring Weekend roster."</p>
+        <p>Students, meanwhile, continued to speculate on the mystery of the
+            missing golden tennis racket, now even more intrigued by its
+            alien-crafted musical counterpart.</p>
+        <p>"Honestly, aliens or not, it’s the best Spring Weekend ever,"
+            concluded Emma Lin '27.
+            "Pumpkin pie, cosmic jazz, and alien tennis rackets? That’s peak Brown."</p>
+    </div>
+    <div style="height: 40vh;"></div>
+    <div id="trigger7"></div>
+    <!-- BuzzFeed Quiz Section -->
+    <div id="buzz-quiz" class="buzz-quiz">
+        <!-- Buzz Start Screen -->
+        <div id="buzz-start" class="buzz-start">
+            <h2>Build your dream home to discover your dream Spring Weekend!</h2>
+            <p>Discover your inner vibe by answering these questions about Spring Weekend.</p>
+            <button id="buzz-start-btn">Click here to start!</button>
+        </div>
+
+        <!-- Buzz Quiz Content (hidden by default) -->
+        <div id="buzz-content" class="buzz-content" style="display: none;">
+            <div id="buzz-question" class="buzz-question"></div>
+            <div id="buzz-answers" class="buzz-answers"></div>
+            <button id="buzz-next" disabled>Next Question</button>
+        </div>
+
+        <!-- Buzz Result Display (hidden until quiz submission) -->
+        <div id="buzz-result" class="buzz-result" style="display: none;">
+            <h2>Your Buzz Result:</h2>
+            <div id="buzz-decision"></div>
+        </div>
+    </div>
+    <div style="height: 40vh;"></div>
+    <div id="trigger8"></div>
+    <div class="data-box">
+        <iframe title="Which states are Spring Weekend Artists from?" aria-label="Map" id="datawrapper-chart-SFENY"
+            src="https://datawrapper.dwcdn.net/SFENY/1/" scrolling="no" frameborder="0"
+            style="width: 0; min-width: 100% !important; border: none;" height="483" data-external="1"></iframe>
+        <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
+        </script>
+    </div>
+    <div style="height: 40vh;"></div>
+    <div id="trigger9"></div>
+    <div class="data-box">
+        <iframe title="Which boroughs are Spring Weekend artists from?" aria-label="Map" id="datawrapper-chart-aN9F0"
+            src="https://datawrapper.dwcdn.net/aN9F0/1/" scrolling="no" frameborder="0"
+            style="width: 0; min-width: 100% !important; border: none;" height="702" data-external="1"></iframe>
+        <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
+        </script>
+    </div>
+    <div style="height: 40vh;"></div>
+    <div id="trigger10"></div>
+    <div class="data-box">
+        <iframe title="Grammy Awards and Nominations" aria-label="Grouped Bars" id="datawrapper-chart-IkWed"
+            src="https://datawrapper.dwcdn.net/IkWed/4/" scrolling="no" frameborder="0"
+            style="width: 0; min-width: 100% !important; border: none;" height="1373" data-external="1"></iframe>
+        <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
+        </script>
+    </div>
+    <div style="height: 40vh;"></div>
+    <div id="trigger11"></div>
+    <div class="data-box">
+        <iframe title="Weeks on Hot 100 by Artist" aria-label="Bar Chart" id="datawrapper-chart-0wSxd"
+            src="https://datawrapper.dwcdn.net/0wSxd/3/" scrolling="no" frameborder="0"
+            style="width: 0; min-width: 100% !important; border: none;" height="521" data-external="1"></iframe>
+        <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
+        </script>
+    </div>
+    <div style="height: 40vh;"></div>
+    <div id="trigger12"></div>
+
     <!-- Quiz -->
     <div id="quiz-box" class="quiz-box">
-        <div class="quiz-container">
-            <div id="question" class="question"></div>
-            <div id="answers" class="answers"></div>
-            <button id="next" disabled>Next Question</button>
-            <div id="score"></div>
+        <div id="start-screen" class="start-screen">
+            <h2>Welcome to the Spring Weekend Quiz!</h2>
+            <p>Test your knowledge about Spring Weekend's music and
+                history.</p>
+            <button id="start-btn">Start Quiz</button>
         </div>
-        <script src="quiz.js"></script>
+        <div id="quiz-content" style="display: none;">
+            <div class="quiz-container">
+                <div id="question" class="question"></div>
+                <div id="answers" class="answers"></div>
+                <div id="message"></div>
+                <button id="next" disabled>Next Question</button>
+                <div id="score"></div>
+            </div>
+        </div>
     </div>
-
-
+    <div style="height: 40vh;"></div>
     <div>
-        <!-- Your content goes here -->
         <div id="collage" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;">
             <img src="images/1960BDR1.jpeg" class="flash-image" id="image1" alt="Image 1">
             <img src="images/1966BDR1.jpeg" class="flash-image" id="image2" alt="Image 2">
