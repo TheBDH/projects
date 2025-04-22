@@ -193,7 +193,7 @@ a {
     margin-bottom: 1em;
     color: rgb(12, 12, 12);
     text-align: center;
-
+    font-weight: bold;
 }
 
 #message {
@@ -211,7 +211,7 @@ a {
     box-shadow: black;
     position: relative;
     z-index: 10;
-    font-family: "freight-text-pro", "Georgia", "Times", serif;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 
@@ -227,7 +227,7 @@ a {
 }
 
 .start-screen {
-    font-family: "freight-text-pro", "Georgia", "Times", serif;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     position: relative;
     text-align: center;
     color: rgb(12, 12, 12);
@@ -371,7 +371,7 @@ a {
     padding: 2em;
     box-shadow: black;
     z-index: 10;
-    font-family: "freight-text-pro", "Georgia", "Times", serif;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     color: rgb(12, 12, 12);
     text-align: center;
 }
@@ -428,6 +428,7 @@ a {
     margin-bottom: 1em;
     color: rgb(12, 12, 12);
     text-align: center;
+    font-weight: bold;
 }
 
 .buzz-answers {
@@ -496,7 +497,7 @@ a {
 .big-numbers {
     text-align: center;
     margin: 2em auto;
-    padding: 2em;
+    padding: 1em;
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
@@ -504,10 +505,11 @@ a {
 }
 
 .big-numbers h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 0.2em;
     margin-top: 0.2em;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 .number-container {
@@ -520,19 +522,18 @@ a {
 .number-item {
     flex: 1 1 200px;
     text-align: center;
-    /* background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    padding: 0.5em 0; /* Reduce padding to make items less tall */
 }
 
 .number-item h3 {
-    font-size: 3rem;
+    font-size: 3.5rem; /* Slightly reduce font size */
     font-weight: bold;
     color: #d371d3;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.3em; /* Adjust margin for better spacing */
 }
 
 .number-item p {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Slightly reduce font size */
     color: rgb(12, 12, 12);
+    font-weight: bold;
 }

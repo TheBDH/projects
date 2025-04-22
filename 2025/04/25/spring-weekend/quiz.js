@@ -2,34 +2,34 @@ document.addEventListener("DOMContentLoaded", function () {
     // Questions for the quiz
     const quizData = [
         {
-            question: "Which of these artists did not perform at Spring Weekend?",
+            question: "Which of these artists has not performed at Spring Weekend?",
             answers: ["Snoop Dogg", "Doechii", "Lil Nas X", "Childish Gambino"],
             correct: "Lil Nas X",
-            message: "Snoop Dogg has performed in 2010. Doechii has performed in 2023. Childish Cambino has performed in 2012. However, Lil Nas X has never performed at Spring Weekend yet..."
+            message: "Snoop Dogg performed in 2010, Doechii performed in 2023 and Childish Cambino performed in 2012. However, Lil Nas X hasn't performed at Spring Weekend...yet"
         },
         {
-            question: "Which of these artists from Spring Weekend has the most Grammy awards?",
+            question: "Which of these Spring Weekend performers has the most Grammy awards?",
             answers: ["Kendrick Lamar", "U2", "Ella Fitzgerald", "Bob Dylan"],
             correct: ["Kendrick Lamar", "U2"],
-            message: "Both Kendrick Lamar and U2 has the most Grammy awards with 22 awards!"
+            message: "Both Kendrick Lamar and U2 have the most Grammy awards with 22 awards!"
         },
         {
-            question: "Which genre was the most featured at Spring Weekned?",
+            question: "Which genre has been most featured at Spring Weekned?",
             answers: ["Rock", "Pop", "Alternative", "Rap"],
             correct: "Rap",
             message: "There was a total of 48 Rap performances, closely followed by a 40 performances of Rock music. Alternative and Pop had 35 and 12 respectively."
         },
         {
-            question: "How many international artists have performed at Spring Weekend?",
-            answers: ["42", "41", "35", "36"],
-            correct: "35",
-            message: "A total of 35 international artists have performed at Spring Weekend so far! That is 18% of all the artists so far!"
+            question: "How many different countries have been represented at Spring Weekend?",
+            answers: ["38", "23", "16", "10"],
+            correct: "16",
+            message: "35 international artists have represented 16 different countries at Spring Weekend"
         },
         {
-            question: "Which of these artists has performed more than once at Spring Weekend?",
+            question: "Which of the following artists has performed more than once at Spring Weekend?",
             answers: ["Bob Dylan", "Phoebe Bridgers", "Young Thug", "Smokey Robinson"],
             correct: "Bob Dylan",
-            message: "Bob Dylan has performed twice at Spring Weekend. Once in 1964 and once in 1997."
+            message: "Bob Dylan has performed twice at Spring Weekend—in 1964 and 1997."
         }
     ];
 
@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
         nextButton.disabled = true;
 
         const currentQuiz = quizData[currentQuestion];
+        questionElement.style.fontWeight = "bold";
         questionElement.innerText = currentQuiz.question;
 
         currentQuiz.answers.forEach(answer => {
@@ -116,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
             const feedbackMessage = feedbackPrefix + currentQuiz.message;
+            questionElement.style.fontWeight = "normal";
             questionElement.innerText = feedbackMessage;
             answersElement.innerHTML = "";
             nextButton.innerText = "Continue";
@@ -130,14 +132,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 isMessageShowing = false;
             } else {
                 // quiz done
+                questionElement.style.fontWeight = "bold";
                 questionElement.innerText = "Quiz completed!";
                 answersElement.innerHTML = "";
                 document.getElementById("message").innerText = "";
-                if (score == 1) {
-                    scoreElement.innerText = `You got ${score} question correct out of ${quizData.length}.`;
-                } else {
-                    scoreElement.innerText = `You got ${score} questions correct out of ${quizData.length}.`;
-                }
+                scoreElement.innerText = `You got ${score}/${quizData.length} questions correct.`;
                 nextButton.style.display = "none";
             }
         }

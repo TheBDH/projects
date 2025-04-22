@@ -2,9 +2,19 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async
+        src="https://www.googletagmanager.com/gtag/js?id=G-321HPHTJEX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-321HPHTJEX');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Data Behind Spring Weekend</title>
+    <link rel="icon" href="images/icon.png" sizes="96x96">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
@@ -22,13 +32,14 @@
         <a href="https://www.browndailyherald.com" target="_blank">
             <img src="images/logo-black.png" id="herald-logo" alt="Brown Daily Herald Logo" />
         </a>
-        <h3 style="text-align: center;">The <span id="purple-data">Data</span> Behind Spring Weekend</h3>
+        <h3 style="text-align: center;">The <span id="purple-data">data</span> behind Spring Weekend</h3>
         <p style="text-align: center; font-family: 'freight-text-pro', 'Georgia', 'Times', serif; font-style: normal;">
             Quantifying 75 Years of Music at Brown
         </p>
         <h6 id="byline" style="text-align: center;">
             Reporting by
-            <span class="author">Someone!</span>
+            <span class="author"><a href="https://www.browndailyherald.com/staff/manav-musunuru" target="_blank">Manav
+                Musunuru</a></span>
             <br>
             <br>
             Data analysis by
@@ -124,7 +135,7 @@
     <div style="height: 40vh;"></div>
     <div id="trigger4"></div>
     <div class="data-box big-numbers">
-        <h2 style="text-align: center;">Spring Weekend by the Numbers</h2>
+        <h2 style="text-align: center;">Spring Weekend Performers by the Numbers</h2>
         <div class="number-container">
             <div class="number-item">
                 <h3>193</h3>
@@ -141,7 +152,7 @@
         </div>
         <div class="number-container">
             <div class="number-item">
-                <h3>10,664</h3>
+                <h3>10,781</h3>
                 <p>Total Weeks on Hot 100</p>
             </div>
             <div class="number-item">
@@ -226,8 +237,7 @@
     <div id="buzz-quiz" class="buzz-quiz">
         <!-- Buzz Start Screen -->
         <div id="buzz-start" class="buzz-start">
-            <h2>Build your dream home to discover your dream Spring Weekend!</h2>
-            <p>Discover your inner vibe by answering these questions about Spring Weekend.</p>
+            <h2 style="text-align: center; margin-bottom: 60px; font-size: 1.5em;">Build your dream home to discover your dream Spring Weekend!</h2>
             <button id="buzz-start-btn">Click here to start!</button>
         </div>
 
@@ -242,8 +252,13 @@
         <div id="buzz-result" class="buzz-result" style="display: none;">
             <h2 id="buzz-year">You matched to: </h2>
             <div id="buzz-decision"></div>
+            <p style="text-align: center; font-size: 0.9em; margin-top: 60px;"><strong>See more data below!</strong></p>
+            <div class="down-arrow" style="text-align: center;">
+                &#x2193;
+            </div>
         </div>
     </div>
+    <!-- KEEEP READING SIGN -->
     <div style="height: 40vh;"></div>
     <div id="trigger8"></div>
     <div class="data-box">
@@ -286,7 +301,7 @@
     <!-- Quiz -->
     <div id="quiz-box" class="quiz-box">
         <div id="start-screen" class="start-screen">
-            <h2>Welcome to the Spring Weekend Quiz!</h2>
+            <h2>Can you pass Spring Weekend Quiz?</h2>
             <p>Test your knowledge about Spring Weekend's music and
                 history.</p>
             <button id="start-btn">Start Quiz</button>
