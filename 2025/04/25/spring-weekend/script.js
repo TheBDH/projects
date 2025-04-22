@@ -5,22 +5,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const controller = new ScrollMagic.Controller();
 
-    // List of trigger IDs and corresponding forward/backward image IDs
-    const configs = [
-        { trigger: "#trigger1", forwardImage: "#image1", backwardImage: "#image1" },
-        { trigger: "#trigger2", forwardImage: "#image2", backwardImage: "#image1" },
-        { trigger: "#trigger3", forwardImage: "#image3", backwardImage: "#image2" },
-        { trigger: "#trigger4", forwardImage: "#image4", backwardImage: "#image3" },
-        { trigger: "#trigger5", forwardImage: "#image5", backwardImage: "#image4" },
-        { trigger: "#trigger6", forwardImage: "#image6", backwardImage: "#image5" },
-        { trigger: "#trigger7", forwardImage: "#image7", backwardImage: "#image6" },
-        { trigger: "#trigger8", forwardImage: "#image8", backwardImage: "#image7" },
-        { trigger: "#trigger9", forwardImage: "#image9", backwardImage: "#image8" },
-        { trigger: "#trigger10", forwardImage: "#image10", backwardImage: "#image9" },
-        { trigger: "#trigger11", forwardImage: "#image11", backwardImage: "#image10" },
-        { trigger: "#trigger12", forwardImage: "#image12", backwardImage: "#image11" },
-        { trigger: "#trigger13", forwardImage: "#image13", backwardImage: "#image12" }
+    // Define captions to avoid repetition
+    const captions = [
+        "Spring Weekend 1960",
+        "Spring Weekend 1966",
+        "Spring Weekend 1966",
+        "Spring Weekend 1973",
+        "Spring Weekend 1980",
+        "Spring Weekend 1980",
+        "Spring Weekend 1986",
+        "Spring Weekend 2000",
+        "Spring Weekend 2000",
+        "Spring Weekend 2000",
+        "Spring Weekend 2000",
+        "Spring Weekend 2000",
+        "Media by Emily Gilbert, Spring Weekend 2013"
     ];
+
+    // List of trigger IDs, corresponding forward/backward image IDs, and captions
+    const configs = captions.map((caption, index) => ({
+        trigger: `#trigger${index + 1}`,
+        forwardImage: `#image${index + 1}`,
+        backwardImage: `#image${index}`,
+        forwardCaption: caption,
+        backwardCaption: captions[index - 1] || "Spring Weekend"
+    }));
 
     configs.forEach(function (conf) {
         const triggerElement = document.querySelector(conf.trigger);
@@ -42,6 +51,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 const img = document.querySelector(event.scrollDirection === "REVERSE" ? conf.backwardImage : conf.forwardImage);
                 if (img) {
                     img.style.opacity = 1;
+                }
+
+                // Update the caption text based on scroll direction
+                const captionElement = document.querySelector("#caption");
+                if (captionElement) {
+                    captionElement.textContent = event.scrollDirection === "REVERSE" ? conf.backwardCaption : conf.forwardCaption;
                 }
             })
             .addTo(controller);

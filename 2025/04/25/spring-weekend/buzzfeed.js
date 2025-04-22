@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const buzzQuizQuestions = [
         {
             attribute: "Genre",
-            question: "Pick your door!",
+            question: "Pick your dream door",
             options: ["Alternative & Folk", "Electric", "Jazz & R&B", "Pop", "Rap & Reggae/ska", "Rock"],
             captions: ["Courtesy of Doncram via Wikimedia Commons",
                 "Courtesy of Graufeder via Wikimedia Commons",
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             attribute: "Decade",
-            question: "Pick your wallpaper",
+            question: "Pick your fav wallpaper",
             options: ["60s & 70s", "80s", "90s", "00s", "10s", "20s"],
             captions: ["Courtesy of Morris & Co. via Wikimedia Commons",
                 "Courtesy of Morris & Co. via Wikimedia Commons",
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             attribute: "Popularity",
-            question: "Do you prefer big name artists?",
+            question: "Pick your bed",
             options: ["0", "0+", "50+", "200+"],
             captions: ["Courtesy of W.carter via Wikimedia Commons",
                 "Courtesy of Kurt Kaiser via Wikimedia Commons",
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             attribute: "Location",
-            question: "Where do you prefer?",
+            question: "Pick your ideal neighborhood",
             options: ["US", "NY", "Europe", "Other"],
             captions: ["Courtesy of Acroterion via Wikimedia Commons",
                 "Courtesy of Mike Peel via Wikimedia Commons",
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             attribute: "Band",
-            question: "Do you prefer bands?",
+            question: "Last one—pick a plant to spruce up your home",
             options: ["TRUE", "FALSE"],
             captions: ["Courtesy of F. D. Richards via Wikimedia Commons",
                 "Courtesy of Jennifer C. via Wikimedia Commons"
