@@ -138,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("message").innerText = "";
                 scoreElement.innerText = `You got ${score}/${quizData.length} questions correct.`;
                 nextButton.style.display = "none";
+                document.getElementById("read-more").style.display = "block";
             }
         }
     });
