@@ -13,52 +13,52 @@ document.addEventListener("DOMContentLoaded", function () {
             attribute: "Genre",
             question: "Pick your door!",
             options: ["Alternative & Folk", "Electric", "Jazz & R&B", "Pop", "Rap & Reggae/ska", "Rock"],
-            captions: ["LIW Hs Rock House door 2 by Doncram, via Wikimedia Commons, CC BY 4.0",
-                "Glowing Doorway by Graufeder, via Wikimedia Commons, CC BY 4.0",
-                "Door in Antwerpen by John Samuel, via Wikimedia Commons, CC BY 4.0",
-                "Working Girls' Home Doorway by David Dixon, via Wikimedia Commons, CC BY 2.0",
-                "Bicycle parked in front of a graffitied building façade with doors, in a street near Kloveniersburgwal, in Amsterdam, the Netherlands. Front view. by 	Basile Morin, via Wikimedia Commons, CC BY 4.0",
-                "Door of The Gheorghe Petrașcu House by Neoclassicism Enthusiast, via Wikimedia Commons, CC BY 4.0"
+            captions: ["Courtesy of Doncram via Wikimedia Commons",
+                "Courtesy of Graufeder via Wikimedia Commons",
+                "Courtesy of John Samuel via Wikimedia Commons",
+                "Courtesy of David Dixon via Wikimedia Commons",
+                "Courtesy of Basile Morin via Wikimedia Commons",
+                "Courtesy of Neoclassicism Enthusiast via Wikimedia Commons"
             ]
         },
         {
             attribute: "Decade",
             question: "Pick your wallpaper",
             options: ["60s & 70s", "80s", "90s", "00s", "10s", "20s"],
-            captions: ["FILL OUT",
-                "FILL OUT",
-                "Toki pona arcade carpet tile by Neonpixii, via Wikimedia Commons, CC BY 4.0",
-                "Red brick wall background, brick wall texture free photo with attribution by Marek Ślusarczyk, via Wikimedia Commons, CC BY 3.0",
-                "Pattern of colors by Helgi Halldórsson, via Wikimedia Commons, CC BY 2.0",
-                "Tapetentextur by PantheraLeo1359531, via Wikimedia Commons, CC BY 1.0"
+            captions: ["Courtesy of Morris & Co. via Wikimedia Commons",
+                "Courtesy of Morris & Co. via Wikimedia Commons",
+                "Courtesy of Neonpixii via Wikimedia Commons",
+                "Courtesy of Marek Ślusarczyk via Wikimedia Commons",
+                "Courtesy of Helgi Halldórsson via Wikimedia Commons",
+                "Courtesy of PantheraLeo1359531 via Wikimedia Commons"
             ]
         },
         {
             attribute: "Popularity",
             question: "Do you prefer big name artists?",
             options: ["0", "0+", "50+", "200+"],
-            captions: ["Air mattress or extra bed with internal air pump 1 by W.carter, via Wikimedia Commons, CC BY 4.0",
-                "Bed in hotel room 4 by Kurt Kaiser, via Wikimedia Commons, CC BY 1.0",
-                "Bed in hotel room 2 by Kurt Kaiser, via Wikimedia Commons, CC BY 1.0",
-                "Canopy bed of Amantaka Suite in Amantaka luxury Resort & Hotel in Luang Prabang Laos by Basile Morin, via Wikimedia Commons, CC BY 4.0"
+            captions: ["Courtesy of W.carter via Wikimedia Commons",
+                "Courtesy of Kurt Kaiser via Wikimedia Commons",
+                "Courtesy of Kurt Kaiser via Wikimedia Commons",
+                "Courtesy of Basile Morin via Wikimedia Commons"
             ]
         },
         {
             attribute: "Location",
             question: "Where do you prefer?",
             options: ["US", "NY", "Europe", "Other"],
-            captions: ["John Coblentz Farm MD3 by Acroterion, via Wikimedia Commons, CC BY 4.0",
-                "At New York City 2023 033 by Mike Peel, via Wikimedia Commons, CC BY 4.0",
-                "KeizersgrachtReguliersgrachtAmsterdam by Massimo Catarinella, via Wikimedia Commons, CC BY 3.0",
-                "Cape Town (52114591273) by Nina R from Africa, via Wikimedia Commons, CC BY 2.0"
+            captions: ["Courtesy of Acroterion via Wikimedia Commons",
+                "Courtesy of Mike Peel via Wikimedia Commons",
+                "Courtesy of Massimo Catarinella via Wikimedia Commons",
+                "Courtesy of Nina R via Wikimedia Commons"
             ]
         },
         {
             attribute: "Band",
             question: "Do you prefer bands?",
             options: ["TRUE", "FALSE"],
-            captions: ["Houseplants in Michigan by F. D. Richards, via Wikimedia Commons, CC BY 2.0",
-                "Houseplant (4165125246) by Jennifer C., via Wikimedia Commons, CC BY 2.0"
+            captions: ["Courtesy of F. D. Richards via Wikimedia Commons",
+                "Courtesy of Jennifer C. via Wikimedia Commons"
             ]
         }
     ];
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Determine the best year
             const bestYear = getBestYear(scores);
             const buzzYear = document.getElementById("buzz-year");
-            buzzYear.innerText = "You matched to " + bestYear + "'s Spring Weekend!"; // Display the best year
+            buzzYear.innerText = "You matched to Spring Weekend " + bestYear + "!"; // Display the best year
             
             // Scrape all artists from the best year
             const artists = buzzDecisionTree
