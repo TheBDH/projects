@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
         header: true,   // Treat the first row as headers
         dynamicTyping: true, // Automatically convert numeric values
         complete: function (results) {
-            console.log(results.data);
             treeBuilt = true; // Mark the data as ready
             buzzDecisionTree = results.data; // Store the parsed data for scoring
         },
