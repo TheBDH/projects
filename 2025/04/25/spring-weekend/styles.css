@@ -72,7 +72,7 @@ h2 {
 }
 
 .data-box .number-item {
-    border: 1px solid #ccc;
+    border: 1px solid #d1d1d1;
     padding: 1rem;
     margin: .5rem 0;
     text-align: center;
@@ -82,12 +82,14 @@ h2 {
 }
 
 .number-item.item1 {
-    background-color: rgb(234, 233, 233);
+    background-color: rgb(233, 233, 233);
+    /* border: 1px solid rgb(233, 233, 233); */
     color: #d371d3;
 }
 
 .number-item.item2 {
     background-color: #d371d3;
+    border: 1px solid #d371d3;
     color: white;
 }
 
