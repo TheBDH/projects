@@ -20,6 +20,7 @@ body {
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.95);
     padding: 10px;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
 }
 
 #logo {
@@ -357,12 +358,13 @@ a {
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 20%;
-    height: 2em;
-    margin: 0.5em 0;
+    width: auto;
+    padding: 0.75em 1.5em;
     text-align: center;
-    margin: 0 auto;
-    margin-top: 1em;
+    margin: 1em auto; /* Center the button horizontally */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #next:hover {
@@ -386,6 +388,11 @@ a {
         padding: 10px;
     }
 
+    #heading {
+        width: 70%;
+        max-width: 80%;
+    }
+
     #herald-logo {
         max-width: 200px;
     }
@@ -406,6 +413,10 @@ a {
     /*idk if this is going to break stuff*/
     .buzz-answers {
         grid-template-columns: 1fr;
+    }
+
+    #quiz-box {
+        max-width: 75%;
     }
 }
 
@@ -484,7 +495,7 @@ a {
     padding: 0;
     margin: 0;
     justify-content: center;
-    max-height: 50vh;
+    /* max-height: 80vh; */
     overflow-y: visible;
 }
 
@@ -552,9 +563,9 @@ a {
 .big-numbers h2 {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 0.7em;
+    margin-bottom: 0.5em;
     margin-top: 0.2em;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    /* font-family: "Roboto", "Helvetica", "Arial", sans-serif; */
 }
 
 .number-container {
@@ -582,7 +593,7 @@ a {
 }
 
 .number-item p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     /* Slightly reduce font size */
     font-weight: bold;
 }
