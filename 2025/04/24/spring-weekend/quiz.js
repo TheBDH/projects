@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             question: "Which genre has been most featured at Spring Weekned?",
             answers: ["Rock", "Pop", "Alternative", "Rap"],
             correct: "Rock",
-            message: "There was a total of 77 Rock performances, closely followed by a 58 Rap performances. Alternative and Pop had 53 and 15, respectively."
+            message: "There was a total of 76 Rock performances, closely followed by a 58 Rap performances. Alternative and Pop had 53 and 15, respectively."
         },
         {
             question: "How many different countries have been represented at Spring Weekend?",

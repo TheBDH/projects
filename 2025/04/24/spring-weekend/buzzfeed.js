@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             attribute: "Decade",
             question: "Pick your fav wallpaper",
-            options: ["60s & 70s", "80s", "90s", "00s", "10s", "20s"],
+            options: ["50s & 60s & 70s", "80s", "90s", "00s", "10s", "20s"],
             captions: ["Courtesy of Morris & Co. via Wikimedia Commons",
                 "Courtesy of Morris & Co. via Wikimedia Commons",
                 "Courtesy of Neonpixii via Wikimedia Commons",
@@ -95,7 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // ---------------------------
     // Function to score each row based on matching attributes
     function scoreRows(data, responses) {
-        const scores = {};
+        const yearScores = {};
+        const yearCounts = {};
+
         data.forEach(row => {
             let matchCount = 0;
             Object.keys(responses).forEach(attr => {
@@ -104,17 +106,79 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
             const year = row["Year"];
-            scores[year] = (scores[year] || 0) + matchCount / Object.keys(responses).length;
+            const scoreIncrement = matchCount / Object.keys(responses).length;
+
+            yearScores[year] = (yearScores[year] || 0) + scoreIncrement;
+            yearCounts[year] = (yearCounts[year] || 0) + 1;
+
+            // Small boost for artists with popularity 200+
+            if (row["Popularity"] === "200+") {
+                yearScores[year] = (yearScores[year] || 0) + 0.1; // Add a small boost
+            }
+
+            // Boost for Kendrick Lamar
+            if (row["Artist"] && row["Artist"].toLowerCase().includes("kendrick")) {
+                yearScores[year] = (yearScores[year] || 0) + 0.4; // Add a Kendrick boost
+            }
+
+            // Cost for being before 1970
+            if (year < 1970) {
+                yearScores[year] = (yearScores[year] || 0) - 0.1; // Subtract a small cost
+            }
+
+            if (year >= 2000) {
+                yearScores[year] = (yearScores[year] || 0) + 0.1; // add a small boost
+            }
         });
-        return scores;
+
+        // Calculate the average score for each year
+        const averageScores = {};
+        Object.keys(yearScores).forEach(year => {
+            const randomnessFactor = Math.random() * 0.2; // Add a small random factor
+            averageScores[year] = (yearScores[year] / yearCounts[year]) + randomnessFactor;
+        });
+
+        return averageScores;
     }
 
     // Function to determine the year with the highest score
     function getBestYear(scores) {
         const maxScore = Math.max(...Object.values(scores));
         const bestYears = Object.keys(scores).filter(year => scores[year] === maxScore);
-        return bestYears[Math.floor(Math.random() * bestYears.length)]; // Break ties randomly
+        return bestYears[Math.floor(Math.random() * bestYears.length)];
     }
+
+    // ---------------------------
+    // 2.5. Simulation Functionality
+    // ---------------------------
+    function runSimulations(numSimulations) {
+        const yearDistribution = {};
+
+        for (let i = 0; i < numSimulations; i++) {
+            const randomResponses = {};
+            buzzQuizQuestions.forEach(question => {
+                const randomOption = question.options[Math.floor(Math.random() * question.options.length)];
+                randomResponses[question.attribute] = randomOption;
+            });
+
+            const scores = scoreRows(buzzDecisionTree, randomResponses);
+            const bestYear = getBestYear(scores);
+
+            yearDistribution[bestYear] = (yearDistribution[bestYear] || 0) + 1;
+        }
+
+        console.log("Year Distribution after", numSimulations, "simulations:", yearDistribution);
+    }
+
+    // Wait for the decision tree to be built and then run 1000 simulations
+    const checkTreeInterval = setInterval(() => {
+        if (treeBuilt) {
+            clearInterval(checkTreeInterval); // Stop checking once the tree is built
+            //runSimulations(10000); // Run the simulations
+        } else {
+            //console.log("Waiting for the decision tree to be built...");
+        }
+    }, 100); // Check every 100ms
 
     // ---------------------------
     // 3. Buzz Quiz UI Functionality
@@ -189,7 +253,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 .join(", ")
                 .replace(/, ([^,]*)$/, " and $1"); // Add "and" at the end without an Oxford comma
             
-            console.log(artists);
             buzzDecisionDiv.innerText = "\nArtists: " + artists; // Append the artists to the result
             
             buzzResultDiv.style.display = "block"; // Show the result
@@ -205,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Pop": "images/pop.jpg",
             "Rap & Reggae/ska": "images/rap_reggae.jpg",
             "Rock": "images/rock.jpg",
-            "60s & 70s": "images/60s_70s.jpg",
+            "50s & 60s & 70s": "images/60s_70s.jpg",
             "80s": "images/80s.jpg",
             "90s": "images/90s.jpg",
             "00s": "images/00s.jpg",
