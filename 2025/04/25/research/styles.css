@@ -207,6 +207,9 @@ a {
     #logo {
         width: 200px;
     }
+    #herald-logo {
+        max-width: 200px;
+    }
 }
 
 .question {
