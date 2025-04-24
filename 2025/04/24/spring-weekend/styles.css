@@ -425,6 +425,15 @@ a {
     #quiz-box {
         max-width: 75%;
     }
+
+    #text-box {
+        max-width: 85%;
+        padding: 1em;
+    }
+
+    #data-box {
+        max-width: 85%;
+    }
 }
 
 /* Buzz Quiz Box with updated styling */
