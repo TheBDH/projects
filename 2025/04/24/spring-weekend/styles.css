@@ -298,14 +298,14 @@ a {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    background-color: #c76ac7;
+    background-color: #d371d3;
     color: white;
     transition: background-color 0.3s ease;
     margin-bottom: 1em;
 }
 
 .start-screen button:hover {
-    background-color: #b45ba6;
+    background-color: #c76ac7;
 }
 
 .answers button {
@@ -316,16 +316,16 @@ a {
     padding: 0.75em 1em;
     font-size: 1em;
     cursor: pointer;
-    background-color: #c76ac7;
+    background-color: #d371d3;
     color: white;
-    border: 2px solid #c76ac7;
+    border: 2px solid #d371d3;
     border-radius: 8px;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
 .answers button:hover {
-    background-color: #b45ba6;
-    border-color: #c76ac7;
+    background-color: #c76ac7;
+    border-color: #d371d3;
     color: white;
 }
 
@@ -358,7 +358,7 @@ a {
 #next {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     display: block;
-    background-color: #c76ac7;
+    background-color: #d371d3;
     color: white;
     border: none;
     border-radius: 8px;
@@ -376,7 +376,7 @@ a {
 
 #next:hover {
     color: white;
-    background-color: #b45ba6;
+    background-color: #c76ac7;
 }
 
 #next:active {
@@ -471,7 +471,7 @@ a {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    background-color: #c76ac7;
+    background-color: #d371d3;
     color: white;
     transition: background-color 0.3s ease;
     margin-top: 1em;
@@ -483,7 +483,7 @@ a {
 
 #buzz-start-btn:hover,
 #buzz-next:hover {
-    background-color: #b45ba6;
+    background-color: #c76ac7;
 }
 
 /* Buzz Question and Buzz Answers */
@@ -514,7 +514,7 @@ a {
     align-items: center;
     background-color: #fff;
     /* white card background */
-    border: 2px solid #c76ac7;
+    border: 2px solid #d371d3;
     /* your purple border */
     border-radius: 8px;
     padding: 0.5rem;
@@ -523,7 +523,7 @@ a {
 }
 
 .buzz-answer-btn:hover {
-    border-color: #b45ba6;
+    border-color: #c76ac7;
     transform: translateY(-1px);
 }
 
