@@ -1,13 +1,41 @@
 body {
     font-family: 'Times New Roman', Times, serif;
     margin: 0px;
-    background-image: url('images/basketballBackground.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-color: #f6f0f0e6;
     color: rgb(190, 33, 33);
 }
+
+.data-box {
+    position: relative;
+    max-width: 1000px;
+    width: 80%;
+    margin: 2em auto;
+    padding: 2em;
+    box-shadow: black;
+    background-color: rgba(255, 255, 255, 0.95);
+    position: relative;
+    z-index: 10;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+}
+
+.text-box {
+    position: relative;
+    max-width: 800px;
+    width: 80%;
+    margin: 2em auto;
+    padding: 2em;
+    box-shadow: black;
+    color: rgb(12, 12, 12);
+    background-color: rgba(255, 255, 255, 0.95);
+    position: relative;
+    z-index: 10;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+    font-size: 1.2em;
+}
+
 
 #images {
     position: relative;
