@@ -433,6 +433,7 @@ a {
 
     .data-box {
         max-width: 85%;
+        padding: 1em;
     }
 }
 

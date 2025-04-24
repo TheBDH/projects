@@ -225,6 +225,7 @@ a {
 
     .data-box {
         width: 85%;
+        padding: 1em;
     }
 
     .text-box {
