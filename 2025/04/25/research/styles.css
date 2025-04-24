@@ -1,0 +1,321 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0px;
+    background-image: url('images/basketballBackground.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-color: #f6f0f0e6;
+    color: rgb(190, 33, 33);
+}
+
+#images {
+    position: relative;
+    height: 100vh;
+}
+
+#logo {
+    width: 300px;
+    height: auto;
+}
+
+.flash-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.flash-image.visible {
+    opacity: 1;
+}
+
+#heading {
+    min-height: 15rem;
+    text-align: center;
+    padding: 2rem 2.2rem 2.2rem 2.2rem;
+    background-color: #f6f0f0e6;
+    /* Light grey background */
+    max-width: 40%;
+    /* Limit the width */
+    margin: 0 auto;
+    /* Center the element horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /* Center the element vertically and horizontally */
+}
+
+#heading h3 {
+    font-size: 4rem;
+    font-family: "carol-gothic", Times;  /* TODO: specify better substitute fonts */
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    text-align: center;
+}
+
+#herald-logo {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.description {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 400;
+    max-width: 350px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+#heading p {
+    text-align: left;
+    font-style: italic;
+}
+
+#byline {
+    font-size: 0.7rem;
+}
+
+#byline .author {
+    background-color: #ff00ff;
+    padding: 0.2rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    white-space: nowrap;
+}
+
+.author a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a {
+    color: #94102a;
+}
+
+#purple-data {
+    color: white;
+    animation: fadeToPurple 2s forwards;
+}
+
+@keyframes fadeToPurple {
+    to {
+        color: #bb2fbb;
+    }
+}
+
+#jump-button {
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    background-color: #f7f7f7;
+    border: rgb(59, 59, 59) 2px solid;
+    cursor: pointer;
+    margin-bottom: 22px;
+}
+
+.down-arrow {
+    animation: bounce 2s infinite;
+    font-size: 2rem;
+    /* Increase the size of the down arrow */
+    font-weight: bold;
+    /* Make the arrow bold */
+    color: rgb(190, 33, 33);
+    /* Change the color to a shade of green */
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-5px);
+    }
+
+    60% {
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 768px) {
+    #title {
+        width: 80%;
+        padding: 10px;
+    }
+
+    #title h1 {
+        font-size: 2em;
+        padding-top: 10px;
+    }
+
+    #title h2 {
+        font-size: 0.8em;
+    }
+
+    #logo {
+        width: 200px;
+    }
+}
+
+.question {
+    font-size: 1.4em;
+    margin-bottom: 1em;
+    color: white;
+    text-align: center;
+
+}
+
+#message {
+    text-align: justify;
+    color: white;
+    font-size: 1.2em;
+}
+
+#quiz-box {
+    position: relative;
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 1em;
+    box-shadow: black;
+    position: relative;
+    z-index: 10;
+    font-family: "Playfair Display", serif;
+}
+
+
+#quiz-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.start-screen {
+    font-family: "Playfair Display", serif;
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.start-screen h2 {
+    margin-bottom: 1em;
+}
+
+.start-screen button {
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #c76ac7;
+    color: white;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1em;
+}
+
+.start-screen button:hover {
+    background-color: #b45ba6;
+}
+
+
+.answers button {
+    display: block;
+    width: 100%;
+    margin: 0.5em 0;
+    padding: 0.75em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #c76ac7;
+    color: white;
+    border: 2px solid #c76ac7;
+    border-radius: 8px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.answers button:hover {
+    background-color: #c6f5c6;
+    border-color: #7ee97e;
+    color: black;
+}
+
+.answers button:active {
+    background-color: #7ee97e;
+}
+
+@keyframes buttonAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.answers button.selected {
+    background-color: #8ae98a;
+    /* Color for the selected answer */
+    border-color: #42e642;
+    color: black;
+    animation: buttonAnimation 0.4s ease;
+}
+
+#next {
+    background-color: #c76ac7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 20%;
+    height: 2em;
+    margin: 0.5em 0;
+}
+
+#next:hover {
+    color: white;
+    background-color: #b45ba6;
+}
+
+#next:active {
+    transform: scale(0.95);
+}
+
+#score {
+    color: white;
+    font-size: 1.5em;
+}
