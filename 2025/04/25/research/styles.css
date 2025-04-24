@@ -222,4 +222,13 @@ a {
     #herald-logo {
         max-width: 200px;
     }
+
+    .data-box {
+        width: 85%;
+    }
+
+    .text-box {
+        width: 85%;
+        padding: 1em;
+    }
 }
