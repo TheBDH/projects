@@ -435,6 +435,11 @@ a {
         max-width: 85%;
         padding: 1em;
     }
+
+    .buzz-quiz {
+        max-width: 85%;
+        padding: 1em;
+    }
 }
 
 /* Buzz Quiz Box with updated styling */
