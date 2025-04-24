@@ -1,5 +1,5 @@
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
     margin: 0px;
     background-attachment: fixed;
     background-size: cover;
@@ -66,9 +66,10 @@ body {
     min-height: 15rem;
     text-align: center;
     padding: 2rem 2.2rem 2.2rem 2.2rem;
-    background-color: #f6f0f0e6;
+    background-color: rgba(255, 255, 255, 0.95);
     /* Light grey background */
-    max-width: 40%;
+    min-width: 300px;
+    width: 32%;
     /* Limit the width */
     margin: 0 auto;
     /* Center the element horizontally */
@@ -161,6 +162,7 @@ a {
 }
 
 .down-arrow {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     animation: bounce 2s infinite;
     font-size: 2rem;
     /* Increase the size of the down arrow */
@@ -195,6 +197,11 @@ a {
         padding: 10px;
     }
 
+    #heading {
+        width: 70%;
+        min-width: 200px;
+    }
+
     #title h1 {
         font-size: 2em;
         padding-top: 10px;
@@ -210,144 +217,4 @@ a {
     #herald-logo {
         max-width: 200px;
     }
-}
-
-.question {
-    font-size: 1.4em;
-    margin-bottom: 1em;
-    color: white;
-    text-align: center;
-
-}
-
-#message {
-    text-align: justify;
-    color: white;
-    font-size: 1.2em;
-}
-
-#quiz-box {
-    position: relative;
-    max-width: 600px;
-    margin: 2em auto;
-    padding: 1em;
-    box-shadow: black;
-    position: relative;
-    z-index: 10;
-    font-family: "Playfair Display", serif;
-}
-
-
-#quiz-box::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    opacity: 0.8;
-    z-index: -1;
-}
-
-.start-screen {
-    font-family: "Playfair Display", serif;
-    position: relative;
-    text-align: center;
-    color: white;
-    z-index: 10;
-}
-
-.start-screen h2 {
-    margin-bottom: 1em;
-}
-
-.start-screen button {
-    padding: 0.75em 1.5em;
-    font-size: 1em;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #c76ac7;
-    color: white;
-    transition: background-color 0.3s ease;
-    margin-bottom: 1em;
-}
-
-.start-screen button:hover {
-    background-color: #b45ba6;
-}
-
-
-.answers button {
-    display: block;
-    width: 100%;
-    margin: 0.5em 0;
-    padding: 0.75em 1em;
-    font-size: 1em;
-    cursor: pointer;
-    background-color: #c76ac7;
-    color: white;
-    border: 2px solid #c76ac7;
-    border-radius: 8px;
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-.answers button:hover {
-    background-color: #c6f5c6;
-    border-color: #7ee97e;
-    color: black;
-}
-
-.answers button:active {
-    background-color: #7ee97e;
-}
-
-@keyframes buttonAnimation {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(0.95);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-.answers button.selected {
-    background-color: #8ae98a;
-    /* Color for the selected answer */
-    border-color: #42e642;
-    color: black;
-    animation: buttonAnimation 0.4s ease;
-}
-
-#next {
-    background-color: #c76ac7;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 20%;
-    height: 2em;
-    margin: 0.5em 0;
-}
-
-#next:hover {
-    color: white;
-    background-color: #b45ba6;
-}
-
-#next:active {
-    transform: scale(0.95);
-}
-
-#score {
-    color: white;
-    font-size: 1.5em;
 }
