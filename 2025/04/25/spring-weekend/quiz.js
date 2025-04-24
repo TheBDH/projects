@@ -11,25 +11,25 @@ document.addEventListener("DOMContentLoaded", function () {
             question: "Which of these Spring Weekend performers has the most Grammy awards?",
             answers: ["Kendrick Lamar", "U2", "Ella Fitzgerald", "Bob Dylan"],
             correct: ["Kendrick Lamar", "U2"],
-            message: "Both Kendrick Lamar and U2 have the most Grammy awards with 22 awards!"
+            message: "Kendrick Lamar and U2 are tied for the most Grammy awards with 22 each!"
         },
         {
             question: "Which genre has been most featured at Spring Weekned?",
             answers: ["Rock", "Pop", "Alternative", "Rap"],
-            correct: "Rap",
-            message: "There was a total of 48 Rap performances, closely followed by a 40 performances of Rock music. Alternative and Pop had 35 and 12 respectively."
+            correct: "Rock",
+            message: "There was a total of 77 Rock performances, closely followed by a 58 Rap performances. Alternative and Pop had 53 and 15, respectively."
         },
         {
             question: "How many different countries have been represented at Spring Weekend?",
-            answers: ["38", "23", "16", "10"],
-            correct: "16",
-            message: "35 international artists have represented 16 different countries at Spring Weekend"
+            answers: ["38", "24", "17", "10"],
+            correct: "24",
+            message: "24 different countries have been represented at Spring Weekend"
         },
         {
             question: "Which of the following artists has performed more than once at Spring Weekend?",
             answers: ["Bob Dylan", "Phoebe Bridgers", "Young Thug", "Smokey Robinson"],
             correct: "Bob Dylan",
-            message: "Bob Dylan has performed twice at Spring Weekend—in 1964 and 1997."
+            message: "Bob Dylan performed twice at Spring Weekend—in 1964 and 1997."
         }
     ];
 
