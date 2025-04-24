@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             attribute: "Decade",
-            question: "Pick your fav wallpaper",
+            question: "Select your favorite wallpaper",
             options: ["50s & 60s & 70s", "80s", "90s", "00s", "10s", "20s"],
             captions: ["Courtesy of Morris & Co. via Wikimedia Commons",
                 "Courtesy of Morris & Co. via Wikimedia Commons",
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             attribute: "Popularity",
-            question: "Pick your bed",
+            question: "Choose your ideal bed",
             options: ["0", "0+", "50+", "200+"],
             captions: ["Courtesy of W.carter via Wikimedia Commons",
                 "Courtesy of Kurt Kaiser via Wikimedia Commons",
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             attribute: "Band",
-            question: "Last one—pick a plant to spruce up your home",
+            question: "Last one — pick a plant to spruce up your home",
             options: ["TRUE", "FALSE"],
             captions: ["Courtesy of F. D. Richards via Wikimedia Commons",
                 "Courtesy of Jennifer C. via Wikimedia Commons"

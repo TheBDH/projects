@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
             question: "Which of these artists has not performed at Spring Weekend?",
             answers: ["Snoop Dogg", "Doechii", "Lil Nas X", "Childish Gambino"],
             correct: "Lil Nas X",
-            message: "Snoop Dogg performed in 2010, Doechii performed in 2023 and Childish Cambino performed in 2012. However, Lil Nas X hasn't performed at Spring Weekend...yet"
+            message: "Snoop Dogg performed in 2010, Doechii performed in 2023 and Childish Cambino performed in 2012. However, Lil Nas X hasn't performed at Spring Weekend ... yet"
         },
         {
             question: "Which of these Spring Weekend performers has the most Grammy awards?",
@@ -14,16 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
             message: "Kendrick Lamar and U2 are tied for the most Grammy awards with 22 each!"
         },
         {
-            question: "Which genre has been most featured at Spring Weekned?",
+            question: "Which genre has been most featured at Spring Weekend?",
             answers: ["Rock", "Pop", "Alternative", "Rap"],
             correct: "Rock",
-            message: "There were a total of 76 Rock performances, closely followed by 58 Rap performances. Alternative and Pop had 53 and 15, respectively."
+            message: "Rock has been the most featured genre at Spring Weekend, although its popularity has fallen in recent decades."
         },
         {
-            question: "How many different countries have been represented at Spring Weekend?",
-            answers: ["38", "24", "17", "10"],
-            correct: "24",
-            message: "24 different countries have been represented at Spring Weekend"
+            question: "Which Spring Weekend Artist has received a Pulitzer Prize for Music?",
+            answers: ["Daniel Ceasar", "Ethel Cain", "The Yardbirds", "Kendrick Lamar"],
+            correct: "Kendrick Lamar",
+            message: "Kendrick Lamar (SW 2013) received the 2018 Pulitzer Prize for Music for his album “DAMN."
         },
         {
             question: "Which of the following artists has performed more than once at Spring Weekend?",
