@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
             message: "Rock has been the most featured genre at Spring Weekend, although its popularity has fallen in recent decades."
         },
         {
-            question: "Which Spring Weekend Artist has received a Pulitzer Prize for Music?",
+            question: "Which Spring Weekend performer has received a Pulitzer Prize for Music?",
             answers: ["Daniel Ceasar", "Ethel Cain", "The Yardbirds", "Kendrick Lamar"],
             correct: "Kendrick Lamar",
             message: "Kendrick Lamar (SW 2013) received the 2018 Pulitzer Prize for Music for his album “DAMN."
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             question: "Which of the following artists has performed more than once at Spring Weekend?",
             answers: ["Bob Dylan", "Phoebe Bridgers", "Young Thug", "Smokey Robinson"],
             correct: "Bob Dylan",
-            message: "Bob Dylan performed twice at Spring Weekend—in 1964 and 1997."
+            message: "Bob Dylan performed twice at Spring Weekend — once in 1964 and once in 1997."
         }
     ];
 
