@@ -141,7 +141,8 @@ body {
 }
 
 a {
-    color: #94102a;
+    /* color: #94102a; */
+    color: rgb(190, 33, 33);
 }
 
 #purple-data {
