@@ -10,7 +10,7 @@ body {
 
 .data-box, .text-box {
     position: relative;
-    max-width: 1000px;
+    max-width: 940px;
     width: 80%;
     margin: 2em auto;
     padding: 2em;
