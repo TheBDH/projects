@@ -8,32 +8,18 @@ body {
     color: rgb(190, 33, 33);
 }
 
-.data-box {
+.data-box, .text-box {
     position: relative;
-    max-width: 900px;
+    max-width: 1000px;
     width: 80%;
     margin: 2em auto;
     padding: 2em;
-    box-shadow: black;
     background-color: rgba(255, 255, 255, 0.95);
-    position: relative;
-    z-index: 10;
-    font-family: "freight-text-pro", "Georgia", "Times", serif;
-}
-
-.text-box {
-    position: relative;
-    max-width: 900px;
-    width: 80%;
-    margin: 2em auto;
-    padding: 2em;
-    box-shadow: black;
-    color: rgb(12, 12, 12);
-    background-color: rgba(255, 255, 255, 0.95);
-    position: relative;
     z-index: 10;
     font-family: "freight-text-pro", "Georgia", "Times", serif;
     font-size: 1.2em;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    color: rgb(12, 12, 12); /* Apply color for text-box */
 }
 
 
@@ -228,13 +214,8 @@ a {
         max-width: 200px;
     }
 
-    .data-box {
-        max-width: 85%;
-        padding: 1em;
-    }
-
-    .text-box {
-        max-width: 85%;
+    .data-box, .text-box {
+        max-width: 90%;
         padding: 1em;
     }
 }
