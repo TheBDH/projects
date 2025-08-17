@@ -9,10 +9,10 @@
 }
 
 body {
-  font-family: "Playfair Display", serif;
   margin: 0;
   padding: 2rem;
   background-color: #f5f5f5;
+  user-select: none;
 }
 
 .card-container {
@@ -60,78 +60,56 @@ body {
   font-family: "Arial", sans-serif;
 }
 
+.card-affiliations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
 .card-affiliation {
   font-size: 0.6em;
   color: white;
   border-radius: 15px;
-  max-width: 50%;
   padding: 0.3rem 1rem;
   text-align: center;
 }
 
-.card-approval {
-  font-size: 0.6em;
-  text-align: center;
-  color: white;
-  width: fit-content;
-}
-
-[data-approval="somewhat approve"] .card-approval {
-  color: #a1c181;
-}
-
-[data-approval="strongly approve"] .card-approval {
-  color: #798d68;
-}
-
-[data-approval="somewhat disapprove"] .card-approval {
-  color: #d6a1a1;
-}
-
-[data-approval="strongly disapprove"] .card-approval {
-  color: #b87a7a;
-}
-
-[data-approval="neither approve nor disapprove"] .card-approval {
-  color: #b8b8b8;
-}
-
-[data-affiliation="Alumni"] .card-affiliation,
+.card-affiliation[data-affiliation="Alumni"],
 .alumni.active,
 .alumni.active:hover {
   background-color: var(--active-color);
   border-color: var(--active-color);
 }
 
-[data-affiliation="Student"] .card-affiliation,
+.card-affiliation[data-affiliation="Student"],
 .student.active,
 .student.active:hover {
   background-color: var(--student-color);
   border-color: var(--student-color);
 }
 
-[data-affiliation="Parent/guardian"] .card-affiliation,
+.card-affiliation[data-affiliation="Parent/guardian"],
 .parent.active,
 .parent.active:hover {
   background-color: var(--parent-color);
   border-color: var(--parent-color);
 }
 
-[data-affiliation="Staff"] .card-affiliation,
+.card-affiliation[data-affiliation="Staff"],
 .staff.active,
 .staff.active:hover {
   background-color: var(--staff-color);
   border-color: var(--staff-color);
 }
 
-[data-affiliation="Faculty"] .card-affiliation,
+.card-affiliation[data-affiliation="Faculty"],
 .faculty.active,
 .faculty.active:hover {
   background-color: var(--faculty-color);
   border-color: var(--faculty-color);
 }
 
-[data-affiliation="Providence community"] .card-affiliation,
+.card-affiliation[data-affiliation="Providence community"],
 .providence.active,
 .providence.active:hover {
   background-color: var(--pvd-color);
@@ -179,6 +157,10 @@ body {
 
 .full-quote {
   font-size: 1.2em;
+}
+
+.full-quote i {
+  font-size: 0.8em;
 }
 
 .close {
@@ -249,11 +231,34 @@ body {
   text-align: center;
   padding: 5rem 2rem 2rem 2rem;
   max-width: 35rem;
-  margin: 0 auto;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin-left: 2rem;
+}
+
+#heading-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url("./assets/5.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1;
+}
+
+#page-content {
+  margin-top: 100vh;
 }
 
 #heading h3 {
-  font-size: 2.5rem;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.5em;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 800;
@@ -263,8 +268,31 @@ body {
   margin-bottom: 22px;
 }
 
-.blurb a {
+#heading-photo-caption {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: #f5efed;
+  padding: 0.02rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  border-radius: 0.5rem;
+  line-height: 1.5rem;
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+
+#heading-photo-caption a {
   color: inherit;
+}
+
+.blurb {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.blurb a {
+  color: #4a71c0;
 }
 
 #byline {
@@ -279,7 +307,8 @@ body {
 }
 
 #byline .author {
-  background-color: #e0e0e0;
+  background-color: #4a71c0;
+  color: #f5f5f5;
   padding: 0.2rem;
   padding-left: 0.4rem;
   padding-right: 0.4rem;

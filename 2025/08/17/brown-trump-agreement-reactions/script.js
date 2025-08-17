@@ -1,7 +1,7 @@
 const messages = [
   {
     name: "Lauren Zalaznick '84",
-    affiliation: "Alumni",
+    affiliation: ["Alumni"],
     approval: "strongly approve",
     pullQuote:
       "We did the best job possible under the worst circumstances possible.",
@@ -10,7 +10,7 @@ const messages = [
   },
   {
     name: "Joyce Cohen Bedine '66",
-    affiliation: "Alumni",
+    affiliation: ["Alumni"],
     approval: "strongly disapprove",
     pullQuote:
       "It really hurts our future as a democracy to see all these wonderful institutions of higher learning bend a knee to despotism.",
@@ -18,15 +18,15 @@ const messages = [
       "It really hurts our future as a democracy to see all these wonderful institutions of higher learning bend a knee to despotism. Couldn't all of these universities banded together and refused to be complicit to the Trump administration’s attack on our rights? Maybe they could have survived at least as long as it would have taken for Trump to see that he did not have the power he was taking from all of us. My father fought in World War II for freedom from tyranny, and now it is coming back.",
   },
   {
-    name: "Charles Morin '76",
-    affiliation: "Alumni",
+    name: "Charles Morin MD’76",
+    affiliation: ["Alumni"],
     approval: "strongly disapprove",
     pullQuote: "I'm sad that Brown caved under fascist Trump.",
     message: "I'm sad that Brown caved under fascist Trump.",
   },
   {
     name: "Jon Vacura",
-    affiliation: "Providence community",
+    affiliation: ["Providence community"],
     approval: "strongly disapprove",
     pullQuote:
       "The Trump administration has broken Brown, and they will have more demands.",
@@ -35,7 +35,7 @@ const messages = [
   },
   {
     name: "Anna Murphy",
-    affiliation: "Staff",
+    affiliation: ["Staff"],
     approval: "strongly disapprove",
     pullQuote:
       "The deal between Brown and the Trump administration is undeniably a protection racket, and the price Brown paid has compromised the safety of Brown’s transgender community.",
@@ -44,7 +44,7 @@ const messages = [
   },
   {
     name: "Jane Lancaster, PhD'98, Adjunct faculty in History Department",
-    affiliation: "Alumni",
+    affiliation: ["Alumni", "Faculty"],
     approval: "neither approve nor disapprove",
     pullQuote:
       "I am concerned about Brown's efforts to pay for the settlement, including the potential sale/redevelopment of 20 Olive St., which was, for over a hundred years, the home of the Providence Shelter for Colored Children.",
@@ -53,7 +53,7 @@ const messages = [
   },
   {
     name: "Eileen Rudden '72",
-    affiliation: "Alumni",
+    affiliation: ["Alumni"],
     approval: "strongly approve",
     pullQuote:
       "Although I despise Trump, this was a sensible agreement to follow current federal law and restore research funding.",
@@ -62,7 +62,7 @@ const messages = [
   },
   {
     name: "Carla Ferrari '82",
-    affiliation: "Alumni",
+    affiliation: ["Alumni"],
     approval: "somewhat disapprove",
     pullQuote:
       "I wish the University had held out and let this play out over a few years to retain their reputation.",
@@ -71,7 +71,7 @@ const messages = [
   },
   {
     name: "Vinny Egizi '88",
-    affiliation: "Alumni",
+    affiliation: ["Alumni"],
     approval: "strongly approve",
     pullQuote:
       "I fully support the Brown administration’s agreement to improve its actions to stop the harassment of the Jewish community on campus.",
@@ -80,16 +80,16 @@ const messages = [
   },
   {
     name: "Emma Gardner '24",
-    affiliation: "Alumni",
+    affiliation: ["Alumni"],
     approval: "strongly disapprove",
     pullQuote:
       "I am revolted by the deal Brown has struck with the Trump administration, and particularly its cowardly attacks on its own trans students, particularly trans women.",
     message:
-      "I am revolted by the deal Brown has struck with the Trump administration, and particularly its cowardly attacks on its own trans students, particularly trans women. The University should know its deal will do little to protect them from a hostile and capricious president.\nWhen I transitioned at Brown, I struggled with intense family rejection, the indignities of social and medical transition, isolation and rising political attacks on my community — on top of the normal stress of a rigorous college workload. Now, trans students will also have to worry about whether Trump’s executive orders apply to the bathrooms in their libraries, dormitories and lecture halls. There are already few trans women at the University, and Brown’s explicitly hostile concessions will further marginalize students who disproportionately experience discrimination and financial hardship.\nThe University played a critical role in the current anti-trans fervor by popularizing shoddy claims about “social contagion” in 2018. Now, the movement Brown helped to fuel is harming some of its most vulnerable students. I will not be donating to, or otherwise supporting the University, going forward.",
+      "I am revolted by the deal Brown has struck with the Trump administration, and particularly its cowardly attacks on its own trans students, particularly trans women. The University should know its deal will do little to protect them from a hostile and capricious president.<br/><br/>When I transitioned at Brown, I struggled with intense family rejection, the indignities of social and medical transition, isolation and rising political attacks on my community — on top of the normal stress of a rigorous college workload. Now, trans students will also have to worry about whether Trump’s executive orders apply to the bathrooms in their libraries, dormitories and lecture halls. There are already few trans women at the University, and Brown’s explicitly hostile concessions will further marginalize students who disproportionately experience discrimination and financial hardship.<br/><br/>The University played a critical role in the current anti-trans fervor by popularizing shoddy claims about “social contagion” in 2018. Now, the movement Brown helped to fuel is harming some of its most vulnerable students. I will not be donating to, or otherwise supporting the University, going forward.<br/><br/><i>Emma Gardner '24 is a former metro editor for The Herald.</i>",
   },
   {
     name: "Kevin Seaman '69",
-    affiliation: "Alumni",
+    affiliation: ["Alumni"],
     approval: "strongly approve",
     pullQuote:
       "Brown was smart and practical in accepting the terms of the 2025 reality with which it must adapt to after decades of leftist policies.",
@@ -98,7 +98,7 @@ const messages = [
   },
   {
     name: "Amy Cohen",
-    affiliation: "Staff",
+    affiliation: ["Staff"],
     approval: "somewhat approve",
     pullQuote:
       "I hope we can work together to show our continued support for our transgender and nonbinary community and make it explicitly clear that any direct confrontation with others would be considered harassment and against Brown's policies.",
@@ -107,7 +107,7 @@ const messages = [
   },
   {
     name: "Francois Luks",
-    affiliation: "Faculty",
+    affiliation: ["Faculty"],
     approval: "somewhat approve",
     pullQuote:
       "The school seems to bet that it will outlive this cruel, short-sighted, racist, isolationist and erratic administration.",
@@ -116,16 +116,16 @@ const messages = [
   },
   {
     name: "Christopher Morin MD'75",
-    affiliation: "Alumni",
+    affiliation: ["Alumni"],
     approval: "strongly approve",
     pullQuote:
       "The agreement should not have been necessary. Brown did nothing that was wrong.",
     message:
-      "The agreement should not have been necessary. Brown did nothing that was wrong. In the many years I was at Brown, I have never been prouder of how the University administration, and the whole Brown community, grappled with difficult issues. I spent twenty-two years at Brown as both a student and a member of the clinical faculty. I served on the Board of Directors of the Brown Medical Alumni Association for 17 years.\nI do believe that the agreement is fair and the best that could have been negotiated.\nBrown has never been systematically antisemitic. The medical school was founded by many of Jewish faith. The oath of the physician at Brown has as much input from the Oath of Maimonides as any other source. I should know — I was on the committee that wrote the oath.",
+      "The agreement should not have been necessary. Brown did nothing that was wrong. In the many years I was at Brown, I have never been prouder of how the University administration, and the whole Brown community, grappled with difficult issues. I spent twenty-two years at Brown as both a student and a member of the clinical faculty. I served on the Board of Directors of the Brown Medical Alumni Association for 17 years.<br/><br/>I do believe that the agreement is fair and the best that could have been negotiated.<br><br>Brown has never been systematically antisemitic. The medical school was founded by many of Jewish faith. The oath of the physician at Brown has as much input from the Oath of Maimonides as any other source. I should know — I was on the committee that wrote the oath.",
   },
   {
     name: "Rev. Peter Laarman '70",
-    affiliation: "Alumni",
+    affiliation: ["Alumni"],
     approval: "neither approve nor disapprove",
     pullQuote:
       "The very idea of having to strike a deal with this White House is abhorrent, especially when Brown's alleged “discrimination” is a baseless and trumped up canard.",
@@ -133,8 +133,8 @@ const messages = [
       "The proof will be in the pudding. We don’t yet know enough about the precise definitions of “merit-based” admissions and hiring decisions. No institution expects to come out unscathed when a mafia-like administration puts a gun to its head. But settlements reached under such circumstances are ugly by definition. The very idea of having to strike a deal with this White House is abhorrent, especially when Brown's alleged “discrimination” is a baseless and trumped up canard.",
   },
   {
-    name: "Stefan Lutschg '24",
-    affiliation: "Alumni",
+    name: "Stefan Lutschg ScM’24",
+    affiliation: ["Alumni"],
     approval: "strongly disapprove",
     pullQuote:
       "Agreeing to be surveilled by the government will have severe long-term consequences for Brown, and Brown has chosen to forsake its trans and non-binary community all for $50 million, which is meager in comparison to the institution’s endowment.",
@@ -143,23 +143,23 @@ const messages = [
   },
   {
     name: "Jainisa Baudin '29",
-    affiliation: "Student",
+    affiliation: ["Student"],
     approval: "somewhat disapprove",
     pullQuote:
       "Many of us are scared — especially incoming freshman and those who are members of minority communities",
     message:
-      "Many of us are scared — especially incoming freshman and those who are members of minority communities. I want to trust Brown's administration, but we are in a time where students are threatened, especially BIPOC and LGBTQ+ students. I am dissapointed in our administration because they knew what this concession would look like, but I am praying that I chose the best school to deal with a situation like this.",
+      "Many of us are scared — especially incoming freshman and those who are members of minority communities. I want to trust Brown's administration, but we are in a time where students are threatened, especially BIPOC and LGBTQ+ students. I am disappointed in our administration because they knew what this concession would look like, but I am praying that I chose the best school to deal with a situation like this.",
   },
   {
     name: "John Peracchio '82",
-    affiliation: "Alumni",
+    affiliation: ["Alumni"],
     approval: "strongly approve",
     pullQuote: "It's a great deal. The administration is to be commended.",
     message: "It's a great deal. The administration is to be commended.",
   },
   {
     name: "Jenny Cortez",
-    affiliation: "Parent/guardian",
+    affiliation: ["Parent/guardian"],
     approval: "strongly disapprove",
     pullQuote: "If those who know better kneel, who will stand?",
     message:
@@ -167,7 +167,7 @@ const messages = [
   },
   {
     name: "Ryan Spinney GS",
-    affiliation: "Student",
+    affiliation: ["Student"],
     approval: "strongly disapprove",
     pullQuote:
       "While I understand Brown's urgent need for funding, it shows that the federal government can pressure educational institutions to submit, setting a troubling new precedent for both this and future administrations.",
@@ -176,7 +176,7 @@ const messages = [
   },
   {
     name: "Irene Sudac '81 P'17",
-    affiliation: "Alumni",
+    affiliation: ["Alumni", "Parent/guardian"],
     approval: "somewhat approve",
     pullQuote:
       "Caving to a bully doesn't guarantee that the bully won't renege or come back for more.",
@@ -185,7 +185,7 @@ const messages = [
   },
   {
     name: "David Parker '69 P'12",
-    affiliation: "Alumni",
+    affiliation: ["Alumni", "Parent/guardian"],
     approval: "somewhat approve",
     pullQuote:
       "I assume and believe that, despite its much weaker bargaining position relative to the federal administration, Brown struck the best deal possible.",
@@ -194,7 +194,7 @@ const messages = [
   },
   {
     name: "Benjamin Daniel '29",
-    affiliation: "Student",
+    affiliation: ["Student"],
     approval: "strongly disapprove",
     pullQuote:
       "To me, this represents a policy of appeasement that weakens the independence of the University.",
@@ -202,8 +202,8 @@ const messages = [
       "I am incredibly disappointed, but not surprised. I am an incoming student who has just decided to make Brown my home for the next four years. At Brown, I hoped to find a community built on common care. Brown to me represented a place where curiosity could thrive. I fear that this current strategy endangers that vision. To me, this represents a policy of appeasement that weakens the independence of the University. Even if Brown maintains a policy of independence in the text of the agreement, we are now in a world where the federal government has successfully demanded change by threatening a revocation of funding. Once this line has been crossed, who’s to say it won’t be crossed again? I recognize that federal grants are essential to maintain the groundbreaking research we conduct on campus, but this should not come at the cost of our transgender friends and neighbors. I suspect the full ramifications of this decision have yet to be felt. This is a new reality for the University — one I hope students will face with renewed vigilance and kindness.",
   },
   {
-    name: "Carol Landau '70 P'09, emerita faculty",
-    affiliation: "Alumni",
+    name: "Carol Landau PhD’70, P'09, emerita faculty",
+    affiliation: ["Alumni", "Faculty", "Parent/guardian"],
     approval: "somewhat disapprove",
     pullQuote:
       "It’s tragic that Brown has sacrificed the needs of transgender students, given our long history of welcoming diversity on campus.",
@@ -212,7 +212,7 @@ const messages = [
   },
   {
     name: "Adit Sabnis GS",
-    affiliation: "Student",
+    affiliation: ["Student"],
     approval: "strongly disapprove",
     pullQuote:
       "Brown postures itself as being progressive, yet they so easily threw trans people under the bus to capitulate.",
@@ -221,7 +221,7 @@ const messages = [
   },
   {
     name: "Andrew Clark GS",
-    affiliation: "Student",
+    affiliation: ["Student"],
     approval: "strongly disapprove",
     pullQuote:
       "Our administrators are delusional if they think this is the end of Trump’s attacks against Brown and higher education.",
@@ -230,16 +230,16 @@ const messages = [
   },
   {
     name: "David Grossman '89",
-    affiliation: "Alumni",
+    affiliation: ["Alumni"],
     approval: "somewhat approve",
     pullQuote:
       "While no deal is the preferred outcome, the deal agreed to is reasonable for Brown.",
     message:
-      "While no deal is the preferred outcome, the deal agreed to is reasonable for Brown. One remaining concern is longevity. What is preventing Trump from changing the deal or seeking a new one in the future?",
+      "While no deal is the preferred outcome, the deal agreed to is reasonable for Brown. One remaining concern is longevity. What is preventing Trump from changing the deal or seeking a new one in the future?<br/><br/><i>David Grossman ’89 was formerly a general manager for The Herald.</i>",
   },
   {
     name: "Brandon Yu '28",
-    affiliation: "Student",
+    affiliation: ["Student"],
     approval: "somewhat disapprove",
     pullQuote:
       "There are dozens of transgender and nonbinary students who are a vital part of the Brown community, and I believe it is wrong to sell out their wellbeing to appease some far right ideologues and think tanks.",
@@ -248,7 +248,7 @@ const messages = [
   },
   {
     name: "Lorraine Fryer '09",
-    affiliation: "Alumni",
+    affiliation: ["Alumni"],
     approval: "somewhat disapprove",
     pullQuote:
       "I feel that Brown has relinquished important principles, and capitulating to bullies only leads to more bullying.",
@@ -257,7 +257,7 @@ const messages = [
   },
   {
     name: "Jianye Hu P'28",
-    affiliation: "Parent/guardian",
+    affiliation: ["Parent/guardian"],
     approval: "somewhat approve",
     pullQuote:
       "Brown should do something further to defend the values our nation has been holding.",
@@ -266,7 +266,7 @@ const messages = [
   },
   {
     name: "Alexander Caicedo '29",
-    affiliation: "Student",
+    affiliation: ["Student"],
     approval: "somewhat disapprove",
     pullQuote:
       "This direct attack on the very existence of Brown University, a 260-year-old symbol of American and global greatness, simply demanded a more powerful response than appeasement. ",
@@ -275,7 +275,7 @@ const messages = [
   },
   {
     name: "Judith Beckman",
-    affiliation: "Providence community",
+    affiliation: ["Providence community"],
     approval: "strongly disapprove",
     pullQuote:
       "To have the University brought to heel by a corrupt administration whose agenda is one of repression of free speech and hatred of progressive ideals is more than just disturbing.",
@@ -291,15 +291,22 @@ messages.forEach((person, index) => {
   const card = document.createElement("div");
   card.className = "card";
   card.setAttribute("onclick", `openModal(${index})`);
-  card.setAttribute("data-affiliation", person.affiliation);
+  card.setAttribute("data-affiliation", person.affiliation.join(", "));
   card.setAttribute("data-approval", person.approval);
+
   card.innerHTML = `
     <div class="card-header">
-      <div class="card-title">${person.name},</div>
-      <div class="card-affiliation">${person.affiliation}</div>
+      <div class="card-title">${person.name}:</div>
+      <div class="card-affiliations">
+       ${person.affiliation
+         .map(
+           (aff) =>
+             `<div class="card-affiliation" data-affiliation="${aff}">${aff}</div>`
+         )
+         .join("")}
+         </div>
     </div>
     <p>${person.pullQuote}</p>
-    <div class="card-approval">${person.approval}</div>
   `;
   cardContainer.appendChild(card);
 
@@ -312,7 +319,9 @@ messages.forEach((person, index) => {
       <div class="text-container">
         <div class="card-title">${person.name},</div>
         <p class="full-quote">${person.message}</p>
-        <div class="card-title" style="text-align: right;">${person.affiliation}</div>
+        <div class="card-title" style="text-align: right;">${person.affiliation.join(
+          ", "
+        )}</div>
       </div>
     </div>
   `;
@@ -400,12 +409,10 @@ function filterCards(type) {
   });
 
   cards.forEach((card) => {
-    const affiliation = card.getAttribute("data-affiliation");
-    if (
-      type === "All" ||
-      filters.includes("All") ||
-      filters.includes(affiliation)
-    ) {
+    const affiliations = card.getAttribute("data-affiliation").split(",");
+    const matches = affiliations.some((aff) => filters.includes(aff.trim()));
+
+    if (filters.includes("All") || type === "All" || matches) {
       card.classList.remove("hidden");
     } else {
       card.classList.add("hidden");
