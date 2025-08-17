@@ -1,0 +1,295 @@
+:root {
+  --all-color: #3a4040;
+  --active-color: #19535f;
+  --student-color: #d64933;
+  --staff-color: #6dc0d5;
+  --parent-color: #4caf50;
+  --faculty-color: #ad7a99;
+  --pvd-color: #cb793a;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 25rem;
+  padding: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.pull-quote {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.card-header,
+.card-approval {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  text-transform: uppercase;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+}
+
+.card-title {
+  font-size: 0.7em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+}
+
+.card-affiliation {
+  font-size: 0.6em;
+  color: white;
+  border-radius: 15px;
+  max-width: 50%;
+  padding: 0.3rem 1rem;
+  text-align: center;
+}
+
+.card-approval {
+  font-size: 0.6em;
+  text-align: center;
+  color: white;
+  width: fit-content;
+}
+
+[data-approval="somewhat approve"] .card-approval {
+  color: #a1c181;
+}
+
+[data-approval="strongly approve"] .card-approval {
+  color: #798d68;
+}
+
+[data-approval="somewhat disapprove"] .card-approval {
+  color: #d6a1a1;
+}
+
+[data-approval="strongly disapprove"] .card-approval {
+  color: #b87a7a;
+}
+
+[data-approval="neither approve nor disapprove"] .card-approval {
+  color: #b8b8b8;
+}
+
+[data-affiliation="Alumni"] .card-affiliation,
+.alumni.active,
+.alumni.active:hover {
+  background-color: var(--active-color);
+  border-color: var(--active-color);
+}
+
+[data-affiliation="Student"] .card-affiliation,
+.student.active,
+.student.active:hover {
+  background-color: var(--student-color);
+  border-color: var(--student-color);
+}
+
+[data-affiliation="Parent/guardian"] .card-affiliation,
+.parent.active,
+.parent.active:hover {
+  background-color: var(--parent-color);
+  border-color: var(--parent-color);
+}
+
+[data-affiliation="Staff"] .card-affiliation,
+.staff.active,
+.staff.active:hover {
+  background-color: var(--staff-color);
+  border-color: var(--staff-color);
+}
+
+[data-affiliation="Faculty"] .card-affiliation,
+.faculty.active,
+.faculty.active:hover {
+  background-color: var(--faculty-color);
+  border-color: var(--faculty-color);
+}
+
+[data-affiliation="Providence community"] .card-affiliation,
+.providence.active,
+.providence.active:hover {
+  background-color: var(--pvd-color);
+  border-color: var(--pvd-color);
+}
+
+.all.active,
+.all.active:hover {
+  background-color: var(--all-color);
+  border-color: var(--all-color);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  border-radius: 5px;
+  overflow: scroll;
+  max-height: 35rem;
+  max-width: 25rem;
+}
+
+.text-container {
+  width: 95%;
+}
+
+.full-quote {
+  font-size: 1.2em;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+  transition-duration: 1s;
+}
+
+.blurred {
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid #ddd;
+}
+
+.filter-buttons button.active {
+  background-color: #f5f5f5;
+}
+
+.filter-buttons button:hover {
+  background-color: #ccc;
+  border-color: #ccc;
+  transition-duration: 0.5s;
+}
+
+.filter-buttons button.p {
+  margin-right: 1rem;
+}
+
+.filter-buttons button.active:hover {
+  background-color: #f5f5f5;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#herald-logo {
+  max-width: 250px;
+  display: block;
+  margin: 0 auto;
+}
+
+#heading {
+  min-height: 15rem;
+  text-align: center;
+  padding: 5rem 2rem 2rem 2rem;
+  max-width: 35rem;
+  margin: 0 auto;
+}
+
+#heading h3 {
+  font-size: 2.5rem;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  padding: 0;
+  margin-top: 16px;
+  margin-bottom: 22px;
+}
+
+.blurb a {
+  color: inherit;
+}
+
+#byline {
+  font-weight: normal;
+  font-family: "Inconsolata", serif;
+  font-size: 0.8rem;
+}
+
+#byline a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#byline .author {
+  background-color: #e0e0e0;
+  padding: 0.2rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  white-space: nowrap;
+}
+
+.filter-buttons .close-tag {
+  margin-left: 6px;
+  cursor: pointer;
+}

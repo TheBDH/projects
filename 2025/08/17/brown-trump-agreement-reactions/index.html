@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opinions board</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="page-content">
+    <div id="heading">
+    <a href="https://www.browndailyherald.com" target="_blank">
+        <img
+            src="assets/logo-black.png"
+            id="herald-logo"
+            alt="Brown Daily Herald Logo"
+        />
+        </a>
+        <h3>Community reactions to Brown’s agreement with the Trump administration</h3>
+        <p class="blurb"> 
+            On Wednesday, July 30, Brown <a href="https://www.browndailyherald.com/article/2025/07/brown-reaches-deal-with-federal-government-to-restore-research-funding">reached</a> a deal with the Trump administration to restore the University's federal research funding in exchange for a number of concessions. The University agreed to distribute $50 million over 10 years in state workforce development grants, provide admissions data to the federal government and adhere to <a href="https://www.ncaa.org/news/2025/2/6/media-center-ncaa-announces-transgender-student-athlete-participation-policy-change.aspx">NCAA</a> rules for the participation of transgender athletes in intercollegiate sports, which state that only students assigned female at birth can participate in women’s sports, among other terms.<br/><br/>
+            Over the past few weeks, The Herald solicited reactions from community members — students, alumni, parents, staff — to show how those affiliated with Brown are feeling about the settlement. The Herald has compiled a collection of over 30 letters, published below. 
+        </p>
+        <h6 id="byline">
+        By
+        <span class="author">
+            Op-ed Contributors
+        </span><br /><br />
+        Web design by
+        <span class="author">
+            <a href="https://www.browndailyherald.com/staff/annika-singh"
+            target="_blank"
+            class="author-link"
+            >Annika Singh</a
+            ></span>
+        <br /><br />
+        </h6>
+    </div>
+
+      <div class="filter-buttons">
+        <button class="all active" id="All" onclick="filterCards('All')">All</button>
+        <button class="student" id="Student" onclick="filterCards('Student')">
+          Student
+        </button>
+        <button class="faculty" id="Faculty" onclick="filterCards('Faculty')">
+          Faculty
+        </button>
+        <button class="staff" id="Staff" onclick="filterCards('Staff')">Staff</button>
+        <button class="parent" id="Parent/guardian" onclick="filterCards('Parent/guardian')">
+          Parent/guardian
+        </button>
+        <button class="alumni" id="Alumni" onclick="filterCards('Alumni')">Alumni</button>
+        <button class="providence" id="Providence community" onclick="filterCards('Providence community')">
+          Providence community
+      </div>
+
+      <div class="card-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
