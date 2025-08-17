@@ -198,6 +198,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   border: 2px solid #ddd;
+  color: "#000";
 }
 
 .filter-buttons button.active {

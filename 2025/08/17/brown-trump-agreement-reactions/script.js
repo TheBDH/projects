@@ -43,6 +43,13 @@ const messages = [
     message: "I'm sad that Brown caved under fascist Trump.",
   },
   {
+    name: "John Peracchio '82",
+    affiliation: ["Alumni"],
+    approval: "strongly approve",
+    pullQuote: "It's a great deal. The administration is to be commended.",
+    message: "It's a great deal. The administration is to be commended.",
+  },
+  {
     name: "Jane Lancaster, PhD'98, Adjunct faculty in History Department",
     affiliation: ["Alumni", "Faculty"],
     approval: "neither approve nor disapprove",
@@ -149,13 +156,6 @@ const messages = [
       "While I understand Brown's urgent need for funding, it shows that the federal government can pressure educational institutions to submit, setting a troubling new precedent for both this and future administrations.",
     message:
       "It's deeply disheartening that President Paxson compromised Brown's principles to secure resumed funding. While I understand Brown's urgent need for funding, it shows that the federal government can pressure educational institutions to submit, setting a troubling new precedent for both this and future administrations. Brown has an endowment that could allow it to weather financial damages if it refused an agreement. Since Brown compromised despite having the financial resources to do otherwise, it clearly sets a precedent for other smaller and less endowed schools. Essentially, it sends a message to other American institutions: if Brown, with its vast resources, wouldn't stand up to the federal government, then why should we?",
-  },
-  {
-    name: "John Peracchio '82",
-    affiliation: ["Alumni"],
-    approval: "strongly approve",
-    pullQuote: "It's a great deal. The administration is to be commended.",
-    message: "It's a great deal. The administration is to be commended.",
   },
   {
     name: "Jenny Cortez",
