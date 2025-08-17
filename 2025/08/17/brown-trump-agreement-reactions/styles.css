@@ -346,4 +346,8 @@ body {
   .modal-content {
     width: 80%;
   }
+
+  #page-content {
+    margin-top: 110vh;
+  }
 }
