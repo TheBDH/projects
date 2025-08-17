@@ -324,3 +324,24 @@ body {
   margin-left: 6px;
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  #heading-photo-caption {
+    display: none;
+  }
+
+  #heading-bg {
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #heading {
+    margin: 0 auto;
+  }
+
+  .modal-content {
+    width: 80%;
+  }
+}
