@@ -332,6 +332,7 @@ body {
   }
 
   #heading-bg {
+    position: flex;
     background-image: none;
     display: flex;
     flex-direction: column;
