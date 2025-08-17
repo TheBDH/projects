@@ -1,12 +1,12 @@
 const messages = [
   {
-    name: "Lauren Zalaznick '84",
-    affiliation: ["Alumni"],
-    approval: "strongly approve",
+    name: "Anna Murphy",
+    affiliation: ["Staff"],
+    approval: "strongly disapprove",
     pullQuote:
-      "We did the best job possible under the worst circumstances possible.",
+      "The deal between Brown and the Trump administration is undeniably a protection racket, and the price Brown paid has compromised the safety of Brown’s transgender community.",
     message:
-      "We did the best job possible under the worst circumstances possible. The money spent towards supporting local organizations over ten years is great on its own, and helps us with community relations while not funding the Trump administration. Brown’s administration has stayed out of the limelight and out of Washington, while protecting the students, mission and values of the University.",
+      "The deal between Brown and the Trump administration is undeniably a protection racket, and the price Brown paid has compromised the safety of Brown’s transgender community. Even beyond this, Brown’s capitulation makes the institution feel increasingly like an extension of the Trump administration itself, which directly undermines the University's mission while also creating a chilling effect on the kinds of research Brown’s staff, faculty and students can engage in.",
   },
   {
     name: "Joyce Cohen Bedine '66",
@@ -18,13 +18,6 @@ const messages = [
       "It really hurts our future as a democracy to see all these wonderful institutions of higher learning bend a knee to despotism. Couldn't all of these universities banded together and refused to be complicit to the Trump administration’s attack on our rights? Maybe they could have survived at least as long as it would have taken for Trump to see that he did not have the power he was taking from all of us. My father fought in World War II for freedom from tyranny, and now it is coming back.",
   },
   {
-    name: "Charles Morin MD’76",
-    affiliation: ["Alumni"],
-    approval: "strongly disapprove",
-    pullQuote: "I'm sad that Brown caved under fascist Trump.",
-    message: "I'm sad that Brown caved under fascist Trump.",
-  },
-  {
     name: "Jon Vacura",
     affiliation: ["Providence community"],
     approval: "strongly disapprove",
@@ -34,13 +27,20 @@ const messages = [
       "It’s extremely ignorant to assume that this capitulation will be enough. Once you give in it’s over: A cursory examination of the history of authoritarianism will make that obvious. The Trump administration has broken Brown, and they will have more demands.",
   },
   {
-    name: "Anna Murphy",
-    affiliation: ["Staff"],
-    approval: "strongly disapprove",
+    name: "Lauren Zalaznick '84",
+    affiliation: ["Alumni"],
+    approval: "strongly approve",
     pullQuote:
-      "The deal between Brown and the Trump administration is undeniably a protection racket, and the price Brown paid has compromised the safety of Brown’s transgender community.",
+      "We did the best job possible under the worst circumstances possible.",
     message:
-      "The deal between Brown and the Trump administration is undeniably a protection racket, and the price Brown paid has compromised the safety of Brown’s transgender community. Even beyond this, Brown’s capitulation makes the institution feel increasingly like an extension of the Trump administration itself, which directly undermines the University's mission while also creating a chilling effect on the kinds of research Brown’s staff, faculty and students can engage in.",
+      "We did the best job possible under the worst circumstances possible. The money spent towards supporting local organizations over ten years is great on its own, and helps us with community relations while not funding the Trump administration. Brown’s administration has stayed out of the limelight and out of Washington, while protecting the students, mission and values of the University.",
+  },
+  {
+    name: "Charles Morin MD’76",
+    affiliation: ["Alumni"],
+    approval: "strongly disapprove",
+    pullQuote: "I'm sad that Brown caved under fascist Trump.",
+    message: "I'm sad that Brown caved under fascist Trump.",
   },
   {
     name: "Jane Lancaster, PhD'98, Adjunct faculty in History Department",
@@ -52,22 +52,13 @@ const messages = [
       "I am concerned about Brown's efforts to pay for the settlement, including the potential sale/redevelopment of 20 Olive St., which was, for over a hundred years, the home of the Providence Shelter for Colored Children. Originally founded in 1838, the Shelter — which still exists as a fund to help local children of color — is one of the oldest continuous charities in Rhode Island. That history should not be ignored.",
   },
   {
-    name: "Eileen Rudden '72",
-    affiliation: ["Alumni"],
-    approval: "strongly approve",
+    name: "Amy Cohen",
+    affiliation: ["Staff"],
+    approval: "somewhat approve",
     pullQuote:
-      "Although I despise Trump, this was a sensible agreement to follow current federal law and restore research funding.",
+      "I hope we can work together to show our continued support for our transgender and nonbinary community and make it explicitly clear that any direct confrontation with others would be considered harassment and against Brown's policies.",
     message:
-      "Although I despise Trump, this was a sensible agreement to follow current federal law and restore research funding. Brown will be supporting workforce development for its biomedical projects anyway. Kudos to Christina Paxson in a difficult environment.",
-  },
-  {
-    name: "Carla Ferrari '82",
-    affiliation: ["Alumni"],
-    approval: "somewhat disapprove",
-    pullQuote:
-      "I wish the University had held out and let this play out over a few years to retain their reputation.",
-    message:
-      "I'm very disappointed. I felt pride in the resistance of the University and the way they had handled some of the conflict over this issue. I wish the University had held out and let this play out over a few years to retain their reputation. Now they have capitulated to this dictatorship, and I feel this is the wrong reaction. I think handling the short-term suffering would have been difficult, but in the long run, the better solution.",
+      "I feel a lot of relief and gratitude that President Christina Paxson P’19 P’MD’20 was able to broker an agreement that, to a large extent, stayed true to Brown's mission and to our community. The one point troubling me is the adoption of the federal definitions of gender and the impact it has on our transgender and nonbinary community. This seems to validate the current administration’s weaponization of the issue, and I worry that it might embolden someone at Brown with discomfort around gender identity to take it upon themselves to police bathroom use. I hope we can work together to show our continued support for our transgender and nonbinary community and make it explicitly clear that any direct confrontation with others would be considered harassment and against Brown's policies.",
   },
   {
     name: "Vinny Egizi '88",
@@ -88,22 +79,31 @@ const messages = [
       "I am revolted by the deal Brown has struck with the Trump administration, and particularly its cowardly attacks on its own trans students, particularly trans women. The University should know its deal will do little to protect them from a hostile and capricious president.<br/><br/>When I transitioned at Brown, I struggled with intense family rejection, the indignities of social and medical transition, isolation and rising political attacks on my community — on top of the normal stress of a rigorous college workload. Now, trans students will also have to worry about whether Trump’s executive orders apply to the bathrooms in their libraries, dormitories and lecture halls. There are already few trans women at the University, and Brown’s explicitly hostile concessions will further marginalize students who disproportionately experience discrimination and financial hardship.<br/><br/>The University played a critical role in the current anti-trans fervor by popularizing shoddy claims about “social contagion” in 2018. Now, the movement Brown helped to fuel is harming some of its most vulnerable students. I will not be donating to, or otherwise supporting the University, going forward.<br/><br/><i>Emma Gardner '24 is a former metro editor for The Herald.</i>",
   },
   {
-    name: "Kevin Seaman '69",
+    name: "Eileen Rudden '72",
     affiliation: ["Alumni"],
     approval: "strongly approve",
     pullQuote:
-      "Brown was smart and practical in accepting the terms of the 2025 reality with which it must adapt to after decades of leftist policies.",
+      "Although I despise Trump, this was a sensible agreement to follow current federal law and restore research funding.",
     message:
-      "Brown was smart and practical in accepting the terms of the 2025 reality with which it must adapt to after decades of leftist policies. Brown could not afford to forfeit $510 million in federal grants and forgo future aid in the face of its fiscal crisis. Society no longer regards the Ivies as special or entitled. Trump’s regard for the Ivies reflects, to a great degree, that of the nation. I suspect this will be a change transcending the current presidential administration. The outrage of alums to this alleged capitulation reflects the degree to which Brown has lost its way in its failure to recognize the fatality of the sociopolitical course it chose. Ironically, Brown was never antisemitic but has been cast into that cohort as a result of its reputation as being one of the most left-wing institutions in the nation. With that in mind, I believe the University got off easy. Brown will have to become “ever true” to institutional values that are grounded in a recognition that all political views and platforms need to be respected.",
+      "Although I despise Trump, this was a sensible agreement to follow current federal law and restore research funding. Brown will be supporting workforce development for its biomedical projects anyway. Kudos to Christina Paxson in a difficult environment.",
   },
   {
-    name: "Amy Cohen",
-    affiliation: ["Staff"],
-    approval: "somewhat approve",
+    name: "Carla Ferrari '82",
+    affiliation: ["Alumni"],
+    approval: "somewhat disapprove",
     pullQuote:
-      "I hope we can work together to show our continued support for our transgender and nonbinary community and make it explicitly clear that any direct confrontation with others would be considered harassment and against Brown's policies.",
+      "I wish the University had held out and let this play out over a few years to retain their reputation.",
     message:
-      "I feel a lot of relief and gratitude that President Christina Paxson P’19 P’MD’20 was able to broker an agreement that, to a large extent, stayed true to Brown's mission and to our community. The one point troubling me is the adoption of the federal definitions of gender and the impact it has on our transgender and nonbinary community. This seems to validate the current administration’s weaponization of the issue, and I worry that it might embolden someone at Brown with discomfort around gender identity to take it upon themselves to police bathroom use. I hope we can work together to show our continued support for our transgender and nonbinary community and make it explicitly clear that any direct confrontation with others would be considered harassment and against Brown's policies.",
+      "I'm very disappointed. I felt pride in the resistance of the University and the way they had handled some of the conflict over this issue. I wish the University had held out and let this play out over a few years to retain their reputation. Now they have capitulated to this dictatorship, and I feel this is the wrong reaction. I think handling the short-term suffering would have been difficult, but in the long run, the better solution.",
+  },
+  {
+    name: "Christopher Morin MD'75",
+    affiliation: ["Alumni"],
+    approval: "strongly approve",
+    pullQuote:
+      "The agreement should not have been necessary. Brown did nothing that was wrong.",
+    message:
+      "The agreement should not have been necessary. Brown did nothing that was wrong. In the many years I was at Brown, I have never been prouder of how the University administration, and the whole Brown community, grappled with difficult issues. I spent twenty-two years at Brown as both a student and a member of the clinical faculty. I served on the Board of Directors of the Brown Medical Alumni Association for 17 years.<br/><br/>I do believe that the agreement is fair and the best that could have been negotiated.<br><br>Brown has never been systematically antisemitic. The medical school was founded by many of Jewish faith. The oath of the physician at Brown has as much input from the Oath of Maimonides as any other source. I should know — I was on the committee that wrote the oath.",
   },
   {
     name: "Francois Luks",
@@ -115,13 +115,13 @@ const messages = [
       "There is a spectrum from principled suicide to cowardice, and from calculated cynicism to pragmatism. Brown didn’t die on this hill, but it did not roll over either. The reality is that the problem was not one of Brown’s making, and any decision would have been met with criticism, jeopardized programs and negatively affected people. Brown has been around for more than 250 years and has survived authoritarianism before. The school seems to bet that it will outlive this cruel, short-sighted, racist, isolationist and erratic administration. The odds are pretty good.",
   },
   {
-    name: "Christopher Morin MD'75",
+    name: "Kevin Seaman '69",
     affiliation: ["Alumni"],
     approval: "strongly approve",
     pullQuote:
-      "The agreement should not have been necessary. Brown did nothing that was wrong.",
+      "Brown was smart and practical in accepting the terms of the 2025 reality with which it must adapt to after decades of leftist policies.",
     message:
-      "The agreement should not have been necessary. Brown did nothing that was wrong. In the many years I was at Brown, I have never been prouder of how the University administration, and the whole Brown community, grappled with difficult issues. I spent twenty-two years at Brown as both a student and a member of the clinical faculty. I served on the Board of Directors of the Brown Medical Alumni Association for 17 years.<br/><br/>I do believe that the agreement is fair and the best that could have been negotiated.<br><br>Brown has never been systematically antisemitic. The medical school was founded by many of Jewish faith. The oath of the physician at Brown has as much input from the Oath of Maimonides as any other source. I should know — I was on the committee that wrote the oath.",
+      "Brown was smart and practical in accepting the terms of the 2025 reality with which it must adapt to after decades of leftist policies. Brown could not afford to forfeit $510 million in federal grants and forgo future aid in the face of its fiscal crisis. Society no longer regards the Ivies as special or entitled. Trump’s regard for the Ivies reflects, to a great degree, that of the nation. I suspect this will be a change transcending the current presidential administration. The outrage of alums to this alleged capitulation reflects the degree to which Brown has lost its way in its failure to recognize the fatality of the sociopolitical course it chose. Ironically, Brown was never antisemitic but has been cast into that cohort as a result of its reputation as being one of the most left-wing institutions in the nation. With that in mind, I believe the University got off easy. Brown will have to become “ever true” to institutional values that are grounded in a recognition that all political views and platforms need to be respected.",
   },
   {
     name: "Rev. Peter Laarman '70",
@@ -142,13 +142,13 @@ const messages = [
       "I genuinely wish that the Trump administration had found something “wrong” so that Brown would actually take a stand and defend itself. President Paxson’s email outright stating the question “If there was no finding of wrongdoing against Brown, then why negotiate an agreement?” is absolutely laughable because of how short sighted this agreement is. Agreeing to be surveilled by the government will have severe long-term consequences for Brown, and Brown has chosen to forsake its trans and non-binary community all for $50 million, which is meager in comparison to the institution’s endowment.",
   },
   {
-    name: "Jainisa Baudin '29",
+    name: "Ryan Spinney GS",
     affiliation: ["Student"],
-    approval: "somewhat disapprove",
+    approval: "strongly disapprove",
     pullQuote:
-      "Many of us are scared — especially incoming freshman and those who are members of minority communities",
+      "While I understand Brown's urgent need for funding, it shows that the federal government can pressure educational institutions to submit, setting a troubling new precedent for both this and future administrations.",
     message:
-      "Many of us are scared — especially incoming freshman and those who are members of minority communities. I want to trust Brown's administration, but we are in a time where students are threatened, especially BIPOC and LGBTQ+ students. I am disappointed in our administration because they knew what this concession would look like, but I am praying that I chose the best school to deal with a situation like this.",
+      "It's deeply disheartening that President Paxson compromised Brown's principles to secure resumed funding. While I understand Brown's urgent need for funding, it shows that the federal government can pressure educational institutions to submit, setting a troubling new precedent for both this and future administrations. Brown has an endowment that could allow it to weather financial damages if it refused an agreement. Since Brown compromised despite having the financial resources to do otherwise, it clearly sets a precedent for other smaller and less endowed schools. Essentially, it sends a message to other American institutions: if Brown, with its vast resources, wouldn't stand up to the federal government, then why should we?",
   },
   {
     name: "John Peracchio '82",
@@ -166,13 +166,13 @@ const messages = [
       "I'm disappointed. If those who know better kneel, who will stand? They immediately went after other universities.",
   },
   {
-    name: "Ryan Spinney GS",
+    name: "Jainisa Baudin '29",
     affiliation: ["Student"],
-    approval: "strongly disapprove",
+    approval: "somewhat disapprove",
     pullQuote:
-      "While I understand Brown's urgent need for funding, it shows that the federal government can pressure educational institutions to submit, setting a troubling new precedent for both this and future administrations.",
+      "Many of us are scared — especially incoming freshman and those who are members of minority communities",
     message:
-      "It's deeply disheartening that President Paxson compromised Brown's principles to secure resumed funding. While I understand Brown's urgent need for funding, it shows that the federal government can pressure educational institutions to submit, setting a troubling new precedent for both this and future administrations. Brown has an endowment that could allow it to weather financial damages if it refused an agreement. Since Brown compromised despite having the financial resources to do otherwise, it clearly sets a precedent for other smaller and less endowed schools. Essentially, it sends a message to other American institutions: if Brown, with its vast resources, wouldn't stand up to the federal government, then why should we?",
+      "Many of us are scared — especially incoming freshman and those who are members of minority communities. I want to trust Brown's administration, but we are in a time where students are threatened, especially BIPOC and LGBTQ+ students. I am disappointed in our administration because they knew what this concession would look like, but I am praying that I chose the best school to deal with a situation like this.",
   },
   {
     name: "Irene Sudac '81 P'17",
@@ -184,15 +184,6 @@ const messages = [
       "I have mixed feelings regarding the agreement. Caving to a bully doesn't guarantee that the bully won't renege or come back for more. On the other hand, the school needs greater certainty to plan for the year ahead and research must be reinstated to keep Brown at the forefront of top universities.",
   },
   {
-    name: "David Parker '69 P'12",
-    affiliation: ["Alumni", "Parent/guardian"],
-    approval: "somewhat approve",
-    pullQuote:
-      "I assume and believe that, despite its much weaker bargaining position relative to the federal administration, Brown struck the best deal possible.",
-    message:
-      "I assume and believe that, despite its much weaker bargaining position relative to the federal administration, Brown struck the best deal possible. Brown appears to have given very little, if anything, and agreed to no changes it was not already making or ready to make. In doing so, it eliminated an existential risk, avoided substantial legal costs and removed a major distraction from its mission. That said, I am sorry that Brown was forced to settle this matter, rather than stand on principle, and am concerned that there may be no effective way to prevent the counterparties from making further demands or otherwise violating their obligations.",
-  },
-  {
     name: "Benjamin Daniel '29",
     affiliation: ["Student"],
     approval: "strongly disapprove",
@@ -200,6 +191,15 @@ const messages = [
       "To me, this represents a policy of appeasement that weakens the independence of the University.",
     message:
       "I am incredibly disappointed, but not surprised. I am an incoming student who has just decided to make Brown my home for the next four years. At Brown, I hoped to find a community built on common care. Brown to me represented a place where curiosity could thrive. I fear that this current strategy endangers that vision. To me, this represents a policy of appeasement that weakens the independence of the University. Even if Brown maintains a policy of independence in the text of the agreement, we are now in a world where the federal government has successfully demanded change by threatening a revocation of funding. Once this line has been crossed, who’s to say it won’t be crossed again? I recognize that federal grants are essential to maintain the groundbreaking research we conduct on campus, but this should not come at the cost of our transgender friends and neighbors. I suspect the full ramifications of this decision have yet to be felt. This is a new reality for the University — one I hope students will face with renewed vigilance and kindness.",
+  },
+  {
+    name: "David Parker '69 P'12",
+    affiliation: ["Alumni", "Parent/guardian"],
+    approval: "somewhat approve",
+    pullQuote:
+      "I assume and believe that, despite its much weaker bargaining position relative to the federal administration, Brown struck the best deal possible.",
+    message:
+      "I assume and believe that, despite its much weaker bargaining position relative to the federal administration, Brown struck the best deal possible. Brown appears to have given very little, if anything, and agreed to no changes it was not already making or ready to make. In doing so, it eliminated an existential risk, avoided substantial legal costs and removed a major distraction from its mission. That said, I am sorry that Brown was forced to settle this matter, rather than stand on principle, and am concerned that there may be no effective way to prevent the counterparties from making further demands or otherwise violating their obligations.",
   },
   {
     name: "Carol Landau PhD’70, P'09, emerita faculty",
