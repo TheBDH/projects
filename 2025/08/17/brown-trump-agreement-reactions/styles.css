@@ -6,6 +6,7 @@
   --parent-color: #4caf50;
   --faculty-color: #ad7a99;
   --pvd-color: #cb793a;
+  --blue-bg: #638ed0;
 }
 
 body {
@@ -292,7 +293,7 @@ body {
 }
 
 .blurb a {
-  color: #4a71c0;
+  color: #638ed0;
 }
 
 #byline {
@@ -307,7 +308,7 @@ body {
 }
 
 #byline .author {
-  background-color: #4a71c0;
+  background-color: #638ed0;
   color: #f5f5f5;
   padding: 0.2rem;
   padding-left: 0.4rem;
