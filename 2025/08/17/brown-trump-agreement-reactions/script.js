@@ -113,7 +113,7 @@ const messages = [
       "The agreement should not have been necessary. Brown did nothing that was wrong. In the many years I was at Brown, I have never been prouder of how the University administration, and the whole Brown community, grappled with difficult issues. I spent twenty-two years at Brown as both a student and a member of the clinical faculty. I served on the Board of Directors of the Brown Medical Alumni Association for 17 years.<br/><br/>I do believe that the agreement is fair and the best that could have been negotiated.<br><br>Brown has never been systematically antisemitic. The medical school was founded by many of Jewish faith. The oath of the physician at Brown has as much input from the Oath of Maimonides as any other source. I should know — I was on the committee that wrote the oath.",
   },
   {
-    name: "Francois Luks",
+    name: "Francois Luks, Faculty at Warren Alpert Medical School",
     affiliation: ["Faculty"],
     approval: "somewhat approve",
     pullQuote:
@@ -170,7 +170,7 @@ const messages = [
     affiliation: ["Student"],
     approval: "somewhat disapprove",
     pullQuote:
-      "Many of us are scared — especially incoming freshman and those who are members of minority communities",
+      "Many of us are scared — especially incoming freshman and those who are members of minority communities.",
     message:
       "Many of us are scared — especially incoming freshman and those who are members of minority communities. I want to trust Brown's administration, but we are in a time where students are threatened, especially BIPOC and LGBTQ+ students. I am disappointed in our administration because they knew what this concession would look like, but I am praying that I chose the best school to deal with a situation like this.",
   },
