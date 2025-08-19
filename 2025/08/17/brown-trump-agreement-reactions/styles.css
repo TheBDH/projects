@@ -188,6 +188,7 @@ body {
 .filter-buttons {
   text-align: center;
   margin-bottom: 20px;
+  color: #000;
 }
 
 .filter-buttons button {
