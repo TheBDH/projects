@@ -1,0 +1,156 @@
+{
+    "date": "Summer - September 5, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+        {
+            "question": "How many schools were sued over increasing tuition through early decision admissions?",
+            "type": "MC",
+            "choices": [
+                "10",
+                "12",
+                "25",
+                "32"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "32 universities and colleges, including Brown, were sued on August 8 by a group of three students and one recent graduate. The plaintiffs allege that the schools are colluding via restrictive early decision contracts in violation of antitrust laws.",
+            "link": "https://www.browndailyherald.com/article/2025/08/lawsuit-early-decision-admissions-price-fixing-brown-university"
+        },
+        {
+            "question": "What is the U.S. Department of Justice investigating Rhode Island for?",
+            "type": "MC",
+            "choices": [
+                "Refusing to cooperate with immigration enforcement",
+                "Misusing federal funds",
+                "Applying affirmative action to hiring practices",
+                "H1B visa fraud"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "On June 4, The U.S. Department of Justice sent a letter to Rhode Island Attorney General Peter Neronha P’19 P’22 saying it would open an investigation into whether the state “is engaged in a pattern or practice of discrimination based on race or any other protected characteristic in violation of Title VII.”",
+            "link": "https://www.browndailyherald.com/article/2025/06/us-department-of-justice-opens-investigation-into-rhode-island"
+        },
+        {
+            "question": "How many Brown faculty members were elected to the American Academy of Arts and Sciences this year?",
+            "type": "MC",
+            "choices": [
+                "10",
+                "12",
+                "5",
+                "8"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Eight Brown faculty members were among 248 scholars elected to the American Academy of Arts and Sciences this year.",
+            "link": "https://www.browndailyherald.com/article/2025/05/honored-and-humbled-eight-brown-faculty-members-elected-to-american-academy-of-arts-and-sciences"
+        },
+        {
+            "question": "What University building will the new admissions welcome center be located in?",
+            "type": "MC",
+            "choices": [
+                "Sayles Hall",
+                "Manning Hall",
+                "University Hall",
+                "Slater Hall"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Brown plans to construct a new admissions welcome center on the first floor of Manning Hall, the University announced on May 19. Expected to be completed in October 2025, the renovated 2,400-square-foot space will serve as a starting point for campus visits and information sessions.",
+            "link": "https://www.browndailyherald.com/article/2025/05/university-announces-new-admissions-welcome-center-in-manning-hall-other-summer-construction-projects"
+        },
+        {
+            "question": "What place did Brown graduate student Eva Erickson finish on the 48th season of “Survivor”?",
+            "type": "MC",
+            "choices": [
+                "2nd",
+                "1st",
+                "4th",
+                "16th"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Erickson, a rising fourth-year graduate student in fluids and thermal sciences, took second place during the show’s season 48 finale on May 21, just barely missing the million-dollar prize. While she did not walk away with the title of “Sole Survivor,” Erickson cinched runner-up and amassed a loyal fan base in the process.",
+            "link": "https://www.browndailyherald.com/article/2025/07/graduate-student-eva-erickson-reflects-on-second-place-finish-in-season-48-of-survivor"
+        },
+        {
+            "question": "How much was President Christina Paxson’s contract extended by?",
+            "type": "MC",
+            "choices": [
+                "One year",
+                "Four years",
+                "Two years",
+                "Seven years"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "The Brown Corporation, the University’s highest governing body, announced on May 27 that President Christina Paxson’s P’19 P’MD’20 term is being extended by two years, from an end date in June 2026 to a new expiration in June 2028.",
+            "link": "https://www.browndailyherald.com/article/2025/05/brown-university-president-paxson-term-extended"
+        },
+        {
+            "question": "How many years did Rashid Zia serve as dean of the College?",
+            "type": "MC",
+            "choices": [
+                "5 years",
+                "7 years",
+                "10 years",
+                "12 years"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Rashid Zia ‘01 stepped down on June 30 after seven years as dean of the College. He plans to go on sabbatical before returning as a professor of engineering and physics.",
+            "link": "https://www.browndailyherald.com/article/2025/06/it-is-remarkable-how-approachable-he-is-rashid-zia-01-closes-tenure-as-dean-of-the-college"
+        },
+        {
+            "question": "How much was Brown’s projected financial loss due to federal actions?",
+            "type": "MC",
+            "choices": [
+                "25 million",
+                "30 million",
+                "70 million",
+                "10 million"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Despite reaching an agreement with the Trump administration to restore federal funding, the University still needs to address the $30 million financial loss through staff layoffs and other cost-cutting measures.",
+            "link": "https://www.browndailyherald.com/article/2025/08/brown-braces-for-layoffs-further-cost-cutting-measures-despite-agreement-with-trump-administration"
+        },
+        {
+            "question": "What was Han Nguyen ’21 and her brother Holden Nguyen’s team name when competing in reality game show “The Amazing Race”?",
+            "type": "MC",
+            "choices": [
+                "Team Sibs",
+                "Team Asian Swag",
+                "Team Nguyen Twins",
+                "Team No Confidence"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Han Nguyen ’21 and her brother Holden Nguyen, self named “Team Asian Swag,” placed second in the 37th season of the reality competition “The Amazing Race.”",
+            "link": "https://www.browndailyherald.com/article/2025/06/brown-alum-han-nguyen-21-finishes-second-in-the-amazing-race-alongside-her-brother"
+        },
+        {
+            "question": "Which of the following did President Christina Paxson P’19 P’MD’20 not include in her institutional priorities?",
+            "type": "MC",
+            "choices": [
+                "Advancing the Discovery Through Dialogue project",
+                "Following guidelines in University Values and Voice",
+                "Supporting liberal learning values",
+                "Accomplishing carbon neutrality by 2028"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "In her letter, Paxson shared plans to align University policies with the statement of University Values and Voice, a set of guidelines for when Brown should use its institutional voice to comment on sociopolitical issues. She also revealed that the University plans to increase programming for the Discovery Through Dialogue project, which facilitates discussion among community members.",
+            "link": "https://www.browndailyherald.com/article/2025/08/paxson-addresses-federal-deal-outlines-university-priorities-ahead-of-2025-26-year"
+        }
+        ]
+    }
