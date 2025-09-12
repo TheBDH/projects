@@ -1,0 +1,156 @@
+{
+    "date": "September 5 - September 12, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+        {
+            "question": "When did the construction on Simmons Quad begin?",
+            "type": "MC",
+            "choices": [
+                "February",
+                "May",
+                "June",
+                "August"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "The construction of the new amphitheater in Simmons Quad first began in June. The renovated quadrangle is slated to open to the public in late October.",
+            "link": "https://www.browndailyherald.com/article/2025/09/on-simmons-quad-a-century-old-plan-set-to-be-finished-in-late-october"
+        },
+        {
+            "question": "Following the passage of the “One Big Beautiful Bill Act,” what is the new lifetime limit on student loans?",
+            "type": "MC",
+            "choices": [
+                "$257,000",
+                "$446,000",
+                "$150,000",
+                "$780,000"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "The landmark tax-and-spending bill barred some students who receive full-time scholarships from receiving Pell Grants, eliminated the GraduatePLUS loan program and placed a lifetime limit of $257,000 on student loans.",
+            "link": "https://www.browndailyherald.com/article/2025/09/students-will-see-no-decrease-in-aid-packages-after-pell-grant-cuts-brown-says"
+        },
+        {
+            "question": "Who did the women’s soccer team beat last Thursday?",
+            "type": "MC",
+            "choices": [
+                "Boston College",
+                "Boston University",
+                "MIT",
+                "Northeastern"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "The women’s team beat Northeastern 2-0 at home last Thursday. With the win, the team moved to 4-1-1 on the season.",
+            "link": "https://www.browndailyherald.com/article/2025/09/womens-soccer-trumps-northeastern-ties-against-wake-forest"
+        },
+        {
+            "question": "Which of the following countries wasn’t a destination of the RISD Global Summer Studies program this year?",
+            "type": "MC",
+            "choices": [
+                "Spain",
+                "Japan",
+                "Italy",
+                "Brazil"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "The RISD study abroad programs in Japan, Italy, and Brazil offer “eye-opening” artistic inspiration for students and enable respectful cultural exchange.",
+            "link": "https://www.browndailyherald.com/article/2025/09/from-italy-to-japan-risd-students-jet-across-the-world-for-summer-courses-abroad"
+        },
+        {
+            "question": "Which of these spots is frequented by the College Hill Turkey?",
+            "type": "MC",
+            "choices": [
+                "Sciences Library",
+                "Ratty",
+                "Prospect Terrace",
+                "Providence Athenaeum"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "The College Hill turkey is often spotted hanging out in the garden and parking lot of the Providence Athenaeum. The turkey has also been observed sleeping on top of the Athenaeum’s roof at night.",
+            "link": "https://www.browndailyherald.com/article/2025/09/infamous-turkey-ruffles-feathers-on-college-hill"
+        },
+        {
+            "question": "The 2025 Black Convocation was the _____ iteration of this annual event for first-year students.",
+            "type": "MC",
+            "choices": [
+                "Third",
+                "Eighth",
+                "First",
+                "Sixth"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "The 2025 Black Convocation was the eighth annual iteration of the event, in which students got to hear from several speakers and connect with each other over food, games and conversation.",
+            "link": "https://www.browndailyherald.com/article/2025/09/with-diversity-initiatives-under-threat-black-convocation-seeks-to-empower-first-year-students"
+        },
+        {
+            "question": "What was the unique discovery that Anthony Englert GS, a Ph.D. candidate in physics, made while studying the local galaxy cluster Abell 3667?",
+            "type": "MC",
+            "choices": [
+                "A shooting star",
+                "A dying star",
+                "A bridge of light",
+                "A black hole"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "Englert noticed a faint bridge of light connecting the brightest galaxies in two small clusters within Abell 3667, evidence that the two galaxies are actively merging.",
+            "link": "https://www.browndailyherald.com/article/2025/09/brown-astronomer-captures-evidence-of-merging-galaxies-in-local-cluster-for-first-time"
+        },
+        {
+            "question": "Which of the following shows or movies was not filmed in Rhode Island?",
+            "type": "MC",
+            "choices": [
+                "The Gilded Age",
+                "The Summer I Turned Pretty",
+                "Ghostwriter",
+                "Remain"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Rhode Island continues to be a popular destination for film and TV show production, with close to 100 TV shows and movies filmed in the state since 2005.",
+            "link": "https://www.browndailyherald.com/article/2025/09/major-films-are-increasingly-anchoring-their-productions-in-rhode-island"
+        },
+        {
+            "question": "The University is aiming to reach net-zero carbon emissions by what year?",
+            "type": "MC",
+            "choices": [
+                "2040",
+                "2036",
+                "2026",
+                "2030"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "According to Brown’s Path to Net-Zero, the University has been aiming to reduce campus emissions by 75% from the FY18 benchmark by this year, with the ultimate goal of achieving net-zero by 2040.",
+            "link": "https://www.browndailyherald.com/article/2025/09/though-disappointed-environmental-faculty-understand-browns-pause-on-net-zero-emissions-efforts"
+        },
+        {
+            "question": "Which of the following is not a song on “Wishbone,” Conan Gray’s most recent album?",
+            "type": "MC",
+            "choices": [
+                "“Actor”",
+                "“Miss You”",
+                "“Nauseous”",
+                "“This Song”"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Conan Gray’s fourth studio album, “Wishbone,” features 12 unique tracks including “Actor,” “Nauseous” and “This Song.” “Miss You” is a song from Conan Gray’s third album, “Found Heaven.”",
+            "link": "https://www.browndailyherald.com/article/2025/09/conan-grays-wishbone-is-required-listening-for-hopeless-romantics"
+        }
+    ]
+}
