@@ -1,7 +1,8 @@
 body {
     font-family: "freight-text-pro", "Georgia", "Times", serif;
     margin: 0px;
-    background-image: url('images/footballBackground.png');
+    /* background-image: url('images/footballBackground.png'); */
+    /* background-image: url('images/otherFootballBackgroundFullMainLines.png'); */
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -307,6 +308,25 @@ a {
 .number-item.item3 {
     background-color: white;
     color: #4E3629;
+}
+
+.stripe-transition {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.background-img-fill {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: right top;
+    display: block;
+    margin: 0;
+    padding: 0;
 }
 
 @media (max-width: 1200px) {

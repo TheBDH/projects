@@ -39,5 +39,30 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('resize', showCurrentIntro);
     showCurrentIntro();
 
+    let lastBgIndex = -1;
+    const bgImages = [
+        'url("images/footballBackground.png")',
+        'url("images/otherFootballBackgroundFullMainLines.png")',
+    ];
+
+    function updateBackground() {
+        const scrollY = window.scrollY || window.pageYOffset;
+        const triggerPoint = window.innerHeight * 2.5; // 250vh
+
+        let bgIndex = 0;
+        if (scrollY >= triggerPoint) {
+            bgIndex = 1; // Switch to bg2 at 250vh
+        }
+
+        if (bgIndex !== lastBgIndex) {
+            document.body.style.backgroundImage = bgImages[bgIndex];
+            lastBgIndex = bgIndex;
+        }
+    }
+
+    window.addEventListener('scroll', updateBackground);
+    window.addEventListener('resize', updateBackground);
+    updateBackground();
+
     
 });
