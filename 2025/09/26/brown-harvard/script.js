@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     const intros = document.querySelectorAll('.intro-text');
     const introSection = document.getElementById('dramatic-intro');
-    const pageHeight = window.innerHeight;
 
     function showCurrentIntro() {
+        // Recalculate pageHeight and sectionTop in case window size or layout changed
+        const pageHeight = window.innerHeight;
         const scrollY = window.scrollY || window.pageYOffset;
         const sectionTop = introSection.offsetTop;
         let relativeScroll = scrollY + pageHeight / 2 - sectionTop;
