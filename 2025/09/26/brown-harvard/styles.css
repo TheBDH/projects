@@ -1,5 +1,5 @@
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
     margin: 0px;
     background-image: url('images/footballBackground.png');
     background-attachment: fixed;
@@ -69,7 +69,7 @@ body {
     pointer-events: none;
     text-align: center;
     position: absolute;
-    top: 0;
+    top: -20%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -210,6 +210,7 @@ a {
     margin-left: auto;
     margin-right: auto;
     /* Center the element horizontally */
+    font-size: 1.2rem;
 }
 
 .chart {
@@ -308,9 +309,5 @@ a {
 
     .image-credit {
         width: 150px;
-    }
-
-    body {
-        /* background-image: none; */
     }
 }

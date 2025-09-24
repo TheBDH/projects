@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     const intros = document.querySelectorAll('.intro-text');
     const introSection = document.getElementById('dramatic-intro');
-    const finalHeading = document.getElementById('heading');
     const pageHeight = window.innerHeight;
 
     function showCurrentIntro() {
         const scrollY = window.scrollY || window.pageYOffset;
         const sectionTop = introSection.offsetTop;
-        const relativeScroll = scrollY + pageHeight / 2 - sectionTop;
+        let relativeScroll = scrollY + pageHeight / 2 - sectionTop;
+        if (relativeScroll < 0) relativeScroll = 0;
         const halfPage = pageHeight / 2;
         let rawIndex = relativeScroll / halfPage;
 
@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     intros.forEach((el, i) => { el.style.opacity = i === 0 ? 1 : 0; });
+    showCurrentIntro()
+    intros.forEach(el => {
+        el.style.display = "flex";
+    });
 
     window.addEventListener('scroll', showCurrentIntro);
     window.addEventListener('resize', showCurrentIntro);
