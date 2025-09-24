@@ -236,8 +236,10 @@ a {
 .big-numbers,
 .data-box {
     text-align: center;
-    margin: 2em auto;
-    padding: 1em;
+    padding: 20px;
+    margin: 20px 0;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #181818;
     z-index: 10;
     position: relative;
@@ -286,6 +288,8 @@ a {
 .number-item p {
     font-size: 1rem;
     font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .number-item.item1 {
