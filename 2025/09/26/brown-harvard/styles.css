@@ -132,7 +132,7 @@ h1 {
     padding: 0.2rem;
     padding-left: 0.4rem;
     padding-right: 0.4rem;
-    border-radius: 0.5rem;
+    border-radius: 0.4rem;
     font-weight: bold;
     line-height: 1.5rem;
     white-space: nowrap;
@@ -339,6 +339,16 @@ a {
     display: block;
     margin: 0;
     padding: 0;
+}
+
+#transition-smoother {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .flash-image {

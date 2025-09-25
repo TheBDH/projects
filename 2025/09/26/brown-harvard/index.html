@@ -34,8 +34,8 @@
         </div>
         <div style="height: 250vh;"></div>
         <img class="stripe-transition"
-            src="images/footballBackgroundFullMainLinesFlipped.png"
-            alt="1893 Daily Herald Article">
+            id="beginning-transition" src="images/footballBackgroundFullMainLinesFlipped.png"
+            alt="background">
         <div id="heading" style="display: block;">
             <a href="https://www.browndailyherald.com" target="_blank">
                 <img
@@ -48,7 +48,19 @@
                 The (fairly uncompetetive) history of a storied rivalry
             </p>
             <h6 id="byline" style="text-align: center;">
-                Reporting and web design by
+                Web design by
+                <span class="author"><a
+                        href="https://www.browndailyherald.com/staff/caleb-ellenberg"
+                        target="_blank">Caleb Ellenberg</a></span>
+            </h6>
+            <h6 id="byline" style="text-align: center;">
+                Reporting by
+                <span class="author"><a
+                        href="https://www.browndailyherald.com/staff/ciara-meyer"
+                        target="_blank">Ciara Meyer</a></span>
+                <span class="author"><a
+                        href="https://www.browndailyherald.com/staff/ian-ritter"
+                        target="_blank">Ian Ritter</a></span>
                 <span class="author"><a
                         href="https://www.browndailyherald.com/staff/caleb-ellenberg"
                         target="_blank">Caleb Ellenberg</a></span>
@@ -156,10 +168,11 @@
             </div>
         </div>
         <div style="height: 20vh;"></div>
-        <img class="background-img" src="images/1995img1.jpg"
-            alt="Brown vs. Harvard football">
+        <video class="background-img" src="images/1989.mp4" autoplay loop muted>
+            Your browser does not support the video tag.
+        </video>
         <div class="image-credit" style="text-align: center;">
-            <p>1995 Harvard vs. Brown — Media by Mike DiBianco</p>
+            <p>1989 Harvard vs. Brown — Media courtesy of Steve Harrison</p>
         </div>
         <div style="height: 20vh;"></div>
         <div class="chart" id="chart-1">
@@ -170,6 +183,24 @@
                 frameborder="0"
                 style="width: 0; min-width: 100% !important; border: none;"
                 height="468" data-external="1"></iframe><script
+                type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}})}();
+            </script>
+        </div>
+        <div style="height: 20vh;"></div>
+        <img class="background-img" src="images/1995img1.jpg"
+            alt="Brown vs. Harvard football">
+        <div class="image-credit" style="text-align: center;">
+            <p>1995 Harvard vs. Brown — Media by Mike DiBianco</p>
+        </div>
+        <div style="height: 20vh;"></div>
+        <div class="chart" id="chart-1-5">
+            <iframe title="Cumulative point differential over time"
+                aria-label="Line chart" id="datawrapper-chart-7Ztud"
+                src="https://datawrapper.dwcdn.net/7Ztud/5/?dark=true"
+                scrolling="no"
+                frameborder="0"
+                style="width: 0; min-width: 100% !important; border: none;"
+                height="487" data-external="1"></iframe><script
                 type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}})}();
             </script>
         </div>
@@ -195,75 +226,136 @@
             <img class="stripe-transition" id="needsLessHeight"
                 src="images/footballBackgroundFullMainLines.png"
                 alt="1893 Daily Herald Article">
+            <!-- 1893 -->
             <div id="trigger1"></div>
-            <img id="scrollImage1" style="position: relative; z-index: -3" class="background-img-fill"
-                    src="images/1893.jpg"
-                    alt="1893 Daily Herald Article">
-            <div class="caption">Brown football played their first game against Harvard in 1893...and lost by a historic margin.</div>
+            <img id="scrollImage1" style="position: relative; z-index: -3"
+                class="background-img-fill"
+                src="images/1893.jpg"
+                alt="1893 Daily Herald Article">
+            <div class="caption">Brown football played their first game against
+                Harvard in 1893...and lost by a historic margin.</div>
+            <!-- 1914 -->
             <div id="trigger2"></div>
             <div style="height: 100vh"></div>
-            <div class="caption">After 23 consecutive losses to begin the rivalry, Brown finally won in the midst of the first World War. We couldn't find any record of that 1916 win, but Brown also took the next meeting in 1918.</div>
+            <div class="caption">1914</div>
+            <!-- 1918 -->
             <div id="trigger3"></div>
             <div style="height: 100vh"></div>
-            <div class="caption">In 1925, Brown vs. Harvard was conducted in Providence for the first time, following the completion of Brown Stadium. The stadium celebrates its 100th anniversary this season.</div>
+            <div class="caption">After 23 consecutive non-wins to begin the
+                rivalry, Brown finally won in the midst of the first World War.
+                We couldn't find any record of that 1916 win, but Brown also
+                took the next meeting in 1918.</div>
+            <!-- 1925 -->
             <div id="trigger4"></div>
             <div style="height: 100vh"></div>
-            <div class="caption">Brown pulled off a surprise victory in 1952. This marked the beginning of the most succesful decade in Brown football, as the Bruins went on a 5 game win streak from 1955-59 and finished the decade 6-3-1.</div>
+            <div class="caption">In 1925, Brown vs. Harvard was conducted in
+                Providence for the first time, following the completion of Brown
+                Stadium. The stadium celebrates its 100th anniversary this
+                season.</div>
+            <!-- 1938 -->
             <div id="trigger5"></div>
             <div style="height: 100vh"></div>
-            <div class="caption">Quarterback James Perry '00 led Brown to victory at Harvard Stadium in 1998. It remains the last time Brown won on the road.</div>
+            <div class="caption">1938</div>
+            <!-- 1952 -->
             <div id="trigger6"></div>
             <div style="height: 100vh"></div>
-            <div class="caption">Perry and Brown won again in 1999, capping off another 6 win decade. This was the last time Brown won back-to-back matchups, another distinction the Bears will try to change on Saturday evening.</div>
+            <div class="caption">Brown pulled off a surprise victory in 1952.
+                This marked the beginning of the most succesful decade in Brown
+                football, as the Bruins went on a 5 game win streak from 1955-59
+                and finished the decade 6-3-1.</div>
+            <!-- 1959 -->
             <div id="trigger7"></div>
             <div style="height: 100vh"></div>
-            <div class="caption">Brown won in 2010 for only the second time in the 21st century. The win was followed by the infamous 12 game losing streak that Brown snapped last year.</div>
+            <div class="caption">Brown won in 1959 to cap off their 5 game win
+                streak, the longest for Brown in the history of the
+                rivalry.</div>
+            <!-- 1998 -->
             <div id="trigger8"></div>
             <div style="height: 100vh"></div>
-            <div class="caption">In December 2018, Brown hired the aforementioned James Perry as head coach. It remained to be seen if he could recapture the magic of the late 90s and end the losing streak.</div>
+            <div class="caption">Quarterback James Perry '00 led Brown to
+                victory at Harvard Stadium in 1998. It remains the last time
+                Brown won on the road.</div>
+            <!-- 1999 -->
             <div id="trigger9"></div>
             <div style="height: 100vh"></div>
-            <div class="caption">The last time Brown traveled to Boston, in 2023, they came excruciatingly close to snapping the streak, but a 4th quarter comeback came up short.</div>
+            <div class="caption">Perry and Brown won again in 1999, capping off
+                another 6 win decade. This was the last time Brown won
+                back-to-back matchups, another distinction the Bears will try to
+                change on Saturday evening.</div>
+            <!-- 2010 -->
             <div id="trigger10"></div>
             <div style="height: 100vh"></div>
-            <div class="caption">But a year later, the comeback was meant to be. Brown recovered Harvard's fumbled field goal snap and scored the winning touchdown in the final seconds to the delight of a crowd of over 10,000.</div>
+            <div class="caption">Brown won in 2010 for only the second time in
+                the 21st century. The win was followed by the infamous 12 game
+                losing streak that Brown snapped last year.</div>
+            <!-- 2018 -->
             <div id="trigger11"></div>
+            <div style="height: 100vh"></div>
+            <div class="caption">In December 2018, Brown hired the
+                aforementioned James Perry as head coach. It remained to be seen
+                if he could recapture the magic of the late 90s and end the
+                losing streak.</div>
+            <!-- 2023 -->
+            <div id="trigger12"></div>
+            <div style="height: 100vh"></div>
+            <div class="caption">The last time Brown traveled to Boston, in
+                2023, they came excruciatingly close to snapping the streak, but
+                a 4th quarter comeback came up short.</div>
+            <!-- 2024 -->
+            <div id="trigger13"></div>
+            <div style="height: 100vh"></div>
+            <div class="caption">But a year later, the comeback was meant to be.
+                Brown recovered Harvard's fumbled field goal snap and scored the
+                winning touchdown in the final seconds to the delight of a crowd
+                of over 10,000.</div>
+            <!-- Final section -->
+            <div id="trigger14"></div>
             <div style="height: 20vh"></div>
             <img id="needsMoreHeight" class="stripe-transition"
-            src="images/footballBackground.png"
-            alt="1893 Daily Herald Article">
-            <div class="outro-text" style="display: none;">On Saturday, they'll try to do it again.</div>
+                src="images/footballBackground.png"
+                alt="1893 Daily Herald Article">
+            <div class="outro-text" style="display: none;">On Saturday, they'll
+                try to do it again.</div>
             <div id="collage"
                 style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
                 <img id="image1" class="flash-image"
                     src="images/1893.jpg"
                     alt="1893 Daily Herald Article">
                 <img id="image2" class="flash-image"
-                    src="images/1918.jpg"
-                    alt="1976 Daily Herald Article">
+                    src="images/1914.jpg"
+                    alt="1914 Daily Herald Article">
                 <img id="image3" class="flash-image"
+                    src="images/1918.jpg"
+                    alt="1918 Daily Herald Article">
+                <img id="image4" class="flash-image"
                     src="images/1925.jpg"
                     alt="1925 Daily Herald Article"
                     style="object-position: top center;">
-                <img id="image4" class="flash-image"
+                <img id="image5" class="flash-image"
+                    src="images/1938.jpg"
+                    alt="1938 Daily Herald Article">
+                <img id="image6" class="flash-image"
                     src="images/1952.jpg"
                     alt="1952 Daily Herald Article">
-                <img id="image5" class="flash-image"
+                <img id="image7" class="flash-image"
+                    src="images/1959.jpg"
+                    alt="1959 Daily Herald Article">
+                <img id="image8" class="flash-image"
                     src="images/1998.jpg"
                     alt="1998 Daily Herald Article">
-                <img id="image6" class="flash-image"
+                <img id="image9" class="flash-image"
                     src="images/1999.jpg"
                     alt="1999 Daily Herald Article">
-                <img id="image7" class="flash-image"
+                <img id="image10" class="flash-image"
                     src="images/2010.png"
                     alt="2010 Daily Herald Article">
-                <img id="image8" class="flash-image"
+                <img id="image11" class="flash-image"
                     src="images/2018PerryHired.png"
                     alt="2018 Daily Herald Article">
-                <img id="image9" class="flash-image"
+                <img id="image12" class="flash-image"
                     src="images/2023img1.png"
                     alt="2023 Daily Herald Article">
-                <img id="image10" class="flash-image"
+                <img id="image13" class="flash-image"
                     src="images/2024.png"
                     alt="2024 Daily Herald Article">
             </div>

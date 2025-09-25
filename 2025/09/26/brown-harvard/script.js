@@ -52,11 +52,15 @@ document.addEventListener("DOMContentLoaded", function () {
         let bgIndex = 0;
         if (scrollY >= triggerPoint) {
             bgIndex = 1; // Switch to bg2 at 250vh
+            document.body.offsetHeight;
         }
 
         if (bgIndex !== lastBgIndex) {
+            document.body.style.transition = 'none'; // Disable transition for instant change
             document.body.style.backgroundImage = bgImages[bgIndex];
             lastBgIndex = bgIndex;
+            // Force a reflow to ensure the change is applied immediately
+            document.body.offsetHeight;
         }
     }
 
@@ -78,6 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
         "Brown – Harvard 1893",
         "Brown – Harvard 1966",
         "Brown – Harvard 1966",
+        "Brown – Harvard 1973",
+        "Brown – Harvard 1973",
+        "Brown – Harvard 1973",
         "Brown – Harvard 1973",
         "Brown – Harvard 1973",
         "Brown – Harvard 1973",
