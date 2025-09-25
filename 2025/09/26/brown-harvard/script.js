@@ -112,9 +112,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Show/hide #collage for trigger1
                 if (idx === 0) {
                     const collage = document.getElementById("collage");
+                    const scrollImage = document.getElementById("scrollImage1");
                     if (event.scrollDirection === "FORWARD") {
                         collage.style.display = "block";
+                        scrollImage.style.opacity = 0;
                     } else {
+                        scrollImage.style.opacity = 1;
                         collage.style.display = "none";
                     }
                 }

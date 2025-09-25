@@ -471,4 +471,17 @@ a {
     .caption {
         width: 70%;
     }
+
+    .stripe-transition {
+        opacity: 0;
+        height: 80vh;
+    }
+
+    #needsLessHeight {
+        height: 25vh;
+    }
+
+    body {
+        background-image: none !important;
+    }
 }
