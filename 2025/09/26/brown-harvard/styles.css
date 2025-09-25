@@ -481,6 +481,10 @@ a {
         height: 25vh;
     }
 
+    #needsMoreHeight {
+        height: 120vh;
+    }
+
     body {
         background-image: none !important;
     }
