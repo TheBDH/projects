@@ -17,17 +17,25 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
         <script src="script.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     </head>
     <body>
         <div id="dramatic-intro">
-            <div class="intro-text" id="intro1" style="display: none;">Brown and Harvard have played
+            <div class="intro-text" id="intro1" style="display: none;">Brown and
+                Harvard have played
                 123 football games.</div>
-            <div class="intro-text" id="intro2" style="display: none;">Brown has won 31 times.</div>
-            <div class="intro-text" id="intro3" style="display: none;">Two games ended in a tie.</div>
-            <div class="intro-text" id="intro4" style="display: none;">Harvard won the other 90.</div>
+            <div class="intro-text" id="intro2" style="display: none;">Brown has
+                won 31 times.</div>
+            <div class="intro-text" id="intro3" style="display: none;">Two games
+                ended in a tie.</div>
+            <div class="intro-text" id="intro4" style="display: none;">Harvard
+                won the other 90.</div>
         </div>
         <div style="height: 250vh;"></div>
-        <img class="stripe-transition" src="images/footballBackgroundFullMainLinesFlipped.png" alt="1893 Daily Herald Article">
+        <img class="stripe-transition"
+            src="images/footballBackgroundFullMainLinesFlipped.png"
+            alt="1893 Daily Herald Article">
         <div id="heading" style="display: block;">
             <a href="https://www.browndailyherald.com" target="_blank">
                 <img
@@ -87,11 +95,13 @@
         <img class="background-img" src="images/1924img2.jpg"
             alt="A football punt">
         <div class="image-credit" style="text-align: center;">
-            <p>1924 Harvard vs. Brown — Photo Courtesy of the Brown Daily Herald</p>
+            <p>1924 Harvard vs. Brown — Photo Courtesy of the Brown Daily
+                Herald</p>
         </div>
         <div style="height: 20vh;"></div>
         <div class="data-box big-numbers">
-            <h2 style="text-align: center;">Brown vs. Harvard by the numbers</h2>
+            <h2 style="text-align: center;">Brown vs. Harvard by the
+                numbers</h2>
             <div class="number-container">
                 <div class="number-item item1">
                     <h3>1,743</h3>
@@ -133,7 +143,8 @@
             <div class="number-container">
                 <div class="number-item item3">
                     <h3>123</h3>
-                    <p>Harvard–Brown football games (second most frequent Brown opponent [128 vs. Yale])</p>
+                    <p>Harvard–Brown football games (second most frequent Brown
+                        opponent [128 vs. Yale])</p>
                 </div>
             </div>
         </div>
@@ -141,7 +152,8 @@
         <img class="background-img" src="images/1952.jpg"
             alt="Brown vs. Harvard football">
         <div class="image-credit" style="text-align: center;">
-            <p>1952 Harvard vs. Brown — Photo Courtesy of the Brown Daily Herald</p>
+            <p>1952 Harvard vs. Brown — Photo Courtesy of the Brown Daily
+                Herald</p>
         </div>
         <div style="height: 20vh;"></div>
         <div class="chart" id="chart-1">
@@ -174,8 +186,81 @@
             </script>
         </div>
         <div id="data-history">
-            <img class="stripe-transition" src="images/footballBackgroundFullMainLines.png" alt="1893 Daily Herald Article">
-            <img class="background-img-fill" src="images/1893.jpg" alt="1893 Daily Herald Article">
+            <img class="stripe-transition"
+                src="images/footballBackgroundFullMainLines.png"
+                alt="1893 Daily Herald Article">
+            <div id="trigger1"></div>
+            <img id="scrollImage1" style="position: relative; z-index: -3" class="background-img-fill"
+                    src="images/1893.jpg"
+                    alt="1893 Daily Herald Article">
+            <div class="caption">Brown football played their first game against Harvard in 1893...and lost by a historic margin.</div>
+            <div id="trigger2"></div>
+            <div style="height: 100vh"></div>
+            <div class="caption">After 23 consecutive losses to begin the rivalry, Brown finally won in the midst of the first World War. We couldn't find any record of that 1916 win, but Brown also took the next meeting in 1918.</div>
+            <div id="trigger3"></div>
+            <div style="height: 100vh"></div>
+            <div class="caption">In 1925, Brown vs. Harvard was conducted in Providence for the first time, following the completion of Brown Stadium. The stadium celebrates its 100th anniversary this season.</div>
+            <div id="trigger4"></div>
+            <div style="height: 100vh"></div>
+            <div class="caption">Brown pulled off a surprise victory in 1952. This marked the beginning of the most succesful decade in Brown football, as the Bruins went on a 5 game win streak from 1955-59 and finished the decade 6-3-1.</div>
+            <div id="trigger5"></div>
+            <div style="height: 100vh"></div>
+            <div class="caption">Quarterback James Perry '00 led Brown to victory at Harvard Stadium in 1998. It remains the last time Brown won on the road.</div>
+            <div id="trigger6"></div>
+            <div style="height: 100vh"></div>
+            <div class="caption">Perry and Brown won again in 1999, capping off another 6 win decade. This was the last time Brown won back-to-back matchups, another distinction the Bears will try to change on Saturday evening.</div>
+            <div id="trigger7"></div>
+            <div style="height: 100vh"></div>
+            <div class="caption">Brown won in 2010 for only the second time in the 21st century. The win was followed by the infamous 12 game losing streak that Brown snapped last year.</div>
+            <div id="trigger8"></div>
+            <div style="height: 100vh"></div>
+            <div class="caption">In December 2018, Brown hired the aforementioned James Perry as head coach. It remained to be seen if he could recapture the magic of the late 90s and end the losing streak.</div>
+            <div id="trigger9"></div>
+            <div style="height: 100vh"></div>
+            <div class="caption">The last time Brown traveled to Boston, in 2023, they came excruciatingly close to snapping the streak, but a 4th quarter comeback came up short.</div>
+            <div id="trigger10"></div>
+            <div style="height: 100vh"></div>
+            <div class="caption">But a year later, the comeback was meant to be. Brown recovered Harvard's fumbled field goal snap and scored the winning touchdown in the final seconds to the delight of a crowd of over 10,000.</div>
+            <div id="trigger11"></div>
+            <div style="height: 20vh"></div>
+            <img class="stripe-transition"
+            src="images/footballBackground.png"
+            alt="1893 Daily Herald Article">
+            <div class="outro-text" style="display: none;">On Saturday, they'll try to do it again.</div>
+            <div id="collage"
+                style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
+                <img id="image1" class="flash-image"
+                    src="images/1893.jpg"
+                    alt="1893 Daily Herald Article">
+                <img id="image2" class="flash-image"
+                    src="images/1918.jpg"
+                    alt="1976 Daily Herald Article">
+                <img id="image3" class="flash-image"
+                    src="images/1925.jpg"
+                    alt="1925 Daily Herald Article"
+                    style="object-position: top center;">
+                <img id="image4" class="flash-image"
+                    src="images/1952.jpg"
+                    alt="1952 Daily Herald Article">
+                <img id="image5" class="flash-image"
+                    src="images/1998.jpg"
+                    alt="1998 Daily Herald Article">
+                <img id="image6" class="flash-image"
+                    src="images/1999.jpg"
+                    alt="1999 Daily Herald Article">
+                <img id="image7" class="flash-image"
+                    src="images/2010.png"
+                    alt="2010 Daily Herald Article">
+                <img id="image8" class="flash-image"
+                    src="images/2018PerryHired.png"
+                    alt="2018 Daily Herald Article">
+                <img id="image9" class="flash-image"
+                    src="images/2023img1.png"
+                    alt="2023 Daily Herald Article">
+                <img id="image10" class="flash-image"
+                    src="images/2024.png"
+                    alt="2024 Daily Herald Article">
+            </div>
         </div>
     </body>
 </html>

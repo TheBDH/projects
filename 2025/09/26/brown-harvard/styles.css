@@ -75,6 +75,17 @@ body {
     transform: translateX(-50%);
 }
 
+.outro-text {
+    font-size: 2.5rem;
+    pointer-events: none;
+    text-align: center;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 2s;
+}
+
 h1 {
     text-align: center;
 }
@@ -323,11 +334,46 @@ a {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    object-position: right top;
+    object-position: left top;
     display: block;
     margin: 0;
     padding: 0;
 }
+
+.flash-image {
+    position: absolute;
+    object-position: left top;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.flash-image.visible {
+    opacity: 1;
+}
+
+.caption {
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+    font-size: 1.3rem;
+    text-align: center;
+    z-index: 1000; /* Increased z-index */
+    background-color: rgba(0, 0, 0, 0.8); /* Added black background */
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%; /* Make the background full width */
+    padding: 0.6rem; /* Add padding for better readability */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+#collage {
+    display: none;
+    background-color: black;
+    z-index: 50;
+}
+
 
 @media (max-width: 1200px) {
     #games-flex {
@@ -405,5 +451,8 @@ a {
 
     .image-credit {
         width: 150px;
+    }
+    .caption {
+        width: 70%;
     }
 }
