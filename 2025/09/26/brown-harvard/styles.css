@@ -80,6 +80,7 @@ body {
     pointer-events: none;
     text-align: center;
     position: fixed;
+    width: 90%;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -359,13 +360,18 @@ a {
     font-family: "freight-text-pro", "Georgia", "Times", serif;
     font-size: 1.3rem;
     text-align: center;
-    z-index: 1000; /* Increased z-index */
-    background-color: rgba(0, 0, 0, 0.8); /* Added black background */
+    z-index: 1000;
+    /* Increased z-index */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Added black background */
     margin-left: auto;
     margin-right: auto;
-    width: 40%; /* Make the background full width */
-    padding: 0.6rem; /* Add padding for better readability */
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    width: 40%;
+    /* Make the background full width */
+    padding: 0.6rem;
+    /* Add padding for better readability */
+    box-sizing: border-box;
+    /* Ensure padding doesn't affect width */
 }
 
 #collage {
@@ -449,9 +455,19 @@ a {
         max-width: 80%;
     }
 
+    .big-numbers,
+    .data-box {
+        max-width: 80%;
+    }
+
+    .chart {
+        max-width: 80%;
+    }
+
     .image-credit {
         width: 150px;
     }
+
     .caption {
         width: 70%;
     }
