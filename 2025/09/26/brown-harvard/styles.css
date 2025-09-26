@@ -372,13 +372,14 @@ a {
     text-align: center;
     z-index: 1000;
     /* Increased z-index */
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.88);
     /* Added black background */
     margin-left: auto;
     margin-right: auto;
     width: 40%;
+    line-height: 1.6;
     /* Make the background full width */
-    padding: 0.6rem;
+    padding: 15px;
     /* Add padding for better readability */
     box-sizing: border-box;
     /* Ensure padding doesn't affect width */
