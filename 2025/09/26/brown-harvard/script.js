@@ -92,8 +92,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "Brown – Harvard 1973",
         "Brown – Harvard 1973",
         "Brown – Harvard 1973",
-        "Brown – Harvard 1973"
-    ];
+        "Brown – Harvard 1973",
+        "Brown – Harvard 1973",
+        "Brown – Harvard 1973",
+        "Brown – Harvard 1973",
+        "Brown – Harvard 1973",
+        "Brown – Harvard 1973"    ];
 
     // List of trigger IDs, corresponding forward/backward image IDs, and captions
     const configs = captions.map((caption, index) => ({
