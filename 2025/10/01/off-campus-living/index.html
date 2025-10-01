@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Off-campus living</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="assets/house.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.js"></script>
+  </head>
+  <body>
+    <video id="bg-video" autoplay muted loop playsinline>
+      <source src="assets/college-hill.mp4" type="video/mp4" />
+    </video>
+    <div id="map">
+      <div id="legend">
+        <ul>
+          <li><span style="background-color: #4caf50"></span> Emma Baskin</li>
+          <li>
+            <span style="background-color: #6dc0d5"></span> Bethany Hughes
+          </li>
+          <li><span style="background-color: #ad7a99"></span> David Baskin</li>
+          <li>
+            <span style="background-color: #cb793a"></span> Edward Kazarian
+          </li>
+          <li>
+            <span style="background-color: #d64933"></span> Walter Bronhard
+          </li>
+          <li><span style="background-color: gray"></span> 257 Thayer St.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="scrolly">
+      <article>
+        <div
+          class="step"
+          data-coords="-71.39122750668932, 41.82626362759777"
+          data-step="0"
+          id="heading"
+        >
+          <a href="https://www.browndailyherald.com" target="_blank">
+            <img
+              src="assets/logo-black.png"
+              id="herald-logo"
+              alt="Brown Daily Herald Logo"
+            />
+          </a>
+          <h3>
+            A glimpse into <span id="accent-text">off-campus living</span>
+          </h3>
+          <p>
+            By the end of September, most students have
+            <span id="accent-text">already</span> signed their leases for the
+            following year.
+          </p>
+          <h6 id="byline">
+            Reporting by
+            <span class="author"
+              ><a
+                href="https://www.browndailyherald.com/staff/pavani-durbhakula"
+                target="_blank"
+                >Pavani Durbhakula</a
+              ></span
+            >
+            <br /><br />
+            Web design by
+            <span class="author"
+              ><a
+                href="https://www.browndailyherald.com/staff/annika-singh"
+                target="_blank"
+                >Annika Singh</a
+              ></span
+            >
+            <br /><br />
+            Media by
+            <span class="author"
+              ><a
+                href="https://www.browndailyherald.com/staff/max-robinson"
+                target="_blank"
+                >Max Robinson</a
+              ></span
+            >
+          </h6>
+        </div>
+        <div
+          class="step"
+          data-coords="-71.39122750668932, 41.82626362759777"
+          data-step="1"
+        >
+          <p>
+            As October arrives, many Brown students hoping to live off campus
+            next year have already signed leases around College Hill.
+            <br /><br />
+            Many of these units are owned by the same individuals, commonly
+            nicknamed by students as the “College Hill Landlords.” The Herald
+            spoke to three of these landlords to learn more about the off-campus
+            housing landscape.
+          </p>
+        </div>
+        <div
+          class="step"
+          data-coords="-71.39122750668932, 41.82626362759777"
+          data-step="2"
+        >
+          <p>
+            The leasing process often begins more than a year in advance of the
+            leases’ start dates, landlords say. According to David Baskin, a
+            landlord on College Hill, students looking for off-campus housing
+            for the 2026-27 school year started signing leases as early as this
+            May. <br /><br />
+            Baskin owns three buildings near Brown’s campus: 21 Euclid Ave., 165
+            Lloyd St. and 159 Lloyd St. Across these three properties, he rents
+            to more than a hundred Brown students.<br /><br />
+            Bethany Hughes ’10 has 40 students living in her five properties,
+            located at 42 John St., 171 Williams St., 173 Williams St., 175
+            Williams St. and 208 Williams St. Students began reaching out months
+            in advance to inquire about her available properties, she wrote. She
+            still gets about 10 emails each week from students looking for
+            off-campus housing for next year. <br /><br />
+            But it’s now too late — all of her properties are full, she wrote.
+            <br /><br />
+          </p>
+        </div>
+        <div
+          class="step"
+          data-coords="-71.38068090593716,41.82770267975988"
+          data-step="3"
+        >
+          <p>
+            Edward Kazarian, known by his residents as “Ed,” has been a landlord
+            for about a dozen College Hill properties over the last 40 years.
+            95% of his tenants are Brown students, he said in an interview with
+            The Herald.<br /><br />
+            Kazarian, Hughes and Baskin all told The Herald that Brown students
+            are drawn to off-campus housing for many reasons, including flexible
+            layouts, independence and living costs.
+          </p>
+        </div>
+        <div
+          class="step"
+          data-coords="-71.39668090593716,41.82970267975988"
+          data-step="4"
+        >
+          <p>
+            In Baskin’s experience, students have largely focused on bedroom and
+            bathroom layouts when choosing a property, he said.<br /><br />
+            When touring off-campus units last year, Vanessa Vu ’26 and her
+            roommates often came across “odd bedroom configurations, like
+            unequal size of rooms.” The group “toured many places that we didn’t
+            end up liking very much.”<br />
+            <br />
+            Vu eventually leased a five-bed, one-bath unit on John St that her
+            and her roommates currently live in.
+          </p>
+        </div>
+        <div
+          class="step"
+          data-coords="-71.39668090593716,41.82970267975988"
+          data-step="5"
+        >
+          <p>
+            Many students also move off campus in hopes of having their own
+            facilities.<br /><br />
+            “I wanted to live off campus because I wanted a living space of my
+            own, a proper kitchen with modern appliances and an apartment I
+            could modify to my liking,” wrote Alp Gurëş ’27, who currently lives
+            in a three-bed, two-bath unit in one of Baskin’s properties. He
+            signed his current lease last September and has already re-signed it
+            for next fall. <br /><br />
+            He added that he “really wanted a bidet” — something that would not
+            be possible in a dorm setting.<br /><br />
+            Students “want to have their own autonomy,” Baskin said.
+          </p>
+        </div>
+        <div
+          class="step"
+          data-coords="-71.39668090593716,41.82970267975988"
+          data-step="6"
+        >
+          <p>
+            Kazarian also shared a similar sentiment, adding that students may
+            not want to live “under institutional constraints” as they get
+            older. The surrounding neighborhoods become “an extension of
+            campus,” since so many friends groups end up living near each other,
+            he said.<br /><br />
+            “I already knew I wanted to go off campus for senior year for the
+            feeling of independence,” Vu wrote, “and I felt like none of the
+            existing on-campus options had everything I wanted.” Location
+            factors were also important for Vu, who wanted to live on South
+            Campus in closer proximity to Wickenden Street and Trader Joe’s.<br /><br />
+            “The reason why students like my properties is because (they’re)
+            literally on campus,” Baskin wrote, adding that his buildings are in
+            a “very safe location” with on-site management. <br /><br />
+            “It’s almost like a white-glove service,” he added.
+          </p>
+        </div>
+        <div
+          class="step"
+          data-coords="-71.3944386218653, 41.82384400998362"
+          data-step="7"
+        >
+          <p>
+            When deciding whether to live on or off campus, a vast majority of
+            students consider the cost of both housing and food.<br /><br />
+            For the 2025-26 school year, on-campus housing and a 20 Weekly Meal
+            Plan cost a total of $18,514 per year, or just over $2,000 per
+            month. In comparison, most Brown students living in private
+            off-campus housing pay $800 to $1,400 per month, not including the
+            cost of food, according to Hughes.<br /><br />
+            “It might make economic sense” for students to live off campus,
+            Kazarian said. “Up until this past year, the rents have been pretty
+            steady.”
+          </p>
+        </div>
+        <div class="step" data-coords="0,0" data-step="8">
+          <p>
+            This year, landlords
+            <a
+              href="https://council.providenceri.gov/2025/06/26/providence-city-council-announces-fairer-tax-rates-after-reaching-agreement-with-mayor/"
+              target="_blank"
+              >faced</a
+            >
+            a city-wide property tax increase, but Kazarian said he “tried to
+            keep that impact very, very minimal” for students.<br /><br />
+            In addition to taxes imposed on landlords, the costs of gas,
+            electricity, water and sewage have more than doubled over the past
+            five years, according to Baskin, who noted that he also needs to pay
+            his employees on top of these expenses. <br /><br />
+            “We have kept our rent really low,” said Hughes. She charges renters
+            a relatively low monthly rate of $650 to $750 per bedroom “since
+            (she) bought in a long time ago,” starting in her junior year at
+            Brown.<br /><br />
+            These rates, she said, have “kept demand high.”
+          </p>
+        </div>
+        <div class="step" data-coords="0,0" data-step="9">
+          <p>
+            Baskin worries that government policies will force landlords to
+            continue raising their rents, he said. He mentioned a proposal put
+            forth before the City Council of Providence which, if passed, would
+            establish a $300 “<a
+              href="https://providenceri.iqm2.com/Citizens/Detail_LegiFile.aspx?Frame=&MeetingID=15235&MediaPosition=314402.000&ID=49758&CssClass="
+              target="_blank"
+              >Student Impact Fee</a
+            >” for students living off campus. Landlords would have to collect
+            this fee from students, and Baskin said landlords “don’t want
+            another tax on the students.”<br /><br />
+            “We hope the students come together with us and (speak out) against
+            this particular ordinance proposal,” he added.
+          </p>
+        </div>
+        <div class="step" data-coords="0,0" data-step="10">
+          <p>
+            In addition to rising taxes, the landlords of College Hill must
+            contend with a frequent turnover rate among renters. “Students don’t
+            stay more than a year or two at most,” Kazarian said.<br /><br />
+            “Usually about 10% of my students renew” because they’re juniors,
+            but the rest are seniors who move out after a year, Baskin said.<br /><br />
+            Güreş is among this 10%. “I will have different roommates, but I’m
+            so happy to say that I won’t be moving out until May 2027,” he
+            wrote.
+          </p>
+        </div>
+        <div class="step" data-coords="0,0" data-step="11">
+          <p>
+            Though many students only stay for one year, the landlords have
+            little to no issues finding new renters. <br /><br />
+            For “most of my apartments, the tenants that we get are from
+            referrals from existing tenants,” Kazarian said, adding that “a lot
+            of it’s word of mouth” as students visit their friends’ apartments
+            and express interest in having the spot next year. He sometimes
+            refers groups of students to a different landlord if he doesn’t have
+            a unit that will work for them. <br /><br />
+            Güreş wrote that his apartment building is “so in-demand that you
+            kind of need to have an ‘in’ to be able to secure the unit you
+            want.” His roommate, who is now a senior, lived in the unit last
+            year, so Güreş and his roommates were “prioritized” when signing
+            their current lease.
+          </p>
+        </div>
+        <div class="step" data-coords="0,0" data-step="12">
+          <p>
+            According to these landlords, the outlook of off-campus housing is
+            bright. Demand is “definitely not declining,” Kazarian said. “I’ve
+            had multiple groups interested in the same quarters,” he added,
+            explaining there is often competition for some units.<br /><br />
+            Demand has “increased over the past 18 years that I have been
+            investing,” Hughes said, and she foresees that this will continue.
+            “You cannot beat the college experience of living in an off-campus
+            house with several of your friends.”<br /><br />
+            “I am super happy with my decision to live off campus and the place
+            we have,” Vu said. <br /><br />
+            For her, nothing is better than “cooking together with (her)
+            roommates and having people over in a homey-feeling space.”
+          </p>
+        </div>
+        <div class="step" data-coords="0,0" data-step="10" id="home">
+          <p>home</p>
+        </div>
+      </article>
+    </div>
+    <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
