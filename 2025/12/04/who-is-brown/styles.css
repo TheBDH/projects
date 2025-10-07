@@ -1,3 +1,11 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents scrollbars */
+  background-color: #333; /* Dark background color */
+}
+
+
 body {
     font-family: "freight-text-pro", "Georgia", "Times", serif;
     margin: 0px;
@@ -151,6 +159,21 @@ a {
     border: rgb(59, 59, 59) 2px solid;
     cursor: pointer;
     margin-bottom: 22px;
+}
+
+#cluster {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    background-color: #f7f7f7;
+    border: rgb(59, 59, 59) 2px solid;
+    cursor: pointer;
 }
 
 .down-arrow {
