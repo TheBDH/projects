@@ -1,0 +1,156 @@
+{
+    "date": "October 4 - October 10, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+        {
+            "question": "Approximately, how many Starbucks locations are there in Rhode Island?",
+            "type": "MC",
+            "choices": [
+                "5",
+                "20",
+                "30",
+                "50"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "The chain has around 30 locations in Rhode Island, including one in Wayland Square and another downtown. The Thayer Street location closed down last week.",
+            "link": "https://www.browndailyherald.com/article/2025/10/students-react-to-sudden-thayer-street-starbucks-closure"
+        },
+        {
+            "question": "What percentage of college students in the United States were diagnosed with a cold or respiratory illness in the past year?",
+            "type": "MC",
+            "choices": [
+                "30%",
+                "65%",
+                "80%",
+                "35%"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "About 35% of all college students in the United States were reported to be diagnosed with a cold or other respiratory illness in the past year.",
+            "link": "https://www.browndailyherald.com/article/2025/10/feeling-sick-the-science-behind-keeney-cough"
+        },
+        {
+            "question": "Which of the following could pose challenges to the University’s budget, according to Provost Doyle?",
+            "type": "MC",
+            "choices": [
+                "Federal financial aid changes",
+                "Increased endowment tax",
+                "Immigration-related barriers",
+                "All of the above"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Federal financial aid changes, an increased endowment tax and immigration-related barriers inhibiting master’s student enrollment could pose challenges for the University’s budget, Doyle said at the meeting.",
+            "link": "https://www.browndailyherald.com/article/2025/10/provost-doyle-outlines-long-term-financial-impact-of-federal-actions-shrinking-phd-cohorts"
+        },
+        {
+            "question": "What is Brown women's soccer's current ranking in the Ivy League?",
+            "type": "MC",
+            "choices": [
+                "1st",
+                "2nd",
+                "5th",
+                "8th"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Brown women’s soccer is now tied with Harvard for second place in the Ivy League. They beat Penn 4-0 in a pink-out on Saturday night.",
+            "link": "https://www.browndailyherald.com/article/2025/10/womens-soccer-cruises-past-penn-4-0-eyes-ivy-tournament"
+        },
+        {
+            "question": "How many students are currently participating in the Conversation Partners Program?",
+            "type": "MC",
+            "choices": [
+                "18",
+                "25",
+                "42",
+                "68"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "42 students have been paired with 40 staff members to practice their conversational English. Though the program is open to all multilingual students, it is mainly focused on international grad students.",
+            "link": "https://www.browndailyherald.com/article/2025/10/in-the-conversation-partners-program-international-students-develop-english-language-skills-lifelong-friendships"
+        },
+        {
+            "question": "Which Pulitzer-winning author gave a talk at the Cogut Institute on Monday?",
+            "type": "MC",
+            "choices": [
+                "Jhumpa Lahiri",
+                "Percival Everett",
+                "Hernan Diaz",
+                "Louise Erdrich"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "At a Monday evening event at the Cogut Institute for the Humanities, Pulitzer Prize-winning author Jhumpa Lahiri spoke about writing across various languages, her relationship with perfectionism and her upbringing in Rhode Island.",
+            "link": "https://www.browndailyherald.com/article/2025/10/pulitzer-winning-author-jhumpa-lahiri-reflects-on-writing-translation-at-cogut-event"
+        },
+        {
+            "question": "How many universities, including Brown, were asked to sign the Trump administration’s “Compact for Academic Excellence in Higher Education?”",
+            "type": "MC",
+            "choices": [
+                "4",
+                "8",
+                "11",
+                "9"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Nine schools were sent the proposal. Penn and Dartmouth were the only other Ivy League schools to receive the offer.",
+            "link": "https://www.browndailyherald.com/article/2025/10/trump-admin-asks-brown-to-freeze-tuition-cap-international-enrollment-for-funding-advantage-wsj-reports"
+        },
+        {
+            "question": "This weekend, Brown women’s volleyball swept which team for the first time?",
+            "type": "MC",
+            "choices": [
+                "Harvard",
+                "Princeton",
+                "Yale",
+                "Dartmouth"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "This historic weekend marked the team’s first ever sweep at Princeton, and their first reverse sweep since 2022.",
+            "link": "https://www.browndailyherald.com/article/2025/10/womens-volleyball-defeats-penn-princeton-in-historic-weekend"
+        },
+        {
+            "question": "By how much has homelessness in Rhode Island decreased in the last year?",
+            "type": "MC",
+            "choices": [
+                "2.8%",
+                "5.7%",
+                "10.1%",
+                "6.8%"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Homelessness in Rhode Island has decreased by 2.8%, according to a report released last month by the Rhode Island Coalition to End Homelessness.",
+            "link": "https://www.browndailyherald.com/article/2025/10/homelessness-in-ri-decreased-by-28-since-2024-new-report-shows"
+        },
+        {
+            "question": "How many tracks does Taylor Swift’s new album “The Life of a Showgirl” contain?",
+            "type": "MC",
+            "choices": [
+                "18",
+                "13",
+                "12",
+                "21"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "Released on Oct. 3, Swift’s 12th studio album has only 12 tracks and signals a new era in her discography.",
+            "link": "https://www.browndailyherald.com/article/2025/10/the-life-of-a-showgirl-has-nothing-to-show"
+        }
+    ]
+}
