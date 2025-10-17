@@ -83,6 +83,7 @@ a {
 @media (max-width: 600px) {
   .scrolly {
     width: 100%;
+    margin: 0;
   }
 
   .step {
