@@ -156,3 +156,9 @@ window.addEventListener("scroll", () => {
 
   progressBar.style.width = `${scrollPercent}%`;
 });
+
+document.body.style.overflow = "hidden";
+
+window.addEventListener("load", () => {
+  document.body.style.overflow = "auto";
+});
