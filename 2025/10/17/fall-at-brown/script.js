@@ -60,6 +60,9 @@ const allCredits = [
   "Media by Phoebe Grace Aseoche | The Brown Daily Herald",
   "Media by Sidney Lin | The Brown Daily Herald",
   "Media by Sidney Lin | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Max Robinson | The Brown Daily Herald",
+  "Media by Max Robinson | The Brown Daily Herald",
   "Media by Bomi Okimoto | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Bomi Okimoto | The Brown Daily Herald",
@@ -67,12 +70,10 @@ const allCredits = [
   "Media by Horatio Hamilton | The Brown Daily Herald",
   "Media by Sidney Lin | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
-  "Media by Max Robinson | The Brown Daily Herald",
-  "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Marat Basaria | The Brown Daily Herald",
   "Media by Max Robinson | The Brown Daily Herald",
   "Media by Bomi Okimoto | The Brown Daily Herald",
-  "Media by SeLin | The Brown Daily Heralda Kao",
+  "Media by Selina Kao | The Brown Daily Heralda Kao",
   "Media by Max Robinson | The Brown Daily Herald",
   "Media by Sidney Lin | The Brown Daily Herald",
   "Media by Kenna Lee | The Brown Daily Herald",
@@ -86,9 +87,8 @@ const allCredits = [
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Sidney Lin | The Brown Daily Herald",
   "Media by Marat Basaria | The Brown Daily Herald",
-  "Media by Max Robinson | The Brown Daily Herald",
   "Media by Phoebe Grace Aseoche | The Brown Daily Herald",
-  "Media by SeLin | The Brown Daily Heralda Kao",
+  "Media by Selina Kao | The Brown Daily Herald",
   "Media by Alayna Chen | The Brown Daily Herald",
   "Media by Max Robinson | The Brown Daily Herald",
 ];
@@ -116,14 +116,14 @@ scroller
       bgVideo.style.opacity = 0;
     }
 
-    if (stepIndex >= 7 && stepIndex <= 14) {
+    if (stepIndex >= 10 && stepIndex <= 15) {
       fwImages.forEach((img, idx) => {
-        img.classList.toggle("active", idx === stepIndex - 7);
+        img.classList.toggle("active", idx === stepIndex - 10);
       });
     }
 
-    if (stepIndex >= 20 && stepIndex <= 26) {
-      const blockIndex = stepIndex - 20;
+    if (stepIndex >= 21 && stepIndex <= 27) {
+      const blockIndex = stepIndex - 21;
       colorBlocks.forEach((block, idx) => {
         if (idx === blockIndex) {
           block.style.opacity = 1;
@@ -133,9 +133,9 @@ scroller
       });
     }
 
-    if (stepIndex >= 27 && stepIndex <= 37) {
+    if (stepIndex >= 28 && stepIndex <= 37) {
       fwImages2.forEach((img, idx) => {
-        img.classList.toggle("active", idx === stepIndex - 27);
+        img.classList.toggle("active", idx === stepIndex - 28);
       });
     }
 
