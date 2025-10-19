@@ -1,0 +1,156 @@
+{
+    "date": "October 11 - October 17, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+            {
+                "question": "Brown professor and anthropologist Ieva Jusionyte was recently awarded a MacArthur grant worth how much?",
+                "type": "MC",
+                "choices": [
+                "$10,000",
+                "$800,000",
+                "$500,000",
+                "$1.2 million"
+                ],
+                "answer": "b",
+                "image": null,
+                "alt": null,
+                "explanation": "On Oct. 8, the MacArthur Foundation named Ieva Jusionyte a 2025 MacArthur Fellow — an $800,000 grant recognizing extraordinary creativity.",
+                "link": "https://www.browndailyherald.com/article/2025/10/brown-anthropologist-ieva-jusionyte-awarded-macarthur-grant"
+            },
+            {
+                "question": "On Tuesday, the Brown Undergraduate Council of Students announced a referendum concerning what topic?",
+                "type": "MC",
+                "choices": [
+                "The Trump administration compact",
+                "A new vegan dining hall",
+                "Organizing a student strike",
+                "A vote of no confidence in the board of student organizations"
+                ],
+                "answer": "a",
+                "image": null,
+                "alt": null,
+                "explanation": "UCS announced a referendum on whether Brown should accept or reject the federal Compact for Academic Excellence in Higher Education.",
+                "link": "https://www.browndailyherald.com/article/2025/10/ucs-to-hold-referendum-on-whether-brown-should-accept-trump-administration-compact"
+            },
+            {
+                "question": "How many Brown students took an entrepreneurship course last year?",
+                "type": "MC",
+                "choices": [
+                "213",
+                "829",
+                "1,347",
+                "1,664"
+                ],
+                "answer": "d",
+                "image": null,
+                "alt": null,
+                "explanation": "Over 1,664 students enrolled in entrepreneurship courses last year, a 20% increase, with the Nelson Center cited as a driver.",
+                "link": "https://www.browndailyherald.com/article/2025/10/from-dorm-room-to-boardroom-how-student-startups-find-their-next-big-idea"
+            },
+            {
+                "question": "When was the S/NC grading system established at Brown?",
+                "type": "MC",
+                "choices": [
+                "2006",
+                "1921",
+                "1969",
+                "1994"
+                ],
+                "answer": "c",
+                "image": null,
+                "alt": null,
+                "explanation": "The S/NC option was implemented with the Open Curriculum in 1969 to encourage exploration and academic risk-taking.",
+                "link": "https://www.browndailyherald.com/article/2025/10/how-students-decide-whether-to-take-a-course-snc"
+            },
+            {
+                "question": "At least how many departments have had their Ph.D admissions paused for the 2026-27 academic year?",
+                "type": "MC",
+                "choices": [
+                "2",
+                "4",
+                "6",
+                "8"
+                ],
+                "answer": "c",
+                "image": null,
+                "alt": null,
+                "explanation": "Leaders of at least six departments were told their Ph.D. program admissions would be paused for 2026–27 amid budget cuts.",
+                "link": null
+            },
+            {
+                "question": "How many miles did students walk in the “Walk Across Rhode Island” event on Oct. 12?",
+                "type": "MC",
+                "choices": [
+                "30",
+                "20",
+                "15",
+                "45"
+                ],
+                "answer": "a",
+                "image": null,
+                "alt": null,
+                "explanation": "Nearly 200 students walked 30 miles in 12 hours, raising over $4,000 for malaria prevention.",
+                "link": "https://www.browndailyherald.com/article/2025/10/nearly-200-students-walk-30-miles-across-the-state-of-rhode-island"
+            },
+            {
+                "question": "When did the Korean Language Program’s celebration of Hangeul, the Korean alphabet, begin?",
+                "type": "MC",
+                "choices": [
+                "Sept. 29",
+                "Oct. 1",
+                "Oct. 5",
+                "Oct. 13"
+                ],
+                "answer": "a",
+                "image": null,
+                "alt": null,
+                "explanation": "The celebration began Sept. 29, featuring a Hangeul Truck translating English messages into Korean and other events.",
+                "link": "https://www.browndailyherald.com/article/2025/10/a-touring-truck-main-green-games-and-a-linguistics-lecture-how-brown-celebrates-the-korean-language"
+            },
+            {
+                "question": "In what field did Professor Peter Howitt win the Nobel Prize?",
+                "type": "MC",
+                "choices": [
+                "Physiology or Medicine",
+                "Economic Sciences",
+                "Literature",
+                "Physics"
+                ],
+                "answer": "b",
+                "image": null,
+                "alt": null,
+                "explanation": "Professor Emeritus Peter Howitt won the Nobel Memorial Prize in Economic Sciences for work on growth via creative destruction.",
+                "link": "https://www.browndailyherald.com/article/2025/10/brown-professor-wins-nobel-prize-in-economics"
+            },
+            {
+                "question": "Axel Brito ’26 is running for Providence City Council as a member of what political party?",
+                "type": "MC",
+                "choices": [
+                "Republican",
+                "Democrat",
+                "Independent",
+                "Green party"
+                ],
+                "answer": "a",
+                "image": null,
+                "alt": null,
+                "explanation": "Brito is running as a Republican in the Ward 2 special election to fill a vacated City Council seat.",
+                "link": "https://www.browndailyherald.com/article/2025/10/axel-brito-26-attempts-to-become-first-republican-elected-to-providence-city-council-in-39-years"
+            },
+            {
+                "question": "When was the last time Brown football defeated both URI and Bryant in the same year?",
+                "type": "MC",
+                "choices": [
+                "5 years ago",
+                "2 years ago",
+                "10 years ago",
+                "7 years ago"
+                ],
+                "answer": "d",
+                "image": null,
+                "alt": null,
+                "explanation": "With wins over URI and Bryant, Brown achieved a feat they hadn’t accomplished in the preceding seven years.",
+                "link": "https://www.browndailyherald.com/article/2025/10/football-storms-back-from-12-0-halftime-deficit-to-overpower-bryant"
+            }
+    ]
+}
