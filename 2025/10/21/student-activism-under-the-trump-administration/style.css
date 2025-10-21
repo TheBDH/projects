@@ -29,6 +29,7 @@ body {
   border-radius: 15px;
   text-align: left;
   width: 70%;
+  font-size: 18px;
   background-color: var(--gray-color);
 }
 
