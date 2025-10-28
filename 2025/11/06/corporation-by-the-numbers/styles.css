@@ -8,7 +8,8 @@ body {
     color: #4B2E05; /* Deep Brown */
 }
 
-.data-box, .text-box {
+.data-box,
+.text-box {
     position: relative;
     max-width: 940px;
     width: 80%;
@@ -18,8 +19,10 @@ body {
     z-index: 10;
     font-family: "freight-text-pro", "Georgia", "Times", serif;
     font-size: 1.2em;
-    box-sizing: border-box; /* Ensure padding is included in width calculation */
-    color: rgb(12, 12, 12); /* Apply color for text-box */
+    box-sizing: border-box;
+    /* Ensure padding is included in width calculation */
+    color: rgb(12, 12, 12);
+    /* Apply color for text-box */
 }
 
 
@@ -210,11 +213,13 @@ a {
     #logo {
         width: 200px;
     }
+
     #herald-logo {
         max-width: 200px;
     }
 
-    .data-box, .text-box {
+    .data-box,
+    .text-box {
         max-width: 90%;
         padding: 1em;
     }

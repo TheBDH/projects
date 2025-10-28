@@ -1,0 +1,156 @@
+{
+    "date": "October 18 - October 24, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+            {
+                "question": "What was the score of the women’s soccer game against Harvard last Saturday?",
+                "type": "MC",
+                "choices": [
+                    "2-2",
+                    "3-2",
+                    "4-2",
+                    "6-7"
+                ],
+                "answer": "a",
+                "image": null,
+                "alt": null,
+                "explanation": "On Saturday night, the women’s soccer team (8-2-4, 2-1-2 Ivy) tied Ivy League leader Harvard (5-4-3, 3-1-1 Ivy) 2-2 following a heated matchup in Cambridge. Entering the weekend, Brown had the chance to claim the No. 1 spot in the Ivy League, but following the draw, they fell to fourth.",
+                "link": "https://www.browndailyherald.com/article/2025/10/womens-soccer-draws-2-2-at-harvard"
+            },
+            {
+                "question": "Which artist’s work is featured in a new exhibit at the Watson School for International and Public Affairs?",
+                "type": "MC",
+                "choices": [
+                    "Pablo Picasso",
+                    "Mary Beth Meehan",
+                    "Keith Haring",
+                    "Azadeh Ghotbi"
+                ],
+                "answer": "d",
+                "image": null,
+                "alt": null,
+                "explanation": "On Sept. 24, Art at Watson unveiled their most recent installation: “In the Name of FREƎDOM” by Azadeh Ghotbi ’91. The installation will be on display until Dec. 15 in Stephen Robert ’62 Hall.",
+                "link": "https://www.browndailyherald.com/article/2025/10/azadeh-ghotbi-91-looks-to-spark-dialogue-with-new-exhibit-at-watson-school"
+            },
+            {
+                "question": "Approximately how many Rhode Island residents’ personal info was compromised in the Brightstar Lottery Group data breach?",
+                "type": "MC",
+                "choices": [
+                    "6,000",
+                    "7,000",
+                    "8,000",
+                    "9,000"
+                ],
+                "answer": "a",
+                "image": null,
+                "alt": null,
+                "explanation": "Earlier this month, Brightstar Lottery Group notified the Rhode Island Attorney General’s Office and impacted individuals about a data breach that compromised the personal information of over 6,000 R.I. residents. The company is the state’s exclusive lottery supplier through 2043.",
+                "link": "https://www.browndailyherald.com/article/2025/10/over-6000-ri-residents-personal-info-compromised-in-brightstar-lottery-group-data-breach"
+            },
+            {
+                "question": "How much total money did Delaney O’Dea ’28 win on “Jeopardy!”?",
+                "type": "MC",
+                "choices": [
+                    "$21,600",
+                    "$24,000",
+                    "$26,700",
+                    "$21,670"
+                ],
+                "answer": "a",
+                "image": null,
+                "alt": null,
+                "explanation": "O’Dea placed first on the quiz show’s Oct. 15 episode before returning for a second place finish on Thursday night. Between her two appearances, she earned a total prize of $21,600, clinching a spot as one of the show’s youngest champions.",
+                "link": "https://www.browndailyherald.com/article/2025/10/delaney-odea-28-wins-jeopardy-and-takes-home-over-20000"
+            },
+            {
+                "question": "Which organization does the course FREN 1410T: “L’expérience des réfugiés: déplacements, migrations” partner with?",
+                "type": "MC",
+                "choices": [
+                    "Rhode Island Commission for Human Rights",
+                    "R.I. Latino Arts",
+                    "Dorcas International Institute of Rhode Island",
+                    "Women’s Refugee Care"
+                ],
+                "answer": "d",
+                "image": null,
+                "alt": null,
+                "explanation": "Designed for students who have advanced proficiency in French, the course partners with Women’s Refugee Care, a Providence-based organization founded by Clement Shabani and Aline Binyungu, both French-speaking refugees from the Democratic Republic of the Congo.",
+                "link": "https://www.browndailyherald.com/article/2025/10/fren-1410t-lexperience-des-refugies-deplacements-migrations-connects-brown-students-to-providence-refugee-community"
+            },
+            {
+                "question": "What percent of students say they call their parents at least once a week?",
+                "type": "MC",
+                "choices": [
+                    "52 percent",
+                    "92 percent",
+                    "81 percent",
+                    "67 percent"
+                ],
+                "answer": "c",
+                "image": null,
+                "alt": null,
+                "explanation": "According to recent poll data, more than 81 percent of students reported calling their parents at least once per week.",
+                "link": "https://www.browndailyherald.com/article/2025/10/over-80-of-brown-students-call-their-parents-or-guardians-at-least-once-per-week-poll-finds"
+            },
+            {
+                "question": "Peter Howitt is Brown’s ______ Nobel laureate.",
+                "type": "MC",
+                "choices": [
+                    "Fourth",
+                    "Third",
+                    "Sixth",
+                    "First"
+                ],
+                "answer": "b",
+                "image": null,
+                "alt": null,
+                "explanation": "Howitt’s research, which he conducted alongside co-laureate Philipe Aghion, a French microeconomist, explores the relationship between technological innovation and the economy. With this award, Howitt became Brown’s third Nobel laureate.",
+                "link": "https://www.browndailyherald.com/article/2025/10/meet-peter-howitt-browns-third-nobel-laureate"
+            },
+            {
+                "question": "Which renowned filmmaker gave a talk at Brown this weekend in partnership with Brown 2026, a campus-wide initiative celebrating the 250th anniversary of American independence?",
+                "type": "MC",
+                "choices": [
+                    "Stephen Spielberg",
+                    "Ken Burns",
+                    "Martin Scorsese",
+                    "Quentin Tarantino"
+                ],
+                "answer": "b",
+                "image": null,
+                "alt": null,
+                "explanation": "On Friday, cinephiles, historians and Family Weekend attendees alike gathered for “An Evening with Ken Burns,” in the Salomon Center. In partnership with Brown 2026 — a campus-wide initiative celebrating the 250th anniversary of American independence — the event featured an exclusive screening of Burns’s upcoming documentary series.",
+                "link": "https://www.browndailyherald.com/article/2025/10/filmmaker-ken-burns-screens-discusses-upcoming-docuseries-at-family-weekend-event"
+            },
+            {
+                "question": "In what decade did the Providence Public School District start offering bilingual education programs?",
+                "type": "MC",
+                "choices": [
+                    "1950s",
+                    "1960s",
+                    "1970s",
+                    "1980s"
+                ],
+                "answer": "c",
+                "image": null,
+                "alt": null,
+                "explanation": "Since the 1970s, the Providence Public School district has offered bilingual education programs to students across the district. Though the benefits of the program are clear, capacity is limited.",
+                "link": "https://www.browndailyherald.com/article/2025/10/students-in-bilingual-education-programs-in-ppsd-schools-academically-outperform-their-peers"
+            },
+            {
+                "question": "How many attendees were at Providence’s “No Kings” rally on Saturday?",
+                "type": "MC",
+                "choices": [
+                    "40,000",
+                    "67,000",
+                    "25,000",
+                    "32,000"
+                ],
+                "answer": "d",
+                "image": null,
+                "alt": null,
+                "explanation": "Sponsored by the R.I. Resistance Coalition and other community groups, Providence’s protest saw a turnout of 32,000, according to organizers.",
+                "link": "https://www.browndailyherald.com/article/2025/10/thousands-protest-trump-administration-at-no-kings-rally"
+            }
+    ]
+}
