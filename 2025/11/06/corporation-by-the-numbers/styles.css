@@ -4,8 +4,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    background-color: #f6f0f0e6;
-    color: rgb(190, 33, 33);
+    background-color: #F4E3C3; /* Soft Sand */
+    color: #4B2E05; /* Deep Brown */
 }
 
 .data-box, .text-box {
