@@ -4,8 +4,10 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    background-color: #F4E3C3; /* Soft Sand */
-    color: #4B2E05; /* Deep Brown */
+    background-color: #efe5d2;
+    /* Soft Sand */
+    color: #4B2E05;
+    /* Deep Brown */
 }
 
 .data-box,
