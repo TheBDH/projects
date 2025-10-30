@@ -5,6 +5,10 @@ const minuteHand = document.getElementById("minuteHand");
 const secondHand = document.getElementById("secondHand");
 const digital = document.getElementById("digitalTime");
 
+let lastHourDeg = 0;
+let lastMinuteDeg = 0;
+let scrollDirection = "down";
+
 function setClockTime(timeStr) {
   const [hourStr, minuteStr] = timeStr.split(":");
   let hour = parseInt(hourStr);
@@ -12,13 +16,23 @@ function setClockTime(timeStr) {
 
   hour = hour % 12;
 
-  const hourDeg = (hour + minute / 60) * 30;
-  const minuteDeg = minute * 6;
-  const secondDeg = 0;
+  let hourDeg = (hour + minute / 60) * 30;
+  let minuteDeg = minute * 6;
+
+  if (scrollDirection === "down") {
+    while (hourDeg < lastHourDeg) hourDeg += 360;
+    while (minuteDeg < lastMinuteDeg) minuteDeg += 360;
+  } else {
+    while (hourDeg > lastHourDeg) hourDeg -= 360;
+    while (minuteDeg > lastMinuteDeg) minuteDeg -= 360;
+  }
+
+  lastHourDeg = hourDeg;
+  lastMinuteDeg = minuteDeg;
 
   hourHand.style.transform = `translate(-50%, -100%) rotate(${hourDeg}deg)`;
   minuteHand.style.transform = `translate(-50%, -100%) rotate(${minuteDeg}deg)`;
-  secondHand.style.transform = `translate(-50%, -100%) rotate(${secondDeg}deg)`;
+  secondHand.style.transform = `translate(-50%, -100%) rotate(0deg)`;
 
   const ampm = hour >= 12 ? "PM" : "AM";
   digital.textContent = `${timeStr} ${ampm}`;
@@ -36,6 +50,7 @@ scroller
     const el = response.element;
     const t = el.dataset.time;
     const idx = response.index;
+    scrollDirection = response.direction;
 
     el.classList.add("active");
 
@@ -54,12 +69,9 @@ scroller
   })
   .onStepExit((response) => {
     const el = response.element;
+    scrollDirection = response.direction;
 
-    if (response.direction === "down") {
-      el.classList.remove("active");
-    } else if (response.direction === "up") {
-      el.classList.remove("active");
-    }
+    el.classList.remove("active");
   });
 
 window.addEventListener("resize", scroller.resize);
