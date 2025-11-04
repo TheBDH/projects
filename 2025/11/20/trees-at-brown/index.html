@@ -83,8 +83,96 @@
         </script>
     </div>
  <div class="data-box">
-    <iframe title="[ Insert title here ]" aria-label="Split Bars" id="datawrapper-chart-eJWh5" src="https://datawrapper.dwcdn.net/eJWh5/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="194" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
- </div>
-</body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tree Map (Brown Campus)</title>
 
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <!-- MarkerCluster CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+    />
+
+    <style>
+      #map {
+        height: 800px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Tree Map (Brown Campus)</h2>
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- MarkerCluster JS -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <!-- Papa Parse for reading CSV -->
+    <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+
+    <script>
+      // Load CSV file using Papa Parse
+      Papa.parse("Brown_Trees_Dataset_New.csv", {
+        download: true,
+        header: true,
+        dynamicTyping: true,
+        complete: function (results) {
+          const trees = results.data;
+
+          // Filter out rows without coordinates
+          const validTrees = trees.filter(
+            (t) => t.latitude && t.longitude
+          );
+
+          // Compute map center
+          const avgLat =
+            validTrees.reduce((sum, t) => sum + t.latitude, 0) /
+            validTrees.length;
+          const avgLon =
+            validTrees.reduce((sum, t) => sum + t.longitude, 0) /
+            validTrees.length;
+
+          // Initialize map
+          const map = L.map("map").setView([avgLat, avgLon], 15);
+
+          // Add base layer
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution:
+              'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+          }).addTo(map);
+
+          // Create MarkerCluster group
+          const markerCluster = L.markerClusterGroup();
+
+          // Add tree markers
+          validTrees.forEach((tree) => {
+            const popupContent = `
+              <b>Species:</b> ${tree.SPP || "Unknown"}<br>
+              <b>Diameter:</b> ${tree.DBH || "N/A"} inches
+            `;
+            const marker = L.marker([tree.latitude, tree.longitude]).bindPopup(
+              popupContent
+            );
+            markerCluster.addLayer(marker);
+          });
+
+          // Add clusters to map
+          map.addLayer(markerCluster);
+        },
+      });
+    </script>
+    
+  </body>
 </html>
