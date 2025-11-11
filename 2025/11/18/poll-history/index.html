@@ -95,6 +95,634 @@
                 type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
             </script>
         </div>
+        <div class="POLL SIM">
+            <nav id="navbar">
+                <div id="navbar-logo">
+                    <a href="https://www.browndailyherald.com" target="_blank"
+                        aria-label="Visit Brown Daily Herald">
+                        <img id="navbar-logo-img" src="assets/logo-black.png"
+                            alt="Brown Daily Herald Logo" />
+                    </a>
+                </div>
+                <h2 class="all-site-title"
+                    style="font-family: var(--header-font);padding:1rem;font-size:1.7rem;">
+                    <span class="desktop-title">Fall 2025 Poll</span>
+                    <span class="mobile-title" style="display:none;">Fall
+                        Poll</span>
+                </h2>
+                <!--TODO update link -->
+                <div id="nav-links">
+                    <a id="story-link"
+                        href="https://www.browndailyherald.com/article/2025/10/paxson-politics-and-partying-the-heralds-fall-2025-poll"
+                        , target="_blank">
+                        <div>Read the story</div>
+                        <img src="assets/white-arrow.svg"
+                            alt="White arrow icon" />
+                    </a>
+                </div>
+                <script>
+            window.addEventListener('resize', function() {
+                const desktopTitle = document.querySelector('.desktop-title');
+                const mobileTitle = document.querySelector('.mobile-title');
+                const readMore = document.querySelector('#nav-links');
+                if (window.innerWidth <= 768) {
+                    desktopTitle.style.display = 'none';
+                    mobileTitle.style.display = 'block';
+                    readMore.style.display = 'none';
+                } else {
+                    desktopTitle.style.display = 'block';
+                    mobileTitle.style.display = 'none';
+                    readMore.style.display = 'block';
+                }
+            });
+            window.dispatchEvent(new Event('resize'));
+        </script>
+            </nav>
+            <section class="section-wrapper">
+
+                <div class="question-categories-wrapper">
+                    <div class="question-categories">
+                        <button
+                            class
+                            data-target="demographics"
+                            id='demographics'>Demographics</button>
+                        <button
+                            class
+                            data-target="approval-ratings"
+                            id='approval-ratings'>Approval Ratings</button>
+                        <button
+                            class
+                            data-target="politics"
+                            id='politics'>Politics</button>
+                        <button
+                            class
+                            data-target="lifestyle"
+                            id='lifestyle'>Lifestyle & Future</button>
+                    </div>
+                </div>
+                <div class="main-content-wrapper">
+                    <div class="subdiv-graph-wrapper">
+                        <div class="question-subdivisions">
+                            <div
+                                class="question-demographics-subdivisions"
+                                style="display: none;">
+                                <h2 id="breakdown-header">Topics</h2>
+                                <button id="class-year"
+                                    class="class-year">Class Year</button>
+                                <button id="area-of-study"
+                                    class="area-of-study">Area of Study</button>
+                                <button id="race"
+                                    class="race">Race</button>
+                                <button id="sexual-orientation"
+                                    class="sexual-orientation">Sexual
+                                    Orientation</button>
+                                <button id="financial-aid"
+                                    class="financial-aid">Financial Aid</button>
+                                <button id="varsity-athlete"
+                                    class="varsity-athlete">Varsity
+                                    Athlete</button>
+                                <button id="legacy"
+                                    class="legacy">Legacy</button>
+                                <button id="religion"
+                                    class="religion">Religion</button>
+                                <button id="first-generation"
+                                    class="first-generation">First
+                                    Generation</button>
+
+                            </div>
+
+                            <div
+                                class="question-approval-ratings-subdivisions"
+                                style="display: none;">
+                                <h2 id="breakdown-header">Topics</h2>
+                                <button id="corporation"
+                                    class="corporation">Corporation</button>
+                                <button id="paxson"
+                                    class="paxson">Paxson</button>
+                                <button id="ucs"
+                                    class="ucs">UCS</button>
+                                <button id="ufb"
+                                    class="ufb">UFB</button>
+                                <button id="ccb"
+                                    class="ccb">CCB</button>
+                            </div>
+
+                            <div
+                                class="question-politics-subdivisions"
+                                style="display: none;">
+                                <h2 id="breakdown-header">Topics</h2>
+                                <button id="political-ideology"
+                                    class="political-ideology">Political
+                                    Ideology</button>
+                                <button id="friendships"
+                                    class="friendships">Friendships</button>
+                                <button id="uncomfortable-expressing-opinions"
+                                    class="uncomfortable-expressing-opinions">Uncomfortable
+                                    Expressing Opinions</button>
+                            </div>
+
+                            <div class="question-lifestyle-subdivisions"
+                                style="display: none;">
+                                <h2 id="breakdown-header">Topics</h2>
+                                <button id="relationship-status"
+                                    class="relationship-status">Relationship
+                                    Status</button>
+                                <button id="going-out"
+                                    class="going-out">Going Out</button>
+                                <button id="calling-parents"
+                                    class="calling-parents">Calling
+                                    Parents</button>
+                                <button id="school-spirit"
+                                    class="school-spirit">School Spirit</button>
+                                <button id="job-prospects"
+                                    class="job-prospects">Job Prospects</button>
+                            </div>
+                        </div>
+
+                        <div class="graphics">
+
+                            <!-- Demographics -->
+                            <div class="image-demographics-class-year"
+                                style="display: none;">
+                                <iframe
+                                    title="The majority of respondents were first and second years"
+                                    aria-label="Donut Chart"
+                                    id="datawrapper-chart-6dWPo"
+                                    src="https://datawrapper.dwcdn.net/6dWPo/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="631"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-demographics-area-of-study"
+                                style="display: none;">
+                                <iframe
+                                    title="Students who disapprove of the Corporation and President Paxson are more likely to study arts or humanities"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-LnIY7"
+                                    src="https://datawrapper.dwcdn.net/LnIY7/2/"
+                                    scrolling="no" frameborder="0"
+                                    style="border: none;" width="600"
+                                    height="775" data-external="1"></iframe>
+                            </div>
+
+                            <div class="image-demographics-race"
+                                style="display: none;">
+                                <iframe
+                                    title="Asians make up more of the underclassmen than upperclassmen"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-A0kCA"
+                                    src="https://datawrapper.dwcdn.net/A0kCA/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="1367"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-demographics-race"
+                                style="display: none;">
+                                <iframe
+                                    title="Legacy students, athlete respondents were more likely to identify as white"
+                                    aria-label="Split Bars"
+                                    id="datawrapper-chart-cDTi0"
+                                    src="https://datawrapper.dwcdn.net/cDTi0/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="951"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-demographics-sexual-orientation"
+                                style="display: none;">
+                                <iframe
+                                    title="Almost 40% of respondents do not identify as exclusively straight"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-QOYPI"
+                                    src="https://datawrapper.dwcdn.net/QOYPI/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="853"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-demographics-sexual-orientation"
+                                style="display: none;">
+                                <iframe
+                                    title="Over 60% of respondents identified as straight"
+                                    aria-label="Bar Chart"
+                                    id="datawrapper-chart-0C6Gx"
+                                    src="https://datawrapper.dwcdn.net/0C6Gx/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="420"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-demographics-financial-aid"
+                                style="display: none;">
+                                <iframe
+                                    title="Legacy Students are Less Likely to Receive Financial Aid"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-HoE1P"
+                                    src="https://datawrapper.dwcdn.net/HoE1P/3/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="323"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-demographics-varsity-athlete"
+                                style="display: none;">
+                                <iframe
+                                    title="The Majority of Students are not Varsity Athletes"
+                                    aria-label="Pie Chart"
+                                    id="datawrapper-chart-B84ZQ"
+                                    src="https://datawrapper.dwcdn.net/B84ZQ/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="632"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-demographics-legacy"
+                                style="display: none;">
+                                <iframe
+                                    title="15% of Brown students have some legacy status"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-M9YsI"
+                                    src="https://datawrapper.dwcdn.net/M9YsI/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="934"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-demographics-religion"
+                                style="display: none;">
+                                <iframe
+                                    title="Majority of Students Are Agnostic, Atheist, or Not Religious"
+                                    aria-label="Bar Chart"
+                                    id="datawrapper-chart-EFkGA"
+                                    src="https://datawrapper.dwcdn.net/EFkGA/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="379"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-demographics-first-generation"
+                                style="display: none;">
+                                <iframe
+                                    title="16% of Students at Brown Identify as a First Generation College Student"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-6sdnX"
+                                    src="https://datawrapper.dwcdn.net/6sdnX/3/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="1006"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <!-- Approval Ratings -->
+
+                            <div class="image-approval-ratings-corporation"
+                                style="display: none;">
+                                <iframe
+                                    title="32% of respondents disapprove of the Brown Corporation"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-hsFaj"
+                                    src="https://datawrapper.dwcdn.net/hsFaj/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="1388"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-approval-ratings-paxson"
+                                style="display: none;">
+                                <iframe
+                                    title="Paxson's approval recovers from Spring 2024 low"
+                                    aria-label="Area Chart"
+                                    id="datawrapper-chart-auasi"
+                                    src="https://datawrapper.dwcdn.net/auasi/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="493"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-approval-ratings-paxson"
+                                style="display: none;">
+                                <iframe
+                                    title="Underclass, white, or male students are more likely to approve of President Paxson"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-PE6bP"
+                                    src="https://datawrapper.dwcdn.net/PE6bP/2/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="1040"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-approval-ratings-ucs"
+                                style="display: none;">
+                                <iframe
+                                    title="Over 40% of students express approval of Undergraduate Council of Students"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-VqZZD"
+                                    src="https://datawrapper.dwcdn.net/VqZZD/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="390"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-approval-ratings-ufb"
+                                style="display: none;">
+                                <iframe
+                                    title="Majority of students neither approve nor disapprove of Undergraduate Finance Board"
+                                    aria-label="Donut Chart"
+                                    id="datawrapper-chart-TrgRz"
+                                    src="https://datawrapper.dwcdn.net/TrgRz/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="526"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-approval-ratings-ccb"
+                                style="display: none;">
+                                <iframe
+                                    title="Upperclass, female, or school spirited students are more likely to approve of the Class Coordinating Board"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-WfyEK"
+                                    src="https://datawrapper.dwcdn.net/WfyEK/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="662"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <!-- Politics -->
+
+                            <div class="image-politics-political-ideology"
+                                style="display: none;">
+                                <iframe
+                                    title="Over 75% respondents describe themselves as liberal or progressive"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-ZYeHI"
+                                    src="https://datawrapper.dwcdn.net/ZYeHI/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="959"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-politics-friendships"
+                                style="display: none;">
+                                <iframe
+                                    title="When forming friendships, almost 70% of Brown students say that it's important to share political perspectives"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-ufS5O"
+                                    src="https://datawrapper.dwcdn.net/ufS5O/2/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="928"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div
+                                class="image-politics-uncomfortable-expressing-opinions"
+                                style="display: none;">
+                                <iframe
+                                    title="Over 40% of students have felt uncomfortable expressing their political opinions in social settings"
+                                    aria-label="Split Bars"
+                                    id="datawrapper-chart-6U8PV"
+                                    src="https://datawrapper.dwcdn.net/6U8PV/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="1223"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <!-- Lifestyle -->
+
+                            <div class="image-lifestyle-relationship-status"
+                                style="display: none;">
+                                <iframe
+                                    title="Athletes and seniors were most likely to be in a long-term relationship"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-9PXRr"
+                                    src="https://datawrapper.dwcdn.net/9PXRr/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="1527"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-lifestyle-going-out"
+                                style="display: none;">
+                                <iframe
+                                    title="Students who studied arts or humanities or social sciences were most likely to go out 1-3 times a week"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-fiIjt"
+                                    src="https://datawrapper.dwcdn.net/fiIjt/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="1527"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-lifestyle-calling-parents"
+                                style="display: none;">
+                                <iframe
+                                    title="Over 80% of students call their parents or guardians at least once per week"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-2EO9Y"
+                                    src="https://datawrapper.dwcdn.net/2EO9Y/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="807"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-lifestyle-school-spirit"
+                                style="display: none;">
+                                <iframe
+                                    title="Athletes and first-years have more school spirit"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-cF8fr"
+                                    src="https://datawrapper.dwcdn.net/cF8fr/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="966"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                            <div class="image-lifestyle-job-prospects"
+                                style="display: none;">
+                                <iframe
+                                    title="Students who call their parents more often are more optimistic about the labor market"
+                                    aria-label="Stacked Bars"
+                                    id="datawrapper-chart-W3T91"
+                                    src="https://datawrapper.dwcdn.net/W3T91/1/"
+                                    scrolling="no" frameborder="0"
+                                    style="width: 0; min-width: 100% !important; border: none;"
+                                    height="432"
+                                    data-external="1"></iframe><script
+                                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <footer><p>Copyright © 2025 The Brown Daily Herald,
+                        Inc.</p></footer>
+            </section>
+        </div>
+        <script>
+    const buttons = document.querySelectorAll('.question-categories button');
+    let subButtons = document.querySelectorAll('.question-subdivisions button');
+    //const textSections = document.querySelectorAll('.question-text div');
+    const subSections = document.querySelectorAll('.question-subdivisions div');
+    const graphics = document.querySelectorAll('.graphics div')
+    let selectedButton = buttons[0].id;
+    let selectedSubButton = subButtons[0].id;
+    window.onload = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const questionParam = urlParams.get('question');
+        const breakdownParam = urlParams.get('breakdown');
+        if (questionParam && breakdownParam) {
+            selectedButton = questionParam;
+            selectedSubButton = breakdownParam;
+        } else if (questionParam) {
+            selectedButton = questionParam;
+        } else {
+            buttons[0].classList.add('selected');
+            subButtons[0].classList.add('selected');
+        }
+        for (const button of buttons) {
+            if (button.id === selectedButton) {
+                button.classList.add('selected');
+            }
+        }
+        for (const subButton of subButtons) {
+            if (subButton.id === selectedSubButton) {
+                subButton.classList.add('selected');
+            }
+        }
+        // for (const textSection of textSections) {
+        //     if (textSection.classList.contains(`question-${selectedButton}-text`)) {
+        //         textSection.style.display = 'block';
+        //     }
+        // }
+        for (const subSection of subSections) {
+            if (subSection.classList.contains(`question-${selectedButton}-subdivisions`)) {
+                subSection.style.display = 'flex';
+            }
+        }
+        for (const graphic of graphics) {
+            if (graphic.classList.contains(`image-${selectedButton}-${selectedSubButton}`)) {
+                graphic.style.display = 'block';
+            }
+            if (graphic.classList.contains(`blurb-${selectedButton}-${selectedSubButton}`)) {
+                graphic.style.display = 'block';
+            }
+        }
+        addButtonsListener();
+        addSubButtonsListener();
+    };
+    addButtonsListener = () => {
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                handleButtonClick(button)
+            });
+        });
+    }
+    addSubButtonsListener = () => {
+            subButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    handleSubButtonClick(button);
+                });
+            });
+    }
+    handleButtonClick = (button) => {
+        selectedButton = button.id;
+        selectName = button.className;
+        console.log(button.className)
+        buttons.forEach((b) => b.classList.remove('selected'));
+        //textSections.forEach((section) => section.style.display = 'none');
+        subSections.forEach((section) => section.style.display = 'none');
+        button.classList.add('selected');
+        const target = button.dataset.target;
+        //document.querySelector(`.question-${target}-text`).style.display = 'block';
+        document.querySelector(`.question-${target}-subdivisions`).style.display = 'flex';
+        subButtons = document.querySelectorAll(`.question-${target}-subdivisions button`);
+        subButtons.forEach((b) => b.classList.remove('selected'));
+        subButtons[0].classList.add('selected');
+        selectedSubButton = subButtons[0].id;
+        updateImage()
+        updateText(selectName)
+    }
+handleSubButtonClick = (button) => {
+    selectedSubButton = button.id;
+    selectedName = button.className;
+    subButtons.forEach((b) => b.classList.remove('selected'));
+    button.classList.add('selected');
+    updateImage();
+    updateText(selectedName)
+}
+
+    updateImage = () => {
+        graphics.forEach((div) => {
+            div.style.display = 'none'
+        });
+        const selectedImages = document.querySelectorAll(`.image-${selectedButton}-${selectedSubButton}`);
+        selectedImages.forEach((image) => {
+            image.style.display = 'block';
+        });
+
+        // selectedEmbed = selectedImage.getElementsByClassName("flourish-embed flourish-chart")[0]
+        // selectedEmbed.style.display = "block"
+    }
+
+    updateText = (title) => {
+        const graphTitles = document.getElementsByClassName('graph-title');
+        for (let i=0; i<graphTitles.length; i++){
+                graphTitles[i].innerHTML = title.replace("selected", "")
+        }
+    }
+
+
+</script>
+
+
+</div>
+        
 
     </body>
 
