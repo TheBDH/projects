@@ -117,13 +117,23 @@
 
         <!-- NEW: Filter Controls -->
         <div class="p-4 bg-white rounded-lg shadow-md mb-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+            <!-- Changed grid to 5 columns -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-end">
                 <!-- Species Filter -->
                 <div>
                     <label for="species-filter" class="block text-sm font-medium text-gray-700">Filter by Species</label>
                     <select id="species-filter" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                         <option value="all">All Species</option>
                         <!-- Species options will be populated by JavaScript -->
+                    </select>
+                </div>
+                
+                <!-- NEW: Street Filter -->
+                <div>
+                    <label for="street-filter" class="block text-sm font-medium text-gray-700">Filter by Street</label>
+                    <select id="street-filter" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                        <option value="all">All Streets</option>
+                        <!-- Street options will be populated by JavaScript -->
                     </select>
                 </div>
 
@@ -136,6 +146,7 @@
                 <!-- Max DBH Filter -->
                 <div>
                     <label for="max-dbh-filter" class="block text-sm font-medium text-gray-700">Max. Diameter (inches)</label>
+
                     <input type="number" id="max-dbh-filter" placeholder="e.g., 50" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                 </div>
 
@@ -164,20 +175,62 @@
         let avgLat = 41.8268; // Default latitude
         let avgLon = -71.4029; // Default longitude
 
+        // --- NEW: Common Name Mapping ---
+        // Add any known scientific-to-common name pairs here
+        const SPECIES_COMMON_NAMES = {
+            'Acer platanoides': 'Norway Maple',
+            'Acer saccharum': 'Sugar Maple',
+            'Acer rubrum': 'Red Maple',
+            'Quercus rubra': 'Red Oak',
+            'Quercus palustris': 'Pin Oak',
+            'Platanus occidentalis': 'American Sycamore',
+            'Gleditsia triacanthos': 'Honey Locust',
+            'Tilia cordata': 'Littleleaf Linden',
+            'Pyrus calleryana': 'Callery Pear',
+            'Ulmus americana': 'American Elm'
+            // Add more as needed...
+        };
+
+        // --- NEW: Helper function to get the display name ---
+        function getDisplayName(spp) {
+            if (spp && SPECIES_COMMON_NAMES[spp]) {
+                return `${spp} (${SPECIES_COMMON_NAMES[spp]})`;
+            }
+            return spp || "Unknown"; // Return the scientific name if no common name is found
+        }
+
         // 1. Function to populate filter dropdowns
         function populateFilters(trees) {
             const speciesFilter = document.getElementById('species-filter');
+            const streetFilter = document.getElementById('street-filter'); 
             const minDbhInput = document.getElementById('min-dbh-filter');
             const maxDbhInput = document.getElementById('max-dbh-filter');
 
-            // Get unique, non-null species and sort them
-            const species = [...new Set(trees.map(t => t.SPP).filter(s => s))].sort();
+            // --- UPDATED: Species Filter ---
+            const speciesSet = new Set(trees.map(t => t.SPP).filter(s => s));
+            const speciesWithCommon = [...speciesSet].map(spp => ({
+                scientific: spp,
+                display: getDisplayName(spp)
+            }));
             
-            species.forEach(spp => {
+            // Sort by the display name
+            speciesWithCommon.sort((a, b) => a.display.localeCompare(b.display));
+            
+            speciesWithCommon.forEach(s => {
                 const option = document.createElement('option');
-                option.value = spp;
-                option.textContent = spp;
+                option.value = s.scientific; // Value is the scientific name
+                option.textContent = s.display; // Text is the display name
                 speciesFilter.appendChild(option);
+            });
+
+            // --- UPDATED: Street Filter ---
+            const streets = [...new Set(trees.map(t => t.Street).filter(s => s))].sort();
+            
+            streets.forEach(street => {
+                const option = document.createElement('option');
+                option.value = street;
+                option.textContent = street;
+                streetFilter.appendChild(option);
             });
 
             // Get min/max DBH to set placeholders
@@ -194,9 +247,8 @@
         function updateMap() {
             // Get current filter values
             const selectedSpecies = document.getElementById('species-filter').value;
-            // Use 0 if input is empty or invalid
+            const selectedStreet = document.getElementById('street-filter').value;
             const minDbh = parseFloat(document.getElementById('min-dbh-filter').value) || 0;
-            // Use Infinity if input is empty or invalid
             const maxDbh = parseFloat(document.getElementById('max-dbh-filter').value) || Infinity;
 
             // Clear existing markers
@@ -205,18 +257,19 @@
             // Filter the trees based on criteria
             const filteredTrees = allTrees.filter(tree => {
                 const speciesMatch = (selectedSpecies === 'all' || tree.SPP === selectedSpecies);
-                
-                // Handle trees with no DBH data (treat as 0 or include them if range is default)
+                const streetMatch = (selectedStreet === 'all' || tree.Street === selectedStreet);
                 const dbh = tree.DBH || 0; 
                 const dbhMatch = (dbh >= minDbh && dbh <= maxDbh);
                 
-                return speciesMatch && dbhMatch;
+                return speciesMatch && streetMatch && dbhMatch;
             });
 
             // Add new markers for filtered trees
             filteredTrees.forEach((tree) => {
+                // --- UPDATED: Popup content ---
                 const popupContent = `
-                    <b>Species:</b> ${tree.SPP || "Unknown"}<br>
+                    <b>Species:</b> ${getDisplayName(tree.SPP)}<br>
+                    <b>Street:</b> ${tree.Street || "N/A"}<br>
                     <b>Diameter:</b> ${tree.DBH || "N/A"} inches
                 `;
                 const marker = L.marker([tree.latitude, tree.longitude]).bindPopup(
@@ -268,15 +321,6 @@
             // Create MarkerCluster group
             markerCluster = L.markerClusterGroup();
 
-            // --- UPDATED SECTION ---
-            // To use a Google Sheet:
-            // 1. In Google Sheets, go to File > Share > Publish to web
-            // 2. Select your sheet, and publish it as a "Comma-separated values (.csv)" file.
-            // 3. Paste the public URL here.
-            
-            // Make sure your Google Sheet has the same column names: 
-            // 'latitude', 'longitude', 'SPP', 'DBH'
-
             // --- !! REPLACE THIS URL WITH YOUR OWN !! ---
             const csv_url = ""; // <-- e.g., "https://docs.google.com/spreadsheets/d/e/..."
             
@@ -323,6 +367,7 @@
             
             document.getElementById('reset-filters-btn').addEventListener('click', () => {
                 document.getElementById('species-filter').value = 'all';
+                document.getElementById('street-filter').value = 'all';
                 document.getElementById('min-dbh-filter').value = '';
                 document.getElementById('max-dbh-filter').value = '';
                 updateMap();
