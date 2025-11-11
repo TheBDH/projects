@@ -12,152 +12,326 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trees@Brown</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Trees@Brown - The Street Trees of College Hill</title>
+    
+    <!-- CSS and Fonts -->
+    <link rel="stylesheet" href="styles.css"> <!-- Assuming you have a styles.css, otherwise remove -->
     <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
+    <link rel="stylesheet" href="https://use.typekit.net/brt8lxm.css"> <!-- newspaper font -->
     <link rel="icon" href="images/icon.png" sizes="96x96">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-    <script src="script.js"></script>
-    <!-- newspaper font -->
-    <link rel="stylesheet" href="https://use.typekit.net/brt8lxm.css">
-</head>
-
-<body>
-    <div id="trigger"></div>
-    <div id="spacer"></div>
-    <div class="full-screen-bg"
-        style="background-image: url('images/background1.jpg'); background-size: cover; background-position: center; height: 100vh; width: 100%; margin: 0; padding: 0; background-repeat: no-repeat;">
-    </div>
-    <div id="heading">
-        <a href="https://www.browndailyherald.com" target="_blank">
-            <img src="images/logo-black.png" id="herald-logo" alt="Brown Daily Herald Logo" />
-        </a>
-        <h3 style="text-align: center;">
-            Trees@Brown
-        </h3>
-        <p style="text-align: center;">
-            The Street Trees of College Hill
-        </p>
-        <h6 id="byline" style="text-align: center;">
-            Reporting by
-            <a href="https://www.browndailyherald.com/staff/claire-song" target="_blank"><span
-                    class="author">TKTK</span></a>
-            <br>
-            <br>
-            Data analysis by
-            <a href="https://www.browndailyherald.com/staff/maya-davis" target="_blank"><span
-                    class="author">TKTK</span></a>
-            <a href="https://www.browndailyherald.com/staff/kenna-lee" target="_blank"><span
-                    class="author">TKTK</span></a>
-            <a href="https://www.browndailyherald.com/staff/claire-song" target="_blank"><span
-                    class="author">TKTK</span></a>
-            <br>
-            <br>
-            Web design by
-            <a href="https://www.browndailyherald.com/staff/caleb-ellenberg" target="_blank"><span
-                    class="author">TKTK</span></a>
-
-            <a href="https://www.browndailyherald.com/staff/kenna-lee" target="_blank"><span
-                    class="author">TKTK</span></a>
-        </h6>
-        <div class="down-arrow" style="text-align: center;">
-            &#x2193;
-        </div>
-    </div>
-
- <div class="data-box">
-  
-    <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Tree Map (Brown Campus)</title>
 
     <!-- Leaflet CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <!-- MarkerCluster CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
-    />
-
-    <style>
-      #map {
-        height: 800px;
-        width: 100%;
-      }
-    </style>
-  </head>
-  <body>
-    <h2>Tree Map (Brown Campus)</h2>
-    <div id="map"></div>
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    
+    <!-- JS Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- MarkerCluster JS -->
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <!-- Papa Parse for reading CSV -->
     <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
-
-    <script>
-      // Load CSV file using Papa Parse
-      Papa.parse("Brown_Trees_Dataset_New.csv", {
-        download: true,
-        header: true,
-        dynamicTyping: true,
-        complete: function (results) {
-          const trees = results.data;
-
-          // Filter out rows without coordinates
-          const validTrees = trees.filter(
-            (t) => t.latitude && t.longitude
-          );
-
-          // Compute map center
-          const avgLat =
-            validTrees.reduce((sum, t) => sum + t.latitude, 0) /
-            validTrees.length;
-          const avgLon =
-            validTrees.reduce((sum, t) => sum + t.longitude, 0) /
-            validTrees.length;
-
-          // Initialize map
-          const map = L.map("map").setView([avgLat, avgLon], 15);
-
-          // Add base layer
-          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            attribution:
-              'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
-          }).addTo(map);
-
-          // Create MarkerCluster group
-          const markerCluster = L.markerClusterGroup();
-
-          // Add tree markers
-          validTrees.forEach((tree) => {
-            const popupContent = `
-              <b>Species:</b> ${tree.SPP || "Unknown"}<br>
-              <b>Diameter:</b> ${tree.DBH || "N/A"} inches
-            `;
-            const marker = L.marker([tree.latitude, tree.longitude]).bindPopup(
-              popupContent
-            );
-            markerCluster.addLayer(marker);
-          });
-
-          // Add clusters to map
-          map.addLayer(markerCluster);
-        },
-      });
-    </script>
     
-  </body>
+    <!-- Your custom script.js, if you have one -->
+    <!-- <script src="script.js"></script> --> 
+
+    <style>
+        /* Simple style for the map container */
+        #map {
+            height: 800px;
+            width: 100%;
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
+        }
+
+        /* You can add your original styles.css content here if it's not a separate file */
+        /* Basic styles from original file (if styles.css is not used) */
+        #heading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            z-index: 10;
+        }
+        #herald-logo {
+            display: block;
+            margin: 0 auto 20px auto;
+            max-width: 300px;
+        }
+        .data-box {
+            padding: 2rem;
+            background-color: #f7fafc; /* A light gray background */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    
+    <!-- This section seems to be for a parallax/scroll effect -->
+    <div id="trigger"></div>
+    <div id="spacer"></div>
+
+    <!-- Full-screen background image -->
+    <div class="full-screen-bg"
+        style="background-image: url('images/background1.jpg'); background-size: cover; background-position: center; height: 100vh; width: 100%; margin: 0; padding: 0; background-repeat: no-repeat; position: relative;">
+        
+        <!-- Heading Content -->
+        <div id="heading">
+            <a href="https://www.browndailyherald.com" target="_blank">
+                <img src="images/logo-black.png" id="herald-logo" alt="Brown Daily Herald Logo" />
+            </a>
+            <h3 class="text-4xl font-bold text-center">Trees@Brown</h3>
+            <p class="text-xl text-center mt-2">
+                The Street Trees of College Hill
+            </p>
+            <h6 id="byline" class="text-center mt-6 text-sm">
+                Reporting by
+                <a href="https://www.browndailyherald.com/staff/claire-song" target="_blank" class="author underline hover:opacity-75">TKTK</a>
+                <br><br>
+                Data analysis by
+                <a href="https://www.browndailyherald.com/staff/maya-davis" target="_blank" class="author underline hover:opacity-75">TKTK</a>
+                <a href="https://www.browndailyherald.com/staff/kenna-lee" target="_blank" class="author underline hover:opacity-75">TKTK</a>
+                <a href="https://www.browndailyherald.com/staff/claire-song" target="_blank" class="author underline hover:opacity-75">TKTK</a>
+                <br><br>
+                Web design by
+                <a href="https://www.browndailyherald.com/staff/caleb-ellenberg" target="_blank" class="author underline hover:opacity-75">TKTK</a>
+                <a href="https://www.browndailyherald.com/staff/kenna-lee" target="_blank" class="author underline hover:opacity-75">TKTK</a>
+            </h6>
+            <div class="down-arrow text-center text-4xl mt-8 animate-bounce">
+                &#x2193;
+            </div>
+        </div>
+    </div>
+
+    <!-- Map and Filter Section -->
+    <div class="data-box container mx-auto p-4 md:p-8">
+        
+        <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Tree Map (Brown Campus)</h2>
+
+        <!-- NEW: Filter Controls -->
+        <div class="p-4 bg-white rounded-lg shadow-md mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+                <!-- Species Filter -->
+                <div>
+                    <label for="species-filter" class="block text-sm font-medium text-gray-700">Filter by Species</label>
+                    <select id="species-filter" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                        <option value="all">All Species</option>
+                        <!-- Species options will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <!-- Min DBH Filter -->
+                <div>
+                    <label for="min-dbh-filter" class="block text-sm font-medium text-gray-700">Min. Diameter (inches)</label>
+                    <input type="number" id="min-dbh-filter" placeholder="e.g., 0" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                </div>
+
+                <!-- Max DBH Filter -->
+                <div>
+                    <label for="max-dbh-filter" class="block text-sm font-medium text-gray-700">Max. Diameter (inches)</label>
+                    <input type="number" id="max-dbh-filter" placeholder="e.g., 50" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="flex gap-2">
+                    <button id="apply-filters-btn" class="w-1/2 px-4 py-2 bg-blue-600 text-white font-medium rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Apply
+                    </button>
+                    <button id="reset-filters-btn" class="w-1/2 px-4 py-2 bg-gray-300 text-gray-800 font-medium rounded-md shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Container -->
+        <div id="map"></div>
+    </div>
+
+    <!-- Map Initialization Script -->
+    <script>
+        // Global variables for the map and data
+        let map;
+        let markerCluster;
+        let allTrees = [];
+        let avgLat = 41.8268; // Default latitude
+        let avgLon = -71.4029; // Default longitude
+
+        // 1. Function to populate filter dropdowns
+        function populateFilters(trees) {
+            const speciesFilter = document.getElementById('species-filter');
+            const minDbhInput = document.getElementById('min-dbh-filter');
+            const maxDbhInput = document.getElementById('max-dbh-filter');
+
+            // Get unique, non-null species and sort them
+            const species = [...new Set(trees.map(t => t.SPP).filter(s => s))].sort();
+            
+            species.forEach(spp => {
+                const option = document.createElement('option');
+                option.value = spp;
+                option.textContent = spp;
+                speciesFilter.appendChild(option);
+            });
+
+            // Get min/max DBH to set placeholders
+            const dbhValues = trees.map(t => t.DBH).filter(d => d && d > 0);
+            if(dbhValues.length > 0) {
+                const minDbh = Math.floor(Math.min(...dbhValues));
+                const maxDbh = Math.ceil(Math.max(...dbhValues));
+                minDbhInput.placeholder = `min: ${minDbh}`;
+                maxDbhInput.placeholder = `max: ${maxDbh}`;
+            }
+        }
+
+        // 2. Function to update the map with filtered markers
+        function updateMap() {
+            // Get current filter values
+            const selectedSpecies = document.getElementById('species-filter').value;
+            // Use 0 if input is empty or invalid
+            const minDbh = parseFloat(document.getElementById('min-dbh-filter').value) || 0;
+            // Use Infinity if input is empty or invalid
+            const maxDbh = parseFloat(document.getElementById('max-dbh-filter').value) || Infinity;
+
+            // Clear existing markers
+            markerCluster.clearLayers();
+
+            // Filter the trees based on criteria
+            const filteredTrees = allTrees.filter(tree => {
+                const speciesMatch = (selectedSpecies === 'all' || tree.SPP === selectedSpecies);
+                
+                // Handle trees with no DBH data (treat as 0 or include them if range is default)
+                const dbh = tree.DBH || 0; 
+                const dbhMatch = (dbh >= minDbh && dbh <= maxDbh);
+                
+                return speciesMatch && dbhMatch;
+            });
+
+            // Add new markers for filtered trees
+            filteredTrees.forEach((tree) => {
+                const popupContent = `
+                    <b>Species:</b> ${tree.SPP || "Unknown"}<br>
+                    <b>Diameter:</b> ${tree.DBH || "N/A"} inches
+                `;
+                const marker = L.marker([tree.latitude, tree.longitude]).bindPopup(
+                    popupContent
+                );
+                markerCluster.addLayer(marker);
+            });
+
+            // Add cluster layer back to the map
+            map.addLayer(markerCluster);
+        }
+        
+        // 4. Helper function to process the loaded data
+        function handleData(results) {
+            // Filter out rows without coordinates *once*
+            allTrees = results.data.filter(
+                (t) => t.latitude && t.longitude
+            );
+
+            // Re-compute map center based on actual data
+            if (allTrees.length > 0) {
+                avgLat =
+                    allTrees.reduce((sum, t) => sum + t.latitude, 0) /
+                    allTrees.length;
+                avgLon =
+                    allTrees.reduce((sum, t) => sum + t.longitude, 0) /
+                    allTrees.length;
+                map.setView([avgLat, avgLon], 16);
+            }
+            
+            // Populate filters with data
+            populateFilters(allTrees);
+            
+            // Perform initial map render with all trees
+            updateMap();
+        }
+
+        // 3. Main function to initialize map and load data
+        function initMap() {
+            // Initialize map with default view
+            map = L.map("map").setView([avgLat, avgLon], 15);
+
+            // Add base layer
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                attribution:
+                    'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+            }).addTo(map);
+
+            // Create MarkerCluster group
+            markerCluster = L.markerClusterGroup();
+
+            // --- UPDATED SECTION ---
+            // To use a Google Sheet:
+            // 1. In Google Sheets, go to File > Share > Publish to web
+            // 2. Select your sheet, and publish it as a "Comma-separated values (.csv)" file.
+            // 3. Paste the public URL here.
+            
+            // Make sure your Google Sheet has the same column names: 
+            // 'latitude', 'longitude', 'SPP', 'DBH'
+
+            // --- !! REPLACE THIS URL WITH YOUR OWN !! ---
+            const csv_url = ""; // <-- e.g., "https://docs.google.com/spreadsheets/d/e/..."
+            
+            // We'll try the Google Sheet URL first, and if it's empty or fails, fall back to the local CSV.
+            if (csv_url && csv_url.startsWith("https")) {
+                console.log("Attempting to load data from Google Sheet...");
+                Papa.parse(csv_url, {
+                    download: true,
+                    header: true,
+                    dynamicTyping: true,
+                    complete: function (results) {
+                        console.log("Successfully loaded data from Google Sheet.");
+                        handleData(results);
+                    },
+                    error: function(err) {
+                        console.warn("Could not load from Google Sheet URL. Trying local file...", err);
+                        loadLocalCsv(); // Fallback
+                    }
+                });
+            } else {
+                console.log("No Google Sheet URL provided. Loading local file.");
+                loadLocalCsv(); // Load local file directly
+            }
+
+            // 5. Function to load the local CSV
+            function loadLocalCsv() {
+                Papa.parse("Brown_Trees_Dataset_New.csv", {
+                    download: true,
+                    header: true,
+                    dynamicTyping: true,
+                    complete: function (results) {
+                        console.log("Successfully loaded data from local 'Brown_Trees_Dataset_New.csv'");
+                        handleData(results);
+                    },
+                    error: function(err) {
+                        console.error("Error loading or parsing local CSV:", err);
+                        document.getElementById('map').innerHTML = '<p class="text-red-500 text-center">Could not load tree data. Please check the file path and format.</p>';
+                    }
+                });
+            }
+            
+            // 6. Add Event Listeners for filters
+            document.getElementById('apply-filters-btn').addEventListener('click', updateMap);
+            
+            document.getElementById('reset-filters-btn').addEventListener('click', () => {
+                document.getElementById('species-filter').value = 'all';
+                document.getElementById('min-dbh-filter').value = '';
+                document.getElementById('max-dbh-filter').value = '';
+                updateMap();
+            });
+        }
+
+        // Run the map initialization
+        initMap();
+
+    </script>
+</body>
 </html>
