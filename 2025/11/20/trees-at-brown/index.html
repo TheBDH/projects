@@ -22,7 +22,7 @@
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- MarkerCluster CSS -->
+    <!-- MarkerCluster CSS (RE-ADDED) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
     
@@ -32,7 +32,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <!-- MarkerCluster JS -->
+    <!-- MarkerCluster JS (RE-ADDED) -->
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <!-- Papa Parse for reading CSV -->
     <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
@@ -115,10 +115,10 @@
         
         <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Tree Map (Brown Campus)</h2>
 
-        <!-- NEW: Filter Controls -->
+        <!-- Filter Controls -->
         <div class="p-4 bg-white rounded-lg shadow-md mb-6">
-            <!-- Changed grid to 5 columns -->
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-end">
+            <!-- UPDATED: Grid changed to 6 columns -->
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-4 items-end">
                 <!-- Species Filter -->
                 <div>
                     <label for="species-filter" class="block text-sm font-medium text-gray-700">Filter by Species</label>
@@ -128,7 +128,7 @@
                     </select>
                 </div>
                 
-                <!-- NEW: Street Filter -->
+                <!-- Street Filter -->
                 <div>
                     <label for="street-filter" class="block text-sm font-medium text-gray-700">Filter by Street</label>
                     <select id="street-filter" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
@@ -146,7 +146,6 @@
                 <!-- Max DBH Filter -->
                 <div>
                     <label for="max-dbh-filter" class="block text-sm font-medium text-gray-700">Max. Diameter (inches)</label>
-
                     <input type="number" id="max-dbh-filter" placeholder="e.g., 50" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                 </div>
 
@@ -159,24 +158,34 @@
                         Reset
                     </button>
                 </div>
+                
+                <!-- NEW: Cluster Toggle Switch -->
+                <div class="flex items-center justify-center">
+                    <input type="checkbox" id="cluster-toggle" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" checked>
+                    <label for="cluster-toggle" class="ml-2 block text-sm font-medium text-gray-700">Cluster Trees</label>
+                </div>
             </div>
         </div>
 
         <!-- Map Container -->
         <div id="map"></div>
+        <div class="data-box">
+          <iframe title="Brown Tree's by Species" aria-label="Pie Chart" id="datawrapper-chart-sk1vN" src="https://datawrapper.dwcdn.net/sk1vN/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="623" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+          </div>
     </div>
 
     <!-- Map Initialization Script -->
     <script>
         // Global variables for the map and data
         let map;
-        let markerCluster;
+        let markerCluster; // For clustering
+        let markerLayer;     // For individual points
+        let isClusterMode = true; // Default to cluster mode
         let allTrees = [];
         let avgLat = 41.8268; // Default latitude
         let avgLon = -71.4029; // Default longitude
 
-        // --- NEW: Common Name Mapping ---
-        // Add any known scientific-to-common name pairs here
+        // Common Name Mapping
         const SPECIES_COMMON_NAMES = {
             'Acer platanoides': 'Norway Maple',
             'Acer saccharum': 'Sugar Maple',
@@ -191,12 +200,12 @@
             // Add more as needed...
         };
 
-        // --- NEW: Helper function to get the display name ---
+        // Helper function to get the display name
         function getDisplayName(spp) {
             if (spp && SPECIES_COMMON_NAMES[spp]) {
                 return `${spp} (${SPECIES_COMMON_NAMES[spp]})`;
             }
-            return spp || "Unknown"; // Return the scientific name if no common name is found
+            return spp || "Unknown";
         }
 
         // 1. Function to populate filter dropdowns
@@ -206,26 +215,22 @@
             const minDbhInput = document.getElementById('min-dbh-filter');
             const maxDbhInput = document.getElementById('max-dbh-filter');
 
-            // --- UPDATED: Species Filter ---
+            // Species Filter
             const speciesSet = new Set(trees.map(t => t.SPP).filter(s => s));
             const speciesWithCommon = [...speciesSet].map(spp => ({
                 scientific: spp,
                 display: getDisplayName(spp)
             }));
-            
-            // Sort by the display name
             speciesWithCommon.sort((a, b) => a.display.localeCompare(b.display));
-            
             speciesWithCommon.forEach(s => {
                 const option = document.createElement('option');
-                option.value = s.scientific; // Value is the scientific name
-                option.textContent = s.display; // Text is the display name
+                option.value = s.scientific; 
+                option.textContent = s.display;
                 speciesFilter.appendChild(option);
             });
 
-            // --- UPDATED: Street Filter ---
+            // Street Filter
             const streets = [...new Set(trees.map(t => t.Street).filter(s => s))].sort();
-            
             streets.forEach(street => {
                 const option = document.createElement('option');
                 option.value = street;
@@ -233,7 +238,7 @@
                 streetFilter.appendChild(option);
             });
 
-            // Get min/max DBH to set placeholders
+            // DBH placeholders
             const dbhValues = trees.map(t => t.DBH).filter(d => d && d > 0);
             if(dbhValues.length > 0) {
                 const minDbh = Math.floor(Math.min(...dbhValues));
@@ -251,8 +256,17 @@
             const minDbh = parseFloat(document.getElementById('min-dbh-filter').value) || 0;
             const maxDbh = parseFloat(document.getElementById('max-dbh-filter').value) || Infinity;
 
-            // Clear existing markers
+            // Clear *both* layers
             markerCluster.clearLayers();
+            markerLayer.clearLayers();
+            
+            // Remove *both* layers from the map to prevent duplicates
+            if (map.hasLayer(markerCluster)) {
+                map.removeLayer(markerCluster);
+            }
+            if (map.hasLayer(markerLayer)) {
+                map.removeLayer(markerLayer);
+            }
 
             // Filter the trees based on criteria
             const filteredTrees = allTrees.filter(tree => {
@@ -266,7 +280,6 @@
 
             // Add new markers for filtered trees
             filteredTrees.forEach((tree) => {
-                // --- UPDATED: Popup content ---
                 const popupContent = `
                     <b>Species:</b> ${getDisplayName(tree.SPP)}<br>
                     <b>Street:</b> ${tree.Street || "N/A"}<br>
@@ -275,11 +288,21 @@
                 const marker = L.marker([tree.latitude, tree.longitude]).bindPopup(
                     popupContent
                 );
-                markerCluster.addLayer(marker);
+
+                // ADDED: Logic to add to the correct layer
+                if (isClusterMode) {
+                    markerCluster.addLayer(marker);
+                } else {
+                    markerLayer.addLayer(marker);
+                }
             });
 
-            // Add cluster layer back to the map
-            map.addLayer(markerCluster);
+            // ADDED: Add the correct layer back to the map
+            if (isClusterMode) {
+                map.addLayer(markerCluster);
+            } else {
+                map.addLayer(markerLayer);
+            }
         }
         
         // 4. Helper function to process the loaded data
@@ -318,13 +341,13 @@
                     'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
             }).addTo(map);
 
-            // Create MarkerCluster group
+            // UPDATED: Initialize *both* layer groups
             markerCluster = L.markerClusterGroup();
+            markerLayer = L.layerGroup();
 
             // --- !! REPLACE THIS URL WITH YOUR OWN !! ---
             const csv_url = ""; // <-- e.g., "https://docs.google.com/spreadsheets/d/e/..."
             
-            // We'll try the Google Sheet URL first, and if it's empty or fails, fall back to the local CSV.
             if (csv_url && csv_url.startsWith("https")) {
                 console.log("Attempting to load data from Google Sheet...");
                 Papa.parse(csv_url, {
@@ -370,7 +393,16 @@
                 document.getElementById('street-filter').value = 'all';
                 document.getElementById('min-dbh-filter').value = '';
                 document.getElementById('max-dbh-filter').value = '';
+                // Also reset the cluster toggle
+                document.getElementById('cluster-toggle').checked = true;
+                isClusterMode = true;
                 updateMap();
+            });
+
+            // NEW: Event listener for the cluster toggle
+            document.getElementById('cluster-toggle').addEventListener('change', (e) => {
+                isClusterMode = e.target.checked;
+                updateMap(); // Redraw the map with the new mode
             });
         }
 
