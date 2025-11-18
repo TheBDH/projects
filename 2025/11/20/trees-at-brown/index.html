@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-321HPHTJEX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -14,51 +13,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trees@Brown - The Street Trees of College Hill</title>
     
-    <!-- CSS and Fonts -->
-    <link rel="stylesheet" href="styles.css"> <!-- Assuming you have a styles.css, otherwise remove -->
+    <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
-    <link rel="stylesheet" href="https://use.typekit.net/brt8lxm.css"> <!-- newspaper font -->
+    <link rel="stylesheet" href="https://use.typekit.net/brt8lxm.css"> 
     <link rel="icon" href="images/icon.png" sizes="96x96">
 
-    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- MarkerCluster CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
     
-    <!-- JS Libraries -->
-    <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <!-- MarkerCluster JS -->
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-    <!-- Papa Parse for reading CSV -->
     <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
-    
-    <!-- Your custom script.js, if you have one -->
-    <!-- <script src="script.js"></script> --> 
 
     <style>
-        /* Simple style for the map container */
         #map {
             height: 800px;
             width: 100%;
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
 
-        /* You can add your original styles.css content here if it's not a separate file */
-        /* Basic styles from original file (if styles.css is not used) */
         #heading {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            color: black; 
+            text-shadow: none;
             z-index: 10;
+            text-align: center;
         }
         #herald-logo {
             display: block;
@@ -67,31 +54,42 @@
         }
         .data-box {
             padding: 2rem;
-            background-color: #f7fafc; /* A light gray background */
+            background-color: #f7fafc;
+        }
+        /* Custom scrollbar for the list */
+        .rare-list-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .rare-list-container::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        .rare-list-container::-webkit-scrollbar-thumb {
+            background: #cbd5e0; 
+            border-radius: 4px;
+        }
+        .rare-list-container::-webkit-scrollbar-thumb:hover {
+            background: #a0aec0; 
         }
     </style>
 </head>
 
 <body class="bg-gray-100 font-sans">
     
-    <!-- This section seems to be for a parallax/scroll effect -->
     <div id="trigger"></div>
     <div id="spacer"></div>
 
-    <!-- Full-screen background image -->
     <div class="full-screen-bg"
         style="background-image: url('images/background1.jpg'); background-size: cover; background-position: center; height: 100vh; width: 100%; margin: 0; padding: 0; background-repeat: no-repeat; position: relative;">
         
-        <!-- Heading Content -->
         <div id="heading">
             <a href="https://www.browndailyherald.com" target="_blank">
                 <img src="images/logo-black.png" id="herald-logo" alt="Brown Daily Herald Logo" />
             </a>
-            <h3 class="text-4xl font-bold text-center">Trees@Brown</h3>
-            <p class="text-xl text-center mt-2">
+            <h3 class="text-4xl font-bold">Trees@Brown</h3>
+            <p class="text-xl mt-2">
                 The Street Trees of College Hill
             </p>
-            <h6 id="byline" class="text-center mt-6 text-sm">
+            <h6 id="byline" class="mt-6 text-sm">
                 Reporting by
                 <a href="https://www.browndailyherald.com/staff/claire-song" target="_blank" class="author underline hover:opacity-75">TKTK</a>
                 <br><br>
@@ -104,42 +102,48 @@
                 <a href="https://www.browndailyherald.com/staff/caleb-ellenberg" target="_blank" class="author underline hover:opacity-75">TKTK</a>
                 <a href="https://www.browndailyherald.com/staff/kenna-lee" target="_blank" class="author underline hover:opacity-75">TKTK</a>
             </h6>
-            <div class="down-arrow text-center text-4xl mt-8 animate-bounce">
+            <div class="down-arrow text-4xl mt-8 animate-bounce">
                 &#x2193;
             </div>
         </div>
     </div>
 
-    <!-- Map and Filter Section -->
     <div class="data-box container mx-auto p-4 md:p-8">
         
+        <div class="max-w-4xl mx-auto mb-10 p-6 bg-white rounded-lg shadow-md border-l-4 border-green-800">
+            <p class="text-xl font-serif italic text-gray-800 text-center leading-relaxed">
+                A tree is “a woody perennial plant having a single usually elongated main stem generally with few or no branches on its lower part." (Merriam Webster)
+            </p>
+        </div>
+
         <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Tree Map (Brown Campus)</h2>
 
-        <!-- NEW: Filter Controls -->
         <div class="p-4 bg-white rounded-lg shadow-md mb-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
-                <!-- Species Filter -->
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-4 items-end">
                 <div>
                     <label for="species-filter" class="block text-sm font-medium text-gray-700">Filter by Species</label>
                     <select id="species-filter" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                         <option value="all">All Species</option>
-                        <!-- Species options will be populated by JavaScript -->
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="street-filter" class="block text-sm font-medium text-gray-700">Filter by Street</label>
+                    <select id="street-filter" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                        <option value="all">All Streets</option>
                     </select>
                 </div>
 
-                <!-- Min DBH Filter -->
                 <div>
-                    <label for="min-dbh-filter" class="block text-sm font-medium text-gray-700">Min. Diameter (inches)</label>
+                    <label for="min-dbh-filter" class="block text-sm font-medium text-gray-700">Min. Diameter (in)</label>
                     <input type="number" id="min-dbh-filter" placeholder="e.g., 0" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                 </div>
 
-                <!-- Max DBH Filter -->
                 <div>
-                    <label for="max-dbh-filter" class="block text-sm font-medium text-gray-700">Max. Diameter (inches)</label>
+                    <label for="max-dbh-filter" class="block text-sm font-medium text-gray-700">Max. Diameter (in)</label>
                     <input type="number" id="max-dbh-filter" placeholder="e.g., 50" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                 </div>
 
-                <!-- Filter Buttons -->
                 <div class="flex gap-2">
                     <button id="apply-filters-btn" class="w-1/2 px-4 py-2 bg-blue-600 text-white font-medium rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                         Apply
@@ -148,39 +152,275 @@
                         Reset
                     </button>
                 </div>
+                
+                <div class="flex items-center justify-center">
+                    <input type="checkbox" id="cluster-toggle" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" checked>
+                    <label for="cluster-toggle" class="ml-2 block text-sm font-medium text-gray-700">Cluster Trees</label>
+                </div>
             </div>
         </div>
 
-        <!-- Map Container -->
         <div id="map"></div>
+
+        <div class="mt-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Data Visualizations</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="bg-white p-4 rounded-lg shadow-md md:col-span-2">
+                    <iframe title="Brown Tree's by Species" aria-label="Pie Chart" id="datawrapper-chart-sk1vN" src="https://datawrapper.dwcdn.net/sk1vN/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="623" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <iframe title="Brown's Trees by Diameter (in)" aria-label="Column Chart" id="datawrapper-chart-3Fwu5" src="https://datawrapper.dwcdn.net/3Fwu5/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="410" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col" style="min-height: 450px;">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 border-b pb-2">Rarest Species on Campus</h3>
+                    
+                    <div class="rare-list-container overflow-y-auto flex-grow" style="max-height: 600px;">
+                        <ul id="rare-tree-list" class="space-y-3">
+                            <li class="text-gray-500 text-center animate-pulse">Calculating rarity...</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg shadow-md md:col-span-2">
+                    <iframe title="Brown's Trees by Street" aria-label="Column Chart" id="datawrapper-chart-4d3r2" src="https://datawrapper.dwcdn.net/4d3r2/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="518" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Map Initialization Script -->
     <script>
-        // Global variables for the map and data
         let map;
-        let markerCluster;
+        let markerCluster; 
+        let markerLayer;    
+        let isClusterMode = true; 
         let allTrees = [];
-        let avgLat = 41.8268; // Default latitude
-        let avgLon = -71.4029; // Default longitude
+        let avgLat = 41.8268; 
+        let avgLon = -71.4029; 
 
-        // 1. Function to populate filter dropdowns
+        // --- EXPANDED COMMON NAME DICTIONARY ---
+        const SPECIES_COMMON_NAMES = {
+            'Ulmus americana Princeton': 'American Elm',
+            'Acer platanoides Crimson King': 'Norway Maple',
+            'Acer x freemanii Armstrong': 'Freeman Maple',
+            'Gleditsia triacanthos inermis': 'Thornless Honey Locust',
+            'Celtis spp.': 'Hackberry',
+            'Acer platanoides': 'Norway Maple',
+            'Acer saccharum': 'Sugar Maple',
+            'Acer rubrum': 'Red Maple',
+            'Acer pseudoplatanus': 'Sycamore Maple',
+            'Acer palmatum': 'Japanese Maple',
+            'Acer negundo': 'Boxelder',
+            'Acer saccharinum': 'Silver Maple',
+            'Acer campestre': 'Hedge Maple',
+            'Acer ginnala': 'Amur Maple',
+            'Acer pensylvanicum': 'Striped Maple',
+            'Acer griseum': 'Paperbark Maple',
+            'Quercus rubra': 'Red Oak',
+            'Quercus palustris': 'Pin Oak',
+            'Quercus alba': 'White Oak',
+            'Quercus robur': 'English Oak',
+            'Quercus coccinea': 'Scarlet Oak',
+            'Quercus velutina': 'Black Oak',
+            'Quercus bicolor': 'Swamp White Oak',
+            'Quercus macrocarpa': 'Bur Oak',
+            'Quercus phellos': 'Willow Oak',
+            'Quercus acutissima': 'Sawtooth Oak',
+            'Quercus imbricaria': 'Shingle Oak',
+            'Prunus serotina': 'Black Cherry',
+            'Prunus cerasifera': 'Cherry Plum',
+            'Prunus serrulata': 'Japanese Flowering Cherry',
+            'Prunus virginiana': 'Chokecherry',
+            'Prunus sargentii': 'Sargent Cherry',
+            'Prunus yedoensis': 'Yoshino Cherry',
+            'Prunus avium': 'Sweet Cherry',
+            'Pyrus calleryana': 'Callery Pear',
+            'Malus': 'Crabapple',
+            'Malus floribunda': 'Japanese Flowering Crabapple',
+            'Ulmus americana': 'American Elm',
+            'Ulmus pumila': 'Siberian Elm',
+            'Ulmus parvifolia': 'Lacebark Elm',
+            'Ulmus glabra': 'Wych Elm',
+            'Ulmus procera': 'English Elm',
+            'Platanus occidentalis': 'American Sycamore',
+            'Platanus x acerifolia': 'London Planetree',
+            'Tilia cordata': 'Littleleaf Linden',
+            'Tilia americana': 'American Linden',
+            'Tilia tomentosa': 'Silver Linden',
+            'Gleditsia triacanthos': 'Honey Locust',
+            'Robinia pseudoacacia': 'Black Locust',
+            'Gymnocladus dioicus': 'Kentucky Coffeetree',
+            'Cladrastis kentukea': 'Yellowwood',
+            'Cercis canadensis': 'Eastern Redbud',
+            'Styphnolobium japonicum': 'Japanese Pagoda Tree',
+            'Sophora japonica': 'Japanese Pagoda Tree', 
+            'Betula nigra': 'River Birch',
+            'Betula papyrifera': 'Paper Birch',
+            'Betula populifolia': 'Gray Birch',
+            'Betula pendula': 'Silver Birch',
+            'Betula lenta': 'Sweet Birch',
+            'Pinus strobus': 'Eastern White Pine',
+            'Pinus nigra': 'Austrian Pine',
+            'Pinus sylvestris': 'Scots Pine',
+            'Picea abies': 'Norway Spruce',
+            'Picea pungens': 'Blue Spruce',
+            'Picea glauca': 'White Spruce',
+            'Tsuga canadensis': 'Eastern Hemlock',
+            'Thuja occidentalis': 'Arborvitae',
+            'Metasequoia glyptostroboides': 'Dawn Redwood',
+            'Taxodium distichum': 'Bald Cypress',
+            'Juniperus virginiana': 'Eastern Red Cedar',
+            'Pseudotsuga menziesii': 'Douglas Fir',
+            'Ginkgo biloba': 'Ginkgo',
+            'Liriodendron tulipifera': 'Tulip Tree',
+            'Fagus sylvatica': 'European Beech',
+            'Fagus grandifolia': 'American Beech',
+            'Cornus florida': 'Flowering Dogwood',
+            'Cornus kousa': 'Kousa Dogwood',
+            'Cornus mas': 'Cornelian Cherry',
+            'Zelkova serrata': 'Japanese Zelkova',
+            'Magnolia x soulangeana': 'Saucer Magnolia',
+            'Magnolia stellata': 'Star Magnolia',
+            'Magnolia virginiana': 'Sweetbay Magnolia',
+            'Liquidambar styraciflua': 'Sweetgum',
+            'Celtis occidentalis': 'Hackberry',
+            'Morus alba': 'White Mulberry',
+            'Morus rubra': 'Red Mulberry',
+            'Ailanthus altissima': 'Tree of Heaven',
+            'Fraxinus pennsylvanica': 'Green Ash',
+            'Fraxinus americana': 'White Ash',
+            'Nyssa sylvatica': 'Black Gum',
+            'Catalpa speciosa': 'Northern Catalpa',
+            'Aesculus hippocastanum': 'Horse Chestnut',
+            'Aesculus glabra': 'Ohio Buckeye',
+            'Carpinus caroliniana': 'American Hornbeam',
+            'Carpinus betulus': 'European Hornbeam',
+            'Ostrya virginiana': 'American Hophornbeam',
+            'Amelanchier arborea': 'Downy Serviceberry',
+            'Amelanchier canadensis': 'Shadbush',
+            'Crataegus phaenopyrum': 'Washington Hawthorn',
+            'Crataegus viridis': 'Green Hawthorn',
+            'Crataegus crus-galli': 'Cockspur Hawthorn',
+            'Koelreuteria paniculata': 'Goldenrain Tree',
+            'Juglans nigra': 'Black Walnut'
+        };
+
+        function getDisplayName(spp) {
+            if (!spp) return "Unknown Species";
+            
+            const cleanSpp = spp.trim().replace(/['"]+/g, '');
+            
+            if (SPECIES_COMMON_NAMES[cleanSpp]) {
+                return `${cleanSpp} <span class="text-gray-500 text-xs italic">(${SPECIES_COMMON_NAMES[cleanSpp]})</span>`;
+            }
+
+            const genus = cleanSpp.split(' ')[0];
+            let genericName = "";
+            
+            if (genus === 'Acer') genericName = 'Maple';
+            else if (genus === 'Quercus') genericName = 'Oak';
+            else if (genus === 'Prunus') genericName = 'Cherry/Plum';
+            else if (genus === 'Ulmus') genericName = 'Elm';
+            else if (genus === 'Pinus') genericName = 'Pine';
+            else if (genus === 'Cornus') genericName = 'Dogwood';
+            else if (genus === 'Malus') genericName = 'Crabapple';
+            else if (genus === 'Magnolia') genericName = 'Magnolia';
+            else if (genus === 'Fraxinus') genericName = 'Ash';
+            else if (genus === 'Picea') genericName = 'Spruce';
+            else if (genus === 'Tilia') genericName = 'Linden';
+            else if (genus === 'Carya') genericName = 'Hickory';
+            else if (genus === 'Betula') genericName = 'Birch';
+            else if (genus === 'Celtis') genericName = 'Hackberry';
+
+            if (genericName) {
+                 return `${cleanSpp} <span class="text-gray-500 text-xs italic">(${genericName})</span>`;
+            }
+
+            return cleanSpp;
+        }
+
+        function generateRareList(trees) {
+            const counts = {};
+            
+            trees.forEach(t => {
+                let s = t.SPP ? t.SPP.trim() : null;
+                if(s) {
+                    counts[s] = (counts[s] || 0) + 1;
+                }
+            });
+
+            const sorted = Object.entries(counts).sort((a, b) => {
+                if (a[1] !== b[1]) return a[1] - b[1];
+                return a[0].localeCompare(b[0]);
+            });
+
+            const rareTrees = sorted.filter(item => {
+                const name = item[0].toLowerCase();
+                const count = item[1];
+                
+                if (name.includes('unknown')) return false;
+                if (name.includes('empty')) return false;
+                if (name.includes('vacant')) return false;
+                
+                return count <= 10;
+            });
+
+            const listContainer = document.getElementById('rare-tree-list');
+            listContainer.innerHTML = ''; 
+
+            if (rareTrees.length === 0) {
+                listContainer.innerHTML = '<li class="text-center text-gray-500">No rare species found.</li>';
+                return;
+            }
+
+            rareTrees.forEach(([spp, count]) => {
+                const li = document.createElement('li');
+                li.className = "flex justify-between items-center p-2 hover:bg-gray-50 rounded border-b border-gray-100";
+                
+                let badgeColor = "bg-blue-100 text-blue-800";
+                if (count === 1) badgeColor = "bg-red-100 text-red-800"; 
+                else if (count === 2) badgeColor = "bg-orange-100 text-orange-800";
+
+                li.innerHTML = `
+                    <div class="text-sm text-gray-800 font-medium">${getDisplayName(spp)}</div>
+                    <div class="ml-4 px-2 py-1 ${badgeColor} text-xs font-bold rounded-full whitespace-nowrap">
+                        ${count} ${count === 1 ? 'Tree' : 'Trees'}
+                    </div>
+                `;
+                listContainer.appendChild(li);
+            });
+        }
+
         function populateFilters(trees) {
             const speciesFilter = document.getElementById('species-filter');
+            const streetFilter = document.getElementById('street-filter'); 
             const minDbhInput = document.getElementById('min-dbh-filter');
             const maxDbhInput = document.getElementById('max-dbh-filter');
 
-            // Get unique, non-null species and sort them
-            const species = [...new Set(trees.map(t => t.SPP).filter(s => s))].sort();
-            
-            species.forEach(spp => {
+            const speciesSet = new Set(trees.map(t => t.SPP).filter(s => s));
+            const speciesWithCommon = [...speciesSet].map(spp => ({
+                scientific: spp,
+                display: spp 
+            }));
+            speciesWithCommon.sort((a, b) => a.display.localeCompare(b.display));
+            speciesWithCommon.forEach(s => {
                 const option = document.createElement('option');
-                option.value = spp;
-                option.textContent = spp;
+                option.value = s.scientific; 
+                option.textContent = s.display;
                 speciesFilter.appendChild(option);
             });
 
-            // Get min/max DBH to set placeholders
+            const streets = [...new Set(trees.map(t => t.Street).filter(s => s))].sort();
+            streets.forEach(street => {
+                const option = document.createElement('option');
+                option.value = street;
+                option.textContent = street;
+                streetFilter.appendChild(option);
+            });
+
             const dbhValues = trees.map(t => t.DBH).filter(d => d && d > 0);
             if(dbhValues.length > 0) {
                 const minDbh = Math.floor(Math.min(...dbhValues));
@@ -190,146 +430,122 @@
             }
         }
 
-        // 2. Function to update the map with filtered markers
         function updateMap() {
-            // Get current filter values
             const selectedSpecies = document.getElementById('species-filter').value;
-            // Use 0 if input is empty or invalid
+            const selectedStreet = document.getElementById('street-filter').value;
             const minDbh = parseFloat(document.getElementById('min-dbh-filter').value) || 0;
-            // Use Infinity if input is empty or invalid
             const maxDbh = parseFloat(document.getElementById('max-dbh-filter').value) || Infinity;
 
-            // Clear existing markers
             markerCluster.clearLayers();
+            markerLayer.clearLayers();
+            
+            if (map.hasLayer(markerCluster)) map.removeLayer(markerCluster);
+            if (map.hasLayer(markerLayer)) map.removeLayer(markerLayer);
 
-            // Filter the trees based on criteria
             const filteredTrees = allTrees.filter(tree => {
                 const speciesMatch = (selectedSpecies === 'all' || tree.SPP === selectedSpecies);
-                
-                // Handle trees with no DBH data (treat as 0 or include them if range is default)
+                const streetMatch = (selectedStreet === 'all' || tree.Street === selectedStreet);
                 const dbh = tree.DBH || 0; 
                 const dbhMatch = (dbh >= minDbh && dbh <= maxDbh);
-                
-                return speciesMatch && dbhMatch;
+                return speciesMatch && streetMatch && dbhMatch;
             });
 
-            // Add new markers for filtered trees
             filteredTrees.forEach((tree) => {
                 const popupContent = `
-                    <b>Species:</b> ${tree.SPP || "Unknown"}<br>
+                    <b>Species:</b> ${getDisplayName(tree.SPP)}<br>
+                    <b>Street:</b> ${tree.Street || "N/A"}<br>
                     <b>Diameter:</b> ${tree.DBH || "N/A"} inches
                 `;
-                const marker = L.marker([tree.latitude, tree.longitude]).bindPopup(
-                    popupContent
-                );
-                markerCluster.addLayer(marker);
+                const marker = L.marker([tree.latitude, tree.longitude]).bindPopup(popupContent);
+
+                if (isClusterMode) {
+                    markerCluster.addLayer(marker);
+                } else {
+                    markerLayer.addLayer(marker);
+                }
             });
 
-            // Add cluster layer back to the map
-            map.addLayer(markerCluster);
+            if (isClusterMode) {
+                map.addLayer(markerCluster);
+            } else {
+                map.addLayer(markerLayer);
+            }
         }
         
-        // 4. Helper function to process the loaded data
         function handleData(results) {
-            // Filter out rows without coordinates *once*
-            allTrees = results.data.filter(
-                (t) => t.latitude && t.longitude
-            );
+            allTrees = results.data.filter((t) => t.latitude && t.longitude);
 
-            // Re-compute map center based on actual data
             if (allTrees.length > 0) {
-                avgLat =
-                    allTrees.reduce((sum, t) => sum + t.latitude, 0) /
-                    allTrees.length;
-                avgLon =
-                    allTrees.reduce((sum, t) => sum + t.longitude, 0) /
-                    allTrees.length;
+                avgLat = allTrees.reduce((sum, t) => sum + t.latitude, 0) / allTrees.length;
+                avgLon = allTrees.reduce((sum, t) => sum + t.longitude, 0) / allTrees.length;
                 map.setView([avgLat, avgLon], 16);
             }
             
-            // Populate filters with data
             populateFilters(allTrees);
-            
-            // Perform initial map render with all trees
+            generateRareList(allTrees); 
             updateMap();
         }
 
-        // 3. Main function to initialize map and load data
         function initMap() {
-            // Initialize map with default view
             map = L.map("map").setView([avgLat, avgLon], 15);
 
-            // Add base layer
             L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-                attribution:
-                    'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+                attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
             }).addTo(map);
 
-            // Create MarkerCluster group
             markerCluster = L.markerClusterGroup();
+            markerLayer = L.layerGroup();
 
-            // --- UPDATED SECTION ---
-            // To use a Google Sheet:
-            // 1. In Google Sheets, go to File > Share > Publish to web
-            // 2. Select your sheet, and publish it as a "Comma-separated values (.csv)" file.
-            // 3. Paste the public URL here.
+            const csv_url = ""; 
             
-            // Make sure your Google Sheet has the same column names: 
-            // 'latitude', 'longitude', 'SPP', 'DBH'
-
-            // --- !! REPLACE THIS URL WITH YOUR OWN !! ---
-            const csv_url = ""; // <-- e.g., "https://docs.google.com/spreadsheets/d/e/..."
-            
-            // We'll try the Google Sheet URL first, and if it's empty or fails, fall back to the local CSV.
             if (csv_url && csv_url.startsWith("https")) {
-                console.log("Attempting to load data from Google Sheet...");
                 Papa.parse(csv_url, {
                     download: true,
                     header: true,
                     dynamicTyping: true,
                     complete: function (results) {
-                        console.log("Successfully loaded data from Google Sheet.");
                         handleData(results);
                     },
                     error: function(err) {
-                        console.warn("Could not load from Google Sheet URL. Trying local file...", err);
-                        loadLocalCsv(); // Fallback
+                        loadLocalCsv(); 
                     }
                 });
             } else {
-                console.log("No Google Sheet URL provided. Loading local file.");
-                loadLocalCsv(); // Load local file directly
+                loadLocalCsv(); 
             }
 
-            // 5. Function to load the local CSV
             function loadLocalCsv() {
                 Papa.parse("Brown_Trees_Dataset_New.csv", {
                     download: true,
                     header: true,
                     dynamicTyping: true,
                     complete: function (results) {
-                        console.log("Successfully loaded data from local 'Brown_Trees_Dataset_New.csv'");
                         handleData(results);
                     },
                     error: function(err) {
-                        console.error("Error loading or parsing local CSV:", err);
-                        document.getElementById('map').innerHTML = '<p class="text-red-500 text-center">Could not load tree data. Please check the file path and format.</p>';
+                        document.getElementById('map').innerHTML = '<p class="text-red-500 text-center">Could not load tree data.</p>';
                     }
                 });
             }
             
-            // 6. Add Event Listeners for filters
             document.getElementById('apply-filters-btn').addEventListener('click', updateMap);
             
             document.getElementById('reset-filters-btn').addEventListener('click', () => {
                 document.getElementById('species-filter').value = 'all';
+                document.getElementById('street-filter').value = 'all';
                 document.getElementById('min-dbh-filter').value = '';
                 document.getElementById('max-dbh-filter').value = '';
+                document.getElementById('cluster-toggle').checked = true;
+                isClusterMode = true;
                 updateMap();
+            });
+
+            document.getElementById('cluster-toggle').addEventListener('change', (e) => {
+                isClusterMode = e.target.checked;
+                updateMap(); 
             });
         }
 
-        // Run the map initialization
         initMap();
 
     </script>
