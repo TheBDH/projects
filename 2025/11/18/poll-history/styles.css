@@ -231,6 +231,7 @@ a {
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(250, 250, 250);
+    min-height: 100%;
 }
 :root {
     --header-font: "freight-text-pro", "Times", serif;
