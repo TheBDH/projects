@@ -4,8 +4,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    background-color: #f6f0f0e6;
-    color: rgb(190, 33, 33);
+    background-color: rgb(131, 17, 197);
+    color: rgb(160, 58, 227);
 }
 
 .data-box,
@@ -15,7 +15,7 @@ body {
     width: 80%;
     margin: 2em auto;
     padding: 2em;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgb(250, 250, 250);
     z-index: 10;
     font-family: "freight-text-pro", "Georgia", "Times", serif;
     font-size: 1.2em;
@@ -113,7 +113,7 @@ body {
 }
 
 #byline .author {
-    background-color: rgb(190, 33, 33);
+    background-color: rgb(160, 58, 227);
     color: white;
     padding: 0.2rem;
     padding-left: 0.4rem;
@@ -131,7 +131,7 @@ body {
 
 a {
     /* color: #94102a; */
-    color: rgb(190, 33, 33);
+    color: rgb(160, 58, 227);
 }
 
 #purple-data {
@@ -141,7 +141,7 @@ a {
 
 @keyframes fadeToPurple {
     to {
-        color: #bb2fbb;
+        color: rgb(160, 58, 227);
     }
 }
 
@@ -163,7 +163,7 @@ a {
     /* Increase the size of the down arrow */
     font-weight: bold;
     /* Make the arrow bold */
-    color: rgb(190, 33, 33);
+    color: rgb(160, 58, 227);
     /* Change the color to a shade of green */
 }
 
@@ -226,15 +226,21 @@ a {
 }
 
 /* POLL STYLING */
+.POLL-SIM {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(250, 250, 250);
+}
 :root {
     --header-font: "freight-text-pro", "Times", serif;
     --body-font: "Roboto", "Helvetica", "Arial", sans-serif;
-    --main-bg-color: #FAFAFA;
-    --section-bg-color: #FFFFFF;
-    --selected-question-color: #F1555B;
-    --selected-subdiv-color: #604A3E;
+    --main-bg-color: rgb(245, 239, 248);
+    --section-bg-color: rgba(255, 255, 255);
+    --selected-question-color: rgb(60, 40, 73);
+    --selected-subdiv-color: rgb(160, 58, 227);
     --border-color: #D7D7D7;
-    --navbar-active-color: #ED1C24;
+    --navbar-active-color: rgb(160, 58, 227);
     --navbar-height: 70px;
     --breakdown-header-color: #636363;
     --footer-text-color: #525252;
@@ -251,9 +257,6 @@ body {
     background-color: var(--main-bg-color)
 }
 
-a {
-    text-decoration: none;
-}
 
 div.about {
     width: 100%;
@@ -630,7 +633,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: rgb(250, 250, 250);
     border-top: 1px solid #D7D7D7;
 }
 
