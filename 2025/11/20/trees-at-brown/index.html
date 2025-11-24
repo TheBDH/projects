@@ -25,12 +25,7 @@
             href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
         <link rel="stylesheet"
             href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+            
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <script
             src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
@@ -53,11 +48,9 @@
                     alt="Brown Daily Herald Logo" />
             </a>
             <h3 style="text-align: center;">Trees @ Brown</h3>
-            <br>
             <p style="text-align: center;">
                 The Street Trees of College Hill
             </p>
-            <br>
             <h6 id="byline" style="text-align: center;">
                 Reporting by
                 <a
@@ -65,19 +58,18 @@
                     target="_blank"><span class="author">Manav
                         Musunuru</span></a>
                 <br><br>
-                Data analysis and web design by
+                Data analysis by
                 <a
-                    href="https://www.browndailyherald.com/staff/manav-musunuru"
-                    target="_blank"><span class="author">Manav
-                        Musunuru</span></a>
+                    href="https://www.browndailyherald.com/staff/edward-ho"
+                    target="_blank"><span class="author">Edward
+                        Ho</span></a>
                 <a
-                    href="https://www.browndailyherald.com/staff/manav-musunuru"
-                    target="_blank"><span class="author">Manav
-                        Musunuru</span></a>
+                    href="https://www.browndailyherald.com/staff/Noah-Kesselman"
+                    target="_blank"><span class="author">Noah Kesselman</span></a>
                 <a
-                    href="https://www.browndailyherald.com/staff/manav-musunuru"
-                    target="_blank"><span class="author">Manav
-                        Musunuru</span></a>
+                    href="https://www.browndailyherald.com/staff/rohan-kher"
+                    target="_blank"><span class="author">Rohan
+                        Kher</span></a>
             </h6>
             <div class="down-arrow" style="text-align: center;">
                 &#x2193;
@@ -85,7 +77,8 @@
         </div>
         <div id="caption">Media by Sidney Lin</div>
 
-        <div class="data-box container mx-auto p-4 md:p-8">
+        <div class="data-box">
+
             <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Tree
                 Map (Brown Campus)</h2>
 
@@ -153,65 +146,39 @@
 
             <div id="map"></div>
 
-            <div class="mt-12">
-                <h2
-                    class="text-3xl font-bold text-gray-800 mb-6 text-center">Data
-                    Visualizations</h2>
+            <div
+                class="data-display">
+                <iframe title="Brown Tree's by Species"
+                    aria-label="Pie Chart" id="datawrapper-chart-sk1vN"
+                    src="https://datawrapper.dwcdn.net/sk1vN/1/"
+                    scrolling="no" frameborder="0"
+                    style="width: 0; min-width: 100% !important; border: none;"
+                    height="623" data-external="1"></iframe><script
+                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+            </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="data-display">
+                <iframe
+                    title="Number of Trees by Diameter (inches) at Brown"
+                    aria-label="Column Chart"
+                    id="datawrapper-chart-3Fwu5"
+                    src="https://datawrapper.dwcdn.net/3Fwu5/2/"
+                    scrolling="no" frameborder="0"
+                    style="width: 0; min-width: 100% !important; border: none;"
+                    height="410" data-external="1"></iframe><script
+                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+            </div>
 
-                    <div
-                        class="bg-white p-4 rounded-lg shadow-md md:col-span-2">
-                        <iframe title="Brown Tree's by Species"
-                            aria-label="Pie Chart" id="datawrapper-chart-sk1vN"
-                            src="https://datawrapper.dwcdn.net/sk1vN/1/"
-                            scrolling="no" frameborder="0"
-                            style="width: 0; min-width: 100% !important; border: none;"
-                            height="623" data-external="1"></iframe><script
-                            type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
-                    </div>
-
-                    <div class="bg-white p-4 rounded-lg shadow-md">
-                        <iframe
-                            title="Number of Trees by Diameter (inches) at Brown"
-                            aria-label="Column Chart"
-                            id="datawrapper-chart-3Fwu5"
-                            src="https://datawrapper.dwcdn.net/3Fwu5/2/"
-                            scrolling="no" frameborder="0"
-                            style="width: 0; min-width: 100% !important; border: none;"
-                            height="410" data-external="1"></iframe><script
-                            type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col"
-                        style="min-height: 450px;">
-                        <h3
-                            class="text-xl font-bold text-gray-800 mb-2 border-b pb-2">Rarest
-                            Species on Campus</h3>
-
-                        <div
-                            class="rare-list-container overflow-y-auto flex-grow"
-                            style="max-height: 600px;">
-                            <ul id="rare-tree-list" class="space-y-3">
-                                <li
-                                    class="text-gray-500 text-center animate-pulse">Calculating
-                                    rarity...</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-white p-4 rounded-lg shadow-md md:col-span-2">
-                        <iframe title="Number of Trees by Street at Brown"
-                            aria-label="Column Chart"
-                            id="datawrapper-chart-4d3r2"
-                            src="https://datawrapper.dwcdn.net/4d3r2/2/"
-                            scrolling="no" frameborder="0"
-                            style="width: 0; min-width: 100% !important; border: none;"
-                            height="518" data-external="1"></iframe><script
-                            type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
-                    </div>
-                </div>
+            <div
+                class="data-display">
+                <iframe title="Number of Trees by Street at Brown"
+                    aria-label="Column Chart"
+                    id="datawrapper-chart-4d3r2"
+                    src="https://datawrapper.dwcdn.net/4d3r2/2/"
+                    scrolling="no" frameborder="0"
+                    style="width: 0; min-width: 100% !important; border: none;"
+                    height="518" data-external="1"></iframe><script
+                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
             </div>
         </div>
     </body>

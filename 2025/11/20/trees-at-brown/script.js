@@ -288,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         populateFilters(allTrees);
-        generateRareList(allTrees);
+        // generateRareList(allTrees);
         updateMap();
     }
 
