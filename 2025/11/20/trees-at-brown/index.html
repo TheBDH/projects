@@ -25,7 +25,7 @@
             href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
         <link rel="stylesheet"
             href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-            
+
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <script
             src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
@@ -65,7 +65,8 @@
                         Ho</span></a>
                 <a
                     href="https://www.browndailyherald.com/staff/Noah-Kesselman"
-                    target="_blank"><span class="author">Noah Kesselman</span></a>
+                    target="_blank"><span class="author">Noah
+                        Kesselman</span></a>
                 <a
                     href="https://www.browndailyherald.com/staff/rohan-kher"
                     target="_blank"><span class="author">Rohan
@@ -79,72 +80,56 @@
 
         <div class="data-box">
 
-            <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Tree
-                Map (Brown Campus)</h2>
+            <div class="filter-panel">
+                <div class="filter-grid">
 
-            <div class="p-4 bg-white rounded-lg shadow-md mb-6">
-                <div class="grid grid-cols-1 md:grid-cols-6 gap-4 items-end">
-                    <div>
-                        <label for="species-filter"
-                            class="block text-sm font-medium text-gray-700">Filter
-                            by Species</label>
-                        <select id="species-filter"
-                            class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                    <div class="form-group">
+                        <label for="species-filter">Filter by Species</label>
+                        <select id="species-filter">
                             <option value="all">All Species</option>
                         </select>
                     </div>
 
-                    <div>
-                        <label for="street-filter"
-                            class="block text-sm font-medium text-gray-700">Filter
-                            by Street</label>
-                        <select id="street-filter"
-                            class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                    <div class="form-group">
+                        <label for="street-filter">Filter by Street</label>
+                        <select id="street-filter">
                             <option value="all">All Streets</option>
+                            <option value="main">Main St</option>
+                            <option value="broadway">Broadway</option>
                         </select>
                     </div>
 
-                    <div>
-                        <label for="min-dbh-filter"
-                            class="block text-sm font-medium text-gray-700">Min.
-                            Diameter (in)</label>
+                    <div class="form-group">
+                        <label for="min-dbh-filter">Min. Diameter (in)</label>
                         <input type="number" id="min-dbh-filter"
-                            placeholder="e.g., 0"
-                            class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                            placeholder="0">
                     </div>
 
-                    <div>
-                        <label for="max-dbh-filter"
-                            class="block text-sm font-medium text-gray-700">Max.
-                            Diameter (in)</label>
+                    <div class="form-group">
+                        <label for="max-dbh-filter">Max. Diameter (in)</label>
                         <input type="number" id="max-dbh-filter"
-                            placeholder="e.g., 50"
-                            class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                            placeholder="50">
                     </div>
 
-                    <div class="flex gap-2">
+                    <div class="button-group">
                         <button id="apply-filters-btn"
-                            class="w-1/2 px-4 py-2 bg-blue-600 text-white font-medium rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                            Apply
-                        </button>
+                            class="btn-primary">Apply</button>
                         <button id="reset-filters-btn"
-                            class="w-1/2 px-4 py-2 bg-gray-300 text-gray-800 font-medium rounded-md shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-                            Reset
-                        </button>
+                            class="btn-secondary">Reset</button>
                     </div>
 
-                    <div class="flex items-center justify-center">
-                        <input type="checkbox" id="cluster-toggle"
-                            class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                            checked>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="cluster-toggle" checked>
                         <label for="cluster-toggle"
-                            class="ml-2 block text-sm font-medium text-gray-700">Cluster
-                            Trees</label>
+                            class="checkbox-label">Cluster Trees</label>
                     </div>
+
                 </div>
             </div>
+            <div style="height: 2vh;"></div>
 
             <div id="map"></div>
+            <div style="height: 8vh;"></div>
 
             <div
                 class="data-display">
@@ -156,6 +141,7 @@
                     height="623" data-external="1"></iframe><script
                     type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
             </div>
+            <div style="height: 8vh;"></div>
 
             <div class="data-display">
                 <iframe
@@ -168,6 +154,7 @@
                     height="410" data-external="1"></iframe><script
                     type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
             </div>
+            <div style="height: 8vh;"></div>
 
             <div
                 class="data-display">
