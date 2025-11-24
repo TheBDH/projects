@@ -4,14 +4,11 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    background-color: #efe5d2;
-    /* Soft Sand */
-    color: #4B2E05;
-    /* Deep Brown */
+    background-color: #E3FFF5;
+    color: #06402B;
 }
 
-.data-box,
-.text-box {
+.data-box, .text-box {
     position: relative;
     max-width: 940px;
     width: 80%;
@@ -21,10 +18,8 @@ body {
     z-index: 10;
     font-family: "freight-text-pro", "Georgia", "Times", serif;
     font-size: 1.2em;
-    box-sizing: border-box;
-    /* Ensure padding is included in width calculation */
-    color: rgb(12, 12, 12);
-    /* Apply color for text-box */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    color: rgb(12, 12, 12); /* Apply color for text-box */
 }
 
 
@@ -81,8 +76,7 @@ body {
     font-size: 2.2rem;
     font-family: "freight-text-pro", "Georgia", "Times", serif;
     font-optical-sizing: auto;
-    font-style: bold;
-    font-style: normal;
+    font-weight: bold;
     padding: 0;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -115,7 +109,7 @@ body {
 }
 
 #byline .author {
-    background-color: rgb(190, 33, 33);
+    background-color: #06402B;
     color: white;
     padding: 0.2rem;
     padding-left: 0.4rem;
@@ -133,7 +127,7 @@ body {
 
 a {
     /* color: #94102a; */
-    color: rgb(190, 33, 33);
+    color: #06402B;
 }
 
 #purple-data {
@@ -143,7 +137,7 @@ a {
 
 @keyframes fadeToPurple {
     to {
-        color: #bb2fbb;
+        color: #06402B;
     }
 }
 
@@ -165,7 +159,7 @@ a {
     /* Increase the size of the down arrow */
     font-weight: bold;
     /* Make the arrow bold */
-    color: rgb(190, 33, 33);
+    color: #06402B;
     /* Change the color to a shade of green */
 }
 
@@ -215,14 +209,40 @@ a {
     #logo {
         width: 200px;
     }
-
+    
     #herald-logo {
         max-width: 200px;
     }
 
-    .data-box,
-    .text-box {
+    .data-box, .text-box {
         max-width: 90%;
         padding: 1em;
     }
+}
+
+/* CUSTOM STYLES FOR THIS PROJECT */
+
+#map {
+    height: 800px;
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Custom scrollbar for the list */
+.rare-list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.rare-list-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.rare-list-container::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+}
+
+.rare-list-container::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
 }
