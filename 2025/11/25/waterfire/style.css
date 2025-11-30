@@ -279,3 +279,12 @@ img {
   opacity: 1;
   transform: translateY(0px);
 }
+
+.img-step img {
+  filter: grayscale(100%);
+  transition: filter 1s ease-out;
+}
+
+.img-step.active img {
+  filter: grayscale(0%);
+}

@@ -161,6 +161,16 @@ function handleStepEnter(response) {
   }
 }
 
+var imgScroller = scrollama();
+
+function handleImgStepEnter(response) {
+  response.element.classList.add("active");
+}
+
+function handleImgStepExit(response) {
+  response.element.classList.remove("active");
+}
+
 function init() {
   scroller
     .setup({
@@ -170,6 +180,15 @@ function init() {
       container: ".scroll",
     })
     .onStepEnter(handleStepEnter);
+
+  imgScroller
+    .setup({
+      step: ".img-step",
+      offset: 0.6,
+      debug: false,
+    })
+    .onStepEnter(handleImgStepEnter)
+    .onStepExit(handleImgStepExit);
 
   // window.addEventListener("resize", handleResize);
 }
