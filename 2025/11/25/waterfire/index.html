@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>WaterFire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="images/fire.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta
+      name="description"
+      content="Brown Daily Herald article about Waterfire, a regularly-scheduled community event in Providence."
+    />
+    <meta
+      name="keywords"
+      content="Brown University, Waterfire, metro, Providence, Rhode Island, Brown Daily Herald"
+    />
+    <meta
+      name="author"
+      content="Sophia Wotman, Maya Nelson, Michelle Bi, Talia Egnal, Annika Singh"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.js"></script>
+  </head>
+  <body>
+    <div id="progress-bar"></div>
+    <div id="pre-map">
+      <div id="heading">
+        <a href="https://www.browndailyherald.com" target="_blank">
+          <img
+            src="images/logo-blue.png"
+            id="herald-logo"
+            alt="Brown Daily Herald Logo"
+          />
+        </a>
+        <h3>
+          Behind the scenes<br />
+          of <span id="waterfire">WaterFire</span>
+        </h3>
+        <p>What it takes to run Providence’s iconic community event (edit later).</p>
+        <h6 id="byline">
+          Reporting by
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/sophia-wotman"
+              target="_blank"
+              >Sophia Wotman</a
+            ></span
+          >,
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/maya-nelson"
+              target="_blank"
+              >Maya Nelson</a
+            ></span
+          >,
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/michelle-bi"
+              target="_blank"
+              >Michelle Bi</a
+            ></span
+          >,
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/talia-egnal"
+              target="_blank"
+              >Talia Egnal</a
+            ></span
+          >
+          &
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/annika-singh"
+              target="_blank"
+              >Annika Singh</a
+            ></span
+          ><br /><br />
+          Media by 
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/jake-parker"
+              target="_blank"
+              >Jake Parker</a
+            ></span
+          >,
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/mia-santomassimo"
+              target="_blank"
+              >Mia Santomassimo</a
+            ></span
+          >
+          ,
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/caleb-lee-kong"
+              target="_blank"
+              >Caleb Lee-Kong</a
+            ></span
+          >, 
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/kai-la-forte"
+              target="_blank"
+              >Kai La Forte</a
+            ></span
+          >, 
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/vanson-vu"
+              target="_blank"
+              >Vanson Vu</a
+            ></span
+          >,
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/horatio-hamilton"
+              target="_blank"
+              >Horatio Hamilton</a
+            ></span
+          >
+          &
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/kaia-yalamanchili"
+              target="_blank"
+              >Kaia Yalamanchili</a
+            ></span
+          ><br /><br />
+          Website by
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/annika-singh"
+              target="_blank"
+              >Annika Singh</a
+            ></span
+          >
+        </h6>
+      </div>
+      <p>A full WaterFire lighting on the Providence River in 2025 features fires
+      blazing in 81 braziers — large, shallow metal stands just above the
+      water’s surface. The braziers run from Crawford street to the WaterFire
+      Basin in Waterplace Park, spanning around five blocks. Throughout the
+      night, fire performers and gondoliers weave their way along the water,
+      while visitors mill around at the river’s edge, stopping at food stalls,
+      admiring locally crafted art or interacting with living statues.<br /><br />
+
+      But in December 1994, when Barnaby Evans ’75 organized the first
+      WaterFire, the event looked very different. <br /><br />
+
+      When Evans attended Brown in the 1970s, the Providence River was buried
+      under streets and buildings, Evans told The Herald. In the 1990s, the city
+      invested significant resources into uncovering the river. <br /><br />
+
+      On Dec. 31, 1994, Evans created a sculptural art installation dubbed
+      “First Fire,” placing and lighting 11 braziers along the river in order to
+      attract people to the newly created waterfront and celebrate the 10th
+      anniversary of a bygone Providence New Year’s Eve tradition called “First
+      Night.” The event, funded out of his own pocket and held without prior
+      approval from the city, ran until 1:30 a.m. in the new year, Evans
+      recalled.<br /><br />
+
+      WaterFire chose to use pine wood for its spicy scent and distinct crackle.
+      A full lighting can go through 15-20 cords of wood — over 30,000 pounds —
+      in one night, according to Bob Hopkins, who has volunteered with WaterFire
+      since 2008.<br /><br /></p>
+
+      <div class="embedded-img">
+              <img src="images/bob-hopkins.jpg" style="max-width: 50%;" alt="TKTK" /><br/>
+              <p id="photo-credit">By Jake Parker | The Brown Daily Herald</p>
+              <br /><br />
+            </div>
+
+      <p>In June 1996 came “Second Fire,” when the then-head of the city’s Parks
+      Department offered Evans $990 to run the program during a week-long
+      international art conference. “It became viral,” Evans said. “The
+      community said, ‘Hey, we’d love you to do this on an ongoing basis.’”<br /><br />
+
+      [ARCHIVAL] <br /><br />
+
+      From there, community members supported the creation of the WaterFire
+      nonprofit in 1997 with Evans as the executive artistic director, the role
+      he remains in to this day. Over 30 years later, that organization has 30
+      employees, 400 annual volunteers and a permanent arts center, along with
+      an annual budget of $3.7 million.<br /><br />
+
+      The fires attract nearly 1 million visitors annually, creating $149
+      million in local economic output and $9 million in state tax revenue,
+      according to the WaterFire website. For funding, the nonprofit relies on
+      corporate sponsorships, community donations and, recently, city and state
+      support.<br /><br />
+
+      But today, nearly three decades since its founding, WaterFire is
+      struggling to stay afloat.<br /><br />
+
+      <div id="toggle-section">
+      <button id="toggle-button">
+        <span class="toggle-arrow">▶</span>
+        <span class="toggle-label">Click here to read an in-depth section on WaterFire’s financial challenges.</span>
+      </button>
+
+      <div id="toggle-content">
+        <p>
+           Last year, the Boston Globe reported that WaterFire was $750,000 over
+      budget in 2023, putting the price tag of each event at $250,000. The fiscal
+      year 2026 state budget includes a $400,000 line item grant to
+      WaterFire.<br /><br />
+
+      Rising expenses have made lightings more costly, as the organization’s
+      annual insurance prices rose to nearly $250,000 in 2024, according to the
+      Globe. The organization also has to pay approximately $50,000 per year to
+      the city of Providence for event security — previously written off by the
+      citypolice details. Since 2023, WaterFire has cut 25% of its staff.<br /><br />
+
+      But the underlying issue seems to be, according to Evans, is a loss of
+      revenue. <br /><br />
+
+      Mark Allan, the interim executive director of WaterFire Providence, told
+      The Herald that he believes the decrease in funding is symptomatic of a
+      yearslong economic trend of companies leaving Providence or scaling back
+      support for WaterFire. <br /><br />
+
+      Out of the nine Rhode Island universities that have previously sponsored
+      lightings, only the Rhode Island School of Design remains a sponsor, Evans
+      said. Earlier this year, Brown stopped sponsoring a Family Weekend
+      WaterFire amid budget shortfalls, The Herald previously reported.
+      <br /><br />
+
+      WaterFire had around 75 sponsors this year, Kelly Pattison, the director
+      of sponsorship and corporate relations, told The Herald. Contributions
+      ranged from $250 for an ad to sponsorship of a full lighting. Sometimes
+      sponsorship can entail lending chairs or vases — “It takes a village,”
+      Pattison said. <br /><br />
+      She explained that planning for a lighting is a long, continuous process,
+      noting that in late October, she was already lining up donors for next
+      year’s lightings. The COVID-19 pandemic “rocked everyone,” she said.
+      Corporations became much more cautious about how they spent their money,
+      prioritizing seeing a return on their investment. As a result, sponsorship
+      has shifted to being more community-based, she said.<br /><br />
+      Amid the se rising costs, falling revenue and dwindling sponsorships,
+      WaterFire scheduled just six full lightings for this year, a marked
+      decrease from nine full lightings in 2024, 2023 and 2022. This year’s
+      schedule saw three 30-brazier Basin lightings, as well as two partial
+      lightings, which only illuminate a smaller section of the river.
+      <br /><br />
+
+      Some city leaders are trying to and state have stepped in andto help.
+      The fiscal year 2026 state budget includes a $400,000 line item grant to
+      WaterFire. Earlier this year, Mayor Smiley proposed the city purchase the
+      WaterFire Arts Center building for $3.5 million and rent it back to the
+      WaterFire nonprofit for $1 a year, provided the organization holds eight
+      full and five partial lightings a year. On Nov. 4, the City Council
+      Finance Committee approved the resolution, sending it to the full City
+      Council for a vote on Nov. 20. 
+        </p>
+      </div>
+    </div><br/>
+
+      “The scale of the event gives the impression that it’s presented by the
+      city or by the state,” Evans said. Visitors do not realize it is a
+      nonprofit that handles everything from building the stages for
+      performances to adjusting the height of the river for the boats, he
+      explained. <br /><br />
+
+      The Herald spoke to staffers, vendors, performers and organizers to see
+      what goes into making WaterFire possible.</p>
+    </div>
+    <div class="scroll">
+      <div id="map"></div>
+      <div class="scrolly">
+        <article>
+          <div class="step" data-step="1" data-info="basin">
+            <p><b>At the basin:</b><br /><br /></p>
+
+            <div class="embedded-img">
+              <img src="images/fire-performer.jpg" alt="TKTK" />
+              <p id="photo-credit">By Jake Parker | The Brown Daily Herald</p>
+              <br /><br />
+            </div>
+
+            <p>
+              <i>Liz Knights, fire performer</i><br /><br />
+              Fire performer Liz Knights has been lighting up the Providence
+              River as part of WaterFire for over a decade. Knights’s company,
+              Cirque de Light, now employs most of the fireball-twirling
+              performers on WaterFire boats — and sometimes, Knights performs
+              with them, she said.<br /><br />
+
+              Knights’s path to performance began while she was a student at
+              Brown, where she joined the juggling club and found a community
+              that encouraged her interest in circus arts and gymnastics. After
+              leaving school due to illness, she began performing professionally
+              and soon crossed paths with WaterFire’s original fire spinner,
+              Spogga Hash. After asking him if she could join the act, she
+              received a formal invitation from the organizers.<br /><br />
+
+              Since then, Cirque de Light has grown to include over 60 fire
+              performers, with about 10 rotating through WaterFire performances
+              each season. “They’ll light their fire prop off of one of the
+              torches, and then perform in the basin, and then perform going up
+              and down the river, which is really fun, because you get to see so
+              many different people,” Knights said. <br /><br />
+
+              For Knights, the choreography and spectacle are part of what makes
+              the event so rewarding — and surprisingly safe. “People think it’s
+              way more dangerous than it is,” she said, adding that she’s gotten
+              worse burns from household objects than the fire she performs
+              with.
+              <br /><br />
+
+              Her favorite part of the night is the sheer beauty of it all.
+              “It’s incredibly immersive,” she said. “You're surrounded by the
+              audience. You're surrounded by fire and music.”<br /><br />
+
+              Having performed at WaterFire for so many years, it feels “kind of
+              like a family,” Knight said. She expressed gratitude that this
+              year’s season was able to happen, but worried about the event’s
+              uncertain future. “It’s one of those things where people might not
+              recognize the effect until it’s gone,” she added.<br /><br />
+
+              “I just like making people happy,” Knights added. “I’m there to
+              make them feel joy, awe, wonder. All those things are very
+              gratifying.”<br /><br />
+            </p>
+
+            <div class="embedded-img">
+              <img src="images/barry-lima.jpg" alt="TKTK" />
+              <p id="photo-credit">By Kaia Yalamanchili | The Brown Daily Herald</p>
+              <br /><br />
+            </div>
+            
+            <p>
+              <i>Barry Lima, Staff sergeant </i><br /><br />
+              This year’s Nov. 1 lighting featured a “Salute to Veterans” event
+              at the basin. Barry Lima Jr., a veteran staff sergeant, was one of
+              the torch holders at the ceremony. Around 50 veterans participated
+              in this year’s event, lighting the braziers that line the river,
+              according to Lima Jr.<br /><br />
+
+              Lima and his wife come down to WaterFire every year, and after
+              seeing a call for veterans to perform at the Nov. 1 lighting, Lima
+              signed up. The experience was incredibly meaningful, he told The
+              Herald. <br /><br />
+
+              Lima recalled taking a photo with his late father at the same spot
+              where he lit the torches on Nov. 1. “There’s a picture that I have
+              — me and my dad before he passed away — and it was right where I
+              was lighting the torches,” he said. “So this place is pretty
+              special. You know, with my dad not being here, I think of him a
+              lot when I come here,.” Lima said.<br /><br />
+
+              He added that he felt instantly connected to the veteran community
+              during the ceremony. “Even just being down there — I didn’t know
+              any of them — we all still felt like brothers and sisters.
+              Strangers, but like we’ve all been through the same hardship of
+              wearing the uniform and all the stuff that we go through.”<br /><br />
+            </p>
+            <div class="embedded-img">
+              <img
+                src="images/basin.jpg"
+                alt="An image of the lit river basin at night."
+              />
+              <p id="photo-credit">By Jake Parker | The Brown Daily Herald</p>
+              <br /><br />
+            </div>
+          </div>
+
+          <div class="step" data-step="2" data-info="steeple-st">
+            <p><b>On Steeple St.:</b><br /><br /></p>
+            <div class="embedded-img">
+              <img src="images/pourever-creations.jpg" alt="TKTK" />
+              <p id="photo-credit">
+                By Mia Santomassimo | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+            <p>
+              <i>Cathy Tague, owner of Pourever Creations</i><br /><br />
+
+              Cathy Tague is the owner of Pourever Creations, a small family
+              business that works with acrylic paint and epoxy to create designs
+              on everything from wine glasses to charcuterie boards. Using a
+              technique called pour painting, Tague designs primarily
+              ocean-themed glassware. <br /><br />
+
+              Pourever Creations started around seven years ago, when Tague’s
+              husband suggested that Tague pour epoxy over acrylic paint to make
+              a glassy finish. They began selling their creations at local
+              crafts fairs and “Small Business Saturday,” an initiative by
+              WaterFire to feature local businesses at their arts center.
+              <br /><br />
+
+              Since being accepted as a WaterFire vendor, Pourever Creations has
+              been at nearly every lighting. <br /><br />
+
+              “WaterFire is, by far, our biggest and best event that we do,”
+              Tague said. <br /><br />
+
+              But the preparation process can be complicated, Tague said, given
+              that often, vendors only find out if they’ve been selected for an
+              upcoming lighting around a month in advance. Since she works with
+              epoxy, which can take up to a few weeks to fully set, Tague
+              emphasized that it’s “about a month-long process to really get
+              things up and going.”<br /><br />
+
+              Tague added that while their ocean designs are most popular, she
+              likes to design her products for WaterFire based on the upcoming
+              event. For the Veterans WaterFire, she designed red, white and
+              blue pieces for sale. <br /><br />
+
+              WaterFire has been crucial for building her business, Tague said,
+              as she often gets repeat customers across multiple WaterFires.
+              “Every year they come back and get a new gift for someone that
+              matches what they brought them last year.” <br /><br />
+
+              She also emphasized “the excitement and energy” of event staff,
+              attendees and other vendors. She recalled one rainy WaterFire
+              night, when Waterfire staff and vendors tried to help each other
+              keep their stalls dry. <br /><br />
+
+              “You’d think it would be the most miserable thing ever, but it’s
+              one of our favorite memories,” Tague said. “You build a
+              community.”<br /><br />
+
+              Tague expressed concern about the recent decrease in WaterFire
+              lightings. “I’m a small business and I rely on WaterFire,” she
+              said.<br /><br />
+            </p>
+
+            <div class="embedded-img">
+              <img src="images/tigris-1.jpg" alt="TKTK" />
+              <p id="photo-credit">
+                By Horatio Hamilton | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+
+            <div class="embedded-img">
+              <img src="images/tigris-2.jpg" alt="TKTK" />
+              <p id="photo-credit">
+                By Horatio Hamilton | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+
+            <p>
+              <i>Selahattin Sep, Tigris Handmade</i><br /><br />
+
+              Selahattin Sep, founder and owner of shoe store Tigris Handmade,
+              said that for him, shoemaking is “a family tradition.” His family
+              has been making shoes for 700 years, he said, with “no glue, no
+              synthetic materials, no machine (and) no electricity.”<br /><br />
+
+              “Everything is made by hand,” he said, explaining that different
+              pieces of leather are hand-stitched together to construct the
+              shoes.<br /><br />
+
+              This shoe-making method requires at least three days to produce
+              five or six pairs. But the shoes he produces last a long time:
+              “Six years old and they still look brand new,” Sep said.<br /><br />
+
+              Since the shoes don't use any chemicals, they can also be
+              composted. The shoes won’t “end up in the landfill,” he said.<br /><br />
+
+              Since Tigris Handmade doesn’t mass produce its merchandise, Sep
+              doesn’t have enough pieces to keep his shop open while he displays
+              his work at WaterFire. Despite the effort, he said, “it’s fun to
+              be here.” <br /><br />
+
+              “It's not all about making money,” he said, adding that often,
+              it’s “not worth it” financially to be part of the event.<br /><br />
+
+              Instead, he continues to come back to WaterFire because of the
+              diverse crowds it attracts, he said. He believes that the
+              community he builds at these events is sometimes “better than
+              money.”<br /><br />
+            </p>
+
+            <div class="embedded-img">
+              <img src="images/honey-shack.jpg" alt="TKTK" />
+              <p id="photo-credit">
+                By Mia Santomassimo | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+
+            <p>
+              <i>Paul Octeau, owner of Paul & Sandy's Honey Shack</i
+              ><br /><br />
+
+              Paul Octeau is a local beekeeper and owner of Paul & Sandy’s Honey
+              Shack, selling raw honey, beeswax candles and honey sticks. He has
+              worked as a beekeeper for over 10 years, helping manage 37 hives
+              throughout Rhode Island, he told The Herald.<br /><br />
+
+              Octeau said he found out about WaterFire from some of his friends
+              who are currently also vendors. <br /><br />
+
+              This is the Honey Shack’s second year as a vendor at WaterFire,
+              which he said has been “great for sales.” He said that the Honey
+              Shack is accepted to be a vendor at about one WaterFire lighting
+              per month. <br /><br />
+
+              Octeau noted the importance of donations for WaterFire, especially
+              due to the loss of sponsors. “The more people they can get to
+              donate, then they can keep the fires burning,” he added.<br /><br />
+            </p>
+            <div class="embedded-img">
+              <img
+                src="images/steeple.jpg"
+                alt="An image of Steeple St. at night, filled with vendors."
+              />
+              <p id="photo-credit">By Jake Parker | The Brown Daily Herald</p>
+              <br /><br />
+            </div>
+          </div>
+
+          <div class="step" data-step="3" data-info="canal-walk">
+            <p><b>On Canal Walk:</b><br /><br /></p>
+
+            <div class="embedded-img">
+              <img src="images/origami.jpg" alt="TKTK" />
+              <p id="photo-credit">
+                By Kaia Yalamanchili | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+
+            <p>
+              <i>Andrew Anselmo, origami</i><br /><br />
+              Andrew Anselmo, a mechanical engineer and origami street
+              performer, has been folding paper creations at WaterFire for over
+              two decades. His journey with origami began “peripherally” as a
+              child, but it wasn’t until a university conference in Turkey that
+              he discovered the joy of folding for others after being asked by
+              attendees to perform origami, he said. <br /><br />
+
+              “And next thing you know, I’m making a couple of bucks,” said
+              Anselmo, who is now an origami master and street performer.<br /><br />
+
+              Anselmo first brought origami to WaterFire when he folded peace
+              cranes along the canal after the September 11 attacks in 2001. “My
+              primary and best gig ever has been WaterFire,” he said. Since
+              then, he has returned year after year, driving down from Boston
+              with his wooden box and knapsack, quietly folding for hours as
+              crowds wander past, absorbing the music and firelight.<br /><br />
+
+              For Anselmo, the performance is about connection, not
+              compensation. “You’re interacting with the crowd by giving stuff
+              away,” he said. “I’ve got a sign on my little tip jar that says,
+              ‘If you can’t leave a tip, leave a note,’ and that allows people
+              to interact with you, and they don’t feel guilty if they don’t
+              have any money.”<br /><br />
+
+              The reactions he receives are as varied as they are memorable.
+              “I've had people say, can you make a ring for me, because I want
+              to propose to my girlfriend,” Anselmo said. “I've had people come
+              up to me saying, you know, this is my last WaterFire because I got
+              cancer and I'm going to be gone.”<br /><br />
+
+              Despite the funding cuts, Anselmo remains committed to the event.
+              “You need music. You need paints. You need sculpture … You need
+              people doing all sorts of wacky stuff to make life worthwhile,” he
+              said.<br /><br /></p>
+
+              <div class="embedded-img">
+              <img
+                src="images/pardo-benitez.jpg"
+                alt="TKTK"
+              />
+              <p id="photo-credit">By Kaia Yalamanchili | The Brown Daily Herald</p>
+              <br /><br />
+            </div>
+
+              <p><i>Tiziano Pardo ’28 & Emily Benitez ’28</i><br /><br />
+
+              For Tiziano Pardo ’28 and Emily Benitez ’28, WaterFire has become
+              a defining part of their time in Providence.<br /><br />
+
+              “It’s the one thing I feel like Providence has that’s very
+              unique,” Pardo said. “It’s really beautiful seeing how the
+              community engages with each other.”<br /><br />
+
+              Benitez said she was drawn to the event’s atmosphere and the sense
+              of calm it provides. “I love the water, so being here with the
+              fires — I think it’s a nice visual,” she said. “It gives me a
+              break from school.” <br /><br />
+
+              Pardo, who attended a recent state budget hearing about WaterFire,
+              said he’s concerned about cuts to the event’s funding. “It’s quite
+              unfortunate,” he said, referring to statewide budget deficits.
+              Pardo highlighted the economic footprint of an event like
+              WaterFire, describing how “you’re propping up local vendors, local
+              artists, hotels, restaurants.”<br /><br />
+
+              He added that the budget cuts “only (make) it more important for
+              private actors like Brown to support the event,” expressing
+              disappointment that “Brown didn’t include WaterFire as part of
+              Parents Weekend.”<br /><br />
+
+              “I can only hope that they continue doing this,” Benitez said.
+              “It’s been a big part of my Brown experience, and I would love to
+              keep coming and seeing this.”<br /><br />
+            </p>
+
+            <div class="embedded-img">
+              <img src="images/merch-tent.jpg" alt="TKTK" />
+              <p id="photo-credit">
+                By Caleb Lee-Kong | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+
+            <p>
+              <i>Juliana Craige, event day staff and cashier</i><br /><br />
+
+              Event-Day Staffer Juliana Craige has been working with WaterFire
+              since June of 2023. She primarily works to help unload trucks and
+              set up the WaterFire merchandise stand. <br /><br />
+
+              “The amount of work that it takes and coordination with the city
+              to make a WaterFire happen is insane,” Craige said, pointing to
+              staffers who come to set up early in the morning and the police
+              that block off the streets the night before a lighting.
+              <br /><br />
+
+              One of Craige’s favorite memories of setting up at WaterFire is of
+              a lighting on a rainy day. <br /><br />
+
+              “We got halfway through setup, and it started torrentially
+              pouring,” Craige said. From there, she and her bosses brainstormed
+              a solution: to pull two trucks onto the street facing one another
+              and set up the merchandise tents in the middle. <br /><br />
+
+              “We were working out of the trucks, and everybody was gathering
+              under the tents,” Craige said. “It was super hectic, but super
+              fun.”
+              <br /><br />
+            </p>
+
+            <div class="embedded-img">
+              <img src="images/patio.jpg" alt="TKTK" />
+              <p id="photo-credit">
+                By Horatio Hamilton | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+
+            <p>
+              <i>Angel Winpenny, The Patio on Broadway and Trinity Brewhouse</i>
+              <br /><br />
+
+              Angel Winpenny — owner of local eateries The Patio on Broadway and
+              the recently acquired Trinity Brewhouse — ran a stall at WaterFire
+              where she served alcoholic beverages from both locations.<br /><br />
+
+              “This is an opportunity that we’re thankful to partake in by
+              representing our business to the local community,” she said. “We
+              like to participate in community events.”<br /><br />
+
+              Events like WaterFire, she added, gives tourists “an idea of what
+              the city of Providence has to offer.” <br /><br />
+
+              Winpenny added that a portion of her sales from WaterFire will be
+              donated back to the event, noting the importance of doing “all
+              that we can to help support” WaterFire. <br /><br />
+
+              She said she finds “a lot of joy” in being part of the event.
+              “It’s nice to connect with other individuals, other vendors and
+              visitors,” she said.<br /><br />
+            </p>
+            <div class="embedded-img">
+              <img
+                src="images/canal-walk.jpg"
+                alt="An image of Canal Walk during the day, filled with vendors."
+              />
+              <p id="photo-credit">
+                By Caleb Lee-Kong | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+          </div>
+          <div class="step" data-step="4" data-info="washington-st">
+            <p><b>On Washington St.:</b><br /><br /></p>
+            <div class="embedded-img">
+              <img src="images/living-statue.jpg" alt="TKTK" />
+              <p id="photo-credit">By Jake Parker | The Brown Daily Herald</p>
+              <br /><br />
+            </div>
+            <p>
+              <i>Tara Smith, living statue</i><br /><br />
+              Tara Smith, a performance artist and living statue, has spent the
+              last 20 seasons bringing WaterFire to life — without moving an
+              inch. She “fell into” the craft 21 years ago, she told The Herald,
+              starting to busk in her hometown of Bridgetown, Massachusetts.
+              <br /><br />
+
+              “I’ve always been a generally artsy person, but living statuary
+              and performance art in general has been the art form that really
+              gripped my soul,” Smith said.<br /><br />
+
+              Smith started out performing near the Washington Street Bridge, an
+              area that wasn’t originally part of the event. But after a few
+              years, WaterFire organizers reached out to her, inviting Smith to
+              become a formal fixture of the event. <br /><br />
+
+              “It's central to my life at this point,” Smith said. “It’s been
+              nice seeing the same people coming to WaterFire year after year. I
+              have adults, they’re in their 20s now, talking about seeing me
+              when they were a little kid.”<br /><br />
+
+              During performances, she scans the crowd looking for chances to
+              connect — with a wave to a child or a gentle gesture to ease
+              someone’s nerves. Her characters, Smith said, are pieces of
+              herself she “pluck(s) out and put on display… and give them a
+              moment to shine.”<br /><br />
+
+              WaterFire’s atmosphere sets it apart from other performance
+              events, Smith said. “There is inherently this sort of unwinding at
+              the end of the day with something fun,” encouraging reflection and
+              small, meaningful interactions, she said.<br /><br />
+
+              For Smith, the WaterFire season provides the bulk of her annual
+              income, and she relies on the event not just financially but
+              creatively. Smith worries about the event’s future, particularly
+              after funding cuts and the slowdown caused by the pandemic. “I
+              rely on the WaterFire season to be the bulk of my income for the
+              year,” she said. <br /><br />
+
+              But she remains committed. “I have no plans to retire anytime
+              soon,” she said. “I’m going to keep performing until my body says,
+              ‘No, we can’t do this anymore.’”<br /><br />
+            </p>
+
+            <div class="embedded-img">
+              <img src="images/glass-1.jpg" alt="TKTK" />
+              <p id="photo-credit">
+                By Horatio Hamilton | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+            <div class="embedded-img">
+              <img src="images/glass-2.jpg" alt="TKTK" />
+              <p id="photo-credit">
+                By Horatio Hamilton | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+            <p>
+              <i>Matt Stone, Gather Glass</i><br /><br />
+              Since 2011, Matt Stone has been working with WaterFire as the
+              co-owner of Gather Glass, a Federal Hill-based glassblowing studio
+              that offers handcrafted products, lessons and more.<br /><br />
+
+              With help from event staff, Gather Glass originally sold “wearable
+              necklaces and earrings,” Stone said, along with WaterFire-themed
+              glasses. Over the years, Gather Glass’s live demonstrations and
+              range of product offerings have evolved and grown.<br /><br />
+
+              WaterFire has “never been anything but wonderful,” Stone said. The
+              festival brings together “such a big group of people from such a
+              variety of places,” he added.<br /><br />
+
+              On the night of the Nov. 1 WaterFire, winds were gusty and strong,
+              making setting up “a little tricky,” Stone said. He and his
+              coworkers used “zip ties and sandbags” to anchor their tent and
+              demonstration area in place.<br /><br />
+
+              Gather Glass has held live glassblowing demonstrations for its
+              entire tenure at WaterFire. Equipped with a mobile furnace, two
+              glassmakers often work on a piece at the same time next to the
+              sales tent. That piece “could be a vase, or a cup or a bird,” said
+              Stone.<br /><br />
+
+              “It’s a dance with the medium, and everyone can be part of
+              something special” watching the demonstration, Stone added.
+              “Sometimes we’ll have 50, 100 people watching us make a piece.”<br /><br />
+
+              WaterFire is “such an important part of our business,” Stone said.
+              The festival provides not only a chance for attendees to purchase
+              glass products, but also for people to “learn about who we are”
+              and sign up for glassblowing classes, he added.<br /><br />
+
+              The financial boost that WaterFire provides Gather Glass “carries
+              over” for “weeks and months beyond” the event,” Stone said. “The
+              business that we get from WaterFire is huge.”<br /><br />
+
+              As a whole, WaterFire nights are “so important for the economy and
+              the jobs that are here” in Providence, Stone said — not only the
+              vendors, but also “the hotels and the surrounding businesses.”
+              Despite funding changes throughout the years, Stone emphasized the
+              consistency of “really big, fun crowds” that attend the
+              festival.<br /><br />
+
+              “It brings this beautiful atmosphere and energy to the city that
+              you just can’t replicate anywhere else,” Stone said. “When I think
+              of Providence, I think of WaterFire.”<br /><br />
+
+              “Without it, our city would be a lot different,” he added.<br /><br />
+
+              <i>Felicia LaRoche, attendee</i><br /><br />
+              Felicia LaRoche, a senior at Rhode Island College, stated that her
+              Nov. 1 visit to WaterFire was her “fifth or sixth time” there.<br /><br />
+
+              She expressed enthusiasm for “the live music” and the bustle of
+              the event. In particular, LaRoche explained that she regularly
+              comes to see Gather Glass’s live glassblowing demonstrations.<br /><br />
+
+              “It’s just really pretty,” she said, watching one of Gather
+              Glass’s glassblowers place a sculpture into the kiln. “It’s nice
+              art.”<br /><br />
+            </p>
+
+            <div class="embedded-img">
+              <img src="images/mushipi.jpg" alt="TKTK" />
+              <p id="photo-credit">By Vanson Vu | The Brown Daily Herald</p>
+              <br /><br />
+            </div>
+
+            <p>
+              <i>Joseph Mushipi, visual artist</i><br /><br />
+
+              Hailing originally from Zambia, visual artist Joseph Mushipi has
+              been participating in WaterFire since 2002.<br /><br />
+
+              “Nature is the source of my inspiration,” he said. “I paint
+              magical trees. I paint leaves. I’m so obsessed with nature.”<br /><br />
+
+              Mushipi describes his experience with WaterFire as simply
+              “phenomenal.”<br /><br />
+
+              “I sell my art to a lot of big festivals,” he said. But his
+              experience with WaterFire in particular has helped him to “learn a
+              lot and improve so much.” <br /><br />
+
+              Especially because of its frequency compared to other festivals
+              across New England, the festival has provided him the most
+              “exposure,” he said.<br /><br />
+
+              The process of preparing for WaterFire “takes so much work,”
+              Mushipi explained. Throughout the year, he has to stay stocked
+              with art materials and build a strong inventory of prints. The
+              night of the festival, he comes early to set up his booth and
+              string lights across the inside.<br /><br />
+
+              “It’s art on its own, just arranging the paintings on the wall,”
+              he added. “So I love it.”<br /><br />
+
+              But his work has not come without financial difficulties.<br /><br />
+
+              “Especially this year, sales have gone way down,” he said.
+              “Looking at what is happening in the country,” he believes that
+              more people are choosing to spend their money on basic necessities
+              such as food.<br /><br />
+
+              “But I signed up for this,” he added. “Two paintings, or prints,
+              whatever comes out of it — you just say, ‘Thank God for that.’”<br /><br />
+
+              During WaterFire nights, Mushipi’s booth often grows extremely
+              crowded. The event formally ends at 10:00 p.m., but Mushipi says
+              that he usually stays until 11:00 p.m. to connect with lingering
+              attendees.<br /><br />
+
+              “Watching people walk past, I see a lot of sad faces,” he said.
+              “But the moment they come close to my art, their face changes. The
+              customer came very sad, and he goes home very happy. I want to
+              achieve that.”<br /><br />
+            </p>
+
+            <div class="embedded-img">
+              <img src="images/good-vibes-1.jpg" alt="TKTK" />
+              <p id="photo-credit">
+                By Horatio Hamilton | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+
+            <div class="embedded-img">
+              <img src="images/good-vibes-2.jpg" alt="TKTK" />
+              <p id="photo-credit">
+                By Horatio Hamilton | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+
+            <p>
+              <i>Tommy Tainsh, Good Vibes</i><br /><br />
+
+              Tommy Tainsh, owner of beverage company Good Vibes, said that he
+              and many of his coworkers “have worked for other companies that
+              have done WaterFire … for probably 30 years.” He noted that the
+              event has “really obviously grown” since he first worked there as
+              a vendor.<br /><br />
+
+              In the late 1990s, Tainsh said, “they used to have a little dance
+              floor” at WaterFire. <br /><br />
+
+              But Good Vibes is a new company, Tainsh noted. “This is our first
+              summer, and it’s been great,” he said.<br /><br />
+
+              Their WaterFire menu advertised several seasonal offerings,
+              including a hot apple cider with caramel whiskey and a spiced fall
+              sangria. At the events they cater, Tainsh said, “we try to bring a
+              little bit of everything.”<br /><br />
+
+              He said that Good Vibes tries “to do something a little extra
+              special” for each event — for WaterFire that day, the company had
+              “glow-in-the-dark ice cubes,” he said. <br /><br />
+
+              The company also sells several locally sourced beers, since for
+              the last three decades, Tainsh has worked as a brewer. “We support
+              a lot of local breweries, because it’s tough in this day and age,”
+              he said.<br /><br />
+
+              Preparing for the event takes weeks, Tainsh noted. For WaterFire,
+              Good Vibes made 50 gallons of hot apple cider.<br /><br />
+
+              In catering, Tainsh added, Good Vibes model its approach after the
+              company name: they “bring the positive energy and hope for the
+              best.”<br /><br />
+
+              “It seems like a five hour event, but it's more like a three week
+              event,” he joked, adding that “it’s worth the effort, because when
+              you have people and they enjoy what you bring ... that's all you
+              could ask for,” he said.<br /><br />
+
+              WaterFire is “huge” for local businesses, Tainsh said. “Not
+              everybody goes out anymore ... the new generation stays in,” he
+              added, but WaterFire “is an excuse to come out.”<br /><br />
+
+              Tainsh said there may be a silver lining despite funding cuts:
+              Rarer WaterFire lightings might attract more visitors. “If you
+              have one every week, maybe as many people won't come,” he said.
+              <br /><br />
+
+              At Good Vibes, Tainsh works with his wife Carlene, his sister
+              Colleen and his friend Tony — who he described as “like a brother”
+              to him.<br /><br />
+
+              “We’re not just here to make money,” he said. “We’re here as a
+              family.”<br /><br />
+            </p>
+            <div class="embedded-img">
+              <img
+                src="images/washington-1.jpg"
+                alt="An image of Washington St. during the day, filled with vendors."
+              />
+              <p id="photo-credit">
+                By Horatio Hamilton | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+            <div class="embedded-img">
+              <img
+                src="images/washington-2.jpg"
+                alt="A closer look at the vendors on Washington St. during the day"
+              />
+              <p id="photo-credit">
+                By Horatio Hamilton | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+          </div>
+          <div class="step" data-step="5" data-info="waterfire-circle-tent">
+            <p>
+              <b>At the WaterFire Circle Tent:</b><br /><br />
+              At WaterFire, “we don't have any fancy seats by the river where
+              you get the best view. We don't sell seats on a boat to ride
+              because it's meant to be seen by everybody from the shore,” Evans
+              told The Herald.<br /><br />
+
+              WaterFire does, however, offer boat rides to members of the
+              WaterFire Circle, their “most generous supporters.” <br /><br />
+
+              WaterFire Circle offers both individual and corporate membership
+              plans. The lowest individual plan, which grants the purchaser 16
+              WaterFire Circle tickets, costs $1,500. The pricier gold plan
+              costs $5,000, granting the purchaser 30 tickets and the right to
+              reserve a private boat ride, according to their website.<br /><br />
+
+              Circle members also have access to the WaterFire Circle reception
+              tent, a private seating area with refreshments, beverages and a
+              private fire dancer show.<br /><br />
+
+              <i>Jeanine Palumbo, volunteer with WaterFire Circle</i
+              ><br /><br />
+
+              Since 2007, Jeanine Palumbo has volunteered at WaterFire. She
+              currently works at the welcome tent for the WaterFire Circle,
+              which consists of individual and corporate sponsors that help to
+              support WaterFire. <br /><br />
+
+              She said that the WaterFire Circle aims to make up for the recent
+              decrease in donations for the event. While the state and city
+              contribute funds, “it’s nowhere near what it takes to put on a
+              WaterFire,” she said. <br /><br />
+
+              Palumbo said that people can become “members” of the WaterFire
+              Circle, which allows them entry into the reception tent. “It’s the
+              only place that you can have access to our wooden boats, where you
+              can go in amongst the fire.” <br /><br />
+
+              Palumbo emphasized that while WaterFire is still struggling with
+              their sponsorship, individual donations have become even more
+              important. “It certainly isn’t going to affect the deficit we have
+              in a big way, but it will all add up,” she added. She said that
+              WaterFire does not charge an entry free, which allows the broader
+              Providence community to participate in the event.<br /><br />
+            </p>
+            <div class="embedded-img">
+              <img
+                src="images/circle-tent.jpg"
+                alt="An image of the WaterFire Circle Tent at night."
+              />
+              <p id="photo-credit">By Jake Parker | The Brown Daily Herald</p>
+              <br /><br />
+            </div>
+          </div>
+          <div class="step" data-step="6" data-info="college-st">
+            <p>
+              <b>On College St.:</b><br /><br />
+              <i>Chris Hill, owner of Chill’s Cheesecakes (food vendor)</i
+              ><br /><br />
+
+              This year marks the first season Chill’s Cheesecakes has been a
+              vendor at WaterFire. The business, founded about a year ago by
+              Chris Hill, serves gourmet miniature cheesecake plates.<br /><br />
+
+              Chill’s Cheesecakes bakes out of a shared kitchen space in Warren,
+              Rhode Island, which is where the business heard about WaterFire,
+              Hill said. <br /><br />
+
+              “It’s been a really steady, nice source of income for us,” Hill
+              added. <br /><br />
+
+              Though it’s only his first year, Hill said that he’s aware of the
+              recent lack of sponsors for WaterFire, and that maintaining the
+              event is crucial. <br /><br />
+
+              “It’s really unique,” Hill said. “And to have it go away, I think
+              that would be very disappointing.” <br /><br /></p>
+
+                <div class="embedded-img">
+              <img src="images/constancio.jpg" alt="TKTK" />
+              <p id="photo-credit">By Kai La Forte | The Brown Daily Herald</p>
+              <br /><br />
+            </div>
+
+              <p><i>Cassandra Constancio</i><br /><br />
+
+              Cassandra Constancio lives in the Rhode Island area and has been
+              attending WaterFire for over 15 years. She said she attended the
+              Nov. 1 WaterFire to enjoy the last full lighting of the season.<br /><br />
+
+              Constancio added that she volunteered at WaterFire briefly while
+              she lived in Providence. “It was great meeting people in the
+              community and just seeing the energy and artistry that went into
+              it,” she said. She said that she wants WaterFire to persist,
+              despite the recent financial struggles. <br /><br />
+
+              “Big businesses and small businesses in the area thrive from the
+              amount of people that it brings in,” Constancio said. “It’s done
+              nothing but positive things in all these years, so it’s sad to see
+              that it still struggles to be seen as that linchpin that really
+              holds the community together.” <br /><br /></p>
+
+            <div class="embedded-img">
+              <img src="images/susan-anthony-farmer.jpg" alt="TKTK" />
+              <p id="photo-credit">By Kai La Forte | The Brown Daily Herald</p>
+              <br /><br />
+            </div>
+
+              <p><i>Susan and Anthony Farmer</i><br /><br />
+
+              At the Nov. 1 lighting, Susan and Anthony Farmer were enjoying
+              their first WaterFire, visiting from New Hampshire. They said that
+              they appreciated the walkability of the event and how it really
+              made the city center more attractive to visitors.<br /><br />
+            </p>
+            <div class="embedded-img">
+              <img src="images/bridge.jpg" alt="An image of the bridge." />
+              <p id="photo-credit">By Jake Parker | The Brown Daily Herald</p>
+              <br /><br />
+            </div>
+          </div>
+          <div class="step" data-step="7" data-info="star-walk">
+            <p>
+              <b>On Star Walk:</b><br /><br /></p>
+              <div class="embedded-img">
+              <img
+                src="images/star-walk.jpg"
+                alt="A portrait of Voykovic at Star Walk."
+              />
+              <p id="photo-credit">By Vanson Vu | The Brown Daily Herald</p>
+              <br /><br />
+            </div>
+              <p><i>Sarah Voykovic, Star Field volunteer</i><br /><br />
+
+              Sarah Voykovic began volunteering with WaterFire in June. On the
+              night of the Nov. 1 lighting, she was stationed at “Starry, Starry
+              Night,” an art installation that suspends visitors’ wishes from
+              light-up blue stars by Hemenway’s Restaurant to raise funds for
+              WaterFire.<br /><br />
+
+              Voykovic explained that the Star Field offers several different
+              types of products, including “little trinkets” with names like
+              “dream orbs” and “dreamworms.” However, the main attraction is the
+              dozens of stars hanging from the trees.<br /><br />
+
+              “People can take a ribbon, and then they write their wish on it,”
+              Voykovic explained. “Then one of our team members will go and hang
+              it in the Star Field, wherever the person chooses.”<br /><br />
+            </p>
+          </div>
+          <div class="step" data-step="8" data-info="full-map">
+            With the many people that make Waterfire function, from volunteers
+            to vendors and even attendees, the event intends to “use the arts to
+            make the community stronger,” Evans said. <br /><br />
+
+            “I wanted to create an artwork that was about celebrating the values
+            of community,” Evans added. “I wanted to make an artwork that didn't
+            involve cynicism, that didn't involve irony, and it was absolutely
+            welcoming to everybody, no matter what their level of understanding
+            about the arts.”<br /><br /></p>
+
+            <div class="embedded-img">
+              <img src="images/barnaby-evans.jpg" alt="TKTK" />
+              <p id="photo-credit">
+                By Jake Parker | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+
+            <p>Amid its financial challenges WaterFire is increasingly courting
+            wealthy donors to keep the fires burning, according to Mark Allan,
+            the interim executive director of WaterFire Providence. While Evans
+            understands that this strategy is also employed by museums, operas,
+            ballet companies and other arts organizations, he emphasized that
+            “WaterFire is not a piece about the elite.”<br /><br />
+
+            “It’s about welcoming absolutely everyone of any means, from the
+            homeless to the art professor to students, to (new) immigrants, to
+            people who just wander in on the way home from the beach,” Evans
+            said.<br /><br /></p>
+
+            <div class="embedded-img">
+              <img src="images/mark-allan.jpg" alt="TKTK" />
+              <p id="photo-credit">
+                By Jake Parker | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+
+            <p>Having been at WaterFire for almost two decades, Palumbo said she
+            has experienced many wonderful moments with the community, visitors
+            and guests.<br /><br />
+
+            “There aren’t many situations where you can come out with a diverse
+            group of people from all over the world to enjoy something in a
+            peaceful, magical setting,” Palumbo said. “Between the music, the
+            fires and the sounds, it ignites all of your senses simultaneously
+            and shows Rhode Island in its best light.” <br /><br />
+
+            “The scale of the event gives the impression that it's presented by
+            the city or by the state,” Evans said. Visitors do not realize it is
+            a nonprofit that handles everything from building the stages for
+            performances to adjusting the height of the river for the boats, he
+            explained. <br /><br />
+
+            When asked by The Herald about his hopes for the future of
+            WaterFire, Evans said that he has many ideas for expanding the
+            event, such as creating a torch ceremony for Brown’s graduation.
+            <br /><br />
+
+            “We have hundreds of ideas of things we’d like to try,” Evans said.
+            “We’d love to bring back some of the new ideas we’ve never done, but
+            we can’t do any of them without funding.” <br /><br />
+
+            For Evans, creating WaterFire was a “fascinating experiment,” going
+            from lighting fires with borrowed boats to developing an entire crew
+            of people to make the event function.<br /><br />
+
+            “I don’t think I ever imagined 31 years later we would still be
+            doing it,” Evans said.<br /><br />
+            <div class="embedded-img">
+              <img src="images/donating.jpg" alt="TKTK" />
+              <p id="photo-credit">
+                By Caleb Lee-Kong | The Brown Daily Herald
+              </p>
+              <br /><br />
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
