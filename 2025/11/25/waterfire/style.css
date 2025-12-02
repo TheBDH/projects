@@ -1,0 +1,290 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  position: sticky;
+  top: 0;
+  width: 70%;
+  height: 100vh;
+}
+
+#pre-map {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  width: 55%;
+  margin: 0 auto;
+}
+
+.scroll {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.marker-boat {
+  background-image: url("./images/boat.svg");
+  background-size: cover;
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+  z-index: 4;
+}
+
+.marker-fire {
+  background-image: url("./images/fire.svg");
+  background-size: cover;
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.scrolly {
+  width: 50%;
+  /* background-color: #e9eeea; */
+  height: auto;
+  overflow-y: visible;
+}
+
+article {
+  position: relative;
+  padding: 10rem 0 3rem 0;
+  margin: auto;
+  max-width: 80%;
+}
+
+.step:last-child {
+  margin-bottom: 0;
+}
+
+.step {
+  margin: 0 auto 30rem 0;
+  padding: 1.2rem;
+  font-size: 1rem;
+  /* background-color: #e9eeea; */
+  /* color: #e95c56; */
+  /* font-family: "Tahoma"; */
+  min-height: 10rem;
+  border-radius: 0.5rem;
+}
+
+#photo-credit {
+  font-size: 0.7rem;
+  width: 100%;
+  /* font-style: italic; */
+  text-align: center;
+}
+
+.step p,
+p {
+  display: inline;
+  font-size: 1rem;
+  padding: 0;
+  vertical-align: text-top;
+  font-family: "freight-text-pro", "Times", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3rem;
+}
+
+#home {
+  visibility: hidden;
+}
+
+#heading {
+  width: 80%;
+  margin: auto;
+  min-height: 15rem;
+  text-align: center;
+  padding: 1rem 2rem 1.2rem 1.2rem;
+}
+
+#heading h3 {
+  font-size: 2.5rem;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  padding: 0;
+  margin-top: 16px;
+  margin-bottom: 22px;
+  text-align: center;
+  color: #505050;
+}
+
+#heading p {
+  text-align: center;
+  font-style: italic;
+}
+
+#byline {
+  font-weight: normal;
+  font-family: "Inconsolata", serif;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+#byline .author {
+  background-color: #e0e0e0;
+  padding: 0.2rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* override all link formatting */
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+#herald-logo {
+  max-width: 450px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* mobile formatting */
+@media (max-width: 600px) {
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  #herald-logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+  }
+
+  #heading h3 {
+    font-size: 1.5rem;
+  }
+
+  .step p {
+    font-size: 1.1rem;
+  }
+
+  #map {
+    width: 100%;
+  }
+
+  .scrolly {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  article {
+    max-width: 60%;
+  }
+
+  .step {
+    background-color: white;
+  }
+
+  #heading {
+    text-align: center;
+  }
+
+  .scroll {
+    flex-direction: column;
+  }
+}
+
+#waterfire {
+  color: white;
+  animation: fadeToPink 2s forwards;
+}
+
+@keyframes fadeToPink {
+  to {
+    color: #6e9fec;
+  }
+}
+
+#scroll-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+}
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 0%;
+  background: #6e9fec;
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+img {
+  max-width: 100%;
+  margin-bottom: 0;
+}
+
+.embedded-img {
+  text-align: center;
+}
+
+#toggle-section {
+  width: 100%;
+}
+
+#toggle-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-family: "freight-text-pro", "Times", serif;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.toggle-arrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease;
+  transform-origin: 50% 50%;
+}
+
+#toggle-button.open .toggle-arrow {
+  transform: rotate(90deg);
+}
+
+#toggle-content {
+  padding: 1.5rem;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#toggle-content.open {
+  display: block;
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.img-step img {
+  filter: grayscale(100%);
+  transition: filter 1s ease-out;
+}
+
+.img-step.active img {
+  filter: grayscale(0%);
+}
