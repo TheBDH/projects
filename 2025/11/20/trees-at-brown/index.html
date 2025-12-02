@@ -1,414 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-321HPHTJEX"></script>
-    <script>
+    <head>
+        <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-321HPHTJEX"></script>
+        <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-321HPHTJEX');
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trees@Brown - The Street Trees of College Hill</title>
-    
-    <!-- CSS and Fonts -->
-    <link rel="stylesheet" href="styles.css"> <!-- Assuming you have a styles.css, otherwise remove -->
-    <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
-    <link rel="stylesheet" href="https://use.typekit.net/brt8lxm.css"> <!-- newspaper font -->
-    <link rel="icon" href="images/icon.png" sizes="96x96">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trees@Brown</title>
 
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- MarkerCluster CSS (RE-ADDED) -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-    
-    <!-- JS Libraries -->
-    <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CSS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <!-- MarkerCluster JS (RE-ADDED) -->
-    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-    <!-- Papa Parse for reading CSV -->
-    <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
-    
-    <!-- Your custom script.js, if you have one -->
-    <!-- <script src="script.js"></script> --> 
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
+        <link rel="stylesheet" href="https://use.typekit.net/brt8lxm.css">
+        <link rel="icon" href="images/icon.png" sizes="96x96">
 
-    <style>
-        /* Simple style for the map container */
-        #map {
-            height: 800px;
-            width: 100%;
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
-        }
+        <link rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <link rel="stylesheet"
+            href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+        <link rel="stylesheet"
+            href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 
-        /* You can add your original styles.css content here if it's not a separate file */
-        /* Basic styles from original file (if styles.css is not used) */
-        #heading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-            z-index: 10;
-        }
-        #herald-logo {
-            display: block;
-            margin: 0 auto 20px auto;
-            max-width: 300px;
-        }
-        .data-box {
-            padding: 2rem;
-            background-color: #f7fafc; /* A light gray background */
-        }
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script
+            src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+        <script
+            src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+        <script src="script.js"></script>
+
+        <style>
     </style>
-</head>
+    </head>
 
-<body class="bg-gray-100 font-sans">
-    
-    <!-- This section seems to be for a parallax/scroll effect -->
-    <div id="trigger"></div>
-    <div id="spacer"></div>
+    <body>
 
-    <!-- Full-screen background image -->
-    <div class="full-screen-bg"
-        style="background-image: url('images/background1.jpg'); background-size: cover; background-position: center; height: 100vh; width: 100%; margin: 0; padding: 0; background-repeat: no-repeat; position: relative;">
-        
-        <!-- Heading Content -->
+        <div class="full-screen-bg"
+            style="background-image: url('images/background1.jpg'); background-size: cover; background-position: center; height: 100vh; width: 100%; margin: 0; padding: 0; background-repeat: no-repeat; position: relative;"></div>
+
         <div id="heading">
             <a href="https://www.browndailyherald.com" target="_blank">
-                <img src="images/logo-black.png" id="herald-logo" alt="Brown Daily Herald Logo" />
+                <img src="images/logo-black.png" id="herald-logo"
+                    alt="Brown Daily Herald Logo" />
             </a>
-            <h3 class="text-4xl font-bold text-center">Trees@Brown</h3>
-            <p class="text-xl text-center mt-2">
+            <h3 style="text-align: center;">Trees @ Brown</h3>
+            <p style="text-align: center;">
                 The Street Trees of College Hill
             </p>
-            <h6 id="byline" class="text-center mt-6 text-sm">
+            <h6 id="byline" style="text-align: center;">
                 Reporting by
-                <a href="https://www.browndailyherald.com/staff/claire-song" target="_blank" class="author underline hover:opacity-75">TKTK</a>
+                <a
+                    href="https://www.browndailyherald.com/staff/manav-musunuru"
+                    target="_blank"><span class="author">Manav
+                        Musunuru</span></a>
                 <br><br>
                 Data analysis by
-                <a href="https://www.browndailyherald.com/staff/maya-davis" target="_blank" class="author underline hover:opacity-75">TKTK</a>
-                <a href="https://www.browndailyherald.com/staff/kenna-lee" target="_blank" class="author underline hover:opacity-75">TKTK</a>
-                <a href="https://www.browndailyherald.com/staff/claire-song" target="_blank" class="author underline hover:opacity-75">TKTK</a>
-                <br><br>
-                Web design by
-                <a href="https://www.browndailyherald.com/staff/caleb-ellenberg" target="_blank" class="author underline hover:opacity-75">TKTK</a>
-                <a href="https://www.browndailyherald.com/staff/kenna-lee" target="_blank" class="author underline hover:opacity-75">TKTK</a>
+                <a
+                    href="https://www.browndailyherald.com/staff/edward-ho"
+                    target="_blank"><span class="author">Edward
+                        Ho</span></a>
+                <a
+                    href="https://www.browndailyherald.com/staff/Noah-Kesselman"
+                    target="_blank"><span class="author">Noah
+                        Kesselman</span></a>
+                <a
+                    href="https://www.browndailyherald.com/staff/rohan-kher"
+                    target="_blank"><span class="author">Rohan
+                        Kher</span></a>
             </h6>
-            <div class="down-arrow text-center text-4xl mt-8 animate-bounce">
+            <div class="down-arrow" style="text-align: center;">
                 &#x2193;
             </div>
         </div>
-    </div>
+        <div id="caption">Media by Sidney Lin</div>
 
-    <!-- Map and Filter Section -->
-    <div class="data-box container mx-auto p-4 md:p-8">
-        
-        <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Tree Map (Brown Campus)</h2>
+        <div class="data-box">
 
-        <!-- Filter Controls -->
-        <div class="p-4 bg-white rounded-lg shadow-md mb-6">
-            <!-- UPDATED: Grid changed to 6 columns -->
-            <div class="grid grid-cols-1 md:grid-cols-6 gap-4 items-end">
-                <!-- Species Filter -->
-                <div>
-                    <label for="species-filter" class="block text-sm font-medium text-gray-700">Filter by Species</label>
-                    <select id="species-filter" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
-                        <option value="all">All Species</option>
-                        <!-- Species options will be populated by JavaScript -->
-                    </select>
-                </div>
-                
-                <!-- Street Filter -->
-                <div>
-                    <label for="street-filter" class="block text-sm font-medium text-gray-700">Filter by Street</label>
-                    <select id="street-filter" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
-                        <option value="all">All Streets</option>
-                        <!-- Street options will be populated by JavaScript -->
-                    </select>
-                </div>
+            <div class="filter-panel">
+                <div class="filter-grid">
 
-                <!-- Min DBH Filter -->
-                <div>
-                    <label for="min-dbh-filter" class="block text-sm font-medium text-gray-700">Min. Diameter (inches)</label>
-                    <input type="number" id="min-dbh-filter" placeholder="e.g., 0" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
-                </div>
+                    <div class="form-group">
+                        <label for="species-filter">Filter by Species</label>
+                        <select id="species-filter">
+                            <option value="all">All Species</option>
+                        </select>
+                    </div>
 
-                <!-- Max DBH Filter -->
-                <div>
-                    <label for="max-dbh-filter" class="block text-sm font-medium text-gray-700">Max. Diameter (inches)</label>
-                    <input type="number" id="max-dbh-filter" placeholder="e.g., 50" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
-                </div>
+                    <div class="form-group">
+                        <label for="street-filter">Filter by Street</label>
+                        <select id="street-filter">
+                            <option value="all">All Streets</option>
+                        </select>
+                    </div>
 
-                <!-- Filter Buttons -->
-                <div class="flex gap-2">
-                    <button id="apply-filters-btn" class="w-1/2 px-4 py-2 bg-blue-600 text-white font-medium rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                        Apply
-                    </button>
-                    <button id="reset-filters-btn" class="w-1/2 px-4 py-2 bg-gray-300 text-gray-800 font-medium rounded-md shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-                        Reset
-                    </button>
-                </div>
-                
-                <!-- NEW: Cluster Toggle Switch -->
-                <div class="flex items-center justify-center">
-                    <input type="checkbox" id="cluster-toggle" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" checked>
-                    <label for="cluster-toggle" class="ml-2 block text-sm font-medium text-gray-700">Cluster Trees</label>
+                    <div class="form-group">
+                        <label for="min-dbh-filter">Min. Diameter (in)</label>
+                        <input type="number" id="min-dbh-filter"
+                            placeholder="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="max-dbh-filter">Max. Diameter (in)</label>
+                        <input type="number" id="max-dbh-filter"
+                            placeholder="50">
+                    </div>
+
+                    <div class="button-group">
+                        <button id="apply-filters-btn"
+                            class="btn-primary">Apply</button>
+                        <button id="reset-filters-btn"
+                            class="btn-secondary">Reset</button>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="cluster-toggle" checked>
+                        <label for="cluster-toggle"
+                            class="checkbox-label">Cluster Trees</label>
+                    </div>
+
                 </div>
             </div>
+            <div style="height: 2vh;"></div>
+
+            <div id="map"></div>
+            <div style="height: 8vh;"></div>
+
+            <div
+                class="data-display">
+                <iframe title="Brown Tree's by Species"
+                    aria-label="Pie Chart" id="datawrapper-chart-sk1vN"
+                    src="https://datawrapper.dwcdn.net/sk1vN/1/"
+                    scrolling="no" frameborder="0"
+                    style="width: 0; min-width: 100% !important; border: none;"
+                    height="623" data-external="1"></iframe><script
+                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+            </div>
+            <div style="height: 8vh;"></div>
+
+            <div class="data-display">
+                <iframe
+                    title="Number of Trees by Diameter (inches) at Brown"
+                    aria-label="Column Chart"
+                    id="datawrapper-chart-3Fwu5"
+                    src="https://datawrapper.dwcdn.net/3Fwu5/2/"
+                    scrolling="no" frameborder="0"
+                    style="width: 0; min-width: 100% !important; border: none;"
+                    height="410" data-external="1"></iframe><script
+                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+            </div>
+            <div style="height: 8vh;"></div>
+
+            <div
+                class="data-display">
+                <iframe title="Number of Trees by Street at Brown"
+                    aria-label="Column Chart"
+                    id="datawrapper-chart-4d3r2"
+                    src="https://datawrapper.dwcdn.net/4d3r2/2/"
+                    scrolling="no" frameborder="0"
+                    style="width: 0; min-width: 100% !important; border: none;"
+                    height="518" data-external="1"></iframe><script
+                    type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+            </div>
         </div>
-
-        <!-- Map Container -->
-        <div id="map"></div>
-        <div class="data-box">
-          <iframe title="Brown Tree's by Species" aria-label="Pie Chart" id="datawrapper-chart-sk1vN" src="https://datawrapper.dwcdn.net/sk1vN/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="623" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
-          </div>
-    </div>
-
-    <!-- Map Initialization Script -->
-    <script>
-        // Global variables for the map and data
-        let map;
-        let markerCluster; // For clustering
-        let markerLayer;     // For individual points
-        let isClusterMode = true; // Default to cluster mode
-        let allTrees = [];
-        let avgLat = 41.8268; // Default latitude
-        let avgLon = -71.4029; // Default longitude
-
-        // Common Name Mapping
-        const SPECIES_COMMON_NAMES = {
-            'Acer platanoides': 'Norway Maple',
-            'Acer saccharum': 'Sugar Maple',
-            'Acer rubrum': 'Red Maple',
-            'Quercus rubra': 'Red Oak',
-            'Quercus palustris': 'Pin Oak',
-            'Platanus occidentalis': 'American Sycamore',
-            'Gleditsia triacanthos': 'Honey Locust',
-            'Tilia cordata': 'Littleleaf Linden',
-            'Pyrus calleryana': 'Callery Pear',
-            'Ulmus americana': 'American Elm'
-            // Add more as needed...
-        };
-
-        // Helper function to get the display name
-        function getDisplayName(spp) {
-            if (spp && SPECIES_COMMON_NAMES[spp]) {
-                return `${spp} (${SPECIES_COMMON_NAMES[spp]})`;
-            }
-            return spp || "Unknown";
-        }
-
-        // 1. Function to populate filter dropdowns
-        function populateFilters(trees) {
-            const speciesFilter = document.getElementById('species-filter');
-            const streetFilter = document.getElementById('street-filter'); 
-            const minDbhInput = document.getElementById('min-dbh-filter');
-            const maxDbhInput = document.getElementById('max-dbh-filter');
-
-            // Species Filter
-            const speciesSet = new Set(trees.map(t => t.SPP).filter(s => s));
-            const speciesWithCommon = [...speciesSet].map(spp => ({
-                scientific: spp,
-                display: getDisplayName(spp)
-            }));
-            speciesWithCommon.sort((a, b) => a.display.localeCompare(b.display));
-            speciesWithCommon.forEach(s => {
-                const option = document.createElement('option');
-                option.value = s.scientific; 
-                option.textContent = s.display;
-                speciesFilter.appendChild(option);
-            });
-
-            // Street Filter
-            const streets = [...new Set(trees.map(t => t.Street).filter(s => s))].sort();
-            streets.forEach(street => {
-                const option = document.createElement('option');
-                option.value = street;
-                option.textContent = street;
-                streetFilter.appendChild(option);
-            });
-
-            // DBH placeholders
-            const dbhValues = trees.map(t => t.DBH).filter(d => d && d > 0);
-            if(dbhValues.length > 0) {
-                const minDbh = Math.floor(Math.min(...dbhValues));
-                const maxDbh = Math.ceil(Math.max(...dbhValues));
-                minDbhInput.placeholder = `min: ${minDbh}`;
-                maxDbhInput.placeholder = `max: ${maxDbh}`;
-            }
-        }
-
-        // 2. Function to update the map with filtered markers
-        function updateMap() {
-            // Get current filter values
-            const selectedSpecies = document.getElementById('species-filter').value;
-            const selectedStreet = document.getElementById('street-filter').value;
-            const minDbh = parseFloat(document.getElementById('min-dbh-filter').value) || 0;
-            const maxDbh = parseFloat(document.getElementById('max-dbh-filter').value) || Infinity;
-
-            // Clear *both* layers
-            markerCluster.clearLayers();
-            markerLayer.clearLayers();
-            
-            // Remove *both* layers from the map to prevent duplicates
-            if (map.hasLayer(markerCluster)) {
-                map.removeLayer(markerCluster);
-            }
-            if (map.hasLayer(markerLayer)) {
-                map.removeLayer(markerLayer);
-            }
-
-            // Filter the trees based on criteria
-            const filteredTrees = allTrees.filter(tree => {
-                const speciesMatch = (selectedSpecies === 'all' || tree.SPP === selectedSpecies);
-                const streetMatch = (selectedStreet === 'all' || tree.Street === selectedStreet);
-                const dbh = tree.DBH || 0; 
-                const dbhMatch = (dbh >= minDbh && dbh <= maxDbh);
-                
-                return speciesMatch && streetMatch && dbhMatch;
-            });
-
-            // Add new markers for filtered trees
-            filteredTrees.forEach((tree) => {
-                const popupContent = `
-                    <b>Species:</b> ${getDisplayName(tree.SPP)}<br>
-                    <b>Street:</b> ${tree.Street || "N/A"}<br>
-                    <b>Diameter:</b> ${tree.DBH || "N/A"} inches
-                `;
-                const marker = L.marker([tree.latitude, tree.longitude]).bindPopup(
-                    popupContent
-                );
-
-                // ADDED: Logic to add to the correct layer
-                if (isClusterMode) {
-                    markerCluster.addLayer(marker);
-                } else {
-                    markerLayer.addLayer(marker);
-                }
-            });
-
-            // ADDED: Add the correct layer back to the map
-            if (isClusterMode) {
-                map.addLayer(markerCluster);
-            } else {
-                map.addLayer(markerLayer);
-            }
-        }
-        
-        // 4. Helper function to process the loaded data
-        function handleData(results) {
-            // Filter out rows without coordinates *once*
-            allTrees = results.data.filter(
-                (t) => t.latitude && t.longitude
-            );
-
-            // Re-compute map center based on actual data
-            if (allTrees.length > 0) {
-                avgLat =
-                    allTrees.reduce((sum, t) => sum + t.latitude, 0) /
-                    allTrees.length;
-                avgLon =
-                    allTrees.reduce((sum, t) => sum + t.longitude, 0) /
-                    allTrees.length;
-                map.setView([avgLat, avgLon], 16);
-            }
-            
-            // Populate filters with data
-            populateFilters(allTrees);
-            
-            // Perform initial map render with all trees
-            updateMap();
-        }
-
-        // 3. Main function to initialize map and load data
-        function initMap() {
-            // Initialize map with default view
-            map = L.map("map").setView([avgLat, avgLon], 15);
-
-            // Add base layer
-            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-                attribution:
-                    'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
-            }).addTo(map);
-
-            // UPDATED: Initialize *both* layer groups
-            markerCluster = L.markerClusterGroup();
-            markerLayer = L.layerGroup();
-
-            // --- !! REPLACE THIS URL WITH YOUR OWN !! ---
-            const csv_url = ""; // <-- e.g., "https://docs.google.com/spreadsheets/d/e/..."
-            
-            if (csv_url && csv_url.startsWith("https")) {
-                console.log("Attempting to load data from Google Sheet...");
-                Papa.parse(csv_url, {
-                    download: true,
-                    header: true,
-                    dynamicTyping: true,
-                    complete: function (results) {
-                        console.log("Successfully loaded data from Google Sheet.");
-                        handleData(results);
-                    },
-                    error: function(err) {
-                        console.warn("Could not load from Google Sheet URL. Trying local file...", err);
-                        loadLocalCsv(); // Fallback
-                    }
-                });
-            } else {
-                console.log("No Google Sheet URL provided. Loading local file.");
-                loadLocalCsv(); // Load local file directly
-            }
-
-            // 5. Function to load the local CSV
-            function loadLocalCsv() {
-                Papa.parse("Brown_Trees_Dataset_New.csv", {
-                    download: true,
-                    header: true,
-                    dynamicTyping: true,
-                    complete: function (results) {
-                        console.log("Successfully loaded data from local 'Brown_Trees_Dataset_New.csv'");
-                        handleData(results);
-                    },
-                    error: function(err) {
-                        console.error("Error loading or parsing local CSV:", err);
-                        document.getElementById('map').innerHTML = '<p class="text-red-500 text-center">Could not load tree data. Please check the file path and format.</p>';
-                    }
-                });
-            }
-            
-            // 6. Add Event Listeners for filters
-            document.getElementById('apply-filters-btn').addEventListener('click', updateMap);
-            
-            document.getElementById('reset-filters-btn').addEventListener('click', () => {
-                document.getElementById('species-filter').value = 'all';
-                document.getElementById('street-filter').value = 'all';
-                document.getElementById('min-dbh-filter').value = '';
-                document.getElementById('max-dbh-filter').value = '';
-                // Also reset the cluster toggle
-                document.getElementById('cluster-toggle').checked = true;
-                isClusterMode = true;
-                updateMap();
-            });
-
-            // NEW: Event listener for the cluster toggle
-            document.getElementById('cluster-toggle').addEventListener('change', (e) => {
-                isClusterMode = e.target.checked;
-                updateMap(); // Redraw the map with the new mode
-            });
-        }
-
-        // Run the map initialization
-        initMap();
-
-    </script>
-</body>
+    </body>
 </html>
