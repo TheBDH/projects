@@ -26,7 +26,7 @@ body {
 }
 
 .marker-boat {
-  background-image: url("./images/boat.svg");
+  background-image: url("./images/boat icon.png");
   background-size: cover;
   width: 3em;
   height: 3em;
@@ -35,7 +35,7 @@ body {
 }
 
 .marker-fire {
-  background-image: url("./images/fire.svg");
+  background-image: url("./images/fire icon.png");
   background-size: cover;
   width: 1.5em;
   height: 1.5em;
