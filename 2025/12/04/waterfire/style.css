@@ -314,7 +314,18 @@ img {
   margin-right: 0.5rem;
   transition: transform 0.2s ease;
   transform-origin: 50% 50%;
+  font-family: "Helvetica Neue", Arial, "Segoe UI Symbol", "Noto Sans Symbols",
+    sans-serif;
 }
+
+/* .toggle-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 6px solid black;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+} */
 
 #toggle-button.open .toggle-arrow {
   transform: rotate(90deg);
