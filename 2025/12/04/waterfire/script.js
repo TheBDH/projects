@@ -1,5 +1,6 @@
 // const MAP_LOCATION = [-71.41220993323749, 41.82584977266063];
 const MAP_LOCATION = [-71.41101368514123, 41.825960539744244];
+const MAP_LOCATION_MOBILE = [-71.41173348890245, 41.82335277921127];
 
 const BASIN_COORDS = [-71.41397245285212, 41.82683612316379];
 const STEEPLE_ST_COORDS = [-71.40950598748309, 41.827326655457426];
@@ -92,7 +93,7 @@ const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/asing122/cmidezdpf001701s06jo5fy8g",
   zoom: isMobile ? 15.2 : 16.6,
-  center: MAP_LOCATION,
+  center: isMobile ? MAP_LOCATION_MOBILE : MAP_LOCATION,
 });
 
 var boatMarker;
@@ -120,7 +121,11 @@ map.on("load", () => {
 });
 
 map.scrollZoom.disable();
-// map.panRotate.disable();
+// map.dragPan.disable();
+// map.dragRotate.disable();
+// map.keyboard.disable();
+// map.doubleClickZoom.disable();
+// map.touchZoomRotate.disable();
 
 map.on("click", (e) => {
   console.log(`${e.lngLat.lng}, ${e.lngLat.lat}`);

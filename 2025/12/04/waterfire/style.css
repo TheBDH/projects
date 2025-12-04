@@ -305,6 +305,7 @@ img {
   justify-content: flex-start;
   align-items: center;
   color: var(--text-color);
+  text-align: left;
 }
 
 .toggle-arrow {
