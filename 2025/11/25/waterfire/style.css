@@ -6,7 +6,7 @@ body {
 #map {
   position: sticky;
   top: 0;
-  width: 70%;
+  width: 100% !important;
   height: 100vh;
 }
 
@@ -20,8 +20,6 @@ body {
 
 .scroll {
   position: relative;
-  display: flex;
-  flex-direction: row;
   width: 100%;
 }
 
@@ -43,6 +41,15 @@ body {
   z-index: 1;
 }
 
+.scrolly,
+.step,
+article {
+  width: 0% !important;
+  padding: 0 !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .scrolly {
   width: 50%;
   /* background-color: #e9eeea; */
@@ -61,6 +68,21 @@ article {
   margin-bottom: 0;
 }
 
+#label {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  padding: 0.5rem 1rem;
+  max-width: 15rem;
+  background-color: white;
+  font-size: 1rem;
+  border-radius: 6px;
+  z-index: 9999;
+
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
 .step {
   margin: 0 auto 30rem 0;
   padding: 1.2rem;
@@ -68,7 +90,7 @@ article {
   /* background-color: #e9eeea; */
   /* color: #e95c56; */
   /* font-family: "Tahoma"; */
-  min-height: 10rem;
+  min-height: 150rem;
   border-radius: 0.5rem;
 }
 
@@ -199,6 +221,10 @@ a {
   .scroll {
     flex-direction: column;
   }
+
+  .modal-content {
+    width: 80%;
+  }
 }
 
 #waterfire {
@@ -287,4 +313,104 @@ img {
 
 .img-step.active img {
   filter: grayscale(0%);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  border-radius: 5px;
+  overflow: scroll;
+  max-height: 35rem;
+  max-width: 25rem;
+}
+
+.text-container {
+  width: 95%;
+}
+
+.full-quote {
+  font-size: 1.2em;
+}
+
+.full-quote i {
+  font-size: 0.8em;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+  transition-duration: 1s;
+}
+
+.blurred {
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+.card-title {
+  font-size: 0.7em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+  padding-bottom: 1rem;
+}
+
+.text-container {
+  width: 95%;
+}
+
+.hyperlinked {
+  background: none;
+  border: none;
+  color: #0066cc;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "freight-text-pro", "Times", serif;
+  padding: 0;
+}
+
+.modal a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.marker {
+  /* background-image: url("https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png"); */
+  background-image: url("./images/pin.svg");
+  background-size: cover;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+ul {
+  padding-left: 15px;
+  margin-top: 0;
 }
