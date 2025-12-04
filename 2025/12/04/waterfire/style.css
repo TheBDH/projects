@@ -184,7 +184,7 @@ a {
 }
 
 #herald-logo {
-  max-width: 400px;
+  max-width: 450px;
   display: block;
   margin: 0 auto;
 }
@@ -199,7 +199,7 @@ a {
   #herald-logo {
     display: block;
     margin: 0 auto;
-    max-width: 200px;
+    max-width: 150px;
   }
 
   #heading h3 {
@@ -308,7 +308,7 @@ img {
   text-align: left;
 }
 
-.toggle-arrow {
+/* .toggle-arrow {
   display: inline-block;
   font-size: 0.8rem;
   margin-right: 0.5rem;
@@ -316,6 +316,17 @@ img {
   transform-origin: 50% 50%;
   font-family: "Helvetica Neue", Arial, "Segoe UI Symbol", "Noto Sans Symbols",
     sans-serif;
+} */
+.toggle-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 0.5rem;
+  border-top: 0.32rem solid transparent;
+  border-bottom: 0.32rem solid transparent;
+  border-left: 0.45rem solid currentColor;
+  transition: transform 0.2s ease;
+  transform-origin: 50% 50%;
 }
 
 /* .toggle-arrow {
