@@ -9,6 +9,8 @@ const WATERFIRE_CIRCLE_TENT_COORDS = [-71.40839467993477, 41.82574427972813];
 const COLLEGE_ST_COORDS = [-71.40829558244626, 41.825522744005156];
 const STAR_WALK_COORDS = [-71.40785672214079, 41.825148241397045];
 
+const isMobile = window.innerWidth < 768;
+
 const FIRE_COORDS = [
   // river pre-basin, in -> out
   [-71.41512816754688, 41.82716050251955],
@@ -89,7 +91,7 @@ mapboxgl.accessToken =
 const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/asing122/cmidezdpf001701s06jo5fy8g",
-  zoom: 16.6,
+  zoom: isMobile ? 15.2 : 16.6,
   center: MAP_LOCATION,
 });
 

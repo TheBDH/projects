@@ -203,7 +203,11 @@ a {
   }
 
   #heading h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  #heading p {
+    font-size: 1rem;
   }
 
   .step p {
@@ -238,6 +242,13 @@ a {
 
   .modal-content {
     width: 80%;
+  }
+
+  #label {
+    top: auto;
+    right: auto;
+    bottom: 1rem;
+    left: 1rem;
   }
 }
 
