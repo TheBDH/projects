@@ -214,6 +214,10 @@ a {
     font-size: 1.1rem;
   }
 
+  #pre-map {
+    width: 70%;
+  }
+
   #map {
     width: 100%;
   }
