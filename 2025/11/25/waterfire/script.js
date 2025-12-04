@@ -226,7 +226,7 @@ const messages = [
   },
   {
     id: "gather-glass",
-    name: "Matt Stone, Gather Glass",
+    name: "Matt Stone, co-owner of Gather Glass",
     grafs:
       "Since 2011, Matt Stone has been working with WaterFire as the co-owner of Gather Glass, a Federal Hill-based glassblowing studio that offers handcrafted products, lessons and more.<br/><br/>With help from event staff, Gather Glass originally sold “wearable necklaces and earrings,” Stone said, along with WaterFire-themed glasses. Over the years, Gather Glass’s live demonstrations and range of product offerings have evolved and grown.<br/><br/>WaterFire has “never been anything but wonderful,” Stone said. The festival brings together “such a big group of people from such a variety of places,” he added.<br/><br/>Gather Glass has held live glassblowing demonstrations for its entire tenure at WaterFire. Equipped with a mobile furnace, two glassmakers often work on a piece at the same time next to the sales tent. That piece “could be a vase, or a cup or a bird,” Stone said.<br/><br/>“It’s a dance with the medium, and everyone can be part of something special” watching the demonstration, Stone added. “Sometimes we’ll have 50, 100 people watching us make a piece.”<br/><br/>WaterFire is “such an important part of our business,” Stone said. The festival provides a chance for attendees to purchase glass products and for people to “learn about who we are” and sign up for glassblowing classes, he added.<br/><br/>The financial boost that WaterFire provides Gather Glass “carries over” for “weeks and months beyond” the event, Stone said. “The business that we get from WaterFire is huge.”<br/><br/>As a whole, WaterFire nights are “so important for the economy and the jobs that are here” in Providence, Stone said. Despite funding changes throughout the years, Stone emphasized the consistency of “really big, fun crowds” that attend the festival.<br/><br/>“It brings this beautiful atmosphere and energy to the city that you just can’t replicate anywhere else,” Stone said. “When I think of Providence, I think of WaterFire.”",
     photo: {
@@ -248,7 +248,7 @@ const messages = [
   },
   {
     id: "good-vibes",
-    name: "Tommy Tainsh, Good Vibes",
+    name: "Tommy Tainsh, owner of Good Vibes Beverages",
     grafs:
       "Tommy Tainsh, owner of Good Vibes Beverages, said that he and many of his coworkers “have worked for other companies that have done WaterFire … for probably 30 years.”<br/><br/>But Good Vibes is a new company, Tainsh noted. “This is our first summer, and it’s been great,” he said.<br/><br/>Their WaterFire menu advertised several seasonal offerings, including a hot apple cider with caramel whiskey and a spiced fall sangria. At the events they cater, Tainsh said, “we try to bring a little bit of everything.”<br/><br/>He said that Good Vibes tries “to do something a little extra special” for each event — for WaterFire that day, the company had “glow-in-the-dark ice cubes,” he said. <br/><br/>The company also sells several locally sourced beers, since for the last three decades, Tainsh has worked as a brewer. “We support a lot of local breweries, because it’s tough in this day and age,” he said.<br/><br/>Preparing for the event takes weeks, Tainsh noted. For WaterFire, Good Vibes made 50 gallons of hot apple cider.<br/><br/>In catering, Tainsh added, Good Vibes model its approach after the company name: They “bring the positive energy and hope for the best.”<br/><br/>“It seems like a five-hour event, but it’s more like a three-week event,” he joked, adding that “it’s worth the effort, because when you have people and they enjoy what you bring … that’s all you could ask for,” he said.<br/><br/>WaterFire is “huge” for local businesses, Tainsh said. “Not everybody goes out anymore … the new generation stays in,” he added, but he sees WaterFire as “an excuse to come out.”<br/><br/>Tainsh said there may be a silver lining despite funding cuts: With fewer WaterFire lightings, more visitors may flock to each. “If you have one every week, maybe as many people won’t come,” he said. ",
     photo: {
@@ -259,20 +259,15 @@ const messages = [
   },
   {
     id: "felicia-laroche",
-    name: "Felicia LaRoche, attendee",
+    name: "Felicia LaRoche, event attendee",
     grafs:
       "Felicia LaRoche, a senior at Rhode Island College, said her Nov. 1 visit to WaterFire was her “fifth or sixth time” there.<br/><br/>She expressed enthusiasm for “the live music” and the bustle of the event. In particular, LaRoche explained that she regularly comes to see Gather Glass’s live glassblowing demonstrations.<br/><br/>“It’s just really pretty,” she said, watching a glassblower place a sculpture into the kiln. “It’s nice art.”",
   },
   {
     id: "living-statue",
-    name: "Tara Smith, living statue",
+    name: "Tara Smith, living statue performance artist",
     grafs:
       "Tara Smith, a performance artist and living statue, has spent the last 20 seasons bringing WaterFire to life — without moving an inch. She “fell into” the craft 21 years ago, she told The Herald, starting to busk in her hometown of Bridgewater, Massachusetts. <br/><br/>“I’ve always been a generally artsy person, but living statuary and performance art in general has been the art form that really gripped my soul,” Smith said.<br/><br/>Smith started out performing near the Washington Street Bridge, an area that wasn’t originally part of the event. But after a few years, WaterFire organizers reached out to her, inviting Smith to become a formal fixture of the event. <br/><br/>“It’s central to my life at this point,” Smith said. “It’s been nice seeing the same people coming to WaterFire year after year. I have adults, they’re in their 20s now, talking about seeing me when they were a little kid.”<br/><br/>During performances, she scans the crowd looking for chances to connect — with a wave to a child or a gentle gesture to ease someone’s nerves. Her characters, Smith said, are pieces of herself she “pluck(s) out and put on display … and give them a moment to shine.”<br/><br/>WaterFire’s atmosphere sets it apart from other performance events, Smith said. “There is inherently this sort of unwinding at the end of the day with something fun,” encouraging reflection and small, meaningful interactions, she said.<br/><br/>For Smith, the WaterFire season provides the bulk of her annual income, and she relies on the event not just financially but creatively. Smith worries about the event’s future, particularly after funding cuts and the slowdown caused by the pandemic. “I rely on the WaterFire season to be the bulk of my income for the year,” she said.<br/><br/>But she remains committed. “I have no plans to retire anytime soon,” she said. “I’m going to keep performing until my body says, ‘No, we can’t do this anymore.’”",
-    photo: {
-      src: "images/SilentStatue_CO_Jake_Parker.jpg",
-      alt: "TKTK",
-      credit: "Jake Parker",
-    },
   },
   {
     id: "waterfire-circle",
@@ -294,7 +289,7 @@ const messages = [
   },
   {
     id: "cassandra-constancio",
-    name: "Cassandra Constancio, attendee",
+    name: "Cassandra Constancio, event attendee",
     grafs:
       "Cassandra Constancio has been attending WaterFire for over 15 years. She said she attended the Nov. 1 WaterFire to enjoy the last full lighting of the season.<br/><br/>Constancio also volunteered at WaterFire briefly while she lived in Providence, she said. “It was great meeting people in the community and just seeing the energy and artistry that went into it,” she said.<br/><br/>“Big businesses and small businesses in the area thrive from the amount of people that it brings in,” Constancio said. “It’s done nothing but positive things in all these years, so it’s sad to see that it still struggles to be seen as that linchpin that really holds the community together.” ",
     photo: {
@@ -305,7 +300,7 @@ const messages = [
   },
   {
     id: "the-farmers",
-    name: "Susan and Anthony Farmer, attendees",
+    name: "Susan and Anthony Farmer, event attendees",
     grafs:
       "At the Nov. 1 lighting, Susan and Anthony Farmer were enjoying their first WaterFire, visiting from New Hampshire. They said that they appreciated the walkability of the event and how it made the city center more attractive to visitors.",
     photo: {
@@ -405,21 +400,21 @@ function handleStepEnter(response) {
   switch (info) {
     case "basin":
       label.innerHTML =
-        '<b>At the river basin,</b> The Herald spoke to a <button class="hyperlinked" onclick="openModal(\'liz-knights\')">fire performer</button> who has been performing at WaterFire for several years, and a <button class="hyperlinked" onclick="openModal(\'staff-sergeant\')">staff sergeant</button> who held one of the torches at Waterfire\'s ceremony, which featured a “Salute to Veterans” event.<br/><br/>Click the links above to read about: <ul><li>Liz Knights, fire performer</li><li>Barry Lima Jr., Staff sergeant</li></ul><div class="embedded-img"><img src="images/Basin_CO_JakeParker.jpg" alt="A basin at night with bright fires lining the perimeter of the basin." /><p id="photo-credit">By Jake Parker | The Brown Daily Herald</p></div>';
+        '<b>At Waterplace Park,</b> The Herald spoke to a <button class="hyperlinked" onclick="openModal(\'liz-knights\')">fire performer</button> who has been performing at WaterFire for over a decade, and a <button class="hyperlinked" onclick="openModal(\'staff-sergeant\')">veteran staff sergeant</button> who held one of the torches at Waterfire\'s ceremony, which featured a “Salute to Veterans” event on Nov. 1.<br/><br/>Navigate the links above (or below) to learn more about: <ul><li>Liz Knights, <button class="hyperlinked" onclick="openModal(\'liz-knights\')">fire performer</button></li><li>Barry Lima Jr., <button class="hyperlinked" onclick="openModal(\'staff-sergeant\')">staff sergeant</button></li></ul><div class="embedded-img"><img src="images/Basin_CO_JakeParker.jpg" alt="A basin at night with bright fires lining the perimeter of the basin." /><p id="photo-credit">By Jake Parker | The Brown Daily Herald</p></div>';
       label.style.opacity = "1";
       removeMarkers();
       basin_marker.addTo(map);
       break;
     case "steeple-st":
       label.innerHTML =
-        '<b>On Steeple St.,</b> several art vendors advertised their business\'s offerings, including <button class="hyperlinked" onclick="openModal(\'pourever-creations\')"> painted homeware </button>, <button class="hyperlinked" onclick="openModal(\'honey-shack\')">honey</button> and <button class="hyperlinked" onclick="openModal(\'tigris-handmade\')">handmade shoes</button>.<br/><br/>Click the links above to read about: <ul><li>Cathy Tague, owner of Pourever Creations</li><li>Paul Octeau, owner of Paul & Sandy’s Honey Shack</li><li>Selahattin Sep, Tigris Handmade</li></ul><div class="embedded-img"><img src="images/SteepleStreet_CO_JakeParker.jpg" alt="Photo of Steeple Street full of vendor tents and aglow with nighttime lights." /><p id="photo-credit">By Jake Parker | The Brown Daily Herald</p></div>';
+        '<b>On Steeple Street,</b> several art vendors advertised their businesses\' offerings, including <button class="hyperlinked" onclick="openModal(\'pourever-creations\')"> painted homeware </button>, <button class="hyperlinked" onclick="openModal(\'honey-shack\')">honey</button> and <button class="hyperlinked" onclick="openModal(\'tigris-handmade\')">handmade shoes</button>.<br/><br/>Navigate the links above (or below) to learn more about: <ul><li>Cathy Tague, owner of <button class="hyperlinked" onclick="openModal(\'pourever-creations\')">Pourever Creations</button></li><li>Paul Octeau, owner of Paul & Sandy’s <button class="hyperlinked" onclick="openModal(\'honey-shack\')">Honey Shack</button></li><li>Selahattin Sep, owner of <button class="hyperlinked" onclick="openModal(\'tigris-handmade\')">Tigris Handmade</button></li></ul><div class="embedded-img"><img src="images/SteepleStreet_CO_JakeParker.jpg" alt="Photo of Steeple Street full of vendor tents and aglow with nighttime lights." /><p id="photo-credit">By Jake Parker | The Brown Daily Herald</p></div>';
       label.style.opacity = "1";
       removeMarkers();
       steeple_st_marker.addTo(map);
       break;
     case "canal-walk":
       label.innerHTML =
-        '<b>On Canal Walk,</b> The Herald spoke to an <button class="hyperlinked" onclick="openModal(\'origami-master\')">origami street performer</button> and <button class="hyperlinked" onclick="openModal(\'patio-ri\')">beverage vendor</button>, as well as <button class="hyperlinked" onclick="openModal(\'juliana-craige\')">event-day staff</button> and Brown <button class="hyperlinked" onclick="openModal(\'brown-students\')">students</button> attending WaterFire.<br/><br/>Click the links above to read about: <ul><li>Andrew Anselmo, origami performer</li><li>Tiziano Pardo ’28 and Emily Benitez ’28, attendees</li><li>Juliana Craige, event day staff and cashier</li><li>Angel Winpenny, The Patio on Broadway and Trinity Brewhouse</li></ul><div class="embedded-img"><img src="images/CanalWalk_CO_CalebLeeKong.jpg" alt="Canal Walk in Providence in midday. The street is lined with vendor tents on the left side, with a brick sidewalk on the right." /><p id="photo-credit">By Caleb Lee-Kong | The Brown Daily Herald</p></div>';
+        '<b>On Canal Walk,</b> The Herald spoke to an <button class="hyperlinked" onclick="openModal(\'origami-master\')">origami street performer</button>, a <button class="hyperlinked" onclick="openModal(\'patio-ri\')">beverage vendor</button> and <button class="hyperlinked" onclick="openModal(\'juliana-craige\')">event-day staff</button>, as well as Brown <button class="hyperlinked" onclick="openModal(\'brown-students\')">students</button> who made the trek down College Hill to attend WaterFire.<br/><br/>Navigate the links above (or below) to learn more about: <ul><li>Andrew Anselmo, <button class="hyperlinked" onclick="openModal(\'origami-master\')">origami</button> street performer</li><li>Tiziano Pardo ’28 and Emily Benitez ’28, event <button class="hyperlinked" onclick="openModal(\'brown-students\')">attendees</button></li><li>Juliana Craige, event day <button class="hyperlinked" onclick="openModal(\'juliana-craige\')">staff</button> and cashier</li><li>Angel Winpenny, <button class="hyperlinked" onclick="openModal(\'patio-ri\')">The Patio</button> on Broadway and Trinity Brewhouse</li></ul><div class="embedded-img"><img src="images/CanalWalk_CO_CalebLeeKong.jpg" alt="Canal Walk in Providence in midday. The street is lined with vendor tents on the left side, with a brick sidewalk on the right." /><p id="photo-credit">By Caleb Lee-Kong | The Brown Daily Herald</p></div>';
 
       label.style.opacity = "1";
       removeMarkers();
@@ -427,28 +422,28 @@ function handleStepEnter(response) {
       break;
     case "washington-st":
       label.innerHTML =
-        '<b>On Washington St.,</b> food and art vendors set up stalls selling their <button class="hyperlinked" onclick="openModal(\'gather-glass\')">glassblown products</button>, <button class="hyperlinked" onclick="openModal(\'joseph-mushipi\')">paintings</button> and <button class="hyperlinked" onclick="openModal(\'good-vibes\')">seasonal cocktails</button>. The Herald also spoke to <button class="hyperlinked" onclick="openModal(\'felicia-laroche\')">attendees</button> on Washington St., as well as a <button class="hyperlinked" onclick="openModal(\'living-statue\')">living statue</button> who performed as part of the event.<br/><br/>Click the links above to read about: <ul><li>Tara Smith, living statue</li><li>Matt Stone, Gather Glass</li><li>Felicia LaRoche, attendee</li><li>Joseph Mushipi, visual artist</li><li>Tommy Tainsh, Good Vibes Beverages</li></ul><div class="embedded-img"><img src="images/WashingtonStreet_CO_HoratioHamilton.jpg" alt="Photo of Washington Street lined with vendor tents." /><p id="photo-credit">By Horatio Hamilton | The Brown Daily Herald</p></div>';
+        '<b>On Washington Street,</b> food and art vendors set up stalls selling their <button class="hyperlinked" onclick="openModal(\'gather-glass\')">glass-blown products</button>, <button class="hyperlinked" onclick="openModal(\'joseph-mushipi\')">paintings</button> and <button class="hyperlinked" onclick="openModal(\'good-vibes\')">seasonal cocktails</button>. The Herald also spoke to more WaterFire <button class="hyperlinked" onclick="openModal(\'felicia-laroche\')">attendees</button> and a <button class="hyperlinked" onclick="openModal(\'living-statue\')">living statue</button> performance artist.<br/><br/>Navigate the links above (or below) to learn more about: <ul><li>Tara Smith, <button class="hyperlinked" onclick="openModal(\'living-statue\')">living statue</button> performance artist</li><li>Matt Stone, co-owner of <button class="hyperlinked" onclick="openModal(\'gather-glass\')">Gather Glass</button></li><li>Felicia LaRoche, event <button class="hyperlinked" onclick="openModal(\'felicia-laroche\')">attendee</button></li><li>Joseph Mushipi, <button class="hyperlinked" onclick="openModal(\'joseph-mushipi\')">visual artist</button></li><li>Tommy Tainsh, owner of <button class="hyperlinked" onclick="openModal(\'good-vibes\')">Good Vibes Beverages</button></li></ul><div class="embedded-img"><img src="images/WashingtonStreet_CO_HoratioHamilton.jpg" alt="Photo of Washington Street lined with vendor tents." /><p id="photo-credit">By Horatio Hamilton | The Brown Daily Herald</p></div>';
       label.style.opacity = "1";
       removeMarkers();
       washington_st_marker.addTo(map);
       break;
     case "waterfire-circle-tent":
       label.innerHTML =
-        '<b>At the WaterFire Circle Tent,</b> The Herald spoke to a <button class="hyperlinked" onclick="openModal(\'waterfire-circle-volunteer\')">volunteer</button> with WaterFire Circle — a <button class="hyperlinked" onclick="openModal(\'waterfire-circle\')">membership program</button> that supports the event.<br/><br/>Click the links above to read about: <ul><li>WaterFire Circle</li><li>Jeanine Palumbo, volunteer with WaterFire Circle</li></ul><div class="embedded-img"><img src="images/Waterfirecircletent_CO_JakeParker-2.jpg" alt="Photo of people chatting and grabbing food from a central table in the WaterFire Circle Tent." /><p id="photo-credit">By Jake Parker | The Brown Daily Herald</p></div>';
+        '<b>At the WaterFire Circle Tent,</b> The Herald spoke to a <button class="hyperlinked" onclick="openModal(\'waterfire-circle-volunteer\')">volunteer</button> with WaterFire Circle — a <button class="hyperlinked" onclick="openModal(\'waterfire-circle\')">membership program</button> that supports the event.<br/><br/>Navigate the links above (or below) to learn more about: <ul><li><button class="hyperlinked" onclick="openModal(\'waterfire-circle\')">WaterFire Circle</button></li><li>Jeanine Palumbo, <button class="hyperlinked" onclick="openModal(\'waterfire-circle-volunteer\')">volunteer</button> with WaterFire Circle</li></ul><div class="embedded-img"><img src="images/Waterfirecircletent_CO_JakeParker-2.jpg" alt="Photo of people chatting and grabbing food from a central table in the WaterFire Circle Tent." /><p id="photo-credit">By Jake Parker | The Brown Daily Herald</p></div>';
       label.style.opacity = "1";
       removeMarkers();
       waterfire_circle_tent_marker.addTo(map);
       break;
     case "college-st":
       label.innerHTML =
-        '<b>On College St.,</b> The Herald spoke to a <button class="hyperlinked" onclick="openModal(\'chills-cheesecakes\')">cheesecake vendor</button> and several attendees — from <button class="hyperlinked" onclick="openModal(\'cassandra-constancio\')">Providence</button> and <button class="hyperlinked" onclick="openModal(\'the-farmers\')">elsewhere</button>.<br/><br/>Click the links above to read about: <ul><li>Chris Hill, co-owner of Chill’s Cheesecakes</li><li>Cassandra Constancio</li><li>Susan and Anthony Farmer</li></ul><div class="embedded-img"><img src="images/CollegeStreet_CO_CalebLee-Kong-1.jpg" alt="A couple sitting in a gondola that has just emerged from under a bridge. A gondolier stands behind them with a row." /><p id="photo-credit">By Caleb Lee-Kong | The Brown Daily Herald</p></div>';
+        '<b>On College Street,</b> The Herald spoke to a <button class="hyperlinked" onclick="openModal(\'chills-cheesecakes\')">cheesecake vendor</button> and several more attendees. Some visitors were based <button class="hyperlinked" onclick="openModal(\'cassandra-constancio\')">nearby</button>, while <button class="hyperlinked" onclick="openModal(\'the-farmers\')">others</button> traveled across state borders to attend the performance.<br/><br/>Navigate the links above (or below) to learn more about: <ul><li>Chris Hill, co-owner of <button class="hyperlinked" onclick="openModal(\'chills-cheesecakes\')">Chill’s Cheesecakes</button></li><li>Cassandra Constancio, event <button class="hyperlinked" onclick="openModal(\'cassandra-constancio\')">attendee</button></li><li>Susan and Anthony Farmer, event <button class="hyperlinked" onclick="openModal(\'the-farmers\')">attendees</button></li></ul><div class="embedded-img"><img src="images/CollegeStreet_CO_CalebLee-Kong-1.jpg" alt="A couple sitting in a gondola that has just emerged from under a bridge. A gondolier stands behind them with a row." /><p id="photo-credit">By Caleb Lee-Kong | The Brown Daily Herald</p></div>';
       label.style.opacity = "1";
       removeMarkers();
       college_st_marker.addTo(map);
       break;
     case "star-walk":
       label.innerHTML =
-        '<b>On Star Walk,</b> <button class="hyperlinked" onclick="openModal(\'star-field\')">volunteers</button> maintained the “Starry, Starry Night” art installation.Click the links above to read about: <ul><li>Sarah Voykovic, Star Field volunteer</li></ul>';
+        '<b>At Star Walk,</b> near the Crawford Street Bridge, <button class="hyperlinked" onclick="openModal(\'star-field\')">volunteers</button> maintained the “Starry, Starry Night” art installation.<br/><br/>Navigate the links above (or below) to learn more about: <ul><li>Sarah Voykovic, Star Field <button class="hyperlinked" onclick="openModal(\'star-field\')">volunteer</button></li></ul>';
       label.style.opacity = "1";
       removeMarkers();
       star_walk_marker.addTo(map);

@@ -1,6 +1,19 @@
+:root {
+  /* --background-color: #fff; */
+  /* --accent-color: #6e9fec; */
+  /* --byline-color: #e0e0e0; */
+  --byline-color: #444444;
+  /* --background-color: black;
+  --accent-color: #cd611e; */
+  --background-color: #20324f;
+  --accent-color: #cd611e;
+  --text-color: white;
+}
+
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--background-color);
 }
 
 #map {
@@ -16,6 +29,7 @@ body {
   padding: 2rem;
   width: 55%;
   margin: 0 auto;
+  color: white;
 }
 
 .scroll {
@@ -136,7 +150,7 @@ p {
   margin-top: 16px;
   margin-bottom: 22px;
   text-align: center;
-  color: #505050;
+  color: var(--text-color);
 }
 
 #heading p {
@@ -152,7 +166,7 @@ p {
 }
 
 #byline .author {
-  background-color: #e0e0e0;
+  background-color: var(--byline-color);
   padding: 0.2rem;
   padding-left: 0.4rem;
   padding-right: 0.4rem;
@@ -229,12 +243,12 @@ a {
 
 #waterfire {
   color: white;
-  animation: fadeToPink 2s forwards;
+  animation: fadeToAccent 2s forwards;
 }
 
-@keyframes fadeToPink {
+@keyframes fadeToAccent {
   to {
-    color: #6e9fec;
+    color: var(--accent-color);
   }
 }
 
@@ -250,7 +264,7 @@ a {
   left: 0;
   height: 6px;
   width: 0%;
-  background: #6e9fec;
+  background: var(--accent-color);
   z-index: 9999;
   transition: width 0.1s linear;
 }
@@ -279,6 +293,7 @@ img {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  color: var(--text-color);
 }
 
 .toggle-arrow {
