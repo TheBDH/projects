@@ -1,5 +1,5 @@
 :root {
-  /* --background-color: #fff; */
+  /* --bckground-color: #fff; */
   /* --accent-color: #6e9fec; */
   /* --byline-color: #e0e0e0; */
   --byline-color: #444444;
@@ -100,7 +100,7 @@ article {
 .step {
   margin: 0 auto 30rem 0;
   padding: 1.2rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   /* background-color: #e9eeea; */
   /* color: #e95c56; */
   /* font-family: "Tahoma"; */
@@ -118,7 +118,7 @@ article {
 .step p,
 p {
   display: inline;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 0;
   vertical-align: text-top;
   font-family: "freight-text-pro", "Times", serif;
@@ -285,7 +285,7 @@ img {
 #toggle-button {
   background: none;
   border: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: "freight-text-pro", "Times", serif;
   cursor: pointer;
   padding: 0;
@@ -428,4 +428,12 @@ img {
 ul {
   padding-left: 15px;
   margin-top: 0;
+}
+
+.instructions {
+  font-size: 1.4em;
+}
+
+p a {
+  text-decoration: underline;
 }
