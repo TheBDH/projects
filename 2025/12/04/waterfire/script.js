@@ -92,7 +92,7 @@ mapboxgl.accessToken =
 const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/asing122/cmidezdpf001701s06jo5fy8g",
-  zoom: isMobile ? 15.2 : 16.6,
+  zoom: isMobile ? 15.1 : 16.6,
   center: isMobile ? MAP_LOCATION_MOBILE : MAP_LOCATION,
 });
 
