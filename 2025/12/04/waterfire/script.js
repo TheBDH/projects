@@ -121,11 +121,11 @@ map.on("load", () => {
 });
 
 map.scrollZoom.disable();
-// map.dragPan.disable();
-// map.dragRotate.disable();
-// map.keyboard.disable();
-// map.doubleClickZoom.disable();
-// map.touchZoomRotate.disable();
+map.dragPan.disable();
+map.dragRotate.disable();
+map.keyboard.disable();
+map.doubleClickZoom.disable();
+map.touchZoomRotate.disable();
 
 map.on("click", (e) => {
   console.log(`${e.lngLat.lng}, ${e.lngLat.lat}`);
