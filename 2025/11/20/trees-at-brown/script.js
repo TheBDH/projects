@@ -1,4 +1,3 @@
-// courtesy of the John Hay Library
 document.addEventListener("DOMContentLoaded", function () {
     let map;
     let markerCluster;
