@@ -148,58 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return cleanSpp;
     }
 
-    function generateRareList(trees) {
-        const counts = {};
-
-        trees.forEach(t => {
-            let s = t.SPP ? t.SPP.trim() : null;
-            if (s) {
-                counts[s] = (counts[s] || 0) + 1;
-            }
-        });
-
-        const sorted = Object.entries(counts).sort((a, b) => {
-            if (a[1] !== b[1]) return a[1] - b[1];
-            return a[0].localeCompare(b[0]);
-        });
-
-        const rareTrees = sorted.filter(item => {
-            const name = item[0].toLowerCase();
-            const count = item[1];
-
-            if (name.includes('unknown')) return false;
-            if (name.includes('empty')) return false;
-            if (name.includes('vacant')) return false;
-
-            return count <= 10;
-        });
-
-        const listContainer = document.getElementById('rare-tree-list');
-        listContainer.innerHTML = '';
-
-        if (rareTrees.length === 0) {
-            listContainer.innerHTML = '<li class="text-center text-gray-500">No rare species found.</li>';
-            return;
-        }
-
-        rareTrees.forEach(([spp, count]) => {
-            const li = document.createElement('li');
-            li.className = "flex justify-between items-center p-2 hover:bg-gray-50 rounded border-b border-gray-100";
-
-            let badgeColor = "bg-blue-100 text-blue-800";
-            if (count === 1) badgeColor = "bg-red-100 text-red-800";
-            else if (count === 2) badgeColor = "bg-orange-100 text-orange-800";
-
-            li.innerHTML = `
-                        <div class="text-sm text-gray-800 font-medium">${getDisplayName(spp)}</div>
-                        <div class="ml-4 px-2 py-1 ${badgeColor} text-xs font-bold rounded-full whitespace-nowrap">
-                            ${count} ${count === 1 ? 'Tree' : 'Trees'}
-                        </div>
-                    `;
-            listContainer.appendChild(li);
-        });
-    }
-
     function populateFilters(trees) {
         const speciesFilter = document.getElementById('species-filter');
         const streetFilter = document.getElementById('street-filter');
@@ -288,7 +236,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         populateFilters(allTrees);
-        // generateRareList(allTrees);
         updateMap();
     }
 
