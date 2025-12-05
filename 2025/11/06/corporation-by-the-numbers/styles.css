@@ -115,7 +115,7 @@ body {
 }
 
 #byline .author {
-    background-color: rgb(190, 33, 33);
+    background-color: #471715;
     color: white;
     padding: 0.2rem;
     padding-left: 0.4rem;
@@ -133,7 +133,7 @@ body {
 
 a {
     /* color: #94102a; */
-    color: rgb(190, 33, 33);
+    color: #471715;
 }
 
 #purple-data {
@@ -165,7 +165,7 @@ a {
     /* Increase the size of the down arrow */
     font-weight: bold;
     /* Make the arrow bold */
-    color: rgb(190, 33, 33);
+    color: #471715;
     /* Change the color to a shade of green */
 }
 
