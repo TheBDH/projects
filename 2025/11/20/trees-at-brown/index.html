@@ -80,53 +80,6 @@
 
         <div class="data-box">
 
-            <div class="filter-panel">
-                <div class="filter-grid">
-
-                    <div class="form-group">
-                        <label for="species-filter">Filter by Species</label>
-                        <select id="species-filter">
-                            <option value="all">All Species</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="street-filter">Filter by Street</label>
-                        <select id="street-filter">
-                            <option value="all">All Streets</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="min-dbh-filter">Min. Diameter (in)</label>
-                        <input type="number" id="min-dbh-filter"
-                            placeholder="0">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="max-dbh-filter">Max. Diameter (in)</label>
-                        <input type="number" id="max-dbh-filter"
-                            placeholder="50">
-                    </div>
-
-                    <div class="button-group">
-                        <button id="apply-filters-btn"
-                            class="btn-primary">Apply</button>
-                        <button id="reset-filters-btn"
-                            class="btn-secondary">Reset</button>
-                    </div>
-
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="cluster-toggle" checked>
-                        <label for="cluster-toggle"
-                            class="checkbox-label">Cluster Trees</label>
-                    </div>
-
-                </div>
-            </div>
-            <div style="height: 2vh;"></div>
-
-            <div id="map"></div>
             <div style="height: 8vh;"></div>
 
             <div
@@ -165,6 +118,57 @@
                     height="518" data-external="1"></iframe><script
                     type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
             </div>
+            <div style="height: 8vh;"></div>
+            <div id="article-heading" style="font-weight: bold; text-align: left; font-size: xx-large;">
+                Explore the data yourself:
+            </div>
+            <div class="filter-panel">
+                <div class="filter-grid">
+
+                    <div class="form-group">
+                        <label for="species-filter">Filter by Species</label>
+                        <select id="species-filter">
+                            <option value="all">All Species</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="street-filter">Filter by Street</label>
+                        <select id="street-filter">
+                            <option value="all">All Streets</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="min-dbh-filter">Min. Diameter (in)</label>
+                        <input type="number" id="min-dbh-filter"
+                            placeholder="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="max-dbh-filter">Max. Diameter (in)</label>
+                        <input type="number" id="max-dbh-filter"
+                            placeholder="50">
+                    </div>
+
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <div class="button-group" style="width: 70%; left: auto; right: auto;">
+                    <button id="apply-filters-btn"
+                        class="btn-primary">Apply</button>
+                    <button id="reset-filters-btn"
+                        class="btn-secondary">Reset</button>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="cluster-toggle" checked>
+                        <label for="cluster-toggle"
+                            class="checkbox-label">Cluster Trees</label>
+                    </div>
+                </div>
+            </div>
+            <div style="height: 2vh;"></div>
+
+            <div id="map"></div>
         </div>
     </body>
 </html>

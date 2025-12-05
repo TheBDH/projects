@@ -1,3 +1,4 @@
+// courtesy of the John Hay Library
 document.addEventListener("DOMContentLoaded", function () {
     let map;
     let markerCluster;
@@ -21,11 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
         'Acer palmatum': 'Japanese Maple',
         'Acer negundo': 'Boxelder',
         'Acer saccharinum': 'Silver Maple',
-        'Acer campestre': 'Hedge Maple',
+        'Acer campestre': 'Field Maple',
         'Acer ginnala': 'Amur Maple',
         'Acer pensylvanicum': 'Striped Maple',
         'Acer griseum': 'Paperbark Maple',
-        'Quercus rubra': 'Red Oak',
+        'Quercus rubra': 'Northern Red Oak',
         'Quercus palustris': 'Pin Oak',
         'Quercus alba': 'White Oak',
         'Quercus robur': 'English Oak',
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'Quercus imbricaria': 'Shingle Oak',
         'Prunus serotina': 'Black Cherry',
         'Prunus cerasifera': 'Cherry Plum',
-        'Prunus serrulata': 'Japanese Flowering Cherry',
+        'Prunus serrulata': 'Japanese Cherry',
         'Prunus virginiana': 'Chokecherry',
         'Prunus sargentii': 'Sargent Cherry',
         'Prunus yedoensis': 'Yoshino Cherry',
@@ -52,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'Ulmus glabra': 'Wych Elm',
         'Ulmus procera': 'English Elm',
         'Platanus occidentalis': 'American Sycamore',
-        'Platanus x acerifolia': 'London Planetree',
+        'Platanus x acerifolia': 'London Plane',
         'Tilia cordata': 'Littleleaf Linden',
         'Tilia americana': 'American Linden',
         'Tilia tomentosa': 'Silver Linden',
@@ -106,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'Carpinus betulus': 'European Hornbeam',
         'Ostrya virginiana': 'American Hophornbeam',
         'Amelanchier arborea': 'Downy Serviceberry',
-        'Amelanchier canadensis': 'Shadbush',
+        'Amelanchier canadensis': 'Canadian Serviceberry',
         'Crataegus phaenopyrum': 'Washington Hawthorn',
         'Crataegus viridis': 'Green Hawthorn',
         'Crataegus crus-galli': 'Cockspur Hawthorn',
