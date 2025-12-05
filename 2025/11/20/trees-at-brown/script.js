@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
             speciesFilter.appendChild(option);
         });
 
-        const streets = [...new Set(trees.map(t => t.Street).filter(s => s))].sort();
+        const streets = [...new Set(trees.map(t => t.OnStrProper).filter(s => s))].sort();
         streets.forEach(street => {
             const option = document.createElement('option');
             option.value = street;
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const filteredTrees = allTrees.filter(tree => {
             const speciesMatch = (selectedSpecies === 'all' || tree.SPP === selectedSpecies);
-            const streetMatch = (selectedStreet === 'all' || tree.Street === selectedStreet);
+            const streetMatch = (selectedStreet === 'all' || tree.OnStrProper === selectedStreet);
             const dbh = tree.DBH || 0;
             const dbhMatch = (dbh >= minDbh && dbh <= maxDbh);
             return speciesMatch && streetMatch && dbhMatch;
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
         filteredTrees.forEach((tree) => {
             const popupContent = `
                         <b>Species:</b> ${getDisplayName(tree.SPP)}<br>
-                        <b>Street:</b> ${tree.Street || "N/A"}<br>
+                        <b>Street:</b> ${tree.OnStrProper || "N/A"}<br>
                         <b>Diameter:</b> ${tree.DBH || "N/A"} inches
                     `;
             const marker = L.marker([tree.latitude, tree.longitude]).bindPopup(popupContent);
