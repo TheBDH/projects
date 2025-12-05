@@ -67,6 +67,12 @@
                 <span class="author">Rohan
                     Kher</span>
             </h6>
+            <div style="text-align: center;">
+                <button id="jump-button" onclick="scrollToBottom()">
+                    Explore tree data now
+                </button>
+            </div>
+
             <div class="down-arrow" style="text-align: center;">
                 &#x2193;
             </div>
@@ -180,7 +186,7 @@
                     Library
                 </div>
 
-                <div class="data-box" style="width: 90%">
+                <div class="data-box" style="width: 90%; margin-top: 0%; margin-bottom: 0%;">
                     <iframe title="Most Common Tree Species"
                         aria-label="Pie Chart"
                         id="datawrapper-chart-15IJM"
@@ -260,7 +266,7 @@
                         of what makes Brown University so special.”
                     </p>
                 </div>
-                <div class="data-box" style="width: 90%">
+                <div class="data-box" style="width: 90%; margin-top: 0%; margin-bottom: 0%;">
                     <iframe title="Most Common Tree Genera"
                         aria-label="Pie Chart"
                         id="datawrapper-chart-UGhY2"
@@ -381,7 +387,7 @@
                         family to prevent the spread of disease.
                     </p>
                 </div>
-                <div class="data-box" style="width: 90%">
+                <div class="data-box" style="width: 90%; margin-top: 0%; margin-bottom: 0%;">
                     <iframe title="Number of Trees by Street at Brown"
                         aria-label="Column Chart"
                         id="datawrapper-chart-4d3r2"
@@ -434,7 +440,7 @@
                         Kartzinel said.
                     </p>
                 </div>
-                <div class="data-box" style="width: 90%">
+                <div class="data-box" style="width: 90%; margin-top: 0%; margin-bottom: 0%;">
                     <iframe
                         title="Number of Trees by Diameter (inches) at Brown"
                         aria-label="Column Chart"
@@ -473,7 +479,8 @@
                         the street trees of College Hill.
                     </p>
                 </div>
-                
+                <div id="map-jump"></div>
+
                 <div class="filter-panel">
                     <div class="filter-grid">
 
@@ -522,9 +529,20 @@
                         </div>
                     </div>
                 </div>
-                <div style="height: 2vh;"></div>
+                <div style="height: 3vh;"></div>
 
                 <div id="map"></div>
             </div>
+            <div style="height: 8vh;"></div>
+            <script>
+            function scrollToBottom() {
+                const element = document.getElementById('map-jump');
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    console.error('Element with id "map-jump" not found');
+                }
+            }
+        </script>
         </body>
     </html>
