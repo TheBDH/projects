@@ -12,7 +12,7 @@ body {
 .text-box {
     position: relative;
     max-width: 940px;
-    width: 80%;
+    width: 95%;
     margin: 2em auto;
     padding: 2em;
     background-color: rgba(255, 255, 255, 0.95);
@@ -350,7 +350,7 @@ input[type="checkbox"] {
     height: auto;
     width: 50vw;
     /* Use viewport width to take up 80% of screen width */
-    border: 2px solid #000;
+    border: 4px solid #000;
     /* Add border */
     margin: 0 auto;
     /* Center the image */
