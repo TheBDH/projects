@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      How the shooting at Brown University unfolded, by the minute
+    </title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <link rel="icon" href="./assets/graduation-cap.png" type="image/icon type"/>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="photo-caption-bg">
+      Media by Kaia Yalamanchili | The Brown Daily Herald
+    </div>
+    <div class="timeline">
+      <div class="timeline-step" data-step="1">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">1940s</div>
+      </div>
+      <div class="timeline-step" data-step="2">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">1950s</div>
+      </div>
+      <div class="timeline-step" data-step="3">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">1960s</div>
+      </div>
+      <div class="timeline-step" data-step="4">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">1970s</div>
+      </div>
+      <div class="timeline-step" data-step="5">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">1980s</div>
+      </div>
+      <div class="timeline-step" data-step="6">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">1990s</div>
+      </div>
+      <div class="timeline-step" data-step="7">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">2000s</div>
+      </div>
+      <div class="timeline-step" data-step="8">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">2010s</div>
+      </div>
+      <div class="line"></div>
+    </div>
+    <div class="scrolly">
+      <div class="step" data-step="-1" id="step-heading">
+        <a href="https://www.browndailyherald.com" target="_blank">
+          <img
+            src="assets/logo-black.png"
+            id="herald-logo"
+            alt="Brown Daily Herald Logo"
+            style="max-width: 250px"
+          />
+        </a>
+        <h2>Decades of walking through the Van Wickle gates: A history of <span id="heading-green">admissions</span> at Brown</h3>
+        <h4>The Herald interviewed alums dating back to the class of 1949 about their admissions experience.</h4>
+        <h6 id="byline">
+          Reporting by
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/teddy-fisher"
+              target="_blank"
+              >Teddy Fisher</a
+            ></span
+          > & 
+          <span class="author">
+            <a
+              href="https://www.browndailyherald.com/staff/annika-singh"
+              target="_blank"
+              >Annika Singh</a
+            >
+          </span><br /><br />
+          Web design by
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/annika-singh"
+              target="_blank"
+              >Annika Singh</a
+            ></span
+          >
+      </div>
+
+      <div class="step" data-step="0" id="step-lede" data-offset="0.1">
+        <p>
+          From writing their essays by hand to submitting photos of themselves, applicants to Brown have navigated an application process that has evolved decade over decade.<br/><br/>
+          The Herald interviewed alums and dove into the archives to learn about each decade of the admissions experience since the 1940s.
+        </p>
+      </div>
+      <div class="step" data-step="1">
+        <p>
+          <p><b>1940s: College in the aftermath of a world war</b></p>
+          <p>
+            Phyllis Beck ’49 P’74 arrived on Brown’s campus in fall 1945 — nearly 80 years ago. Standing out in her memory is the image of people celebrating the United States’ victory in World War II, after Japan signed a surrender document on Sept. 2 of that year.<br/><br/>
+            Beck was enrolled at <a href="https://www.browndailyherald.com/article/2023/04/end-of-an-era-exploring-the-legacy-of-pembroke-college">Pembroke College</a>, Brown’s women’s college that <a href="https://www.brown.edu/about/history/timeline/men%E2%80%99s-and-women%E2%80%99s-colleges-combine">merged</a> in 1971 with the College, Brown’s undergraduate program.<br/><br/>
+            Pembroke’s academic requirements included gym classes, something not required of the men at Brown. Among the <a href="https://repository.library.brown.edu/storage/bdr:1089186/PDF/">classes</a> offered were horseback riding, gymnastics, ice hockey and soccer. <br/><br/>
+            Beck went to high school in New York City, took the SAT — although she didn’t remember her score — and completed “short answer” questions for her application to Brown. <br/><br/>
+            Beck passed away on March 3 at the age of 97.
+          </p>
+          <div class="other-news-step" data-step="1">
+              <p>
+                <i>Also in the ’40s:</i><br/><br/>
+                The Class of 1944 <a href="https://www.brown.edu/about/history/timeline/first-american-indian-graduate">included</a> Brown’s first Native American graduate, Albert Anthony. Additionally, in the 1940s, Brown <a href="https://www.brown.edu/about/history/timeline/veterans-college-established">started</a> its Veterans Extension Division, a two-year program for veterans admitted under the G.I. Bill of 1944, which provided educational benefits for former members of the armed services. In 1942, a <a href="https://repository.library.brown.edu/storage/bdr:963635/PDF/">plan</a> to allow freshmen to enter at three separate points each year went into effect, and Brown also <a href="https://repository.library.brown.edu/storage/bdr:963620/PDF/">allowed</a> high school juniors “of superior ability” to be admitted. In the 1945-46 academic year, classes at Brown <a href="https://repository.library.brown.edu/storage/bdr:969279/PDF/">became</a> co-ed due to wartime low enrollment.
+              </p>
+            </div>
+        </p>
+      </div>
+      <div class="step" data-step="2">
+        <p><b>1950s: A Brunonian since birth</b></p>
+        <p>
+          Carol Agate ’55 was born in Providence. “Brown was so much a part of life,” Agate recalled. Her sister also attended Pembroke.<br/><br/>
+          Agate did not remember much about Pembroke’s application process, but she was certain of one thing: “I definitely was not interviewed.” Prospective Pembroke students from at least the class of 1956 onwards were <a href="https://repository.library.brown.edu/storage/bdr:1088606/PDF/">interviewed</a> as part of the admissions process.<br/><br/>
+          Agate, who studied physics, said she was “very active” as a writer for the Pembroke Record, the college’s student newspaper. “I was really more interested in the Pembroke Record than academics,” she said.
+        </p>
+        <div class="article-photo">
+          <img src="./assets/article-photos/1950s_Carol_Agate.png" alt="Carol Agate" class="article-photo" />
+          <p class="img-caption">Courtesy of Carol Agate.</p>
+        </div>
+        <div class="other-news-step" data-step="1">
+          <p>
+            <i>Also in the ’50s:</i><br/><br/>
+            In 1952, a record amount of financial aid was <a href="https://repository.library.brown.edu/storage/bdr:981711/PDF/">given</a> to the class of 1956, aiding 30% of incoming freshmen. In 1953, the “ideas” curriculum was <a href="https://repository.library.brown.edu/storage/bdr:1018212/PDF/">inaugurated</a> at Brown, allowing students to study ideas rather than traditional subject matter tied to a single discipline. In 1958, IC courses were <a href="https://repository.library.brown.edu/storage/bdr:1018212/PDF/">required</a> of underclassmen. The program was <a href="https://repository.library.brown.edu/storage/bdr:983680/PDF/">discontinued</a> in 1963. In 1959, Pembroke College <a href="https://repository.library.brown.edu/storage/bdr:1090340/PDF/">admitted</a> Early Decision applicants for the first time.
+          </p>
+        </div>
+      </div>
+      <div class="step" data-step="3">
+        <p><b>1960s: Parallel lives for Brown’s men and Pembroke’s women</b></p>
+        <p>
+          Larry Gross ’63 grew up in the Glover Park neighborhood of Washington, D.C. He attended a public high school in D.C. <br/><br/>
+          “In those days, Brown was not as difficult to get into,” Gross said. And when he arrived on College Hill, the academic difficulty was “not as high as I expected it to be,” he added.<br/><br/>
+          In 1966, Pembroke College <a href="https://repository.library.brown.edu/storage/bdr:1092263/PDF/">saw</a> the highest ratio of applications to seats available among the Seven Sisters — seven of the nation’s highly prestigious women’s colleges.<br/><br/>
+          Leila Heckman ’66, hailing from Bridgeport, Connecticut, said that only 10% to 20% of her graduating high school class went to college. She was the valedictorian of her class.<br/><br/>
+          Gross was the editor of his high school newspaper and followed the honors track in high school. He said he “had no counseling assistance at all” when applying to college.<br/><br/>
+          Initially, he “knew zero about Brown” and “wanted to go to a small school” — like Amherst College, Wesleyan University or Hamilton College.<br/><br/>
+          But given his father’s service in the Navy, Gross was enticed to apply to Brown’s Navy Reserve Officers’ Training Corps unit, and was admitted as a midshipman. <br/><br/>
+          Gross remembers scoring around a 1400 on his SAT, out of a possible 1600 points. Heckman said she “definitely took the SATs” and “did well enough to get accepted early to Brown.” She also recalls writing “maybe a paragraph” as a writing sample for her application.
+        </p>
+          <div class="article-photo">
+            <img src="./assets/article-photos/1960s_Larry_Gross.png" alt="Larry Gross" class="article-photo" />
+            <p class="img-caption">Courtesy of Larry Gross.</p>
+          </div>
+          <div class="other-news-step" data-step="1">
+            <p>
+              <i>Also in the ’60s:</i><br/><br/>
+              In 1968, 65 African American students <a href="https://www.browndailyherald.com/article/2023/11/browns-history-of-student-protests-demonstrations-sit-ins">held</a> a walkout to call for an increase in Black student enrollment and financial aid. In 1969, students <a href="https://slaveryandjustice.brown.edu/history#:~:text=In%20November%201969%2C%20students%20led,1971">boycotted</a> class in protest of the University’s affirmative action program, which they said was insufficient. The Open Curriculum was also <a href="https://www.browndailyherald.com/article/2023/04/adoch-history-of-open-curriculum">founded</a> in 1969.
+            </p>
+          </div>
+      </div>
+      <div class="step" data-step="4">
+        <p><b>1970s: Handwritten applications and postcards to admissions</b></p>
+        <p>
+          Ken Miller ’70, a professor emeritus of biology at Brown, grew up in Rahway, New Jersey, while his father attended classes at Rutgers University. <br/><br/>
+          “I would flip through his books on electronics and astronomy,” Miller said. “He would take me to Rutgers basketball games.”<br/><br/>
+          For Miller, college was always in the picture. “I was a really smart kid,” he said. He became familiar with Brown through a catalog the University sent him in 1965 after he wrote a postcard to the admissions office.<br/><br/>
+          Joseph Silverman ’77, now a professor of mathematics at Brown, recalled taking a “road trip with three friends” during the spring of his junior year of high school, where they “visited Yale, Brown, (Massachusetts Institute of Technology) and Harvard.” Brown seemed the “happiest” of the four, he wrote.<br/><br/>
+          When Miller toured Brown, he was left “very impressed,” he wrote. “I liked the old campus, sort of the Ivy-League feel.” Miller was valedictorian, student body president and a varsity swimmer at his high school. He swam competitively at Brown.<br/><br/>
+          Silverman remembers filling out a paper application that needed to be submitted to his guidance counselor “weeks before the application deadline.” He noted that “Brown required the essay to be handwritten,” without the use of a typewriter.<br/><br/>
+          Waiting for the admission decision was painful, Silverman recalled. Every day, he would arrive home from school and check the mailbox.<br/><br/>
+          When Miller gets together with his old classmates from Brown decades after their graduation, “all that anybody ever talks about is how we couldn’t possibly get in today,” he said. 
+        </p>
+          <div class="article-photo">
+            <img src="./assets/article-photos/1970s_Ken_Miller.png" alt="Ken Miller" class="article-photo" />
+            <p class="img-caption">Courtesy of Ken Miller.</p>
+          </div>
+          <div class="other-news-step" data-step="1">
+            <p>
+              <i>Also in the ’70s:</i><br/><br/>
+              In 1971, Pembroke College <a href="https://www.brown.edu/about/history/timeline/">merged</a> with Brown’s undergraduate school to <a href="https://250.brown.edu/browns-history.html#:~:text=Women%20were%20first%20admitted%20to,today%20as%20the%20Pembroke%20Campus.">form the College</a>. In 1972, the Committee on Admission and Financial Aid <a href="https://repository.library.brown.edu/storage/bdr:985846/PDF/">approved</a> a proposal to send successful female applicants an additional letter apart from the traditional acceptance letter, encouraging them to enroll. The University also began <a href="https://repository.library.brown.edu/storage/bdr:985002/PDF/">accepting</a> spring transfer students for the first time. <br/><br/>
+              In 1975, students <a href="https://www.browndailyherald.com/article/2023/11/browns-history-of-student-protests-demonstrations-sit-ins">occupied</a> University Hall to protest limited matriculation and recruitment of faculty and students of color. In 1976, Brown began <a href="https://repository.library.brown.edu/storage/bdr:1026901/PDF/">using</a> the Common Application, streamlining the application review process. After Brown <a href="https://repository.library.brown.edu/storage/bdr:987205/PDF/">faced</a> housing shortages with the entrance of the class of 1976, University admissions also reduced the size of the 1977 freshman class. <br/><br/>
+              In 1977, University admissions <a href="https://repository.library.brown.edu/storage/bdr:1027518/PDF/">destroyed</a> 27,000 admissions files after a student attempted to access their admission file through the 1974 Family Educational Rights and Privacy Act. <br/><br/>
+            </p>
+          </div>
+      </div>
+      <div class="step" data-step="5">
+        <p><b>1980s: A photo with your application</b></p>
+        <p>
+          Anne Vollen ’86 attended high school in Washington, D.C. at a private all-girls school. Her high school was “extremely competitive,” Vollen said. “Probably half of my class went to Ivy League schools,” she recalled. <br/><br/>
+          Vollen remembers visiting Brown with a friend and getting interviewed by an alum in Washington. She said she wrote one essay and attached a photograph to the designated space on the application.<br/><br/>
+          In the essay, Vollen wrote about how she raised wild animals. The photo she attached was one of her with a possum on her head.
+        </p>
+        <div class="other-news-step" data-step="1">
+          <p>
+            <i>Also in the ’80s:</i><br/><br/>
+            Applications to Brown’s class of 1987 <a href="https://timesmachine.nytimes.com/timesmachine/1983/03/20/044968.html?pageNumber=23">outnumbered</a> those received by other Ivy League schools for that graduation year.<br/><br/>
+            In 1984, Brown <a href="https://www.brown.edu/about/history/timeline/">approved</a> the start of its eight-year Program in Liberal Medical Education. And in <a href="https://www.browndailyherald.com/article/2024/03/the-history-of-need-blind-admissions-at-brown#:~:text=Earlier%20this%20year%2C%20the%20University,for%20domestic%20applicants%20since%202003.">1985</a>, <a href="https://www.browndailyherald.com/article/2023/11/browns-history-of-student-protests-demonstrations-sit-ins#section-1968">students</a> occupied the John Carter Brown Library and Brown’s admissions office to push for need-blind admissions.
+          </p>
+        </div>
+      </div>
+      <div class="step" data-step="6">
+        <p><b>1990s: Finding home in a “funky” way</b></p>
+        <p>
+          Deb Gordon ’94, a self-described “drama kid” in high school, said she was “burning for Brown.” <br/><br/>
+          Gordon was raised in the Boston suburbs in a family of Harvard graduates. But she was attracted to the “funky” and “progressive” nature of Brown’s student body and loved the Open Curriculum and sense of independence that came with Brown.<br/><br/>
+          For her application, she wrote a creative essay that was “not cookie-cutter,” she recalled. She asked her drama teacher, a Brown alum, to write her a letter of recommendation.
+        </p>
+        <div class="article-photo">
+          <img src="./assets/article-photos/1990s_Deb_Gordon.png" alt="Deb Gordon" class="article-photo" />
+          <p class="img-caption">Courtesy of Deb Gordon.</p>
+        </div>
+        <div class="other-news-step" data-step="1">
+          <p>
+            <i>Also in the ’90s:</i><br/><br/>
+            In 1992, students <a href="https://www.browndailyherald.com/article/2024/03/the-history-of-need-blind-admissions-at-brown#:~:text=Earlier%20this%20year%2C%20the%20University,for%20domestic%20applicants%20since%202003.">occupied</a> University Hall calling for need-blind admissions. In the end, over 250 were arrested. In 1994, female enrollment <a href="https://www.brown.edu/about/history/timeline/">surpassed</a> male enrollment for the first time in University history. Brown no longer has a non-binding early action round, but in <a href="https://repository.library.brown.edu/storage/bdr:1053155/PDF/">1999</a>, the University allowed students to apply early to multiple schools in addition to Brown.
+          </p>
+        </div>
+      </div>
+      <div class="step" data-step="7">
+        <p><b>2000s: Surprising success, surprising struggles</b></p>
+        <p>
+          Margarita Ramos ’00 grew up in Puerto Rico. She always wanted to travel to the mainland United States for college, but knew it would be an uphill battle. She worried the SAT would be her “Achilles heel,” she said.<br/><br/>
+          Ramos remembers writing one essay for Brown, which she printed out and sent in the mail. She also interviewed with an alum in San Juan.<br/><br/>
+          She was admitted to “several” Ivy League schools. Penn offered her a better financial aid package than Brown, but Brown agreed to match Penn’s financial aid offer after she met with a member of the financial aid office.<br/><br/>
+          “What really attracted me (to Brown) was the ability to choose my own curriculum,” Ramos said. “I wanted to be at the helm of my own education.”<br/><br/>
+          She praised Brown for offering “so much support” academically during her four years on campus, during which she found that “some of the courses were very challenging.”<br/><br/>
+          But “there were plenty of (teaching assistant) hours” and “opportunities to get one-on-one attention,” she recalled.
+        </p>
+        <div class="other-news-step" data-step="1">
+          <p>
+            <i>Also in the ’00s:</i><br/><br/>
+            Brown <a href="https://www.browndailyherald.com/article/2024/03/the-history-of-need-blind-admissions-at-brown">implemented</a> need-blind admissions for domestic applicants starting with the class of 2007.<br/><br/>
+            In 2008, the Brown-Rhode Island School of Design dual-degree program <a href="https://www.brown.edu/academics/brown-risd-dual-degree/about/history#:~:text=The%20idea%20of%20a%20dual,School%20of%20Design%20(RISD).">admitted</a> its first cohort. 
+          </p>
+        </div>
+      </div>
+      <div class="step" data-step="8">
+        <p><b>2010s: Making their way to Brown and beyond</b></p>
+        <p>
+          Kayla Smith ’12 grew up in Mississippi. Her mother attended a junior college and her father did not continue with education past high school.<br/><br/>
+          “No one from my high school had ever gone to an Ivy League university before,” she said. Her high school only offered two Advanced Placement classes and had only one guidance counselor. <br/><br/>
+          Still, “my grades were excellent,” she said. “I loved learning.” <br/><br/>
+          Brown was Smith’s “number one dream school,” she said. When it came to the application, Smith recalls typing up her essay, printing it out and mailing it in. <br/><br/>
+          James Chin ’10 ScM’11 grew up in Windham, New Hampshire, where his high school years were “rigorous, but also fun and fulfilling,” he wrote in an email to The Herald. He took three AP classes in high school, co-captained the math team and served on the student council.<br/><br/>
+          For his application to Brown, Chin completed his interview at the local library, during which his interviewer gave him “a good sense of what the culture was like,” Chin wrote. During their conversation, the interviewer agreed that Brown “would be a good fit” for Chin.<br/><br/>
+          At Brown, Chin explored journalism, acting and modern culture and media. He met John Krasinski ’01 in an acting class. He also worked for the student radio, WBRU, as an alternative rock DJ, producer, voice actor and web designer.
+        </p>
+        <div class="dual-photo">
+          <div class="article-photo">
+            <img src="./assets/article-photos/2010s_James_Chin.png" alt="James Chin" class="article-photo" />
+            <p class="img-caption">Courtesy of James Chin.</p>
+          </div>
+          <div class="article-photo">
+            <img src="./assets/article-photos/2010s_Kayla_Smith.png" alt="Kayla Smith" class="article-photo" />
+            <p class="img-caption">Courtesy of Kayla Smith.</p>
+          </div>
+        </div>
+        <div class="other-news-step" data-step="1">
+          <p>
+            <i>Also in the ’10s:</i><br/><br/>
+            In 2019, the University <a href="https://www.brown.edu/news/2023-03-23/brown-promise#:~:text=Featured%20Events-,Brown%20University%20initiative%20to%20replace%20loans%20becomes%20permanent%20after%20fundraising,in%20University%20financial%20aid%20packages.">launched</a> a plan to replace loans with scholarship funds. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
