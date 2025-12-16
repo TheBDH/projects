@@ -10,7 +10,7 @@ var images = [
   "./assets/background-photos/3.jpg",
   "./assets/background-photos/4.png",
   "./assets/background-photos/5.jpg",
-  "./assets/background-photos/6.png",
+  "./assets/background-photos/6.PNG",
   "./assets/background-photos/7.jpg",
   "./assets/background-photos/8.jpg",
   "./assets/background-photos/9.jpeg",
