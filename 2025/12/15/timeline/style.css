@@ -21,7 +21,7 @@ body {
 }
 
 .background {
-  background-image: url("./assets/Barus\ and\ Holley.jpg");
+  background-image: url("./assets/background-photos/1.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -42,19 +42,31 @@ body {
   height: 100%;
 }
 
-.photo-caption-bg {
+.photo-text {
   position: fixed;
   bottom: 5px;
   right: 5px;
+  max-width: 20rem;
+  text-wrap: wrap;
+}
+
+.photo-caption-bg {
+  font-style: italic;
+}
+
+.photo-credit-bg,
+.photo-caption-bg {
   background-color: #f5efed;
   color: #3a5743;
   padding: 0.02rem;
   padding-left: 0.4rem;
   padding-right: 0.4rem;
   border-radius: 0.5rem;
-  line-height: 1.5rem;
   white-space: nowrap;
   font-size: 0.8rem;
+  line-height: 1.2rem;
+  margin-top: 5px;
+  text-wrap: wrap;
 }
 
 .step {
@@ -165,21 +177,22 @@ a {
 }
 
 /* mobile formatting */
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   .scrolly {
-    width: 95%;
+    width: 70%;
+    justify-self: flex-end;
   }
 
   .background {
     width: 0;
   }
 
-  .photo-caption-bg {
+  .photo-credit-bg {
     visibility: hidden;
   }
 
   .step {
-    margin: 25vh 0;
+    margin: 5vh 0;
     width: 65%;
   }
 

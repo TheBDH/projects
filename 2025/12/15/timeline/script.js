@@ -8,22 +8,36 @@ var images = [
   "./assets/background-photos/1.jpg",
   "./assets/background-photos/2.jpg",
   "./assets/background-photos/3.jpg",
-  "./assets/background-photos/4.jpg",
+  "./assets/background-photos/4.png",
   "./assets/background-photos/5.jpg",
-  "./assets/background-photos/6.jpg",
+  "./assets/background-photos/6.png",
   "./assets/background-photos/7.jpg",
   "./assets/background-photos/8.jpg",
+  "./assets/background-photos/9.jpeg",
 ];
 
 var imageCredits = [
-  "Media by Ellis Rougeou | The Brown Daily Herald",
-  "Media by Stephanie London | The Brown Daily Herald",
-  "Media by Kaia Yalamanchili | The Brown Daily Herald",
-  "Media by Sophia Leng | The Brown Daily Herald",
-  "Media by Kaia Yalamanchili | The Brown Daily Herald",
-  "Media by Scout Chen | The Brown Daily Herald",
-  "Media by Ben Kang | The Brown Daily Herald",
-  "Media by Nat Hardy | The Brown Daily Herald",
+  "Media by Kenna Lee | The Brown Daily Herald",
+  "Media by Max Robinson | The Brown Daily Herald",
+  "Media by Annika Singh | The Brown Daily Herald",
+  "Courtesy of the Providence Police Department",
+  "Media by Hadley Carr | The Brown Daily Herald",
+  "Media by Hadley Carr | The Brown Daily Herald",
+  "Media by Anna Luecht | The Brown Daily Herald",
+  "Media by Anna Luecht | The Brown Daily Herald",
+  "Courtesy of the Providence Police Department",
+];
+
+var caption = [
+  "Barus and Holley Room 166",
+  "Governor Street on Dec. 15",
+  "",
+  "",
+  "",
+  "The Olney-Margolies Athletic Center on Dec. 13.",
+  "",
+  "",
+  "Photos of a suspect taken at 2:18 p.m. on Dec. 13 at Corner of Hope and Benevolent streets, publicly released Dec. 15.",
 ];
 
 const timelineData = [
@@ -78,6 +92,10 @@ const contextAbove = document.querySelector(".context-above");
 const contextBelow = document.querySelector(".context-below");
 const itemHeight = labelMain.offsetHeight;
 
+const background = document.querySelector(".background");
+const photoCredit = document.querySelector(".photo-credit-bg");
+const photoCaption = document.querySelector(".photo-caption-bg");
+
 scroller
   .setup({
     step: ".step",
@@ -107,6 +125,36 @@ scroller
       updateLabelContext(activeIndex);
       progressLabel.style.top = `${labelY}px`;
       progressLabel.classList.add("is-visible");
+
+      let photoIndex = 0;
+      if (activeIndex >= 1 && activeIndex <= 5) {
+        photoIndex = 0;
+      } else if (activeIndex >= 6 && activeIndex <= 8) {
+        photoIndex = 1;
+      } else if (activeIndex >= 9 && activeIndex <= 18) {
+        photoIndex = 2;
+      } else if (activeIndex == 19) {
+        photoIndex = 3;
+      } else if (activeIndex >= 20 && activeIndex <= 22) {
+        photoIndex = 4;
+      } else if (activeIndex >= 23 && activeIndex <= 24) {
+        photoIndex = 5;
+      } else if (activeIndex >= 25 && activeIndex <= 29) {
+        photoIndex = 6;
+      } else if (activeIndex >= 30 && activeIndex <= 33) {
+        photoIndex = 7;
+      } else if (activeIndex >= 34) {
+        photoIndex = 8;
+      }
+
+      background.style.backgroundImage = `url(${images[photoIndex]})`;
+      photoCredit.textContent = imageCredits[photoIndex];
+      if (caption[photoIndex] != "") {
+        photoCaption.style.visibility = "visible";
+        photoCaption.textContent = caption[photoIndex];
+      } else {
+        photoCaption.style.visibility = "hidden";
+      }
     } else {
       progressLabel.classList.remove("is-visible");
     }
