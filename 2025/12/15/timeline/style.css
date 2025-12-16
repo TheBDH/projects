@@ -1,7 +1,8 @@
 body {
   font-family: "Playfair Display", serif;
   width: 100%;
-  /* background-color: #f5efed; */
+  background-color: #282d32;
+  color: white;
 }
 
 .scrolly {
@@ -87,7 +88,7 @@ circle {
   height: 10px;
   /* background-color: #657153; */
   border-radius: 50%;
-  border: 2px solid #3a5743;
+  border: 2px solid white;
   position: absolute;
   left: -25px;
   transition: background-color 0.3s;
@@ -98,11 +99,11 @@ circle {
 
 .timeline-step .timeline-dot {
   transition: background-color 0.3s ease;
-  background-color: #fff;
+  background-color: #282d32;
 }
 
 .timeline-step.is-active .timeline-dot {
-  background-color: #3a5743;
+  background-color: white;
 }
 
 .timeline-step.is-visible .timeline-dot,
@@ -111,7 +112,7 @@ circle {
 }
 
 .timeline-content {
-  color: #3a5743;
+  color: white;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -133,7 +134,7 @@ circle {
   left: -19px;
   width: 2px;
   height: 300px;
-  background-color: #3a5743;
+  background-color: white;
   z-index: -2;
 }
 
@@ -175,11 +176,11 @@ h4 {
 }
 
 a {
-  color: #3a5743;
+  color: #9ec2a9;
 }
 
 #heading-green {
-  color: #3a5743;
+  color: #9ec2a9;
 }
 
 .other-news-step {
