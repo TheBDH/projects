@@ -160,7 +160,6 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5em;
   display: none;
 }
 
@@ -211,7 +210,7 @@ a {
   }
 
   .article-photo img {
-    margin: 0.2rem;
+    margin: 0;
     padding: 0;
     width: 100%;
   }
