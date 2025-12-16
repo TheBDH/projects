@@ -33,7 +33,7 @@ var photoAlt = [
   "Photo of Governor Street in the evening, dimly lit by street lamps.",
   "Photo of four ambulances parked on Thayer Street at the intersection of Angell Street.",
   "Photo of a man in dark clothing standing at the intersection of Hope Street and Waterman Street.",
-  "Photo of several students walking towards RITA bus parked outside the Quiet Green.",
+  "Photo of several students walking towards RIPTA bus parked outside the Quiet Green.",
   "Photo of the Olney-Margolies Athletic Center on Dec. 13.",
   "Photo of Providence Police Department car driving down Brook Street, which is covered by snow and caution tape.",
   "Photos of man in dark clothing, dark mask and dark hat showing two different postures.",
@@ -182,6 +182,8 @@ scroller
       } else {
         photoCaption.style.visibility = "hidden";
       }
+
+      background.title = photoAlt[photoIndex];
     } else {
       progressLabel.classList.remove("is-visible");
     }
