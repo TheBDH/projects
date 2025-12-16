@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      ‘Unimaginably tragic’: 50 hours since the shooting at Brown
+    </title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <link rel="icon" href="./assets/graduation-cap.png" type="image/icon type"/>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="photo-caption-bg">
+      Media by Scout Chen | The Brown Daily Herald
+    </div>
+    <div class="timeline">
+      <div class="timeline-step timeline-step-1" data-step="1">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">4:05 p.m.</div>
+      </div>
+      <div class="timeline-step timeline-step-1" data-step="2">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">4:22 p.m.</div>
+      </div>
+      <div class="timeline-step timeline-step-1" data-step="3">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">4:28 p.m.</div>
+      </div>
+      <div class="timeline-step timeline-step-1" data-step="4">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">4:50 p.m.</div>
+      </div>
+      <div class="timeline-step timeline-step-1" data-step="5">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">5:11 p.m.</div>
+      </div>
+      <div class="timeline-step timeline-step-1" data-step="6">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">5:27 p.m.</div>
+      </div>
+      <div class="timeline-step timeline-step-1" data-step="7">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">5:30 p.m.</div>
+      </div>
+      <div class="timeline-step timeline-step-1" data-step="8">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">5:45 p.m.</div>
+      </div>
+      <!-- <div class="timeline-step timeline-step-2" data-step="9">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">6:05 p.m.</div>
+      </div>
+      <div class="timeline-step timeline-step-2" data-step="10">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">6:10 p.m.</div>
+      </div>
+      <div class="timeline-step timeline-step-2" data-step="11">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">6:33 p.m.</div>
+      </div>
+      <div class="timeline-step timeline-step-2" data-step="12">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">6:35 p.m.</div>
+      </div>
+      <div class="timeline-step timeline-step-2" data-step="13">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">7:20 p.m.</div>
+      </div>
+      <div class="timeline-step timeline-step-2" data-step="14">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">7:38 p.m.</div>
+      </div>
+      <div class="timeline-step timeline-step-2" data-step="15">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">8:28 p.m.</div>
+      </div>
+      <div class="timeline-step timeline-step-2" data-step="16">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">9:37 p.m.</div>
+      </div> -->
+      <!-- <div class="timeline-step" data-step="9">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">12:07 a.m.</div>
+      </div>
+      <div class="timeline-step" data-step="9">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">12:15 a.m.</div>
+      </div>
+      <div class="timeline-step" data-step="9">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">1:53 a.m.</div>
+      </div>
+      <div class="timeline-step" data-step="9">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">1:54 a.m.</div>
+      </div>
+      <div class="timeline-step" data-step="9">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">3:05 a.m.</div>
+      </div>
+      <div class="timeline-step" data-step="9">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">3:10 a.m.</div>
+      </div>
+      <div class="timeline-step" data-step="9">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">3:50 a.m.</div>
+      </div>
+      <div class="timeline-step" data-step="9">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">5:42 a.m.</div>
+      </div> -->
+      <div class="line"></div>
+    </div>
+    <div class="scrolly">
+      <div class="step" data-step="-1" id="step-heading">
+        <a href="https://www.browndailyherald.com" target="_blank">
+          <img
+            src="assets/logo-black.png"
+            id="herald-logo"
+            alt="Brown Daily Herald Logo"
+            style="max-width: 250px"
+          />
+        </a>
+        <h2>‘Unimaginably tragic’: <span id="heading-green">50 hours</span> since the shooting at Brown</h2>
+        <h4>The Herald constructed a timeline of events that followed Saturday’s shooting.</h4>
+        <h6 id="byline">
+          Reporting by
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/michelle-bi"
+              target="_blank"
+              >Michelle Bi</a
+            ></span
+          > & <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/alejandro-ruiz"
+              target="_blank"
+              >Alejandro Ruiz</a
+            ></span
+          > <br /><br />
+          Web design by
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/annika-singh"
+              target="_blank"
+              >Annika Singh</a
+            ></span
+          >
+      </div>
+
+      <div class="step" data-step="0" id="step-lede" data-offset="0.1">
+        <p>
+          On Saturday, Dec. 13, around 4:00 p.m., a masked man with a gun <a href="https://www.browndailyherald.com/article/2025/12/two-confirmed-dead-in-active-shooter-incident-on-brown-campus-police-do-not-have-any-suspects-in-custody" target="_blank">entered</a> a review session in Barus & Holley <a href="https://www.washingtonpost.com/nation/2025/12/14/shooting-brown-university-witness/" target="_blank">Room 166</a> for ECON 0110: “Principles of Economics,” shouted something indiscernible and opened <a href="https://www.nytimes.com/2025/12/14/us/brown-shooting-classroom-victims.html" target="_blank">fire</a>.<br/><br/>
+          The Herald constructed a timeline of the events that followed.
+        </p>
+      </div>
+      <div class="step" data-step="1">
+        <p>
+          <p><b>4:05 p.m.</b></p>
+          <p>
+            The first 911 call was reported. A Providence Fire Department team was dispatched to the area for reports of an active shooter.  
+          </p>
+          <!-- <div class="other-news-step" data-step="1">
+              <p>
+                <i>Also in the ’40s:</i><br/><br/>
+                The Class of 1944 <a href="https://www.brown.edu/about/history/timeline/first-american-indian-graduate">included</a> Brown’s first Native American graduate, Albert Anthony. Additionally, in the 1940s, Brown <a href="https://www.brown.edu/about/history/timeline/veterans-college-established">started</a> its Veterans Extension Division, a two-year program for veterans admitted under the G.I. Bill of 1944, which provided educational benefits for former members of the armed services. In 1942, a <a href="https://repository.library.brown.edu/storage/bdr:963635/PDF/">plan</a> to allow freshmen to enter at three separate points each year went into effect, and Brown also <a href="https://repository.library.brown.edu/storage/bdr:963620/PDF/">allowed</a> high school juniors “of superior ability” to be admitted. In the 1945-46 academic year, classes at Brown <a href="https://repository.library.brown.edu/storage/bdr:969279/PDF/">became</a> co-ed due to wartime low enrollment.
+              </p>
+            </div> -->
+        </p>
+      </div>
+      <div class="step" data-step="2">
+        <p><b>4:22 p.m.</b></p>
+        <p>
+          Brown’s Department of Public Safety released its first alert: “There’s an active shooter near Barus and Holley Engineering.” The alert advised students to “lock doors, silence phones and stay hidden until further notice.”
+        </p>
+        <!-- <div class="article-photo">
+          <img src="./assets/article-photos/1950s_Carol_Agate.png" alt="Carol Agate" class="article-photo" />
+          <p class="img-caption">Courtesy of Carol Agate.</p>
+        </div> -->
+      </div>
+      <div class="step" data-step="3">
+        <p><b>4:28 p.m.</b></p>
+        <p>
+          Rhode Island School of Design students were alerted of police activity “in the area of Brook and Thayer Streets.” Students were advised to avoid the area until further notice.   
+        </p>
+      </div>
+      <div class="step" data-step="4">
+        <p><b>4:50 p.m.</b></p>
+        <p>
+          About half an hour after their first alert, DPS announced that a “suspect” was in custody.<br/><br/>
+          As first responders continued to respond to the scene, the community was advised to continue sheltering in place.   
+        </p>
+      </div>
+      <div class="step" data-step="5">
+        <p><b>5:11 p.m.</b></p>
+        <p>
+          DPS retracted the statement that there was a suspect in custody. The notification alerted the community that Brown was coordinating with law enforcement and emergency services on site.  
+        </p>
+      </div>
+      <div class="step" data-step="6">
+        <p><b>5:27 p.m.</b></p>
+        <p>
+          In its fourth update, DPS reported that shots were fired near Governor Street. DPS later retracted this claim in its sixth update.  
+        </p>
+      </div>
+      <div class="step" data-step="7">
+        <p><b>5:30 p.m.</b></p>
+        <p>
+          An alert informed RISD students that there was an “active shooter” on Brown’s campus. The message advised them to avoid Brook Street and Thayer Street.   
+        </p>
+      </div>
+      <div class="step" data-step="8">
+        <p><b>5:45 p.m.</b></p>
+        <p>
+          The White House X account <a href="https://x.com/WhiteHouse/status/1999973974781104238" target="_blank">shared</a> a post from President Trump’s Truth Social that stated the FBI was on campus and a “suspect” was in custody.<br/><br/>
+          “God bless the victims and the families of the victims,” he wrote. 
+        </p>
+        <!-- <div class="dual-photo">
+          <div class="article-photo">
+            <img src="./assets/article-photos/2010s_James_Chin.png" alt="James Chin" class="article-photo" />
+            <p class="img-caption">Courtesy of James Chin.</p>
+          </div>
+          <div class="article-photo">
+            <img src="./assets/article-photos/2010s_Kayla_Smith.png" alt="Kayla Smith" class="article-photo" />
+            <p class="img-caption">Courtesy of Kayla Smith.</p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
