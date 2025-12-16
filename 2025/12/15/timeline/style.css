@@ -1,7 +1,13 @@
+:root {
+  --accent-color: rgb(209, 156, 77);
+  --opacity-accent: rgba(209, 156, 77, 0.2);
+  --higher-opacity-accent: rgba(209, 156, 77, 0.85);
+}
+
 body {
   font-family: "Playfair Display", serif;
   width: 100%;
-  background-color: #282d32;
+  background-color: #261a05;
   color: white;
 }
 
@@ -9,25 +15,25 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-self: center;
+  justify-self: flex-start;
   align-items: center;
-  width: 70%;
+  width: 50%;
 }
 
 .background {
-  background-image: url("./assets/background.jpg");
+  background-image: url("./assets/Barus\ and\ Holley.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transition: background-image 2s ease;
   opacity: 1;
-  /* transition: opacity 1s ease; */
+  transition: opacity 1s ease;
   top: 0;
   right: 0;
   position: fixed;
   height: 100%;
   overflow: none;
-  width: 0%;
+  width: 40%;
   z-index: -1;
 }
 
@@ -52,90 +58,16 @@ body {
 }
 
 .step {
-  margin: 30vh 0;
+  margin: 8vh 0;
   padding: 1rem;
-  /* margin-left: 2.5rem; */
+  margin-left: 15rem;
   border-radius: 5px;
   text-align: left;
   width: 70%;
 }
 
-circle {
-  cursor: pointer;
-  transition: all 0.2s ease-out;
-}
-
-.timeline {
-  position: fixed;
-  top: 50%;
-  left: 60px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 10;
-}
-
-.timeline-step {
-  position: relative;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.timeline-dot {
-  width: 10px;
-  height: 10px;
-  /* background-color: #657153; */
-  border-radius: 50%;
-  border: 2px solid white;
-  position: absolute;
-  left: -25px;
-  transition: background-color 0.3s;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.timeline-step .timeline-dot {
-  transition: background-color 0.3s ease;
-  background-color: #282d32;
-}
-
-.timeline-step.is-active .timeline-dot {
-  background-color: white;
-}
-
-.timeline-step.is-visible .timeline-dot,
-.timeline-step.is-visible .timeline-content {
-  opacity: 1;
-}
-
-.timeline-content {
-  color: white;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.timeline-step.is-active .timeline-content {
-  font-weight: bold;
-}
-
-.timeline-step.is-active ~ .line {
-  opacity: 1;
-}
-
-.timeline .line {
-  opacity: 0;
-  /* transition: opacity 0.1s ease; */
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: -19px;
-  width: 2px;
-  height: 300px;
-  background-color: white;
-  z-index: -2;
+.step:last-child {
+  margin-bottom: 40vh;
 }
 
 p {
@@ -145,6 +77,8 @@ p {
 #step-heading,
 #step-lede {
   text-align: center;
+  padding-top: 20vh;
+  padding-bottom: 30vh;
   width: 80%;
 }
 
@@ -159,7 +93,7 @@ h4 {
 }
 
 #byline .author {
-  background-color: #3a5743;
+  background-color: var(--accent-color);
   color: #f5efed;
   padding: 0.2rem;
   padding-left: 0.4rem;
@@ -176,11 +110,11 @@ h4 {
 }
 
 a {
-  color: #9ec2a9;
+  color: var(--accent-color);
 }
 
 #heading-green {
-  color: #9ec2a9;
+  color: var(--accent-color);
 }
 
 .other-news-step {
@@ -194,6 +128,7 @@ a {
 /* .other-news-step.is-visible {
   opacity: 1;
 } */
+
 .dual-photo {
   display: flex;
   flex-direction: row;
@@ -254,3 +189,100 @@ a {
     max-height: 10rem;
   }
 }
+
+.progress-container {
+  position: fixed;
+  left: 2rem;
+  top: 10vh;
+  height: 80vh;
+  width: 60px;
+  z-index: 10;
+}
+
+.progress-bar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  /* background: rgba(255, 255, 255, 0.2); */
+  background: var(--opacity-accent);
+  border-radius: 2em;
+}
+
+.progress-fill {
+  width: 100%;
+  height: 0%;
+  /* background: white; */
+  background-color: var(--accent-color);
+  transition: height 0.3s ease;
+  border-radius: 2em;
+}
+
+.progress-label {
+  position: absolute;
+  left: 32px;
+  top: 0;
+  transform: translateY(-50%);
+  background: var(--accent-color);
+  color: black;
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  white-space: nowrap;
+}
+
+.progress-label.is-visible {
+  opacity: 1;
+  transform: translateY(-50%) translateX(4px);
+}
+
+.label-main {
+  position: relative;
+  z-index: 2;
+}
+
+.label-context {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  pointer-events: none;
+  /* visibility: hidden; */
+}
+
+.context-above {
+  bottom: 100%;
+  margin-bottom: 2px;
+  align-items: flex-start;
+}
+
+.context-below {
+  top: 100%;
+  margin-top: 2px;
+  align-items: flex-start;
+}
+
+.context-item {
+  background: var(--higher-opacity-accent);
+  color: black;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  opacity: 0.4;
+  white-space: nowrap;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.context-item:hover {
+  opacity: 1;
+}
+
+/* .progress-label:hover .label-context {
+  visibility: visible;
+  pointer-events: auto;
+} */
