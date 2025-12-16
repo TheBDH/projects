@@ -218,17 +218,12 @@ a {
   .article-photo {
     display: block;
   }
-
-  .progress-container {
-    left: 0.5rem;
-    width: 40px;
-  }
 }
 
 .progress-container {
   display: none;
   position: fixed;
-  left: 2rem;
+  left: 0;
   top: 10vh;
   height: 80vh;
   width: 40px;
