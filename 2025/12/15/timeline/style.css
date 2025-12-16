@@ -185,10 +185,12 @@ a {
     width: 100%;
     padding-left: 0;
     margin-left: 0;
+    margin: auto;
   }
 
   .scrolly {
     width: 70%;
+    margin: auto;
     justify-self: flex-end;
   }
 
@@ -202,7 +204,8 @@ a {
   }
 
   .step {
-    margin: 5vh 0;
+    /* margin: 5vh 0; */
+    margin-left: 25vw;
     width: 65%;
   }
 
@@ -215,6 +218,11 @@ a {
   .article-photo {
     display: block;
   }
+
+  .progress-container {
+    left: 0.5rem;
+    width: 40px;
+  }
 }
 
 .progress-container {
@@ -223,7 +231,7 @@ a {
   left: 2rem;
   top: 10vh;
   height: 80vh;
-  width: 60px;
+  width: 40px;
   z-index: 10;
 }
 
