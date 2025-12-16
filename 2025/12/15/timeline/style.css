@@ -9,9 +9,9 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  width: 50%;
+  justify-self: center;
+  align-items: center;
+  width: 70%;
 }
 
 .background {
@@ -27,7 +27,7 @@ body {
   position: fixed;
   height: 100%;
   overflow: none;
-  width: 40%;
+  width: 0%;
   z-index: -1;
 }
 
@@ -54,7 +54,7 @@ body {
 .step {
   margin: 30vh 0;
   padding: 1rem;
-  margin-left: 2.5rem;
+  /* margin-left: 2.5rem; */
   border-radius: 5px;
   text-align: left;
   width: 70%;
