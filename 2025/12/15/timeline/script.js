@@ -116,9 +116,9 @@ scroller
     const activeIndex = timelineData.findIndex((d) => String(d.step) === time);
 
     if (index == 0) {
-      progressBar.style.visibility = "hidden";
+      progressContainer.style.display = "none";
     } else {
-      progressBar.style.visibility = "visible";
+      progressContainer.style.display = "block";
     }
 
     if (activeIndex >= 0 && timelineData[activeIndex].label) {
