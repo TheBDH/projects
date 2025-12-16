@@ -96,6 +96,8 @@ const background = document.querySelector(".background");
 const photoCredit = document.querySelector(".photo-credit-bg");
 const photoCaption = document.querySelector(".photo-caption-bg");
 
+const progressContainer = document.querySelector(".progress-container");
+
 scroller
   .setup({
     step: ".step",
@@ -112,6 +114,12 @@ scroller
     const stepEl = response.element;
     const time = stepEl.getAttribute("data-step");
     const activeIndex = timelineData.findIndex((d) => String(d.step) === time);
+
+    if (index == 0) {
+      progressBar.style.visibility = "hidden";
+    } else {
+      progressBar.style.visibility = "visible";
+    }
 
     if (activeIndex >= 0 && timelineData[activeIndex].label) {
       const barHeight = document.querySelector(".progress-bar").offsetHeight;
