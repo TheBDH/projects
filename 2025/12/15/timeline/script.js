@@ -29,8 +29,8 @@ var imageCredits = [
 ];
 
 var caption = [
-  "Barus and Holley Room 166",
-  "Governor Street on Dec. 15",
+  "Barus and Holley Room 166.",
+  "Governor Street on Dec. 15.",
   "",
   "",
   "",
@@ -135,23 +135,23 @@ scroller
       progressLabel.classList.add("is-visible");
 
       let photoIndex = 0;
-      if (activeIndex >= 1 && activeIndex <= 5) {
+      if (activeIndex >= 0 && activeIndex <= 4) {
         photoIndex = 0;
-      } else if (activeIndex >= 6 && activeIndex <= 8) {
+      } else if (activeIndex >= 5 && activeIndex <= 7) {
         photoIndex = 1;
-      } else if (activeIndex >= 9 && activeIndex <= 18) {
+      } else if (activeIndex >= 8 && activeIndex <= 17) {
         photoIndex = 2;
-      } else if (activeIndex == 19) {
+      } else if (activeIndex == 18) {
         photoIndex = 3;
-      } else if (activeIndex >= 20 && activeIndex <= 22) {
+      } else if (activeIndex >= 19 && activeIndex <= 21) {
         photoIndex = 4;
-      } else if (activeIndex >= 23 && activeIndex <= 24) {
+      } else if (activeIndex >= 22 && activeIndex <= 23) {
         photoIndex = 5;
-      } else if (activeIndex >= 25 && activeIndex <= 29) {
+      } else if (activeIndex >= 24 && activeIndex <= 28) {
         photoIndex = 6;
-      } else if (activeIndex >= 30 && activeIndex <= 33) {
+      } else if (activeIndex >= 29 && activeIndex <= 32) {
         photoIndex = 7;
-      } else if (activeIndex >= 34) {
+      } else if (activeIndex >= 33) {
         photoIndex = 8;
       }
 
