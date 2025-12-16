@@ -137,25 +137,33 @@ scroller
       let photoIndex = 0;
       if (activeIndex >= 0 && activeIndex <= 4) {
         photoIndex = 0;
+        background.style.backgroundImage = `url(${images[photoIndex]})`;
       } else if (activeIndex >= 5 && activeIndex <= 7) {
         photoIndex = 1;
+        fadeInOutImage(activeIndex, photoIndex, 5);
       } else if (activeIndex >= 8 && activeIndex <= 17) {
         photoIndex = 2;
+        fadeInOutImage(activeIndex, photoIndex, 8);
       } else if (activeIndex == 18) {
         photoIndex = 3;
+        fadeInOutImage(activeIndex, photoIndex, 18);
       } else if (activeIndex >= 19 && activeIndex <= 21) {
         photoIndex = 4;
+        fadeInOutImage(activeIndex, photoIndex, 19);
       } else if (activeIndex >= 22 && activeIndex <= 23) {
         photoIndex = 5;
+        fadeInOutImage(activeIndex, photoIndex, 22);
       } else if (activeIndex >= 24 && activeIndex <= 28) {
         photoIndex = 6;
+        fadeInOutImage(activeIndex, photoIndex, 24);
       } else if (activeIndex >= 29 && activeIndex <= 32) {
         photoIndex = 7;
+        fadeInOutImage(activeIndex, photoIndex, 29);
       } else if (activeIndex >= 33) {
         photoIndex = 8;
+        fadeInOutImage(activeIndex, photoIndex, 33);
       }
 
-      background.style.backgroundImage = `url(${images[photoIndex]})`;
       photoCredit.textContent = imageCredits[photoIndex];
       if (caption[photoIndex] != "") {
         photoCaption.style.visibility = "visible";
@@ -199,5 +207,17 @@ function updateLabelContext(activeIndex) {
     } else {
       contextBelow.appendChild(div);
     }
+  }
+}
+
+function fadeInOutImage(activeIndex, photoIndex, goalIndex) {
+  if (activeIndex == goalIndex) {
+    background.style.opacity = 0;
+    setTimeout(() => {
+      background.style.backgroundImage = `url(${images[photoIndex]})`;
+      background.style.opacity = 1;
+    }, 500);
+  } else {
+    background.style.backgroundImage = `url(${images[photoIndex]})`;
   }
 }
