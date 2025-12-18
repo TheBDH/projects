@@ -79,7 +79,7 @@ h1 {
     bottom: 15px;
     right: 15px;
     z-index: 1;
-    background-color: rgba(26, 26, 26, 0.94);
+    background-color: rgba(0, 0, 0, 0.88);
     padding: 10px;
     font-family: "freight-text-pro", "Georgia", "Times", serif;
     opacity: 0;
@@ -143,7 +143,7 @@ a {
     bottom: 15px;
     right: 15px;
     z-index: 1;
-    background-color: rgba(26, 26, 26, 0.94);
+    background-color: rgba(0, 0, 0, 0.94);
     padding: 10px;
     font-family: "freight-text-pro", "Georgia", "Times", serif;
 }
@@ -152,7 +152,7 @@ a {
     min-height: 15rem;
     text-align: center;
     padding: 2rem 2.2rem 2.2rem 2.2rem;
-    background-color: rgba(26, 26, 26, 0.94);
+    background-color: rgba(10, 10, 10, 0.88);
     /* Light grey background */
     min-width: 300px;
     width: 32%;
