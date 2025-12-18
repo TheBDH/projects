@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const captions = [
         "Media by Henry Wang",
+        "Media by Anna Luecht",
         "",
         "Media by Julia Antony",
         "",
@@ -17,7 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Media by Anna Luecht",
         "",
         "Media by Manav Musunuru",
-        ""
+        "",
+        "Media by Anna Luecht"
     ];
 
     const configs = captions.map((caption, index) => ({
