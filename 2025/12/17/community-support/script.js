@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!triggerElement) {
             return;
         }
+        
         new ScrollMagic.Scene({
             triggerElement: triggerElement,
             triggerHook: 0,
