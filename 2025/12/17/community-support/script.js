@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const captions = [
         "Media by Henry Wang",
         "",
-        "Media by Ivy Huang? (not sure if took or uploaded)",
+        "Media by Julia Antony",
         "",
-        "Media by Ivy Huang? (not sure if took or uploaded)",
+        "Media by Theodore Coben",
         "",
         "Media by Henry Wang",
         "",
