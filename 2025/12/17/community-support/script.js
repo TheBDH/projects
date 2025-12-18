@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const captions = [
         "Media by Henry Wang",
-        "Media by Anna Luecht",
+        "Media by Annamaria Luecht",
         "",
         "Media by Julia Antony",
         "",
@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
         "",
         "Media by Henry Wang",
         "",
-        "Media by Anna Luecht",
+        "Media by Annamaria Luecht",
         "",
         "Media by Manav Musunuru",
         "",
-        "Media by Anna Luecht"
+        "Media by Annamaria Luecht"
     ];
 
     const configs = captions.map((caption, index) => ({
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!triggerElement) {
             return;
         }
-        
+
         new ScrollMagic.Scene({
             triggerElement: triggerElement,
             triggerHook: 0,
