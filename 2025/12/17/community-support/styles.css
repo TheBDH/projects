@@ -481,4 +481,16 @@ a {
     body {
         background-image: none !important;
     }
+    
+    .full-screen-bg {
+        display: none;
+    }
+
+    .spacer {
+        height: 100vh;
+    }
+
+    #credit {
+        display: none;
+    }
 }

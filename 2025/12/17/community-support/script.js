@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "",
         "Media by Anna Luecht",
         "",
-        "Media by Manav Musunuru? (not sure if took or uploaded)",
+        "Media by Manav Musunuru",
         ""
     ];
 
