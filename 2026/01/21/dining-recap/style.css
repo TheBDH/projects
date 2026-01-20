@@ -1,0 +1,554 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ece1db;
+    color: #333;
+}
+
+.article-image {
+    border: 2px solid #222222;
+}
+
+#onboarding {
+    display: none;
+    background-color: #ece1db;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.text {
+    font-family: "freight-text-pro", "Georgia", "Times", "serif";
+    font-size: 18px;
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: left;
+}
+
+.charts-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .charts-grid-wrapper {
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+#custom-archetype {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+@keyframes fadeInText {
+    from { color: transparent; }
+}
+
+#custom-archetype .word {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 15px 30px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    font-family: "freight-text-pro", "Georgia", "Times", "serif";
+    font-weight: bold;
+    font-size: 2em;
+    animation: fadeInText 2s ease-out forwards;
+}
+
+#combo-box {
+    background-color: #fff;
+    color: black;
+    border-radius: 4px;
+    padding: 15px 30px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    font-family: "freight-text-pro", "Georgia", "Times", "serif";
+    font-weight: bold;
+    font-size: 2em;
+    margin: 15px auto;
+    width: fit-content;
+    text-align: center;
+    animation: fadeInText 2s ease-out forwards;
+}
+
+@keyframes fadeInContents {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#spot-by-meal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+#spot-by-meal > div {
+    flex: 1 0 21%; /* Roughly 1/4th width minus gap, with basis to allow wrapping */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    min-height: 100px;
+    text-align: center;
+}
+
+#spot-by-meal > div > * {
+    animation: fadeInContents 2s ease-out forwards;
+}
+
+/* Force 2x2 layout on smaller screens but not mobile specific yet */
+@media (max-width: 1024px) {
+    #spot-by-meal > div {
+        flex: 1 0 45%; /* Roughly 1/2 width */
+    }
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #222222;
+    font-size: 2.5rem;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    text-wrap: wrap;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 0px;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    /* Adjust this to increase the gap between the file input and button */
+    row-gap: 8px;
+    justify-content: center;
+    /* Center the elements within the group */
+}
+
+/* Styling the file input */
+input[type="file"] {
+    display: none;
+    /* Hide the default file input */
+}
+
+input[type="file"]+label {
+    display: inline-block;
+    background-color: #4E3629;
+    color: white;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1.2;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="file"]+label:hover {
+    background-color: #30221a;
+    transform: scale(1.02);
+}
+
+
+/* Styling for the button */
+button {
+    font-family: 'Roboto', sans-serif;
+    background-color: #656565;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    line-height: 1.2;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover and Focus States */
+button:hover {
+    background-color: #434343;
+    transform: scale(1.02);
+}
+
+.custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+    margin: 10px 0;
+}
+
+.custom-checkbox input {
+    display: none;
+    /* Hide the default checkbox */
+}
+
+.custom-checkbox .checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    margin-right: 10px;
+    background-color: white;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.custom-checkbox input:checked+.checkmark {
+    border-color: #4E3629;
+    background-color: #4E3629;
+}
+
+.custom-checkbox .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    width: 4px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.custom-checkbox input:checked+.checkmark::after {
+    opacity: 1;
+}
+
+
+
+canvas#myPieChart {
+    width: 100% !important;
+    /* Make the pie chart take up the full width of its container */
+    height: auto !important;
+    /* Allow the height to adjust automatically */
+    max-width: 100%;
+    /* Ensure the pie chart does not exceed the container width */
+    max-height: 100%;
+    /* Ensure the pie chart does not exceed the container height */
+}
+
+/* Add some padding and center text */
+h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #555;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+
+#data-box {
+    flex-wrap: wrap;
+    width: 100%;
+    height: 85%;
+    gap: 20px;
+    row-gap: 0px;
+    padding: 0 20px;
+}
+
+.chart-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 4px; 
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    position: relative; 
+    width: 100%; 
+    min-height: 300px;
+}
+
+#pie-chart-container {
+    height: 48%;
+    padding: 30px;
+}
+
+#hours-chart-container {
+    height: 48%
+}
+
+#days-chart-container {
+    height: 37%
+}
+
+#stats-container {
+    height: 37%;
+}
+
+.stats-wrapper {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stats-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    color: #333;
+}
+
+.stats-output {
+    font-size: 3em;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 100px;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    line-height: 1.4;
+    font-family: "freight-text-pro", "Georgia", "Times", "serif";
+    margin-bottom: 15px;
+}
+
+.help-box {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 75%;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: block;
+    /* Initially shown */
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+}
+
+ol {
+    margin-left: 0;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+/* Add overlay styling */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black */
+    display: block;
+    /* Initially shown */
+    z-index: 10;
+}
+
+a {
+    color: #4E3629;
+}
+
+a:visited {
+    color: #4E3629;
+    /* Keep the same color as unvisited links */
+    text-decoration: none;
+    /* Optional: Keep the same underline style */
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.img-container {
+    width: 60%;
+    border: 3px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 8px;
+    /* Ensures the image does not overflow the div */
+}
+
+.highlight-header {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#diningArchetypeTitle {
+    font-weight: bold;
+}
+
+#diningArchetypeDescription {
+    margin-top: 10px;
+    width: 70%;
+}
+
+.custom-image {
+    width: 100%;
+    /* Makes the image take the full width of the container */
+    height: 100%;
+    /* Ensures the image fills the height of the container */
+    object-fit: cover;
+    /* Ensures the image maintains its aspect ratio and fills the div */
+    display: block;
+    /* Removes extra spacing below the image */
+}
+
+.dropdown-container {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dropdown {
+    width: 100%;
+    max-width: 320px;
+    /* Increase max-width to ensure enough space for the arrow */
+    padding: 10px 40px 10px 10px;
+    /* Add right padding to make space for the arrow */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http://www.w3.org/2000/svg%22 width%3D%2210%22 height%3D%225%22 viewBox%3D%220 0 10 5%22%3E%3Cpath fill%3D%22%23333%22 d%3D%22M0 0l5 5 5-5z%22/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 5px;
+}
+
+.dropdown:focus {
+    border-color: #4E3629;
+    outline: none;
+    box-shadow: 0 0 5px #4e36298d;
+}
+
+#recommendation-zone {
+    display: none;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#recommendButton {
+    margin-top: 14px;
+}
+
+.blue-button {
+    background-color: #4E3629;
+}
+
+.blue-button:hover {
+    background-color: #30221a;
+}
+
+#rec-input-title {
+    margin-bottom: 0px;
+}
+
+#moreStats {
+    margin-top: 20px;
+}
+
+#recMealImg {
+    margin: 10px;
+    width: 75%;
+    overflow: hidden;
+}
+
+.plan-image {
+    width: 100%;
+    /* Makes the image take the full width of the container */
+    height: 100%;
+    /* Ensures the image fills the height of the container */
+    object-fit: cover;
+    /* Ensures the image maintains its aspect ratio and fills the div */
+    display: block;
+    /* Removes extra spacing below the image */
+}
+
+#goUpload {
+    margin-top: 18px;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .chart-container {
+        flex: 0 0 100%;
+        max-height: 25%;
+    }
+
+    #stats-container {
+        height: 20%;
+    }
+
+    #pie-chart-container {
+        padding: 15px;
+    }
+
+    h1 {
+        line-height: 1.15;
+        margin-bottom: 18px;
+    }
+
+    #recMealImg {
+        width: 90%;
+        max-height: 100px;
+        object-fit: contain;
+        /* Ensure the whole image is displayed */
+    }
+
+    .img-container {
+        width: 90%;
+        max-height: 200px;
+        aspect-ratio: 3/2;
+    }
+
+    #diningArchetypeDescription {
+        width: 100%;
+    }
+
+    .help-box {
+        width: 82%;
+    }
+
+    #white-space {
+        height: 45px;
+    }
+
+}
