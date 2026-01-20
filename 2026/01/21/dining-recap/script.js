@@ -78,12 +78,25 @@ window.onload = function () {
         }
     });
 
-    function processData() {
+    async function processData() {
         const fileInput = document.getElementById('file-upload');
-        const file = fileInput.files[0];
-        uploadedFile = file;
-        if (file) {
-            Papa.parse(file, {
+        const flexFileInput = document.getElementById('flex-file-upload');
+        const mealPlanFile = fileInput.files[0];
+        const flexFile = flexFileInput.files[0];
+        if (!mealPlanFile || !flexFile) {
+            alert("Please upload both your meal plan and flex data.");
+            return;
+        }
+
+        try {
+            const [csv1, csv2] = await Promise.all([mealPlanFile.text(), flexFile.text()]);
+            const mergedCsvString = mergeAndSortCSV(csv1, csv2);
+            uploadedFile = mergedCsvString;
+            if (mergedCsvString.size > 100 * 1024) {
+                alert("File is too large. Maximum allowed size is 100KB.");
+                return;
+            }
+            Papa.parse(mergedCsvString, {
                 header: true,         // Use the first row as headers
                 skipEmptyLines: true, // Skip empty lines in the CSV
                 complete: function (results) {
@@ -107,13 +120,10 @@ window.onload = function () {
                     alert('An error occurred while processing the file.');
                 }
             });
-            // Check the file size (500KB = 500 * 1024 bytes)
-            if (file.size > 100 * 1024) {
-                alert("File is too large. Maximum allowed size is 100KB.");
-                return;
-            }
-        } else {
-            alert('Please select a CSV file first.');
+        }
+        catch (error) {
+            console.error("Error reading files:", error);
+            alert("Could not read the files.");
         }
     }
 
@@ -122,6 +132,36 @@ window.onload = function () {
         const label = document.querySelector("label[for='file-upload']");
         label.textContent = fileName;
     });
+
+    document.getElementById("flex-file-upload").addEventListener("change", function (event) {
+        const fileName = event.target.files[0] ? event.target.files[0].name : "Choose a file...";
+        const label = document.querySelector("label[for='flex-file-upload']");
+        label.textContent = fileName;
+    });
+
+    function mergeAndSortCSV(csv1, csv2) {
+        const parseLines = (csv) => csv.trim().split('\n');
+
+        const lines1 = parseLines(csv1);
+        const lines2 = parseLines(csv2);
+
+        const header = lines1[0];
+
+        const data1 = lines1.slice(1).filter(row => row.trim() !== "");
+        const data2 = lines2.slice(1).filter(row => row.trim() !== "");
+
+        const mergedData = [...data1, ...data2];
+
+        mergedData.sort((rowA, rowB) => {
+            const dateA = rowA.split(',')[0];
+            const dateB = rowB.split(',')[0];
+            if (dateA < dateB) return 1;
+            if (dateA > dateB) return -1;
+            return 0;
+        });
+
+        return [header, ...mergedData].join('\n');
+    }
 
     function calcFrequency() {
         let rattyCount = 0;
@@ -245,7 +285,15 @@ window.onload = function () {
             console.error("mealFrequency is undefined or empty");
         }
 
-        generatePieChart(summaryData.locationFrequency);
+        const officialNames = {
+            "Sharpe Refectory": rattyCount,
+            "Andrews Commons": andrewsCount,
+            "Verney-Woolley Dining Hall": vwCount,
+            "Josiah’s": josCount,
+            "Ivy Room": ivyCount,
+        }
+
+        generatePieChart(officialNames);
     }
     // Function to generate the pie chart
     function generatePieChart(locationFrequency) {
@@ -353,7 +401,7 @@ window.onload = function () {
             "12 AM", "1 AM", "2 AM", "3 AM", "4 AM", "5 AM"
         ];
 
-        drawBarChart(shiftedData, labels, 'timeBarChart', 'timeChart', "Swipes");
+        drawBarChart(shiftedData, labels, 'timeBarChart', 'timeChart', "Swipes", "Hour of day");
     }
 
     function calcDays() {
@@ -373,10 +421,10 @@ window.onload = function () {
         // Labels for days of the week
         const labels = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-        drawBarChart(swipeCounts, labels, 'daysBarChart', 'dayChart', "Swipes");
+        drawBarChart(swipeCounts, labels, 'daysBarChart', 'dayChart', "Swipes", "Day of Week");
     }
 
-    function drawBarChart(swipeCounts, labels, canvasID, chartVarName, title) {
+    function drawBarChart(swipeCounts, labels, canvasID, chartVarName, title, xAxis) {
         // Check if chartVarName is provided
         if (!chartVarName) {
             console.error('Chart variable name must be provided');
@@ -467,7 +515,7 @@ window.onload = function () {
                     x: {
                         title: {
                             display: true,
-                            text: 'Hour of Day'
+                            text: xAxis
                         }
                     },
                     y: {
