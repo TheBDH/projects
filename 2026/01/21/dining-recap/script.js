@@ -796,6 +796,9 @@ window.onload = function () {
         const mealPlan = mealPlanElement.value;
 
         const file = uploadedFile;
+
+        const fileBlob = new Blob([file], { type: 'text/csv' });
+
         const timestamp = new Date().getTime();
         const filePath = `bdh_uploads/file_weeklymeals_${timestamp}_${classYear}_${campus}_${mealPlan}.csv`;
         const storageRef = ref(storage, filePath);
@@ -804,7 +807,7 @@ window.onload = function () {
             contentType: 'text/csv',
         };
 
-        uploadBytes(storageRef, file, metadata).then((snapshot) => {
+        uploadBytes(storageRef, fileBlob, metadata).then((snapshot) => {
             console.log('File uploaded successfully!');
         }).catch((error) => {
             console.error('Upload failed:', error);
