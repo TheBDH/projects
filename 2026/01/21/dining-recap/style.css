@@ -76,7 +76,7 @@ body {
     font-family: "freight-text-pro", "Georgia", "Times", "serif";
     font-weight: bold;
     font-size: 2em;
-    animation: fadeInText 2s ease-out forwards;
+    animation: fadeInText 1s ease-out forwards;
 }
 
 #combo-box {
@@ -91,7 +91,7 @@ body {
     margin: 15px auto;
     width: fit-content;
     text-align: center;
-    animation: fadeInText 2s ease-out forwards;
+    animation: fadeInText 1s ease-out forwards;
 }
 
 @keyframes fadeInContents {
@@ -118,7 +118,7 @@ body {
 }
 
 #spot-by-meal > div > * {
-    animation: fadeInContents 2s ease-out forwards;
+    animation: fadeInContents 1s ease-out forwards;
 }
 
 /* Force 2x2 layout on smaller screens but not mobile specific yet */
