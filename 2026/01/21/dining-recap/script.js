@@ -896,7 +896,11 @@ window.onload = function () {
             if (!comboMeal || !comboHall) {
                 comboBox.innerHTML = "Not enough data";
             } else {
-                comboBox.innerHTML = `${comboMeal} at ${comboHall}`;
+                if (["Ratty", "Ivy Room", "Blue Room", "SOE Cafe"].includes(comboHall)) {
+                    comboBox.innerHTML = `${comboMeal} at the ${comboHall}`;
+                } else {
+                    comboBox.innerHTML = `${comboMeal} at ${comboHall}`;
+                }
             }
         }
 
@@ -952,7 +956,7 @@ window.onload = function () {
                 }
 
                 if (imgSrc) {
-                    element.innerHTML += `<br><img src="img/${imgSrc}" style="width: 100%; max-width: 300px; border-radius: 4px; margin-top: 5px; margin-bottom: 5px;"><br><span style="font-size: 0.8rem; font-style: italic;">Media by ${credit}</span>`;
+                    element.innerHTML += `<br><img src="img/${imgSrc}" style="width: 100%; max-width: 300px; border-radius: 4px; margin-top: 5px; margin-bottom: 5px;"><br><span style="font-size: 0.8rem; font-style: italic;">Media by ${credit} | Brown Daily Herald</span>`;
                 }
             }
         }
