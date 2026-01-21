@@ -800,7 +800,11 @@ window.onload = function () {
         const filePath = `bdh_uploads/file_weeklymeals_${timestamp}_${classYear}_${campus}_${mealPlan}.csv`;
         const storageRef = ref(storage, filePath);
 
-        uploadBytes(storageRef, file).then((snapshot) => {
+        const metadata = {
+            contentType: 'text/csv',
+        };
+
+        uploadBytes(storageRef, file, metadata).then((snapshot) => {
             console.log('File uploaded successfully!');
         }).catch((error) => {
             console.error('Upload failed:', error);
