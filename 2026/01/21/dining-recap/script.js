@@ -894,8 +894,7 @@ window.onload = function () {
             "Breakfasts per week: <strong>" + (summaryData.mealFrequency.Breakfast / summaryData.weeks).toFixed(1) + "</strong><br>" +
             "Lunches per week: <strong>" + (summaryData.mealFrequency.Lunch / summaryData.weeks).toFixed(1) + "</strong><br>" +
             "Dinners per week: <strong>" + (summaryData.mealFrequency.Dinner / summaryData.weeks).toFixed(1) + "</strong><br>" +
-            "Late night snacks per week: <strong>" + (summaryData.mealFrequency["Late Night"] / summaryData.weeks).toFixed(1) + "</strong><br>" +
-            "Randomness Index: <strong>" + randomness.toFixed(2) + "</strong>"
+            "Late night snacks per week: <strong>" + (summaryData.mealFrequency["Late Night"] / summaryData.weeks).toFixed(1) + "</strong><br>"
         );
 
         const comboBox = document.getElementById("combo-box");
