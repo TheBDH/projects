@@ -15,7 +15,7 @@ window.onload = function () {
         ["Ratty;break", "Ratty;lunch", "Ratty;dinner", "Ratty;late"],
         ["Andrews;break", "Andrews;lunch", "Andrews;dinner", "Andrews;late"],
         ["V-Dub;break", "V-Dub;lunch", "V-Dub;dinner", "V-Dub;late"],
-        ["Jo's;break", "Jo's;lunch", "Jo's;dinner", "Jo's;late"],
+        ["Jo’s;break", "Jo’s;lunch", "Jo’s;dinner", "Jo’s;late"],
         ["Ivy;break", "Ivy;lunch", "Ivy;dinner", "Ivy;late"]];
 
     // TODO: Add SDKs for Firebase products that you want to use
@@ -305,7 +305,7 @@ window.onload = function () {
             "Ratty": rattyCount,
             "Andrews": andrewsCount,
             "V-Dub": vwCount,
-            "Jo's": josCount,
+            "Jo’s": josCount,
             "Ivy Room": ivyCount,
             "Blue Room": blueroomCount,
             "SOE Cafe": soeCount
@@ -822,7 +822,7 @@ window.onload = function () {
             "Andrews": "Andrews Afficianado",
             "V-Dub": "V-Dub Valedictorian",
             "Ivy Room": "Ivy Idolizer",
-            "Jo's": "Jo's Joyrider",
+            "Jo’s": "Jo’s Joyrider",
             "Blue Room": "Blue Room Bestie",
             "SOE Cafe": "SOE Cafe Connoisseur"
         };
@@ -950,7 +950,7 @@ window.onload = function () {
                     imgSrc = "KaiolenaTacazonRatty.jpg";
                     credit = "Kaiolena Tacazon";
                     link = "https://www.browndailyherald.com/staff/kaiolena-tacazon";
-                } else if (hallName === "Jo's") {
+                } else if (hallName === "Jo’s") {
                     imgSrc = "HenryWangJos.JPG";
                     credit = "Henry Wang";
                     link = "https://www.browndailyherald.com/staff/henry-wang";
@@ -989,7 +989,7 @@ window.onload = function () {
             ratty: "Ratty",
             andrews: "Andrews",
             vdub: "V-Dub",
-            jos: "Jo's",
+            jos: "Jo’s",
             ivy: "Ivy Room",
             blueroom: "Blue Room",
             soe: "SOE Cafe",
@@ -997,7 +997,7 @@ window.onload = function () {
             Ratty: "Ratty",
             Andrews: "Andrews",
             "V-Dub": "V-Dub",
-            "Jo's": "Jo's",
+            "Jo’s": "Jo’s",
             Ivy: "Ivy Room"
         };
 
