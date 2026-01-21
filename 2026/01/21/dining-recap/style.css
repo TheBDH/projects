@@ -341,6 +341,7 @@ h2 {
     position: relative;
     width: 100%;
     min-height: 300px;
+    font-family: 'Roboto', sans-serif;
 }
 
 #pie-chart-container {

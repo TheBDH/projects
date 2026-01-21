@@ -909,7 +909,7 @@ window.onload = function () {
                 setText(word3, "Super Swiper");
                 tooltip3.textContent = "You make the most of your meal plan — and the flex points too.";
             } else if (summaryData.swipesPerWeek > 11) {
-                setText(word3, "Daily Devourer");
+                setText(word3, "Daily Diner");
                 tooltip3.textContent = "You eat a solid couple meals a day, with a few coffee stops sprinkled in.";
             } else if (summaryData.swipesPerWeek > 4) {
                 setText(word3, "Casual Consumer");
