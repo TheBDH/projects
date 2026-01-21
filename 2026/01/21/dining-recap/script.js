@@ -876,10 +876,10 @@ window.onload = function () {
         }
 
         if (word3) {
-            if (summaryData.swipesPerWeek > 15) {
+            if (summaryData.swipesPerWeek > 20) {
                 word3.textContent = "Super Swiper";
-            } else if (summaryData.swipesPerWeek > 10) {
-                word3.textContent = "Bidaily Diner";
+            } else if (summaryData.swipesPerWeek > 14) {
+                word3.textContent = "Daily Devourer";
             } else if (summaryData.swipesPerWeek > 5) {
                 word3.textContent = "Casual Consumer";
             } else {
