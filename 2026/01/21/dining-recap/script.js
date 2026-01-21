@@ -875,6 +875,8 @@ window.onload = function () {
             word2.textContent = topDiningHallMappings[hallKey];
         }
 
+        console.log(summaryData.swipesPerWeek)
+
         if (word3) {
             if (summaryData.swipesPerWeek > 20) {
                 word3.textContent = "Super Swiper";
@@ -888,12 +890,12 @@ window.onload = function () {
         }
 
         updateStats(
-            "Swipes per week: " + summaryData.swipesPerWeek + "<br>" +
-            "Breakfasts per week: " + (summaryData.mealFrequency.Breakfast / summaryData.weeks).toFixed(1) + "<br>" +
-            "Lunches per week: " + (summaryData.mealFrequency.Lunch / summaryData.weeks).toFixed(1) + "<br>" +
-            "Dinners per week: " + (summaryData.mealFrequency.Dinner / summaryData.weeks).toFixed(1) + "<br>" +
-            "Late night snacks per week: " + (summaryData.mealFrequency["Late Night"] / summaryData.weeks).toFixed(1) + "<br>" +
-            "Randomness Index: " + randomness.toFixed(2)
+            "Swipes per week: <strong>" + summaryData.swipesPerWeek + "</strong><br>" +
+            "Breakfasts per week: <strong>" + (summaryData.mealFrequency.Breakfast / summaryData.weeks).toFixed(1) + "</strong><br>" +
+            "Lunches per week: <strong>" + (summaryData.mealFrequency.Lunch / summaryData.weeks).toFixed(1) + "</strong><br>" +
+            "Dinners per week: <strong>" + (summaryData.mealFrequency.Dinner / summaryData.weeks).toFixed(1) + "</strong><br>" +
+            "Late night snacks per week: <strong>" + (summaryData.mealFrequency["Late Night"] / summaryData.weeks).toFixed(1) + "</strong><br>" +
+            "Randomness Index: <strong>" + randomness.toFixed(2) + "</strong>"
         );
 
         const comboBox = document.getElementById("combo-box");
