@@ -964,7 +964,7 @@ window.onload = function () {
                 }
 
                 if (imgSrc) {
-                    element.innerHTML += `<br><img src="img/${imgSrc}" style="width: 100%; max-width: 300px; border-radius: 4px; margin-top: 5px; margin-bottom: 5px;"><br><span style="font-size: 0.8rem; font-style: italic;">Media by <a href=${link} target="_blank">${credit}</a> | Brown Daily Herald</span>`;
+                    element.innerHTML += `<br><img src="img/${imgSrc}" style="width: 100%; max-width: 300px; border-radius: 4px; margin-top: 5px; margin-bottom: 5px;"><br><span style="font-size: 0.8rem; font-style: italic;">Media by <a href=${link} target="_blank">${credit}</a> | The Brown Daily Herald</span>`;
                 }
             }
         }
