@@ -9,6 +9,8 @@ window.onload = function () {
     let onboarding = document.getElementById("onboarding");
     let uploadedFile;
 
+    const validSwipes = ["Sharpe", "Andrews", "VW", "Josiah", "Ivy", "Blue Room", "SOE"]
+
     let labels = [
         ["Ratty;break", "Ratty;lunch", "Ratty;dinner", "Ratty;late"],
         ["Andrews;break", "Andrews;lunch", "Andrews;dinner", "Andrews;late"],
@@ -67,6 +69,18 @@ window.onload = function () {
                 dinner: 0,
                 lateNight: 0,
             },
+            blueroom: {
+                breakfast: 0,
+                lunch: 0,
+                dinner: 0,
+                lateNight: 0,
+            },
+            soe: {
+                breakfast: 0,
+                lunch: 0,
+                dinner: 0,
+                lateNight: 0,
+            }
         }
     };
 
@@ -169,6 +183,8 @@ window.onload = function () {
         let vwCount = 0;
         let josCount = 0;
         let ivyCount = 0;
+        let blueroomCount = 0;
+        let soeCount = 0;
         parsedData.forEach(item => {
             if (item.Description.includes("Sharpe")) {
                 rattyCount += 1;
@@ -250,6 +266,38 @@ window.onload = function () {
                 } else {
                     summaryData.crosstabs.ivy.lateNight += 1;
                 }
+            } else if (item.Description.includes("Blue Room")) {
+                blueroomCount += 1;
+                // calculating meals by time
+                const timestamp = item.Date;
+                const hour = new Date(timestamp).getHours();
+                if (hour >= 20) {
+                    summaryData.crosstabs.blueroom.lateNight += 1;
+                } else if (hour >= 16) {
+                    summaryData.crosstabs.blueroom.dinner += 1;
+                } else if (hour >= 11) {
+                    summaryData.crosstabs.blueroom.lunch += 1;
+                } else if (hour >= 5) {
+                    summaryData.crosstabs.blueroom.breakfast += 1;
+                } else {
+                    summaryData.crosstabs.blueroom.lateNight += 1;
+                }
+            } else if (item.Description.includes("SOE")) {
+                soeCount += 1;
+                // calculating meals by time
+                const timestamp = item.Date;
+                const hour = new Date(timestamp).getHours();
+                if (hour >= 20) {
+                    summaryData.crosstabs.soe.lateNight += 1;
+                } else if (hour >= 16) {
+                    summaryData.crosstabs.soe.dinner += 1;
+                } else if (hour >= 11) {
+                    summaryData.crosstabs.soe.lunch += 1;
+                } else if (hour >= 5) {
+                    summaryData.crosstabs.soe.breakfast += 1;
+                } else {
+                    summaryData.crosstabs.soe.lateNight += 1;
+                }
             }
         });
         summaryData.locationFrequency =
@@ -259,6 +307,8 @@ window.onload = function () {
             "V-Dub": vwCount,
             "Jo's": josCount,
             "Ivy Room": ivyCount,
+            "Blue Room": blueroomCount,
+            "SOE Cafe": soeCount
         }
         // Determine the top dining hall
         const topDiningHall = Object.keys(summaryData.locationFrequency).reduce((top, current) => {
@@ -290,7 +340,9 @@ window.onload = function () {
             "Andrews Commons": andrewsCount,
             "Verney-Woolley Dining Hall": vwCount,
             "Josiah’s": josCount,
+            "Blue Room": blueroomCount,
             "Ivy Room": ivyCount,
+            "School of Engineering Cafe": soeCount
         }
 
         generatePieChart(officialNames);
@@ -317,7 +369,7 @@ window.onload = function () {
                 datasets: [{
                     label: "Swipes",
                     data: data,  // Frequency of each location
-                    backgroundColor: ['#ff5200', '#ff8c02', '#b285ca', '#785ef1', '#fecf03'], // Colors for the slices
+                    backgroundColor: ['#ff5200', '#ff8c02', '#fecf03', '#b285ca', '#785ef1', '#d4d4d4', '#4E3629'], // Colors for the slices
                     borderColor: '#fff',
                     borderWidth: 2
                 }]
@@ -382,7 +434,9 @@ window.onload = function () {
         const swipeCounts = new Array(24).fill(0); // Array to hold swipe counts for each hour
         parsedData.forEach(item => {
             const timestamp = item.Date;
-            if (!item.Description.includes("Reset") && !item.Description.includes("Deposit") && !item.Description.includes("Concessions") && !item.Description.includes("Revoke")) {
+            const isValidSwipe = validSwipes.some(location => item.Description.includes(location));
+
+            if (isValidSwipe) {
                 if (timestamp) {
                     const hour = new Date(timestamp).getHours(); // Extract the hour (0-23)
                     swipeCounts[hour]++; // Increment the swipe count for that hour
@@ -410,7 +464,9 @@ window.onload = function () {
         // Loop through each row in the CSV
         parsedData.forEach(item => {
             const dateStr = item.Date;
-            if (!item.Description.includes("Reset") && !item.Description.includes("Deposit") && !item.Description.includes("Concessions") && !item.Description.includes("Revoke")) {
+            const isValidSwipe = validSwipes.some(location => item.Description.includes(location));
+
+            if (isValidSwipe) {
                 if (dateStr) {
                     const dayOfWeek = new Date(dateStr).getDay(); // Get day of the week (0 = Sunday, 6 = Saturday)
                     swipeCounts[dayOfWeek]++; // Increment count for the corresponding day
@@ -561,7 +617,7 @@ window.onload = function () {
 
         });
         if (weeks == 0) {
-            weeks = 16;
+            weeks = 17;
         }
         let swipesPerWeek = (swipes / weeks).toFixed(1)
         let breakfastPerWeek = (breakfast / weeks).toFixed(1)
@@ -657,9 +713,9 @@ window.onload = function () {
     document.getElementById('shareSiteButton').addEventListener('click', function () {
         if (navigator.share) {
             navigator.share({
-                title: 'Brown Dining Wrapped',
-                text: 'Check out Dining Wrapped!',
-                url: 'https://diningwrapped.calebellenberg.com'
+                title: 'Brown Dining Recap',
+                text: "Check out The Herald's Dining Recap!",
+                url: 'https://projects.browndailyherald.com/2026/01/21/dining-recap/'
             }).then(() => {
                 console.log('Thanks for sharing!');
             }).catch((error) => {
@@ -667,7 +723,7 @@ window.onload = function () {
             });
         } else {
             // Fallback for browsers that do not support the Web Share API
-            alert('Web Share API is not supported in your browser. Please copy the URL manually: https://diningwrapped.calebellenberg.com');
+            alert('Web Share API is not supported in your browser. Please copy the URL manually: https://projects.browndailyherald.com/2026/01/21/dining-recap/');
         }
     });
 
@@ -680,7 +736,7 @@ window.onload = function () {
 
                 if (navigator.share) {
                     navigator.share({
-                        title: 'Brown Dining Wrapped Results',
+                        title: 'Brown Dining Recap Results',
                         text: 'Check out my dining stats!',
                         files: [file]
                     }).then(() => {
@@ -752,20 +808,24 @@ window.onload = function () {
     });
 
     function updateText(summaryData) {
+        const randomness = calculateRandomness(summaryData.locationFrequency);
+
         const topDiningHallMappings = {
             "Ratty": "Refectory Regular",
             "Andrews": "Andrews Afficianado",
             "V-Dub": "V-Dub Valedictorian",
             "Ivy Room": "Ivy Idolizer",
-            "Jo's": "Jo's Joyrider"
+            "Jo's": "Jo's Joyrider",
+            "Blue Room": "Blue Room Bestie",
+            "SOE Cafe": "SOE Cafe Connoisseur"
         };
 
-        const topMealMappings = {
-            "Breakfast": "Early Bird",
-            "Lunch": "Consistent",
-            "Dinner": "Classy",
-            "Late Night": "Sleep Deprived"
-        }
+        // const topMealMappings = {
+        //     "Breakfast": "Early Bird",
+        //     "Lunch": "Consistent",
+        //     "Dinner": "Classy",
+        //     "Late Night": "Sleep Deprived"
+        // }
 
         const word1 = document.getElementById('word1');
         const word2 = document.getElementById('word2');
@@ -790,14 +850,18 @@ window.onload = function () {
         if (word2) word2.style.color = colors[1];
         if (word3) word3.style.color = colors[2];
 
-        let mealKey = summaryData.favMeal;
-        console.log(mealKey)
+        // let mealKey = summaryData.favMeal;
 
         let hallKey = summaryData.topDiningHall;
-        console.log(hallKey)
 
-        if (word1 && topMealMappings[mealKey]) {
-            word1.textContent = topMealMappings[mealKey];
+        if (word1) {
+            if (randomness > 0.75) {
+                word1.textContent = "Wildcard";
+            } else if (randomness > 0.4) {
+                word1.textContent = "Consistent";
+            } else {
+                word1.textContent = "Steadfast";
+            }
         }
 
         if (word2 && topDiningHallMappings[hallKey]) {
@@ -806,24 +870,26 @@ window.onload = function () {
 
         if (word3) {
             if (summaryData.swipesPerWeek > 15) {
-                word3.textContent = "Swipeaholic";
+                word3.textContent = "Super Swiper";
             } else if (summaryData.swipesPerWeek > 10) {
                 word3.textContent = "Bidaily Diner";
             } else if (summaryData.swipesPerWeek > 5) {
-                word3.textContent = "Rattymaxer";
+                word3.textContent = "Casual Consumer";
             } else {
                 word3.textContent = "Are you even on meal plan?";
             }
         }
 
         updateStats(
-            `<span style="color:${word1.style.color}; font-weight:bold;">${word1.textContent}</span><br>` +
-            `<span style="color:${word2.style.color}; font-weight:bold;">${word2.textContent}</span><br>` +
-            `<span style="color:${word3.style.color}; font-weight:bold;">${word3.textContent}</span>`
+            "Swipes per week: " + summaryData.swipesPerWeek + "<br>" +
+            "Breakfasts per week: " + (summaryData.mealFrequency.Breakfast / summaryData.weeks).toFixed(1) + "<br>" +
+            "Lunches per week: " + (summaryData.mealFrequency.Lunch / summaryData.weeks).toFixed(1) + "<br>" +
+            "Dinners per week: " + (summaryData.mealFrequency.Dinner / summaryData.weeks).toFixed(1) + "<br>" +
+            "Late night snacks per week: " + (summaryData.mealFrequency["Late Night"] / summaryData.weeks).toFixed(1) + "<br>" +
+            "Randomness Index: " + randomness.toFixed(2)
         );
 
         const comboBox = document.getElementById("combo-box");
-        console.log(comboBox)
         if (comboBox) {
             let comboMeal = mapNames(summaryData.favHallMeal.meal);
             let comboHall = mapNames(summaryData.favHallMeal.hall);
@@ -877,6 +943,12 @@ window.onload = function () {
                 } else if (hallName === "V-Dub") {
                     imgSrc = "EllisRougeouVDub.JPG";
                     credit = "Ellis Rougeou";
+                } else if (hallName == "Blue Room") {
+                    imgSrc = "BenKangBlueRoom.jpg";
+                    credit = "Ben Kang";
+                } else if (hallName == "SOE Cafe") {
+                    imgSrc = "KaiaYalamanchiliERC.JPG";
+                    credit = "Kaia Yalamanchili";
                 }
 
                 if (imgSrc) {
@@ -898,6 +970,8 @@ window.onload = function () {
             vdub: "V-Dub",
             jos: "Jo's",
             ivy: "Ivy Room",
+            blueroom: "Blue Room",
+            soe: "SOE Cafe",
 
             Ratty: "Ratty",
             Andrews: "Andrews",
@@ -907,6 +981,27 @@ window.onload = function () {
         };
 
         return nameMappings[name] || name.charAt(0).toUpperCase() + name.slice(1);
+    }
+
+    function calculateRandomness(data) {
+        const counts = Object.values(data);
+        const totalMeals = counts.reduce((sum, val) => sum + val, 0);
+        const numberOfHalls = counts.length;
+
+        if (totalMeals === 0) return 0;
+
+        let sumSquaredProbs = 0;
+        for (let count of counts) {
+            let probability = count / totalMeals;
+            sumSquaredProbs += probability * probability;
+        }
+
+        const rawDiversity = 1 - sumSquaredProbs;
+
+        const maxPossible = 1 - (1 / numberOfHalls);
+        const normalizedScore = rawDiversity / maxPossible;
+
+        return normalizedScore;
     }
 
 };
