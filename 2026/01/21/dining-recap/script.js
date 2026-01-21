@@ -827,6 +827,16 @@ window.onload = function () {
             "SOE Cafe": "SOE Cafe Connoisseur"
         };
 
+        const topDiningHallTooltipMappings = {
+            "Ratty": "Your most frequented dining hall was the Ratty. The more choices the better (or maybe you just live in Wriston).",
+            "Andrews": "Your most frequented dining hall was Andrews Commons. You don’t mind a line when you’re getting the most gourmet food on campus.",
+            "V-Dub": "Your most frequented dining hall was Verney-Woolley. You keep it classic in the V-Dub.",
+            "Ivy Room": "Your most frequented dining hall was the Ivy Room. You love a good grab-and-go.",
+            "Jo’s": "Your most frequented dining hall was Josiah’s — it may close at 2 a.m., but for you the night’s just getting started.",
+            "Blue Room": "Your most frequented dining hall was the Blue Room. Coffee chats and croissants are hard to beat.",
+            "SOE Cafe": "Your most frequented dining hall was the School of Engineering Cafe. Nothing like a breakfast sandwich and a hot coffee to start your day."
+        };
+
         // const topMealMappings = {
         //     "Breakfast": "Early Bird",
         //     "Lunch": "Consistent",
@@ -838,12 +848,16 @@ window.onload = function () {
         const word2 = document.getElementById('word2');
         const word3 = document.getElementById('word3');
 
+        const tooltip1 = document.getElementById('word1-tooltip');
+        const tooltip2 = document.getElementById('word2-tooltip');
+        const tooltip3 = document.getElementById('word3-tooltip');
+
         function setText(element, text) {
             if (!element) return;
             const tooltip = element.querySelector('.tooltiptext');
             element.textContent = text;
             if (tooltip) {
-            element.appendChild(tooltip);
+                element.appendChild(tooltip);
             }
         }
 
@@ -852,10 +866,10 @@ window.onload = function () {
         function shuffle(array) {
             let currentIndex = array.length, randomIndex;
             while (currentIndex != 0) {
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex--;
-            [array[currentIndex], array[randomIndex]] = [
-                array[randomIndex], array[currentIndex]];
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                [array[currentIndex], array[randomIndex]] = [
+                    array[randomIndex], array[currentIndex]];
             }
             return array;
         }
@@ -866,43 +880,43 @@ window.onload = function () {
         if (word2) word2.style.color = colors[1];
         if (word3) word3.style.color = colors[2];
 
-        const tooltip1 = document.getElementById('word1-tooltip');
-        const tooltip2 = document.getElementById('word2-tooltip');
-        const tooltip3 = document.getElementById('word3-tooltip');
-
-        tooltip1.textContent = "Hello";
-        tooltip2.textContent = "Hello";
-        tooltip3.textContent = "Hello"
-
         // let mealKey = summaryData.favMeal;
 
         let hallKey = summaryData.topDiningHall;
 
         if (word1) {
             if (randomness > 0.75) {
-            setText(word1, "Wildcard");
+                setText(word1, "Wildcard");
+                tooltip1.textContent = "Even you don’t know where you’re eating lunch today — much less dinner.";
             } else if (randomness > 0.4) {
-            setText(word1, "Consistent");
+                setText(word1, "Consistent");
+                tooltip1.textContent = "You have a go-to dining hall, but you’re happy to go somewhere else with a friend on occasion.";
             } else {
-            setText(word1, "Steadfast");
+                setText(word1, "Steadfast");
+                tooltip1.textContent = "You have a favorite dining hall, and you stick to it.";
             }
         }
 
         if (word2 && topDiningHallMappings[hallKey]) {
             setText(word2, topDiningHallMappings[hallKey]);
+            tooltip2.textContent = topDiningHallTooltipMappings[hallKey];
         }
 
         console.log(summaryData.swipesPerWeek)
 
         if (word3) {
-            if (summaryData.swipesPerWeek > 20) {
-            setText(word3, "Super Swiper");
-            } else if (summaryData.swipesPerWeek > 14) {
-            setText(word3, "Daily Devourer");
-            } else if (summaryData.swipesPerWeek > 5) {
-            setText(word3, "Casual Consumer");
+            if (summaryData.swipesPerWeek > 17) {
+                setText(word3, "Super Swiper");
+                tooltip3.textContent = "You make the most of your meal plan — and the flex points too.";
+            } else if (summaryData.swipesPerWeek > 11) {
+                setText(word3, "Daily Devourer");
+                tooltip3.textContent = "You eat a solid couple meals a day, with a few coffee stops sprinkled in.";
+            } else if (summaryData.swipesPerWeek > 4) {
+                setText(word3, "Casual Consumer");
+                tooltip3.textContent = "You’re a little over dining hall food, but still happy to stop by once or twice a day."
             } else {
-            setText(word3, "Are you even on meal plan?");
+                setText(word3, "Are you even on meal plan?");
+                tooltip3.textContent = "Either you’re on Flex 70 or you have a secret private chef hiding in the Keeney basement."
             }
         }
 
