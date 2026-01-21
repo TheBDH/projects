@@ -931,32 +931,40 @@ window.onload = function () {
                 element.innerHTML = `<strong>${mealLabels[key]}</strong><br>${hallName}`;
                 let imgSrc = "";
                 let credit = "";
+                let link = "";
 
                 if (hallName === "Andrews") {
                     imgSrc = "LianoValenzuelaAndrews.jpg";
                     credit = "Liano Valenzuela";
+                    link = "https://www.browndailyherald.com/staff/liano-valenzuela";
                 } else if (hallName === "Ratty") {
                     imgSrc = "KaiolenaTacazonRatty.jpg";
                     credit = "Kaiolena Tacazon";
+                    link = "https://www.browndailyherald.com/staff/kaiolena-tacazon";
                 } else if (hallName === "Jo's") {
                     imgSrc = "HenryWangJos.JPG";
                     credit = "Henry Wang";
+                    link = "https://www.browndailyherald.com/staff/henry-wang";
                 } else if (hallName === "Ivy Room") {
                     imgSrc = "KennaLeeIvyRoom.JPG";
                     credit = "Kenna Lee";
+                    link = "https://www.browndailyherald.com/staff/kenna-lee";
                 } else if (hallName === "V-Dub") {
                     imgSrc = "EllisRougeouVDub.JPG";
                     credit = "Ellis Rougeou";
+                    link = "https://www.browndailyherald.com/staff/ellis-rougeou";
                 } else if (hallName == "Blue Room") {
                     imgSrc = "BenKangBlueRoom.jpg";
                     credit = "Ben Kang";
+                    link = "https://www.browndailyherald.com/staff/ben-kang";
                 } else if (hallName == "SOE Cafe") {
                     imgSrc = "KaiaYalamanchiliERC.JPG";
                     credit = "Kaia Yalamanchili";
+                    link = "https://www.browndailyherald.com/staff/kaia-yalamanchili";
                 }
 
                 if (imgSrc) {
-                    element.innerHTML += `<br><img src="img/${imgSrc}" style="width: 100%; max-width: 300px; border-radius: 4px; margin-top: 5px; margin-bottom: 5px;"><br><span style="font-size: 0.8rem; font-style: italic;">Media by ${credit} | Brown Daily Herald</span>`;
+                    element.innerHTML += `<br><img src="img/${imgSrc}" style="width: 100%; max-width: 300px; border-radius: 4px; margin-top: 5px; margin-bottom: 5px;"><br><span style="font-size: 0.8rem; font-style: italic;">Media by <a href=${link} target="_blank">${credit}</a> | Brown Daily Herald</span>`;
                 }
             }
         }
