@@ -1,0 +1,332 @@
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-321HPHTJEX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-321HPHTJEX');
+        </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Brown Dining Recap</title>
+        <link rel="icon" href="img/icon.png" sizes="64x64"
+            type="image/png">
+        <link rel="icon" href="img/icon.png" sizes="32x32"
+            type="image/png">
+        <link rel="icon" href="img/icon.png" sizes="16x16"
+            type="image/png">
+        <link rel="apple-touch-icon" href="icons/favicon-64x64.png">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!-- Firebase App -->
+        <script
+            src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+
+        <!-- Firebase Storage -->
+        <script
+            src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script type="module" src="script.js"></script>
+    </head>
+    <body>
+        <div id="intro" style="text-align: center;">
+            <div
+                style="display: flex; align-items: end; justify-content: center; gap: 2px; padding-top: 20px;">
+                <a href="https://www.browndailyherald.com" target="_blank">
+                    <img
+                        src="img/logo-black.png"
+                        id="herald-logo"
+                        alt="Brown Daily Herald Logo" />
+                </a>
+                <p id="presents"
+                    style="font-family: freight-text-pro, Georgia, Times, serif;">presents:</p>
+            </div>
+            <p
+                style="font-family: freight-text-pro, Georgia, Times, serif; font-size: 45px; font-weight: bold;">Dining
+                recap</p>
+            <div class="text"
+                style="text-align: center; margin-top: 10px; margin-bottom: 20px;">
+                <p
+                    style="font-family: freight-text-pro, Georgia, Times, serif; font-size: 18px; font-style: italic;">By
+                    Nate Chen, <a
+                        href="https://www.browndailyherald.com/staff/caleb-ellenberg"
+                        target="_blank">Caleb Ellenberg</a>, May Fujita, Samyak
+                    Jain, <a
+                        href="https://www.browndailyherald.com/staff/kenna-lee"
+                        target="_blank">Kenna Lee</a>, Julia Miyasaka and
+                    Alexander Fraire Rendon</p>
+            </div>
+            <img class="article-image" src="img/KaiolenaTacazonRatty.jpg"
+                alt="ratty outside"
+                style="width: 50%;">
+            <p
+                style="font-family: freight-text-pro, Georgia, Times, serif; font-size: 18px; font-style: italic; margin-top: 5px; width: 90%; margin-left: auto; margin-right: auto;">Media
+                by <a
+                    href="https://www.browndailyherald.com/staff/kaiolena-tacazon"
+                    target="_blank">Kaiolena Tacazon</a> | The Brown Daily
+                Herald</p>
+            <div class="text">
+                <p>
+                    Have you ever wondered what your favorite dining hall really
+                    is? How often do you actually make it out of bed for
+                    breakfast before that 9 a.m. class? Just how many snacks do
+                    you grab from Josiah’s on Saturday nights? The Herald’s data
+                    desk has set out to help you answer these questions and
+                    more.
+                    <br>
+                    <br>
+                    You can follow the instructions below to download your
+                    dining swipe data, and upload it to see your dining
+                    statistics. If you would like, you can also choose to share
+                    your data with The Herald for future analysis. Your data is
+                    anonymous, and we will only analyze and publish data in
+                    aggregate.
+                </p>
+            </div>
+            <div class="text">
+                <p style="font-weight: bold; font-size: 24px;">Instructions:</p>
+                <br>
+                <p>
+                    1. Go to the <a
+                        href="https://mycard.brown.edu/statementnew.php?"
+                        target="_blank">“Account Activity”</a> page of your Meal
+                    and Bear Bucks Online Portal.
+                    <br>
+                    <br>
+                    2. Select your meal plan (e.g. “20 Weekly Meals” or “Flex
+                    460”) under “Account.”
+                    <br>
+                    <br>
+                    3. Select “View last 6 months” under “Statement Period.”
+                    <br>
+                    <br>
+                    4. Click the yellow “View Statement” button to retrieve your
+                    swipe history.
+                </p>
+            </div>
+            <img class="article-image" src="img/select-view-statement-guide.png"
+                alt="how to click statement button"
+                style="width: 50%; margin-top: 25px;">
+            <div class="text">
+                <p>
+                    5. Click the gray “CSV” button in the top right corner of
+                    the page.
+                </p>
+            </div>
+            <img class="article-image" src="img/select-csv-guide.png"
+                alt="how to click CSV button"
+                style="width: 50%; margin-top: 25px;">
+            <div class="text">
+                <p>
+                    6. Go back to the <a
+                        href="https://mycard.brown.edu/statementnew.php?"
+                        target="_blank">“Account Activity”</a> page of your Meal
+                    and Bear Bucks Online Portal.
+                    <br>
+                    <br>
+                    7. Select “Flex Points.”
+                    <br>
+                    <br>
+                    8. Select “View last 6 months” under “Statement Period.”
+                    <br>
+                    <br>
+                    9. Click the yellow “View Statement” button to retrieve your
+                    swipe history.
+                    <br>
+                    <br>
+                    10. Click the gray “CSV” button in the top right corner of
+                    the page.
+                    <br>
+                    <br>
+                    11. Navigate back to this page and click “Upload Meal Plan
+                    CSV.” Upload your downloaded meal plan CSV. Click “Upload
+                    Flex Point CSV.” Upload your downloaded flex point CSV.
+                    <br>
+                    <br>
+                    12. Click “Process data” to view your stats.
+                </p>
+            </div>
+            <div style="height: 5vh;"></div>
+            <form id="csvForm">
+                <div class="form-group">
+                    <div class="file-input-wrapper">
+                        <input type="file" id="file-upload" name="file"
+                            required>
+                        <label for="file-upload"
+                            class="file-input-button">Upload Meal Plan
+                            CSV</label>
+                    </div>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="flex-file-upload"
+                            name="flex-file"
+                            required>
+                        <label for="flex-file-upload"
+                            class="flex-file-input-button">Upload Flex Point
+                            CSV</label>
+                    </div>
+                    <button type="button" id="processButton">Process
+                        data</button>
+                </div>
+                <div style="height: 5vh;"></div>
+            </form>
+        </div>
+        <div id="onboarding">
+            <div
+                style="display: flex; align-items: end; justify-content: center; gap: 2px; padding-top: 20px;">
+                <a href="https://www.browndailyherald.com" target="_blank">
+                    <img
+                        src="img/logo-black.png"
+                        id="herald-logo"
+                        alt="Brown Daily Herald Logo" />
+                </a>
+            </div>
+            <div id="questionPage1" style="justify-content: center;">
+                <div class="text" style="text-align: center; font-size: 22px;">
+                    Do you consent to share your meal swipe data with The Herald
+                    for anonymous, aggregate analysis and publication? If you’ve
+                    already shared your data, please select no.
+                </div>
+                <div style="height: 5vh"></div>
+                <div class="form-group">
+                    <button type="button" id="yesShare"
+                        style="background-color: #4E3629;">Yes</button>
+                    <button type="button" id="noShare">No</button>
+                </div>
+            </div>
+            <div id="questionPage2"
+                style="display: none; flex-direction: column; align-items: center; gap: 10px;">
+                <div class="text" style="text-align: center;">
+                    Optional: Please answer the following questions to help with
+                    our analysis. As a reminder, your data is anonymous, and we
+                    will only analyze and publish data in aggregate.
+                </div>
+                <div class="dropdown-container">
+                    <select id="classYear" class="dropdown">
+                        <option value disabled selected>Select class
+                            year</option>
+                        <option value="prefirst">2030 or later</option>
+                        <option value="first">2029 or 2029.5</option>
+                        <option value="sophomore">2028 or 2028.5</option>
+                        <option value="junior">2027 or 2027.5</option>
+                        <option value="senior">2026 or 2026.5</option>
+                        <option value="supersenior">2025.5</option>
+                    </select>
+                </div>
+                <div class="dropdown-container">
+                    <select id="campus" class="dropdown">
+                        <option value disabled selected>Select location of your
+                            dorm</option>
+                        <option value="north">North campus (North of Waterman
+                            Street)</option>
+                        <option value="south">South campus (South of Waterman
+                            Street)</option>
+                    </select>
+                </div>
+                <div class="dropdown-container">
+                    <select id="mealPlan" class="dropdown">
+                        <option value disabled selected>Select current meal
+                            plan</option>
+                        <option value="20weekly">20 Weekly</option>
+                        <option value="14weekly">14 Weekly</option>
+                        <option value="flex460">Flex 460</option>
+                        <option value="flex330">Flex 330</option>
+                        <option value="flex70">Flex 70</option>
+                    </select>
+                </div>
+                <div style="height: 1vh;"></div>
+                <button type="button" id="seeData"
+                    style="background-color: #4E3629;">Explore your
+                    data</button>
+            </div>
+        </div>
+        <div id="stats" style="display: none;">
+            <div
+                style="display: flex; align-items: end; justify-content: center; gap: 2px; padding-top: 20px;">
+                <a href="https://www.browndailyherald.com" target="_blank">
+                    <img
+                        src="img/logo-black.png"
+                        id="herald-logo"
+                        alt="Brown Daily Herald Logo" />
+                </a>
+            </div>
+            <div class="text">
+                <p
+                    style="font-size: 30px; font-weight: bold; text-align: center;">You
+                    are a:</p>
+                <div id="custom-archetype">
+                    <div class="word" id="word1">
+                        <span class="tooltiptext" id="word1-tooltip"></span>
+                    </div>
+                    <div class="word" id="word2">
+                        <span class="tooltiptext" id="word2-tooltip"></span>
+                    </div>
+                    <div class="word" id="word3">
+                        <span class="tooltiptext" id="word3-tooltip"></span>
+                    </div>
+                </div>
+                <div style="height: 5vh;"></div>
+                <p
+                    style="font-size: 30px; font-weight: bold; text-align: center;">Your top
+                    combo:</p>
+                <div id="combo-box"></div>
+                <div style="height: 5vh;"></div>
+                <p
+                    style="font-size: 30px; font-weight: bold; text-align: center;">Your top
+                    hall by meal:</p>
+                <div id="spot-by-meal">
+                    <div id="breakfast"></div>
+                    <div id="lunch"></div>
+                    <div id="dinner"></div>
+                    <div id="lateNight"></div>
+                </div>
+                <div style="height: 5vh;"></div>
+                <p
+                    style="font-size: 30px; font-weight: bold; text-align: center;">The full
+                    breakdown:</p>
+                <div style="height: 5vh;"></div>
+            </div>
+            <div id="charts-grid-wrapper" class="charts-grid-wrapper">
+                <div class="chart-container" id="pie-chart-container">
+                    <canvas id="myPieChart"></canvas>
+                </div>
+                <div class="chart-container" id="hours-chart-container">
+                    <canvas id="timeBarChart"></canvas>
+                </div>
+                <div class="chart-container" id="days-chart-container">
+                    <canvas id="daysBarChart"></canvas>
+                </div>
+                <div class="chart-container" id="stats-container">
+                    <div class="stats-wrapper">
+                        <div id="statsOutput" class="stats-output">No stats
+                            available yet.</div>
+                    </div>
+                </div>
+            </div>
+            <div style="height: 1vh;"></div>
+            <div class="text" style="font-style: italic; text-align: center;">
+                Swipe data is filtered to include only swipes at the seven listed
+                dining halls. Each flex point transaction is counted as one meal
+                swipe. Expand to full screen for best results.
+            </div>
+            <div style="height: 4vh;"></div>
+            <form id="shareForm">
+                <div class="form-group">
+                    <button type="button" class="blue-button"
+                        id="shareResultsButton">Share
+                        Results</button>
+                    <button type="button" id="shareSiteButton">Share
+                        Site</button>
+                </div>
+            </form>
+            <div style="height: 5vh;"></div>
+        </div>
+    </body>
+</html>
