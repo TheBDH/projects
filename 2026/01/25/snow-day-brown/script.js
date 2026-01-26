@@ -1,4 +1,3 @@
-heading.style.opacity = 1;
 const fwImages = document.querySelectorAll(".fw-image");
 const fwImages2 = document.querySelectorAll(".fw-image-2");
 const horizontalGallery = document.querySelector(".gallery-fullwidth");
@@ -82,8 +81,12 @@ const allCredits = [
   "Media by Bomi Okimoto | The Brown Daily Herald",
   "Media by Bomi Okimoto | The Brown Daily Herald",
   "Media by Bomi Okimoto | The Brown Daily Herald",
+  "Media by Bomi Okimoto | The Brown Daily Herald",
   "Media by Jake Parker | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Henry Wang | The Brown Daily Herald",
+  "Media by Henry Wang | The Brown Daily Herald",
   "Media by Henry Wang | The Brown Daily Herald",
   "Media by Horatio Hamilton | The Brown Daily Herald",
   "Media by Horatio Hamilton | The Brown Daily Herald",
@@ -97,7 +100,8 @@ const allCredits = [
   "Media by Jake Parker | The Brown Daily Herald",
   "Media by Jake Parker | The Brown Daily Herald",
   "Media by Jake Parker | The Brown Daily Herald",
-  "Media by Jake Parker | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
@@ -105,12 +109,15 @@ const allCredits = [
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Annamaria Luecht | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Annamaria Luecht | The Brown Daily Herald",
-  "Media by Selina Kao | The Brown Daily Herald",
-  "Media by Selina Kao | The Brown Daily Herald",
-  "Media by Selina Kao | The Brown Daily Herald",
-  "Media by Selina Kao | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kai LaForte | The Brown Daily Herald",
   "Media by Kenna Lee | The Brown Daily Herald",
+  "Media by Selina Kao | The Brown Daily Herald",
+  "Media by Selina Kao | The Brown Daily Herald",
+  "Media by Selina Kao | The Brown Daily Herald",
+  "Media by Selina Kao | The Brown Daily Herald",
 ];
 
 if ("scrollRestoration" in history) {
@@ -152,7 +159,7 @@ scroller
     const img = d3.select(response.element).select("img");
     if (!img.empty()) img.classed("active", true);
 
-    const credit = allCredits[stepIndex + 1] || "";
+    const credit = allCredits[stepIndex] || "";
     creditDiv.textContent = credit;
   })
   .onStepExit((response) => {
@@ -169,4 +176,10 @@ window.addEventListener("scroll", () => {
   const scrollPercent = (scrollTop / docHeight) * 100;
 
   progressBar.style.width = `${scrollPercent}%`;
+});
+
+document.body.style.overflow = "hidden";
+
+window.addEventListener("load", () => {
+  document.body.style.overflow = "auto";
 });
