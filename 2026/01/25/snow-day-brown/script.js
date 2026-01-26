@@ -155,17 +155,6 @@ scroller
       });
     }
 
-    if (stepIndex >= 37 && stepIndex <= 43) {
-      const blockIndex = stepIndex - 35;
-      colorBlocks2.forEach((block, idx) => {
-        if (idx === blockIndex) {
-          block.style.opacity = 1;
-        } else {
-          block.style.opacity = 0;
-        }
-      });
-    }
-
     d3.selectAll(".gallery img:not(.fw-image)").classed("active", false);
     const img = d3.select(response.element).select("img");
     if (!img.empty()) img.classed("active", true);
