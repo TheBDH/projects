@@ -57,7 +57,7 @@ allImages.forEach((src) => {
   img.src = src;
 });
 
-const colorBlocks = [
+const colorBlocks1 = [
   document.getElementById("block1"),
   document.getElementById("block2"),
   document.getElementById("block3"),
@@ -65,6 +65,15 @@ const colorBlocks = [
   document.getElementById("block5"),
   document.getElementById("block6"),
 ];
+
+const colorBlocks2 = [
+  document.getElementById("block7"),
+  document.getElementById("block8"),
+  document.getElementById("block9"),
+  document.getElementById("block10"),
+  document.getElementById("block11"),
+  document.getElementById("block12"),
+]
 
 const allCredits = [
   "Media by Annamaria Luecht | The Brown Daily Herald",
@@ -126,17 +135,6 @@ scroller
   .onStepEnter((response) => {
     const stepIndex = parseInt(response.element.dataset.step);
 
-    if (stepIndex >= -1 && stepIndex < 0) {
-      heading.style.opacity = 1;
-      bgVideo.style.opacity = 1;
-    } else if (stepIndex < -1 || stepIndex == 0) {
-      heading.style.opacity = 0;
-      bgVideo.style.opacity = 1;
-    } else {
-      heading.style.opacity = 0;
-      bgVideo.style.opacity = 0;
-    }
-
     if (stepIndex >= 10 && stepIndex <= 15) {
       fwImages.forEach((img, idx) => {
         img.classList.toggle("active", idx === stepIndex - 10);
@@ -145,7 +143,7 @@ scroller
 
     if (stepIndex >= 21 && stepIndex <= 27) {
       const blockIndex = stepIndex - 21;
-      colorBlocks.forEach((block, idx) => {
+      colorBlocks1.forEach((block, idx) => {
         if (idx === blockIndex) {
           block.style.opacity = 1;
         } else {
@@ -161,8 +159,13 @@ scroller
     }
 
     if (stepIndex >= 39 && stepIndex <= 44) {
-      fwImages2.forEach((img, idx) => {
-        img.classList.toggle("active", idx === stepIndex - 39);
+      const blockIndex = stepIndex - 39;
+      colorBlocks2.forEach((block, idx) => {
+        if (idx === blockIndex) {
+          block.style.opacity = 1;
+        } else {
+          block.style.opacity = 0;
+        }
       });
     }
 

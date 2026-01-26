@@ -198,7 +198,7 @@ a {
   left: 0;
   height: 8px;
   width: 0%;
-  background-color: #cf5c36;
+  background-color: var(--accent-color);
   z-index: 1000;
   transition: width 0.1s ease;
 }
@@ -238,7 +238,7 @@ a {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
-  background-color: #cf5c36;
+  background-color: var(--accent-color);
   color: #f5efed;
   padding: 0.3rem 0.6rem;
   border-radius: 0.5rem;
