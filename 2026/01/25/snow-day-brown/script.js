@@ -73,7 +73,7 @@ const colorBlocks2 = [
   document.getElementById("block10"),
   document.getElementById("block11"),
   document.getElementById("block12"),
-]
+];
 
 const allCredits = [
   "Media by Annamaria Luecht | The Brown Daily Herald",
@@ -91,9 +91,9 @@ const allCredits = [
   "Media by Horatio Hamilton | The Brown Daily Herald",
   "Media by Horatio Hamilton | The Brown Daily Herald",
   "Media by Horatio Hamilton | The Brown Daily Herald",
-  "Media by Ina Ma | The Brown Daily Heralda Kao",
-  "Media by Ina Ma | The Brown Daily Heralda Kao",
-  "Media by Ina Ma | The Brown Daily Heralda Kao",
+  "Media by Ina Ma | The Brown Daily Herald",
+  "Media by Ina Ma | The Brown Daily Herald",
+  "Media by Ina Ma | The Brown Daily Herald",
   "Media by Jake Parker | The Brown Daily Herald",
   "Media by Jake Parker | The Brown Daily Herald",
   "Media by Jake Parker | The Brown Daily Herald",
@@ -121,16 +121,16 @@ if ("scrollRestoration" in history) {
 scroller
   .setup({
     step: ".step",
-    offset: 0.1,
+    offset: 0.6,
   })
   .onStepEnter((response) => {
     const stepIndex = parseInt(response.element.dataset.step);
 
-  if (stepIndex < 1) {
-    heading.style.opacity = 1;
-  } else {
-    heading.style.opacity = 0;
-  }
+    if (stepIndex < 1) {
+      heading.style.opacity = 1;
+    } else {
+      heading.style.opacity = 0;
+    }
 
     if (stepIndex >= 10 && stepIndex <= 15) {
       fwImages.forEach((img, idx) => {
@@ -163,7 +163,7 @@ scroller
     creditDiv.textContent = credit;
   })
   .onStepExit((response) => {
-    if (response.direction === 'up') {
+    if (response.direction === "up") {
       heading.style.opacity = 1;
     }
   });
@@ -176,10 +176,4 @@ window.addEventListener("scroll", () => {
   const scrollPercent = (scrollTop / docHeight) * 100;
 
   progressBar.style.width = `${scrollPercent}%`;
-});
-
-document.body.style.overflow = "hidden";
-
-window.addEventListener("load", () => {
-  document.body.style.overflow = "auto";
 });
