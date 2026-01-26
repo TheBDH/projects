@@ -165,7 +165,7 @@ scroller
       });
     }
 
-    if (stepIndex >= 35 && stepIndex <= 43) {
+    if (stepIndex >= 35 && stepIndex <= 41) {
       const blockIndex = stepIndex - 35;
       colorBlocks2.forEach((block, idx) => {
         if (idx === blockIndex) {
