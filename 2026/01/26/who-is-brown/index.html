@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-321HPHTJEX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-321HPHTJEX');
+        </script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Brown Community 2024</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/brt8lxm.css">
+    <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
+  </head>
+  <body>
+    <!-- Article Visualization Container (view-only, scroll-triggered) -->
+    <div id="article-viz-container">
+      <svg id="article-svg"></svg>
+    </div>
+
+    <!-- Article Sections (trigger dot animations on scroll) -->
+    <div id="article-content">
+      <!-- Stage 0: Title card with dots behind -->
+      <section class="article-section article-section-title" data-stage="0">
+        <div id="heading">
+          <a href="https://www.browndailyherald.com" target="_blank">
+            <img src="images/logo-black.png" id="herald-logo"
+              alt="Brown Daily Herald Logo" />
+          </a>
+          <h3 style="text-align: center;">
+            Who is Brown?
+          </h3>
+          <br>
+          <p style="text-align: center;">
+            The Herald analyzed 20 years of demographic data to understand how
+            the Brown community has evolved over time.
+          </p>
+          <br>
+          <h6 id="byline" style="text-align: center;">
+            Reporting by
+            <a
+              href="https://www.browndailyherald.com/staff/caleb-ellenberg"
+              target="_blank"><span class="author">Caleb
+                Ellenberg</span></a>
+            <br>
+            <br>
+            Data analysis by
+            <span class="author">Dayna Phan</span>
+            <a href="https://www.browndailyherald.com/staff/rahul-sameer"
+              target="_blank"><span class="author">Rahul Sameer</span>
+            </a>
+            <span class="author">Joy Zou</span>
+            <br>
+            <br>
+            Web design by
+            <span class="author">Dhruv Jain</span>
+          </h6>
+          <br>
+          <div class="down-arrow" style="text-align: center;">
+            &#x2193;
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section" data-stage="0">
+        <div class="article-text">
+          <p>In fall 2024, 16,916 people made up the Brown community. From
+            graduate students to professors to maintenance staff, every one of
+            those people is part of Brown’s identity. The Herald’s data desk
+            investigated demographic trends over the span of 20 years from 2004
+            to 2024. This article explores who Brown is and was, starting from
+            the biggest picture and steadily zooming in.
+          </p>
+        </div>
+      </section>
+
+      <!-- Stage 1: Split into students, faculty, staff -->
+      <section class="article-section" data-stage="1">
+        <div class="article-text">
+          <p>The largest category is Brown’s 11,205 students, which includes
+            undergraduate, graduate, and medical students. The 1,740 faculty
+            members include both research and instructional staff. Brown employs
+            3,971 staff, including librarians, lawyers and dining
+            staff.</p>
+        </div>
+      </section>
+
+      <!-- Stage 2: Show just students -->
+      <section class="article-section" data-stage="2">
+        <div class="article-text">
+          <p>Brown has long stood out among Ivy League universities for its
+            focus on undergraduate education. Brown considers itself a
+            “university-college,” a term that former President Henry Wriston
+            used to describe a liberal arts perspective towards education and
+            research. That focus has shifted in recent decades as Brown has
+            <a
+              href="https://www.browndailyherald.com/article/2025/04/from-liberal-arts-to-a-research-institution-uncovering-the-roots-of-browns-research-focus"
+              target="_blank">worked to position itself</a> as a premier
+            research institution.
+            Graduate student enrollment has more than doubled since 2004, and
+            medical student enrollment increased by 81%. Undergraduate
+            enrollment has also increased, but by a more modest 25%.</p>
+        </div>
+      </section>
+
+      <!-- Stage 3: 2024 student breakdown -->
+      <section class="article-section article-section-empty" data-stage="3">
+      </section>
+
+      <!-- Stage 4: 2014 data (no text box) -->
+      <section class="article-section article-section-empty" data-stage="4">
+      </section>
+
+      <!-- Stage 5: 2004 data (no text box) -->
+      <section class="article-section article-section-empty" data-stage="5">
+      </section>
+
+      <!-- Stage 6: Return to Students/Faculty/Staff view for faculty discussion -->
+      <section class="article-section article-section-empty" data-stage="6">
+      </section>
+
+      <!-- Stage 7: Faculty only, mixed colors -->
+      <section class="article-section" data-stage="7">
+        <div class="article-text">
+          <p>The faculty category includes all employees in instructional or
+            research positions. Faculty who both teach and research are
+            categorized as instructional. Matching the growth in the student
+            body, the total faculty count has grown by 58% since 2004. That
+            increase was especially concentrated in research-only faculty, which
+            has nearly doubled since 2004. This growth is likely to slow
+            following Brown’s decision to <a
+              href="https://www.browndailyherald.com/article/2024/12/brown-will-restrict-faculty-staff-growth-and-reduce-phd-admissions-to-address-budget-deficit"
+              target="_blank">limit faculty hiring</a> last winter amid
+            financial struggles.
+            <br>
+            <br>
+            In 2024, Brown had 880 “regular faculty,” which includes professors
+            and distinguished senior lecturers. In 2015, 66% of “regular
+            faculty”
+            were men and 34% were women, a gap that has somewhat narrowed in
+            recent years to 60% men, 40% women in 2024.
+          </p>
+        </div>
+      </section>
+
+      <section class="article-section" data-stage="7">
+        <div class="article-chart">
+          <iframe title="Faculty by Gender Over the Decades"
+            aria-label="Stacked Bars" id="datawrapper-chart-G7V7m"
+            src="https://datawrapper.dwcdn.net/G7V7m/2/" scrolling="no"
+            frameborder="0"
+            style="width: 0; min-width: 100% !important; border: none;"
+            height="430" data-external="1"></iframe><script
+            type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+        </div>
+      </section>
+
+      <!-- Stage 8: Faculty split into instructional/research - 2024 -->
+      <section class="article-section article-section-empty" data-stage="8">
+      </section>
+
+      <!-- Stage 9: 2014 faculty data -->
+      <section class="article-section article-section-empty" data-stage="9">
+      </section>
+
+      <!-- Stage 10: 2004 faculty data -->
+      <section class="article-section article-section-empty" data-stage="10">
+      </section>
+
+      <!-- Stage 11: Return to full view (Students, Faculty, Staff) -->
+      <section class="article-section article-section-empty" data-stage="11">
+      </section>
+
+      <!-- Stage 12: Staff only, centered -->
+      <section class="article-section" data-stage="12">
+        <div class="article-text">
+          <p>Brown’s 3,971 staff employees make the university work. Dining
+            staff <a
+              href="https://www.browndailyherald.com/article/2025/09/behind-the-bagel-bar-a-day-in-the-life-of-the-blue-rooms-supervisor-antonia-monteiro"
+              target="_blank">run the Blue Room</a> and 7 other dining
+            locations. Archivists
+            <a
+              href="https://www.browndailyherald.com/article/2025/10/preserving-the-human-story-day-in-the-life-of-janaya-kizzie-an-archivist-at-the-hay"
+              target="_blank">conserve and catalog historical documents</a> at
+            the John Hay Library.
+            Career advisors <a
+              href="https://www.browndailyherald.com/article/2025/12/brown-names-lizzie-and-jonathan-tisch-center-for-career-exploration-after-20-million-donation"
+              target="_blank">help students determine their path</a> after
+            graduation.
+            Brown splits staff into 13 broad categories, the largest of which
+            are “Computer, Engineering, Science,” “Business and Financial
+            Operations” and “Service.”</p>
+        </div>
+      </section>
+
+      <section class="article-section" data-stage="12">
+        <div class="article-chart">
+          <iframe title="Brown University Staff by Department (2024)"
+            aria-label="Donut Chart" id="datawrapper-chart-U4KAw"
+            src="https://datawrapper.dwcdn.net/U4KAw/1/" scrolling="no"
+            frameborder="0"
+            style="border: none;"
+            height="633" data-external="1"></iframe>
+        </div>
+      </section>
+
+      <script
+        type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";e[r].style.height=d}}}))}();</script>
+
+      <!-- Stage 13: Final full view -->
+      <section class="article-section" data-stage="13">
+        <div class="article-text">
+          <p>Together, these thousands of students, faculty and staff make Brown who it is.</p>
+        </div>
+      </section>
+
+      <!-- Final: Button to explore interactive -->
+      <section class="article-final">
+        <div class="article-text">
+          <h2>Explore the Data</h2>
+          <a href="interactive.html" class="explore-button">Explore Interactive
+            &#x2192;</a>
+        </div>
+      </section>
+    </div>
+
+    <script src="brown-community-data.js"></script>
+      <script src="brown-article-dots.js"></script>
+    </body>
+  </html>
