@@ -25,21 +25,24 @@ p {
   font-family: "freight-text-pro", "Times", serif;
 }
 
+
 #heading {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-height: 15rem;
-  text-align: left;
-  padding: 1rem 2rem 1.2rem 1.2rem;
-  background: var(--lighter-accent-color);
-  border-radius: 0.5rem;
-  color: #000;
-  text-align: center;
-  opacity: 1;
-  transition: opacity 0.8s ease;
-  z-index: 1;
+    min-height: 15rem;
+    text-align: center;
+    padding: 2rem 2.2rem 2.2rem 2.2rem;
+    background-color: var(--lighter-accent-color);
+    /* Light grey background */
+    min-width: 300px;
+    width: 32%;
+    /* Limit the width */
+    margin: 0 auto;
+    /* Center the element horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /* Center the element vertically and horizontally */
 }
 
 #heading h2 {

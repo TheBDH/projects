@@ -166,7 +166,7 @@ scroller
     }
 
     if (stepIndex >= 35 && stepIndex <= 43) {
-      const blockIndex = stepIndex - 28;
+      const blockIndex = stepIndex - 35;
       colorBlocks2.forEach((block, idx) => {
         if (idx === blockIndex) {
           block.style.opacity = 1;
