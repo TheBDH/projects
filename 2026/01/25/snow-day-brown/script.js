@@ -1,5 +1,4 @@
 const heading = document.getElementById("heading");
-const bgVideo = document.getElementById("bg-video");
 const fwImages = document.querySelectorAll(".fw-image");
 const fwImages2 = document.querySelectorAll(".fw-image-2");
 const horizontalGallery = document.querySelector(".gallery-fullwidth");
@@ -152,13 +151,13 @@ scroller
       });
     }
 
-    if (stepIndex >= 28 && stepIndex <= 37) {
+    if (stepIndex >= 28 && stepIndex <= 36) {
       fwImages2.forEach((img, idx) => {
         img.classList.toggle("active", idx === stepIndex - 28);
       });
     }
 
-    if (stepIndex >= 39 && stepIndex <= 44) {
+    if (stepIndex >= 38 && stepIndex <= 44) {
       const blockIndex = stepIndex - 39;
       colorBlocks2.forEach((block, idx) => {
         if (idx === blockIndex) {
