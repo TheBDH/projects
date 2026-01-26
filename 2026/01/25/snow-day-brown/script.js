@@ -182,6 +182,11 @@ scroller
 
     const credit = allCredits[stepIndex + 1] || "";
     creditDiv.textContent = credit;
+  })
+  .onStepExit((response) => {
+    if (response.direction === 'up') {
+      heading.style.opacity = 1;
+    }
   });
 
 const progressBar = document.getElementById("scroll-progress");
