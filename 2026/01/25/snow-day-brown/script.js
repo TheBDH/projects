@@ -1,4 +1,3 @@
-const heading = document.getElementById("heading");
 heading.style.opacity = 1;
 const fwImages = document.querySelectorAll(".fw-image");
 const fwImages2 = document.querySelectorAll(".fw-image-2");
@@ -125,12 +124,6 @@ scroller
   })
   .onStepEnter((response) => {
     const stepIndex = parseInt(response.element.dataset.step);
-
-    if (stepIndex < 1) {
-      heading.style.opacity = 1;
-    } else {
-      heading.style.opacity = 0;
-    }
 
     if (stepIndex >= 10 && stepIndex <= 15) {
       fwImages.forEach((img, idx) => {
