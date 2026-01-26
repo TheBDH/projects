@@ -57,7 +57,7 @@ p {
 }
 
 h4 {
-  font-style: italic;
+  font-weight:normal;
   width: 60%;
   margin: auto;
 }
@@ -181,16 +181,6 @@ a {
   z-index: 1;
 }
 
-#bg-video {
-  transition-duration: 1s;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
 
 .empty-step {
   height: 100vh;
