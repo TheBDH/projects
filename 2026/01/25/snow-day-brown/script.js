@@ -159,13 +159,13 @@ scroller
       });
     }
 
-    if (stepIndex >= 28 && stepIndex <= 34) {
+    if (stepIndex >= 28 && stepIndex <= 36) {
       fwImages2.forEach((img, idx) => {
         img.classList.toggle("active", idx === stepIndex - 28);
       });
     }
 
-    if (stepIndex >= 35 && stepIndex <= 41) {
+    if (stepIndex >= 37 && stepIndex <= 43) {
       const blockIndex = stepIndex - 35;
       colorBlocks2.forEach((block, idx) => {
         if (idx === blockIndex) {
