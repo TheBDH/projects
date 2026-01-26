@@ -1,4 +1,5 @@
 const heading = document.getElementById("heading");
+heading.style.opacity = 1;
 const fwImages = document.querySelectorAll(".fw-image");
 const fwImages2 = document.querySelectorAll(".fw-image-2");
 const horizontalGallery = document.querySelector(".gallery-fullwidth");
@@ -75,6 +76,7 @@ const colorBlocks2 = [
 ]
 
 const allCredits = [
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Annamaria Luecht | The Brown Daily Herald",
   "Media by Annamaria Luecht | The Brown Daily Herald",
   "Media by Annamaria Luecht | The Brown Daily Herald",
@@ -129,7 +131,7 @@ if ("scrollRestoration" in history) {
 scroller
   .setup({
     step: ".step",
-    offset: 0.6,
+    offset: 0.1,
   })
   .onStepEnter((response) => {
     const stepIndex = parseInt(response.element.dataset.step);
@@ -178,7 +180,7 @@ scroller
     const img = d3.select(response.element).select("img");
     if (!img.empty()) img.classed("active", true);
 
-    const credit = allCredits[stepIndex + 2] || "";
+    const credit = allCredits[stepIndex + 1] || "";
     creditDiv.textContent = credit;
   });
 
