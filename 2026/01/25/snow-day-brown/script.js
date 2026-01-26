@@ -1,5 +1,3 @@
-const heading = document.getElementById("heading");
-heading.style.opacity = 1;
 const fwImages = document.querySelectorAll(".fw-image");
 const fwImages2 = document.querySelectorAll(".fw-image-2");
 const horizontalGallery = document.querySelector(".gallery-fullwidth");
@@ -73,7 +71,7 @@ const colorBlocks2 = [
   document.getElementById("block10"),
   document.getElementById("block11"),
   document.getElementById("block12"),
-]
+];
 
 const allCredits = [
   "Media by Annamaria Luecht | The Brown Daily Herald",
@@ -83,22 +81,27 @@ const allCredits = [
   "Media by Bomi Okimoto | The Brown Daily Herald",
   "Media by Bomi Okimoto | The Brown Daily Herald",
   "Media by Bomi Okimoto | The Brown Daily Herald",
+  "Media by Bomi Okimoto | The Brown Daily Herald",
   "Media by Jake Parker | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Henry Wang | The Brown Daily Herald",
+  "Media by Henry Wang | The Brown Daily Herald",
   "Media by Henry Wang | The Brown Daily Herald",
   "Media by Horatio Hamilton | The Brown Daily Herald",
   "Media by Horatio Hamilton | The Brown Daily Herald",
   "Media by Horatio Hamilton | The Brown Daily Herald",
   "Media by Horatio Hamilton | The Brown Daily Herald",
   "Media by Horatio Hamilton | The Brown Daily Herald",
-  "Media by Ina Ma | The Brown Daily Heralda Kao",
-  "Media by Ina Ma | The Brown Daily Heralda Kao",
-  "Media by Ina Ma | The Brown Daily Heralda Kao",
+  "Media by Ina Ma | The Brown Daily Herald",
+  "Media by Ina Ma | The Brown Daily Herald",
+  "Media by Ina Ma | The Brown Daily Herald",
   "Media by Jake Parker | The Brown Daily Herald",
   "Media by Jake Parker | The Brown Daily Herald",
   "Media by Jake Parker | The Brown Daily Herald",
   "Media by Jake Parker | The Brown Daily Herald",
-  "Media by Jake Parker | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
@@ -106,12 +109,15 @@ const allCredits = [
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Annamaria Luecht | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Annamaria Luecht | The Brown Daily Herald",
-  "Media by Selina Kao | The Brown Daily Herald",
-  "Media by Selina Kao | The Brown Daily Herald",
-  "Media by Selina Kao | The Brown Daily Herald",
-  "Media by Selina Kao | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kai LaForte | The Brown Daily Herald",
   "Media by Kenna Lee | The Brown Daily Herald",
+  "Media by Selina Kao | The Brown Daily Herald",
+  "Media by Selina Kao | The Brown Daily Herald",
+  "Media by Selina Kao | The Brown Daily Herald",
+  "Media by Selina Kao | The Brown Daily Herald",
 ];
 
 if ("scrollRestoration" in history) {
@@ -121,16 +127,10 @@ if ("scrollRestoration" in history) {
 scroller
   .setup({
     step: ".step",
-    offset: 0.1,
+    offset: 0.6,
   })
   .onStepEnter((response) => {
     const stepIndex = parseInt(response.element.dataset.step);
-
-  if (stepIndex < 1) {
-    heading.style.opacity = 1;
-  } else {
-    heading.style.opacity = 0;
-  }
 
     if (stepIndex >= 10 && stepIndex <= 15) {
       fwImages.forEach((img, idx) => {
@@ -159,11 +159,11 @@ scroller
     const img = d3.select(response.element).select("img");
     if (!img.empty()) img.classed("active", true);
 
-    const credit = allCredits[stepIndex + 1] || "";
+    const credit = allCredits[stepIndex] || "";
     creditDiv.textContent = credit;
   })
   .onStepExit((response) => {
-    if (response.direction === 'up') {
+    if (response.direction === "up") {
       heading.style.opacity = 1;
     }
   });

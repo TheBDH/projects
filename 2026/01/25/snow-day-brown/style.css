@@ -1,5 +1,5 @@
 :root {
-  --accent-color: #5B7C99;
+  --accent-color: #5b7c99;
   --lighter-accent-color: #9cb5ca;
   --background-color: white;
   --text-color: white;
@@ -25,24 +25,34 @@ p {
   font-family: "freight-text-pro", "Times", serif;
 }
 
-
 #heading {
-    min-height: 15rem;
-    text-align: center;
-    padding: 2rem 2.2rem 2.2rem 2.2rem;
-    background-color: var(--lighter-accent-color);
-    /* Light grey background */
-    min-width: 300px;
-    width: 32%;
-    /* Limit the width */
-    margin: 0 auto;
-    /* Center the element horizontally */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    /* Center the element vertically and horizontally */
+  min-height: 15rem;
+  text-align: center;
+  padding: 2rem 2.2rem 2.2rem 2.2rem;
+  background-color: var(--lighter-accent-color);
+  /* Light grey background */
+  min-width: 300px;
+  width: 32%;
+  /* Limit the width */
+  margin: 0 auto;
+  /* Center the element horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  /* Center the element vertically and horizontally */
+}
+
+#heading .accent {
+  color: var(--text-color);
+  animation: fadeToAccent 2s forwards;
+}
+
+@keyframes fadeToAccent {
+  to {
+    color: var(--accent-color);
+  }
 }
 
 #heading h2 {
@@ -57,7 +67,7 @@ p {
 }
 
 h4 {
-  font-weight:normal;
+  font-weight: normal;
   width: 60%;
   margin: auto;
 }
@@ -137,11 +147,26 @@ a {
 .gallery img {
   width: 70%;
   filter: grayscale(100%);
-  transition: filter 1s ease, transform 1s ease;
+  transition:
+    filter 1s ease,
+    transform 1s ease;
 }
 
 .gallery img.active {
   filter: grayscale(0%);
+}
+
+.full-screen-bg {
+  background-image: url("assets/3.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  margin-top: -8px;
+  margin-left: -8px;
+  padding: 0;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 .fullwidth-wrapper {
@@ -180,7 +205,6 @@ a {
   opacity: 1;
   z-index: 1;
 }
-
 
 .empty-step {
   height: 100vh;
@@ -244,32 +268,32 @@ a {
 }
 
 .background-img {
-    background-size: cover;
-    background-position: center;
-    height: auto;
-    width: 50vw;
-    /* Use viewport width to take up 80% of screen width */
-    border: 4px solid #000;
-    /* Add border */
-    margin: 0 auto;
-    /* Center the image */
-    box-sizing: border-box;
-    /* Include border in the element's total width and height */
-    display: block;
-    /* Ensure the image is treated as a block element */
-    margin-bottom: 0px;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  width: 50vw;
+  /* Use viewport width to take up 80% of screen width */
+  border: 4px solid #000;
+  /* Add border */
+  margin: 0 auto;
+  /* Center the image */
+  box-sizing: border-box;
+  /* Include border in the element's total width and height */
+  display: block;
+  /* Ensure the image is treated as a block element */
+  margin-bottom: 0px;
 }
 
 .image-credit {
-    font-size: 1rem;
-    font-style: italic;
-    color: white;
-    text-align: center;
-    margin-top: 15px;
-    background-color: var(--accent-color);
-    width: 280px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px;
-    font-family: "freight-text-pro", "Georgia", "Times", serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+  background-color: var(--accent-color);
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  font-family: "freight-text-pro", "Georgia", "Times", serif;
 }
