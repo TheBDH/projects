@@ -65,7 +65,7 @@ h4 {
 }
 
 #byline .author {
-  background-color: #cf5c36;
+  background-color: var(--accent-color);
   color: #f5efed;
   padding: 0.2rem;
   padding-left: 0.4rem;
@@ -82,7 +82,7 @@ h4 {
 }
 
 a {
-  color: #cf5c36;
+  color: var(--accent-color);
 }
 
 /* mobile formatting */

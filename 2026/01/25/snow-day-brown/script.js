@@ -34,6 +34,22 @@ const allImages = [
   "assets/23.jpg",
   "assets/24.jpg",
   "assets/25.jpg",
+  "assets/26.jpg",
+  "assets/27.jpg",
+  "assets/28.jpg",
+  "assets/29.jpg",
+  "assets/30.jpg",
+  "assets/31.jpg",
+  "assets/32.jpg",
+  "assets/33.jpg",
+  "assets/34.jpg",
+  "assets/35.jpg",
+  "assets/36.jpg",
+  "assets/37.jpg",
+  "assets/38.jpg",
+  "assets/39.jpg",
+  "assets/40.jpg",
+  "assets/41.jpg",
 ];
 
 allImages.forEach((src) => {
@@ -51,46 +67,51 @@ const colorBlocks = [
 ];
 
 const allCredits = [
-  "Media by Max Robinson | The Brown Daily Herald",
-  "Media by Max Robinson | The Brown Daily Herald",
-  "Media by Max Robinson | The Brown Daily Herald",
-  "Media by Kaia Yalamanchili | The Brown Daily Herald",
-  "Media by Kaia Yalamanchili | The Brown Daily Herald",
-  "Media by Max Robinson | The Brown Daily Herald",
-  "Media by Phoebe Grace Aseoche | The Brown Daily Herald",
+  "Media by Annamaria Luecht | The Brown Daily Herald",
+  "Media by Annamaria Luecht | The Brown Daily Herald",
+  "Media by Annamaria Luecht | The Brown Daily Herald",
+  "Media by Bomi Okimoto | The Brown Daily Herald",
+  "Media by Bomi Okimoto | The Brown Daily Herald",
+  "Media by Bomi Okimoto | The Brown Daily Herald",
+  "Media by Bomi Okimoto | The Brown Daily Herald",
+  "Media by Jake Parker | The Brown Daily Herald",
   "Media by Sidney Lin | The Brown Daily Herald",
-  "Media by Sidney Lin | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
-  "Media by Max Robinson | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
   "Media by Max Robinson | The Brown Daily Herald",
   "Media by Bomi Okimoto | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
-  "Media by Bomi Okimoto | The Brown Daily Herald",
+  "Media by Henry Wang | The Brown Daily Herald",
+  "Media by Henry Wang | The Brown Daily Herald",
+  "Media by Henry Wang | The Brown Daily Herald",
   "Media by Horatio Hamilton | The Brown Daily Herald",
   "Media by Horatio Hamilton | The Brown Daily Herald",
-  "Media by Sidney Lin | The Brown Daily Herald",
-  "Media by Kaia Yalamanchili | The Brown Daily Herald",
-  "Media by Marat Basaria | The Brown Daily Herald",
-  "Media by Max Robinson | The Brown Daily Herald",
-  "Media by Bomi Okimoto | The Brown Daily Herald",
-  "Media by Selina Kao | The Brown Daily Heralda Kao",
-  "Media by Max Robinson | The Brown Daily Herald",
-  "Media by Sidney Lin | The Brown Daily Herald",
-  "Media by Kenna Lee | The Brown Daily Herald",
-  "Media by Sidney Lin | The Brown Daily Herald",
-  "Media by Bomi Okimoto | The Brown Daily Herald",
-  "Media by Dolma Arow | The Brown Daily Herald",
+  "Media by Horatio Hamilton | The Brown Daily Herald",
+  "Media by Horatio Hamilton | The Brown Daily Herald",
+  "Media by Horatio Hamilton | The Brown Daily Herald",
+  "Media by Ina Ma | The Brown Daily Heralda Kao",
+  "Media by Ina Ma | The Brown Daily Heralda Kao",
+  "Media by Ina Ma | The Brown Daily Heralda Kao",
+  "Media by Jake Parker | The Brown Daily Herald",
+  "Media by Jake Parker | The Brown Daily Herald",
+  "Media by Jake Parker | The Brown Daily Herald",
+  "Media by Jake Parker | The Brown Daily Herald",
   "",
-  "Media by Ella Le | The Brown Daily Herald",
-  "Media by Horatio Hamilton | The Brown Daily Herald",
-  "Media by Horatio Hamilton | The Brown Daily Herald",
   "Media by Kaia Yalamanchili | The Brown Daily Herald",
-  "Media by Sidney Lin | The Brown Daily Herald",
-  "Media by Marat Basaria | The Brown Daily Herald",
-  "Media by Phoebe Grace Aseoche | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kaia Yalamanchili | The Brown Daily Herald",
+  "Media by Kenna Lee | The Brown Daily Herald",
   "Media by Selina Kao | The Brown Daily Herald",
-  "Media by Alayna Chen | The Brown Daily Herald",
-  "Media by Max Robinson | The Brown Daily Herald",
+  "Media by Selina Kao | The Brown Daily Herald",
+  "Media by Selina Kao | The Brown Daily Herald",
 ];
 
 if ("scrollRestoration" in history) {
@@ -136,6 +157,12 @@ scroller
     if (stepIndex >= 28 && stepIndex <= 37) {
       fwImages2.forEach((img, idx) => {
         img.classList.toggle("active", idx === stepIndex - 28);
+      });
+    }
+
+    if (stepIndex >= 39 && stepIndex <= 44) {
+      fwImages2.forEach((img, idx) => {
+        img.classList.toggle("active", idx === stepIndex - 39);
       });
     }
 
