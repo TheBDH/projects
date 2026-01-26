@@ -32,11 +32,11 @@ p {
   min-height: 15rem;
   text-align: left;
   padding: 1rem 2rem 1.2rem 1.2rem;
-  background: rgba(255, 255, 255);
+  background: var(--accent-color);
   border-radius: 0.5rem;
   color: #000;
   text-align: center;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.8s ease;
   z-index: 1;
 }

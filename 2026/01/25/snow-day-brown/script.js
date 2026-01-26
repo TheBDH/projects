@@ -134,6 +134,12 @@ scroller
   .onStepEnter((response) => {
     const stepIndex = parseInt(response.element.dataset.step);
 
+  if (stepIndex < 1) {
+    heading.style.opacity = 1;
+  } else {
+    heading.style.opacity = 0;
+  }
+
     if (stepIndex >= 10 && stepIndex <= 15) {
       fwImages.forEach((img, idx) => {
         img.classList.toggle("active", idx === stepIndex - 10);
@@ -151,14 +157,14 @@ scroller
       });
     }
 
-    if (stepIndex >= 28 && stepIndex <= 36) {
+    if (stepIndex >= 28 && stepIndex <= 34) {
       fwImages2.forEach((img, idx) => {
         img.classList.toggle("active", idx === stepIndex - 28);
       });
     }
 
-    if (stepIndex >= 38 && stepIndex <= 44) {
-      const blockIndex = stepIndex - 39;
+    if (stepIndex >= 35 && stepIndex <= 43) {
+      const blockIndex = stepIndex - 28;
       colorBlocks2.forEach((block, idx) => {
         if (idx === blockIndex) {
           block.style.opacity = 1;
