@@ -1,8 +1,10 @@
 
 :root{
-    --light-blue: #97c1e6;
+    --background-color: white;
+    --card-color: rgba(151, 193, 230, 0.65);
     --text-color: white;
     --dark-color: #495d6e;
+    --author-background: #495d6e;
 
 }
 body {
@@ -11,7 +13,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    background-color: var(--light-blue);
+    background-color: var(--background-color);
     color: black;
 }
 
@@ -25,7 +27,7 @@ body {
     text-align: center;
     margin-top: 0.5rem;
     z-index: 300; /* Increased z-index */
-    background-color: rgba(255, 255, 255, 0.65); /* Added black background */
+    background-color: var(--card-color); /* Added black background */
     margin-left: auto;
     margin-right: auto;
     width: 40%; /* Make the background full width */
@@ -34,7 +36,7 @@ body {
 }
 
 .HIDE {
-    background-color: rgba(255,255,255,255);
+    background-color: var(--card-color);
 }
 
 #images {
@@ -71,7 +73,7 @@ body {
     min-height: 15rem;
     text-align: center;
     padding: 2rem 2.2rem 2.2rem 2.2rem;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--card-color);
     /* Light grey background */
     max-width: 40%;
     /* Limit the width */
@@ -89,7 +91,7 @@ body {
     text-align: center;
     margin-top: 20px;
     padding: 2rem 2.2rem;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--card-color);
     max-width: 40%;
     margin: 20px auto;
     box-sizing: border-box;
@@ -148,7 +150,7 @@ body {
 }
 
 #byline .author {
-    background-color: var(--light-blue);
+    background-color: var(--author-background);
     padding: 0.2rem;
     padding-left: 0.4rem;
     padding-right: 0.4rem;
