@@ -13,6 +13,8 @@
     dotRadius: 4,
     peoplePerDot: 5,
     clusterSpread: 4,
+    stage0ClusterSpread: 8, // Larger spread for stage 0
+    staffClusterSpread: 8,  // Larger spread for Staff blob
     animDuration: 400,      // Faster for responsive scrolling
     fadeOutDuration: 200,
     observerRootMargin: '-10% 0px -10% 0px',
@@ -315,7 +317,7 @@
     const totalCount = scaledCount(brownData.students.total) + 
                        scaledCount(brownData.faculty.total) + 
                        scaledCount(brownData.staff.total);
-    const sharedRadius = Math.sqrt(totalCount) * CONFIG.clusterSpread;
+    const sharedRadius = Math.sqrt(totalCount) * CONFIG.stage0ClusterSpread;
 
     // Generate student dots with fixed subgroup assignments based on 2024 data
     const byType = brownData.students.byType;
@@ -588,7 +590,7 @@
       const visibleGroups = new Set(stage.groups.filter(g => g.visible).map(g => g.name));
       const visibleDots = articleState.dots.filter(d => d.historicallyVisible && (visibleGroups.has(d.currentGroup) || visibleGroups.has(d.subGroup) || visibleGroups.has(d.baseGroup)));
       const totalCount = visibleDots.length;
-      const sharedRadius = Math.sqrt(totalCount) * CONFIG.clusterSpread;
+      const sharedRadius = Math.sqrt(totalCount) * CONFIG.stage0ClusterSpread;
       const centerX = articleState.width / 2;
       const centerY = articleState.height / 2;
 
@@ -624,7 +626,8 @@
         
         // Only count visible dots for cluster radius
         const visibleGroupDots = groupDots.filter(d => d.historicallyVisible);
-        const clusterRadius = Math.sqrt(visibleGroupDots.length || 1) * CONFIG.clusterSpread;
+        const spreadMultiplier = group.name === 'Staff' ? CONFIG.staffClusterSpread : CONFIG.clusterSpread;
+        const clusterRadius = Math.sqrt(visibleGroupDots.length || 1) * spreadMultiplier;
 
         groupDots.forEach(dot => {
           // If shouldKeepPositions is true, don't move any dots - only change opacity
@@ -724,7 +727,8 @@
   function renderLabels(groups) {
     groups.forEach(group => {
       const count = scaledCount(group.count);
-      const radius = Math.sqrt(count) * CONFIG.clusterSpread;
+      const spreadMultiplier = group.name === 'Staff' ? CONFIG.staffClusterSpread : CONFIG.clusterSpread;
+      const radius = Math.sqrt(count) * spreadMultiplier;
 
       articleLabelsGroup.append('text')
         .attr('class', 'article-label')
