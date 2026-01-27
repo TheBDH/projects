@@ -18,7 +18,20 @@
     animDuration: 400,      // Faster for responsive scrolling
     fadeOutDuration: 200,
     observerRootMargin: '-10% 0px -10% 0px',
-    observerThreshold: 0.1
+    observerThreshold: 0.1,
+    // Three-group layout (Students/Faculty/Staff) - horizontal positions
+    threeGroupX1: 0.28,       // First group X position (Students)
+    threeGroupX2: 0.55,        // Second group X position (Faculty)
+    threeGroupX3: 0.78,       // Third group X position (Staff)
+    // Student subtypes layout (Undergrad/Grad/Medical) - horizontal positions
+    studentSubtypeX1: 0.35,   // Undergraduate X position
+    studentSubtypeX2: 0.59,   // Graduate X position
+    studentSubtypeX3: 0.75,   // Medical X position
+    // Faculty subtypes layout (Instructional/Research) - horizontal positions
+    facultySubtypeX1: 0.35,   // Instructional X position
+    facultySubtypeX2: 0.65,   // Research X position
+    // Year label position
+    yearX: 0.08               // Year label X position (fraction of screen width)
   };
 
   // Mobile-specific configuration - adjust these values for portrait/vertical screens
@@ -116,9 +129,9 @@
       shuffle: false,
       showLabels: true,
       groups: [
-        { name: 'Students', count: brownData.students.total, color: colors.students, x: portrait ? centerX : articleState.width * 0.25, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY1 : articleState.height / 2, visible: true },
-        { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: portrait ? centerX : articleState.width * 0.5, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY2 : articleState.height / 2, visible: true },
-        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: portrait ? centerX : articleState.width * 0.75, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY3 : articleState.height / 2, visible: true }
+        { name: 'Students', count: brownData.students.total, color: colors.students, x: portrait ? centerX : articleState.width * CONFIG.threeGroupX1, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY1 : articleState.height / 2, visible: true },
+        { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: portrait ? centerX : articleState.width * CONFIG.threeGroupX2, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY2 : articleState.height / 2, visible: true },
+        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: portrait ? centerX : articleState.width * CONFIG.threeGroupX3, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY3 : articleState.height / 2, visible: true }
       ]
     };
   }
@@ -154,9 +167,9 @@
       showYear: 2024,
       keepPositions: true, // Part of year comparison group - dots stay in place for 3↔4↔5
       groups: [
-        { name: 'Undergraduate', count: byType.undergrad, color: colors.undergrad, x: portrait ? centerX : articleState.width * 0.35, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
-        { name: 'Graduate', count: byType.grad, color: colors.grad, x: portrait ? centerX : articleState.width * 0.55, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
-        { name: 'Medical', count: byType.medical, color: colors.medical, x: portrait ? centerX : articleState.width * 0.75, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY3 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Undergraduate', count: byType.undergrad, color: colors.undergrad, x: portrait ? centerX : articleState.width * CONFIG.studentSubtypeX1, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Graduate', count: byType.grad, color: colors.grad, x: portrait ? centerX : articleState.width * CONFIG.studentSubtypeX2, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Medical', count: byType.medical, color: colors.medical, x: portrait ? centerX : articleState.width * CONFIG.studentSubtypeX3, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY3 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
         { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: articleState.width / 2, y: articleState.height / 2, visible: false },
         { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: articleState.width / 2, y: articleState.height / 2, visible: false }
       ]
@@ -175,9 +188,9 @@
       showYear: 2014,
       keepPositions: true, // Dots stay in place, only fade
       groups: [
-        { name: 'Undergraduate', count: byType.undergrad, color: colors.undergrad, x: portrait ? centerX : articleState.width * 0.35, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
-        { name: 'Graduate', count: byType.grad, color: colors.grad, x: portrait ? centerX : articleState.width * 0.55, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
-        { name: 'Medical', count: byType.medical, color: colors.medical, x: portrait ? centerX : articleState.width * 0.75, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY3 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Undergraduate', count: byType.undergrad, color: colors.undergrad, x: portrait ? centerX : articleState.width * CONFIG.studentSubtypeX1, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Graduate', count: byType.grad, color: colors.grad, x: portrait ? centerX : articleState.width * CONFIG.studentSubtypeX2, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Medical', count: byType.medical, color: colors.medical, x: portrait ? centerX : articleState.width * CONFIG.studentSubtypeX3, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY3 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
         { name: 'Faculty', count: 0, color: colors.faculty, x: articleState.width / 2, y: articleState.height / 2, visible: false },
         { name: 'Staff', count: 0, color: colors.staff, x: articleState.width / 2, y: articleState.height / 2, visible: false }
       ]
@@ -196,9 +209,9 @@
       showYear: 2004,
       keepPositions: true, // Dots stay in place, only fade
       groups: [
-        { name: 'Undergraduate', count: byType.undergrad, color: colors.undergrad, x: portrait ? centerX : articleState.width * 0.35, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
-        { name: 'Graduate', count: byType.grad, color: colors.grad, x: portrait ? centerX : articleState.width * 0.55, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
-        { name: 'Medical', count: byType.medical, color: colors.medical, x: portrait ? centerX : articleState.width * 0.75, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY3 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Undergraduate', count: byType.undergrad, color: colors.undergrad, x: portrait ? centerX : articleState.width * CONFIG.studentSubtypeX1, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Graduate', count: byType.grad, color: colors.grad, x: portrait ? centerX : articleState.width * CONFIG.studentSubtypeX2, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Medical', count: byType.medical, color: colors.medical, x: portrait ? centerX : articleState.width * CONFIG.studentSubtypeX3, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY3 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
         { name: 'Faculty', count: 0, color: colors.faculty, x: articleState.width / 2, y: articleState.height / 2, visible: false },
         { name: 'Staff', count: 0, color: colors.staff, x: articleState.width / 2, y: articleState.height / 2, visible: false }
       ]
@@ -214,9 +227,9 @@
       shuffle: false,
       showLabels: true,
       groups: [
-        { name: 'Students', count: brownData.students.total, color: colors.students, x: portrait ? centerX : articleState.width * 0.25, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY1 : articleState.height / 2, visible: true },
-        { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: portrait ? centerX : articleState.width * 0.5, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY2 : articleState.height / 2, visible: true },
-        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: portrait ? centerX : articleState.width * 0.75, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY3 : articleState.height / 2, visible: true }
+        { name: 'Students', count: brownData.students.total, color: colors.students, x: portrait ? centerX : articleState.width * CONFIG.threeGroupX1, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY1 : articleState.height / 2, visible: true },
+        { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: portrait ? centerX : articleState.width * CONFIG.threeGroupX2, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY2 : articleState.height / 2, visible: true },
+        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: portrait ? centerX : articleState.width * CONFIG.threeGroupX3, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY3 : articleState.height / 2, visible: true }
       ]
     };
   }
@@ -252,8 +265,8 @@
       yearColor: colors.faculty,
       keepPositions: true, // Part of year comparison group
       groups: [
-        { name: 'Instructional', count: byType.instructional, color: colors.instructional, x: portrait ? centerX : articleState.width * 0.35, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
-        { name: 'Research', count: byType.research, color: colors.research, x: portrait ? centerX : articleState.width * 0.65, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
+        { name: 'Instructional', count: byType.instructional, color: colors.instructional, x: portrait ? centerX : articleState.width * CONFIG.facultySubtypeX1, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
+        { name: 'Research', count: byType.research, color: colors.research, x: portrait ? centerX : articleState.width * CONFIG.facultySubtypeX2, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
         { name: 'Students', count: brownData.students.total, color: colors.students, x: articleState.width / 2, y: articleState.height / 2, visible: false },
         { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: articleState.width / 2, y: articleState.height / 2, visible: false }
       ]
@@ -273,8 +286,8 @@
       yearColor: colors.faculty,
       keepPositions: true, // Dots stay in place, only fade
       groups: [
-        { name: 'Instructional', count: byType.instructional, color: colors.instructional, x: portrait ? centerX : articleState.width * 0.35, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
-        { name: 'Research', count: byType.research, color: colors.research, x: portrait ? centerX : articleState.width * 0.65, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
+        { name: 'Instructional', count: byType.instructional, color: colors.instructional, x: portrait ? centerX : articleState.width * CONFIG.facultySubtypeX1, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
+        { name: 'Research', count: byType.research, color: colors.research, x: portrait ? centerX : articleState.width * CONFIG.facultySubtypeX2, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
         { name: 'Students', count: 0, color: colors.students, x: articleState.width / 2, y: articleState.height / 2, visible: false },
         { name: 'Staff', count: 0, color: colors.staff, x: articleState.width / 2, y: articleState.height / 2, visible: false }
       ]
@@ -294,8 +307,8 @@
       yearColor: colors.faculty,
       keepPositions: true, // Dots stay in place, only fade
       groups: [
-        { name: 'Instructional', count: byType.instructional, color: colors.instructional, x: portrait ? centerX : articleState.width * 0.35, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
-        { name: 'Research', count: byType.research, color: colors.research, x: portrait ? centerX : articleState.width * 0.65, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
+        { name: 'Instructional', count: byType.instructional, color: colors.instructional, x: portrait ? centerX : articleState.width * CONFIG.facultySubtypeX1, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
+        { name: 'Research', count: byType.research, color: colors.research, x: portrait ? centerX : articleState.width * CONFIG.facultySubtypeX2, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
         { name: 'Students', count: 0, color: colors.students, x: articleState.width / 2, y: articleState.height / 2, visible: false },
         { name: 'Staff', count: 0, color: colors.staff, x: articleState.width / 2, y: articleState.height / 2, visible: false }
       ]
@@ -310,9 +323,9 @@
       shuffle: false,
       showLabels: true,
       groups: [
-        { name: 'Students', count: brownData.students.total, color: colors.students, x: portrait ? centerX : articleState.width * 0.25, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY1 : articleState.height / 2, visible: true },
-        { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: portrait ? centerX : articleState.width * 0.5, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY2 : articleState.height / 2, visible: true },
-        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: portrait ? centerX : articleState.width * 0.75, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY3 : articleState.height / 2, visible: true }
+        { name: 'Students', count: brownData.students.total, color: colors.students, x: portrait ? centerX : articleState.width * CONFIG.threeGroupX1, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY1 : articleState.height / 2, visible: true },
+        { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: portrait ? centerX : articleState.width * CONFIG.threeGroupX2, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY2 : articleState.height / 2, visible: true },
+        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: portrait ? centerX : articleState.width * CONFIG.threeGroupX3, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY3 : articleState.height / 2, visible: true }
       ]
     };
   }
@@ -751,7 +764,7 @@
     const portrait = isPortrait();
     articleLabelsGroup.append('text')
       .attr('class', 'article-year')
-      .attr('x', portrait ? articleState.width / 2 : articleState.width * 0.08)
+      .attr('x', portrait ? articleState.width / 2 : articleState.width * CONFIG.yearX)
       .attr('y', portrait ? articleState.height * MOBILE_CONFIG.yearY : articleState.height / 2)
       .attr('text-anchor', portrait ? 'middle' : 'start')
       .attr('dominant-baseline', 'middle')
