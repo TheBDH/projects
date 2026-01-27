@@ -14,11 +14,33 @@
     peoplePerDot: 5,
     clusterSpread: 4,
     stage0ClusterSpread: 8, // Larger spread for stage 0
-    staffClusterSpread: 8,  // Larger spread for Staff blob
+    stage12StaffSpread: 8,  // Larger spread for Staff blob in stage 12 only
     animDuration: 400,      // Faster for responsive scrolling
     fadeOutDuration: 200,
     observerRootMargin: '-10% 0px -10% 0px',
     observerThreshold: 0.1
+  };
+
+  // Mobile-specific configuration - adjust these values for portrait/vertical screens
+  const MOBILE_CONFIG = {
+    clusterSpread: 2.5,       // Cluster spread on mobile (smaller = tighter dots)
+    labelOffset: 15,          // Distance from cluster bottom to label
+    countOffset: 30,          // Distance from cluster bottom to count number
+    labelFontSize: '14px',
+    countFontSize: '12px',
+    yearFontSize: '56px',
+    yearY: 0.12,              // Year label Y position (fraction of screen height)
+    // Three-group layout (Students/Faculty/Staff) - vertical positions
+    threeGroupY1: 0.2,        // First group Y position
+    threeGroupY2: 0.5,        // Second group Y position  
+    threeGroupY3: 0.8,        // Third group Y position
+    // Student subtypes layout (Undergrad/Grad/Medical) - vertical positions
+    studentSubtypeY1: 0.3,   // Undergraduate Y position
+    studentSubtypeY2: 0.55,    // Graduate Y position
+    studentSubtypeY3: 0.8,   // Medical Y position
+    // Faculty subtypes layout (Instructional/Research) - vertical positions
+    facultySubtypeY1: 0.35,   // Instructional Y position
+    facultySubtypeY2: 0.65    // Research Y position
   };
 
   // ============================================
@@ -47,6 +69,10 @@
     const angle = Math.random() * 2 * Math.PI;
     const r = Math.random() * radius;
     return { x: cx + Math.cos(angle) * r, y: cy + Math.sin(angle) * r };
+  }
+
+  function isPortrait() {
+    return articleState.height > articleState.width;
   }
 
   // ============================================
@@ -84,13 +110,15 @@
 
   function getStage1() {
     // Split into three groups: Students, Faculty, Staff (same colors as stage 0)
+    const portrait = isPortrait();
+    const centerX = articleState.width / 2;
     return {
       shuffle: false,
       showLabels: true,
       groups: [
-        { name: 'Students', count: brownData.students.total, color: colors.students, x: articleState.width * 0.25, y: articleState.height / 2, visible: true },
-        { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: articleState.width * 0.5, y: articleState.height / 2, visible: true },
-        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: articleState.width * 0.75, y: articleState.height / 2, visible: true }
+        { name: 'Students', count: brownData.students.total, color: colors.students, x: portrait ? centerX : articleState.width * 0.25, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY1 : articleState.height / 2, visible: true },
+        { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: portrait ? centerX : articleState.width * 0.5, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY2 : articleState.height / 2, visible: true },
+        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: portrait ? centerX : articleState.width * 0.75, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY3 : articleState.height / 2, visible: true }
       ]
     };
   }
@@ -117,6 +145,8 @@
   function getStage3() {
     // Undergrad, Grad, Medical split into three separate groups - 2024 data
     const byType = brownData.students.byType;
+    const portrait = isPortrait();
+    const centerX = articleState.width / 2;
     
     return {
       shuffle: false,
@@ -124,9 +154,9 @@
       showYear: 2024,
       keepPositions: true, // Part of year comparison group - dots stay in place for 3↔4↔5
       groups: [
-        { name: 'Undergraduate', count: byType.undergrad, color: colors.undergrad, x: articleState.width * 0.35, y: articleState.height / 2, visible: true, sourceGroup: 'Students' },
-        { name: 'Graduate', count: byType.grad, color: colors.grad, x: articleState.width * 0.55, y: articleState.height / 2, visible: true, sourceGroup: 'Students' },
-        { name: 'Medical', count: byType.medical, color: colors.medical, x: articleState.width * 0.75, y: articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Undergraduate', count: byType.undergrad, color: colors.undergrad, x: portrait ? centerX : articleState.width * 0.35, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Graduate', count: byType.grad, color: colors.grad, x: portrait ? centerX : articleState.width * 0.55, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Medical', count: byType.medical, color: colors.medical, x: portrait ? centerX : articleState.width * 0.75, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY3 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
         { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: articleState.width / 2, y: articleState.height / 2, visible: false },
         { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: articleState.width / 2, y: articleState.height / 2, visible: false }
       ]
@@ -136,6 +166,8 @@
   function getStage4() {
     // 2014 data - Undergrad, Grad, Medical split
     const byType = brownData2014.students.byType;
+    const portrait = isPortrait();
+    const centerX = articleState.width / 2;
     
     return {
       shuffle: false,
@@ -143,9 +175,9 @@
       showYear: 2014,
       keepPositions: true, // Dots stay in place, only fade
       groups: [
-        { name: 'Undergraduate', count: byType.undergrad, color: colors.undergrad, x: articleState.width * 0.35, y: articleState.height / 2, visible: true, sourceGroup: 'Students' },
-        { name: 'Graduate', count: byType.grad, color: colors.grad, x: articleState.width * 0.55, y: articleState.height / 2, visible: true, sourceGroup: 'Students' },
-        { name: 'Medical', count: byType.medical, color: colors.medical, x: articleState.width * 0.75, y: articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Undergraduate', count: byType.undergrad, color: colors.undergrad, x: portrait ? centerX : articleState.width * 0.35, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Graduate', count: byType.grad, color: colors.grad, x: portrait ? centerX : articleState.width * 0.55, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Medical', count: byType.medical, color: colors.medical, x: portrait ? centerX : articleState.width * 0.75, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY3 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
         { name: 'Faculty', count: 0, color: colors.faculty, x: articleState.width / 2, y: articleState.height / 2, visible: false },
         { name: 'Staff', count: 0, color: colors.staff, x: articleState.width / 2, y: articleState.height / 2, visible: false }
       ]
@@ -155,6 +187,8 @@
   function getStage5() {
     // 2004 data - Undergrad, Grad, Medical split
     const byType = brownData2004.students.byType;
+    const portrait = isPortrait();
+    const centerX = articleState.width / 2;
     
     return {
       shuffle: false,
@@ -162,9 +196,9 @@
       showYear: 2004,
       keepPositions: true, // Dots stay in place, only fade
       groups: [
-        { name: 'Undergraduate', count: byType.undergrad, color: colors.undergrad, x: articleState.width * 0.35, y: articleState.height / 2, visible: true, sourceGroup: 'Students' },
-        { name: 'Graduate', count: byType.grad, color: colors.grad, x: articleState.width * 0.55, y: articleState.height / 2, visible: true, sourceGroup: 'Students' },
-        { name: 'Medical', count: byType.medical, color: colors.medical, x: articleState.width * 0.75, y: articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Undergraduate', count: byType.undergrad, color: colors.undergrad, x: portrait ? centerX : articleState.width * 0.35, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Graduate', count: byType.grad, color: colors.grad, x: portrait ? centerX : articleState.width * 0.55, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
+        { name: 'Medical', count: byType.medical, color: colors.medical, x: portrait ? centerX : articleState.width * 0.75, y: portrait ? articleState.height * MOBILE_CONFIG.studentSubtypeY3 : articleState.height / 2, visible: true, sourceGroup: 'Students' },
         { name: 'Faculty', count: 0, color: colors.faculty, x: articleState.width / 2, y: articleState.height / 2, visible: false },
         { name: 'Staff', count: 0, color: colors.staff, x: articleState.width / 2, y: articleState.height / 2, visible: false }
       ]
@@ -174,13 +208,15 @@
   function getStage6() {
     // Return to three-group view: Students combine back, Faculty and Staff appear
     // Students merge back into single color, faculty and staff fade in
+    const portrait = isPortrait();
+    const centerX = articleState.width / 2;
     return {
       shuffle: false,
       showLabels: true,
       groups: [
-        { name: 'Students', count: brownData.students.total, color: colors.students, x: articleState.width * 0.25, y: articleState.height / 2, visible: true },
-        { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: articleState.width * 0.5, y: articleState.height / 2, visible: true },
-        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: articleState.width * 0.75, y: articleState.height / 2, visible: true }
+        { name: 'Students', count: brownData.students.total, color: colors.students, x: portrait ? centerX : articleState.width * 0.25, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY1 : articleState.height / 2, visible: true },
+        { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: portrait ? centerX : articleState.width * 0.5, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY2 : articleState.height / 2, visible: true },
+        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: portrait ? centerX : articleState.width * 0.75, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY3 : articleState.height / 2, visible: true }
       ]
     };
   }
@@ -206,6 +242,8 @@
   function getStage8() {
     // Instructional and Research split into two separate groups - 2024 data
     const byType = brownData.faculty.byType;
+    const portrait = isPortrait();
+    const centerX = articleState.width / 2;
     
     return {
       shuffle: false,
@@ -214,8 +252,8 @@
       yearColor: colors.faculty,
       keepPositions: true, // Part of year comparison group
       groups: [
-        { name: 'Instructional', count: byType.instructional, color: colors.instructional, x: articleState.width * 0.35, y: articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
-        { name: 'Research', count: byType.research, color: colors.research, x: articleState.width * 0.65, y: articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
+        { name: 'Instructional', count: byType.instructional, color: colors.instructional, x: portrait ? centerX : articleState.width * 0.35, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
+        { name: 'Research', count: byType.research, color: colors.research, x: portrait ? centerX : articleState.width * 0.65, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
         { name: 'Students', count: brownData.students.total, color: colors.students, x: articleState.width / 2, y: articleState.height / 2, visible: false },
         { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: articleState.width / 2, y: articleState.height / 2, visible: false }
       ]
@@ -225,6 +263,8 @@
   function getStage9() {
     // 2014 faculty data - Instructional and Research split
     const byType = brownData2014.faculty.byType;
+    const portrait = isPortrait();
+    const centerX = articleState.width / 2;
     
     return {
       shuffle: false,
@@ -233,8 +273,8 @@
       yearColor: colors.faculty,
       keepPositions: true, // Dots stay in place, only fade
       groups: [
-        { name: 'Instructional', count: byType.instructional, color: colors.instructional, x: articleState.width * 0.35, y: articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
-        { name: 'Research', count: byType.research, color: colors.research, x: articleState.width * 0.65, y: articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
+        { name: 'Instructional', count: byType.instructional, color: colors.instructional, x: portrait ? centerX : articleState.width * 0.35, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
+        { name: 'Research', count: byType.research, color: colors.research, x: portrait ? centerX : articleState.width * 0.65, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
         { name: 'Students', count: 0, color: colors.students, x: articleState.width / 2, y: articleState.height / 2, visible: false },
         { name: 'Staff', count: 0, color: colors.staff, x: articleState.width / 2, y: articleState.height / 2, visible: false }
       ]
@@ -244,6 +284,8 @@
   function getStage10() {
     // 2004 faculty data - Instructional and Research split
     const byType = brownData2004.faculty.byType;
+    const portrait = isPortrait();
+    const centerX = articleState.width / 2;
     
     return {
       shuffle: false,
@@ -252,8 +294,8 @@
       yearColor: colors.faculty,
       keepPositions: true, // Dots stay in place, only fade
       groups: [
-        { name: 'Instructional', count: byType.instructional, color: colors.instructional, x: articleState.width * 0.35, y: articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
-        { name: 'Research', count: byType.research, color: colors.research, x: articleState.width * 0.65, y: articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
+        { name: 'Instructional', count: byType.instructional, color: colors.instructional, x: portrait ? centerX : articleState.width * 0.35, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY1 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
+        { name: 'Research', count: byType.research, color: colors.research, x: portrait ? centerX : articleState.width * 0.65, y: portrait ? articleState.height * MOBILE_CONFIG.facultySubtypeY2 : articleState.height / 2, visible: true, sourceGroup: 'Faculty' },
         { name: 'Students', count: 0, color: colors.students, x: articleState.width / 2, y: articleState.height / 2, visible: false },
         { name: 'Staff', count: 0, color: colors.staff, x: articleState.width / 2, y: articleState.height / 2, visible: false }
       ]
@@ -262,13 +304,15 @@
 
   function getStage11() {
     // Return to three-group view: Students, Faculty, and Staff
+    const portrait = isPortrait();
+    const centerX = articleState.width / 2;
     return {
       shuffle: false,
       showLabels: true,
       groups: [
-        { name: 'Students', count: brownData.students.total, color: colors.students, x: articleState.width * 0.25, y: articleState.height / 2, visible: true },
-        { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: articleState.width * 0.5, y: articleState.height / 2, visible: true },
-        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: articleState.width * 0.75, y: articleState.height / 2, visible: true }
+        { name: 'Students', count: brownData.students.total, color: colors.students, x: portrait ? centerX : articleState.width * 0.25, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY1 : articleState.height / 2, visible: true },
+        { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: portrait ? centerX : articleState.width * 0.5, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY2 : articleState.height / 2, visible: true },
+        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: portrait ? centerX : articleState.width * 0.75, y: portrait ? articleState.height * MOBILE_CONFIG.threeGroupY3 : articleState.height / 2, visible: true }
       ]
     };
   }
@@ -280,9 +324,9 @@
     
     return {
       shuffle: false,
-      showLabels: true,
+      showLabels: false,
       groups: [
-        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: centerX, y: centerY, visible: true },
+        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: centerX, y: centerY, visible: true, clusterSpread: CONFIG.stage12StaffSpread },
         { name: 'Students', count: brownData.students.total, color: colors.students, x: centerX, y: centerY, visible: false },
         { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: centerX, y: centerY, visible: false }
       ]
@@ -290,14 +334,15 @@
   }
 
   function getStage13() {
-    // Final view: all three groups
+    // Final view: all three groups mixed together in center (like stage 0)
+    const centerX = articleState.width / 2;
+    const centerY = articleState.height / 2;
     return {
-      shuffle: false,
-      showLabels: true,
+      shuffle: true, // Mix all dots together
       groups: [
-        { name: 'Students', count: brownData.students.total, color: colors.students, x: articleState.width * 0.25, y: articleState.height / 2, visible: true },
-        { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: articleState.width * 0.5, y: articleState.height / 2, visible: true },
-        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: articleState.width * 0.75, y: articleState.height / 2, visible: true }
+        { name: 'Students', count: brownData.students.total, color: colors.students, x: centerX, y: centerY, visible: true },
+        { name: 'Faculty', count: brownData.faculty.total, color: colors.faculty, x: centerX, y: centerY, visible: true },
+        { name: 'Staff', count: brownData.staff.total, color: colors.staff, x: centerX, y: centerY, visible: true }
       ]
     };
   }
@@ -626,7 +671,7 @@
         
         // Only count visible dots for cluster radius
         const visibleGroupDots = groupDots.filter(d => d.historicallyVisible);
-        const spreadMultiplier = group.name === 'Staff' ? CONFIG.staffClusterSpread : CONFIG.clusterSpread;
+        const spreadMultiplier = group.clusterSpread || (isPortrait() ? MOBILE_CONFIG.clusterSpread : CONFIG.clusterSpread);
         const clusterRadius = Math.sqrt(visibleGroupDots.length || 1) * spreadMultiplier;
 
         groupDots.forEach(dot => {
@@ -703,15 +748,16 @@
   // ============================================
 
   function renderYearLabel(year, color) {
+    const portrait = isPortrait();
     articleLabelsGroup.append('text')
       .attr('class', 'article-year')
-      .attr('x', articleState.width * 0.08)
-      .attr('y', articleState.height / 2)
-      .attr('text-anchor', 'start')
+      .attr('x', portrait ? articleState.width / 2 : articleState.width * 0.08)
+      .attr('y', portrait ? articleState.height * MOBILE_CONFIG.yearY : articleState.height / 2)
+      .attr('text-anchor', portrait ? 'middle' : 'start')
       .attr('dominant-baseline', 'middle')
       .attr('fill', color)
       .attr('font-family', '"freight-text-pro", Georgia, serif')
-      .attr('font-size', '72px')
+      .attr('font-size', portrait ? MOBILE_CONFIG.yearFontSize : '72px')
       .attr('font-weight', '700')
       .attr('opacity', 0)
       .text(year)
@@ -725,19 +771,22 @@
   // ============================================
 
   function renderLabels(groups) {
+    const portrait = isPortrait();
     groups.forEach(group => {
       const count = scaledCount(group.count);
-      const spreadMultiplier = group.name === 'Staff' ? CONFIG.staffClusterSpread : CONFIG.clusterSpread;
+      const spreadMultiplier = group.clusterSpread || (portrait ? MOBILE_CONFIG.clusterSpread : CONFIG.clusterSpread);
       const radius = Math.sqrt(count) * spreadMultiplier;
+      const labelOffset = portrait ? MOBILE_CONFIG.labelOffset : 25;
+      const countOffset = portrait ? MOBILE_CONFIG.countOffset : 45;
 
       articleLabelsGroup.append('text')
         .attr('class', 'article-label')
         .attr('x', group.x)
-        .attr('y', group.y + radius + 25)
+        .attr('y', group.y + radius + labelOffset)
         .attr('text-anchor', 'middle')
         .attr('fill', '#333')
         .attr('font-family', 'Inter, sans-serif')
-        .attr('font-size', '16px')
+        .attr('font-size', portrait ? MOBILE_CONFIG.labelFontSize : '16px')
         .attr('font-weight', '600')
         .attr('opacity', 0)
         .text(group.name)
@@ -748,11 +797,11 @@
       articleLabelsGroup.append('text')
         .attr('class', 'article-label')
         .attr('x', group.x)
-        .attr('y', group.y + radius + 45)
+        .attr('y', group.y + radius + countOffset)
         .attr('text-anchor', 'middle')
         .attr('fill', '#666')
         .attr('font-family', 'Inter, sans-serif')
-        .attr('font-size', '14px')
+        .attr('font-size', portrait ? MOBILE_CONFIG.countFontSize : '14px')
         .attr('opacity', 0)
         .text(group.count.toLocaleString())
         .transition()
