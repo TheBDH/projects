@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      How Providence Place Mall found its place in Rhode Island’s heart, from
+      1999 to 2025
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <!-- <link rel="icon" href="images/fire icon.png" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta
+      name="description"
+      content="Brown Daily Herald article about Providence Place Mall, located in Providence, Rhode Island."
+    />
+    <meta
+      name="keywords"
+      content="Brown University, metro, Providence, Rhode Island, Brown Daily Herald, Providence Place Mall, RI"
+    />
+    <meta
+      name="author"
+      content="Cate Latimer, Elise Haulund, Emily Feil, Ian Ritter, Ava Rahman"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      property="og:title"
+      content="How Providence Place Mall found its place in Rhode Island’s heart, from
+      1999 to 2025"
+    />
+    <meta
+      property="og:description"
+      content="From department stores to arcades and from delayed mortgage payments to a court receivership, the mall has seen a plethora of change in the past two and a half decades."
+    />
+    <meta
+      property="og:image"
+      content="https://projects.browndailyherald.com/2026/01/30/providence-place-mall/images/photo-1.JPG"
+    />
+    <meta
+      property="og:url"
+      content="https://projects.browndailyherald.com/2026/01/30/providence-place-mall/"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.js"></script>
+  </head>
+  <body>
+    <div id="progress-bar"></div>
+    <div id="pre-map">
+      <div id="heading">
+        <a href="https://www.browndailyherald.com" target="_blank">
+          <img
+            src="images/logo-white.png"
+            id="herald-logo"
+            alt="Brown Daily Herald Logo"
+          />
+        </a>
+        <h3>
+          How <span id="accent">Providence Place Mall</span> found its place in
+          Rhode Island’s heart, from 1999 to 2025
+        </h3>
+        <p>
+          From department stores to arcades and from delayed mortgage payments
+          to a court receivership, the mall has seen a plethora of change in the
+          past two and a half decades.
+        </p>
+        <h6 id="byline">
+          Reporting by
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/cate-latimer"
+              target="_blank"
+              >Cate Latimer</a
+            ></span
+          >,
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/elise-haulund"
+              target="_blank"
+              >Elise Haulund</a
+            ></span
+          >,
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/emily-feil"
+              target="_blank"
+              >Emily Feil</a
+            ></span
+          >,
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/ian-ritter"
+              target="_blank"
+              >Ian Ritter</a
+            ></span
+          >
+          &
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/ava-rahman"
+              target="_blank"
+              >Ava Rahman</a
+            ></span
+          ><br /><br />
+          Website by
+          <span class="author"
+            ><a
+              href="https://www.browndailyherald.com/staff/annika-singh"
+              target="_blank"
+              >Annika Singh</a
+            ></span
+          >
+        </h6>
+      </div>
+    </div>
+    <div class="scroll">
+      <div class="scrolly">
+        <article>
+          <div class="step lede" data-step="0">
+            Once projected to be the city’s “<a
+              href="https://www.bostonglobe.com/metro/rhode-island/2019/06/11/once-providence-brightest-jewel-mall-looks-regain-its-sparkle/k7by2D6U2TpRXetGb0HuWP/story.html"
+              target="_blank"
+              >brightest jewel</a
+            >,” the Providence Place Mall has seen over 25 tumultuous years ever
+            since its doors first opened in August 1999.<br /><br />
+            Despite
+            <a
+              href="https://www.providencejournal.com/story/news/local/2023/04/05/providence-place-mall-carpet-garners-attention-of-buzzfeed-ai/70076785007/?gnt-cfr=1&gca-cat=p&gca-uir=true&gca-epti=z115716d00----v115716d--64--b--64--&gca-ft=183&gca-ds=sophi"
+              target="_blank"
+              >debate</a
+            >
+            over its claim to fame as the second-largest carpeted mall in the
+            world, Providence Place has survived various economic threats,
+            including the 2008 Great Recession and the sweeping technological
+            advancements of the 2010s — but not without incident.<br /><br />
+            The mall has faced its share of tribulations, including changing
+            ownership, court receivership and the closure of almost all of its
+            original anchor stores.<br /><br />
+            Some of this can be attributed to an increase in Americans’ tendency
+            to shop online, compounded by a decrease in the strength of anchor
+            stores, with staple mall franchises like
+            <a
+              href="https://www.usatoday.com/story/money/2025/02/13/jcpenney-store-closings/78536216007/"
+              target="_blank"
+              >JCPenney</a
+            >
+            and
+            <a
+              href="https://www.usatoday.com/story/money/2025/03/27/macys-stores-closing-list/82686537007/"
+              target="_blank"
+              >Macy’s</a
+            >
+            announcing sweeping closures across their brick-and-mortar
+            locations. In fact, while the rise of online shopping and the drop
+            in consumerism amid the COVID-19 pandemic have intensified concern
+            for the future of malls in recent years, national trends have long
+            predicted the death of the American mall.<br /><br />
+            Other reports paint a more positive picture of a
+            <a
+              href="https://www.nytimes.com/2024/06/09/business/shopping-centers-mall-demand-comeback.html"
+              target="_blank"
+              >comeback</a
+            >
+            forshopping malls — seen by many as important
+            <a
+              href="https://www.vox.com/videos/2018/4/11/17220528/american-shopping-malls-death-third-place"
+              target="_blank"
+              >third spaces</a
+            >
+            for young shopping malls — seen by many as important third spaces
+            for young people — with data showing
+            <a
+              href="https://capitaloneshopping.com/research/mall-foot-traffic-statistics/"
+              target="_blank"
+              >foot traffic upticks in 2025.</a
+            ><br /><br />
+            Still, itremains uncertain whether Providence Place, now facing
+            court-ordered receivership, will adapt with the changing times or
+            join the ranks of the many shuttered malls in the United States.<br /><br />
+            The Herald traced the mall’s history from its origins to discover
+            how it became what it is today and where it might go from here.<br /><br />
+          </div>
+          <div class="photo unpinned">
+            <img class="photo-img" src="images/photo-1.JPG" alt="TKTK" />
+            <p id="photo-credit">
+              Media by Selina Kao | The Brown Daily Herald
+            </p>
+          </div>
+          <div class="step" data-step="1">
+            <b class="subheading">Before the mall</b><br /><br />
+            In the 1980s, the area between downtown Providence and the Rhode
+            Island State House — where the mall now stands — looked very
+            different.<br /><br />
+            Originally, railroad tracks stretched across this area, dubbed the
+            Capital Center. In 1982, the state approved a $126 million project
+            to move the tracks behind Union Station, the train station that used
+            to serve downtown Providence. The city’s current Amtrak station
+            would later be built in 1986.<br /><br />
+            This relocation left the parking lots between Union Station and the
+            State House open for development.<br /><br />
+            The Capital Center Commission was tasked with overseeing development
+            and economic growth around the State House, according to former CCC
+            Chair Deming Sherman.<br /><br />
+            The CCC’s job was to develop the newly open area into something “as
+            attractive as possible,” without interfering with the view of the
+            State House, Sherman said in a recent interview with The Herald.<br /><br />
+            Around the time the tracks were relocated, Joseph Paolino Jr. —
+            former mayor of Providence and former director of the Rhode Island
+            Department of Economic Development — heard a developer was
+            interested in the lot on which the mall stands today.<br /><br />
+            This developer initially hoped to build office space on the lot,
+            Paolino said in a recent interview with The Herald. But Paolino
+            recalled receiving pushback for that plan, noting that some
+            individuals involved in deciding how to develop the area didn’t
+            believe Providence had a “very good office market.”<br /><br />
+            The developer later came back with a senior real estate developer
+            for Macy’s and a new idea, Paolina said: The lot should become a
+            mall.<br /><br />
+            The proposed mall project was initially supposed to cost $300
+            million and open by 1991. The project was backed by Melvin Simon &
+            Associates, one of the largest shopping mall developers in the
+            United States at the time and a precursor to Simon Property Group,
+            currently the largest mall owner in the U.S.<br /><br />
+            But construction was delayed by factors such as developer shake-ups,
+            issues with acquiring land from Amtrak and debates over the mall’s
+            financial terms. The mall’s finalized financial agreement with the
+            city, which promised 30 years of property tax stabilization
+            beginning in 2000, wasn’t signed until 1996. By then, Paolino had
+            been succeeded by Vincent “Buddy” Cianci Jr. as mayor and no longer
+            directed the R.I. Department of Economic Development.<br /><br />
+          </div>
+          <div class="step" data-step="2">
+            <b class="subheading">A surprising discovery</b><br /><br />
+            In 1994, in accordance with federal permitting requirements, a team
+            of archaeologists from the Pawtucket-based Public Archaeology Lab
+            investigated the open lot for historic and archaeological remains.
+            What they discovered surprised them.<br /><br />
+            “We found the entire (Rhode Island State) Prison with walls and the
+            cells and bed frames,” said Deborah Cox MA’82, the firm’s longtime
+            president, in a recent interview with The Herald.<br /><br />
+            According to PAL archaeology laboratory manager and archivist
+            Heather Olson, the prison was opened in 1838. Conditions were poor,
+            Olson said, explaining that the prison was “an imposing stone
+            structure” designed around a rehabilitative philosophy of solitary
+            confinement and trade skills to prepare prisoners to reenter
+            society. By the late 1860s, prisoners were transferred by foot to a
+            new facility in Cranston. Eventually, the remaining structure was
+            filled in to serve as the foundation for the Rhode Island Normal
+            School, preceding what is now a parking lot for the University of
+            Rhode Island.<br /><br />
+            After this discovery, the archaeological site was open to the public
+            for tours, according to Olson. There were even initial ideas of
+            putting up an “artifact exhibit in the mall when it first opened,
+            but it never ended up working out,” she said.<br /><br />
+          </div>
+          <div class="step" data-step="3">
+            <b class="subheading">Securing approval</b><br /><br />
+            The $360 million project was formally approved by the Providence
+            City Council in 1996. Designed by Providence-based architect
+            Friedrich St. Florian and Boston-based architecture and design firm
+            Arrowstreet, the building was supposed to be “an elegant blend of
+            older building forms — part 19th-century commercial block, part
+            classic department store and part European galleria,” according to a
+            Providence Journal
+            <a
+              href="https://infoweb.newsbank.com/apps/news/document-view?p=NewsBank&docref=news/1525219728A02198&f=basic"
+              target="_blank"
+              class="hyperlinked"
+              >article</a
+            >
+            at the time.<br /><br />
+            The mall’s design includes over 1.4 million square feet of retail
+            space and over 4,000 parking spaces.<br /><br />
+          </div>
+          <div class="step" data-step="4">
+            <b class="subheading">Mall opening and early turnover</b
+            ><br /><br />
+            <b>The mall’s debut in 1999</b><br /><br />
+            After years of planning and construction, the Providence Place Mall
+            opened on Aug. 20, 1999. The project came in $100 million over
+            budget at $460 million, becoming one of the state’s most expensive
+            development projects at the time.<br /><br />
+            “I was excited,” Paolino told The Herald. “That was one of the
+            greatest projects ever built in downtown Providence and the state of
+            Rhode Island.”<br /><br />
+            A gala was held inside the mall on the eve of its opening day to
+            celebrate the occasion. “It was black tie … the place was crawling
+            with people having hors d’oeuvres and drinks,” Sherman said. The
+            event’s attendees included Robert Weygand, one of Rhode Island’s
+            U.S. representatives at the time, and Lincoln Almond, then governor
+            of R.I.<br /><br />
+            Fewer than half of the mall’s stores were open on the first day, yet
+            crowds streamed through the doors, eager to be the first people to
+            experience the new shopping center. At the time, the mall’s anchor
+            stores — large stores commonly positioned at the end of the mall
+            that often draw most of the center’s traffic — were Nordstrom and
+            Filene’s, two department stores later joined by Lord & Taylor, a
+            third.<br /><br />
+          </div>
+          <div class="step" data-step="5">
+            <b class="subheading">Early changes from 2005 to 2006</b
+            ><br /><br />
+            Just six years after the mall opened, its flagship stores were
+            already changing. In the first eight months of 2005, 10 total stores
+            at the mall
+            <a
+              href="https://pbn.com/at-providence-place-mall-several-changes-in-store18561/#:~:text=Mastercuts%2C%20a%20hair%20salon%2C%20will,tenants%20in%2C%E2%80%9D%20Kalinowski%20said."
+              target="_blank"
+              class="hyperlinked"
+              >closed</a
+            >
+            their doors, although 15 new stores had opened or were planned to
+            open in their place.<br /><br />
+            Soon after Filene’s came under the ownership of Federated Department
+            Stores — now Macy’s, Inc — in 2005, its Providence Place location
+            was converted to a Macy’s. Lord & Taylor closed in 2005 as well,
+            later replaced by JCPenney.<br /><br />
+            “Penney’s was the No. 1 requested store in our research,”
+            then-Senior General Manager Tony Kalinowski said in a 2005
+            Providence Business News
+            <a
+              href="https://pbn.com/at-providence-place-mall-several-changes-in-store18561/"
+              target="_blank"
+              class="hyperlinked"
+              >article</a
+            >.<br /><br />
+            Monique Murphy, a store manager for JCPenney at the Providence Place
+            Mall when the flagship first opened, described opening day as
+            “really exciting” in a recent interview with The Herald. She
+            recalled many members of JCPenney’s corporate branch coming to the
+            store to prepare for its grand opening.<br /><br />
+            One of these corporate visitors was the granddaughter of
+            entrepreneur James Cash Penney, the company’s founder, who “came and
+            talked to all of the employees, all the associates before opening
+            and thanked everybody for coming to work at JCPenney,” Murphy
+            recalled.<br /><br />
+            Before opening day, the store’s staff had “a lot of help” from the
+            company’s district teams, who spent “days at a time making sure the
+            store looks great,” Murphy said. There was “great teamwork to make
+            it all happen.”<br /><br />
+          </div>
+          <div class="step" data-step="6">
+            <b class="subheading">The mall’s secret</b><br /><br />
+            The mall is not popular among all Providence residents, with some
+            feeling that the city misallocated its resources.<br /><br />
+            “It’s $250 million plus in tax breaks and incentives for there to be
+            a Nordstrom,” said Adriana Valdez Young ’01, who was a student at
+            Brown in the mall’s early years. “It’s just one of these very
+            laughable moments of capitalism.”<br /><br />
+            To Valdez Young, the mall, even in its current state, acts as a
+            “boundary” that separates immigrant communities on the west side of
+            Providence from the “very resourced neighborhoods” in the rest of
+            the city.<br /><br />
+            Further development and gentrification in downtown Providence
+            <a
+              href="https://www.browndailyherald.com/article/2025/03/documentary-about-a-secret-apartment-in-a-providence-mall-captures-the-art-of-resistance"
+              target="_blank"
+              class="hyperlinked"
+              >coincided</a
+            >
+            with the mall’s construction and led to the destruction of mill
+            buildings in Eagle Square, which had operated as a hub for artists
+            like Valdez Young.<br /><br />
+            While working on an art installation with three other artists —
+            Michael Townsend, Jay Zehngebot and James J.A. Mercer — Valdez Young
+            was listening to the radio when an advertisement for the mall came
+            on, she recalled.<br /><br />
+            According to Valdez Young, the commercial was narrated by a mother
+            saying that the Providence Place Mall made shopping so convenient
+            for her family and ended with the tagline “if only I could live
+            there.”<br /><br />
+            “In that moment, I was like, ‘Yes, we should live there. That’s what
+            they want, that’s the future of the city and the Providence they’re
+            building, so let’s just go now,’” Valdez Young said.<br /><br />
+            After coming up with the idea, the four artists originally planned
+            on spending four days in the mall as a competition until they got
+            caught, Valdez Young said. But after staying for four days and
+            discovering a 750-square-foot empty space, she explained, the group
+            decided to build a secret apartment in the mall.<br /><br />
+            “We thought we were so funny,” Valdez Young said. “This is
+            underutilized space — the same argument that real estate developers
+            (were) using when they (were) justifying knocking down all those
+            mill buildings.”<br /><br />
+            The artists slowly constructed the apartment inside the mall,
+            eventually building a wall with a locked door and outfitting the
+            space with a couch, waffle maker and PlayStation. The artists
+            periodically lived in the apartment undiscovered over four years —
+            though Valdez Young moved to New York after two.<br /><br />
+            Townsend was
+            <a
+              href="https://www.browndailyherald.com/article/2007/10/artists-hideaway-in-providence-mall-exposed"
+              target="_blank"
+              class="hyperlinked"
+              >caught</a
+            >
+            when showing the apartment to a visiting artist from Hong Kong and
+            banned from the mall for life. But his sentence was
+            <a
+              href="https://www.providencejournal.com/story/news/columns/2025/03/25/secret-mall-apartment-captures-life-inside-providence-place-patinkin/82633828007/?gnt-cfr=1&gca-cat=p&gca-uir=true&gca-epti=z113212p001972n00----c00----d00----v113212b0067xxd116765&gca-ft=259&gca-ds=sophi"
+              target="_blank"
+              class="hyperlinked"
+              >lifted</a
+            >
+            after the 2024 premiere of a
+            <a
+              href="https://www.browndailyherald.com/article/2025/03/documentary-about-a-secret-apartment-in-a-providence-mall-captures-the-art-of-resistance"
+              target="_blank"
+              class="hyperlinked"
+              >documentary</a
+            >
+            recounting the tale of the secret mall apartment.<br /><br />
+            Valdez Young returned to the mall for the documentary screening in
+            2024.<br /><br />
+            “It smells the same,” she said. “Like Orange Julius and that pretzel
+            shop.”<br /><br />
+          </div>
+          <div class="step" data-step="7">
+            <b class="subheading">Early financial turmoil</b><br /><br />
+            In the wake of the 2008 economic downturn, General Growth Properties
+            — the owner of the mall between 2004 and 2018 — faced a $27 billion
+            debt. Though the Providence Place Mall had generated just shy of $14
+            million in sales taxes for Rhode Island in 2007, the GGP listed the
+            mall for sale in early 2009 to help pay off its debt,
+            <a
+              href="https://www.browndailyherald.com/article/2009/01/providence-place-up-for-sale"
+              target="_blank"
+              class="hyperlinked"
+              >The Herald previously reported.</a
+            ><br /><br />
+            Just three months later, the GGP
+            <a
+              href="https://www.browndailyherald.com/article/2009/04/mall-owner-files-for-bankruptcy"
+              target="_blank"
+              class="hyperlinked"
+              >filed</a
+            >
+            for bankruptcy, marking the largest real estate bankruptcy in U.S.
+            history at the time, according to a 2009
+            <a
+              href="https://www.reuters.com/article/us-generalgrowth-bankruptcy/general-growth-files-largest-u-s-real-estate-bankruptcy-idUSTRE53F68P20090416/"
+              target="_blank"
+              class="hyperlinked"
+              >Reuters</a
+            >
+            report.<br /><br />
+            But the mall was not sold and was ultimately taken off the market.
+            In 2010, GGP
+            <a
+              href="https://www.browndailyherald.com/article/2010/03/mall-operator-considers-buyout"
+              target="_blank"
+              class="hyperlinked"
+              >turned down</a
+            >
+            an unsolicited bid from rival company Simon Property Group, Inc. The
+            same year, the GGP’s annual report
+            <a
+              href="https://www.annualreports.com/HostedData/AnnualReportArchive/g/NYSE_GGP_2010.pdf"
+              target="_blank"
+              class="hyperlinked"
+              >found</a
+            >
+            that the group had reduced its debt by around 30%, down to $20.6
+            billion and falling.<br /><br />
+          </div>
+          <div class="step" data-step="8">
+            <b class="subheading">Changes in the 2010s</b><br /><br />
+            <b class="subheading">Renovations between 2015 and 2016</b
+            ><br /><br />
+            In 2015, Providence Place’s JCPenney location
+            <a
+              href="https://archive.ph/LyRko#selection-337.0-337.154"
+              target="_blank"
+              class="hyperlinked"
+              >closed</a
+            >
+            its doors after spending almost a decade anchoring the mall. Rather
+            than finding a new tenant, the GGP saw an opportunity for its first
+            major renovation.<br /><br />
+            The following year, the GGP
+            <a
+              href="https://www.providencejournal.com/story/news/2016/06/11/providence-place-mall-in-line-for-first-major-overhaul/27644408007/?gnt-cfr=1&gca-cat=p&gca-uir=true&gca-epti=z118911d00----v118911b0099xxd119965&gca-ft=159&gca-ds=sophi"
+              target="_blank"
+              class="hyperlinked"
+              >took</a
+            >
+            over the bottom two floors of the former department store for 150
+            new parking spaces. The project, which cost over $20 million, also
+            installed a new digital parking system, alongside other
+            improvements.<br /><br />
+          </div>
+          <div class="photo-double">
+            <div>
+              <img src="images/photo-9.JPG" alt="TKTK" />
+            </div>
+            <div>
+              <img src="images/photo-10.JPG" alt="TKTK" />
+            </div>
+          </div>
+          <p id="photo-credit-double">
+            Photos by Selina Kao | The Brown Daily Herald
+          </p>
+          <div class="step" data-step="9">
+            <b class="subheading">Nordstrom leaves in 2019</b><br /><br />
+            In 2018, Nordstrom announced it would be leaving Providence Place
+            the following January. “When we look at our business in the
+            Providence market, we determined it made most sense to end our
+            Providence Place lease,” said Jamie Nordstrom, then-president of the
+            company’s stores, in a press release at the time.<br /><br />
+            The department store had opened as the mall’s first tenant. Before
+            construction of the mall had even completed, Paolino had traveled to
+            Seattle with then-mayor Cianci and then-governor Bruce Sundlun to
+            persuade the Nordstrom family to open a location at Providence
+            Place, according to
+            <a
+              href="https://www.browndailyherald.com/article/2018/10/nordstrom-to-close-at-providence-place"
+              target="_blank"
+              class="hyperlinked"
+              >previous Herald reporting.</a
+            ><br /><br />
+            “To have Nordstrom there, that was an anchor that would bring
+            shoppers to visit Rhode Island,” Paolino said in a recent interview
+            with The Herald.<br /><br />
+            The Herald spoke to many current mall shoppers who shared that they
+            mourn the loss of the flagship store, citing its departure as a
+            reason they no longer visit the mall as frequently. “I stopped going
+            after Nordstrom moved out,” Cox affirmed.<br /><br />
+            Paolino noted that the city government at the time should have taken
+            more steps to prevent the closure. “They should have done everything
+            they could to have kept them,” he said.<br /><br />
+          </div>
+          <div class="step" data-step="10">
+            <b class="subheading">Boscov’s replaces Nordstrom</b><br /><br />
+            Boscov’s succeeded Nordstrom in the fall of 2019. Based in
+            Pennsylvania, the family-owned department store was the first of its
+            chain to arrive in Rhode Island and is
+            <a
+              href="https://childandfamilyri.org/child-family-teams-up-with-providence-places-newest-retailer-boscovs/"
+              target="_blank"
+              class="hyperlinked"
+              >known</a
+            >
+            for partnering with local nonprofits.<br /><br />
+            In one program, the store gives nonprofits multiple one-day-only 25%
+            off coupons, which they can sell for five dollars, Store Manager
+            Victoria Belair said. The nonprofits keep 100% of the proceeds from
+            the voucher sales.<br /><br />
+            In previous Herald reporting, Chairman and CEO Jim Boscov emphasized
+            the store’s mission to be a “member of the community.” The store is
+            distinguished by its low prices, which are “sharper than anything
+            people have seen in the past,” Boscov added.<br /><br />
+            Lucy de Jesus is a floor manager who has worked at the store since
+            its opening.<br /><br />
+            “It’s like my second house,” de Jesus said. Every day, she looks
+            forward to her morning meetings with her coworkers, who “feel like
+            family here.”<br /><br />
+            While customers dropped during the COVID-19 pandemic, foot traffic
+            seems to have returned to pre-pandemic levels, de Jesus said.<br /><br />
+            The store held its big 20% off sale on Nov. 15. It was quiet, with
+            only a couple of customers shopping for items as many customer
+            service kiosks sat empty.<br /><br />
+            Cheryl White was searching for a pair of socks. She has been a
+            regular customer since the store opened in 2019, she told The
+            Herald, often coming twice or three times a month. But “I’m not a
+            mall girl,” she admitted. “They’re overpriced.”<br /><br />
+            But Boscov’s pricing brings her to Providence Place, even though
+            there’s another mall closer to where she lives in Warwick.<br /><br />
+            “I look for the deals,” she explained.<br /><br />
+            Donna Vento and Donna Folcarelli, both shoppers at the mall on Nov.
+            15, told The Herald that the store’s affordability is a draw. The
+            two had never shopped at Nordstrom, and only came after Boscov’s
+            opened.<br /><br />
+            “The prices in here are a lot better,” said Vento, a retired nurse
+            from Johnston. “You have the same items that you would buy at Kohl’s
+            or Macy’s or Penney’s.”<br /><br />
+          </div>
+          <div class="photo-grid">
+            <div>
+              <img src="images/photo-11.JPG" alt="TKTK" />
+            </div>
+            <div>
+              <img src="images/photo-12.JPG" alt="TKTK" />
+            </div>
+            <div>
+              <img src="images/photo-13.JPG" alt="TKTK" />
+            </div>
+            <div>
+              <img src="images/photo-14.JPG" alt="TKTK" />
+            </div>
+            <div>
+              <img src="images/photo-15.JPG" alt="TKTK" />
+            </div>
+            <div>
+              <img src="images/photo-16.JPG" alt="TKTK" />
+            </div>
+          </div>
+          <p id="photo-credit-double">
+            Photos by Selina Kao | The Brown Daily Herald
+          </p>
+          <div class="step" data-step="11">
+            <b class="subheading">Management shake-up</b><br /><br />
+            <b class="subheading">Brookfield takes over in 2018</b><br /><br />
+            In 2018, the mall’s ownership changed hands after Brookfield
+            Properties, a global real estate firm, bought the GGP in a $9.25
+            billion deal, according to a
+            <a
+              href="https://bpy.brookfield.com/press-releases/bpy/brookfield-property-partners-lp-completes-acquisition-ggp-inc"
+              target="_blank"
+              class="hyperlinked"
+              >2018 press release.</a
+            ><br /><br />
+            Brookfield had played a role in facilitating the GGP’s recovery from
+            bankruptcy through an initial purchase of future shares, according
+            to a
+            <a
+              href="https://bn.brookfield.com/press-releases/investors-general-growth-properties-announce-certain-transactions"
+              target="_blank"
+              class="hyperlinked"
+              >2013 press release.</a
+            >
+            The firm had previously bid to take over the GGP, an offer rejected
+            in 2017,
+            <a
+              href="https://www.providencejournal.com/story/news/2018/03/28/competitor-buying-providence-places-chicago-owner-at-discount/12888125007/"
+              target="_blank"
+              class="hyperlinked"
+              >the Providence Journal reported.</a
+            ><br /><br />
+          </div>
+          <div class="step" data-step="12">
+            <b class="subheading">Pandemic woes</b><br /><br />
+            Like the rest of the world around it, the Providence Place Mall’s
+            momentum ground to a halt in 2020 during the COVID-19 pandemic as
+            the mall
+            <a
+              href="https://www.browndailyherald.com/article/2020/03/rhode-island-works-to-contain-covid-19"
+              target="_blank"
+              class="hyperlinked"
+              >closed</a
+            >
+            for business in March of that year. The mall remained closed through
+            May 2020 and
+            <a
+              href="https://www.providencejournal.com/story/news/politics/2021/05/16/providence-place-mall-owner-seeks-mortgage-relief-after-covid-struggle/5120070001/?gnt-cfr=1&gca-cat=p&gca-uir=true&gca-epti=z118811d00----v118811d--98--b--98--&gca-ft=233&gca-ds=sophi"
+              target="_blank"
+              class="hyperlinked"
+              >fell behind</a
+            >
+            on mortgage payments, as reported by The Providence Journal.<br /><br />
+            The mall continued to struggle in the following few years before
+            <a
+              href="https://www.browndailyherald.com/article/2022/11/the-energy-is-getting-better-providence-place-mall-begins-to-bounce-back"
+              target="_blank"
+              class="hyperlinked"
+              >beginning</a
+            >
+            to bounce back in 2022.<br /><br />
+            “Now it’s getting back to normal,” Rachel Benedides, an operations
+            lead at Sephora, told The Herald in 2022. “Not quite there, but you
+            can feel the energy is getting better.”<br /><br />
+          </div>
+          <div class="step" data-step="13">
+            <b class="subheading">Receivership in 2024</b><br /><br />
+            In October 2024, the Providence Place Mall was placed into
+            court-ordered receivership after private lenders alleged that
+            Brookfield owed $259 million after taking out $305 million in loans
+            in 2011.<br /><br />
+            In an email to The Herald, Mark Russo, a West Warwick-based attorney
+            and temporary receiver of the mall, said that “it has taken us about
+            a year to stabilize the property” since the beginning of the
+            receivership. Under receivership, the mall has undergone renovations
+            to the parking garage and updated its code of conduct, which
+            <a
+              href="https://www.browndailyherald.com/article/2025/04/providence-place-mall-now-restricting-congregations-of-over-four-people-unaccompanied-minors"
+              target="_blank"
+              class="hyperlinked"
+              >prohibits</a
+            >
+            groups of four or more people and outlines other policies banning
+            unaccompanied minors in the mall during certain hours.<br /><br />
+            “The former operator had allowed security and housekeeping hours to
+            dip to unacceptable levels,” Russo wrote. “The Providence Place Mall
+            had somewhat of an earned perception as no longer being attractive
+            to patrons because it had become a hangout.”<br /><br />
+            According to Russo, the receivership has also addressed renovation
+            issues that were deferred by past management. He said that mall
+            operators discovered outdated facilities while receivers were in the
+            process of finding a new theater operator after National Amusements,
+            the parent company of Showcase Cinemas, ended its lease at
+            Providence Place.<br /><br />
+            “We came to discover that the HVAC system for the theater was the
+            original from when the mall was first built some 25 years ago,”
+            Russo wrote. “Accordingly, we will be replacing those rooftop units
+            in April of 2026.”<br /><br />
+            As part of the mall’s receivership process, Centennial Real Estate
+            Management took over management of Providence Place from Brookfield
+            Properties. While Centennial’s role in the mall after the
+            receivership remains uncertain, Russo says he is “hopeful that
+            Centennial will consider remaining involved with a Buyer, but that
+            is to be a decision to be made by the Buyer and Centennial.”<br /><br />
+            Russo expects the mall to go to market “sometime this month” and
+            “would imagine that a sale process will take at least three to four
+            months to complete.” He estimated that the receivership will
+            conclude by mid-2026.<br /><br />
+            Brookfield did not respond to multiple requests for comment.<br /><br />
+            According to Spencer Reith, a co-owner of Courtside Kicks in the
+            mall, the management under the receivership has been “great.”<br /><br />
+            “I think the new ownership has been doing a better job at promoting
+            the mall and advertising it,” Reith told The Herald in April. “If
+            anything, we’ve seen an uptick in the last few months for foot
+            traffic.”<br /><br />
+          </div>
+          <div class="step" data-step="14">
+            <b class="subheading">A new code of conduct in 2025</b><br /><br />
+            This past spring brought
+            <a
+              href="https://www.browndailyherald.com/article/2025/04/providence-place-mall-now-restricting-congregations-of-over-four-people-unaccompanied-minors"
+              target="_blank"
+              class="hyperlinked"
+              >a slew of new rules</a
+            >
+            at the mall. A new youth guidance program, increased security
+            presence and an updated code of conduct were all implemented in
+            March, about four months after the mall was placed into
+            <a
+              href="https://www.wpri.com/target-12/judge-puts-providence-place-mall-into-receivership/"
+              target="_blank"
+              class="hyperlinked"
+              >receivership</a
+            >.<br /><br />
+            At the time, The Herald spoke with John Dorsey, an attorney and one
+            of the individuals tasked with managing the mall during the
+            receivership, about these changes.<br /><br />
+            The updated code of conduct stipulated 13 new provisions, including
+            prohibitions on taking photos or videos “in an intimidating or
+            threatening manner,” non-service animals and firearms. “The old code
+            of conduct for Providence Place had not been updated in many years,
+            (and) the face of retail has really changed,” Dorsey said at the
+            time. “The goal of the updated code of conduct is to try and reflect
+            that.”<br /><br />
+          </div>
+          <div class="step" data-step="15">
+            <div class="step-img">
+              <img src="images/photo-17.JPG" alt="TKTK" />
+              <p id="step-photo-credit">
+                Photo by Selina Kao | The Brown Daily Herald
+              </p>
+            </div>
+            <div class="step-text">
+              <b class="subheading">Today’s Providence Place</b><br /><br />
+              <b class="subheading">New players enter the mall in 2024</b
+              ><br /><br />
+              In January 2024, Level99 — part arcade, part bar and restaurant —
+              moved into the third floor lot, formerly the site of JCPenney.
+              According to Matthew DuPlessie, founder and CEO of Level99, the
+              demographics of nearby residents make Providence Place a good fit
+              for the concept.<br /><br />
+              “The peak of our demographic curve is young adults who are
+              mentally, socially and physically active people who want to get
+              out and do things,” DuPlessie said. “There’s a lot of that in
+              Providence.”<br /><br />
+              According to DuPlessie, the mall’s receivership has not hindered
+              operations.<br /><br />
+              “The average person going to Providence Place isn’t aware or
+              doesn’t care who the owner is,” DuPlessie said. “They care how the
+              facility is kept, they care about what the tenant mix is.”<br /><br />
+              He added that the business has seen a “positive” change since the
+              receivership went into effect.<br /><br />
+              “The new ownership is actually spending money again,” DuPlessie
+              said. He explained that new managers have fixed elevators,
+              installed new equipment for gates and introduced access control
+              for parking.<br /><br />
+            </div>
+          </div>
+          <div class="step" data-step="16">
+            <div class="step-img">
+              <img src="images/photo-18.JPG" alt="TKTK" />
+              <p id="step-photo-credit">
+                Photo by Selina Kao | The Brown Daily Herald
+              </p>
+            </div>
+            <div class="step-text">
+              <b class="subheading">2025 → Apple Cinemas</b><br /><br />
+              Providence Place has housed an IMAX-capable movie theater above
+              its food court since its first year of operations. So when
+              National Amusements — the parent company of Showcase Cinemas,
+              which occupies the space —
+              <a
+                href="https://turnto10.com/news/local/roll-the-credits-providence-place-new-chain-showcase-cinemas-leave-lease-expires-shopping-consumers-movies-imax-national-amusements-september-26-2025"
+                target="_blank"
+                class="hyperlinked"
+                >decided against renewing its lease</a
+              >
+              in fall 2025, mall receivers began looking for a new theater chain
+              to use the space.<br /><br />
+              Apple Cinemas
+              <a
+                href="https://www.browndailyherald.com/article/2025/11/apple-cinemas-opens-at-providence-place-replacing-showcase-cinemas"
+                target="_blank"
+                class="hyperlinked"
+                >opened</a
+              >
+              on Nov. 1, using the furniture and equipment left behind by
+              Showcase in
+              <a
+                href="https://www.browndailyherald.com/article/2025/10/curtains-to-close-on-providence-places-showcase-cinemas-by-january-2026"
+                target="_blank"
+                class="hyperlinked"
+                >October</a
+              >. The new theater operators plan to install a bowling lounge, a
+              trampoline park and a bar in the space.<br /><br />
+              For current employee Amanda Graves, who worked at Showcase for
+              “probably almost a year” before Apple Cinemas began running the
+              space, the transition has been somewhat “stressful” because
+              “everything’s changing.”<br /><br />
+              Apple Cinemas did not respond to multiple requests for comment.<br /><br />
+              Two weeks after Apple Cinemas began business at the mall, Graves
+              told The Herald that the theater has been “pretty dead,” except
+              for when new movies come out.<br /><br />
+              “We get a good amount of people, but not as much as we did for
+              Showcase,” Graves said. She added that this decrease in customers
+              might be because “people don’t believe yet that Apple Cinemas is
+              open.”<br /><br />
+              When Showcase announced its departure from Providence Place in
+              October, Carter Via ’28 told The Herald that he was “heartbroken”
+              and that going to see movies with his friends during his first
+              year at Brown was “formative” and “a lot of fun.”<br /><br />
+              After hearing that Apple Cinemas would continue to operate the
+              theater, some students expressed cautious optimism and relief in
+              interviews with The Herald.<br /><br />
+              “I actually have a lot of really good memories going with friends
+              to watch a movie, pretty spontaneously, (on) random Friday,
+              Saturday nights,” Finnur Christianson ’27 said in November.<br /><br />
+            </div>
+          </div>
+          <div class="step" data-step="17">
+            <div class="step-img">
+              <img src="images/photo-19.JPG" alt="TKTK" />
+              <p id="step-photo-credit">
+                Photo by Selina Kao | The Brown Daily Herald
+              </p>
+            </div>
+            <div class="step-text">
+              <b class="subheading"
+                >‘If it’s not broken, don’t fix it’: The persistence of Dave &
+                Busters</b
+              ><br /><br />
+              Weathering the decades of storms plaguing the Providence Place
+              Mall, one anchor business has managed to stay steady. Dave &
+              Buster’s has remained in its location across from the movie
+              theater, hosting children’s birthdays and welcoming guests for
+              arcade games since 2000. On the morning of Nov. 15, many of the
+              chain’s guests were grandparents spending some time with their
+              grandchildren.<br /><br />
+              “He loves coming here,” said Dave & Buster’s visitor Mary Millard,
+              gesturing to her grandson, who was immersed in an arcade game.
+              “This is really the only thing, other than Level99, for kids their
+              age.”<br /><br />
+              Millard said she had been coming to Providence Place since the
+              mall first opened.<br /><br />
+              “We’ve lived here for a long time,” Millard said. “We were coming
+              here with our sons when they were like 18, 22.”<br /><br />
+              Nurisbel Santana, who has worked at Dave & Buster’s for close to
+              half a year, enjoys the “hands-on experience” of her job.<br /><br />
+              Working the front desk, Santana sees customers come in for parties
+              at many milestones in life, from kids’ birthdays, to graduation
+              celebrations, to bachelorette parties.<br /><br />
+              “I love seeing little kids coming in for the first time and walk
+              out like, ‘That was awesome!’” Santana said.<br /><br />
+              Jaime Pereira, the manager at the Providence Place Dave & Buster’s
+              since August 2024, said that the business has prioritized “adding
+              value” for guests to try and increase foot traffic amid recent
+              mall shakeups.<br /><br />
+              Some examples include the “Eat & Play” combo, which allows guests
+              to pair an entree with a $10 game play card, and seasonal game
+              play passes, which can be offered to guests at parties to entice
+              them to return.<br /><br />
+              “Obviously, the games are a big draw,” Pereira said. “That’s,
+              like, 70% of our income.” According to Pereira, the Providence
+              Place Dave & Buster’s has benefitted from a “lack of competition
+              in the area” — a sentiment that multiple visitors shared.<br /><br />
+              “Dave and Busters offers something that’s not duplicated anywhere
+              nearby.”<br /><br />
+              For Santana, the business’s success over so many years is
+              attributed to a simple principle: “If it’s not broken, don’t fix
+              it.”<br /><br />
+            </div>
+          </div>
+          <div class="photo-full">
+            <img src="images/photo-23.JPG" alt="" />
+            <p id="photo-credit-double">
+              Photo by Selina Kao | The Brown Daily Herald
+            </p>
+          </div>
+
+          <div class="step lede" data-step="18">
+            <b class="subheading">A resilient symbol of community</b
+            ><br /><br />
+            To some, the Providence Place Mall has lost its allure.<br /><br />
+            In conversations with The Herald, some Rhode Island shoppers said
+            they have turned to other shopping centers, like Garden City Center
+            in Cranston or The Crossing at Smithfield. Others said they rarely
+            come to the mall, preferring to do their shopping online.<br /><br />
+            No new indoor megamalls have been built in the United States
+            <a
+              href="https://www.usatoday.com/story/money/shopping/2025/07/14/top-10-american-shopping-malls/85098821007/"
+              target="_blank"
+              class="hyperlinked"
+              >since 2006</a
+            >. According to Capital One, up to 87% percent of large shopping
+            malls are
+            <a
+              href="https://capitaloneshopping.com/research/mall-closure-statistics/"
+              target="_blank"
+              class="hyperlinked"
+              >expected to close</a
+            >
+            in the next decade. “You don’t see any new malls being developed,”
+            Sherman said. “Twenty years ago, there would be a new mall every
+            week.”<br /><br />
+            But some malls are finding ways to keep people coming back. Stores
+            like Dave & Buster’s and Level99 are examples of
+            <a
+              href="https://www.cnbc.com/2025/08/09/americas-dying-shopping-malls-have-surprising-rebound-in-store.html"
+              target="_blank"
+              class="hyperlinked"
+              >experiential opportunities</a
+            >, a growing strategy among malls across the country. Other mall
+            owners have chosen to develop vacant store space into
+            <a
+              href="https://www.cnbc.com/2024/12/05/why-developers-are-building-housing-at-shopping-malls.html"
+              target="_blank"
+              class="hyperlinked"
+              >apartments</a
+            >
+            or even
+            <a
+              href="https://www.cnbc.com/2024/08/12/macys-store-closures-will-change-malls.html"
+              target="_blank"
+              class="hyperlinked"
+              >ice rinks</a
+            >.<br /><br />
+            Although the Providence Place Mall has faced its fair share of
+            challenges, the carpeted walkways still bustled with energy when The
+            Herald visited the mall in November. Couples sat in the food court
+            and families toted armfuls of shopping bags.<br /><br />
+            “As somebody who is here literally every single day, I’m very
+            honestly confused about the mass misconception about the fact that
+            the mall is doing bad,” said TraciMarie Chandler, a manager at the
+            Coffee Cup, a coffee shop in the mall.<br /><br />
+            For Chandler, the mall is the “most community-based job (she’s)
+            worked at.”<br /><br />
+            “I personally love working here,” she said. “I don’t really see the
+            mall closing any time soon.”<br /><br />
+            For now, it looks like the Providence Place Mall — despite its
+            troubles — is here to stay.<br /><br />
+          </div>
+        </article>
+      </div>
+    </div>
+    <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
