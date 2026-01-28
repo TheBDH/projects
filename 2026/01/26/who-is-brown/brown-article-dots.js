@@ -558,15 +558,31 @@
         const centerX = group.x;
         const centerY = group.y;
         
-        // Calculate distance from center for each dot
-        subGroupDots.forEach(dot => {
-          dot.distanceFromCenter = Math.sqrt(
-            Math.pow(dot.x - centerX, 2) + Math.pow(dot.y - centerY, 2)
-          );
-        });
+        // Only recalculate distances when entering year-comparison stages from outside
+        // (when shouldKeepPositions is false, meaning we're coming from a non-keepPositions stage)
+        // When staying within year-comparison stages, keep the existing distances
+        const needsDistanceRecalc = !shouldKeepPositions || subGroupDots.some(d => d.yearComparisonDistance === undefined);
+        if (needsDistanceRecalc) {
+          // Pre-calculate target positions and distances for edge-based fading
+          // Count visible dots for proper cluster radius
+          const visibleCount = Math.max(...[undergradLimit, gradLimit, medicalLimit].filter(l => l > 0));
+          const spreadMultiplier = isPortrait() ? MOBILE_CONFIG.clusterSpread : CONFIG.clusterSpread;
+          const clusterRadius = Math.sqrt(subGroupDots.length || 1) * spreadMultiplier;
+          
+          subGroupDots.forEach(dot => {
+            // Generate and store the position this dot will have
+            const pos = randomInCircle(centerX, centerY, clusterRadius);
+            dot.yearComparisonX = pos.x;
+            dot.yearComparisonY = pos.y;
+            // Calculate distance based on where dot WILL BE, not where it currently is
+            dot.yearComparisonDistance = Math.sqrt(
+              Math.pow(pos.x - centerX, 2) + Math.pow(pos.y - centerY, 2)
+            );
+          });
+        }
         
         // Sort by distance (closest first)
-        subGroupDots.sort((a, b) => a.distanceFromCenter - b.distanceFromCenter);
+        subGroupDots.sort((a, b) => a.yearComparisonDistance - b.yearComparisonDistance);
         
         // Mark visibility - keep the closest `limit` dots visible
         subGroupDots.forEach((dot, idx) => {
@@ -602,15 +618,29 @@
           const centerX = group.x;
           const centerY = group.y;
           
-          // Calculate distance from center for each dot
-          subGroupDots.forEach(dot => {
-            dot.distanceFromCenter = Math.sqrt(
-              Math.pow(dot.x - centerX, 2) + Math.pow(dot.y - centerY, 2)
-            );
-          });
+          // Only recalculate distances when entering year-comparison stages from outside
+          // (when shouldKeepPositions is false, meaning we're coming from a non-keepPositions stage)
+          // When staying within year-comparison stages, keep the existing distances
+          const needsDistanceRecalc = !shouldKeepPositions || subGroupDots.some(d => d.yearComparisonDistance === undefined);
+          if (needsDistanceRecalc) {
+            // Pre-calculate target positions and distances for edge-based fading
+            const spreadMultiplier = isPortrait() ? MOBILE_CONFIG.clusterSpread : CONFIG.clusterSpread;
+            const clusterRadius = Math.sqrt(subGroupDots.length || 1) * spreadMultiplier;
+            
+            subGroupDots.forEach(dot => {
+              // Generate and store the position this dot will have
+              const pos = randomInCircle(centerX, centerY, clusterRadius);
+              dot.yearComparisonX = pos.x;
+              dot.yearComparisonY = pos.y;
+              // Calculate distance based on where dot WILL BE, not where it currently is
+              dot.yearComparisonDistance = Math.sqrt(
+                Math.pow(pos.x - centerX, 2) + Math.pow(pos.y - centerY, 2)
+              );
+            });
+          }
           
           // Sort by distance (closest first)
-          subGroupDots.sort((a, b) => a.distanceFromCenter - b.distanceFromCenter);
+          subGroupDots.sort((a, b) => a.yearComparisonDistance - b.yearComparisonDistance);
           
           // Mark visibility - keep the closest `limit` dots visible
           subGroupDots.forEach((dot, idx) => {
@@ -692,6 +722,10 @@
           if (shouldKeepPositions) {
             dot.targetX = dot.x;
             dot.targetY = dot.y;
+          } else if (dot.yearComparisonX !== undefined && (stageIndex >= 2 && stageIndex <= 5 || stageIndex >= 8 && stageIndex <= 10)) {
+            // Use pre-calculated positions for year comparison stages (ensures edge-based fade works correctly)
+            dot.targetX = dot.yearComparisonX;
+            dot.targetY = dot.yearComparisonY;
           } else {
             const pos = randomInCircle(group.x, group.y, clusterRadius);
             dot.targetX = pos.x;
