@@ -165,7 +165,7 @@
   }
 
   // ============================================
-  // Stage Definitions - CONFIGURE YOUR STAGES HERE
+  // Stage Definitions
   // ============================================
 
   // Each stage function returns an array of groups with:
