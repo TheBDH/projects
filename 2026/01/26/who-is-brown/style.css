@@ -814,7 +814,7 @@ body.interactions-locked {
 
 #calc-info-popup .popup-text {
     font-family: Inter, sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.6;
     color: #333;
     font-family: "freight-text-pro", "Georgia", "Times", serif;
@@ -822,7 +822,7 @@ body.interactions-locked {
 
 #calc-info-popup .popup-text h3 {
     margin: 0 0 16px 0;
-    font-size: 20px;
+    font-size: 24px;
     color: #000;
     font-family: "freight-text-pro", "Georgia", "Times", serif;
 }
