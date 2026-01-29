@@ -1,6 +1,3 @@
-// Brown Community Visualization Data
-// Real data for Brown University
-
 const brownData = {
   year: 2024,
   totalCount: 16916,
