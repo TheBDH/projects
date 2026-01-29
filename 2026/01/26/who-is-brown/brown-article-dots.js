@@ -125,9 +125,10 @@
   calcInfoText.className = 'popup-text';
   calcInfoText.innerHTML = `
     <h3>How we calculated these numbers</h3>
-    <p>Student enrollment numbers include only degree-seeking students and were measured at the conclusion of the Fall 2024 semester.</p>
-    <p>Faculty/Staff numbers include all employees paid by Brown through November 1, 2024.</p>
-    <p>Each dot in the visualizations represents 5 people, rounded to the nearest integer.</p>
+    <p>Student enrollment numbers include only degree-seeking students and were measured by the Office of Institutional Research at the conclusion of the fall semester for each respective year.</p>
+    <p>Faculty/Staff numbers include all employees paid by Brown by Nov. 1 for each respective year.</p>
+    <p>Each dot in the visualizations represents five people, rounded to the nearest integer.</p>
+    
   `;
 
   calcInfoContent.appendChild(calcInfoClose);

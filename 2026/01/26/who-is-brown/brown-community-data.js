@@ -35,7 +35,7 @@ const brownData2014 = {
     }
   },
   faculty: {
-    total: 1333,
+    total: 1338,
     byType: {
       instructional: 929,
       research: 409
