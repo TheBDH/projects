@@ -2,7 +2,7 @@
 // This file controls the view-only dots that respond to article scrolling
 // These dots are separate from the interactive visualization dots
 
-(function() {
+(function () {
   'use strict';
 
   // ============================================
@@ -101,13 +101,78 @@
   const articleLabelsGroup = articleSvg.append('g').attr('id', 'article-labels-group');
 
   // ============================================
+  // Calculation Info Button & Popup (Stage 1 only)
+  // ============================================
+
+  // Create the button
+  const calcInfoButton = document.createElement('button');
+  calcInfoButton.id = 'calc-info-button';
+  calcInfoButton.textContent = 'See how we calculated these numbers';
+  document.body.appendChild(calcInfoButton);
+
+  // Create the popup overlay
+  const calcInfoPopup = document.createElement('div');
+  calcInfoPopup.id = 'calc-info-popup';
+
+  // Create the popup content
+  const calcInfoContent = document.createElement('div');
+  calcInfoContent.className = 'popup-content';
+
+  // Create close button
+  const calcInfoClose = document.createElement('button');
+  calcInfoClose.className = 'close-button';
+  calcInfoClose.innerHTML = '&times;';
+
+  // Create popup text
+  const calcInfoText = document.createElement('div');
+  calcInfoText.className = 'popup-text';
+  calcInfoText.innerHTML = `
+    <h3>How we calculated these numbers</h3>
+    <p>Student enrollment numbers include only degree-seeking students and were measured at the conclusion of the Fall 2024 semester.</p>
+    <p>Faculty/Staff numbers include all employees paid by Brown through November 1, 2024.</p>
+    <p>Each dot in the visualizations represents 5 people, rounded to the nearest integer.</p>
+  `;
+
+  calcInfoContent.appendChild(calcInfoClose);
+  calcInfoContent.appendChild(calcInfoText);
+  calcInfoPopup.appendChild(calcInfoContent);
+  document.body.appendChild(calcInfoPopup);
+
+  // Event handlers
+  calcInfoButton.addEventListener('click', () => {
+    calcInfoPopup.classList.add('visible');
+  });
+
+  calcInfoClose.addEventListener('click', () => {
+    calcInfoPopup.classList.remove('visible');
+  });
+
+  calcInfoPopup.addEventListener('click', (e) => {
+    if (e.target === calcInfoPopup) {
+      calcInfoPopup.classList.remove('visible');
+    }
+  });
+
+  // Functions to show/hide the button
+  function showCalcInfoButton() {
+    calcInfoButton.classList.add('visible');
+  }
+
+  function hideCalcInfoButton() {
+    calcInfoButton.classList.remove('visible');
+    // Also close the popup if open
+    calcInfoPopup.classList.remove('visible');
+  }
+
+  // ============================================
   // Stage Definitions - CONFIGURE YOUR STAGES HERE
   // ============================================
-  
+
   // Each stage function returns an array of groups with:
   // { name, count, color, x, y, visible }
-  
+
   function getStage0() {
+    showCalcInfoButton();
     // All three groups mixed together in center
     const centerX = articleState.width / 2;
     const centerY = articleState.height / 2;
@@ -141,7 +206,7 @@
     const centerX = articleState.width / 2;
     const centerY = articleState.height / 2;
     const byType = brownData.students.byType;
-    
+
     return {
       shuffle: true, // Mix all student types together
       showLabels: false,
@@ -160,7 +225,7 @@
     const byType = brownData.students.byType;
     const portrait = isPortrait();
     const centerX = articleState.width / 2;
-    
+
     return {
       shuffle: false,
       showLabels: true,
@@ -181,7 +246,7 @@
     const byType = brownData2014.students.byType;
     const portrait = isPortrait();
     const centerX = articleState.width / 2;
-    
+
     return {
       shuffle: false,
       showLabels: true,
@@ -202,7 +267,7 @@
     const byType = brownData2004.students.byType;
     const portrait = isPortrait();
     const centerX = articleState.width / 2;
-    
+
     return {
       shuffle: false,
       showLabels: true,
@@ -239,7 +304,7 @@
     const centerX = articleState.width / 2;
     const centerY = articleState.height / 2;
     const byType = brownData.faculty.byType;
-    
+
     return {
       shuffle: true, // Mix all faculty types together
       showLabels: false,
@@ -257,7 +322,7 @@
     const byType = brownData.faculty.byType;
     const portrait = isPortrait();
     const centerX = articleState.width / 2;
-    
+
     return {
       shuffle: false,
       showLabels: true,
@@ -278,7 +343,7 @@
     const byType = brownData2014.faculty.byType;
     const portrait = isPortrait();
     const centerX = articleState.width / 2;
-    
+
     return {
       shuffle: false,
       showLabels: true,
@@ -299,7 +364,7 @@
     const byType = brownData2004.faculty.byType;
     const portrait = isPortrait();
     const centerX = articleState.width / 2;
-    
+
     return {
       shuffle: false,
       showLabels: true,
@@ -334,7 +399,7 @@
     // Staff only, centered
     const centerX = articleState.width / 2;
     const centerY = articleState.height / 2;
-    
+
     return {
       shuffle: false,
       showLabels: false,
@@ -370,11 +435,11 @@
     const dots = [];
     const centerX = articleState.width / 2;
     const centerY = articleState.height / 2;
-    
+
     // Calculate total for shared radius
-    const totalCount = scaledCount(brownData.students.total) + 
-                       scaledCount(brownData.faculty.total) + 
-                       scaledCount(brownData.staff.total);
+    const totalCount = scaledCount(brownData.students.total) +
+      scaledCount(brownData.faculty.total) +
+      scaledCount(brownData.staff.total);
     const sharedRadius = Math.sqrt(totalCount) * CONFIG.stage0ClusterSpread;
 
     // Generate student dots with fixed subgroup assignments based on 2024 data
@@ -382,15 +447,15 @@
     const undergradCount = scaledCount(byType.undergrad);
     const gradCount = scaledCount(byType.grad);
     const medicalCount = scaledCount(byType.medical);
-    
+
     // Track index within each subgroup for historical visibility
     let undergradIdx = 0;
     let gradIdx = 0;
     let medicalIdx = 0;
-    
+
     for (let i = 0; i < scaledCount(brownData.students.total); i++) {
       const pos = randomInCircle(centerX, centerY, sharedRadius);
-      
+
       // Assign fixed subgroup based on 2024 proportions
       let subGroup, subGroupIndex;
       if (i < undergradCount) {
@@ -403,7 +468,7 @@
         subGroup = 'Medical';
         subGroupIndex = medicalIdx++;
       }
-      
+
       dots.push({
         x: pos.x,
         y: pos.y,
@@ -423,13 +488,13 @@
     const facultyByType = brownData.faculty.byType;
     const instructionalCount = scaledCount(facultyByType.instructional);
     const researchCount = scaledCount(facultyByType.research);
-    
+
     let instructionalIdx = 0;
     let researchIdx = 0;
-    
+
     for (let i = 0; i < scaledCount(brownData.faculty.total); i++) {
       const pos = randomInCircle(centerX, centerY, sharedRadius);
-      
+
       // Assign fixed subgroup based on proportions
       let facultySubGroup, facultySubGroupIndex;
       if (i < instructionalCount) {
@@ -439,7 +504,7 @@
         facultySubGroup = 'Research';
         facultySubGroupIndex = researchIdx++;
       }
-      
+
       dots.push({
         x: pos.x,
         y: pos.y,
@@ -513,8 +578,15 @@
     articleState.currentStage = stageIndex;
     pendingStage = null;
 
+    // Show/hide calculation info button based on stage
+    // if (stageIndex === 1) {
+    //   showCalcInfoButton();
+    // } else {
+    //   hideCalcInfoButton();
+    // }
+
     const stage = STAGE_FUNCTIONS[stageIndex]();
-    
+
     // Determine if we should keep positions:
     // - Only keep positions if BOTH current and previous stage have keepPositions
     // - This means 3→4, 4→5, 5→4 keep positions (year transitions)
@@ -522,7 +594,7 @@
     const prevStageConfig = previousStage >= 0 ? STAGE_FUNCTIONS[previousStage]() : null;
     const comingFromKeepPositionsStage = prevStageConfig && prevStageConfig.keepPositions;
     const shouldKeepPositions = stage.keepPositions === true && comingFromKeepPositionsStage;
-    
+
     // Clear labels and year display
     articleLabelsGroup.selectAll('.article-label, .article-year')
       .transition()
@@ -539,12 +611,12 @@
       const undergrad = groupMap.get('Undergraduate');
       const grad = groupMap.get('Graduate');
       const medical = groupMap.get('Medical');
-      
+
       // Get historical counts for this stage
       const undergradLimit = scaledCount(undergrad.count);
       const gradLimit = scaledCount(grad.count);
       const medicalLimit = scaledCount(medical.count);
-      
+
       // For each subgroup, sort dots by distance from group center
       // and hide the furthest ones beyond the historical limit
       const subGroups = [
@@ -552,12 +624,12 @@
         { name: 'Graduate', group: grad, limit: gradLimit },
         { name: 'Medical', group: medical, limit: medicalLimit }
       ];
-      
+
       subGroups.forEach(({ name, group, limit }) => {
         const subGroupDots = articleState.dots.filter(d => d.subGroup === name);
         const centerX = group.x;
         const centerY = group.y;
-        
+
         // Only recalculate distances when entering year-comparison stages from outside
         // (when shouldKeepPositions is false, meaning we're coming from a non-keepPositions stage)
         // When staying within year-comparison stages, keep the existing distances
@@ -568,7 +640,7 @@
           const visibleCount = Math.max(...[undergradLimit, gradLimit, medicalLimit].filter(l => l > 0));
           const spreadMultiplier = isPortrait() ? MOBILE_CONFIG.clusterSpread : CONFIG.clusterSpread;
           const clusterRadius = Math.sqrt(subGroupDots.length || 1) * spreadMultiplier;
-          
+
           subGroupDots.forEach(dot => {
             // Generate and store the position this dot will have
             const pos = randomInCircle(centerX, centerY, clusterRadius);
@@ -580,17 +652,17 @@
             );
           });
         }
-        
+
         // Sort by distance (closest first)
         subGroupDots.sort((a, b) => a.yearComparisonDistance - b.yearComparisonDistance);
-        
+
         // Mark visibility - keep the closest `limit` dots visible
         subGroupDots.forEach((dot, idx) => {
           dot.currentGroup = dot.subGroup;
           dot.historicallyVisible = idx < limit;
         });
       });
-      
+
       // Non-student dots stay hidden
       articleState.dots.forEach(dot => {
         if (dot.baseGroup !== 'Students') {
@@ -601,23 +673,23 @@
       // Handle faculty subgroups for stages 7-10
       const instructional = groupMap.get('Instructional');
       const research = groupMap.get('Research');
-      
+
       // Get historical counts for this stage (stages 8-10 have year data)
       const instructionalLimit = scaledCount(instructional.count);
       const researchLimit = scaledCount(research.count);
-      
+
       // For stages 8-10, sort dots by distance and hide furthest ones beyond historical limit
       if (stageIndex >= 8) {
         const facultySubGroups = [
           { name: 'Instructional', group: instructional, limit: instructionalLimit },
           { name: 'Research', group: research, limit: researchLimit }
         ];
-        
+
         facultySubGroups.forEach(({ name, group, limit }) => {
           const subGroupDots = articleState.dots.filter(d => d.subGroup === name && d.baseGroup === 'Faculty');
           const centerX = group.x;
           const centerY = group.y;
-          
+
           // Only recalculate distances when entering year-comparison stages from outside
           // (when shouldKeepPositions is false, meaning we're coming from a non-keepPositions stage)
           // When staying within year-comparison stages, keep the existing distances
@@ -626,7 +698,7 @@
             // Pre-calculate target positions and distances for edge-based fading
             const spreadMultiplier = isPortrait() ? MOBILE_CONFIG.clusterSpread : CONFIG.clusterSpread;
             const clusterRadius = Math.sqrt(subGroupDots.length || 1) * spreadMultiplier;
-            
+
             subGroupDots.forEach(dot => {
               // Generate and store the position this dot will have
               const pos = randomInCircle(centerX, centerY, clusterRadius);
@@ -638,10 +710,10 @@
               );
             });
           }
-          
+
           // Sort by distance (closest first)
           subGroupDots.sort((a, b) => a.yearComparisonDistance - b.yearComparisonDistance);
-          
+
           // Mark visibility - keep the closest `limit` dots visible
           subGroupDots.forEach((dot, idx) => {
             dot.currentGroup = dot.subGroup;
@@ -657,7 +729,7 @@
           }
         });
       }
-      
+
       // Non-faculty dots
       articleState.dots.forEach(dot => {
         if (dot.baseGroup !== 'Faculty') {
@@ -703,7 +775,7 @@
       // Each group gets its own position
       stage.groups.forEach(group => {
         if (!group.visible) return;
-        
+
         // Get all dots for this group (including hidden ones for keepPositions stages)
         const groupDots = articleState.dots.filter(d => {
           if (group.sourceGroup) {
@@ -711,7 +783,7 @@
           }
           return d.currentGroup === group.name || d.baseGroup === group.name;
         });
-        
+
         // Only count visible dots for cluster radius
         const visibleGroupDots = groupDots.filter(d => d.historicallyVisible);
         const spreadMultiplier = group.clusterSpread || (isPortrait() ? MOBILE_CONFIG.clusterSpread : CONFIG.clusterSpread);
@@ -739,8 +811,8 @@
       // Handle dots whose groups are not visible
       const visibleGroupNames = new Set(stage.groups.filter(g => g.visible).map(g => g.name));
       articleState.dots.forEach(dot => {
-        const inVisible = visibleGroupNames.has(dot.currentGroup) || 
-                          stage.groups.some(g => g.visible && g.sourceGroup === dot.baseGroup && g.name === dot.currentGroup);
+        const inVisible = visibleGroupNames.has(dot.currentGroup) ||
+          stage.groups.some(g => g.visible && g.sourceGroup === dot.baseGroup && g.name === dot.currentGroup);
         if (!inVisible && !visibleGroupNames.has(dot.baseGroup)) {
           dot.targetOpacity = 0;
           if (shouldKeepPositions) {
@@ -780,7 +852,7 @@
       }
 
       articleState.animating = false;
-      
+
       // If there's a pending stage, transition to it
       if (pendingStage !== null && pendingStage !== articleState.currentStage) {
         const nextStage = pendingStage;
@@ -863,7 +935,7 @@
 
   function setupArticleObserver() {
     const articleSections = document.querySelectorAll('.article-section');
-    
+
     if (articleSections.length === 0) {
       setTimeout(() => transitionToStage(0), 500);
       return;
@@ -871,7 +943,7 @@
 
     // Track intersection ratios to determine which section is most visible
     const sectionVisibility = new Map();
-    
+
     const observer = new IntersectionObserver((entries) => {
       // Update visibility map
       entries.forEach(entry => {
@@ -880,18 +952,18 @@
           sectionVisibility.set(stageIndex, entry.intersectionRatio);
         }
       });
-      
+
       // Find the most visible section
       let mostVisibleStage = -1;
       let highestRatio = 0;
-      
+
       sectionVisibility.forEach((ratio, stage) => {
         if (ratio > highestRatio) {
           highestRatio = ratio;
           mostVisibleStage = stage;
         }
       });
-      
+
       // Only transition if we have a clear winner with decent visibility
       if (mostVisibleStage >= 0 && highestRatio > 0.2) {
         transitionToStage(mostVisibleStage);
@@ -908,7 +980,7 @@
     // Checks which section is most centered in viewport
     let scrollTimeout = null;
     let lastCheckedStage = -1;
-    
+
     function checkVisibleSection() {
       const viewportCenter = window.innerHeight / 2;
       let closestStage = -1;
@@ -918,7 +990,7 @@
         const rect = section.getBoundingClientRect();
         const sectionCenter = rect.top + rect.height / 2;
         const distance = Math.abs(sectionCenter - viewportCenter);
-        
+
         // Only consider sections that are at least partially visible
         if (rect.bottom > 0 && rect.top < window.innerHeight) {
           if (distance < closestDistance) {
@@ -933,11 +1005,11 @@
         transitionToStage(closestStage);
       }
     }
-    
+
     window.addEventListener('scroll', () => {
       // Immediate check for fast response
       checkVisibleSection();
-      
+
       // Also debounced check to catch settling
       if (scrollTimeout) clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(checkVisibleSection, 100);

@@ -736,3 +736,109 @@ body.interactions-locked {
     text-anchor: middle;
     pointer-events: none;
 }
+
+/* Calculation Info Button & Popup */
+#calc-info-button {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 16px;
+    background: #ffffff;
+    color: rgb(79, 79, 79);
+    border: none;
+    border-radius: 6px;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, background 0.2s ease;
+    pointer-events: none;
+    z-index: 1000;
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.15); */
+}
+
+/* #calc-info-button:hover {
+    background: #357ABD;
+} */
+
+#calc-info-button.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#calc-info-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1001;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+}
+
+#calc-info-popup.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#calc-info-popup .popup-content {
+    background: white;
+    padding: 32px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+}
+
+#calc-info-popup .close-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    color: black;
+    padding: 4px 8px;
+}
+
+#calc-info-popup .popup-text {
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+}
+
+#calc-info-popup .popup-text h3 {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    color: #000;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+}
+
+#calc-info-popup .popup-text p {
+    margin: 0 0 12px 0;
+}
+
+#calc-info-popup .popup-text p:last-child {
+    margin: 0;
+}
+
+@media (max-width: 768px), (orientation: portrait) {
+    #calc-info-button {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
