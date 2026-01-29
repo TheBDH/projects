@@ -1,6 +1,3 @@
-// Brown Community Visualization - Article Dots
-// This file controls the view-only dots that respond to article scrolling
-// These dots are separate from the interactive visualization dots
 
 (function () {
   'use strict';
@@ -45,11 +42,11 @@
     yearY: 0.12,              // Year label Y position (fraction of screen height)
     // Three-group layout (Students/Faculty/Staff) - vertical positions
     threeGroupY1: 0.2,        // First group Y position
-    threeGroupY2: 0.5,        // Second group Y position  
+    threeGroupY2: 0.55,        // Second group Y position  
     threeGroupY3: 0.8,        // Third group Y position
     // Student subtypes layout (Undergrad/Grad/Medical) - vertical positions
     studentSubtypeY1: 0.3,   // Undergraduate Y position
-    studentSubtypeY2: 0.55,    // Graduate Y position
+    studentSubtypeY2: 0.6,    // Graduate Y position
     studentSubtypeY3: 0.8,   // Medical Y position
     // Faculty subtypes layout (Instructional/Research) - vertical positions
     facultySubtypeY1: 0.35,   // Instructional Y position
@@ -630,9 +627,6 @@
         const centerX = group.x;
         const centerY = group.y;
 
-        // Only recalculate distances when entering year-comparison stages from outside
-        // (when shouldKeepPositions is false, meaning we're coming from a non-keepPositions stage)
-        // When staying within year-comparison stages, keep the existing distances
         const needsDistanceRecalc = !shouldKeepPositions || subGroupDots.some(d => d.yearComparisonDistance === undefined);
         if (needsDistanceRecalc) {
           // Pre-calculate target positions and distances for edge-based fading
@@ -690,9 +684,6 @@
           const centerX = group.x;
           const centerY = group.y;
 
-          // Only recalculate distances when entering year-comparison stages from outside
-          // (when shouldKeepPositions is false, meaning we're coming from a non-keepPositions stage)
-          // When staying within year-comparison stages, keep the existing distances
           const needsDistanceRecalc = !shouldKeepPositions || subGroupDots.some(d => d.yearComparisonDistance === undefined);
           if (needsDistanceRecalc) {
             // Pre-calculate target positions and distances for edge-based fading
