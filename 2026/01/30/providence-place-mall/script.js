@@ -1,6 +1,7 @@
 const steps = document.querySelectorAll(".step");
 const photoImg = document.querySelector(".photo img");
 const photoContainer = document.querySelector(".photo");
+const toc = document.getElementById("toc");
 
 let currentIndex = null;
 let isTransitioning = false;
@@ -9,9 +10,17 @@ const scroller = scrollama();
 
 function handleStepEnter(response) {
   const index = response.index;
+  const stepEl = response.element;
+  const sid = stepEl?.id || 0;
+  document
+    .querySelectorAll(".toc-list button")
+    .forEach((b) => b.classList.remove("active"));
+  if (document.querySelector(`[data-target-id="${sid}"]`)) {
+    document.querySelector(`[data-target-id="${sid}"]`).classList.add("active");
+  }
   if (!photoImg) return;
   if (currentIndex === index) return;
-  const newSrc = `images/photo-${index}.JPG`;
+  const newSrc = `images/photo-${index + 1}.JPG`;
 
   if (index >= 1) {
     toc.classList.add("visible");
@@ -49,11 +58,7 @@ function handleStepEnter(response) {
           if (e.propertyName !== "opacity") return;
           photoImg.removeEventListener("transitionend", onTransitionEnd);
           photoImg.src = newSrc;
-          requestAnimationFrame(() =>
-            requestAnimationFrame(() => {
-              photoImg.classList.remove("fade-out");
-            }),
-          );
+          photoImg.classList.remove("fade-out");
           currentIndex = index;
           const onFadeInEnd = (ev) => {
             if (ev.propertyName !== "opacity") return;
@@ -91,22 +96,12 @@ function updateProgressBar() {
 
 window.addEventListener("scroll", updateProgressBar);
 
-// ciara table of contents thing
 const headings = document.querySelectorAll(".subheading");
 const tocList = document.querySelector(".toc-list");
 
-function slugify(text) {
-  return text
-    .toString()
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
 headings.forEach((h, i) => {
   const step = h.closest(".step") || h;
-  const id = step.id || `toc-${i}-${slugify(h.textContent || "heading")}`;
+  const id = step.id || `toc-${i}`;
   step.id = id;
 
   const li = document.createElement("li");
@@ -129,56 +124,6 @@ headings.forEach((h, i) => {
   tocList.appendChild(li);
 });
 
-const idToButton = {};
 document.querySelectorAll(".toc-list button").forEach((b) => {
   const tid = b.getAttribute("data-target-id");
-  if (tid) idToButton[tid] = b;
 });
-
-const stepsToObserve = Array.from(document.querySelectorAll(".step")).filter(
-  (s) => s.querySelector(".subheading"),
-);
-
-if (stepsToObserve.length) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const visible = entries.filter(
-        (e) => e.isIntersecting && e.intersectionRatio > 0,
-      );
-      if (!visible.length) return;
-      visible.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-      const top = visible[0].target;
-      const btn = idToButton[top.id];
-      if (!btn) return;
-      document
-        .querySelectorAll(".toc-list button")
-        .forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-    },
-    {
-      root: null,
-      rootMargin: "0px 0px -40% 0px",
-      threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
-    },
-  );
-
-  stepsToObserve.forEach((s) => observer.observe(s));
-
-  const setInitial = () => {
-    const inView = stepsToObserve.find((s) => {
-      const r = s.getBoundingClientRect();
-      return (
-        r.top <= window.innerHeight * 0.6 && r.bottom > window.innerHeight * 0.2
-      );
-    });
-    if (inView && idToButton[inView.id]) {
-      document
-        .querySelectorAll(".toc-list button")
-        .forEach((b) => b.classList.remove("active"));
-      idToButton[inView.id].classList.add("active");
-    }
-  };
-  window.addEventListener("load", setInitial);
-  window.addEventListener("resize", setInitial);
-  setInitial();
-}

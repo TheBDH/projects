@@ -87,16 +87,10 @@ article {
   background-color: transparent;
 }
 
+.step[data-step="7"],
 .step[data-step="8"],
 .step[data-step="9"],
-.step[data-step="10"],
-.step[data-step="11"],
-.step[data-step="12"],
-.step[data-step="13"],
-.step[data-step="14"],
-.step[data-step="15"],
-.step[data-step="16"],
-.step[data-step="17"] {
+.step[data-step="10"] {
   margin-bottom: 5rem;
   padding-bottom: 0;
 }
@@ -129,6 +123,7 @@ article {
   display: flex;
   position: relative;
   height: auto;
+  margin-top: 5rem;
 }
 
 #step-photo-credit,
