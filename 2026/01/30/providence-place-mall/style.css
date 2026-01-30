@@ -1,6 +1,7 @@
 :root {
   --byline-color: #5e3846;
   --background-color: #39161e;
+  --dark-color: #2b151a;
   --accent-color: #5e3846;
   --text-color: #fff;
   --hyperlink-color: #0066cc;
@@ -228,7 +229,9 @@ article {
 }
 
 .step p,
-p {
+p,
+ul,
+button {
   display: inline;
   font-size: 1.2rem;
   padding: 0;
@@ -327,22 +330,10 @@ a {
     font-size: 1.1rem;
   }
 
-  #pre-map {
-    width: 70%;
-  }
-
-  #map {
-    width: 100%;
-  }
-
   .scrolly {
     width: 100%;
     padding: 0;
     margin: 0;
-  }
-
-  article {
-    max-width: 60%;
   }
 
   #heading {
@@ -353,15 +344,8 @@ a {
     flex-direction: column;
   }
 
-  .modal-content {
-    width: 80%;
-  }
-
-  #label {
-    top: auto;
-    right: auto;
-    bottom: 1rem;
-    left: 1rem;
+  #toc {
+    display: none;
   }
 }
 
@@ -448,4 +432,61 @@ img {
 
 p a {
   text-decoration: underline;
+}
+
+#toc {
+  position: fixed;
+  right: 12px;
+  top: 6vh;
+  z-index: 30;
+  text-align: right;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+#toc.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.toc-list {
+  list-style: none;
+}
+
+.toc-list a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.toc-list a:hover,
+.toc-list button:hover {
+  opacity: 1;
+}
+
+.toc-list a.active {
+  font-weight: 700;
+}
+
+.toc-list button {
+  background: var(--accent-color);
+  border: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.toc-list button.active {
+  font-weight: 700;
+  background: var(--dark-color);
 }
