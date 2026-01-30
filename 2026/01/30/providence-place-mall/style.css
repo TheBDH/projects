@@ -87,7 +87,14 @@ article {
 }
 
 .step[data-step="8"],
+.step[data-step="9"],
 .step[data-step="10"],
+.step[data-step="11"],
+.step[data-step="12"],
+.step[data-step="13"],
+.step[data-step="14"],
+.step[data-step="15"],
+.step[data-step="16"],
 .step[data-step="17"] {
   margin-bottom: 5rem;
   padding-bottom: 0;
