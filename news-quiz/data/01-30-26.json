@@ -1,0 +1,147 @@
+{
+  "date": "January 26 - January 30, 2025",
+  "intro": "Test your knowledge of this week's Herald news!",
+  "questions": [
+    {
+      "question": "How many Brown alums were named to the 2026 Forbes 30 Under 30 list?",
+      "type": "MC",
+      "choices": [
+        "1",
+        "5",
+        "9",
+        "13"
+      ],
+      "answer": "c",
+      "image": "",
+      "alt": null,
+      "explanation": "In December 2025, nine Brown alums were featured on the 2026 Forbes 30 Under 30 list. There has been at least one Brown alum on the list each year for the past five years.",
+      "link": "https://www.browndailyherald.com/article/2026/01/nine-brown-alums-named-to-2026-forbes-30-under-30-list"
+    },
+    {
+      "question": "What was the final score in the men’s ice hockey game against Stonehill on Saturday?",
+      "type": "MC",
+      "choices": [
+        "3-2, Brown",
+        "3-2, Stonehill",
+        "4-1, Brown",
+        "3-0, Stonehill"],
+      "answer": "b",
+      "image": "",
+      "alt": null,
+      "explanation": "Two goals by Ivan Zadvernyuk ’28 pushed the game to overtime, but the Bears ultimately fell 3-2 to the Skyhawks.",
+      "link": "https://www.browndailyherald.com/article/2026/01/mens-ice-hockey-falls-short-to-stonehill-3-2-in-ot"
+    },
+    {
+      "question": "To what team did men’s basketball win in overtime?",
+      "type": "MC",
+      "choices": [
+        "Cornell",
+        "Columbia",
+        "Dartmouth",
+        "Harvard"],
+      "answer": "b",
+      "image": "",
+      "alt": null,
+      "explanation": "Men’s basketball had their first league win (86-80) vs Columbia last Saturday. ",
+      "link": "https://www.browndailyherald.com/article/2026/01/mens-basketball-splits-homestand-with-overtime-win-over-columbia-stumble-against-cornell"
+    },
+    {
+      "question": "What species of animal is Turbobo, a popular plush toy created by a Brown student?",
+      "type": "MC",
+      "choices": [
+        "Sheep",
+        "Bear",
+        "Pig",
+        "Dog"],
+      "answer": "d",
+      "image": "",
+      "alt": null,
+      "explanation": "In 2023, Ryan Miele ’27 launched Turbobo, a product that has now found its way into classrooms, homes and care centers across the United States.",
+      "link": "https://www.browndailyherald.com/article/2026/01/meet-turbobo-the-weighted-plush-dog-that-wears-his-heart-on-his-fur"
+    },
+    {
+      "question": "What is the name of the Brunonian-filled music group nominated for the 2026 Grammys?",
+      "type": "MC",
+      "choices": [
+        "Soulbears",
+        "Second Direction",
+        "Lawrence",
+        "Page-Robbers"],
+      "answer": "c",
+      "image": "",
+      "alt": null,
+      "explanation": "The soul-pop group Lawrence received a nomination for the 2026 Grammy awards for their song “Something in the Water (acoustic-ish).”",
+      "link": "https://www.browndailyherald.com/article/2026/01/draft-brown-alumni-nominated-for-the-2026-grammy-awards"
+    },
+    {
+      "question": "What price was the Rhode Island minimum wage raised to?",
+      "type": "MC",
+      "choices": [
+        "$10",
+        "$12",
+        "$15",
+        "$16"],
+      "answer": "d",
+      "image": "",
+      "alt": null,
+      "explanation": "Rhode Island raised the state minimum wage from $15 to $16 per hour in a law that went into effect Jan. 1.",
+      "link": "https://www.browndailyherald.com/article/2026/01/ri-minimum-wage-raised-to-16-per-hour-50000-workers-impacted"
+    },
+    {
+      "question": "What is the name of RISD Museum’s children’s tour?",
+      "type": "MC",
+      "choices": [
+        "Children’s Art Tour",
+        "RISD Under 7",
+        "Tours for Tots",
+        "Tours for Children"],
+      "answer": "c",
+      "image": "",
+      "alt": null,
+      "explanation": "RISD’s “Tour for Tots” program encourages children to feel comfortable in the museum by partaking in activities such as gallery sketches and thinking about different works of art. ",
+      "link": "https://www.browndailyherald.com/article/2026/01/risd-museum-tours-for-tots-teaches-youth-to-make-experience-art"
+    },
+    {
+      "question": "How many restaurants will be participating in Providence’s Restaurant Weeks this year?",
+      "type": "MC",
+      "choices": [
+        "93",
+        "100",
+        "60",
+        "87"],
+      "answer": "a",
+      "image": "",
+      "alt": null,
+      "explanation": "This year, 93 restaurants will be participating in Restaurant Weeks from Jan. 25 to Feb. 7. Many participating businesses will be offering special deals such as set menus and meal discounts.",
+      "link": "https://www.browndailyherald.com/article/2026/01/twenty-years-and-hundreds-of-discounts-later-providence-restaurant-weeks-continues-boosting-local-businesses"
+    },
+    {
+      "question": "How many responses did the UCS community assistance form receive?",
+      "type": "MC",
+      "choices": [
+        "500",
+        "1,000",
+        "2,000",
+        "2,500"],
+      "answer": "c",
+      "image": "",
+      "alt": null,
+      "explanation": "After the Dec. 13 shooting, the Undergraduate Council of Students launched a community assistance form that paired students with support services ranging from transportation to mental health care. The form received over 2,000 responses before closing on Dec. 22.",
+      "link": "https://www.browndailyherald.com/article/2026/01/santiago-ucs-break-initiatives"
+    },
+    {
+      "question": "What Brown community restaurant recently closed?",
+      "type": "MC",
+      "choices": [
+        "Louis Family Restaurant",
+        "Chinatown on Thayer",
+        "Heng Thai",
+        "Den Den"],
+      "answer": "a",
+      "image": "",
+      "alt": null,
+      "explanation": "After 79 years of operation, Louis Family Restaurant has closed. Owners John and Albert Gianfrancesco served the restaurant’s last meal on Dec. 31.",
+      "link": "https://www.browndailyherald.com/article/2026/01/draft-durbhakula-louis-family-restaurant-closing"
+    }
+  ]
+}
