@@ -7,9 +7,6 @@
 
 .article {
   font-family: "Playfair Display", serif;
-  width: 100vw;
-  margin-left: -5px;
-  padding-left: 5px;
   overflow-x: none;
   font-size: var(--font-size);
   display: flex;
@@ -182,5 +179,21 @@ h4 {
 @media (max-width: 720px) {
   .heading-text {
     width: 50%;
+  }
+
+  .grid-4 {
+    width: 100vw;
+  }
+
+  .img-step.grid-4 img,
+  .grid-4 .img-block,
+  .img-step.grid-2 img,
+  .grid-2 .img-block {
+    width: calc(100vw / 2 - 2.5px);
+    height: calc(100vh / 2 - 2.5px);
+  }
+
+  .grid-4-2 {
+    object-position: 20% 20%;
   }
 }
