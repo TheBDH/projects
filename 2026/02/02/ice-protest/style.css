@@ -177,7 +177,7 @@ h4 {
   right: 10px;
   color: gray;
 }
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   .heading-text {
     width: 50%;
   }
