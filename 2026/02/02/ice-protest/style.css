@@ -212,16 +212,16 @@ h4 {
     height: calc(100vh / 2 - 2.5px);
   }
 
-  .grid-4-2 img {
-    object-position: -50px 0px;
-  }
-
   .grid-2-1 img {
     object-position: 100% 0%;
   }
 
   .grid-3-3 img {
     object-position: 90% 20%;
+  }
+
+  .img-step .grid-4-2 img {
+    object-position: 0% 0%;
   }
 
   .img-step.grid-3 img,
