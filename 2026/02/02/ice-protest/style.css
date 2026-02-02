@@ -5,10 +5,6 @@
   --font-size: 1rem;
 }
 
-body {
-  overflow-x: none;
-}
-
 .article {
   font-family: "Playfair Display", serif;
   width: 100vw;
