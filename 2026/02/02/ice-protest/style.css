@@ -180,6 +180,11 @@ h4 {
   right: 10px;
   color: gray;
 }
+
+.img-step img {
+  object-fit: cover;
+}
+
 @media (max-width: 720px) {
   .heading-text {
     width: 50%;
@@ -198,7 +203,7 @@ h4 {
   }
 
   .grid-4-2 {
-    object-position: 20% 20%;
+    object-position: 0% 20%;
   }
 
   .img-step.solo-photo img,
