@@ -8,9 +8,15 @@
 body {
   font-family: "Playfair Display", serif;
   width: 100vw;
+  margin-left: -5px;
+  padding-left: 5px;
   width: calc(var(--vw, 1vw) * 100);
   overflow-x: none;
   font-size: var(--font-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .heading {
@@ -73,6 +79,7 @@ h4 {
 .step {
   margin-top: 5rem;
   width: 80%;
+  display: flex;
   justify-self: center;
 }
 
