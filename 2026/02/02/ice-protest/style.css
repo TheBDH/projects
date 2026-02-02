@@ -5,17 +5,13 @@
   --font-size: 1rem;
 }
 
-body {
+.article {
   font-family: "Playfair Display", serif;
   width: 100vw;
   margin-left: -5px;
   padding-left: 5px;
   overflow-x: none;
   font-size: var(--font-size);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .heading {
@@ -79,6 +75,10 @@ h4 {
   width: 80%;
   display: flex;
   justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .img-step {
@@ -178,13 +178,5 @@ h4 {
 @media (max-width: 720px) {
   .heading-text {
     width: 50%;
-  }
-
-  body {
-    width: 100svw;
-  }
-
-  .heading {
-    height: 100svh;
   }
 }
