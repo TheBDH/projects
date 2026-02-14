@@ -144,35 +144,42 @@ a {
 .hotspot:nth-child(3) {
   width: 120px;
   height: auto;
-  top: 124px;
-  left: 83px;
+  /* top: 124px;
+  left: 83px; */
+  position: relative;
+  transform: translate(70%, -320%);
 }
 
 .hotspot:nth-child(4) {
-  top: 197px;
-  left: 153px;
+  /* top: 197px;
+  left: 153px; */
+  transform: translate(30%, -250%);
 }
 
 .hotspot:nth-child(5) {
-  top: 127px;
-  left: 208px;
+  /* top: 127px;
+  left: 208px; */
+  transform: translate(75%, -290%);
 }
 
 .hotspot:nth-child(6) {
-  top: 56px;
-  left: 271px;
+  /* top: 56px;
+  left: 271px; */
+  transform: translate(135%, -365%);
 }
 
 .hotspot:nth-child(7) {
-  top: 145px;
-  left: 310px;
+  /* top: 145px;
+  left: 310px; */
+  transform: translate(170%, -290%);
 }
 
 .hotspot:nth-child(8) {
   width: 125px;
   height: auto;
-  top: 223px;
-  left: 255px;
+  /* top: 223px;
+  left: 255px; */
+  transform: translate(105%, -225%);
 }
 
 .chocolate.blur {
@@ -258,37 +265,37 @@ img {
   }
 
   .hotspot:nth-child(3) {
-    width: 90px;
+    width: 100px;
     height: auto;
-    top: 110px;
-    left: 75px;
+    /* top: 110px; */
+    /* left: 75px; */
   }
 
   .hotspot:nth-child(4) {
-    top: 165px;
-    left: 130px;
+    /* top: 165px;
+    left: 130px; */
   }
 
   .hotspot:nth-child(5) {
-    top: 105px;
-    left: 180px;
+    /* top: 105px;
+    left: 180px; */
   }
 
   .hotspot:nth-child(6) {
-    top: 50px;
-    left: 230px;
+    /* top: 50px;
+    left: 230px; */
   }
 
   .hotspot:nth-child(7) {
-    top: 125px;
-    left: 260px;
+    /* top: 125px;
+    left: 260px; */
   }
 
   .hotspot:nth-child(8) {
     width: 100px;
     height: auto;
-    top: 190px;
-    left: 212px;
+    /* top: 190px;
+    left: 212px; */
   }
 
   .box-lid.open {
