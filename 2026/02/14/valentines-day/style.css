@@ -188,24 +188,6 @@ a {
   transition-duration: 0.5s;
 }
 
-.story-panel {
-  text-align: center;
-  flex-shrink: 0;
-  max-width: 400px;
-}
-
-.story {
-  visibility: hidden;
-  font-size: 18px;
-  margin: auto;
-  position: absolute;
-  width: 20rem;
-}
-
-.story.show {
-  visibility: visible;
-}
-
 .row-container {
   display: flex;
   justify-content: flex-end;
@@ -256,7 +238,7 @@ img {
   .box-lid {
     top: 15px;
     left: 50px;
-    max-width: 280px;
+    max-width: 250px;
   }
 
   .hotspot {
