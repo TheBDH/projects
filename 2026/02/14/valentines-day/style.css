@@ -264,6 +264,17 @@ img {
   font-size: 0.9rem;
 }
 
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 0%;
+  background: var(--accent-color);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
 /* mobile formatting */
 @media (max-width: 600px) {
   .step {
