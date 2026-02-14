@@ -242,12 +242,12 @@ img {
   }
 
   .hotspot {
-    width: 70px;
+    width: 60px;
     height: auto;
   }
 
   .hotspot:nth-child(3) {
-    width: 80px;
+    width: 70px;
     height: auto;
     /* top: 110px; */
     /* left: 75px; */
@@ -274,7 +274,7 @@ img {
   }
 
   .hotspot:nth-child(8) {
-    width: 80px;
+    width: 70px;
     height: auto;
     /* top: 190px;
     left: 212px; */
