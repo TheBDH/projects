@@ -256,11 +256,11 @@ img {
   .box-lid {
     top: 15px;
     left: 50px;
-    max-width: 330px;
+    max-width: 280px;
   }
 
   .hotspot {
-    width: 90px;
+    width: 80px;
     height: auto;
   }
 
