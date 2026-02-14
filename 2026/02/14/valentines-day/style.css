@@ -1,0 +1,302 @@
+:root {
+  --bg-color: #2c2213;
+  --accent-color: #cb3032;
+  --accent-2: #edd2c2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  background-color: var(--accent-2);
+  color: var(--bg-color);
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.step {
+  width: 40%;
+  padding-bottom: 10rem;
+  padding-top: 10rem;
+  margin-left: 5rem;
+  border-bottom: 1px solid var(--bg-color);
+}
+
+.step[data-step="-1"] {
+  margin-top: 0;
+}
+
+.step:last-child {
+  border-bottom: none;
+}
+
+p {
+  font-family: "freight-text-pro", "Times", serif;
+}
+
+.background-heading {
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#step-heading {
+  text-align: center;
+  width: 30%;
+  margin: auto;
+  background-color: #d6b1a2;
+  padding: 1rem 2.5rem;
+  border-radius: 1.5rem;
+}
+
+h4 {
+  font-style: italic;
+}
+
+@keyframes typing {
+  0%,
+  50%,
+  100% {
+    border-color: var(--accent-color);
+  }
+  25%,
+  75% {
+    border-color: transparent;
+  }
+}
+
+#platonic {
+  color: var(--accent-color);
+  font-weight: bold;
+  animation: typing 1s infinite;
+  border-right: 2px solid var(--accent-color);
+}
+
+#byline {
+  font-weight: normal;
+  font-family: "freight-text-pro", "Times", serif;
+  font-size: 0.8rem;
+}
+
+#byline .author {
+  background-color: var(--accent-color);
+  color: #f5efed;
+  padding: 0.2rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  white-space: nowrap;
+}
+
+#byline .author a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a {
+  color: var(--accent-color);
+}
+
+.box-wrapper {
+  position: relative;
+  width: 600px;
+}
+
+.box-image {
+  flex-shrink: 0;
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+
+.box-lid {
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  width: 380px;
+  z-index: 100;
+}
+
+.hotspot {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 99;
+  width: 115px;
+  height: auto;
+  opacity: 0;
+}
+
+.hotspot.active {
+  opacity: 1;
+}
+
+.hotspot:nth-child(3) {
+  width: 120px;
+  height: auto;
+  top: 124px;
+  left: 83px;
+}
+
+.hotspot:nth-child(4) {
+  top: 197px;
+  left: 153px;
+}
+
+.hotspot:nth-child(5) {
+  top: 127px;
+  left: 208px;
+}
+
+.hotspot:nth-child(6) {
+  top: 56px;
+  left: 271px;
+}
+
+.hotspot:nth-child(7) {
+  top: 145px;
+  left: 310px;
+}
+
+.hotspot:nth-child(8) {
+  width: 125px;
+  height: auto;
+  top: 223px;
+  left: 255px;
+}
+
+.chocolate.blur {
+  filter: blur(6px);
+  opacity: 0.7;
+  transition-duration: 0.5s;
+}
+
+.story-panel {
+  text-align: center;
+  flex-shrink: 0;
+  max-width: 400px;
+}
+
+.story {
+  visibility: hidden;
+  font-size: 18px;
+  margin: auto;
+  position: absolute;
+  width: 20rem;
+}
+
+.story.show {
+  visibility: visible;
+}
+
+.row-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  position: sticky;
+  top: 100px;
+}
+
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.box-lid.open {
+  transform: translateX(350px) rotate(30deg);
+  transition-duration: 3s;
+  opacity: 0.95;
+}
+
+.step b {
+  color: var(--accent-color);
+  white-space: normal;
+}
+
+/* mobile formatting */
+@media (max-width: 600px) {
+  .step {
+    width: 90%;
+    margin-left: 5%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  #step-heading {
+    width: 80%;
+    font-size: 1.5rem;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .box-wrapper {
+    width: 100%;
+  }
+
+  .box-lid {
+    top: 15px;
+    left: 50px;
+    max-width: 330px;
+  }
+
+  .hotspot {
+    width: 90px;
+    height: auto;
+  }
+
+  .hotspot:nth-child(3) {
+    width: 90px;
+    height: auto;
+    top: 110px;
+    left: 75px;
+  }
+
+  .hotspot:nth-child(4) {
+    top: 165px;
+    left: 130px;
+  }
+
+  .hotspot:nth-child(5) {
+    top: 105px;
+    left: 180px;
+  }
+
+  .hotspot:nth-child(6) {
+    top: 50px;
+    left: 230px;
+  }
+
+  .hotspot:nth-child(7) {
+    top: 125px;
+    left: 260px;
+  }
+
+  .hotspot:nth-child(8) {
+    width: 100px;
+    height: auto;
+    top: 190px;
+    left: 212px;
+  }
+
+  .box-lid.open {
+    transform: translateX(300px) rotate(30deg);
+  }
+
+  .row-container {
+    top: 0;
+    background-color: var(--accent-2);
+  }
+}
