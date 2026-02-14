@@ -72,3 +72,11 @@ function typeText(element, speed = 40) {
 
 const typingElement = document.getElementById("platonic");
 typeText(typingElement, 100);
+
+const backToTopButton = document.getElementById("back-to-top");
+backToTopButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
