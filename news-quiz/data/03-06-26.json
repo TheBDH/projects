@@ -1,0 +1,169 @@
+{
+  "date": "...",
+  "intro": "...",
+  "questions": [
+    {
+      "question": "What subject do the O’Callaghan twins both concentrate in?",
+      "type": "MC",
+      "choices": [
+        "Biology",
+        "Urban Studies",
+        "History",
+        "Applied Mathematics"
+      ],
+      "answer": "c",
+      "image": "",
+      "alt": null,
+      "explanation": "Four sets of twins speak with The Herald about navigating college life with a built-in companion.",
+      "link": "https://www.browndailyherald.com/article/2026/03/finding-twindependence-how-twins-navigate-identity-connection-at-brown"
+    },
+    {
+      "question": "Which NBA player spoke via Zoom at a Brown event on Monday?",
+      "type": "MC",
+      "choices": [
+        "Luka Dončić",
+        "DeAndre Jordan",
+        "Jaylen Brown",
+        "Chet Holmgren"
+
+      ],
+      "answer": "b",
+      "image": "",
+      "alt": null,
+      "explanation": "The Brown contemplative studies institute hosted DeAndre Jordan, a center on the New Orleans Pelicans and current contemplative studies student. ",
+      "link": "https://www.browndailyherald.com/article/2026/03/nba-player-deandre-jordan-discusses-practice-of-meditation-basketball"
+    },
+    {
+      "question": "How many people are now in the group chat started by Jon Kletzien to organise snow shovelling in the Providence community?",
+      "choices": [
+        "Over 100 members",
+        "Over 150 members",
+        "Over 200 members",
+        "Over 300 members"
+      ],
+      "answer": "c",
+      "image": "",
+      "alt": null,
+      "explanation": "The Signal group chat called the snow shovelling efforts of Providence residents a “labor of love.",
+      "link": "https://www.browndailyherald.com/article/2026/03/in-labor-of-love-providence-locals-come-together-to-shovel-snow-in-wake-of-record-breaking-blizzard"
+    },
+    {
+      "question": "What percent of Brown students are reportedly single?",
+      "choices": [
+        "82%",
+        "47%",
+        "69%",
+        "73%"
+
+      ],
+      "answer": "c",
+      "image": "",
+      "alt": null,
+      "explanation": "The Brown Marriage Pact has grown in popularity after being introduced last spring.",
+      "link": "https://docs.google.com/document/d/1b1rY8z4cZYHDdAn4y__FBMS-mZHwFvUgjNyDxHNOVFs/edit?tab=t.0"
+    },
+    {
+      "question": "Which Brown professor researches methods to support humans for 500 days on the moon and Mars?",
+      "choices": [
+        "Karianne Bergan ’09",
+        "Colleen Dalton ’00",
+        "Mara Freilich ’15",
+        "James Head PhD’69 P’90"
+
+      ],
+      "answer": "d",
+      "image": "",
+      "alt": null,
+      "explanation": "Research Professor of Earth, Environmental and Planetary Sciences James Head PhD’69 P’90 heads the 500-Day Design Reference Mission, researching practices necessary for humans to survive for 500 days on the moon and Mars.",
+      "link": "https://www.browndailyherald.com/article/2026/03/brown-professor-researches-methods-to-support-humans-for-500-days-on-mars"
+    },
+    {
+      "question": "During what month in 2024 did Lana Del Rey originally announce her country album?",
+      "choices": [
+        "January", 
+        "March",
+        "September" ,
+        "October" 
+
+
+      ],
+      "answer": "a",
+      "image": "",
+      "alt": null,
+      "explanation": "Lana Del Rey’s long awaited country album was originally announced in 2024, and was recently revealed to be set for release this year. ",
+      "link": "https://www.browndailyherald.com/article/2026/02/lana-del-reys-latest-track-white-feather-hawk-tail-deer-hunter-is-positively-strange"
+},
+{
+      "question": "How much was the grant RISD received from the National Science Foundation?",
+      "choices": [
+        "$100,000",
+        "$200,000",
+        "$1,000,000",
+        "$400,000"
+ 
+
+
+      ],
+      "answer": "d",
+      "image": "",
+      "alt": null,
+      "explanation": "Using a $400,000 grant from the National Science Foundation, the Rhode Island School of Design is looking to expand its research and industry partnerships.",
+      "link": "https://www.browndailyherald.com/article/2026/03/risd-using-400000-national-science-foundation-grant-to-expand-research-partnership-capacities"
+   
+  
+},
+{
+      "question": "Who did the late Eric Dane play on the TV show “Grey’s Anatomy?",
+      "choices": [
+        "Mark “McSteamy” Sloan",
+        "Alex Karev",
+        "Derek “McDreamy” Shepherd",
+        "Richard Webber"
+
+
+
+
+      ],
+      "answer": "a",
+      "image": "",
+      "alt": null,
+      "explanation": "The actor featured in a recent episode of ‘Famous Last Words’ which was released after his death and mentioned both his achievements and struggles in life",
+      "link": "https://www.browndailyherald.com/article/2026/03/in-moving-episode-of-famous-last-words-actor-eric-dane-tells-his-daughters-to-persevere"
+    },
+
+    {
+      "question": "What was the theme of this year’s TEDxBrownU event?",
+      "choices": [
+       "“Inner Peace”",
+    "“Mindfulness”",
+    "“Don’t Blink”",
+    "“An Evolving World”"
+
+
+
+
+
+      ],
+      "answer": "c",
+      "image": "",
+      "alt": null,
+      "explanation": "The decade-long student-run series returned on Sunday with the theme “Don’t Blink.” Numerous speakers with a diverse range of interests presented their experiences at the Salomon Center.",
+      "link": "https://www.browndailyherald.com/article/2026/03/eight-speakers-share-stories-of-passion-presence-at-student-led-tedxbrownu-conference"
+    },
+    {
+      "question": "How many Brown faculty members voted to replace President Christina Paxson P’19 P’MD’20 as the chair of the University’s monthly faculty meeting? ",
+      "choices": [
+       "21",
+        "72",
+        "75",
+        "16"
+
+      ],
+      "answer": "c",
+      "image": "",
+      "alt": null,
+      "explanation": "At Tuesday’s meeting, 75 attendees voted in favor of the change, ultimately passing the motion.",
+      "link": "https://www.browndailyherald.com/article/2026/03/faculty-vote-to-replace-paxson-as-faculty-meeting-chair"
+    }
+
+]}
