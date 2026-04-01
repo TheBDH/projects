@@ -1,0 +1,1354 @@
+/* ============================================
+   Brown Daily Herald — 2026 Housing Lottery Guide
+   Global Design Tokens & Base Styles
+   ============================================ */
+
+:root {
+    /* ---- Stone & Neutral Palette ---- */
+    --color-bg: #dedad6;
+    /* warm stone gray (lighter)      */
+    --color-bg-light: #e8e5e1;
+    /* lighter stone for cards        */
+    --color-bg-dark: #cdc8c1;
+    /* subtle depth / dividers        */
+    --color-surface: #eeedea;
+    /* card surface                   */
+    --color-surface-hover: #f4f3f0;
+    /* card hover                     */
+
+    /* ---- Brown / BDH Brand Accents ---- */
+    --color-accent: #4E3629;
+    /* seal brown                     */
+    --color-accent-light: #6b4d3d;
+    /* lighter seal brown             */
+    --color-accent-warm: #be1b20;
+    /* red accent                     */
+    --color-red: #be1b20;
+    /* BDH red (sparingly)            */
+
+    /* ---- Text ---- */
+    --color-text: #1a1a1a;
+    /* near-black for body text       */
+    --color-text-muted: #5a5651;
+    /* muted captions                 */
+    --color-text-inverse: #f5f3f0;
+    /* text on dark backgrounds       */
+
+    /* ---- Typography ---- */
+    --font-heading: "freight-text-pro", "Georgia", "Times", serif;
+    --font-body: "freight-text-pro", "Georgia", "Times", serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: "Roboto", "Helvetica", "Arial", sans-serif;
+
+    /* ---- Spacing scale (4px base) ---- */
+    --space-xs: 0.25rem;
+    /*  4px */
+    --space-sm: 0.5rem;
+    /*  8px */
+    --space-md: 1rem;
+    /* 16px */
+    --space-lg: 1.5rem;
+    /* 24px */
+    --space-xl: 2.5rem;
+    /* 40px */
+    --space-2xl: 4rem;
+    /* 64px */
+
+    /* ---- Radii ---- */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+
+    /* ---- Shadows ---- */
+    --shadow-card: 0 2px 12px rgba(30, 25, 20, .08);
+    --shadow-hover: 0 6px 24px rgba(30, 25, 20, .12);
+    --shadow-inner: inset 0 1px 3px rgba(30, 25, 20, .06);
+
+    /* ---- Transitions ---- */
+    --ease-out: cubic-bezier(.22, 1, .36, 1);
+    --duration: 280ms;
+}
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*:focus,
+*:focus-visible,
+*:focus-within {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+[class*="inset-outline"],
+[class*="inset-outline"]::before,
+[class*="inset-outline"]::after,
+.esri-view-surface,
+.esri-view-surface::before,
+.esri-view-surface::after {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    min-height: 100vh;
+}
+
+.article-text-block {
+    width: 80%;
+    margin: 2rem auto;
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    line-height: 1.4;
+    color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    line-height: 1.25;
+    color: var(--color-accent);
+}
+
+a {
+    color: var(--color-accent-warm);
+    text-decoration: none;
+    transition: color var(--duration) var(--ease-out);
+}
+
+a:hover {
+    color: var(--color-red);
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+iframe {
+    outline: none !important;
+    border: 0 !important;
+}
+
+iframe:focus,
+iframe:focus-visible {
+    outline: none !important;
+    border: 0 !important;
+}
+
+#bg-video {
+    transition: opacity 0.08s linear;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        pointer-events: none;
+}
+
+.down-arrow {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    animation: bounce 2s infinite;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(190, 33, 33);
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-5px);
+    }
+
+    60% {
+        transform: translateY(-2px);
+    }
+}
+
+/* ---- Utility ---- */
+.container {
+    width: min(68rem, 100% - 2rem);
+    margin-inline: auto;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ---- Static content (no scroll reveal) ---- */
+.reveal,
+.reveal.visible,
+.reveal .stagger,
+.reveal.visible .stagger {
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.countdown {
+    padding: var(--space-lg) 0 var(--space-md);
+    text-align: center;
+}
+
+.countdown__inner {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl) var(--space-lg);
+    box-shadow: var(--shadow-card);
+    max-width: 34rem;
+    margin-inline: auto;
+}
+
+.countdown__label {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--color-accent);
+    margin-bottom: var(--space-md);
+    letter-spacing: 0.03em;
+}
+
+.countdown__grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.countdown__unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 5rem;
+}
+
+.countdown__number {
+    font-family: var(--font-mono);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--color-accent-warm);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.countdown__text {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text-muted);
+    margin-top: var(--space-xs);
+}
+
+.countdown__note {
+    margin-top: var(--space-md);
+    font-style: italic;
+    color: var(--color-accent-warm);
+    font-size: 0.95rem;
+    min-height: 1.5em;
+}
+
+.hero {
+    width: min(50vw, 50rem);
+    min-height: 40vh;
+    margin: calc(30vh - 1rem) auto 1rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+    border-radius: 16px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero__inner {
+    width: 100%;
+    padding: var(--space-lg) 1.25rem var(--space-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    animation: heroIn 0.8s var(--ease-out) both;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        width: min(92vw, 60rem);
+    }
+}
+
+@keyframes heroIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-xs);
+}
+
+.hero__logo-image {
+    display: block;
+    width: 400px;
+    height: auto;
+    object-fit: contain;
+}
+
+.hero__title {
+    font-size: clamp(2.6rem, 4vw + 1.5rem, 3.75rem);
+    color: var(--color-accent);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-xs);
+}
+
+.hero__highlight {
+    color: var(--color-accent-warm);
+    display: block;
+    font-size: 0.6em;
+    letter-spacing: 0.04em;
+    margin-top: var(--space-xs);
+}
+
+.hero__subtitle {
+    max-width: 32rem;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+}
+
+.hero__byline {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.2;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+.hero__byline br {
+    display: none;
+}
+
+.hero__author,
+.hero__author:visited,
+.hero__author:hover,
+.hero__author:active {
+    color: var(--color-accent-warm);
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .hero__byline {
+        font-size: 0.6rem;
+    }
+}
+
+.hero__divider {
+    width: min(32rem, 90%);
+    margin-top: calc(var(--space-md) * -0.5);
+}
+
+.housing {
+    padding: var(--space-md) 0 var(--space-sm);
+}
+
+.housing__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    color: var(--color-accent);
+}
+
+.housing__header h2 {
+    font-size: 1.8rem;
+}
+
+/* Toggle row */
+.housing__toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    color: var(--color-accent);
+}
+
+.housing__toggle {
+    display: inline-flex;
+    background: var(--color-bg-dark);
+    border-radius: var(--radius-md);
+    padding: 3px;
+    gap: 2px;
+}
+
+.housing__toggle-btn {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    padding: 0.45rem 1.1rem;
+    border: none;
+    border-radius: calc(var(--radius-md) - 2px);
+    background: transparent;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--duration) var(--ease-out);
+}
+
+.housing__toggle-btn.active {
+    background: var(--color-surface);
+    color: var(--color-accent);
+    box-shadow: var(--shadow-card);
+    font-weight: 600;
+}
+
+.housing__toggle-btn:hover:not(.active) {
+    color: var(--color-text);
+}
+
+/* --- External map controls row --- */
+.housing__controls-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.housing__map-filters {
+    display: flex;
+    align-items: end;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+    padding: 0.55rem 0.7rem;
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+}
+
+.housing__map-filters.is-hidden {
+    display: none;
+}
+
+.housing__filter {
+    display: grid;
+    gap: 0.22rem;
+    min-width: 120px;
+}
+
+.housing__filter span {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    line-height: 1;
+}
+
+.housing__filter select {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    padding: 0.42rem 0.55rem;
+    border-radius: 8px;
+    border: 1px solid color-mix(in srgb, var(--color-text-muted) 30%, transparent);
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.housing__filter-refresh {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid color-mix(in srgb, var(--color-text-muted) 30%, transparent);
+    background: var(--color-bg-dark);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all var(--duration) var(--ease-out);
+}
+
+.housing__filter-refresh:hover {
+    color: var(--color-accent);
+}
+
+.housing__filter-count {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    min-width: 2.5rem;
+    align-self: center;
+}
+
+@media (max-width: 900px) {
+    .housing__controls-row {
+        align-items: stretch;
+    }
+
+    .housing__map-filters {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.65rem;
+        align-items: end;
+    }
+
+    .housing__filter {
+        min-width: 0;
+    }
+
+    .housing__filter select {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* Panels — use visibility so iframe stays rendered */
+.housing__panels {
+    position: relative;
+}
+
+.housing__panel {
+    position: absolute;
+    inset: 0;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s var(--ease-out);
+}
+
+.housing__panel.active {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.housing__iframe {
+    width: 100%;
+    height: 560px;
+    border: none;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    background: var(--color-surface);
+    outline: none !important;
+    border: 0 !important;
+}
+
+.housing__iframe:focus,
+.housing__iframe:focus-visible,
+.housing__iframe:focus-within {
+    outline: none !important;
+    border: 0 !important;
+    box-shadow: var(--shadow-card);
+}
+
+.housing__note {
+    margin-top: var(--space-sm);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    text-align: center;
+}
+
+.housing__placeholder-box {
+    background: var(--color-surface);
+    border: 2px dashed var(--color-bg-dark);
+    border-radius: var(--radius-md);
+    height: 400px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: var(--color-text-muted);
+}
+
+.housing__placeholder-box p {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--color-accent);
+}
+
+.housing__placeholder-box span {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-top: var(--space-xs);
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .housing__iframe {
+        height: 70vh;
+    }
+}
+
+.housing-live {
+    position: relative;
+}
+
+.housing-live__content {
+    position: relative;
+}
+
+.housing-live__map-wrap {
+    position: relative;
+}
+
+.housing-live__map {
+    width: 100%;
+    height: 560px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: none;
+    background: var(--color-surface);
+    position: relative;
+}
+
+.housing-live__time-wrap {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    z-index: 1000;
+    width: 320px;
+    max-width: calc(100vw - 48px);
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    padding: 40px 8px 10px 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.housing-live__time-label {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    right: 12px;
+    font-family: var(--font-sans);
+    font-size: 17px;
+    font-weight: 700;
+    color: #222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.15;
+}
+
+.housing-live__slider-row {
+    padding: 0 8px;
+}
+
+.housing-live__slider-row input[type='range'] {
+    width: 100%;
+    margin: 0;
+    accent-color: #6b7280;
+}
+
+.housing-live__legend {
+    position: absolute;
+    bottom: 28px;
+    right: 16px;
+    z-index: 1000;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    width: 130px;
+    max-width: min(130px, calc(100vw - 24px));
+    color: #333;
+}
+
+.housing-live__legend b {
+    display: block;
+    font-weight: 650;
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.housing-live__legend-title {
+    font-weight: 650;
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.housing-live__legend-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.housing-live__legend-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.housing-live__legend-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    flex: 0 0 14px;
+}
+
+.housing-live__legend-label {
+    font-size: 12px;
+    color: #333;
+}
+
+.housing-live__note {
+    margin-top: var(--space-sm);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    text-align: center;
+}
+
+.housing-live__placeholder {
+    background: var(--color-surface);
+    border: 2px dashed var(--color-bg-dark);
+    border-radius: var(--radius-md);
+    height: 560px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: var(--color-text-muted);
+}
+
+.housing-live__placeholder p {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--color-accent);
+}
+
+.housing-live__placeholder span {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-top: var(--space-xs);
+    display: block;
+}
+
+.housing-live__slider-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 6px 8px 2px 8px;
+}
+
+.housing-live__slider-date {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    color: #444;
+    white-space: nowrap;
+}
+
+.housing-live__slider-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.housing-live__slider-btn {
+    border: none;
+    background: transparent;
+    color: #6f6f6f;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 120ms ease, background-color 120ms ease, opacity 120ms ease;
+}
+
+.housing-live__slider-btn:hover {
+    color: #303030;
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.housing-live__slider-btn:active {
+    transform: translateY(0.5px);
+}
+
+.housing-live__slider-icon {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.housing-live__slider-icon--play .housing-live__play-shape {
+    fill: currentColor;
+    stroke: none;
+}
+
+.housing-live__slider-btn.is-playing .housing-live__play-shape {
+    display: none;
+}
+
+.housing-live__slider-btn.is-playing .housing-live__pause-shape {
+    display: block !important;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+.leaflet-popup-content {
+    margin: 10px 12px;
+}
+
+.housing-live__legend i {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    flex: 0 0 14px;
+}
+
+.housing-live__legend div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 3.8px;
+}
+
+.housing-live__label {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: rgba(30, 30, 30, 1);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    white-space: normal;
+    max-width: 95px;
+    overflow-wrap: break-word;
+    word-break: normal;
+    pointer-events: none;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-shadow:
+        -1px -1px 0 rgba(255, 255, 255, 0.95),
+        1px -1px 0 rgba(255, 255, 255, 0.95),
+        -1px 1px 0 rgba(255, 255, 255, 0.95),
+        1px 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.leaflet-tooltip.housing-live__label {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.housing-live__label:before {
+    display: none !important;
+}
+
+.housing-live__label-name,
+.housing-live__label-value {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.housing-live__label-value {
+    margin-top: 1px;
+}
+
+.leaflet-top,
+.leaflet-bottom,
+.leaflet-control-container,
+.leaflet-control {
+    z-index: 2000 !important;
+    pointer-events: auto !important;
+}
+
+.leaflet-control-zoom {
+    z-index: 2100 !important;
+    pointer-events: auto !important;
+}
+
+.housing-live__time-wrap,
+.housing-live__legend {
+    z-index: 1000;
+}
+
+@media (max-width: 600px) {
+    .housing-live__legend {
+        display: none;
+    }
+
+    .housing-live__time-wrap {
+        width: min(344px, calc(100vw - 36px));
+    }
+}
+
+@media (max-width: 600px) {
+
+    .housing-live__map,
+    .housing-live__placeholder {
+        height: 455px;
+    }
+}
+
+.housing-chart-shell {
+    width: 100%;
+}
+
+.housing-chart-controls {
+    display: inline-flex;
+    align-items: end;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+    padding: 0.55rem 0.7rem;
+    margin-bottom: var(--space-lg);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+    width: fit-content;
+    max-width: 100%;
+}
+
+.housing-chart-filter {
+    display: grid;
+    gap: 0.22rem;
+    min-width: 120px;
+}
+
+.housing-chart-filter span {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    line-height: 1;
+}
+
+.housing-chart-filter select {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    padding: 0.42rem 0.55rem;
+    border-radius: 8px;
+    border: 1px solid color-mix(in srgb, var(--color-text-muted) 30%, transparent);
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.housing-chart-card {
+    width: 100%;
+    border-radius: var(--radius-md, 16px);
+    overflow: hidden;
+    background: rgba(236, 235, 232, 1);
+    box-shadow: var(--shadow-card, 0 10px 30px rgba(0, 0, 0, 0.14));
+}
+
+.housing-chart-header {
+    padding: 28px 24px 8px 24px;
+    text-align: center;
+}
+
+.housing-chart-headline {
+    color: #ff6238;
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+}
+
+.housing-chart-subheadline {
+    display: none;
+}
+
+.housing-chart-legend {
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: rgba(35, 35, 35, 0.9);
+    font-family: var(--font-heading);
+    font-size: 0.98rem;
+}
+
+.housing-chart-legend-item {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    color: rgba(35, 35, 35, 0.9);
+}
+
+.housing-chart-legend-swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.housing-chart-legend-swatch--rooms {
+    background: #4E3629;
+}
+
+.housing-chart-legend-swatch--suites {
+    background: #be1b20;
+}
+
+.housing-chart-plot-wrap {
+    width: 100%;
+    padding: 0 8px 10px 8px;
+    position: relative;
+}
+
+.housing-chart-tooltip {
+    position: absolute;
+    z-index: 20;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.96);
+    color: #222;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
+    padding: 8px 10px;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    line-height: 1.3;
+    min-width: 120px;
+    transform: translate(0, -100%);
+}
+
+.housing-chart-tooltip__time {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.housing-chart-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: rgba(236, 235, 232, 1);
+}
+
+@media (max-width: 600px) {
+    .housing-chart-controls {
+        display: flex;
+        width: 100%;
+    }
+
+    .housing-chart-filter {
+        min-width: 140px;
+        flex: 1 1 140px;
+    }
+}
+
+@media (max-width: 720px) {
+    .housing-chart-header {
+        padding: 22px 14px 4px 14px;
+    }
+
+    .housing-chart-plot-wrap {
+        padding: 0 2px 10px 2px;
+    }
+}
+
+.lottery-map-shell {
+    width: 100%;
+    height: 560px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: none;
+    background: var(--color-surface);
+    position: relative;
+}
+
+.lottery-map-view {
+    width: 100%;
+    height: 100%;
+}
+
+.lottery-map-view:focus,
+.lottery-map-view:focus-visible,
+.lottery-map-view .esri-view-surface:focus,
+.lottery-map-view .esri-view-surface:focus-visible,
+.lottery-map-view .esri-view-surface--inset-outline:focus,
+.lottery-map-view .esri-view-surface--inset-outline:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.lottery-map-view .esri-view-surface--inset-outline,
+.lottery-map-view .esri-view-surface--inset-outline::before,
+.lottery-map-view .esri-view-surface--inset-outline::after {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* ArcGIS panel styling from your standalone HTML */
+.ui-panel {
+    padding: 10px;
+    background: white;
+    width: 360px;
+    max-width: calc(100vw - 24px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.title {
+    font-weight: 650;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.row label {
+    width: 92px;
+    color: #333;
+}
+
+select {
+    flex: 1;
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 13px;
+}
+
+.row button {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    cursor: pointer;
+}
+
+.small {
+    color: #444;
+    font-size: 12px;
+}
+
+.time-wrap {
+    width: 320px;
+    max-width: calc(100vw - 24px);
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    padding: 0px 8px 0px 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.time-wrap .esri-widget {
+    width: 100% !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.time-label {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    right: 12px;
+    font-family: var(--font-sans);
+    font-size: 17px;
+    /* slightly bigger */
+    font-weight: 700;
+    /* bold */
+    color: #222;
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.15;
+}
+
+/* Hide ArcGIS built-in top date/extent row completely */
+.esri-time-slider__time-extent,
+.esri-time-slider__header,
+.esri-time-slider__label {
+    display: none !important;
+}
+
+/* Collapse extra top spacing inside the slider widget */
+.esri-time-slider {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.esri-time-slider__slider {
+    background-color: transparent !important;
+    padding: 0 8px !important;
+}
+
+.esri-time-slider__layout--compact .esri-time-slider__row:nth-child(2) {
+    height: 32px !important;
+}
+
+.esri-time-slider__layout-container,
+.esri-time-slider__main {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.esri-time-slider__time-extent {
+    display: none !important;
+}
+
+.legend-bar {
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 1);
+    /* more opaque */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    /* subtle edge helps on map */
+    backdrop-filter: blur(2px);
+    /* optional, nice if supported */
+    -webkit-backdrop-filter: blur(2px);
+
+    font-family: var(--font-sans);
+
+    width: 130px;
+    /* was 360px; small bump */
+    max-width: min(130px, calc(100vw - 24px));
+}
+
+/* Mobile: hide */
+@media (max-width: 600px) {
+    .legend-bar {
+        display: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .legend-expand {
+        display: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .time-wrap {
+        width: calc(100vw - 24px);
+        max-width: calc(100vw - 24px);
+    }
+}
+
+
+.esri-expand__content {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.esri-expand__content .esri-widget {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.legend-title {
+    font-weight: 650;
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.legend-note {
+    font-size: 11px;
+    color: #666;
+    margin-top: 6px;
+}
+
+* {
+    box-shadow: none !important;
+}
+
+@media (max-width: 600px) {
+    .lottery-map-shell {
+        height: 70vh;
+    }
+}
+
+.placeholder-map {
+    padding: var(--space-xl) 0;
+  }
+  .map-wrapper {
+    background-color: var(--color-bg-dark, #e8f4f8);
+    border: 2px dashed #99c2d1;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: var(--color-text-muted, #5591a8);
+    font-size: 1.2rem;
+    font-weight: bold;
+  }

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <!-- <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-321HPHTJEX"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-321HPHTJEX');
+    </script> -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Housing Lottery</title>
+        <link
+            rel="stylesheet"
+            href="https://js.arcgis.com/4.29/esri/themes/light/main.css" />
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
+        <link rel="icon" href="images/icon.png" sizes="96x96">
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+        <script src="script.js" defer></script>
+        <!-- newspaper font -->
+        <link rel="stylesheet" href="https://use.typekit.net/brt8lxm.css">
+        <link rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="https://js.arcgis.com/4.29/"></script>
+    </head>
+
+    <body>
+        <video id="bg-video" muted autoplay loop playsinline>
+            <source src="images/drone.mp4" type="video/mp4" />
+            Your browser does not support video.
+        </video>
+        <header class="hero">
+            <div class="container hero__inner">
+                <div class="hero__logo">
+                    <a href="https://www.browndailyherald.com" target="_blank"><img src="images/logo-black.png"
+                        alt="Brown Daily Herald logo"
+                        class="hero__logo-image" /></a>
+                </div>
+
+                <h1 class="hero__title">
+                    <!-- Brown Daily Herald<br /> -->
+                    <span class="hero__highlight">2026 Housing Lottery
+                        Guide</span>
+                </h1>
+
+                <p class="hero__subtitle">
+                    Everything you need to navigate Brown's three-day housing
+                    selection period.
+                </p>
+
+                <p class="hero__byline">
+                    <br />
+                    Reporting by <a class="hero__author" href="https://www.browndailyherald.com/staff/rahul-sameer" target="_blank">Rahul
+                    Sameer</a>
+                </p>
+
+                <p class="hero__byline">
+                    <br />
+                    Analysis and Website by <span class="hero__author">Nikos Koss</span>, <a class="hero__author" href="https://www.browndailyherald.com/staff/jasper-perlis" target="_blank">Jasper Perlis</a>, <a class="hero__author" href="https://www.browndailyherald.com/staff/rahul-sameer" target="_blank">Rahul
+                    Sameer</a>,
+                    and <span class="hero__author">Lucy Sun</span>
+                </p>
+                <div class="down-arrow" style="text-align: center;">
+                    &#x2193;
+                </div>
+            </div>
+        </header>
+        <div id="spacer" style="height: 10vh;"></div>
+
+        <div class="article-text-block">
+            As April approaches, the Brown community begins to prepare for the
+            long-awaited housing lottery. Responsible for determining where each
+            student will be living for the upcoming school year, the housing
+            process at Brown can be one of great anticipation as well as
+            confusion, particularly for rising sophomores who have never gone
+            through the process.
+            <br>
+            <br>
+
+            For this reason, The Herald decided to investigate housing trends to
+            give readers more information on how last year’s lottery worked, and
+            provide real-time updates of available dorms throughoutas students
+            choose them during the three-day selection process.
+            <br>
+            <br>
+            This information has been synthesized into a campus map with each
+            residence hall color-coded based on percentage availability.
+            Students can filter this information based on their preferences,
+            such as by room type and gender, and can control a slider that shows
+            room availability over time.
+
+        </div>
+        <div id="spacer" style="height: 10vh;"></div>
+
+        <section class="countdown reveal" id="countdown"
+            data-target="2026-04-06T10:00:00-04:00">
+            <div class="container countdown__inner">
+                <p class="countdown__label">Housing Selection Begins In</p>
+
+                <div class="countdown__grid">
+                    <div class="countdown__unit">
+                        <span class="countdown__number" id="cd-days">--</span>
+                        <span class="countdown__text">Days</span>
+                    </div>
+                    <div class="countdown__unit">
+                        <span class="countdown__number" id="cd-hours">--</span>
+                        <span class="countdown__text">Hours</span>
+                    </div>
+                    <div class="countdown__unit">
+                        <span class="countdown__number" id="cd-mins">--</span>
+                        <span class="countdown__text">Minutes</span>
+                    </div>
+                    <div class="countdown__unit">
+                        <span class="countdown__number" id="cd-secs">--</span>
+                        <span class="countdown__text">Seconds</span>
+                    </div>
+                </div>
+
+                <p class="countdown__note" id="cd-note"></p>
+            </div>
+        </section>
+
+        <div id="spacer" style="height: 5vh;"></div>
+
+        <section class="housing reveal" id="housing-data">
+            <div class="container">
+                <!-- Section heading -->
+                <div class="housing__header">
+                    <h2>Housing Availability Map</h2>
+                </div>
+
+                <!-- Year toggle + external map controls -->
+                <div class="housing__controls-row">
+                    <div class="housing__toggle-wrapper">
+                        <div class="housing__toggle" role="radiogroup"
+                            aria-label="Select year">
+                            <button
+                                class="housing__toggle-btn active"
+                                role="radio"
+                                aria-checked="true"
+                                data-year="2025">2025</button>
+                            <button
+                                class="housing__toggle-btn"
+                                role="radio"
+                                aria-checked="false"
+                                data-year="2026">2026 (Live)</button>
+                        </div>
+                    </div>
+
+                    <!-- External controls for 2025 map -->
+                    <div class="housing__map-filters" id="housing-map-filters"
+                        aria-label="Housing map filters">
+                        <label class="housing__filter">
+                            <span>Gender</span>
+                            <select id="housing-filter-gender">
+                                <option value="ALL">All</option>
+                                <option value="COED">CoEd</option>
+                                <option value="COEDMALE">CoEd + Male</option>
+                                <option value="COEDFEMALE">CoEd +
+                                    Female</option>
+                            </select>
+                        </label>
+
+                        <label class="housing__filter">
+                            <span>Group size</span>
+                            <select id="housing-filter-size">
+                                <option value="ALL">All sizes</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </label>
+
+                        <label class="housing__filter">
+                            <span>Room type</span>
+                            <select id="housing-filter-type">
+                                <option value="ALL">All types</option>
+                                <option value="SUITE">Suite only</option>
+                            </select>
+                        </label>
+
+                        <label class="housing__filter">
+                            <span>Metric</span>
+                            <select id="housing-filter-metric">
+                                <option value="pct">Percent available</option>
+                                <option value="count">Rooms available
+                                    (count)</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Map panels -->
+                <div class="housing__panels">
+                    <!-- 2025 panel (default visible before lottery) -->
+                    <div class="housing__panel active" id="panel-2025">
+                        <div class="housing__embed-placeholder">
+                            <div class="lottery-map-shell">
+                                <div id="housingLotteryMapView"
+                                    class="lottery-map-view"></div>
+                            </div>
+                            <p class="housing__note">
+                                Data from the 2025 housing selection period.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2026 panel -->
+                    <div class="housing__panel" id="panel-2026">
+                        <div class="housing__embed-placeholder">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="housing-live">
+                <div class="housing-live__placeholder"
+                    id="housing-live-placeholder">
+                    <span>Live data will be available once housing
+                        selection begins.</span>
+                </div>
+
+                <div class="housing-live__content" id="housing-live-content"
+                    style="display:none;">
+                    <div class="housing-live__map-wrap">
+                        <div id="housing-live-map"
+                            class="housing-live__map"></div>
+
+                        <div id="housing-live-time-control"
+                            class="housing-live__time-wrap">
+                            <div id="housing-live-time-label"
+                                class="housing-live__time-label">Time: —</div>
+
+                            <div class="housing-live__slider-row">
+                                <input
+                                    type="range"
+                                    id="housing-live-time-slider"
+                                    min="0"
+                                    max="0"
+                                    step="1"
+                                    value="0" />
+                            </div>
+
+                            <div class="housing-live__slider-footer">
+                                <span id="housing-live-start-date"
+                                    class="housing-live__slider-date">—</span>
+
+                                <div class="housing-live__slider-controls">
+                                    <button type="button" id="housing-live-prev"
+                                        class="housing-live__slider-btn"
+                                        aria-label="Previous">
+                                        <svg viewBox="0 0 24 24"
+                                            class="housing-live__slider-icon"
+                                            aria-hidden="true">
+                                            <path d="M7 5v14" />
+                                            <path d="M18 5l-8 7 8 7" />
+                                        </svg>
+                                    </button>
+
+                                    <button type="button" id="housing-live-play"
+                                        class="housing-live__slider-btn"
+                                        aria-label="Play/Pause">
+                                        <svg viewBox="0 0 24 24"
+                                            class="housing-live__slider-icon housing-live__slider-icon--play"
+                                            aria-hidden="true">
+                                            <path
+                                                class="housing-live__play-shape"
+                                                d="M8 5l11 7-11 7z" />
+                                            <g class="housing-live__pause-shape"
+                                                style="display:none;">
+                                                <path d="M8 5v14" />
+                                                <path d="M16 5v14" />
+                                            </g>
+                                        </svg>
+                                    </button>
+
+                                    <button type="button" id="housing-live-next"
+                                        class="housing-live__slider-btn"
+                                        aria-label="Next">
+                                        <svg viewBox="0 0 24 24"
+                                            class="housing-live__slider-icon"
+                                            aria-hidden="true">
+                                            <path d="M17 5v14" />
+                                            <path d="M6 5l8 7-8 7" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <span id="housing-live-end-date"
+                                    class="housing-live__slider-date">—</span>
+                            </div>
+                        </div>
+
+                        <div id="housing-live-legend"
+                            class="housing-live__legend"></div>
+                    </div>
+
+                    <p class="housing-live__note" id="housing-live-note">
+                        Live data updated throughout the housing selection
+                        period.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="article-text-block">
+            As April approaches, the Brown community begins to prepare for the
+            long-awaited housing lottery. Responsible for determining where each
+            student will be living for the upcoming school year, the housing
+            process at Brown can be one of great anticipation as well as
+            confusion, particularly for rising sophomores who have never gone
+            through the process.
+            <br>
+            <br>
+
+            For this reason, The Herald decided to investigate housing trends to
+            give readers more information on how last year’s lottery worked, and
+            provide real-time updates of available dorms throughoutas students
+            choose them during the three-day selection process.
+            <br>
+            <br>
+            This information has been synthesized into a campus map with each
+            residence hall color-coded based on percentage availability.
+            Students can filter this information based on their preferences,
+            such as by room type and gender, and can control a slider that shows
+            room availability over time.
+
+        </div>
+
+        <section class="housing reveal">
+            <div class="container">
+                <div class="housing-chart-shell">
+                    <!-- Controls row -->
+                    <div class="housing-chart-controls"
+                        aria-label="Housing chart filters">
+                        <label class="housing-chart-filter">
+                            <span>Gender</span>
+                            <select id="housing-chart-filter-gender">
+                                <option value="ALL">All</option>
+                                <option value="COED">CoEd</option>
+                                <option value="COEDMALE">CoEd + Male</option>
+                                <option value="COEDFEMALE">CoEd +
+                                    Female</option>
+                            </select>
+                        </label>
+
+                        <label class="housing-chart-filter">
+                            <span>Group size</span>
+                            <select id="housing-chart-filter-group">
+                                <option value="1">1</option>
+                                <option value="2" selected>2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </label>
+
+                        <label class="housing-chart-filter">
+                            <span>Selection day</span>
+                            <select id="housing-chart-filter-day">
+                                <option value>Loading…</option>
+                            </select>
+                        </label>
+
+                        <label class="housing-chart-filter">
+                            <span>Approximate time</span>
+                            <select id="housing-chart-filter-time">
+                                <option value>Loading…</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="housing-chart-card">
+                        <div class="housing-chart-header">
+                            <div id="housingChartHeadline"
+                                class="housing-chart-headline">--.-%
+                                Available</div>
+                            <div id="housingChartSubheadline"
+                                class="housing-chart-subheadline"></div>
+                            <div id="housingChartLegend"
+                                class="housing-chart-legend">
+                                <span class="housing-chart-legend-item">
+                                    <span
+                                        class="housing-chart-legend-swatch housing-chart-legend-swatch--rooms"></span>
+                                    All Matching Rooms
+                                </span>
+                                <span class="housing-chart-legend-item">
+                                    <span
+                                        class="housing-chart-legend-swatch housing-chart-legend-swatch--suites"></span>
+                                    Matching Suites
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="housing-chart-plot-wrap">
+                            <div id="housingChartTooltip"
+                                class="housing-chart-tooltip" hidden></div>
+                            <svg
+                                id="housingChartSvg"
+                                class="housing-chart-svg"
+                                viewBox="0 0 1200 400"
+                                preserveAspectRatio="xMidYMid meet"
+                                aria-label="Housing availability chart"></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="article-text-block">
+            As April approaches, the Brown community begins to prepare for the
+            long-awaited housing lottery. Responsible for determining where each
+            student will be living for the upcoming school year, the housing
+            process at Brown can be one of great anticipation as well as
+            confusion, particularly for rising sophomores who have never gone
+            through the process.
+            <br>
+            <br>
+
+            For this reason, The Herald decided to investigate housing trends to
+            give readers more information on how last year’s lottery worked, and
+            provide real-time updates of available dorms throughoutas students
+            choose them during the three-day selection process.
+            <br>
+            <br>
+            This information has been synthesized into a campus map with each
+            residence hall color-coded based on percentage availability.
+            Students can filter this information based on their preferences,
+            such as by room type and gender, and can control a slider that shows
+            room availability over time.
+
+        </div>
+
+    </body>
+
+</html>
