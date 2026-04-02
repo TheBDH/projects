@@ -5,6 +5,7 @@ const lotteryStartISO = '2026-04-06T00:00:00-04:00'; // April 6 2026, midnight E
 const section = document.getElementById('countdown');
 const target = new Date(section.dataset.target).getTime();
 const bgVideo = document.getElementById('bg-video');
+const mediaCredit = document.getElementById('media-credit');
 
 const $days = document.getElementById('cd-days');
 const $hours = document.getElementById('cd-hours');
@@ -46,11 +47,12 @@ function tick() {
 requestAnimationFrame(tick);
 
 function updateBgVideoOpacity() {
-    if (!bgVideo) return;
+    if (!bgVideo && !mediaCredit) return;
 
     const fadeRange = Math.max(window.innerHeight * 0.3, 1);
     const opacity = Math.max(0, 1 - (window.scrollY / fadeRange));
-    bgVideo.style.opacity = String(opacity);
+    if (bgVideo) bgVideo.style.opacity = String(opacity);
+    if (mediaCredit) mediaCredit.style.opacity = String(opacity);
 }
 
 window.addEventListener('scroll', () => {
