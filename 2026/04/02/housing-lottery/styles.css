@@ -120,6 +120,10 @@ body {
     color: var(--color-text);
 }
 
+.article-text-block a {
+    text-decoration: underline;
+}
+
 .basic-image-block {
     width: 50%;
     margin: 0 auto 2rem;
