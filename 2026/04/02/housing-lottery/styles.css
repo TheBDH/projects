@@ -279,7 +279,7 @@ iframe:focus-visible {
 .countdown__note {
     margin-top: var(--space-md);
     font-style: italic;
-    color: var(--color-accent-warm);
+    color: var(--color-accent-light);
     font-size: 0.95rem;
     min-height: 1.5em;
 }

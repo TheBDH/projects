@@ -1,7 +1,7 @@
 /* COUNTDOWN CODE */
 
 const FORCE_LIVE_MAP = false;
-const lotteryStartISO = '2026-04-06T10:00:00-04:00'; // April 6 2026, 10 AM EDT — adjust as needed
+const lotteryStartISO = '2026-04-06T00:00:00-04:00'; // April 6 2026, midnight EDT — adjust as needed
 const section = document.getElementById('countdown');
 const target = new Date(section.dataset.target).getTime();
 const bgVideo = document.getElementById('bg-video');
@@ -25,7 +25,7 @@ function tick() {
         $hours.textContent = '00';
         $mins.textContent = '00';
         $secs.textContent = '00';
-        $note.textContent = 'The housing selection period has begun — good luck!';
+        $note.textContent = 'The housing selection period has begun.';
         return;
     }
 
