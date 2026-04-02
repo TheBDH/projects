@@ -120,6 +120,27 @@ body {
     color: var(--color-text);
 }
 
+.basic-image-block {
+    width: 50%;
+    margin: 0 auto 2rem;
+}
+
+.basic-image-block__image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.basic-image-block__caption {
+    margin-top: 0.5rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    text-align: center;
+}
+
+.basic-image-block__caption a {
+    text-decoration: underline;
+}
 h1,
 h2,
 h3,
