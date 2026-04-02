@@ -233,7 +233,7 @@ iframe:focus-visible {
     border-radius: var(--radius-lg);
     padding: var(--space-xl) var(--space-lg);
     box-shadow: var(--shadow-card);
-    max-width: 34rem;
+    max-width: 35rem;
     margin-inline: auto;
 }
 
@@ -257,6 +257,19 @@ iframe:focus-visible {
     flex-direction: column;
     align-items: center;
     min-width: 5rem;
+}
+
+.housing-live__placeholder #countdown .countdown__grid {
+    flex-wrap: nowrap;
+    gap: var(--space-lg);
+}
+
+.housing-live__placeholder #countdown .countdown__unit {
+    min-width: 0;
+}
+
+.housing-live__placeholder #countdown {
+    transform: translateY(-5px);
 }
 
 .countdown__number {
@@ -759,13 +772,13 @@ iframe:focus-visible {
     color: var(--color-text-muted);
 }
 
-.housing-live__placeholder p {
+.housing-live__placeholder > p {
     font-family: var(--font-heading);
     font-size: 1.3rem;
     color: var(--color-accent);
 }
 
-.housing-live__placeholder span {
+.housing-live__placeholder > span {
     font-size: 0.85rem;
     opacity: 0.7;
     margin-top: var(--space-xs);

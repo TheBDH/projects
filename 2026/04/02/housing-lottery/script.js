@@ -868,7 +868,7 @@ const dataUrl = './housingdataforwebsite.csv';
 
     function fmtSelectionLabel(date) {
         const shifted = shiftDateForDisplay(date, DISPLAY_DAY_SHIFT);
-        return "Selection Time "
+        return "Time  "
         /*
               if (!(shifted instanceof Date) || Number.isNaN(shifted.getTime())) return "Selection Time";
               return `Selection Time: ${new Intl.DateTimeFormat(undefined, {
