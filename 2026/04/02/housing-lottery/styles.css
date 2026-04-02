@@ -395,6 +395,7 @@ iframe:focus-visible {
     max-width: 32rem;
     color: var(--color-text-muted);
     font-size: 1.1rem;
+    margin-bottom: 5px;
 }
 
 .hero__byline {
