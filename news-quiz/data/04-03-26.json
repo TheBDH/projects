@@ -1,0 +1,147 @@
+{
+  "date": "January 28 - April 3, 2025",
+  "intro": "Test your knowledge of this semester's Herald news!",
+  "questions": [
+    {
+      "question": "How many Brown alums were named to the 2026 Forbes 30 Under 30 list?",
+      "type": "MC",
+      "choices": [
+        "1",
+        "5",
+        "9",
+        "13"
+      ],
+      "answer": "c",
+      "image": "",
+      "alt": null,
+      "explanation": "In December 2025, nine Brown alums were featured on the 2026 Forbes 30 Under 30 list. There has been at least one Brown alum on the list each year for the past five years.",
+      "link": "https://www.browndailyherald.com/article/2026/01/nine-brown-alums-named-to-2026-forbes-30-under-30-list"
+    },
+    {
+      "question": "Where did Brown archaeologists find a medieval Islamic settlement?",
+      "type": "MC",
+      "choices": [
+        "Under the Quiet Green",
+        "Machu Picchu, Peru",
+        "Menorca, Spain",
+        "Cairo, Egypt"],
+      "answer": "c",
+      "image": "",
+      "alt": null,
+      "explanation": "Brown archaeologists have uncovered evidence of a medieval Islamic settlement which is documented on the island of Menorca, Spain.",
+      "link": "https://www.browndailyherald.com/article/2026/02/brown-researchers-document-major-medieval-islamic-settlement-in-menorca"
+    },
+    {
+      "question": "On Monday, the Corporation, Brown’s highest governing body, approved an increase in tuition by ____ percent.",
+      "type": "MC",
+      "choices": [
+        "2.25%",
+        "3.75%",
+        "6.0%",
+        "4.25%"],
+      "answer": "d",
+      "image": "",
+      "alt": null,
+      "explanation": "Total undergraduate tuition and fees have risen to $97,016 for the upcoming academic year.",
+      "link": "https://www.browndailyherald.com/article/2026/02/corporation-approves-425-increase-in-undergraduate-tuition-and-fees-increases-faculty-staff-salary-pool"
+    },
+    {
+      "question": "What species of animal is Turbobo, a popular plush toy created by a Brown student?",
+      "type": "MC",
+      "choices": [
+        "Sheep",
+        "Bear",
+        "Pig",
+        "Dog"],
+      "answer": "d",
+      "image": "",
+      "alt": null,
+      "explanation": "In 2023, Ryan Miele ’27 launched Turbobo, a product that has now found its way into classrooms, homes and care centers across the United States.",
+      "link": "https://www.browndailyherald.com/article/2026/01/meet-turbobo-the-weighted-plush-dog-that-wears-his-heart-on-his-fur"
+    },
+    {
+      "question": "Which prize was John Donoghue PhD’79 awarded?",
+      "type": "MC",
+      "choices": [
+        "Charles Stark Draper Prize",
+        "Queen Elizabeth Prize",
+        "Bernard M. Gordon Prize",
+        "Nobel Prize for Physics"],
+      "answer": "b",
+      "image": "",
+      "alt": null,
+      "explanation": "The Professor of Neuroscience and Engineering was awarded the 2026 Queen Elizabeth Prize for Engineering for his work on brain-computer interfaces which help restore function in people with paralysis.",
+      "link": "https://www.browndailyherald.com/article/2026/02/john-donoghue-phd79-awarded-queen-elizabeth-prize-for-engineering"
+    },
+    {
+      "question": "What price was the Rhode Island minimum wage raised to?",
+      "type": "MC",
+      "choices": [
+        "$10",
+        "$12",
+        "$15",
+        "$16"],
+      "answer": "d",
+      "image": "",
+      "alt": null,
+      "explanation": "Rhode Island raised the state minimum wage from $15 to $16 per hour in a law that went into effect Jan. 1.",
+      "link": "https://www.browndailyherald.com/article/2026/01/ri-minimum-wage-raised-to-16-per-hour-50000-workers-impacted"
+    },
+    {
+      "question": "What was the name of Fusion Dance Company’s 42nd annual spring show?",
+      "type": "MC",
+      "choices": [
+        "Crush",
+        "Marmoris: The Ocean’s shining surface",
+        "Nebula",
+        "Mirage"],
+      "answer": "a",
+      "image": "",
+      "alt": null,
+      "explanation": "RISD’s “Tour for Tots” program encourages children to feel comfortable in the museum by partaking in activities such as gallery sketches and thinking about different works of art. ",
+      "link": "https://www.browndailyherald.com/article/2026/01/risd-museum-tours-for-tots-teaches-youth-to-make-experience-art"
+    },
+    {
+      "question": "What percent of Brown students are reportedly single?",
+      "type": "MC",
+      "choices": [
+        "82%",
+        "47%",
+        "69%",
+        "73%"],
+      "answer": "c",
+      "image": "",
+      "alt": null,
+      "explanation": "The Brown Marriage Pact has grown in popularity after being introduced last spring..",
+      "link": "https://www.browndailyherald.com/article/2026/03/how-students-found-lasting-love-through-marriage-pact"
+    },
+    {
+      "question": "Which Breaking Bad actor spoke at the Solomon Center for Brown Lecture Board’s annual spring lecture?",
+      "type": "MC",
+      "choices": [
+        "Bryan Cranston",
+        "Giancarlo Esposito",
+        "Charles Baker",
+        "Anna Gunn"],
+      "answer": "b",
+      "image": "",
+      "alt": null,
+      "explanation": "Giancarlo Esposito outlined his acting journey, discussing his hit performances in shows like “Breaking Bad, “The Boys” and “The Mandalorian.”",
+      "link": "https://www.browndailyherald.com/article/2026/03/breaking-bad-actor-giancarlo-esposito-reveals-how-he-channels-chaos-in-spring-brown-lecture-board-talk"
+    },
+    {
+      "question": "What organization is funding the Rhode Island Network for Environmental Sensing and Technology’s environmental sensors project?",
+      "type": "MC",
+      "choices": [
+        "Society For Science",
+        "National Academy of Sciences",
+        "National Science Foundation",
+        "American Association for the Advancement of Science"],
+      "answer": "c",
+      "image": "",
+      "alt": null,
+      "explanation": "The National Science Foundation is funding the project for environment sensors to help community members adapt to future hazardous weather conditions.",
+      "link": "https://www.browndailyherald.com/article/2026/04/how-a-network-of-environmental-sensors-aim-to-help-people-better-understand-their-communities"
+    }
+  ]
+}
