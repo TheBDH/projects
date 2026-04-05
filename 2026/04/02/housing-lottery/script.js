@@ -5,6 +5,7 @@ const lotteryStartISO = '2026-04-06T00:00:00-04:00'; // April 6 2026, midnight E
 const section = document.getElementById('countdown');
 const target = new Date(section.dataset.target).getTime();
 const bgVideo = document.getElementById('bg-video');
+const mediaCredit = document.getElementById('media-credit');
 
 const $days = document.getElementById('cd-days');
 const $hours = document.getElementById('cd-hours');
@@ -46,11 +47,12 @@ function tick() {
 requestAnimationFrame(tick);
 
 function updateBgVideoOpacity() {
-    if (!bgVideo) return;
+    if (!bgVideo && !mediaCredit) return;
 
     const fadeRange = Math.max(window.innerHeight * 0.3, 1);
     const opacity = Math.max(0, 1 - (window.scrollY / fadeRange));
-    bgVideo.style.opacity = String(opacity);
+    if (bgVideo) bgVideo.style.opacity = String(opacity);
+    if (mediaCredit) mediaCredit.style.opacity = String(opacity);
 }
 
 window.addEventListener('scroll', () => {
@@ -227,6 +229,8 @@ function initLeafletMap() {
         .then(() => fetch('./dorms.geojson'))
         .then((r) => r.json())
         .then((geo) => {
+            logDormsMissingFromGeoJSON(geo);
+
             dormLayer = L.geoJSON(geo, {
                 style: styleDorm,
                 onEachFeature: onEachDorm,
@@ -513,6 +517,10 @@ function getRoomCounts(dormName, timeKey) {
     return { avail, total, pct };
 }
 
+function hasDormData(dormName, timeKey) {
+    return Boolean(housingData?.[timeKey]?.[dormName]);
+}
+
 function getFeatureDormName(feature) {
     return (
         feature?.properties?.Property_Name ||
@@ -520,6 +528,27 @@ function getFeatureDormName(feature) {
         feature?.properties?.Building ||
         ''
     );
+}
+
+function logDormsMissingFromGeoJSON(geo) {
+    if (!housingData || !geo?.features) return;
+
+    const geoNames = new Set(
+        geo.features.map((feature) => getFeatureDormName(feature)).filter(Boolean)
+    );
+
+    const outputNames = new Set();
+    for (const timeKey of Object.keys(housingData)) {
+        const snap = housingData[timeKey] || {};
+        for (const dormName of Object.keys(snap)) {
+            outputNames.add(dormName);
+        }
+    }
+
+    const missing = Array.from(outputNames).filter((name) => !geoNames.has(name));
+    if (missing.length) {
+        console.warn('Dorms in housing_output.json missing from dorms.geojson:', missing);
+    }
 }
 
 function getLabelText(feature) {
@@ -564,6 +593,14 @@ function refreshDormLabels() {
 // --- STYLING / POPUPS ---
 
 function styleDorm(feature) {
+    const hidden = {
+        weight: 0,
+        color: 'transparent',
+        fillColor: 'transparent',
+        fillOpacity: 0,
+        opacity: 0,
+    };
+
     const gray = {
         weight: 0.6,
         color: '#c8c8c8',
@@ -574,6 +611,8 @@ function styleDorm(feature) {
     if (!housingData || !timestamps.length) return gray;
 
     const dormName = getFeatureDormName(feature);
+    if (!hasDormData(dormName, timestamps[currentIndex])) return hidden;
+
     const counts = getRoomCounts(dormName, timestamps[currentIndex]);
 
     if (!counts || counts.total === 0) return gray;
@@ -628,6 +667,8 @@ function formatPopupHTML(name, counts) {
 function onEachDorm(feature, layer) {
     layer.on('click', () => {
         const name = getFeatureDormName(feature);
+        if (!hasDormData(name, timestamps[currentIndex])) return;
+
         const counts = getRoomCounts(name, timestamps[currentIndex]);
 
         layer.bindPopup(formatPopupHTML(name, counts)).openPopup();
@@ -868,7 +909,7 @@ const dataUrl = './housingdataforwebsite.csv';
 
     function fmtSelectionLabel(date) {
         const shifted = shiftDateForDisplay(date, DISPLAY_DAY_SHIFT);
-        return "Selection Time "
+        return "Time  "
         /*
               if (!(shifted instanceof Date) || Number.isNaN(shifted.getTime())) return "Selection Time";
               return `Selection Time: ${new Intl.DateTimeFormat(undefined, {

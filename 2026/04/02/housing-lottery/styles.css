@@ -120,6 +120,37 @@ body {
     color: var(--color-text);
 }
 
+.article-text-block a {
+    text-decoration: underline;
+}
+
+.basic-image-block {
+    width: 50%;
+    margin: 0 auto 2rem;
+}
+
+@media (max-width: 600px) {
+    .basic-image-block {
+        width: 80%;
+    }
+}
+
+.basic-image-block__image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.basic-image-block__caption {
+    margin-top: 0.5rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    text-align: center;
+}
+
+.basic-image-block__caption a {
+    text-decoration: underline;
+}
 h1,
 h2,
 h3,
@@ -166,6 +197,30 @@ iframe:focus-visible {
         object-fit: cover;
         z-index: 0;
         pointer-events: none;
+}
+
+#media-credit {
+    position: fixed;
+    right: 1rem;
+    bottom: 0.9rem;
+    z-index: 1;
+    pointer-events: auto;
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+    border-radius: 6px;
+    padding: 0.25rem 0.5rem;
+    box-shadow: none;
+    transition: opacity 0.08s linear;
+}
+
+#media-credit a,
+#media-credit a:visited,
+#media-credit a:hover,
+#media-credit a:active {
+    color: inherit;
+    text-decoration: underline;
 }
 
 .down-arrow {
@@ -233,7 +288,7 @@ iframe:focus-visible {
     border-radius: var(--radius-lg);
     padding: var(--space-xl) var(--space-lg);
     box-shadow: var(--shadow-card);
-    max-width: 34rem;
+    max-width: 35rem;
     margin-inline: auto;
 }
 
@@ -257,6 +312,19 @@ iframe:focus-visible {
     flex-direction: column;
     align-items: center;
     min-width: 5rem;
+}
+
+.housing-live__placeholder #countdown .countdown__grid {
+    flex-wrap: nowrap;
+    gap: var(--space-lg);
+}
+
+.housing-live__placeholder #countdown .countdown__unit {
+    min-width: 0;
+}
+
+.housing-live__placeholder #countdown {
+    transform: translateY(-5px);
 }
 
 .countdown__number {
@@ -287,7 +355,7 @@ iframe:focus-visible {
 .hero {
     width: min(50vw, 50rem);
     min-height: 40vh;
-    margin: calc(30vh - 1rem) auto 1rem;
+    margin: calc(26vh - 1rem) auto 1rem;
     padding: 0;
     display: flex;
     align-items: center;
@@ -302,7 +370,7 @@ iframe:focus-visible {
 
 .hero__inner {
     width: 100%;
-    padding: var(--space-lg) 1.25rem var(--space-md);
+    padding: var(--space-lg) 2rem var(--space-md);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -361,6 +429,7 @@ iframe:focus-visible {
     max-width: 32rem;
     color: var(--color-text-muted);
     font-size: 1.1rem;
+    margin-bottom: 5px;
 }
 
 .hero__byline {
@@ -759,13 +828,13 @@ iframe:focus-visible {
     color: var(--color-text-muted);
 }
 
-.housing-live__placeholder p {
+.housing-live__placeholder > p {
     font-family: var(--font-heading);
     font-size: 1.3rem;
     color: var(--color-accent);
 }
 
-.housing-live__placeholder span {
+.housing-live__placeholder > span {
     font-size: 0.85rem;
     opacity: 0.7;
     margin-top: var(--space-xs);
