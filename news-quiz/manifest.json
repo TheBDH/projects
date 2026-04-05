@@ -1,0 +1,9 @@
+{
+  "short_name": "BDH News Quiz",
+  "name": "BDH Weekly News Quiz",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
