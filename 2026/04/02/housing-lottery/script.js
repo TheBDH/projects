@@ -236,7 +236,7 @@ function initLeafletMap() {
                 onEachFeature: onEachDorm,
             }).addTo(leafletMap);
 
-            updateMap(0);
+            updateMap(currentIndex);
 
             const slider = document.getElementById('housing-live-time-slider');
             slider?.addEventListener('input', function () {
@@ -330,7 +330,9 @@ function fetchHousingData() {
             const slider = document.getElementById('housing-live-time-slider');
             if (slider) {
                 slider.max = String(Math.max(timestamps.length - 1, 0));
-                slider.value = String(Math.min(currentIndex, Math.max(timestamps.length - 1, 0)));
+                currentIndex = timestamps.length - 1;
+                slider.value = String(currentIndex);
+                updateMap(currentIndex);
             }
 
             updateLegend();
