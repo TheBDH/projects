@@ -1,0 +1,156 @@
+{
+    "date": "February 15 - February 21, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+        {
+            "question": "Approximately how many flu hospitalizations have been reported in Rhode Island since October?",
+            "type": "MC",
+            "choices": [
+                "117",
+                "364",
+                "792",
+                "900"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Last month, Brown University Health announced a mask mandate requiring all staff, patients and visitors to wear either Level 2 or N95 surgical masks amid “very high” levels of respiratory illness, with the state seeing approximately 900 hospitalizations since October.",
+            "link": "https://www.browndailyherald.com/article/2025/02/amid-rising-flu-cases-ri-hospitals-implement-mask-mandates"
+        },
+        {
+            "question": "How many books were reportedly targeted in book ban attempts in the US during the first eight months of 2024?",
+            "type": "MC",
+            "choices": [
+                "414",
+                "1128",
+                "2348",
+                "4240"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "In the first eight months of 2024, the American Library Association reported 414 attempts at censorship of “library materials and services” across the country, with 1,128 titles targeted for removal.",
+            "link": "https://www.browndailyherald.com/article/2025/02/federal-support-for-book-bans-will-harm-students-librarians-warn"
+        },
+        {
+            "question": "Which independent concentration was not pursued by a Brown student 10 years ago?",
+            "type": "MC",
+            "choices": [
+                "Contemplative Psychosomatic Medicine",
+                "Educational Neuroscience",
+                "Social Justice through Music",
+                "Perception of Digital Art and Design"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "Ten years ago, Brown students completed independent concentrations in Contemplative Psychosomatic Medicine, Educational Neuroscience, Perception of Digital Art and Design, and Neuroaesthetics.",
+            "link": "https://www.browndailyherald.com/article/2025/02/ten-years-ago-these-four-alums-graduated-with-an-independent-concentration-where-are-they-now-67b56510b859f"
+        },
+        {
+            "question": "Which coffee shop’s employees are seeking unionization?",
+            "type": "MC",
+            "choices": [
+                "Ceremony",
+                "Brown Bee",
+                "Coffee Exchange",
+                "Sydney"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Sixteen baristas, prep cooks and tea and coffee specialists at Ceremony’s two locations in Providence are seeking higher base wages, paid sick leave and improved working conditions.",
+            "link": "https://www.browndailyherald.com/article/2025/02/ceremony-employees-seek-unionization-over-wages-benefits-working-conditions"
+        },
+        {
+            "question": "The visiting RISD alums were a part of which band?",
+            "type": "MC",
+            "choices": [
+                "Radiohead",
+                "Talking Heads",
+                "One Direction",
+                "Ramones"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "The Rhode Island School of Design welcomed back class of 1974 alums Tina Weymouth and Chris Frantz for a screening of “Stop Making Sense,” a concert film for their band Talking Heads.",
+            "link": "https://www.browndailyherald.com/article/2025/02/risd-alums-from-talking-heads-band-return-for-screening-of-concert-film"
+        },
+        {
+            "question": "Which artists just released deluxe editions of their albums this month?",
+            "type": "MC",
+            "choices": [
+                "Gracie Abrams and The Weeknd",
+                "Sabrina Carpenter and SZA",
+                "Kendrick Lamar and Billie Eilish",
+                "Beyonce and Charli XCX"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Sabrina Carpenter recently released “Short n’ Sweet (Deluxe)”, and SZA just dropped “SOS Deluxe: LANA”, making waves in the music world.",
+            "link": "https://www.browndailyherald.com/article/2025/02/sabrina-carpenter-and-sza-are-at-the-top-of-their-game-with-deluxe-releases"
+        },
+        {
+            "question": "Which Watson Institute committee started the annual spoken word and open mic event for Black History Month?",
+            "type": "MC",
+            "choices": [
+                "Watson Institute’s Diversity and Inclusion Action Plan Committee",
+                "Watson Institute’s Faculty Committee",
+                "Watson Institute’s American Studies Committee",
+                "Watson Institute’s Graduate Students Committee"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "The event began three years ago, when the Watson Institute’s Diversity and Inclusion Action Plan committee was tasked with creating programming for historical heritage months.",
+            "link": "https://www.browndailyherald.com/article/2025/02/watson-institute-hosts-spoken-word-open-mic-event-to-celebrate-black-history-month"
+        },
+        {
+            "question": "What is Brown Women’s Basketball’s current Ivy League standing?",
+            "type": "MC",
+            "choices": [
+                "Second",
+                "Third",
+                "Fourth",
+                "Fifth"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Despite two impressive come-from-behind efforts, Brown women’s basketball lost back-to-back games on the road against Ivy League rivals Princeton and Penn.",
+            "link": "https://www.browndailyherald.com/article/2025/02/womens-basketball-drops-two-games-extends-losing-streak-to-four"
+        },
+        {
+            "question": "Which dish is not mentioned as a menu item at the newly opened Rong Chic restaurant?",
+            "type": "MC",
+            "choices": [
+                "Brown Sugar Chinese Rice Cake",
+                "Three Pepper Chicken",
+                "Sweet and Sour Pork",
+                "Tofu Cheesecake"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "Wickenden Street recently welcomed its newest, spicy addition: Chinese restaurant Rong Chic. The eatery opened its doors for food tastings earlier this month, featuring dishes like tofu cheesecake, three pepper chicken and Mapo tofu.",
+            "link": "https://www.browndailyherald.com/article/2025/02/rong-chic-opens-for-sichuanese-menu-tastings-on-wickenden-street"
+        },
+        {
+            "question": "Who concluded his service as Rhode Island U.S. Attorney?",
+            "type": "MC",
+            "choices": [
+                "Zachary Cunha",
+                "Rob Bonta",
+                "Derek Brown",
+                "Kamala Harris"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "In a Feb. 17 press release, Zachary Cunha ’98, the United States Attorney for the District of Rhode Island, wrote that he had submitted a letter of resignation to the Justice Department and White House earlier this month.",
+            "link": "https://www.browndailyherald.com/article/2025/02/rhode-island-us-attorney-zachary-cunha-98-resigns-at-trumps-behest"
+        }
+        ]
+    }

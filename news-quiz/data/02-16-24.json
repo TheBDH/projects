@@ -1,0 +1,125 @@
+{
+  "date": "February 9 - February 16, 2024",
+  "intro": "Test your knowledge of this week's Herald news!",
+  "questions": [
+    {
+      "question": "Who was recently elected to be the University’s 22nd Chancellor?",
+      "type": "MC",
+      "choices": [
+        "Samuel Mencoff",
+        "Ateev Mehrotra",
+        "Brian Moynihan",
+        "Bruno the Bear"
+      ],
+      "answer": "c",
+      "image": null,
+      "alt": null,
+      "explanation": "Bank of America CEO Brian Moynihan ’81 P’14 P’19 was announced as Brown’s 22nd chancellor in a Feb. 13 Today@Brown announcement. He has served as a member of the corporation for the past 14 years, as both a trustee and a member of the board of fellows, and has served on the President’s Leadership Council. He will succeed Samuel Mencoff ’78 P’11 P’15 to lead the University’s highest governing body beginning July 1.",
+      "link": "https://www.browndailyherald.com/article/2024/02/bank-of-america-ceo-to-lead-brown-corporation-beginning-july-1"
+    },
+    {
+      "question": "When will the East Coast Taiko Conference be held?",
+      "type": "MC",
+      "choices": [
+        "February 16th",
+        "February 17th",
+        "February 18th",
+        "February 19th"
+      ],
+      "answer": "b",
+      "image": null,
+      "alt": null,
+      "explanation": "Brown-RISD Gendo Taiko will host the East Coast Taiko Conference on February 17th for members of the East Coast taiko community to build their performance repertoires, learn from taiko masters, and create long-lasting community ties.",
+      "link": null
+    },
+    {
+      "question": "Which student group hosted a Lunar New Year banquet at Alumnae Hall?",
+      "type": "MC",
+      "choices": ["CSA", "VSA", "KASA", "KISA"],
+      "answer": "a",
+      "image": null,
+      "alt": null,
+      "explanation": "The Brown Chinese Students Association (CSA) hosted its annual Lunar New Year banquet Friday, Feb. 9 in Alumnae Hall.",
+      "link": "https://www.browndailyherald.com/article/2024/02/brown-chinese-students-association-hosts-annual-banquet-for-lunar-new-year"
+    },
+    {
+      "question": "Corporation recently approved a ___ increase in undergraduate tuition.",
+      "type": "MC",
+      "choices": ["3.25%", "4%", "4.75%", "5.1%"],
+      "answer": "c",
+      "image": null,
+      "alt": null,
+      "explanation": "During the Brown Corporation’s meetings held last week, members of the University’s highest governing body approved a 4.75% tuition increase and a 4.5% salary pool increase.",
+      "link": "https://www.browndailyherald.com/article/2024/02/corporation-discusses-student-demands-for-divestment-approves-475-increase-in-undergraduate-tuition"
+    },
+    {
+      "question": "An athlete on which of the following teams at Brown scored a historic “Michigan” goal?",
+      "type": "MC",
+      "choices": [
+        "Men’s Hockey",
+        "Women’s Hockey",
+        "Men’s Lacrosse",
+        "Women’s Water Polo"
+      ],
+      "answer": "b",
+      "image": null,
+      "alt": null,
+      "explanation": "First-year Margot Norehad ’27 scored the “Michigan” goal in a Jan. 27 match against Quinnipiac to become the second women’s hockey player in history to do so.",
+      "link": "https://www.browndailyherald.com/article/2024/02/margot-norehad-27-scores-fabled-michigan-goal"
+    },
+    {
+      "question": "How many Group Independent Study Projects (GISPs) are active this semester?",
+      "type": "MC",
+      "choices": ["4", "14", "7", "11"],
+      "answer": "d",
+      "image": null,
+      "alt": null,
+      "explanation": "This semester features the largest number of GISPs offered since before the pandemic, according to Courses@Brown.",
+      "link": "https://www.browndailyherald.com/article/2024/02/group-individual-independent-study-projects-rise-in-popularity"
+    },
+    {
+      "question": "Brown recently delayed their FAFSA deadline from Feb. 1 to…",
+      "type": "MC",
+      "choices": ["March 1", "March 8", "March 15", "March 22"],
+      "answer": "a",
+      "image": null,
+      "alt": null,
+      "explanation": "This year, students applying for financial aid using the Free Application for Federal Student Aid form were met with delays following significant changes to the form, leading Brown to extend its own FAFSA deadline to March.",
+      "link": "https://www.browndailyherald.com/article/2024/02/amid-federal-delays-brown-postpones-fafsa-deadline#:~:text=In%20response%2C%20Brown%20delayed%20its,result%20of%20a%20late%20application.%E2%80%9D"
+    },
+    {
+      "question": "How many games did Brown sport teams lose this week?",
+      "type": "MC",
+      "choices": ["0", "5", "8", "11"],
+      "answer": "d",
+      "image": null,
+      "alt": null,
+      "explanation": "Brown sports teams have lost 11 games in the past week.",
+      "link": null
+    },
+    {
+      "question": "Which student organization recently announced plans to pursue monetary compensation for members’ work?",
+      "type": "MC",
+      "choices": [
+        "The Class Coordinating Board",
+        "Undergraduate Council of Students",
+        "Undergraduate Finance Board"
+      ],
+      "answer": "a",
+      "image": null,
+      "alt": null,
+      "explanation": "The Class Coordinating Board plans to pursue monetary compensation for members’ work on campus, according to CCB Senior Co-Presidents Logan Torres ’24 and Becca Erdenebulgan ’24. CCB hopes compensating members for long hours will allow for more diverse board and higher retention.",
+      "link": "https://www.browndailyherald.com/article/2024/02/ccb-to-pursue-monetary-compensation-for-members-work"
+    },
+    {
+      "question": "Where is the location of the new Ceremony?",
+      "type": "MC",
+      "choices": ["Thayer St", "South Main St", "Benevolent St", "Brook St"],
+      "answer": "b",
+      "image": null,
+      "alt": null,
+      "explanation": "Ceremony will join the School of Public Health and Hemenway’s Restaurant at 121 South Main St., in the former lot of Cafe La France. “The new location will be more focused on food,” including “onigiri, yubuchobap, fruit sandos and comfort foods like egg sandos,” Ceremony’s owner and founder Michelle Cheng wrote in an email to The Herald.",
+      "link": "https://www.browndailyherald.com/article/2024/02/ceremony-cafe-to-open-second-location-on-south-main-street"
+    }
+  ]
+}

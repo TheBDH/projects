@@ -1,0 +1,156 @@
+{
+    "date": "March 17 - March 21, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+        {
+            "question": "What day will Josiah’s begin offering milkshakes?",
+            "type": "MC",
+            "choices": [
+            "April 2",
+            "April 3",
+            "April 4",
+            "April 5"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "After months of anticipation, Josiah’s will officially begin churning out milkshakes on April 2, marking the end of a year-long initiative by the Undergraduate Council of Students.",
+            "link": "https://www.browndailyherald.com/article/2025/03/josiahs-to-offer-milkshakes-after-spring-break"
+        },
+        {
+            "question": "Who did the women’s rugby team defeat in the tournament finale this weekend?",
+            "type": "MC",
+            "choices": [
+            "Boston College",
+            "Northwestern University",
+            "Northeastern University",
+            "University of Southern California"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "After going undefeated in regular play — taking down the Hawks 24-22, the Maddogs 39-0 and the Eagles 50-0 — Brown defeated Northeastern 41-7 in the tournament finale.",
+            "link": "https://www.browndailyherald.com/article/2025/03/reigning-rugby-national-champions-dominate-in-season-opener"
+        },
+        {
+            "question": "What newspaper did Carol Agate ’55 write for?",
+            "type": "MC",
+            "choices": [
+            "Pembroke Daily",
+            "Pembroke Record",
+            "Pembroke Sun",
+            "Pembroke Herald"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Agate, who studied physics, said she was “very active” as a writer for the Pembroke Record, the college’s student newspaper.",
+            "link": "https://projects.browndailyherald.com/2025/03/18/history-of-admissions/"
+        },
+        {
+            "question": "What was the theme of The Met’s brunch this past weekend?",
+            "type": "MC",
+            "choices": [
+            "Japanese",
+            "Hello Kitty",
+            "St. Patrick’s Day",
+            "Women empowerment"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "This past weekend, students eating at the Rhode Island School of Design’s the Met dining hall were treated to more than just food. The dining hall’s Japanese-themed brunch featured a variety of Japanese dishes and a performance from Japanese drumming group Gendo Taiko.",
+            "link": "https://www.browndailyherald.com/article/2025/03/japanese-food-hello-kitty-the-color-green-themed-met-brunches-bring-community-to-risd-dining"
+        },
+        {
+            "question": "Who organized the lunch meeting for concerned researchers, faculty and library staff on losing federal data under the Trump administration?",
+            "type": "MC",
+            "choices": [
+            "Allan Just",
+            "Frank Donnelly",
+            "Holly Case",
+            "Reuben Fischer-Baum"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "Last month, Holly Case, a professor of history and the deputy director of the Data Science Institute, held a lunch meeting convening researchers, faculty members and library staff. A shared concern brought them there: losing federal data under the Trump administration.",
+            "link": "https://www.browndailyherald.com/article/2025/03/brown-librarians-professors-lead-effort-to-archive-government-data-under-threat-by-trump-administration"
+        },
+        {
+            "question": "What percentage of Rhode Islanders received SNAP benefits in 2024?",
+            "type": "MC",
+            "choices": [
+            "8%",
+            "32%",
+            "13%",
+            "20%"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "1,800 Rhode Islanders were robbed of over $500,000 in food benefits due to EBT card skimmers, R.I. DHS said.",
+            "link": "https://www.browndailyherald.com/article/2025/03/ebt-card-theft-robs-1800-rhode-islanders-of-500000-in-food-benefits"
+        },
+        {
+            "question": "Which artist designed the “Unsui (Cloud Forest)” art exhibition in Sayles Hall?",
+            "type": "MC",
+            "choices": [
+            "Kate Kraczon",
+            "Nicole Wholean",
+            "Emily Walsh",
+            "Sanford Biggers"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Those venturing into Sayles Hall this spring might notice an unusually cloudy ceiling atop the portrait-lined walls. Visitors can now experience the building’s main hall in a new light — literally — thanks to interdisciplinary artist Sanford Biggers’s new installation, “Unsui (Cloud Forest).”",
+            "link": "https://www.browndailyherald.com/article/2025/03/new-art-exhibit-turns-sayles-hall-partly-cloudy"
+        },
+        {
+            "question": "What new establishment has repurposed the old Union Station in downtown Providence?",
+            "type": "MC",
+            "choices": [
+            "A flea market",
+            "A food hall",
+            "An ice skating rink",
+            "A concert venue"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "After years of anticipation, the 18,000-square-foot Track 15 food hall opened inside the former Union Station in downtown Providence on Tuesday.",
+            "link": "https://www.browndailyherald.com/article/2025/03/track-15-food-hall-repurposes-downtown-providence-train-station"
+        },
+        {
+            "question": "Who directed ‘Novocaine’?",
+            "type": "MC",
+            "choices": [
+            "Dan Berk and Robert Olsen",
+            "Nathan Caine",
+            "Dennis Quaid and Meg Ryan",
+            "Ray Nicholson"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "“Novocaine” follows Nathan Caine (Jack Quaid), an assistant manager of a financial institution with a genetic disorder that makes him unable to feel physical pain. It’s the kind of gimmick that could be exhausting and flat — think the endless bee jokes in “The Beekeeper” — but writer Lars Jacobson and directors Dan Berk and Robert Olsen make it work.",
+            "link": "https://www.browndailyherald.com/article/2025/03/novocaine-packs-a-punch"
+        },
+        {
+            "question": "What was the first class to have need-blind admissions for domestic applicants?",
+            "type": "MC",
+            "choices": [
+            "Class of 2022",
+            "Class of 1998",
+            "Class of 1965",
+            "Class of 2007"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Brown implemented need-blind admissions for domestic applicants starting with the class of 2007.",
+            "link": "https://projects.browndailyherald.com/2025/03/18/history-of-admissions/"
+        }
+        ]
+    }

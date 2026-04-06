@@ -1,0 +1,156 @@
+{
+    "date": "September 27 - October 3, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+        {
+            "question": "Which president did Under Secretary of Education James Kvaal serve under?",
+            "type": "MC",
+            "choices": [
+            "George W. Bush",
+            "Barack Obama",
+            "Joe Biden",
+            "Donald Trump"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "On Tuesday, the Watson School of International and Public Affairs hosted a conversation between former Under Secretary of Education James Kvaal and Dean of the Watson School John Friedman. The discussion encompassed the future of higher education, the Department of Education's successes and failures, the Trump administration and rising tuition costs.",
+            "link": "https://www.browndailyherald.com/article/2025/10/former-under-secretary-of-education-admits-fafsa-issues-justifies-rising-tuition-in-watson-talk"
+        },
+        {
+            "question": "Which concentration are conservative first-year students more likely to want to concentrate in?",
+            "type": "MC",
+            "choices": [
+            "Medieval Cultures",
+            "Neuroscience",
+            "Political Science",
+            "Economics"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Conservative first-year students are more likely to want to study economics while liberals are eyeing a degree in political science, data from The Herald's First-Year Poll shows.",
+            "link": "https://www.browndailyherald.com/article/2025/09/conservative-first-years-interested-in-economics-while-liberal-ones-interested-in-political-science-poll-suggests"
+        },
+        {
+            "question": "For how many new H-1B visa applications was the University approved as petitioner in 2024?",
+            "type": "MC",
+            "choices": [
+            "39",
+            "40",
+            "41",
+            "42"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "In 2023 and 2024, the University was approved as the petitioner for 49 and 39 new H1-B visa applications, respectively.",
+            "link": "https://www.browndailyherald.com/article/2025/09/new-100000-h-1b-visa-application-fee-set-to-impact-international-students-faculty"
+        },
+        {
+            "question": "Due to a recent federal policy change, how much will employers now have to pay to sponsor an H-1B visa?",
+            "type": "MC",
+            "choices": [
+            "$100,000",
+            "$10,000",
+            "$50,000",
+            "$67,000"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "The federal proclamation outlines a policy change that now requires employers to pay a $100,000 fee to sponsor an H-1B application, citing alleged \"systemic abuse\" of the policy over the past three decades. Previously, there was no singular fee, although employers typically spent around $10,000 on legal and administrative costs associated with the application.",
+            "link": "https://www.browndailyherald.com/article/2025/09/new-100000-h-1b-visa-application-fee-set-to-impact-international-students-faculty"
+        },
+        {
+            "question": "How old is the Palagis Ice Cream Company?",
+            "type": "MC",
+            "choices": [
+            "87 years",
+            "129 years",
+            "140 years",
+            "157 years"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Alex Arteaga has owned Palagis Ice Cream Company — a 129-year-old ice cream truck company based in Pawtucket — since 1998, developing a deep appreciation for the business.",
+            "link": "https://www.browndailyherald.com/article/2025/10/alex-arteaga-details-history-of-120-year-old-ice-cream-truck-in-new-book"
+        },
+        {
+            "question": "What is the $4 billion offshore wind farm off the coast of Rhode Island called?",
+            "type": "MC",
+            "choices": [
+            "Alta Wind Energy Center",
+            "Hornsea 2 Wind Farm",
+            "Revolution Wind",
+            "Hornsea 2 Wind Farm"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "After the Trump administration attempted to halt construction of Revolution Wind — a $4 billion offshore wind farm off the coast of Rhode Island — a federal judge ruled that the work is allowed to continue.",
+            "link": "https://www.browndailyherald.com/article/2025/10/revolution-wind-allowed-to-resume-construction-judge-rules"
+        },
+        {
+            "question": "Due to the 'Taylor Swift Tax,' how much extra money would Taylor Swift have to pay in taxes starting next year?",
+            "type": "MC",
+            "choices": [
+            "$136,000",
+            "$150,000",
+            "$690,000",
+            "$670,000"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "The bill has been nicknamed the \"Taylor Swift Tax\" on social media. While Swift has no relation to the tax, the pop star owns a $17.75 million mansion in Westerly and would have to pay an additional $136,000 in taxes starting next year.",
+            "link": "https://www.browndailyherald.com/article/2025/09/taylor-swift-tax-targets-owners-of-ri-summer-homes-alters-vacation-real-estate"
+        },
+        {
+            "question": "How many students are concentrating in biochemistry and molecular biology in 2025?",
+            "type": "MC",
+            "choices": [
+            "60",
+            "83",
+            "124",
+            "142"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "In the past 10 years, the biochemistry and molecular biology concentration has increased from 60 students in 2015 to 142 in 2025, according to William Holmes, an associate teaching professor of biology, molecular biology, cell biology and biochemistry.",
+            "link": "https://www.browndailyherald.com/article/2025/10/why-is-the-biochemistry-concentration-attracting-more-students"
+        },
+        {
+            "question": "Which Ivy League did Brown women's tennis recently secure 17 victories against?",
+            "type": "MC",
+            "choices": [
+            "Princeton",
+            "Harvard",
+            "Dartmouth",
+            "Columbia"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "This weekend, Brown women's tennis traveled to New Hampshire to play Dartmouth's team, and they left with 13 singles victories and four doubles victories.",
+            "link": "https://www.browndailyherald.com/article/2025/09/womens-tennis-serves-up-strong-showings-at-dartmouth-tournament"
+        },
+        {
+            "question": "Who will be running against incumbent Brett Smiley in the upcoming Providence mayoral election?",
+            "type": "MC",
+            "choices": [
+            "Jack Reed",
+            "David Morales",
+            "Seth Magaziner",
+            "Gabe Amo"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "The Democratic primary election will be held next September, with the general election to follow on Nov. 3. Morales will likely face Mayor Brett Smiley, who took office in 2023.",
+            "link": "https://www.browndailyherald.com/article/2025/09/rep-david-morales-mpa19-centers-affordability-financial-inequity-in-providence-mayoral-bid"
+        }
+    ]
+}

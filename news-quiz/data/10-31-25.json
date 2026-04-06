@@ -1,0 +1,156 @@
+{
+    "date": "October 25 - October 31, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+        {
+            "question": "Nearly what percent of varsity athletes report going out at least once a week?",
+            "type": "MC",
+            "choices": [
+                "60%",
+                "43%",
+                "67%",
+                "52%"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Nearly 60 percent of varsity athletes say they go out once a week or more, according to The Herald’s Fall 2025 poll, compared with just 43 percent of other students.",
+            "link": "https://www.browndailyherald.com/article/2025/10/from-frat-houses-to-kickbacks-going-out-varies-from-student-to-student"
+        },
+        {
+            "question": "A farmhouse that inspired which famous horror movie recently had its mortgage purchased by an unknown buyer?",
+            "type": "MC",
+            "choices": [
+                "“The Shining”",
+                "“The Conjuring”",
+                "“The Silence of the Lambs”",
+                "“The Exorcist”"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Located on Round Top Road in Burrillville, the farmhouse that inspired the hit 2013 horror movie “The Conjuring” was slated to be auctioned off on Halloween. But on Oct. 8, an unknown buyer purchased the note and mortgage, taking on the loan for the property. As a result, Needham Bank, the previous mortgagee, canceled the foreclosure auction.",
+            "link": "https://www.browndailyherald.com/article/2025/10/the-conjuring-house-mortgage-sold-frightening-prospective-buyers"
+        },
+        {
+            "question": "Retired General Mark Milley served as Chairman of the Joint Chiefs of Staff during which years?",
+            "type": "MC",
+            "choices": [
+                "2019 to 2023",
+                "2017 to 2021",
+                "2021 to 2024",
+                "2020 to 2022"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Milley served as Chairman from 2019 to 2023. Milley visited Brown on Saturday to commemorate the launch of the Watson School and spoke on issues of global security and domestic unrest.",
+            "link": "https://www.browndailyherald.com/article/2025/10/fmr-joint-chiefs-of-staff-chairman-assesses-domestic-global-orders-at-watson-launch"
+        },
+        {
+            "question": "What imprint will Jonathan Karp ’86 join after stepping down as CEO of publishing house Simon & Schuster?",
+            "type": "MC",
+            "choices": [
+                "Bantam Books",
+                "Hachette UK",
+                "Simon Six",
+                "Touchstone"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "Karp announced his decision to step down from his role as CEO. His next venture is a new Simon & Schuster imprint called Simon Six that will publish just six books annually — a small fraction of the over 2,000 new books the publisher puts out each year.",
+            "link": "https://www.browndailyherald.com/article/2025/10/with-new-role-at-simon-schuster-jonathan-karp-86-enters-an-exciting-yet-familiar-chapter"
+        },
+        {
+            "question": "How much money did the Brown Corporation formally accept in gifts and pledges at their October meetings?",
+            "type": "MC",
+            "choices": [
+                "$80 million",
+                "$97 million",
+                "$121 million",
+                "$183 million"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "The Brown Corporation — the University’s highest governing body — has formally accepted over $121 million in gifts and pledges made to the University since May, President Christina Paxson P’19 P’MD’20 wrote in a Monday announcement, which followed the Corporation’s October meetings.",
+            "link": "https://www.browndailyherald.com/article/2025/10/brown-corporation-accepts-over-121-million-in-gifts-and-pledges-at-its-fall-meetings"
+        },
+        {
+            "question": "How much money did the Philippine Consulate General offer the University to jumpstart a Tagalog language program?",
+            "type": "MC",
+            "choices": [
+                "$10,000",
+                "$18,000",
+                "$26,000",
+                "$37,000"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Last week, Alexa Theodoropoulos ’27 — vice president of the Brown Filipino Alliance — received confirmation that the Philippine Consulate General would offer the University a contract of around $18,000 to jumpstart a Tagalog language program. The contribution does not meet the amount needed to offer “a full suite of courses and associated programming in any language that we offer,” Dean of the Faculty Leah VanWey wrote in an email to The Herald.",
+            "link": "https://www.browndailyherald.com/article/2025/10/philippine-consulate-general-offers-university-18000-to-start-tagalog-courses"
+        },
+        {
+            "question": "Nearly what percent of Brown students consider political affiliation when forming friendships?",
+            "type": "MC",
+            "choices": [
+                "34%",
+                "49%",
+                "91%",
+                "70%"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "According to The Herald’s 2025 poll, nearly 70 percent of Brown students consider political affiliation when forming friendships with other students. Liberals valued political alignment more than conservatives, data showed.",
+            "link": "https://www.browndailyherald.com/article/2025/10/nearly-70-of-students-value-political-alignment-when-forming-friendships-herald-poll-says"
+        },
+        {
+            "question": "Which Providence government body is proposing a rent stabilization ordinance this fall?",
+            "type": "MC",
+            "choices": [
+                "Rhode Island Department of Human Services",
+                "Providence City Council",
+                "Rhode Island Department of Children, Youth and Families",
+                "Providence Redevelopment Agency"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "The Providence City Council is drafting a rent stabilization ordinance to be introduced this fall, following a report about the state of the city’s housing market authored by the City Council’s Housing Crisis Task Force.",
+            "link": "https://www.browndailyherald.com/article/2025/10/providence-city-council-to-propose-rent-stabilization-ordinance-this-fall"
+        },
+        {
+            "question": "How many Senate Democrats voted for the National Defense Authorization Act?",
+            "type": "MC",
+            "choices": [
+                "10",
+                "12",
+                "24",
+                "26"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "On Oct. 9, U.S. Sens. Sheldon Whitehouse (D-R.I.) and Jack Reed (D-R.I.) joined 24 other Senate Democrats in voting for the National Defense Authorization Act. The controversial bill passed the Senate in a 77-20 vote.",
+            "link": "https://www.browndailyherald.com/article/2025/10/senators-from-ri-face-criticism-for-voting-to-pass-national-defense-authorization-act"
+        },
+        {
+            "question": "How many Rhode Island students receive special education services?",
+            "type": "MC",
+            "choices": [
+                "26,000",
+                "42,000",
+                "52,000",
+                "66,000"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "About 26,000 students receive special education services across the state. A recent report by state education officials revealed that twenty percent of Rhode Island’s students are classified as differently abled.",
+            "link": "https://www.browndailyherald.com/article/2025/10/ri-education-department-releases-special-education-blueprint-amid-federal-funding-cuts"
+        }
+    ]
+}

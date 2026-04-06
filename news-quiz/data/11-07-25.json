@@ -1,0 +1,156 @@
+{
+    "date": "November 1 - November 7, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+        {
+            "question": "By what percentage will Brown reduce its overall Ph.D. admissions targets?",
+            "type": "MC",
+            "choices": [
+            "20%",
+            "30%",
+            "45%",
+            "90%"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Brown will reduce its overall Ph.D. admissions to around 80% of its current targets in an effort to regulate University operating costs, Provost Francis Doyle said at Tuesday’s faculty meeting.",
+            "link": "https://www.browndailyherald.com/article/2025/11/brown-to-reduce-phd-admissions-by-20-this-application-cycle"
+        },
+        {
+            "question": "Which former U.S. Representative spoke at the Watson School on Monday?",
+            "type": "MC",
+            "choices": [
+            "Hillary Clinton",
+            "Seth Magaziner",
+            "David Cicilline",
+            "Kathy Manning"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Former U.S. Representative Kathy Manning, a senior fellow at the Watson School of International and Public Affairs, dissected the causes and symptoms of the ongoing federal government shutdown at a Watson event on Monday.",
+            "link": "https://www.browndailyherald.com/article/2025/11/fmr-rep-kathy-manning-breaks-down-government-shutdown-at-watson-event"
+        },
+        {
+            "question": "Which Olympian and Paralympian gold medal-winning duo gave a talk on Monday?",
+            "type": "MC",
+            "choices": [
+            "Tara Davis-Woodhall and Hunter Woodhall",
+            "Evan Bates and Madison Chock",
+            "Sydney McLaughlin and Andre Levrone Jr.",
+            "Noah Lyles and Junelle Broomfield"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Tara Davis-Woodhall and Hunter Woodhall strolled, smiling, onto the stage of the Salomon Center’s De Ciccio Family Auditorium on Monday night. Last year, the Woodhalls rose to the pinnacle of the track and field world, with Davis-Woodhall winning her first Olympic gold medal at the 2024 Paris Olympic Games, just weeks before Woodhall won his first gold medal at the 2024 Paralympic Games.",
+            "link": "https://www.browndailyherald.com/article/2025/11/the-woodhalls-celebrate-diversity-perseverance-at-brown-lecture-board-event"
+        },
+        {
+            "question": "Where were two students threatened at knifepoint on Saturday night?",
+            "type": "MC",
+            "choices": [
+            "Andrews Commons",
+            "Sharpe Refectory",
+            "Verney-Woolley Dining Hall",
+            "Josiah’s"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "On Saturday afternoon, two Brown students were threatened at knifepoint during an attempted robbery outside Verney-Woolley Dining Hall, according to an email from the Department of Public Safety and videos reviewed by The Herald.",
+            "link": "https://www.browndailyherald.com/article/2025/10/two-students-threatened-at-knifepoint-in-attempted-robbery-outside-v-dub"
+        },
+        {
+            "question": "How many people attended BRYTE Science Day?",
+            "type": "MC",
+            "choices": [
+            "20",
+            "84",
+            "152",
+            "167"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Brown Refugee Youth Tutoring and Enrichment hosted BRYTE Science Day, an on-campus event organized to provide Providence elementary, middle and high school refugee students an opportunity to gain hands-on STEM experience through various experiments and crafts. The four hour event drew 167 attendees, including BRYTE tutees, tutors, volunteers and representatives of a dozen other student groups from Brown.",
+            "link": "https://www.browndailyherald.com/article/2025/11/brown-refugee-youth-tutoring-and-enrichment-hosts-first-k-12-science-day-in-over-a-decade"
+        },
+        {
+            "question": "Around how many students are currently on the waitlist to volunteer at Rhode Island Hospital?",
+            "type": "MC",
+            "choices": [
+            "100",
+            "150",
+            "200",
+            "300"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "For pre-medical students at Brown, volunteering at Rhode Island Hospital is a popular extracurricular activity meant to help them accrue valuable clinical experience. But due to its popularity, many students struggle to land a position, with the waitlist currently sitting at nearly 200 applicants.",
+            "link": "https://www.browndailyherald.com/article/2025/11/pre-med-students-report-long-waitlist-to-volunteer-at-ri-hospital"
+        },
+        {
+            "question": "How many students are a part of the Brown Competitive Climbing Club?",
+            "type": "MC",
+            "choices": [
+            "10",
+            "13",
+            "17",
+            "21"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "The Brown Competitive Climbing Club — a 17-member organization split into training and competitive teams — was created to give students the opportunity to train consistently and represent Brown in the USA Climbing Collegiate Series, the main circuit for college-level competitions in the United States.",
+            "link": "https://www.browndailyherald.com/article/2025/11/climbing-becomes-club-sport-at-brown"
+        },
+        {
+            "question": "The new exhibit at the John Hay Library aims to capture the significance of what rock?",
+            "type": "MC",
+            "choices": [
+            "Amethyst",
+            "Cumberlandite",
+            "Lapis Lazuli",
+            "Serpentinite"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "The exhibition displays work by Swedish artist and exhibit curator Kajsa Eriksson, which aims to capture the significance of Cumberlandite — Rhode Island’s state rock — and titanomagnetitolivinit, two similar magnetic rocks found only in Rhode Island and Sweden, respectively.",
+            "link": "https://www.browndailyherald.com/article/2025/11/new-hay-exhibit-showcases-chance-geological-social-connection-between-ri-sweden"
+        },
+        {
+            "question": "How many students traveled to New York City with Brown Democrats to canvas for Mayor Zohran Mamdani?",
+            "type": "MC",
+            "choices": [
+            "20",
+            "30",
+            "15",
+            "12"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Most of the 20 Brown students who went on the canvassing trip are not originally from New York, according to Zhang. Although Vinh Pham ’28 hails from Atlanta, he felt it was still important to campaign for candidates who inspire him, he told The Herald.",
+            "link": "https://www.browndailyherald.com/article/2025/11/how-brown-students-got-involved-in-the-2025-elections"
+        },
+        {
+            "question": "What school does the women’s soccer team play on Thursday in the first round of the Ivy League tournament?",
+            "type": "MC",
+            "choices": [
+            "Princeton",
+            "Dartmouth",
+            "Harvard",
+            "Penn"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Despite dropping their senior day matchup to Princeton on Saturday, Bruno will soon have a shot at redemption: On Thursday, the Bears will take on the Tigers again in the Ivy tournament semifinals.",
+            "link": "https://www.browndailyherald.com/article/2025/11/with-1-2-loss-to-princeton-womens-soccer-barely-qualifies-for-ivy-tournament"
+        }
+    ]
+}

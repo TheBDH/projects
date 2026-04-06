@@ -1,0 +1,156 @@
+{
+    "date": "September 13 - September 19, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+        {
+            "question": "At least how many Advanced Placement courses did more than 50% of Brown’s class of 2029 take?",
+            "type": "MC",
+            "choices": [
+                "10",
+                "7",
+                "9",
+                "5"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "More than 50% of the class of 2029 took at least seven Advanced Placement courses and five exams in high school, according to data from The Herald’s First-Year Poll.",
+            "link": "https://www.browndailyherald.com/article/2025/09/brown-doesnt-accept-ap-exams-for-credit-but-admitted-students-take-them-anyway"
+        },
+        {
+            "question": "When was Brown’s chapter of Students for Justice in Palestine suspended?",
+            "type": "MC",
+            "choices": [
+                "October 2024",
+                "November 2024",
+                "December 2024",
+                "January 2025"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "At the end of October 2024, the University suspended SJP subject to an external investigation into conduct violations at a pro-divestment protest held earlier that month outside a meeting of the University’s Corporation.",
+            "link": "https://www.browndailyherald.com/article/2025/09/sjp-reinstated-as-a-student-group-on-probation-following-external-investigation"
+        },
+        {
+            "question": "Where does Brown rank out of the 257 schools on the 2026 College Free Speech Rankings?",
+            "type": "MC",
+            "choices": [
+                "220",
+                "187",
+                "240",
+                "10"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Brown ranks 187th out of a total 257 schools on the list with an overall score of 55.2 out of 100 and an overall letter grade of F.",
+            "link": "https://www.browndailyherald.com/article/2025/09/brown-rises-in-college-free-speech-rankings-but-remains-in-bottom-half-of-ranked-schools"
+        },
+        {
+            "question": "Who is an upcoming speaker at the Watson School of International and Public Affairs?",
+            "type": "MC",
+            "choices": [
+                "Letitia James",
+                "Amanda Gorman",
+                "James Kvaal",
+                "Cory Booker"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "Speakers at upcoming events include James Kvaal, former U.S. under secretary of education under the Biden administration, and Yvonne Aki-Sawyerr, mayor of Freetown, Sierra Leone.",
+            "link": "https://www.browndailyherald.com/article/2025/09/friedman-aims-to-bring-interdisciplinary-voices-expansive-events-to-new-watson-school"
+        },
+        {
+            "question": "For how many months has the university-wide staff hiring freeze been in place?",
+            "type": "MC",
+            "choices": [
+                "3",
+                "6",
+                "9",
+                "12"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "The hiring freeze has been in place since March 13, 2025. The university announced the freeze in response to federal actions and budget shortfalls.",
+            "link": "https://www.browndailyherald.com/article/2025/09/hundreds-flock-to-fall-student-employment-fair-in-search-of-on-campus-jobs"
+        },
+        {
+            "question": "What is the most common intended concentration among first-year athletes, according to The Herald’s First-Year Poll?",
+            "type": "MC",
+            "choices": [
+                "Neuroscience",
+                "International and Public Affairs",
+                "Medieval Cultures",
+                "Economics"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Recruited athletes were more likely to select economics as their intended concentration than other students, according to data from The Herald’s First-Year Poll.",
+            "link": "https://www.browndailyherald.com/article/2025/09/recruited-athletes-less-likely-to-submit-a-video-introduction-more-likely-to-concentrate-in-economics-herald-poll-shows"
+        },
+        {
+            "question": "What medication has not experienced increased patient access despite acquisition of opioid treatment programs by private equity firms?",
+            "type": "MC",
+            "choices": [
+                "Naloxone",
+                "Methadone",
+                "Nalmefene",
+                "Oxycodone"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "A Brown study found that while an increasing number of opioid treatment programs are being acquired by private equity firms, this has not led to an increase in methadone supply.",
+            "link": "https://www.browndailyherald.com/article/2025/09/as-private-equity-firms-increasingly-acquire-opioid-treatment-programs-access-to-treatment-shows-no-improvement-brown-study-finds"
+        },
+        {
+            "question": "Which law firm demanded the retraction of three publications authored by researchers at the Climate and Development Lab?",
+            "type": "MC",
+            "choices": [
+                "Lex Politica",
+                "Stone Hilton",
+                "Panza, Maurer & Maynard",
+                "Marzulla Law"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "On Aug. 11, Brown received a letter from Marzulla Law, a law firm with close ties to the conservative legal movement, on behalf of Green Oceans, a local anti-offshore wind group. In the letter, the law firm demanded the University retract three publications from 2023 and 2024 authored by researchers at the Climate and Development Lab.",
+            "link": "https://www.browndailyherald.com/article/2025/09/law-firm-threatens-browns-funding-over-research-about-anti-offshore-wind-groups"
+        },
+        {
+            "question": "What percent of the international class of 2029 received financial aid?",
+            "type": "MC",
+            "choices": [
+                "15%",
+                "35%",
+                "55%",
+                "65%"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "The class of 2029 is the first to be admitted on a need-blind basis after the university raised $120 million to fund the initiative. Domestic admissions have been need-blind since 2003.",
+            "link": "https://www.browndailyherald.com/article/2025/09/international-students-are-more-socioeconomically-diverse-after-first-year-of-need-blind-admission-herald-poll-shows"
+        },
+        {
+            "question": "What is the women’s rugby team’s record so far this season?",
+            "type": "MC",
+            "choices": [
+                "0-3",
+                "5-0",
+                "2-6",
+                "3-1"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "For years, the women’s rugby team (0-3) has been one of Brown Athletics’s brightest stars. Last year’s roster became the first rugby team ever to win the Collegiate Rugby Championship National 7s Women’s Premier Cup three years in a row. But only three games into the season, the Bears’ magical run seems to have come to an end.",
+            "link": "https://www.browndailyherald.com/article/2025/09/facing-a-rocky-0-3-start-womens-rugby-hopes-to-replicate-last-years-successes"
+        }
+    ]
+}

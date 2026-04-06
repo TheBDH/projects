@@ -1,0 +1,156 @@
+{
+    "date": "March 3 - March 7, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+        {
+            "question": "What is the mean occupancy rate of Rhode Island hospitals?",
+            "type": "MC",
+            "choices": [
+                "55%",
+                "67%",
+                "79%",
+                "88%"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "A study from the Journal of the American Medical Association found that RI hospitals have the highest average occupancy rates in the nation. According to the report, occupancy rates jumped during the pandemic and have yet to decline.",
+            "link": "https://www.browndailyherald.com/article/2025/03/ri-hospitals-have-highest-occupancy-rates-in-nation-report-finds"
+        },
+        {
+            "question": "What new name was proposed for lecturers at Tuesday’s faculty meeting?",
+            "type": "MC",
+            "choices": [
+                "Teaching professor",
+                "Academic teacher",
+                "Research scholar",
+                "Research scientist"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Kristina Mendicino, chair of the FEC and professor of German Studies, also discussed recommendations that were made to the FEC to change the title of lecturers to “teaching professors,” following the example of peer institutions like the University of Chicago and Emory University.",
+            "link": "https://www.browndailyherald.com/article/2025/03/faculty-executive-committee-discusses-clarified-non-tenure-faculty-tracks"
+        },
+        {
+            "question": "What percentage of the class of 2027 initially planned on double concentrating?",
+            "type": "MC",
+            "choices": [
+                "75",
+                "15",
+                "40",
+                "20"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "When they first entered Van Wickle Gates as first-years, 40% of the class of 2027 indicated that they planned to pursue a double-concentration, according to The Herald’s 2023 first year poll.",
+            "link": "https://www.browndailyherald.com/article/2025/02/brown-students-second-guess-their-second-concentration"
+        },
+        {
+            "question": "How long was “The __ Hour Play Festival”?",
+            "type": "MC",
+            "choices": [
+                "10 hours",
+                "12 hours",
+                "24 hours",
+                "36 hours"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "From 7 p.m. last Friday to 7 p.m. last Saturday, students shared their new comedic works in day-long theatre festival.",
+            "link": "https://www.browndailyherald.com/article/2025/03/humanccinos-magical-goats-sex-ed-and-cole-n-oscopy-the-24-hour-play-festival-delivers-comedic-genius"
+        },
+        {
+            "question": "In what event did swimmer Jack Kelly ’25 break the Ivy League record?",
+            "type": "MC",
+            "choices": [
+                "1000-meter freestyle",
+                "100-meter breaststroke",
+                "400-meter IM",
+                "500-meter freestyle"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Jack Kelly ’25 won the 100-meter breaststroke event for the second year in a row and broke the program, pool and Ivy League record.",
+            "link": "https://www.browndailyherald.com/article/2025/03/mens-swimming-diving-knocks-down-records-in-best-ivy-championship-finish-since-2022"
+        },
+        {
+            "question": "How long was Adrien Brody’s acceptance speech for Best Actor, now the longest in history?",
+            "type": "MC",
+            "choices": [
+                "About 3 minutes",
+                "About 4 minutes",
+                "About 5 minutes",
+                "About 6 minutes"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Adrien Brody’s Best Actor win for “The Brutalist” carried its own complications. While his speech had some redeeming moments, at times it felt like a beauty pageant queen’s call for world peace. At nearly six minutes, his acceptance speech is now the longest in Oscars history.",
+            "link": "https://www.browndailyherald.com/article/2025/03/in-2025-show-oscars-face-identity-crisis"
+        },
+        {
+            "question": "What type of emissions is Brown Dining Services aiming to reduce through their new half-mushroom burger?",
+            "type": "MC",
+            "choices": [
+                "Carbon",
+                "Oxygen",
+                "Nitrogen",
+                "Phosphorus"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "One of Dining Services’ primary goals has been reducing their nitrogen emission — as excessive levels of nitrogen in the atmosphere can produce harmful pollutants for humans, forests and waterways. This has led Dining Services to serve less red meat.",
+            "link": "https://www.browndailyherald.com/article/2025/03/half-mushroom-burger-at-josiahs-sparks-debate-on-taste-sustainability"
+        },
+        {
+            "question": "Where did Professor Matthew Guterl, new vice president for diversity and inclusion, receive his undergraduate degree?",
+            "type": "MC",
+            "choices": [
+                "Claremont McKenna College",
+                "Brown",
+                "Assumption University",
+                "Richard Stockton College of New Jersey"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Guterl graduated from Richard Stockton College of New Jersey with a bachelor’s degree in history, and went on to earn a PhD from Rutgers University in United States history.",
+            "link": "https://www.browndailyherald.com/article/2025/03/meet-matthew-guterl-browns-new-vice-president-for-diversity-and-inclusion"
+        },
+        {
+            "question": "What is the median asking rent in Providence?",
+            "type": "MC",
+            "choices": [
+                "$1,320",
+                "$2,145",
+                "$3,583",
+                "$4,276"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "But renters in Providence need an income of $85,800 to afford the median asking rent of $2,145. This is a 12.6% increase from the income needed in Providence in December 2023.",
+            "link": "https://www.browndailyherald.com/article/2025/02/providence-named-the-least-affordable-us-city-for-renters-in-redfin-report"
+        },
+        {
+            "question": "Under the new dual-advising structure for the biology and health and human biology concentrations, what are students no longer required to do before declaring their concentration?",
+            "type": "MC",
+            "choices": [
+                "Schedule a pre-advising meeting",
+                "Talk to the Dean",
+                "Submit their request through ASK",
+                "Complete at least one BIOL class"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Under this new structure, students are no longer required to schedule a pre-advising meeting before declaring their concentration. Instead, they can just complete the process through Brown’s Advising Sidekick, said Toni-Marie Achilli PhD’14, associate dean of biology undergraduate education and senior lecturer in biology, in an interview with The Herald.",
+            "link": "https://www.browndailyherald.com/article/2025/03/new-dual-advising-structure-launched-for-biology-health-and-human-biology"
+        }
+        ]
+    }

@@ -1,0 +1,156 @@
+{
+    "date": "April 7 - April 11, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+        {
+            "question": "What percentage of students have accepted paid summer internships?",
+            "type": "MC",
+            "choices": [
+            "About 50%",
+            "About 30%",
+            "About 25%",
+            "About 10%"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "The Herald polled 1,145 undergraduates on campus’ most pressing issues.",
+            "link": "https://www.browndailyherald.com/article/2025/04/trump-summer-plans-and-campus-housing-the-heralds-spring-2025-poll"
+        },
+        {
+            "question": "By when are Brown community members required to have completed the University’s anti-discrimination training?",
+            "type": "MC",
+            "choices": [
+            "April 18",
+            "May 2",
+            "The end of reading period",
+            "The end of spring semester"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Executive Vice President for Planning and Policy Russell Carey announced Monday that all Brown community members are required to complete an online training aimed at strengthening “Brown’s response to reports of discrimination and harassment.”",
+            "link": "https://www.browndailyherald.com/article/2025/04/university-announces-new-mandatory-training-to-combat-discrimination-harassment"
+        },
+        {
+            "question": "When was the now-retired First Readings program launched?",
+            "type": "MC",
+            "choices": [
+            "2005",
+            "2007",
+            "2012",
+            "2019"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "University set to retire First Readings program, with students citing concerns over whether future students will be adequately informed on Brown’s historical ties to slavery.",
+            "link": "https://www.browndailyherald.com/article/2025/04/first-readings-program-to-be-retired"
+        },
+        {
+            "question": "About how many RIPTA rides did members of the Brown community take in the 2024 academic year?",
+            "type": "MC",
+            "choices": [
+            "150,000",
+            "195,000",
+            "230,000",
+            "270,000"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "The University first partnered with the Rhode Island Public Transit Authority’s University Pass Program in 2004. Every year, Brown pays about $313,000 for rides taken by community members.",
+            "link": "https://www.browndailyherald.com/article/2025/04/do-brown-students-ride-ripta"
+        },
+        {
+            "question": "Who demanded an ethnic studies program in a new bill?",
+            "type": "MC",
+            "choices": [
+            "University students",
+            "University professors",
+            "High school students",
+            "Parents of high school students"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "High school students in Rhode Island demand ethnic studies program in new bill. A press conference at the R.I. State House on Wednesday featured speeches from youth activists, parents and teachers.",
+            "link": "https://www.browndailyherald.com/article/2025/04/a-coalition-of-local-high-school-students-are-demanding-ri-to-implement-ethnic-studies-program"
+        },
+        {
+            "question": "How much federal funding did Rhode Island secure for Washington Bridge repairs?",
+            "type": "MC",
+            "choices": [
+            "560 million",
+            "105 million",
+            "79 million",
+            "221 million"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "The Rhode Island Department of Transportation gained access to the first $30 million wave of federal funds from the grant.",
+            "link": "https://www.browndailyherald.com/article/2025/04/rhode-island-secures-221-million-in-federal-funding-for-washington-bridge-repairs"
+        },
+        {
+            "question": "How many days long is the extension granted by President Trump to Bytedance to either sell their app TikTok or have it be banned in the US?",
+            "type": "MC",
+            "choices": [
+            "60 days",
+            "75 days",
+            "90 days",
+            "120 days"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "On Jan. 18, a federal ban prevented people in the United States from accessing the TikTok app. After Trump signaled support for delaying a ban, the app came back online after around 12 hours. On Trump’s first day in office, he signed an executive order to extend a ban by 75 days.",
+            "link": "https://www.browndailyherald.com/article/2025/04/tiktok-is-staying-in-the-us-for-now-but-what-are-its-effects-on-student-well-being"
+        },
+        {
+            "question": "What was the original name of Richardson Hall?",
+            "type": "MC",
+            "choices": [
+            "Brunonia Hall",
+            "John Brown Hall",
+            "New England Hall",
+            "Howard Hall"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "Richardson Hall — first known as Brunonia Hall — was built as a private dormitory in 1900 and bought by the University in 1920. But in 1996, Richardson Hall was razed to build Macmillan Hall, according to a 1996 Herald article.",
+            "link": "https://www.browndailyherald.com/article/2025/04/from-university-hall-to-brook-street-tracing-the-history-of-dorms-at-brown"
+        },
+        {
+            "question": "Who plays Steve in “A Minecraft Movie?”",
+            "type": "MC",
+            "choices": [
+            "Jason Momoa",
+            "Jacob Elordi",
+            "Jack Black",
+            "JENNIE"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "The movie, released last Friday, follows Steve (Jack Black) and his journey into the Overworld.",
+            "link": "https://www.browndailyherald.com/article/2025/04/a-minecraft-movie-has-something-for-everyone"
+        },
+        {
+            "question": "How many home runs did Laurel Moody ’25 hit in the softball games against Cornell this weekend?",
+            "type": "MC",
+            "choices": [
+            "7",
+            "5",
+            "11",
+            "3"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Laurel Moody ’25 was the star of the show with three home runs across the weekend, including the game winner in Saturday’s 3-2 victory.",
+            "link": "https://www.browndailyherald.com/article/2025/04/softballs-clutch-performance-leads-to-2-1-series-win-against-cornell"
+        }
+        ]
+    }

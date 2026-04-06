@@ -1,0 +1,156 @@
+{
+    "date": "February 24 - February 28, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+        {
+            "question": "How many computer science classes have been canceled or at risk of being canceled for the 2025-26 year?",
+            "type": "MC",
+            "choices": [
+                "20",
+                "13",
+                "15",
+                "11"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "In an email to The Herald, Kathi Fisler, co-director of the department’s undergraduate program, attributed the changes in part to faculty members being on “sabbatical or other forms of leave.”",
+            "link": "https://www.browndailyherald.com/article/2025/02/cs-department-announces-course-cancellations-changes-for-next-academic-year"
+        },
+        {
+            "question": "What place did the women’s swimming and diving team earn at the Ivy League Championships on Feb. 19?",
+            "type": "MC",
+            "choices": [
+                "1st",
+                "2nd",
+                "4th",
+                "6th"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "The women’s swimming and diving team made waves at the Ivy League Championships last week, totaling 998.50 points and splashing into a fourth-place finish.",
+            "link": "https://www.browndailyherald.com/article/2025/02/womens-swimming-and-diving-splashes-into-third-consecutive-fourth-place-ivy-finish"
+        },
+        {
+            "question": "How many students from Brown received a Fulbright Scholarship during the 2024-2025 cycle?",
+            "type": "MC",
+            "choices": [
+                "50",
+                "15",
+                "20",
+                "40"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Brown was named the top producing school of Fulbright U.S. students for the 2024-25 academic year, earning the recognition for the fifth time in the past decade.",
+            "link": "https://www.browndailyherald.com/article/2025/02/brown-university-named-top-producer-of-2024-25-fulbright-students"
+        },
+        {
+            "question": "What season of Survivor will a Brown PhD student compete in?",
+            "type": "MC",
+            "choices": [
+                "Season 53",
+                "Season 48",
+                "Season 32",
+                "Season 37"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Eva Erickson GS, a third-year graduate student in fluids and thermal sciences, competed as a contestant on the 48th season of the hit reality TV show “Survivor,” which premiered on Wednesday night.",
+            "link": "https://www.browndailyherald.com/article/2025/02/brown-graduate-student-eva-erickson-competes-on-survivor"
+        },
+        {
+            "question": "Rhode Island’s 2021 Act on Climate calls for net-zero emissions by:",
+            "type": "MC",
+            "choices": [
+                "2045",
+                "2050",
+                "2055",
+                "2060"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "In 2021, Governor Dan McKee signed the 2021 Act of Climate, which set emission reduction mandates. This calls for net zero emissions by 2050.",
+            "link": "https://www.browndailyherald.com/article/2025/02/new-ri-report-takes-step-towards-reducing-energy-usage-emissions-of-large-buildings"
+        },
+        {
+            "question": "What do RISD students no longer have to participate in past their first year?",
+            "type": "MC",
+            "choices": [
+                "Experimental and Foundation Studies",
+                "Wintersession",
+                "Liberal arts classes",
+                "Painting"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "RISD officials said that the change aims to return Wintersession to its original purpose of deeply exploring specific disciplines, diving into special topics or learning new experimental techniques.",
+            "link": "https://www.browndailyherald.com/article/2025/02/risd-will-no-longer-require-wintersession-for-students-after-their-first-year"
+        },
+        {
+            "question": "Where will Ivy Madness take place?",
+            "type": "MC",
+            "choices": [
+                "Cambridge",
+                "New York",
+                "Providence",
+                "New Haven"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "Brown will host Ivy Madness for the first time in the tournament’s history.",
+            "link": "https://projects.browndailyherald.com/2025/02/27/ivy-madness/"
+        },
+        {
+            "question": "What percent of the Class of 2024 double concentrated?",
+            "type": "MC",
+            "choices": [
+                "32%",
+                "54%",
+                "76%",
+                "19%"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "While Herald polling found 40% of the class of 2027 intended to pursue a double-concentration, 32% of the class of 2024 graduated with two concentrations, according to Brown’s Office of Institutional Research.",
+            "link": "https://www.browndailyherald.com/article/2025/02/brown-students-second-guess-their-second-concentration"
+        },
+        {
+            "question": "What did Brown’s 14th provost major in as an undergraduate?",
+            "type": "MC",
+            "choices": [
+                "Mechanical Engineering",
+                "Applied Math",
+                "Chemical Engineering",
+                "International Relations"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "Fascinated by chemistry, physics and math in high school, Francis Doyle pursued chemical engineering, following in the footsteps of his father and brother.",
+            "link": "https://www.browndailyherald.com/article/2025/02/before-brown-francis-doyle-browns-14th-provost"
+        },
+        {
+            "question": "How many Brown professors were awarded a career research fellowships through the the Alfred P. Sloan Foundation?",
+            "type": "MC",
+            "choices": [
+                "2",
+                "3",
+                "7",
+                "9"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "The Alfred P. Sloan Foundation awarded three Brown professors with early career research fellowships last week. The Sloan Research Fellowship awards $75,000 in research funding over the course of two years to researchers who have shown creativity and innovation early in their careers.",
+            "link": "https://www.browndailyherald.com/article/2025/02/brown-professors-awarded-sloan-research-fellowships-for-math-econometrics"
+        }
+        ]
+    }

@@ -1,0 +1,156 @@
+{
+    "date": "March 24 - April 4, 2025",
+    "intro": "Test your knowledge of this week's Herald news!",
+    "questions": [
+        {
+            "question": "What sociological topic did author Brittany Friedman discuss during her book talk on Monday?",
+            "type": "MC",
+            "choices": [
+            "The racial wealth gap",
+            "Education in underserved communities",
+            "Predictive policing",
+            "Violence within US prisons"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "Friedman’s book, “Carceral Apartheid: How Lies and White Supremacists Run Our Prisons,” investigates the California Department of Corrections and how it works “to suppress Black political movements.”",
+            "link": "https://www.browndailyherald.com/article/2025/04/award-winning-sociologist-details-racial-oppression-violence-within-us-prison-system-during-book-talk"
+        },
+        {
+            "question": "What Brown Corporation member defended campus protesters in an Atlantic article?",
+            "type": "MC",
+            "choices": [
+            "Shanelle Chambers Haile PhD ’23",
+            "Xochitl Gonzalez ’99",
+            "Mitchell R. Julis",
+            "Frayda B. Lindemann"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "Xochitl Gonzalez ’99, a trustee since 2022, described her experience at a protest against the Brown Corporation in October.",
+            "link": "https://www.browndailyherald.com/article/2025/04/brown-corporation-member-defends-campus-protestors-in-a-piece-in-the-atlantic"
+        },
+        {
+            "question": "Where did the RISD administration request students relocate a pro-Palestine art exhibit from?",
+            "type": "MC",
+            "choices": [
+            "RISD Museum",
+            "Coffee Exchange",
+            "Prov-Wash",
+            "Carr Haus"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "The art exhibit, titled “To Every Orange Tree,” opened on March 17 at the Carr Haus Cafe, a student-run cafe on RISD’s campus, before administration asked RISD Students for Justice in Palestine to remove the exhibit.",
+            "link": "https://www.browndailyherald.com/article/2025/04/risd-students-rally-against-schools-request-to-remove-pro-palestine-art-exhibit"
+        },
+        {
+            "question": "Some congregations of over how many people are now banned at the Providence Place Mall?",
+            "type": "MC",
+            "choices": [
+            "Ten",
+            "Seven",
+            "Six",
+            "Four"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "The Providence Place Mall has implemented 13 new prohibitions, including congregations of four or more people and “free speech activity not authorized in advance.”",
+            "link": "https://www.browndailyherald.com/article/2025/04/providence-place-mall-now-restricting-congregations-of-over-four-people-unaccompanied-minors"
+        },
+        {
+            "question": "As of right now, approximately what percent of existing research grants have been cut at Brown?",
+            "type": "MC",
+            "choices": [
+            "1%",
+            "2%",
+            "3%",
+            "4%"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "In a community-wide announcement, Provost Francis Doyle and Executive Vice President for Policy and Planning Russel Carey ’91 wrote that Brown has “seen the termination of about one percent of existing research grants.”",
+            "link": "https://www.browndailyherald.com/article/2025/03/brown-administrators-clarify-immigration-enforcement-policies-address-research-funding-cuts"
+        },
+        {
+            "question": "What percent of applicants were admitted to the Brown Class of 2029?",
+            "type": "MC",
+            "choices": [
+            "3.43%",
+            "5.65%",
+            "7.47%",
+            "10.32%"
+            ],
+            "answer": "b",
+            "image": null,
+            "alt": null,
+            "explanation": "On March 27, the University rounded out its admitted class of 2029 with 2,418 accepted applicants, marking an overall acceptance rate of 5.65%.",
+            "link": "https://www.browndailyherald.com/article/2025/03/brown-admits-565-of-applicants-to-class-of-2029"
+        },
+        {
+            "question": "Following a faculty vote, “lecturers” will now be referred to as…",
+            "type": "MC",
+            "choices": [
+            "Assistant teaching professor",
+            "Speaker",
+            "Assistant Teacher",
+            "Professor Aid"
+            ],
+            "answer": "a",
+            "image": null,
+            "alt": null,
+            "explanation": "The title of “lecturer” is now “assistant teaching professor,” following peer institutions like University of Chicago and Emory.",
+            "link": "https://www.browndailyherald.com/article/2025/04/faculty-vote-to-change-titles-of-lecturers-to-teaching-professors"
+        },
+        {
+            "question": "Where does Patricia Poitevien ’94 MD ’98, the newly appointed vice president for campus life, currently work?",
+            "type": "MC",
+            "choices": [
+            "Watson Institute",
+            "University Hall",
+            "Warren Alpert Medical School",
+            "Miriam Hospital"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "Poitevien is currently the senior associate dean of diversity, equity and inclusion at Brown’s Warren Alpert Medical School and an associate professor in the division of pediatric hospitalist medicine at Hasbro Children’s Hospital.",
+            "link": "https://www.browndailyherald.com/article/2025/04/patricia-poitevien-94-md98-appointed-next-vice-president-for-campus-life"
+        },
+        {
+            "question": "In recent years, how many books in Rhode Island have been targeted by bans?",
+            "type": "MC",
+            "choices": [
+            "16",
+            "23",
+            "28",
+            "35"
+            ],
+            "answer": "c",
+            "image": null,
+            "alt": null,
+            "explanation": "In February, the R.I. General Assembly saw the introduction of the Freedom to Read Act, which would shield library materials and librarians from government censorship and lawsuits.",
+            "link": "https://www.browndailyherald.com/article/2025/03/ri-legislators-introduce-bill-to-curb-book-bans-protect-librarians"
+        },
+        {
+            "question": "Which one of these classes takes “learning outside the classroom?”",
+            "type": "MC",
+            "choices": [
+            "MATH 0100",
+            "COLT 0510K",
+            "ANTH 0320",
+            "ETHN 1750A"
+            ],
+            "answer": "d",
+            "image": null,
+            "alt": null,
+            "explanation": "As a part of ETHN 1750A: “Immigrant Social Movements: Bridging Theory and Practice”, Sofia Guarisma ’27 works with Progreso Latino in Central Falls, a community-based organization that serves immigrant communities.",
+            "link": "https://www.browndailyherald.com/article/2025/04/these-classes-at-brown-take-learning-outside-the-classroom"
+        }
+        ]
+    }
