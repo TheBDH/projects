@@ -321,7 +321,7 @@ playBtn?.addEventListener('click', () => {
 });
 
 function fetchHousingData() {
-    return fetch('./housing_output.json')
+    return fetch('./housing_output.json?t=' + Date.now())
         .then((r) => r.json())
         .then((data) => {
             housingData = data;
