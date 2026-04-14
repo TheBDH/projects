@@ -1,0 +1,2 @@
+function showHall(v){document.querySelectorAll('[data-hall]').forEach(b=>b.classList.toggle('active',b.dataset.hall===v));}
+function showYear(v){document.querySelectorAll('[data-year]').forEach(b=>b.classList.toggle('active',b.dataset.year===v));}

@@ -20,8 +20,27 @@ body {
     font-size: 1.2em;
     box-sizing: border-box; /* Ensure padding is included in width calculation */
     color: rgb(12, 12, 12); /* Apply color for text-box */
+    min-height: 450px;
 }
 
+.data-box[data-hall] { position: absolute; visibility: hidden; pointer-events: none; }
+.data-box[data-hall].active { position: relative; visibility: visible; pointer-events: auto; }
+.data-box[data-year] { position: absolute; visibility: hidden; pointer-events: none; }
+.data-box[data-year].active { position: relative; visibility: visible; pointer-events: auto; }
+
+#hall-select, #year-select {
+    display: block;
+    margin: 0 auto;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+    font-size: 1.1em;
+    padding: 0.4em 0.8em;
+    border: 2px solid rgb(106, 106, 106);
+    color: rgb(12, 12, 12);
+    background-color: rgba(255, 255, 255, 0.95);
+    cursor: pointer;
+    border-radius: 6px;
+    outline: none;
+}
 
 #caption {
     position: absolute;
