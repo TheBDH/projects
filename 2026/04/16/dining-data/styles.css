@@ -5,7 +5,7 @@ body {
     background-size: cover;
     background-position: center;
     background-color: #f6f0f0e6;
-    color: rgb(190, 33, 33);
+    color: #540A26;
 }
 
 .data-box, .text-box {
@@ -20,7 +20,7 @@ body {
     font-size: 1.2em;
     box-sizing: border-box; /* Ensure padding is included in width calculation */
     color: rgb(12, 12, 12); /* Apply color for text-box */
-    min-height: 450px;
+    min-height: 100px;
 }
 
 .data-box[data-hall] { position: absolute; visibility: hidden; pointer-events: none; }
@@ -76,7 +76,7 @@ body {
     min-height: 15rem;
     text-align: center;
     padding: 2rem 2.2rem 2.2rem 2.2rem;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.85);
     /* Light grey background */
     min-width: 300px;
     width: 32%;
@@ -129,7 +129,7 @@ body {
 }
 
 #byline .author {
-    background-color: rgb(190, 33, 33);
+    background-color: #540A26;
     color: white;
     padding: 0.2rem;
     padding-left: 0.4rem;
@@ -147,7 +147,7 @@ body {
 
 a {
     /* color: #94102a; */
-    color: rgb(190, 33, 33);
+    color: #540A26;
 }
 
 #purple-data {
@@ -179,7 +179,7 @@ a {
     /* Increase the size of the down arrow */
     font-weight: bold;
     /* Make the arrow bold */
-    color: rgb(190, 33, 33);
+    color: #540A26;
     /* Change the color to a shade of green */
 }
 
