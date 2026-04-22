@@ -33,7 +33,7 @@ body {
 
 #front-sidebar {
     width: 24%;
-    background-color: #D3D3D3;
+    background-color: #EEECE8;
     display: flex;
     flex-direction: column;
 }
@@ -50,7 +50,7 @@ body {
 }
 
 #byline {
-    margin: 0px 10px;
+    margin: 0px 15px;
     font-size: 1rem;
 }
 
@@ -62,12 +62,13 @@ body {
     padding-right: 0.4rem;
     border-radius: 0.2rem;
     font-weight: bold;
-    line-height: 2rem;
+    line-height: 2.15rem;
     white-space: nowrap;
 }
 
 .author-header {
     margin-top: 10px;
+    font-size: 1rem;
 }
 
 #byline a {
@@ -141,8 +142,37 @@ body {
 
 #considered-main {
     flex: 1;
-    padding: 10px;
+    padding: 18px;
     box-sizing: border-box;
+    display: flex;
+    gap: 18px;
+}
+
+.considered-item {
+    flex: 1;
+    background-color: #EEECE8;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.considered-item:hover {
+    background-color: #951D23;
+    color: #FFFFFF;
+}
+
+.considered-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.considered-subtitle {
+    margin-top: 4px;
 }
 
 .down-arrow {
