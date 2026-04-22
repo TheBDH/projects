@@ -4,8 +4,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    background-color: rgb(205, 149, 137);
-    color: rgb(192, 3, 3);
+    background-color: #e6d4c7;
+    color: #664126;
 }
 
 .data-box,
@@ -113,7 +113,7 @@ body {
 }
 
 #byline .author {
-    background-color: rgb(160, 58, 227);
+    background-color: #664126;
     color: white;
     padding: 0.2rem;
     padding-left: 0.4rem;
@@ -131,7 +131,7 @@ body {
 
 a {
     /* color: #94102a; */
-    color: rgb(160, 58, 227);
+    color: #664126;
 }
 
 #purple-data {
@@ -141,7 +141,7 @@ a {
 
 @keyframes fadeToPurple {
     to {
-        color: rgb(160, 58, 227);
+        color: #664126;
     }
 }
 
@@ -163,7 +163,7 @@ a {
     /* Increase the size of the down arrow */
     font-weight: bold;
     /* Make the arrow bold */
-    color: rgb(160, 58, 227);
+    color: #664126;
     /* Change the color to a shade of green */
 }
 
@@ -236,12 +236,12 @@ a {
 :root {
     --header-font: "freight-text-pro", "Times", serif;
     --body-font: "Roboto", "Helvetica", "Arial", sans-serif;
-    --main-bg-color: rgb(245, 239, 248);
+    --main-bg-color: #f3eeeb;
     --section-bg-color: rgba(255, 255, 255);
-    --selected-question-color: rgb(60, 40, 73);
-    --selected-subdiv-color: rgb(160, 58, 227);
+    --selected-question-color: #664126;
+    --selected-subdiv-color: #9a6944;
     --border-color: #D7D7D7;
-    --navbar-active-color: rgb(160, 58, 227);
+    --navbar-active-color: #9a6944;
     --navbar-height: 70px;
     --breakdown-header-color: #636363;
     --footer-text-color: #525252;
