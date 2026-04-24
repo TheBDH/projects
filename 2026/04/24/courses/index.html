@@ -82,17 +82,19 @@
                 <div id="considered">
                     <div id="considered-strip">Have you investigated?</div>
                     <div id="considered-main">
-                        <div class="considered-item">
-                            <div class="considered-title">MAPS 1200</div>
-                            <div class="considered-subtitle">A map of how
-                                classroom usage has changed over time.</div>
+                        <div class="considered-item" role="button" tabindex="0"
+                            data-scroll-target="marker-profs">
+                            <div class="considered-title">PROF 1200</div>
+                            <div class="considered-subtitle">The professors who have taught the most students in the past decade.</div>
                         </div>
-                        <div class="considered-item">
+                        <div class="considered-item" role="button" tabindex="0"
+                            data-scroll-target="marker-time">
                             <div class="considered-title">TIME 0740</div>
                             <div class="considered-subtitle">A cumulative chart
                                 of when students are in class.</div>
                         </div>
-                        <div class="considered-item">
+                        <div class="considered-item" role="button" tabindex="0"
+                            data-scroll-target="marker-reqs">
                             <div class="considered-title">REQS 2780D</div>
                             <div class="considered-subtitle">An investigation of
                                 patterns in prerequisites.</div>
@@ -104,7 +106,8 @@
 
         <aside id="slide-sidebar" aria-hidden="true">
             <div id="slide-sidebar-top">
-                <button id="slide-sidebar-close" aria-label="Close article panel"></button>
+                <button id="slide-sidebar-close"
+                    aria-label="Close article panel"></button>
                 <span>Article</span>
             </div>
             <div id="slide-sidebar-body">
@@ -124,7 +127,90 @@
                         height="960" data-external="1"></iframe><script
                         type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
                 </div>
+                <div class="text-box">
+                    A TEXT BOX WILL BE HERE
+                </div>
+                <div id="marker-profs" style="height: 1px;"></div>
                 <div style="height: 8vh;"></div>
+                <div class="data-box">
+                    <iframe
+                        title="Professors John Stein, Barrett Hazeltine, and Rachel Friedberg taught 6,000+ Brown students each during the 2016-2025 academic years"
+                        aria-label="Bar Chart" id="datawrapper-chart-BTVmX"
+                        src="https://datawrapper.dwcdn.net/BTVmX/8/"
+                        scrolling="no" frameborder="0"
+                        style="width: 0; min-width: 100% !important; border: none;"
+                        height="881" data-external="1"></iframe><script
+                        type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                </div>
+                <div id="marker-time" style="height: 1px;"></div>
+                <div style="height: 8vh;"></div>
+                <select id="day-select" onchange="showDay(this.value)">
+                    <option value="Monday" selected>Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                </select>
+                <div class="data-box active" data-day="Monday">
+                    <iframe
+                        title="On Mondays, the most students were in class at 11a.m."
+                        aria-label="Column Chart" id="datawrapper-chart-FQVKh"
+                        src="https://datawrapper.dwcdn.net/FQVKh/1/"
+                        scrolling="no" frameborder="0"
+                        style="width: 0; min-width: 100% !important; border: none;"
+                        height="456" data-external="1"></iframe><script
+                        type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                </div>
+                <div class="data-box" data-day="Tuesday">
+                    <iframe title="TUESDAY" aria-label="Column Chart"
+                        id="datawrapper-chart-1CQ0g"
+                        src="https://datawrapper.dwcdn.net/1CQ0g/1/"
+                        scrolling="no" frameborder="0"
+                        style="width: 0; min-width: 100% !important; border: none;"
+                        height="424" data-external="1"></iframe><script
+                        type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                </div>
+                <div class="data-box" data-day="Wednesday">
+                    <iframe title="WEDNESDAY" aria-label="Column Chart"
+                        id="datawrapper-chart-swjRh"
+                        src="https://datawrapper.dwcdn.net/swjRh/1/"
+                        scrolling="no" frameborder="0"
+                        style="width: 0; min-width: 100% !important; border: none;"
+                        height="424" data-external="1"></iframe><script
+                        type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                </div>
+                <div class="data-box" data-day="Thursday">
+                    <iframe title="THURSDAY" aria-label="Column Chart"
+                        id="datawrapper-chart-47Pqv"
+                        src="https://datawrapper.dwcdn.net/47Pqv/1/"
+                        scrolling="no" frameborder="0"
+                        style="width: 0; min-width: 100% !important; border: none;"
+                        height="424" data-external="1"></iframe><script
+                        type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                </div>
+
+                <div class="data-box" data-day="Friday">
+                    <iframe title="FRIDAY" aria-label="Column Chart"
+                        id="datawrapper-chart-hzPMO"
+                        src="https://datawrapper.dwcdn.net/hzPMO/1/"
+                        scrolling="no" frameborder="0"
+                        style="width: 0; min-width: 100% !important; border: none;"
+                        height="410" data-external="1"></iframe><script
+                        type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                </div>
+                <div class="text-box">
+                    HELOOOOOOOOOOO
+                </div>
+                <div id="marker-reqs" style="height: 1px;"></div>
+                <div class="data-box">
+                    <iframe title="Most frequent prerequisites"
+                        aria-label="Bar Chart" id="datawrapper-chart-FupCU"
+                        src="https://datawrapper.dwcdn.net/FupCU/1/"
+                        scrolling="no" frameborder="0"
+                        style="width: 0; min-width: 100% !important; border: none;"
+                        height="829" data-external="1"></iframe><script
+                        type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                </div>
             </div>
         </aside>
 

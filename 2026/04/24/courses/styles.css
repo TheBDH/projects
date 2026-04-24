@@ -236,6 +236,11 @@ body {
     text-align: left;
     padding: 20px;
     box-sizing: border-box;
+    cursor: pointer;
+}
+
+.considered-item * {
+    cursor: pointer;
 }
 
 .considered-item:hover {
@@ -297,4 +302,22 @@ body {
     /* Ensure padding is included in width calculation */
     color: rgb(12, 12, 12);
     /* Apply color for text-box */
+    min-height: 100px;
+}
+
+.data-box[data-day] { position: absolute; visibility: hidden; pointer-events: none; }
+.data-box[data-day].active { position: relative; visibility: visible; pointer-events: auto; }
+
+#day-select {
+    display: block;
+    margin: 0 auto;
+    font-family: "freight-text-pro", "Georgia", "Times", serif;
+    font-size: 1.1em;
+    padding: 0.4em 0.8em;
+    border: 2px solid rgb(106, 106, 106);
+    color: rgb(12, 12, 12);
+    background-color: rgba(255, 255, 255, 0.95);
+    cursor: pointer;
+    border-radius: 6px;
+    outline: none;
 }
