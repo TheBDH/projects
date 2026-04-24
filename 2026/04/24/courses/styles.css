@@ -187,6 +187,10 @@ body {
     font-size: 1rem;
 }
 
+#front-subtitle a {
+    color: white;
+}
+
 #considered {
     position: absolute;
     left: 24px;
@@ -320,4 +324,82 @@ body {
     cursor: pointer;
     border-radius: 6px;
     outline: none;
+}
+
+@media (max-width: 768px) {
+    html,
+    body {
+        overflow-y: auto;
+    }
+
+    #welcome-text {
+        display: none;
+    }
+
+    #top-bar {
+        justify-content: center;
+    }
+
+    #top-bar a {
+        margin: 0 auto;
+    }
+
+    #considered {
+        display: none;
+    }
+
+    #front-split {
+        height: 94vh;
+        display: block;
+        position: relative;
+    }
+
+    #front-image-space {
+        min-height: 94vh;
+    }
+
+    #front-overlay {
+        left: 50%;
+        top: 34%;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: min(88%, 560px);
+        box-sizing: border-box;
+    }
+
+    #front-sidebar {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 56%;
+        transform: translateX(-50%);
+        width: min(88%, 560px);
+        z-index: 4;
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    #read-more {
+        display: none;
+    }
+
+    #slide-sidebar,
+    #slide-sidebar.open {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        transform: none;
+        transition: none;
+        z-index: 1;
+    }
+
+    #slide-sidebar-top,
+    #slide-sidebar-close {
+        display: none;
+    }
+
+    #slide-sidebar-body {
+        overflow-y: visible;
+    }
 }

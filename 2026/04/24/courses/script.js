@@ -81,6 +81,10 @@ slideSidebar.addEventListener('transitionend', (event) => {
 });
 
 window.addEventListener('wheel', (event) => {
+    if (window.matchMedia('(max-width: 768px)').matches) {
+        return;
+    }
+
     event.preventDefault();
 
     if (event.deltaY > 0 && !panelOpen) {
