@@ -21,7 +21,7 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-        <script src="script.js"></script>
+        <script defer src="script.js"></script>
         <!-- newspaper font -->
         <link rel="stylesheet" href="https://use.typekit.net/brt8lxm.css">
     </head>
@@ -76,27 +76,57 @@
                     <h1 id="front-title">10 Years of Courses at Brown</h1>
                     <p id="front-subtitle">The Herald's data desk analyzed a
                         decade of course enrollment.</p>
-                    <p id="front-subtitle" style="font-style: italic;">Media by Scout Chen.</p>
+                    <p id="front-subtitle" style="font-style: italic;">Media by
+                        Scout Chen.</p>
                 </div>
                 <div id="considered">
                     <div id="considered-strip">Have you investigated?</div>
                     <div id="considered-main">
                         <div class="considered-item">
                             <div class="considered-title">MAPS 1200</div>
-                            <div class="considered-subtitle">A map of how classroom usage has changed over time.</div>
+                            <div class="considered-subtitle">A map of how
+                                classroom usage has changed over time.</div>
                         </div>
                         <div class="considered-item">
                             <div class="considered-title">TIME 0740</div>
-                            <div class="considered-subtitle">A cumulative chart of when students are in class.</div>
+                            <div class="considered-subtitle">A cumulative chart
+                                of when students are in class.</div>
                         </div>
                         <div class="considered-item">
                             <div class="considered-title">REQS 2780D</div>
-                            <div class="considered-subtitle">An investigation of patterns in prerequisites.</div>
+                            <div class="considered-subtitle">An investigation of
+                                patterns in prerequisites.</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <aside id="slide-sidebar" aria-hidden="true">
+            <div id="slide-sidebar-top">
+                <button id="slide-sidebar-close" aria-label="Close article panel"></button>
+                <span>Article</span>
+            </div>
+            <div id="slide-sidebar-body">
+                <div style="height: 8vh;"></div>
+                <div class="text-box">
+                    HELLO ARTICLE
+                </div>
+                <div style="height: 8vh;"></div>
+                <div class="data-box">
+                    <iframe
+                        title="Over 7,000 students took Principles of Economics in the past decade"
+                        aria-label="Bar Chart" id="datawrapper-chart-igJFU"
+                        src="https://datawrapper.dwcdn.net/igJFU/7/"
+                        scrolling="no"
+                        frameborder="0"
+                        style="width: 0; min-width: 100% !important; border: none;"
+                        height="960" data-external="1"></iframe><script
+                        type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+                </div>
+                <div style="height: 8vh;"></div>
+            </div>
+        </aside>
 
     </body>
 </html>
