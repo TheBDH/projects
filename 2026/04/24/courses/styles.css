@@ -385,7 +385,8 @@ body {
         width: 100%;
         order: 2;
         z-index: 4;
-        background-color: rgba(255, 255, 255, 0.95);
+        /* background-color: rgba(255, 255, 255, 0.95); */
+        background-color: #EEECE8;
     }
 
     #credits,
