@@ -424,4 +424,9 @@ body {
     #slide-sidebar-body {
         overflow-y: visible;
     }
+
+    .data-box,
+    .text-box {
+        width: 86%;
+    }
 }
