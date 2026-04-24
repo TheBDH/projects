@@ -119,12 +119,17 @@ body {
     font-size: 1.5rem;
 }
 
-#byline {
+#byline, #mobile-byline {
     margin: 0px 15px;
     font-size: 1rem;
 }
 
-#byline .author {
+#mobile-byline {
+    display: none;
+}
+
+#byline .author,
+#mobile-byline .author {
     background-color: #951D23;
     color: white;
     padding: 0.2rem;
@@ -141,7 +146,8 @@ body {
     font-size: 1rem;
 }
 
-#byline a {
+#byline a,
+#mobile-byline a {
     color: inherit;
     text-decoration: none;
 }
@@ -350,36 +356,52 @@ body {
 
     #front-split {
         height: 94vh;
-        display: block;
-        position: relative;
+        display: flex;
+        flex-direction: column;
     }
 
     #front-image-space {
-        min-height: 94vh;
+        min-height: 0;
+        flex: 1;
+        order: 1;
     }
 
     #front-overlay {
         left: 50%;
-        top: 34%;
-        bottom: auto;
-        transform: translate(-50%, -50%);
+        top: auto;
+        bottom: 10px;
+        transform: translateX(-50%);
         width: min(88%, 560px);
         box-sizing: border-box;
     }
 
     #front-sidebar {
         display: block;
-        position: absolute;
-        left: 50%;
-        top: 56%;
-        transform: translateX(-50%);
-        width: min(88%, 560px);
+        position: relative;
+        left: auto;
+        top: auto;
+        bottom: auto;
+        transform: none;
+        width: 100%;
+        order: 2;
         z-index: 4;
         background-color: rgba(255, 255, 255, 0.95);
     }
 
-    #read-more {
+    #credits,
+    #byline {
         display: none;
+    }
+
+    #mobile-byline {
+        display: block;
+        margin: 8px 12px 0;
+    }
+
+    #read-more {
+        display: block;
+        margin-top: 4px;
+        padding-bottom: 8px;
     }
 
     #slide-sidebar,
