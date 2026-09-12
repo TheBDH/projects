@@ -219,7 +219,7 @@ function initLeafletMap() {
     }).setView(initialCenter, initialZoom);
 
     // Closest simple Leaflet equivalent to ArcGIS gray-vector look
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png?key=cb1_3in0_1_b5c63ca23f19fe5392cae4e9', {
         subdomains: 'abcd',
         maxZoom: 20,
         attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
