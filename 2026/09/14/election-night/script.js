@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const steps = [...document.querySelectorAll(".step")];
     const slides = [...document.querySelectorAll(".slide")];
     const clock = document.querySelector("#clock");
+    const first = document.querySelector(".article");
     let last = -1;
 
     function update() {
@@ -17,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const step = steps.filter(passed).pop();
         clock.classList.toggle("active", !!step);
-        if (!step) return;
-        const [h, m] = step.dataset.time.split(":").map(Number);
+        clock.classList.toggle("labels", first.getBoundingClientRect().top > clock.getBoundingClientRect().bottom);
+        const [h, m] = (step || steps[0]).dataset.time.split(":").map(Number);
         clock.querySelector(".hour").style.transform = `rotate(${h * 30 + m / 2}deg)`;
         clock.querySelector(".minute").style.transform = `rotate(${h * 360 + m * 6}deg)`;
         clock.querySelector("span").textContent = `${h % 12 || 12}:${String(m).padStart(2, "0")} ${h % 24 < 12 ? "a.m." : "p.m."}`;
@@ -26,4 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     addEventListener("scroll", update);
     update();
+    void clock.offsetWidth;
+    clock.classList.add("ready");
 });
