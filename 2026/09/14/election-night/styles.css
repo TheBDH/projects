@@ -669,7 +669,8 @@ a {
         width: 100%;
     }
 
-    #clock {
+    #clock,
+    .extra {
         display: none;
     }
 }

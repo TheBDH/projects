@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const mid = innerHeight / 2;
         const passed = el => el.getBoundingClientRect().top <= mid;
         const cur = slides.findIndex(s => passed(s) && s.getBoundingClientRect().bottom > mid);
-        const snap = cur >= 0 && last >= 0 && cur !== last && slides[cur].lastChild.textContent === slides[last].lastChild.textContent;
+        const snap = cur >= 0 && last >= 0 && cur !== last && slides[cur].lastChild.textContent.replace(/\s+/g, " ") === slides[last].lastChild.textContent.replace(/\s+/g, " ");
         slides.forEach((s, i) => {
             s.classList.toggle("active", i === cur);
             s.classList.toggle("snap", snap && (i === cur || i === last));
