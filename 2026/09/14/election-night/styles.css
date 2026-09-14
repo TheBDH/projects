@@ -503,11 +503,11 @@ a {
 }
 
 .step[data-side="morales"] .article {
-    border: 10px solid #E0643D;
+    border: 10px solid #639CCF;
 }
 
 .step[data-side="morales"] .article h3 {
-    color: #E0643D;
+    color: #639CCF;
 }
 
 .step[data-side="smiley"] .article {
@@ -601,7 +601,7 @@ a {
 
 #clock .morales {
     right: calc(100% + 20px);
-    color: #E0643D;
+    color: #639CCF;
 }
 
 #clock .smiley {
