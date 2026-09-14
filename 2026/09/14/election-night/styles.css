@@ -494,11 +494,11 @@ a {
     margin: 30vh 8%;
 }
 
-.step .article > :first-child {
+.article > :first-child {
     margin-top: 0;
 }
 
-.step .article > :last-child {
+.article > :last-child {
     margin-bottom: 0;
 }
 
@@ -540,6 +540,7 @@ a {
 }
 
 .slide p {
+    z-index: -1;
     bottom: 15px;
     right: 15px;
     margin: 0;
@@ -569,23 +570,23 @@ a {
     display: none;
 }
 
+#intro {
+    box-sizing: border-box;
+    width: 84%;
+    max-width: none;
+    margin: 0 8% 10vh;
+}
+
 #clock {
-    position: fixed;
+    position: sticky;
     top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto;
     width: 80px;
     height: 80px;
     border: 3px solid #111;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.92);
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-}
-
-#clock.active {
-    opacity: 1;
+    z-index: 1;
 }
 
 #clock .label {
