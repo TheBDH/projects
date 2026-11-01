@@ -1,0 +1,365 @@
+:root {
+  --bg: #000;
+  --ink: #f5efed;
+  --line: #fff;
+  --accent: #cf5c36;
+  --pumpkin: #cf5c36;
+  --line-w: 2px;
+  --web: 200px;
+  --gutter: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 300;
+}
+
+a {
+  color: var(--accent);
+}
+
+/* ---------- header ---------- */
+
+/* opening screen: pumpkin and heading fill the first view */
+#heading {
+  max-width: 640px;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#herald-logo {
+  max-width: 400px;
+}
+
+#heading h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 2.25rem;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+#pumpkin {
+  width: min(300px, 70vw);
+  margin-bottom: 2rem;
+  overflow: visible;
+}
+
+#pumpkin circle {
+  fill: var(--pumpkin);
+}
+
+h4 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 auto 1.5rem;
+}
+
+#byline {
+  font-weight: normal;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+#byline .author {
+  background-color: var(--accent);
+  color: var(--ink);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  white-space: nowrap;
+}
+
+#byline .author a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* ---------- timeline ---------- */
+
+/* each chapter draws the line across its top and down one side,
+   alternating sides so the whole thing zigzags down the page.
+   --top and --side (0 to 1) are set from script.js as you scroll,
+   so the line draws itself in; --tail varies each chapter's height */
+.timeline {
+  width: min(960px, calc(100% - 32px));
+  margin: 2rem auto 0;
+  padding-bottom: 6rem;
+}
+
+.chapter {
+  position: relative;
+  padding: 3.5rem 1rem var(--tail, 3.5rem) var(--gutter);
+}
+
+.chapter:nth-child(even) {
+  padding: 3.5rem var(--gutter) var(--tail, 3.5rem) 1rem;
+}
+
+.chapter::before,
+.chapter::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  background: var(--line);
+}
+
+/* line across the top: left-to-right on even chapters, right-to-left on odd */
+.chapter::before {
+  left: 0;
+  right: 0;
+  height: var(--line-w);
+  transform: scaleX(var(--top, 1));
+  transform-origin: right;
+}
+
+.chapter:nth-child(even)::before {
+  transform-origin: left;
+}
+
+/* the first chapter only gets its corner web, no line across the top */
+.chapter:first-child::before {
+  display: none;
+}
+
+/* line down the side */
+.chapter::after {
+  bottom: 0;
+  width: var(--line-w);
+  transform: scaleY(var(--side, 1));
+  transform-origin: top;
+}
+
+.chapter:nth-child(odd)::after {
+  left: 0;
+}
+
+.chapter:nth-child(even)::after {
+  right: 0;
+}
+
+.chapter:last-child {
+  padding-bottom: 12rem;
+}
+
+.web {
+  position: absolute;
+  top: 0;
+  width: var(--web);
+  height: var(--web);
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1.2;
+  pointer-events: none;
+  opacity: var(--web-o, 1);
+  transition: opacity 0.6s ease;
+}
+
+.chapter:nth-child(odd) .web {
+  left: 0;
+}
+
+.chapter:nth-child(even) .web {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.entry + .entry {
+  margin-top: 4rem;
+}
+
+/* day label sits in the corner opposite the cobweb */
+.day {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2rem;
+  margin: 0 0 2.5rem;
+  text-align: right;
+}
+
+.chapter:nth-child(even) .day {
+  text-align: left;
+}
+
+.entry h3 {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 1.25rem 0 0.4rem;
+}
+
+.entry p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 34rem;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+/* a lone photo sits at ~80% width, nudged toward alternating sides */
+.photos:has(> .shot:only-child) {
+  grid-template-columns: 80%;
+}
+
+.entry:nth-child(even of .entry) .photos:has(> .shot:only-child) {
+  justify-content: end;
+}
+
+/* three photos: lead image full width, two below */
+.photos:has(> .shot:nth-child(3)) > .shot:first-child {
+  grid-column: 1 / -1;
+}
+
+/* each photo carries the time it was taken in its corner */
+.shot {
+  position: relative;
+  margin: 0;
+}
+
+.shot-time {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.3rem 0.65rem;
+  color: var(--ink);
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  border-radius: 0.4rem;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .shot-time {
+    top: 0.4rem;
+    left: 0.4rem;
+    font-size: 0.85rem;
+  }
+}
+
+.media {
+  display: block;
+  width: 100%;
+  filter: grayscale(100%);
+  transition: filter 1s ease;
+}
+
+.media.active {
+  filter: grayscale(0%);
+}
+
+/* ---------- chrome ---------- */
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 0%;
+  background-color: var(--accent);
+  z-index: 1000;
+  transition: width 0.1s ease;
+}
+
+#current-credit {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: var(--accent);
+  color: var(--ink);
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 1000;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#current-credit:empty {
+  opacity: 0;
+}
+
+/* glowing orb cursor, sized from the pumpkin's front dots in script.js */
+#cursor {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body,
+  a {
+    cursor: none;
+  }
+
+  #cursor {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--cursor-size, 12px);
+    height: var(--cursor-size, 12px);
+    margin: calc(var(--cursor-size, 12px) / -2) 0 0 calc(var(--cursor-size, 12px) / -2);
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 6px 2px var(--accent), 0 0 18px 6px rgba(207, 92, 54, 0.45);
+    pointer-events: none;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  #cursor.visible {
+    opacity: 1;
+  }
+}
+
+/* mobile formatting */
+@media (max-width: 600px) {
+  :root {
+    --web: 120px;
+    --gutter: 1rem;
+  }
+
+  #heading h2 {
+    font-size: 1.8rem;
+  }
+
+  .chapter,
+  .chapter:nth-child(even) {
+    padding-top: 2.5rem;
+  }
+
+  .chapter:nth-child(odd) {
+    padding-right: 3%;
+  }
+
+  .chapter:nth-child(even) {
+    padding-left: 3%;
+  }
+}

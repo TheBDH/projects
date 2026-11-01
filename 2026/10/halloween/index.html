@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halloweekend at Brown</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <link
+      rel="icon"
+      href="./assets/fall.svg"
+      type="image/icon type"
+    />
+    <meta property="og:image" content="assets/1.jpg">
+  </head>
+  <body>
+    <div id="scroll-progress"></div>
+
+    <!-- cobweb drawn once, reused in every corner of the timeline -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="cobweb" viewBox="0 0 110 110">
+        <path
+          d="M0 0L110.0 0.0M0 0L104.6 34.0M0 0L86.7 67.7M0 0L58.3 93.3M0 0L26.6 106.7M0 0L0.0 110.0M16.0 0.0Q12.3 2.0 15.2 4.9Q11.0 5.9 12.6 9.9Q8.4 9.3 8.5 13.6Q4.9 11.5 3.9 15.5Q1.5 12.4 0.0 16.0M34.0 0.0Q26.2 4.1 32.3 10.5Q23.4 12.5 26.8 20.9Q17.7 19.7 18.0 28.8Q10.4 24.4 8.2 33.0Q3.2 26.3 0.0 34.0M54.0 0.0Q41.6 6.6 51.4 16.7Q37.2 19.8 42.6 33.2Q28.2 31.3 28.6 45.8Q16.5 38.8 13.1 52.4Q5.1 41.8 0.0 54.0M76.0 0.0Q58.6 9.3 72.3 23.5Q52.3 27.8 59.9 46.8Q39.7 44.1 40.3 64.5Q23.2 54.6 18.4 73.7Q7.2 58.8 0.0 76.0M100.0 0.0Q77.0 12.2 95.1 30.9Q68.9 36.6 78.8 61.6Q52.2 58.0 53.0 84.8Q30.5 71.8 24.2 97.0Q9.5 77.4 0.0 100.0"
+        />
+      </symbol>
+    </svg>
+
+    <header id="heading">
+      <svg id="pumpkin" viewBox="-60 -70 120 130" aria-hidden="true"></svg>
+      <a href="https://www.browndailyherald.com" target="_blank">
+        <img
+          src="assets/logo-black.png"
+          id="herald-logo"
+          alt="Brown Daily Herald Logo"
+        />
+      </a>
+      <h2><span class = "accent">Halloweekend</span> at Brown</h2>
+      <h4>As the leaves oranged and the fall air became crisp, The Herald captured how students celebrated Halloween this weekend.</h4>
+      <h6 id="byline">
+        Media by
+        <span class="author"
+          ><a
+            href="https://www.browndailyherald.com/staff/the-herald-photo-team"
+            target="_blank"
+            >The Herald Photo Team</a
+          ></span
+        > <br /><br />
+        Reporting by
+        <span class="author"
+          ><a
+            href="https://www.browndailyherald.com/staff/emily-feil"
+            target="_blank"
+            >Emily Feil</a
+          ></span
+        >
+      <span class="author"
+          ><a
+            href="https://www.browndailyherald.com/staff/alejandro-ruiz"
+            target="_blank"
+            >Alejandro Ruiz</a
+          ></span
+        >
+      </h6>
+    </header>
+
+    <main class="timeline">
+
+      <section class="chapter" style="--tail: 6rem">
+        <svg class="web"><use href="#cobweb" /></svg>
+        <h2 class="day">Thursday</h2>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">1:00 PM</time>
+            </figure>
+          </div>
+          <h3>Neur10 Costume Contest</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">3:00 PM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">3:20 PM</time>
+            </figure>
+          </div>
+          <h3>CS15 Skit</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">4:00 PM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">4:20 PM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">4:40 PM</time>
+            </figure>
+          </div>
+          <h3>Costumes around campus &amp; decorations</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">8:00 PM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">8:20 PM</time>
+            </figure>
+          </div>
+          <h3>Underground</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">10:00 PM</time>
+            </figure>
+          </div>
+          <h3>KASA/CSA</h3>
+          <p>Caption text goes here.</p>
+        </article>
+      </section>
+
+      <section class="chapter" style="--tail: 16rem">
+        <svg class="web"><use href="#cobweb" /></svg>
+        <h2 class="day">Friday</h2>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">1:00 AM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">1:20 AM</time>
+            </figure>
+          </div>
+          <h3>Jos</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">3:00 AM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">3:20 AM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">3:40 AM</time>
+            </figure>
+          </div>
+          <h3>Aftermath</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">3:00 PM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">3:20 PM</time>
+            </figure>
+          </div>
+          <h3>Costumes around campus &amp; decorations</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">7:00 PM</time>
+            </figure>
+          </div>
+          <h3>BSR Concert</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">7:00 PM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">7:20 PM</time>
+            </figure>
+          </div>
+          <h3>Sunrise</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">7:00 PM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">7:20 PM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">7:40 PM</time>
+            </figure>
+          </div>
+          <h3>Tech House</h3>
+          <p>Caption text goes here.</p>
+        </article>
+      </section>
+
+      <section class="chapter" style="--tail: 4rem">
+        <svg class="web"><use href="#cobweb" /></svg>
+        <h2 class="day">Saturday</h2>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">1:00 AM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">1:20 AM</time>
+            </figure>
+          </div>
+          <h3>Jos</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">3:00 AM</time>
+            </figure>
+          </div>
+          <h3>Aftermath</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">12:00 AM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">12:20 AM</time>
+            </figure>
+          </div>
+          <h3>Organ Recital</h3>
+          <p>Caption text goes here.</p>
+        </article>
+      </section>
+
+      <section class="chapter">
+        <svg class="web"><use href="#cobweb" /></svg>
+        <h2 class="day">Sunday</h2>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">1:00 AM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">1:20 AM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">1:40 AM</time>
+            </figure>
+          </div>
+          <h3>Organ Tour</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">1:00 AM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">1:20 AM</time>
+            </figure>
+          </div>
+          <h3>Jos</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">3:00 AM</time>
+            </figure>
+          </div>
+          <h3>Aftermath</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">6:00 PM</time>
+            </figure>
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">6:20 PM</time>
+            </figure>
+          </div>
+          <h3>Campus Center</h3>
+          <p>Caption text goes here.</p>
+        </article>
+        <article class="entry">
+          <div class="photos">
+            <figure class="shot">
+              <img class="media" src="assets/1.jpg" data-credit="Photographer Name" alt="Alt text placeholder" />
+              <time class="shot-time">8:00 PM</time>
+            </figure>
+          </div>
+          <h3>JCA</h3>
+          <p>Caption text goes here.</p>
+        </article>
+      </section>
+    </main>
+
+    <div id="current-credit"></div>
+    <div id="cursor" aria-hidden="true"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
