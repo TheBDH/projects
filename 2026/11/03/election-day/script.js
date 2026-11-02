@@ -35,13 +35,23 @@ if (updateCountdown()) {
 }
 
 // ---------- section tabs ----------
-// Each tab is its own page, so the bar's horizontal scroll would reset on every
-// switch. Remember where it was and restore it so the bar looks unchanged.
+// Each tab is its own page, so the bar's horizontal scroll and the page's
+// vertical scroll would both reset on every switch. Remember where the bar was
+// and restore both so it stays put on screen while the content below changes.
 
 const tabs = document.querySelector(".tabs");
 const TABS_KEY = "tabs-scroll";
+const TABS_TOP_KEY = "tabs-top";
+const TABS_FROM_KEY = "tabs-from";
 
 if (tabs) {
+  // the bar is pinned to the top on scroll; share its height with the CSS so
+  // anchors and the sticky map sit below it
+  const setTabsHeight = () =>
+    document.documentElement.style.setProperty("--tabs-height", `${tabs.offsetHeight}px`);
+  setTabsHeight();
+  new ResizeObserver(setTabsHeight).observe(tabs);
+
   let saved = null;
   try {
     saved = sessionStorage.getItem(TABS_KEY);
@@ -66,6 +76,86 @@ if (tabs) {
     }
   }
 
+  // put the bar back at the same height on screen it had on the last page.
+  // Only after clicking a link to another page of this site (the key is used
+  // up here), so reloads, back/forward and outside links keep normal scrolling
+  let savedTop = null;
+  try {
+    savedTop = sessionStorage.getItem(TABS_TOP_KEY);
+    sessionStorage.removeItem(TABS_TOP_KEY);
+  } catch {}
+
+  if (savedTop !== null && !location.hash) {
+    const place = () =>
+      window.scrollTo({
+        top: tabs.getBoundingClientRect().top + window.scrollY - Number(savedTop),
+        behavior: "instant",
+      });
+    place();
+    // the logo above the bar can finish loading after this and push the bar
+    // down; follow it, unless the reader has already started scrolling
+    const placedAt = window.scrollY;
+    window.addEventListener(
+      "load",
+      () => {
+        if (Math.abs(window.scrollY - placedAt) < 2) place();
+      },
+      { once: true }
+    );
+  }
+
+  // underline: one bar that slides from the tab you came from to this one
+  const indicator = document.createElement("span");
+  indicator.className = "tabs-indicator";
+  indicator.setAttribute("aria-hidden", "true");
+  tabs.append(indicator);
+  tabs.classList.add("has-indicator");
+
+  const moveIndicator = (link) => {
+    if (!link) {
+      indicator.style.opacity = "0";
+      return;
+    }
+    const bar = tabs.getBoundingClientRect();
+    const box = link.getBoundingClientRect();
+    indicator.style.opacity = "1";
+    indicator.style.width = `${box.width}px`;
+    indicator.style.transform = `translateX(${box.left - bar.left + tabs.scrollLeft}px)`;
+  };
+
+  let from = null;
+  try {
+    from = sessionStorage.getItem(TABS_FROM_KEY);
+    sessionStorage.removeItem(TABS_FROM_KEY);
+  } catch {}
+  const fromLink = from && [...tabs.querySelectorAll("a")].find((a) => a.getAttribute("href") === from);
+
+  if (fromLink && fromLink !== current && !reduceMotion) {
+    // start under the old tab, then slide once that position has painted
+    moveIndicator(fromLink);
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        indicator.classList.add("animated");
+        moveIndicator(current);
+      })
+    );
+  } else {
+    moveIndicator(current);
+    requestAnimationFrame(() => indicator.classList.add("animated"));
+  }
+
+  // keep it under the tab as fonts load, the window resizes, or the pinned
+  // Live Updates tab moves while the bar scrolls sideways
+  const follow = () => {
+    indicator.classList.remove("animated");
+    moveIndicator(current);
+    requestAnimationFrame(() => indicator.classList.add("animated"));
+  };
+  window.addEventListener("resize", follow);
+  window.addEventListener("load", follow);
+  document.fonts?.ready.then(follow);
+  if (current === pinned) tabs.addEventListener("scroll", follow, { passive: true });
+
   const save = () => {
     try {
       sessionStorage.setItem(TABS_KEY, String(tabs.scrollLeft));
@@ -73,28 +163,133 @@ if (tabs) {
   };
   tabs.addEventListener("click", save);
   window.addEventListener("pagehide", save);
+
+  // any link to another page of this site (tabs, "Read more", the breaking
+  // bar...) carries the bar's position and the tab we're leaving with it
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a[href]");
+    if (!link || e.defaultPrevented || e.button !== 0) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (link.target && link.target !== "_self") return;
+    const url = new URL(link.href, location.href);
+    if (url.protocol !== location.protocol || url.host !== location.host) return;
+    if (url.pathname === location.pathname) return;
+    try {
+      sessionStorage.setItem(TABS_TOP_KEY, String(tabs.getBoundingClientRect().top));
+      if (current) sessionStorage.setItem(TABS_FROM_KEY, current.getAttribute("href"));
+    } catch {}
+  });
 }
 
-// ---------- menu ----------
+// ---------- authors ----------
 
-const menuButton = document.getElementById("menu-button");
-const menuList = document.getElementById("menu-list");
+// every writer, written once. Bylines point here by id instead of repeating
+// the name, link and photo:
+//   update cards and ballot sliders: <div class="update-byline" data-author="michelle-bi"></div>
+//   the "Reporting by" line:         <p data-authors="michelle-bi talia-katz">Reporting by</p>
+// Several ids (space-separated) work in either. Photos are square-ish images
+// in images/authors/; until one is added the gray circle shows instead.
+const AUTHORS = {
+  "michelle-bi": {
+    name: "Michelle Bi",
+    page: "https://www.browndailyherald.com/staff/michelle-bi",
+    photo: "images/authors/michelle-bi.jpg",
+  },
+  "talia-katz": {
+    name: "Talia Katz",
+    page: "https://www.browndailyherald.com/staff/talia-katz",
+    photo: "images/authors/talia-katz.jpg",
+  },
+  "nate-barkow": {
+    name: "Nate Barkow",
+    page: "https://www.browndailyherald.com/staff/nate-barkow",
+    photo: "images/authors/nate-barkow.jpg",
+  },
+  "annika-melwani": {
+    name: "Annika Melwani",
+    page: "https://www.browndailyherald.com/staff/annika-melwani",
+    photo: "images/authors/annika-melwani.jpg",
+  },
+};
 
-function setMenu(open) {
-  menuButton.setAttribute("aria-expanded", open);
-  menuList.hidden = !open;
+function authorsFor(ids) {
+  return (ids || "")
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((id) => {
+      if (!AUTHORS[id]) console.warn(`Unknown author id "${id}" — add it to AUTHORS in script.js`);
+      return AUTHORS[id] || { name: id };
+    });
 }
 
-menuButton.addEventListener("click", (e) => {
-  e.stopPropagation();
-  setMenu(menuList.hidden);
-});
-document.addEventListener("click", (e) => {
-  if (!menuList.contains(e.target)) setMenu(false);
-});
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") setMenu(false);
-});
+function authorLink(author) {
+  if (!author.page) return document.createTextNode(author.name);
+  const a = document.createElement("a");
+  a.href = author.page;
+  a.target = "_blank";
+  a.textContent = author.name;
+  return a;
+}
+
+// "A", "A & B", "A, B & C"
+function authorList(authors) {
+  const frag = document.createDocumentFragment();
+  authors.forEach((author, i) => {
+    if (i > 0) frag.append(i === authors.length - 1 ? " & " : ", ");
+    frag.append(authorLink(author));
+  });
+  return frag;
+}
+
+function avatar(author) {
+  const blank = () => {
+    const span = document.createElement("span");
+    span.className = "avatar";
+    span.setAttribute("aria-hidden", "true");
+    return span;
+  };
+  if (!author?.photo) return blank();
+  const img = document.createElement("img");
+  img.className = "avatar";
+  img.src = author.photo;
+  img.alt = "";
+  // photo not uploaded yet: fall back to the gray circle, not a broken image
+  img.addEventListener("error", () => img.replaceWith(blank()), { once: true });
+  return img;
+}
+
+// fills every byline under root. Safe to run more than once
+function renderBylines(root) {
+  root.querySelectorAll("[data-authors]:not([data-rendered])").forEach((el) => {
+    el.append(" ", authorList(authorsFor(el.dataset.authors)));
+    el.dataset.rendered = "";
+  });
+
+  root.querySelectorAll(".update-byline[data-author]:not([data-rendered])").forEach((el) => {
+    const authors = authorsFor(el.dataset.author);
+    const photos = document.createElement("span");
+    photos.className = "avatars";
+    photos.append(...(authors.length ? authors.map(avatar) : [avatar()]));
+
+    const name = document.createElement("p");
+    name.className = "author";
+    name.append(authors.length ? authorList(authors) : "Author name");
+
+    const text = document.createElement("div");
+    text.append(name);
+    // live update cards also show their time under the name
+    if (el.closest(".update")) {
+      const time = document.createElement("p");
+      time.className = "update-time";
+      text.append(time);
+    }
+
+    el.replaceChildren(photos, text);
+    el.dataset.rendered = "";
+  });
+}
+
+renderBylines(document);
 
 // ---------- polling locations ----------
 
@@ -146,6 +341,8 @@ function initTimeline(container, { onReach } = {}) {
   const rows = [...container.querySelectorAll(".update")];
 
   rows.forEach((row) => {
+    // updates copied in from the live page arrive with empty bylines
+    renderBylines(row);
     // the time is written once beside the dot and copied into each card
     row.querySelector(".update-time").textContent = row.querySelector(".update-marker time").textContent;
     addLocationTag(row);
@@ -208,27 +405,63 @@ function initTimeline(container, { onReach } = {}) {
 
 // ---------- breaking news ----------
 
-// the newest update (first in the list) fills the breaking news bar. the
-// section pages don't have the updates, so they read them from index.html
-function showBreaking(doc) {
-  const latest = doc.querySelector("#live-updates .update");
-  if (!latest) return;
-  const time = latest.querySelector(".update-marker time").textContent.trim();
-  const headline = latest.querySelector(".update-headline").textContent.trim();
-  document.getElementById("breaking-time").textContent = `at ${time}`;
-  document.getElementById("breaking-text").textContent = headline;
-  document.getElementById("breaking").hidden = false;
+// the three most recent updates, newest first, shown in the bar at the top of
+// every page. Written here (not read from index.html) so the bar works on
+// every page without a request. When you post a new update, add it to the top
+// and drop the last one.
+const BREAKING = [
+  { time: "10:30 AM", headline: "Update headline Update headline Update headline Update headline" },
+  { time: "9:15 AM", headline: "Update headline Update headline Update headline Update headline" },
+  { time: "7:00 AM", headline: "Update headline Update headline Update headline" },
+];
+
+// rotates through them every few seconds; pauses while hovered or focused
+function initBreaking() {
+  const bar = document.getElementById("breaking");
+  const items = BREAKING.slice(0, 3);
+  if (!bar || !items.length) return;
+  const time = document.getElementById("breaking-time");
+  const text = document.getElementById("breaking-text");
+
+  let i = 0;
+  const show = () => {
+    time.textContent = `at ${items[i].time}`;
+    text.textContent = items[i].headline;
+  };
+  show();
+  bar.hidden = false;
+  if (items.length < 2) return;
+
+  let paused = false;
+  ["mouseenter", "focusin"].forEach((ev) => bar.addEventListener(ev, () => (paused = true)));
+  ["mouseleave", "focusout"].forEach((ev) => bar.addEventListener(ev, () => (paused = false)));
+
+  setInterval(() => {
+    if (paused || document.hidden) return;
+    const next = () => {
+      i = (i + 1) % items.length;
+      show();
+      bar.classList.remove("fading");
+    };
+    if (reduceMotion) return next();
+    bar.classList.add("fading");
+    setTimeout(next, 300); // matches the fade in styles.css
+  }, 6000);
 }
+
+initBreaking();
 
 const liveUpdates = document.getElementById("live-updates");
 
+// the polling locations page lists updates from index.html; no other page
+// needs to load it
 const liveDoc = liveUpdates
   ? Promise.resolve(document)
-  : fetch("index.html")
-      .then((res) => res.text())
-      .then((html) => new DOMParser().parseFromString(html, "text/html"));
-
-liveDoc.then(showBreaking).catch(() => {});
+  : document.getElementById("polling-updates")
+    ? fetch("index.html")
+        .then((res) => res.text())
+        .then((html) => new DOMParser().parseFromString(html, "text/html"))
+    : null;
 
 if (liveUpdates) initTimeline(liveUpdates);
 
@@ -325,7 +558,7 @@ if (pollingUpdates) {
 // ---------- ballot sliders ----------
 
 // each .slider shows one .slide at a time, with a tab per slide along the
-// bottom, arrows, swipe and arrow keys. "See all" lays every slide out at once
+// bottom, swipe and arrow keys. "Expand" lays every slide out at once
 document.querySelectorAll(".slider").forEach((slider, sliderIndex) => {
   const slides = [...slider.querySelectorAll(".slide")];
   if (!slides.length) return;
@@ -333,17 +566,6 @@ document.querySelectorAll(".slider").forEach((slider, sliderIndex) => {
 
   const controls = document.createElement("div");
   controls.className = "slider-controls";
-
-  const arrow = (dir, label) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = `slider-arrow slider-${dir}`;
-    button.setAttribute("aria-label", label);
-    button.innerHTML = dir === "prev" ? "&larr;" : "&rarr;";
-    return button;
-  };
-  const prev = arrow("prev", "Previous");
-  const next = arrow("next", "Next");
 
   const tablist = document.createElement("div");
   tablist.className = "slider-tabs";
@@ -367,7 +589,7 @@ document.querySelectorAll(".slider").forEach((slider, sliderIndex) => {
     return tab;
   });
 
-  controls.append(prev, tablist, next);
+  controls.append(tablist);
   slidesBox.after(controls);
 
   const expand = document.createElement("button");
@@ -390,8 +612,6 @@ document.querySelectorAll(".slider").forEach((slider, sliderIndex) => {
       tab.setAttribute("aria-selected", j === current);
       tab.tabIndex = j === current ? 0 : -1;
     });
-    prev.disabled = current === 0;
-    next.disabled = current === slides.length - 1;
     if (focus) tabs[current].focus();
   }
 
@@ -402,16 +622,14 @@ document.querySelectorAll(".slider").forEach((slider, sliderIndex) => {
     requestAnimationFrame(() => requestAnimationFrame(() => slider.classList.add("animated")));
     slider.classList.toggle("expanded", open);
     expand.setAttribute("aria-expanded", open);
-    expand.textContent = open ? "Show one at a time" : `See all ${slides.length} questions`;
+    expand.textContent = open ? "Collapse" : "Expand";
     slides.forEach((slide) => slide.setAttribute("role", open ? "article" : "tabpanel"));
     // collapsing a long list can leave the reader far below the slider
-    if (scroll && !open && slider.getBoundingClientRect().top < 0) {
+    if (scroll && !open && slider.getBoundingClientRect().top < (tabs?.offsetHeight || 0)) {
       slider.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
     }
   }
 
-  prev.addEventListener("click", () => show(current - 1));
-  next.addEventListener("click", () => show(current + 1));
   expand.addEventListener("click", () => setExpanded(!slider.classList.contains("expanded"), true));
 
   tablist.addEventListener("keydown", (e) => {
@@ -440,3 +658,4 @@ document.querySelectorAll(".slider").forEach((slider, sliderIndex) => {
   show(0);
   setExpanded(false);
 });
+

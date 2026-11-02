@@ -34,24 +34,6 @@
                 <p class="breaking-text" id="breaking-text"></p>
                 <span class="breaking-more">see more &rarr;</span>
             </a>
-            <div class="menu">
-                <button class="menu-button" id="menu-button" aria-label="Menu"
-                    aria-expanded="false" aria-controls="menu-list">
-                    <svg width="6" height="24" viewBox="0 0 6 24" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="currentColor" />
-                        <circle cx="3" cy="12" r="3" fill="currentColor" />
-                        <circle cx="3" cy="21" r="3" fill="currentColor" />
-                    </svg>
-                </button>
-                <nav class="menu-list" id="menu-list" hidden>
-                    <a href="index.html">Live Updates</a>
-                    <a href="ballot.html">The Ballot</a>
-                    <a href="polling-locations.html">Polling Locations</a>
-                    <a href="previous-coverage.html">Previous Coverage</a>
-                    <hr>
-                    <a href="https://www.browndailyherald.com" target="_blank">The Brown Daily Herald</a>
-                </nav>
-            </div>
         </header>
 
         <div class="hero">
@@ -61,16 +43,9 @@
             <h1>Election Day</h1>
             <p class="hero-dek">Live updates from The Herald on election day in Providence</p>
             <div class="byline">
-                <p>Reporting by
-                    <a href="https://www.browndailyherald.com/staff/michelle-bi" target="_blank">Michelle Bi</a>
-                    ,
-                    <a href="https://www.browndailyherald.com/staff/talia-katz" target="_blank">Talia Katz</a>
-                    ,
-                    <a href="https://www.browndailyherald.com/staff/nate-barkow" target="_blank">Nate Barkow</a>
-                    &amp;
-                    <a href="https://www.browndailyherald.com/staff/annika-melwani" target="_blank">Annika Melwani</a>
-                </p>
+                <p data-authors="michelle-bi talia-katz nate-barkow annika-melwani">Reporting by</p>
             </div>
+            <p class="hero-credit">Pavani Durbhakula / Herald</p>
         </div>
 
         <nav class="tabs" aria-label="Election coverage sections">
@@ -83,99 +58,156 @@
         <main>
             <!--
                 Each .slider becomes a set of tabs: one .slide per tab, shown one
-                at a time with arrows, swipe and a "see all" button. The tab
+                at a time with tabs, swipe and an expand/collapse button. The tab
                 labels come from each slide's .slide-number, so add or remove
                 <article class="slide"> blocks freely.
             -->
+            <!--
+                One .candidate per person: portrait, name, a short blurb and a
+                link to the governor's race on previous-coverage.html.
+            -->
+            <section class="ballot-card race" aria-labelledby="governor-title">
+                <h2 class="slider-title" id="governor-title">The race for governor</h2>
+                <!-- TODO: author id from AUTHORS in script.js -->
+                <div class="update-byline slider-byline" data-author=""></div>
+                <article class="candidate">
+                    <img class="candidate-portrait" src="assets/HelenaFoulkes.png" alt="Illustration of Helena Foulkes">
+                    <div class="candidate-text">
+                        <h3>Helena Foulkes</h3>
+                        <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                        <a class="read-more" href="previous-coverage.html">Read more &rarr;</a>
+                    </div>
+                </article>
+                <article class="candidate">
+                    <img class="candidate-portrait" src="assets/AaraonGuckian.png" alt="Illustration of Aaron Guckian">
+                    <div class="candidate-text">
+                        <h3>Aaron Guckian</h3>
+                        <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                        <a class="read-more" href="previous-coverage.html">Read more &rarr;</a>
+                    </div>
+                </article>
+                <article class="candidate">
+                    <img class="candidate-portrait" src="assets/KennethBlock.png" alt="Illustration of Kenneth Block">
+                    <div class="candidate-text">
+                        <h3>Kenneth Block</h3>
+                        <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                        <a class="read-more" href="previous-coverage.html">Read more &rarr;</a>
+                    </div>
+                </article>
+            </section>
+
             <div class="ballot-card">
                 <section class="slider" aria-labelledby="bonds-title">
                     <h2 class="slider-title" id="bonds-title">The 5 statewide bonds on this year’s general election ballot</h2>
+                    <div class="update-byline slider-byline" data-author="annika-melwani"></div>
+                    <p>
+                        On Nov. 3, the final round of Rhode Island voters will cast their votes on five statewide ballot measures ranging from funding for affordable housing to watershed protection.
+                        <br><br>The Herald spoke with community members to understand the issues that will be on voters’ ballots this election.
+                    </p>
                     <div class="slides">
                         <article class="slide">
                             <h3><span class="slide-number">Question 1:</span> Higher Education Facilities Bond</h3>
                             <div class="slide-body">
-                                <!-- TODO: link for "allocate" -->
-                                <p>The first proposed measure on this year’s ballot aims to <a href="#">allocate</a> $275 million for “capital improvements to higher education facilities.”</p>
+                                <p>The first proposed measure on this year’s ballot aims to <a href="https://vote.sos.ri.gov/Forms/Elections/Guides/VoterRef26.pdf">allocate</a> $275 million for “capital improvements to higher education facilities.”</p>
                                 <p>The bond would allow for the construction of an Integrated Health Building at the University of Rhode Island and a Workforce Innovation Center at Community College of Rhode Island, National Education Association Rhode Island Communications Director Stephanie DeSilva Mandeville wrote in an email to The Herald. It would also fund renovations of Rhode Island College’s Adams Library.</p>
                                 <p>A “yes” vote on Question 1 “is an investment in Rhode Island’s future,” Mandeville added in an email to The Herald. “We need to rethink what our college and university campuses look like to meet the changing needs of students in Rhode Island,” Mandeville wrote. “These investments will provide the resources necessary to build the skilled workforce our state’s economy needs to thrive.”</p>
                             </div>
                         </article>
                         <article class="slide">
-                            <h3><span class="slide-number">Question 2:</span> Bond name</h3>
+                            <h3><span class="slide-number">Question 2:</span>Housing and Development Bond</h3>
                             <div class="slide-body">
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                <p>
+                                Question 2 asks voters if they want $120 million to go toward affordable housing projects in the state.
+                                <br><br>Ellijah McLean MA’24, director of government relations and policy at United Way Rhode Island, told The Herald that “the funding would support new housing construction, rehabilitation, existing properties, neighborhood revitalization and expand home ownership opportunities.”
+
+<br><br>He added that a minimum of $25 million would be used to build units intended for home ownership, and $10 million would be invested in public housing development. 
+
+<br><br>Rhode Island “is experiencing an affordability crisis,” McLean said. He added that housing is one of the “greatest needs” voiced by the people United Way serves.
+
+<br><br>A recent United Way R.I. report found that 43% of R.I. households struggle to afford basic necessities, The Herald previously reported. 
+
+<br><br>“The housing bond has historically been one of the most supported and approved ballot measure items,” McLean said. But he pointed out that a common misconception about this type of funding is that it only provides support for low-income communities.
+
+<br><br>“This supports all of our income demographics,” McLean said. “When people have homes, they can contribute to the economy.” 
+
+<br><br>He also noted that Question 2 had to first be approved by the R.I. General Assembly in order to appear on the ballot. 
+
+<br><br>All five ballot measures were first introduced to the state legislature in the fiscal year 2027 appropriations bill. The bill was approvedby the House on June 5 and by the Senate on June 9.
+
+<br><br>“Our legislators already voted for this,” McLean said. “It’s now Rhode Island’s turn to come out and support this investment.” 
+                                </p>
                             </div>
                         </article>
                         <article class="slide">
-                            <h3><span class="slide-number">Question 3:</span> Bond name</h3>
+                            <h3><span class="slide-number">Question 3:</span> Economic and Infrastructure Development Bond</h3>
                             <div class="slide-body">
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                The third measure that Rhode Islanders will be asked to consider proposes dividing $100 million between two economic priorities: Site Development and Growth Industry Infrastructure. 
+<br><br>Industries such as ocean technology, life sciences, defense and cybersecurity would receive funding from the bond, according to Marc Crisafulli, chair of the I-195 Redevelopment District Commission. 
+<br><br>Bob Cormier, CEO and president of Rhode Island Life Science Hub, wrote in an email to The Herald that “these dollars should return two to ten times their value to the state.” 
+<br><br>“If the funds come to life sciences, we’d build on our strengths and keep supporting the great science coming out of Brown, URI and our hospitals,” he added. 
+<br><br>“We’d put a special focus on helping entrepreneurs turn that science into Rhode Island companies and real healthcare solutions for patients,” Cormier wrote. “And we’d help the companies already here grow, so the jobs stay in Rhode Island.”
+<br><br>“It’s all about increasing private investment and creating jobs,” Crisafulli said. “Everything gets better with growth.” 
+<br><br>Crisafulli emphasized the importance of continued investment in the state’s infrastructure. 
+<br><br>“You start the investment, you make some progress,” he said. “You have to keep the investment going to really have that progress accelerate its pace.” 
+<br><br>Crisafulli said that some Rhode Islanders are concerned that the state may not have “the fiscal wherewithal” to keep up with such a “significant amount of incremental borrowing.”
+<br><br>But he said that “if you scale back investment, you can actually exacerbate the problems that you have instead of getting closer to a solution.” 
                             </div>
                         </article>
                         <article class="slide">
-                            <h3><span class="slide-number">Question 4:</span> Bond name</h3>
+                            <h3><span class="slide-number">Question 4:</span> istorical Center and Cultural Grants Bond</h3>
                             <div class="slide-body">
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
-                            </div>
+                                <p>
+<br><br>Question 4 proposes the allocation of $50 million to cultural and historical projects — an initiative publicly supported by R.I. Secretary of State Gregg Amore. 
+<br><br>The funding would go toward a 3,000 square foot exhibit featuring Rhode Island’s historic documents. The proposed Rhode Island State History Center is projected to cost around $43,165,076, according to an informational poster Amore shared with The Herald. 
+<br><br>“We know there’s an appetite for this history center,” Amore said in an interview with The Herald. “This has been one of our priorities since taking office.” 
+<br><br>While celebrating the country’s semiquincentennial this year, Amore said that he traveled throughout Rhode Island with the Department of State to display the state’s copies of the Declaration of Independence and was met with interest from thousands of Rhode Islanders.  
+<br><br>The center would offer “a fantastic opportunity to invest in the historic documents that tell Rhode Island’s story, but also in building another tourism destination in our state,” Amore added. 
+<br><br>An additional $5 million would “support historic preservation around the state,” he said, such as the Old State House on Benefit Street. 
+<br><br>“We are an outlier,” Amore said. “Across the country, states have history centers (and) archives that are available to the citizens of their state, but also available for tourists.”                             </div>
+                                </p>
                         </article>
                         <article class="slide">
-                            <h3><span class="slide-number">Question 5:</span> Bond name</h3>
+                            <h3><span class="slide-number">Question 5:</span> Environment and Watershed Protection and Development Bond </h3>
                             <div class="slide-body">
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
-                            </div>
-                        </article>
-                        <article class="slide">
-                            <h3><span class="slide-number">Question 6:</span> Bond name</h3>
-                            <div class="slide-body">
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
-                            </div>
-                        </article>
-                        <article class="slide">
-                            <h3><span class="slide-number">Question 7:</span> Bond name</h3>
-                            <div class="slide-body">
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                <p>
+                                    The final ballot measure asks voters to authorize $55 million to finance environmental preservation and water infrastructure projects.
+<br><br>The bond — commonly referred to as the Green Bond — “invests in climate resilience, recreation, clean water, open space and our green spaces,” said Kate McCarthy, community organizer at Save the Bay. 
+<br><br>While these environmental assets “have all helped shape Rhode Island’s culture, they’re also vital to our economy,” McCarthy said. 
+<br><br>This measure differs from past state legislation relating to environmental preservation because “the green bond is funding infrastructure projects that will reduce vulnerability to climate impacts specifically,” McCarthy added. 
+<br><br>She emphasized the urgency of “addressing the impacts of climate change” in Rhode Island. “It only becomes more expensive and harder the longer we wait,” she said.
+                                </p>
                             </div>
                         </article>
                     </div>
                 </section>
 
                 <section class="slider" aria-labelledby="questions-title">
-                    <h2 class="slider-title" id="questions-title">Ballot questions</h2>
+                    <h2 class="slider-title" id="questions-title">The questions on the ballot</h2>
+                    <!-- TODO: author id from AUTHORS in script.js -->
+                    <div class="update-byline slider-byline" data-author=""></div>
                     <div class="slides">
                         <article class="slide">
-                            <h3><span class="slide-number">Question 1:</span> Question name</h3>
+                            <h3><span class="slide-number">Question 6</span></h3>
                             <div class="slide-body">
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                <p>
+                                    A “yes” on this measure would have Providence borrow $25 million — for an ultimate cost of about $40 million — in order to fund affordable multi-family housing units. The combined cost of rent, mortgage payments and utilities for these units would not surpass 30% of the household’s monthly income. If the measure passes, construction on the affordable housing units is expected to begin by July 2027 and end by July 2030, according to the language on the ballot.
+<br><br>Providence first took out an affordable housing bond in 2021 for $24.75 million, which has funded 616 units of affordable housing. Until 2024, residents could make no more than 120% the area median income to qualify for affordable housing; the City has since lowered that threshold to 80% for rental units. Housing advocates and politicians including Mayor Brett Smiley, Lieutenant Governor Sabrina Matos and Providence City Council President Rachel Miller have endorsed the initiative. 
+
+                                </p>
                             </div>
                         </article>
                         <article class="slide">
-                            <h3><span class="slide-number">Question 2:</span> Question name</h3>
+                            <h3><span class="slide-number">Question 7</span></h3>
                             <div class="slide-body">
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
-                            </div>
-                        </article>
-                        <article class="slide">
-                            <h3><span class="slide-number">Question 3:</span> Question name</h3>
-                            <div class="slide-body">
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
-                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                This measure would require the City to divest municipal funds from countries found to have committed severe human rights violations and from corporations that enabled those violations. The ordinance technically does not mention any country by name, but The Providence for Palestine coalition — which led the campaign to get Question 7 on the ballot and helped collect over 10,000 signatures to do so — has described Israel as its priority. While a handful of other cities have passed similar measures, Providence would become the largest city to divest and the first to pass such a measure through a direct popular vote. 
+<br><br>Critics include incumbent Mayor Brett Smiley, Republican nominee for mayor David Talan and the Jewish Alliance of Greater Rhode Island. Many argue that a “yes” vote would raise taxes in order to make up the difference in the already-struggling pension fund. They also claim this would be illegal: the City’s charter allows citizens to get a question on the ballot if they collect enough signatures, but these questions may not cost taxpayers additional money. Smiley has argued that Question 7 would therefore be a violation of the City’s charter and if it passes will likely face costly legal challenges.
+<br><br>Supporters include Democratic nominee for mayor David Morales MPA’19, Reclaim Rhode Island and the Rhode Island Democratic Socialists of America. They argue that a “yes” vote will send an important message as to how voters feel about the Israel-Palestine conflict and pressure the government to take action. Morales has also emphasized that divesting these funds would not simply pull money out of the pension fund, but would allow for careful reinvestment elsewhere. Supporters have also compared this ordinance to Providence’s 2006 divestment from companies that conducted business in Sudan after the genocide in Darfur and its 2013 divestment from fossil fuels.
+
                             </div>
                         </article>
                     </div>
                 </section>
             </div>
         </main>
-
-        <footer>
-            <a href="https://www.browndailyherald.com" target="_blank">The Brown Daily Herald</a>
-        </footer>
     </body>
 </html>

@@ -34,24 +34,6 @@
                 <p class="breaking-text" id="breaking-text"></p>
                 <span class="breaking-more">see more &rarr;</span>
             </a>
-            <div class="menu">
-                <button class="menu-button" id="menu-button" aria-label="Menu"
-                    aria-expanded="false" aria-controls="menu-list">
-                    <svg width="6" height="24" viewBox="0 0 6 24" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="currentColor" />
-                        <circle cx="3" cy="12" r="3" fill="currentColor" />
-                        <circle cx="3" cy="21" r="3" fill="currentColor" />
-                    </svg>
-                </button>
-                <nav class="menu-list" id="menu-list" hidden>
-                    <a href="index.html">Live Updates</a>
-                    <a href="ballot.html">The Ballot</a>
-                    <a href="polling-locations.html">Polling Locations</a>
-                    <a href="previous-coverage.html">Previous Coverage</a>
-                    <hr>
-                    <a href="https://www.browndailyherald.com" target="_blank">The Brown Daily Herald</a>
-                </nav>
-            </div>
         </header>
 
         <div class="hero">
@@ -61,16 +43,9 @@
             <h1>Election Day</h1>
             <p class="hero-dek">Live updates from The Herald on election day in Providence</p>
             <div class="byline">
-                <p>Reporting by
-                    <a href="https://www.browndailyherald.com/staff/michelle-bi" target="_blank">Michelle Bi</a>
-                    ,
-                    <a href="https://www.browndailyherald.com/staff/talia-katz" target="_blank">Talia Katz</a>
-                    ,
-                    <a href="https://www.browndailyherald.com/staff/nate-barkow" target="_blank">Nate Barkow</a>
-                    &amp;
-                    <a href="https://www.browndailyherald.com/staff/annika-melwani" target="_blank">Annika Melwani</a>
-                </p>
+                <p data-authors="michelle-bi talia-katz nate-barkow annika-melwani">Reporting by</p>
             </div>
+            <p class="hero-credit">Pavani Durbhakula / Herald</p>
         </div>
 
         <nav class="tabs" aria-label="Election coverage sections">
@@ -99,7 +74,10 @@
                 Live updates, newest first. Each update is one <article class="update">.
                 The time in .update-marker is shown beside the dot and copied into the
                 card and the breaking news bar, so it only needs to be written once.
-                Photos: one to three <figure>s in .update-photos. Add "side" to
+                Author: data-author on .update-byline, with an id from AUTHORS in
+                script.js (e.g. data-author="talia-katz"); the photo, name and link
+                fill in from there. Several ids, space-separated, for a shared update.
+                Photos: one to three <figure>s in .update-photos, each with a <figcaption>. Add "side" to
                 .update-card to put the photo on the left and the text on the right.
                 To file an update from a polling location, add data-location with one
                 of the ids in LOCATIONS in script.js (e.g. data-location="hope-high").
@@ -114,19 +92,13 @@
                         </div>
                     </div>
                     <div class="update-card">
-                        <div class="update-byline">
-                            <span class="avatar"></span>
-                            <div>
-                                <p class="author">Author name</p>
-                                <p class="update-time"></p>
-                            </div>
-                        </div>
+                        <div class="update-byline" data-author="michelle-bi"></div>
                         <h2 class="update-headline">Update headline Update headline Update headline Update headline</h2>
                         <div class="update-content">
                             <div class="update-photos">
-                                <figure><div class="photo-placeholder"></div></figure>
-                                <figure><div class="photo-placeholder"></div></figure>
-                                <figure><div class="photo-placeholder"></div></figure>
+                                <figure><div class="photo-placeholder"></div><figcaption>Photo caption</figcaption></figure>
+                                <figure><div class="photo-placeholder"></div><figcaption>Photo caption</figcaption></figure>
+                                <figure><div class="photo-placeholder"></div><figcaption>Photo caption</figcaption></figure>
                             </div>
                             <div class="update-body">
                                 <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
@@ -143,17 +115,11 @@
                         </div>
                     </div>
                     <div class="update-card side">
-                        <div class="update-byline">
-                            <span class="avatar"></span>
-                            <div>
-                                <p class="author">Author name</p>
-                                <p class="update-time"></p>
-                            </div>
-                        </div>
+                        <div class="update-byline" data-author="talia-katz"></div>
                         <h2 class="update-headline">Update headline Update headline Update headline Update headline</h2>
                         <div class="update-content">
                             <div class="update-photos">
-                                <figure><div class="photo-placeholder"></div></figure>
+                                <figure><div class="photo-placeholder"></div><figcaption>Photo caption</figcaption></figure>
                             </div>
                             <div class="update-body">
                                 <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
@@ -171,13 +137,7 @@
                         </div>
                     </div>
                     <div class="update-card">
-                        <div class="update-byline">
-                            <span class="avatar"></span>
-                            <div>
-                                <p class="author">Author name</p>
-                                <p class="update-time"></p>
-                            </div>
-                        </div>
+                        <div class="update-byline" data-author="nate-barkow"></div>
                         <h2 class="update-headline">Update headline Update headline Update headline</h2>
                         <div class="update-content">
                             <div class="update-body">
@@ -188,9 +148,5 @@
                 </article>
             </div>
         </main>
-
-        <footer>
-            <a href="https://www.browndailyherald.com" target="_blank">The Brown Daily Herald</a>
-        </footer>
     </body>
 </html>

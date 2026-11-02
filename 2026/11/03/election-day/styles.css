@@ -6,7 +6,7 @@
     --hero: #7f7e7e;
     --panel: #f5f5f5;
     --rule: #1a1a1a;
-    --dot: #0b2a17;
+    --dot: #111;
     --placeholder: #d9d9d9;
     --serif: "freight-text-pro", "Georgia", "Times", serif;
     --sans: "Roboto", "Helvetica Neue", Arial, sans-serif;
@@ -22,6 +22,12 @@
     box-sizing: border-box;
 }
 
+/* anchor links and scrollIntoView stop below the pinned tab bar instead of
+   under it. --tabs-height is measured in script.js */
+html {
+    scroll-padding-top: var(--tabs-height, 0px);
+}
+
 body {
     margin: 0;
     background: var(--bg);
@@ -33,7 +39,7 @@ a {
     color: inherit;
 }
 
-/* ---------- top bar: countdown, breaking news, menu ---------- */
+/* ---------- top bar: countdown, breaking news ---------- */
 
 .topbar {
     display: flex;
@@ -74,6 +80,11 @@ a {
     display: none;
 }
 
+/* no divider beside the countdown until there's breaking news next to it */
+.countdown:has(+ .breaking[hidden]) {
+    border-right: 0;
+}
+
 .breaking p {
     margin: 0;
 }
@@ -93,68 +104,43 @@ a {
     overflow: hidden;
 }
 
+/* cross-fade between the three latest updates */
+.breaking-time,
+.breaking-text {
+    transition: opacity 0.3s ease;
+}
+
+.breaking.fading .breaking-time,
+.breaking.fading .breaking-text {
+    opacity: 0;
+}
+
 .breaking:hover .breaking-more {
     text-decoration: underline;
 }
 
-.menu {
-    position: relative;
-    margin-left: auto;
-}
-
-.menu-button {
-    display: grid;
-    place-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
-    background: none;
-    color: var(--ink);
-    cursor: pointer;
-}
-
-.menu-button:hover,
-.menu-button[aria-expanded="true"] {
-    background: rgba(0, 0, 0, 0.08);
-}
-
-.menu-list {
-    position: absolute;
-    top: calc(100% + 0.5rem);
-    right: 0;
-    z-index: 10;
-    min-width: 14rem;
-    padding: 0.5rem 0;
-    background: var(--bg);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
-
-.menu-list a {
-    display: block;
-    padding: 0.6rem 1.25rem;
-    font-family: var(--serif);
-    font-size: 1.05rem;
-    text-decoration: none;
-}
-
-.menu-list a:hover {
-    background: var(--panel);
-}
-
-.menu-list hr {
-    margin: 0.5rem 0;
-    border: 0;
-    border-top: 1px solid var(--placeholder);
-}
-
 /* ---------- hero and section tabs ---------- */
 
+/* photo of Faunce Arch by Pavani Durbhakula; darkened on the left so the
+   white title reads, with the "vote here" sign left clear on the right */
 .hero {
+    position: relative;
     padding: 7rem 4.5rem 3.5rem;
-    background: var(--hero);
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.5) 45%, rgba(0, 0, 0, 0.1) 75%),
+        url("assets/hero-faunce.jpg") 70% 45% / cover no-repeat,
+        var(--hero);
     color: #fff;
+}
+
+.hero-credit {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.6rem;
+    margin: 0;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .hero h1 {
@@ -200,7 +186,12 @@ a {
     text-underline-offset: 0.15em;
 }
 
+/* pinned to the top of the screen once you scroll down to it */
 .tabs {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--bg);
     display: flex;
     justify-content: space-between;
     gap: 2rem;
@@ -247,6 +238,27 @@ a {
 .tabs a:hover,
 .tabs a[aria-current="page"] {
     border-bottom-color: var(--rule);
+}
+
+/* with script.js running, the current tab's underline is a separate bar that
+   slides over from the tab you came from */
+.tabs.has-indicator a[aria-current="page"] {
+    border-bottom-color: transparent;
+}
+
+.tabs-indicator {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 0;
+    height: 3px;
+    background: var(--rule);
+    pointer-events: none;
+}
+
+.tabs-indicator.animated {
+    transition: transform 0.3s cubic-bezier(0.65, 0, 0.35, 1), width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 /* ---------- live updates page ---------- */
@@ -381,6 +393,17 @@ main {
     object-fit: cover;
 }
 
+/* shared updates: one photo per author, slightly overlapping */
+.avatars {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.avatars .avatar + .avatar {
+    margin-left: -0.75rem;
+    box-shadow: 0 0 0 2px var(--bg);
+}
+
 .update-byline p {
     margin: 0;
 }
@@ -425,6 +448,7 @@ main {
 .update-photos figcaption {
     margin-top: 0.35rem;
     font-size: 0.75rem;
+    letter-spacing: normal;
     color: var(--muted);
 }
 
@@ -546,7 +570,7 @@ main.wide {
 
 .polling-map {
     position: sticky;
-    top: 1rem;
+    top: calc(var(--tabs-height, 0px) + 1rem);
 }
 
 .polling-map svg {
@@ -556,8 +580,10 @@ main.wide {
     max-height: calc(100vh - 2rem);
 }
 
+/* black and white map: light gray ground, gray roads (their color is set
+   in assets/maps/*.svg), black markers and labels */
 .map-bg {
-    fill: #f6f4f1;
+    fill: #f3f3f3;
 }
 
 .map-marker {
@@ -585,7 +611,7 @@ main.wide {
     font-weight: 500;
     fill: var(--ink);
     paint-order: stroke;
-    stroke: #f6f4f1;
+    stroke: #f3f3f3;
     stroke-width: 0.9px;
 }
 
@@ -647,8 +673,58 @@ main.wide {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
 }
 
+.ballot-card + .ballot-card,
 .slider + .slider {
     margin-top: 3.5rem;
+}
+
+/* race for governor: portrait on the left, name and blurb on the right,
+   a rule between candidates */
+.candidate {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr);
+    gap: 2rem;
+    align-items: center;
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 1.75rem 0;
+}
+
+/* the first candidate sits right under the byline, without the gap that
+   separates candidates from each other */
+.candidate:first-of-type {
+    padding-top: 0;
+}
+
+.candidate + .candidate {
+    border-top: 1px solid var(--rule);
+}
+
+.candidate-portrait {
+    width: 100%;
+    height: auto;
+}
+
+.candidate h3 {
+    margin: 0 0 0.75rem;
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    line-height: 1.15;
+}
+
+.candidate p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.read-more {
+    display: table;
+    margin: 1rem 0 0 auto;
+    color: var(--ink);
+}
+
+.read-more:hover {
+    text-decoration-thickness: 2px;
 }
 
 .slider-title {
@@ -657,6 +733,27 @@ main.wide {
     font-size: 1.6rem;
     line-height: 1.25;
     text-align: center;
+}
+
+/* author under each section's title, on the left */
+.slider-byline {
+    justify-content: flex-start;
+    margin: -0.5rem 0 1.5rem;
+}
+
+/* in the governor's race, line up with the candidates' left edge */
+.race .slider-byline {
+    max-width: 44rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slider-byline .author a {
+    text-decoration: none;
+}
+
+.slider-byline .author a:hover {
+    text-decoration: underline;
 }
 
 .slides {
@@ -668,11 +765,15 @@ main.wide {
     touch-action: pan-y;
 }
 
+/* question name above its text */
 .slide {
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    gap: 2rem;
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+    /* short slides keep their text together instead of spreading out to
+       match the tallest one */
+    align-content: start;
 }
 
 .slide h3 {
@@ -791,23 +892,6 @@ main.wide {
     transform: translateY(-1.5px);
 }
 
-.slider-arrow {
-    width: 2.25rem;
-    height: 2.25rem;
-    margin-top: 1.5rem;
-    border: 1px solid var(--rule);
-    border-radius: 50%;
-    background: var(--bg);
-    color: var(--ink);
-    font-size: 1.1rem;
-    cursor: pointer;
-}
-
-.slider-arrow:disabled {
-    opacity: 0.3;
-    cursor: default;
-}
-
 .slider-expand {
     display: block;
     margin: 1.25rem auto 0;
@@ -823,6 +907,48 @@ main.wide {
 
 .slider-expand:hover {
     background: var(--panel);
+}
+
+/* ---------- previous coverage ---------- */
+
+/* photo on the left, headline and summary on the right */
+.story {
+    display: grid;
+    grid-template-columns: minmax(0, 16rem) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--placeholder);
+}
+
+.story-photo img,
+.story-photo .photo-placeholder {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    background: var(--placeholder);
+}
+
+.story h2 {
+    margin: 0 0 0.5rem;
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.story h2 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.story h2 a:hover {
+    text-decoration: underline;
+}
+
+.story p {
+    margin: 0;
+    line-height: 1.5;
 }
 
 /* ---------- section pages ---------- */
@@ -843,23 +969,6 @@ main.wide {
     line-height: 1.5;
 }
 
-/* ---------- footer ---------- */
-
-footer {
-    padding: 2rem 1rem;
-    border-top: 1px solid var(--placeholder);
-    font-family: var(--serif);
-    text-align: center;
-}
-
-footer a {
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
 /* ---------- mobile ---------- */
 
 @media (max-width: 900px) {
@@ -873,8 +982,13 @@ footer a:hover {
         font-size: 1.5rem;
     }
 
+    /* the text covers most of the photo on narrow screens, so darken it evenly */
     .hero {
         padding: 4rem 1.5rem 2rem;
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            url("assets/hero-faunce.jpg") 65% 45% / cover no-repeat,
+            var(--hero);
     }
 
     .tabs a {
@@ -968,18 +1082,28 @@ footer a:hover {
         padding: 0 1.25rem 1rem;
     }
 
-    /* question name above its text */
-    .slide {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        align-items: start;
-        /* short slides keep their text together instead of spreading out to
-           match the tallest one */
-        align-content: start;
-    }
-
     .slide h3 {
         font-size: 1.3rem;
+    }
+
+    .candidate {
+        grid-template-columns: 7rem minmax(0, 1fr);
+        gap: 1rem;
+        align-items: start;
+    }
+
+    .candidate h3 {
+        font-size: 1.4rem;
+    }
+
+    /* smaller photo beside the headline */
+    .story {
+        grid-template-columns: minmax(0, 7rem) minmax(0, 1fr);
+        gap: 1rem;
+    }
+
+    .story h2 {
+        font-size: 1.2rem;
     }
 
     /* filter buttons scroll sideways instead of stacking several rows deep */

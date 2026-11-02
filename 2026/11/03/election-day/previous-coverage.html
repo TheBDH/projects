@@ -34,24 +34,6 @@
                 <p class="breaking-text" id="breaking-text"></p>
                 <span class="breaking-more">see more &rarr;</span>
             </a>
-            <div class="menu">
-                <button class="menu-button" id="menu-button" aria-label="Menu"
-                    aria-expanded="false" aria-controls="menu-list">
-                    <svg width="6" height="24" viewBox="0 0 6 24" aria-hidden="true">
-                        <circle cx="3" cy="3" r="3" fill="currentColor" />
-                        <circle cx="3" cy="12" r="3" fill="currentColor" />
-                        <circle cx="3" cy="21" r="3" fill="currentColor" />
-                    </svg>
-                </button>
-                <nav class="menu-list" id="menu-list" hidden>
-                    <a href="index.html">Live Updates</a>
-                    <a href="ballot.html">The Ballot</a>
-                    <a href="polling-locations.html">Polling Locations</a>
-                    <a href="previous-coverage.html">Previous Coverage</a>
-                    <hr>
-                    <a href="https://www.browndailyherald.com" target="_blank">The Brown Daily Herald</a>
-                </nav>
-            </div>
         </header>
 
         <div class="hero">
@@ -61,16 +43,9 @@
             <h1>Election Day</h1>
             <p class="hero-dek">Live updates from The Herald on election day in Providence</p>
             <div class="byline">
-                <p>Reporting by
-                    <a href="https://www.browndailyherald.com/staff/michelle-bi" target="_blank">Michelle Bi</a>
-                    ,
-                    <a href="https://www.browndailyherald.com/staff/talia-katz" target="_blank">Talia Katz</a>
-                    ,
-                    <a href="https://www.browndailyherald.com/staff/nate-barkow" target="_blank">Nate Barkow</a>
-                    &amp;
-                    <a href="https://www.browndailyherald.com/staff/annika-melwani" target="_blank">Annika Melwani</a>
-                </p>
+                <p data-authors="michelle-bi talia-katz nate-barkow annika-melwani">Reporting by</p>
             </div>
+            <p class="hero-credit">Pavani Durbhakula / Herald</p>
         </div>
 
         <nav class="tabs" aria-label="Election coverage sections">
@@ -81,15 +56,34 @@
         </nav>
 
         <main>
-            <!-- TODO: replace with the Previous Coverage design -->
-            <section class="page-placeholder">
-                <h2>Previous Coverage</h2>
-                <p>The Herald’s earlier reporting on this election. Coming soon.</p>
-            </section>
-        </main>
+            <!--
+                Add a story by copying an <article class="story">. Swap the
+                .photo-placeholder for <img src="..." alt="..."> once there's a photo.
+            -->
 
-        <footer>
-            <a href="https://www.browndailyherald.com" target="_blank">The Brown Daily Herald</a>
-        </footer>
+            <div class="stories" id="stories">
+                <article class="story">
+                    <a class="story-photo" href="#" tabindex="-1" aria-hidden="true"><div class="photo-placeholder"></div></a>
+                    <div class="story-text">
+                        <h2><a href="#">Story headline Story headline Story headline</a></h2>
+                        <p>Text text Text text Text text Text text Text text Text text Text text.</p>
+                    </div>
+                </article>
+                <article class="story">
+                    <a class="story-photo" href="#" tabindex="-1" aria-hidden="true"><div class="photo-placeholder"></div></a>
+                    <div class="story-text">
+                        <h2><a href="#">Story headline Story headline Story headline</a></h2>
+                        <p>Text text Text text Text text Text text Text text Text text Text text.</p>
+                    </div>
+                </article>
+                <article class="story">
+                    <a class="story-photo" href="#" tabindex="-1" aria-hidden="true"><div class="photo-placeholder"></div></a>
+                    <div class="story-text">
+                        <h2><a href="#">Story headline Story headline Story headline</a></h2>
+                        <p>Text text Text text Text text Text text Text text Text text Text text.</p>
+                    </div>
+                </article>
+            </div>
+        </main>
     </body>
 </html>
