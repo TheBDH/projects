@@ -1,0 +1,1005 @@
+:root {
+    --bg: #fff;
+    --ink: #111;
+    --muted: #555;
+    --topbar: #f2f2f4;
+    --hero: #7f7e7e;
+    --panel: #f5f5f5;
+    --rule: #1a1a1a;
+    --dot: #0b2a17;
+    --placeholder: #d9d9d9;
+    --serif: "freight-text-pro", "Georgia", "Times", serif;
+    --sans: "Roboto", "Helvetica Neue", Arial, sans-serif;
+    --container: min(880px, calc(100% - 32px));
+    /* timeline columns: time label, then the rail the line runs down */
+    --time-col: 7.5rem;
+    --rail-col: 3rem;
+    --line-w: 2px;
+    --dot-size: 1.5rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+}
+
+a {
+    color: inherit;
+}
+
+/* ---------- top bar: countdown, breaking news, menu ---------- */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 1.5rem 2rem 1.5rem 3.25rem;
+    background: var(--topbar);
+}
+
+.countdown {
+    flex-shrink: 0;
+    padding-right: 2.5rem;
+    border-right: var(--line-w) solid var(--rule);
+    font-family: var(--serif);
+    font-size: 2rem;
+    line-height: 1.15;
+}
+
+.countdown p {
+    margin: 0;
+}
+
+.countdown-time {
+    font-weight: 700;
+    /* fixed-width digits so the line doesn't jitter as seconds tick */
+    font-variant-numeric: tabular-nums;
+}
+
+.breaking {
+    flex: 1;
+    min-width: 0;
+    max-width: 30rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.breaking[hidden] {
+    display: none;
+}
+
+.breaking p {
+    margin: 0;
+}
+
+.breaking-time,
+.breaking-more {
+    font-family: var(--serif);
+    font-size: 0.9rem;
+}
+
+.breaking-text {
+    margin: 0.35rem 0 0.5rem !important;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.breaking:hover .breaking-more {
+    text-decoration: underline;
+}
+
+.menu {
+    position: relative;
+    margin-left: auto;
+}
+
+.menu-button {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    color: var(--ink);
+    cursor: pointer;
+}
+
+.menu-button:hover,
+.menu-button[aria-expanded="true"] {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.menu-list {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    z-index: 10;
+    min-width: 14rem;
+    padding: 0.5rem 0;
+    background: var(--bg);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.menu-list a {
+    display: block;
+    padding: 0.6rem 1.25rem;
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    text-decoration: none;
+}
+
+.menu-list a:hover {
+    background: var(--panel);
+}
+
+.menu-list hr {
+    margin: 0.5rem 0;
+    border: 0;
+    border-top: 1px solid var(--placeholder);
+}
+
+/* ---------- hero and section tabs ---------- */
+
+.hero {
+    padding: 7rem 4.5rem 3.5rem;
+    background: var(--hero);
+    color: #fff;
+}
+
+.hero h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* background will become an image; --hero is the placeholder until then */
+.hero-logo {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.hero-logo img {
+    display: block;
+    width: min(16rem, 60vw);
+    height: auto;
+}
+
+.hero-dek {
+    max-width: 36rem;
+    margin: 1rem 0 0;
+    font-family: var(--serif);
+    font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+    line-height: 1.3;
+}
+
+.byline {
+    margin-top: 1.75rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.byline p {
+    margin: 0 0 0.5rem;
+}
+
+.byline a {
+    font-weight: 500;
+    text-underline-offset: 0.15em;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0 1.25rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.tabs a {
+    flex-shrink: 0;
+    padding: 0.8rem 0 0.7rem;
+    border-bottom: 3px solid transparent;
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Live Updates stays pinned at the left while the other tabs scroll under it */
+.tabs a:first-child {
+    position: sticky;
+    left: 1.25rem;
+    z-index: 1;
+    background: var(--bg);
+    /* covers the bar's left padding so scrolled tabs don't peek through */
+    box-shadow: -1.25rem 0 0 var(--bg);
+}
+
+/* soft fade so tabs slide out of view instead of butting into it */
+.tabs a:first-child::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    width: 1.5rem;
+    background: linear-gradient(to right, var(--bg), transparent);
+    pointer-events: none;
+}
+
+.tabs a:hover,
+.tabs a[aria-current="page"] {
+    border-bottom-color: var(--rule);
+}
+
+/* ---------- live updates page ---------- */
+
+main {
+    width: var(--container);
+    margin: 1.5rem auto 0;
+}
+
+.need-to-know {
+    padding: 1.5rem 1.75rem 2.5rem;
+    background: var(--panel);
+    font-size: 1.05rem;
+    line-height: 1.45;
+}
+
+.need-to-know h2 {
+    margin: 0 0 0.75rem;
+    font-family: var(--serif);
+    font-size: 1.5rem;
+}
+
+.need-to-know p {
+    max-width: 38rem;
+    margin: 0 0 1.25rem;
+}
+
+.need-to-know p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- timeline ---------- */
+
+/* the line down the rail draws itself as you scroll: the "pen" sits halfway
+   down the screen and --progress (0 to 1) is set from script.js. each update's
+   dot sticks at that same height, so it rides the tip of the line */
+.updates {
+    position: relative;
+    padding: 2rem 0 10rem;
+}
+
+.updates::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--time-col) + var(--rail-col) / 2 - var(--line-w) / 2);
+    width: var(--line-w);
+    background: var(--rule);
+    transform: scaleY(var(--progress, 1));
+    transform-origin: top;
+}
+
+.update {
+    display: grid;
+    grid-template-columns: var(--time-col) var(--rail-col) 1fr;
+    column-gap: 1.5rem;
+}
+
+.update + .update {
+    margin-top: 3rem;
+}
+
+/* filtered out on the polling locations page */
+.update[hidden] {
+    display: none;
+}
+
+.update-marker {
+    grid-column: 1 / 3;
+    padding-top: 5rem;
+}
+
+.marker-inner {
+    position: sticky;
+    top: calc(50vh - var(--dot-size) / 2);
+    display: grid;
+    grid-template-columns: var(--time-col) var(--rail-col);
+    align-items: center;
+}
+
+.update-marker time {
+    padding-right: 0.75rem;
+    font-size: 1.35rem;
+    font-weight: 500;
+    text-align: right;
+    white-space: nowrap;
+    color: var(--muted);
+    transition: color 0.4s ease;
+}
+
+.dot {
+    grid-column: 2;
+    justify-self: center;
+    position: relative;
+    z-index: 1;
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border: var(--line-w) solid var(--dot);
+    border-radius: 50%;
+    background: var(--bg);
+    transition: background-color 0.4s ease, transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.update.reached .update-marker time {
+    color: var(--ink);
+}
+
+.update.reached .dot {
+    background: var(--dot);
+    transform: scale(1.15);
+}
+
+.update-card {
+    padding: 1.5rem 1.25rem 2.5rem;
+    background: var(--bg);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+}
+
+.update-byline {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.avatar {
+    flex-shrink: 0;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    background: var(--placeholder);
+    object-fit: cover;
+}
+
+.update-byline p {
+    margin: 0;
+}
+
+.author {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.update-time {
+    font-size: 0.95rem;
+}
+
+.update-headline {
+    margin: 1.25rem 0 1rem;
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.update-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-bottom: 1.25rem;
+}
+
+.update-photos figure {
+    margin: 0;
+}
+
+.update-photos img,
+.photo-placeholder {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--placeholder);
+}
+
+.update-photos figcaption {
+    margin-top: 0.35rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+/* photos color in once the line reaches their update */
+.update-photos img {
+    filter: grayscale(100%);
+    transition: filter 1s ease;
+}
+
+.update.reached .update-photos img {
+    filter: grayscale(0%);
+}
+
+.update-body {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.update-body p {
+    margin: 0 0 1rem;
+}
+
+.update-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* side layout: photo on the left, text on the right */
+.update-card.side .update-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.update-card.side .update-photos {
+    grid-template-columns: 1fr;
+    margin-bottom: 0;
+}
+
+/* cards rise in as they enter the screen (only once script.js is running) */
+.animate .update-card {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate .update.in-view .update-card {
+    opacity: 1;
+    transform: none;
+}
+
+/* polling location tag on a card, links to that location's updates */
+.update-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.update-location::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--dot);
+}
+
+.update-location:hover {
+    text-decoration: underline;
+}
+
+.update-location + .update-headline {
+    margin-top: 0.4rem;
+}
+
+/* ---------- polling locations page ---------- */
+
+main.wide {
+    width: min(1200px, calc(100% - 32px));
+}
+
+.location-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.location-filter button {
+    padding: 0.45rem 0.9rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: var(--bg);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.location-filter button:hover {
+    background: var(--panel);
+}
+
+.location-filter button[aria-pressed="true"] {
+    background: var(--dot);
+    border-color: var(--dot);
+    color: #fff;
+}
+
+/* map on the left, the timeline's line running down its right edge */
+.polling-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+    align-items: start;
+}
+
+.polling-map {
+    position: sticky;
+    top: 1rem;
+}
+
+.polling-map svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 2rem);
+}
+
+.map-bg {
+    fill: #f6f4f1;
+}
+
+.map-marker {
+    cursor: pointer;
+    outline: none;
+}
+
+.marker-dot {
+    fill: var(--dot);
+    stroke: #fff;
+    stroke-width: 0.6;
+    transition: transform 0.3s ease;
+}
+
+.marker-halo {
+    fill: var(--dot);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.map-marker text {
+    font-family: var(--sans);
+    font-size: 3.4px;
+    font-weight: 500;
+    fill: var(--ink);
+    paint-order: stroke;
+    stroke: #f6f4f1;
+    stroke-width: 0.9px;
+}
+
+.map-marker:hover .marker-dot,
+.map-marker:focus-visible .marker-dot,
+.map-marker.selected .marker-dot {
+    transform: scale(1.3);
+}
+
+/* the update the timeline has reached glows on the map */
+.map-marker.current .marker-halo,
+.map-marker:focus-visible .marker-halo {
+    opacity: 0.2;
+    transform: none;
+}
+
+.map-marker.dimmed {
+    opacity: 0.35;
+}
+
+.map-marker.dimmed.current {
+    opacity: 1;
+}
+
+.updates.compact {
+    --time-col: 0px;
+    --rail-col: 2.5rem;
+    min-height: 60vh;
+    padding-top: 0;
+}
+
+.updates.compact .update-marker time {
+    display: none;
+}
+
+.updates.compact .update-marker {
+    padding-top: 3rem;
+}
+
+.updates.compact .update + .update {
+    margin-top: 2rem;
+}
+
+.updates.is-empty::before {
+    display: none;
+}
+
+.updates-empty {
+    margin: 0;
+    padding: 2rem 0 0 calc(var(--rail-col) + 1.5rem);
+    color: var(--muted);
+}
+
+/* ---------- ballot page ---------- */
+
+.ballot-card {
+    padding: 2rem 3rem 3rem;
+    background: var(--bg);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+}
+
+.slider + .slider {
+    margin-top: 3.5rem;
+}
+
+.slider-title {
+    margin: 0 0 1.5rem;
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.slides {
+    padding: 2.5rem 2rem 1rem;
+    background: var(--panel);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    /* horizontal swipes go to the slider, vertical ones still scroll the page */
+    touch-action: pan-y;
+}
+
+.slide {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.slide h3 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.slide-number {
+    display: block;
+    font-weight: 700;
+}
+
+.slide-body {
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.slide-body p {
+    margin: 0 0 1rem;
+}
+
+/* one slide at a time: every slide sits in the same grid cell, so the box is
+   as tall as the longest one and doesn't jump between tabs */
+.slider.ready:not(.expanded) .slides {
+    display: grid;
+}
+
+.slider.ready:not(.expanded) .slide {
+    grid-area: 1 / 1;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(2.5rem);
+}
+
+.slider.animated:not(.expanded) .slide {
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s 0.4s;
+}
+
+.slider.ready:not(.expanded) .slide.before {
+    transform: translateX(-2.5rem);
+}
+
+.slider.ready:not(.expanded) .slide.active {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+}
+
+.slider.animated:not(.expanded) .slide.active {
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s;
+}
+
+/* see all: slides stack, divided by the same rule as the tab bar */
+.slider.expanded .slide + .slide {
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+}
+
+.slider.expanded .slider-controls {
+    display: none;
+}
+
+/* tab bar: the rule along the bottom of the slide, split into one segment
+   per slide; the current one is drawn thick */
+.slider-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: -1rem;
+    padding: 0 2rem 1.25rem;
+    background: var(--panel);
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.15);
+}
+
+.slider-tabs {
+    flex: 1;
+    display: flex;
+    gap: 3px;
+}
+
+.slider-tab {
+    flex: 1;
+    padding: 1.5rem 0 0;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.slider-tab::after {
+    content: "";
+    display: block;
+    height: 1px;
+    margin-top: 0.4rem;
+    background: var(--rule);
+    transition: height 0.3s ease, transform 0.3s ease;
+}
+
+.slider-tab:hover {
+    color: var(--ink);
+}
+
+.slider-tab[aria-selected="true"] {
+    color: var(--ink);
+    font-weight: 700;
+}
+
+.slider-tab[aria-selected="true"]::after {
+    height: 4px;
+    transform: translateY(-1.5px);
+}
+
+.slider-arrow {
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-top: 1.5rem;
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.slider-arrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.slider-expand {
+    display: block;
+    margin: 1.25rem auto 0;
+    padding: 0.55rem 1.25rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: var(--bg);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.slider-expand:hover {
+    background: var(--panel);
+}
+
+/* ---------- section pages ---------- */
+
+.page-placeholder {
+    padding: 2rem 0 8rem;
+}
+
+.page-placeholder h2 {
+    margin: 0 0 0.75rem;
+    font-family: var(--serif);
+    font-size: 2rem;
+}
+
+.page-placeholder p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+/* ---------- footer ---------- */
+
+footer {
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--placeholder);
+    font-family: var(--serif);
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- mobile ---------- */
+
+@media (max-width: 900px) {
+    .topbar {
+        gap: 1.25rem;
+        padding: 1rem;
+    }
+
+    .countdown {
+        padding-right: 1.25rem;
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        padding: 4rem 1.5rem 2rem;
+    }
+
+    .tabs a {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --time-col: 0px;
+        --rail-col: 1.5rem;
+        --dot-size: 1.1rem;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+        padding-bottom: 0.75rem;
+    }
+
+    .countdown {
+        border-right: 0;
+        padding-right: 0;
+        font-size: 1.35rem;
+    }
+
+    /* breaking news drops to its own row under the countdown */
+    .breaking {
+        order: 3;
+        flex-basis: 100%;
+        max-width: none;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--placeholder);
+    }
+
+    .update {
+        column-gap: 0.75rem;
+    }
+
+    .update-marker {
+        padding-top: 1.75rem;
+    }
+
+    .update-marker time {
+        display: none;
+    }
+
+    .update-card {
+        padding: 1rem 1rem 1.5rem;
+    }
+
+    .update-photos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .update-photos figure:first-child:nth-last-child(odd) {
+        grid-column: 1 / -1;
+    }
+
+    .update-card.side .update-content {
+        grid-template-columns: 1fr;
+    }
+
+    /* map stacks above the timeline and scrolls away with the page */
+    .polling-layout {
+        grid-template-columns: 1fr;
+        row-gap: 1.5rem;
+    }
+
+    .polling-map {
+        position: static;
+    }
+
+    .polling-map svg {
+        max-height: 60vh;
+    }
+
+    .ballot-card {
+        padding: 1.5rem 1rem 2rem;
+    }
+
+    .slider-title {
+        font-size: 1.3rem;
+    }
+
+    .slides {
+        padding: 1.5rem 1.25rem 1rem;
+    }
+
+    .slider-controls {
+        gap: 0.5rem;
+        padding: 0 1.25rem 1rem;
+    }
+
+    /* question name above its text */
+    .slide {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        align-items: start;
+        /* short slides keep their text together instead of spreading out to
+           match the tallest one */
+        align-content: start;
+    }
+
+    .slide h3 {
+        font-size: 1.3rem;
+    }
+
+    /* filter buttons scroll sideways instead of stacking several rows deep */
+    .location-filter {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .location-filter button {
+        flex-shrink: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dot,
+    .update-marker time,
+    .update-photos img,
+    .slider .slide,
+    .slider-tab::after {
+        transition: none !important;
+    }
+}

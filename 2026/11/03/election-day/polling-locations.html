@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-321HPHTJEX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-321HPHTJEX');
+        </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Polling Locations | Election Coverage | The Brown Daily Herald</title>
+        <meta name="description" content="Where to vote in Providence on election day.">
+        <link rel="icon" href="images/icon.png" sizes="96x96">
+        <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="countdown" aria-live="polite">
+                <p class="countdown-time" id="countdown-time">&nbsp;</p>
+                <p class="countdown-label" id="countdown-label">until polls close</p>
+            </div>
+            <a class="breaking" id="breaking" href="index.html#live-updates" hidden>
+                <p class="breaking-time" id="breaking-time"></p>
+                <p class="breaking-text" id="breaking-text"></p>
+                <span class="breaking-more">see more &rarr;</span>
+            </a>
+            <div class="menu">
+                <button class="menu-button" id="menu-button" aria-label="Menu"
+                    aria-expanded="false" aria-controls="menu-list">
+                    <svg width="6" height="24" viewBox="0 0 6 24" aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="currentColor" />
+                        <circle cx="3" cy="12" r="3" fill="currentColor" />
+                        <circle cx="3" cy="21" r="3" fill="currentColor" />
+                    </svg>
+                </button>
+                <nav class="menu-list" id="menu-list" hidden>
+                    <a href="index.html">Live Updates</a>
+                    <a href="ballot.html">The Ballot</a>
+                    <a href="polling-locations.html">Polling Locations</a>
+                    <a href="previous-coverage.html">Previous Coverage</a>
+                    <hr>
+                    <a href="https://www.browndailyherald.com" target="_blank">The Brown Daily Herald</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="hero">
+            <a class="hero-logo" href="https://www.browndailyherald.com" target="_blank">
+                <img src="assets/logo-black.png" alt="The Brown Daily Herald">
+            </a>
+            <h1>Election Day</h1>
+            <p class="hero-dek">Live updates from The Herald on election day in Providence</p>
+            <div class="byline">
+                <p>Reporting by
+                    <a href="https://www.browndailyherald.com/staff/michelle-bi" target="_blank">Michelle Bi</a>
+                    ,
+                    <a href="https://www.browndailyherald.com/staff/talia-katz" target="_blank">Talia Katz</a>
+                    ,
+                    <a href="https://www.browndailyherald.com/staff/nate-barkow" target="_blank">Nate Barkow</a>
+                    &amp;
+                    <a href="https://www.browndailyherald.com/staff/annika-melwani" target="_blank">Annika Melwani</a>
+                </p>
+            </div>
+        </div>
+
+        <nav class="tabs" aria-label="Election coverage sections">
+            <a href="index.html">Live Updates</a>
+            <a href="ballot.html">The Ballot</a>
+            <a href="polling-locations.html" aria-current="page">Polling Locations</a>
+            <a href="previous-coverage.html">Previous Coverage</a>
+        </nav>
+
+        <main class="wide">
+            <!--
+                Updates here are pulled from index.html: any live update with a
+                data-location attribute shows up on this page. Locations (names,
+                addresses, map positions) are listed in LOCATIONS in script.js.
+            -->
+            <div class="location-filter" id="location-filter" role="group"
+                aria-label="Show updates from"></div>
+
+            <div class="polling-layout">
+                <div class="polling-map">
+                    <!-- road map from The Herald's 2022 property story, same
+                         projection (map units are its d3 Mercator coordinates);
+                         the southern strip extends it to reach Elmwood -->
+                    <svg id="polling-map" viewBox="188 84 118 178"
+                        role="img" aria-label="Map of Providence polling locations">
+                        <rect x="142.92" y="33.879" width="314.159" height="269.643" class="map-bg" />
+                        <image href="assets/maps/roads.svg" x="142.92" y="33.879"
+                            width="314.159" height="160.218" />
+                        <image href="assets/maps/roads-south.svg" x="142.92" y="194.097"
+                            width="314.159" height="109.425" />
+                        <g id="map-markers"></g>
+                    </svg>
+                </div>
+
+                <div class="updates compact" id="polling-updates">
+                    <p class="updates-empty" id="updates-empty" hidden>
+                        No updates from this polling location yet.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <a href="https://www.browndailyherald.com" target="_blank">The Brown Daily Herald</a>
+        </footer>
+    </body>
+</html>

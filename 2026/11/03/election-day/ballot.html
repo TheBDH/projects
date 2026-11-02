@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-321HPHTJEX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-321HPHTJEX');
+        </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Ballot | Election Coverage | The Brown Daily Herald</title>
+        <meta name="description" content="What’s on the ballot in Providence this election.">
+        <link rel="icon" href="images/icon.png" sizes="96x96">
+        <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="countdown" aria-live="polite">
+                <p class="countdown-time" id="countdown-time">&nbsp;</p>
+                <p class="countdown-label" id="countdown-label">until polls close</p>
+            </div>
+            <a class="breaking" id="breaking" href="index.html#live-updates" hidden>
+                <p class="breaking-time" id="breaking-time"></p>
+                <p class="breaking-text" id="breaking-text"></p>
+                <span class="breaking-more">see more &rarr;</span>
+            </a>
+            <div class="menu">
+                <button class="menu-button" id="menu-button" aria-label="Menu"
+                    aria-expanded="false" aria-controls="menu-list">
+                    <svg width="6" height="24" viewBox="0 0 6 24" aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="currentColor" />
+                        <circle cx="3" cy="12" r="3" fill="currentColor" />
+                        <circle cx="3" cy="21" r="3" fill="currentColor" />
+                    </svg>
+                </button>
+                <nav class="menu-list" id="menu-list" hidden>
+                    <a href="index.html">Live Updates</a>
+                    <a href="ballot.html">The Ballot</a>
+                    <a href="polling-locations.html">Polling Locations</a>
+                    <a href="previous-coverage.html">Previous Coverage</a>
+                    <hr>
+                    <a href="https://www.browndailyherald.com" target="_blank">The Brown Daily Herald</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="hero">
+            <a class="hero-logo" href="https://www.browndailyherald.com" target="_blank">
+                <img src="assets/logo-black.png" alt="The Brown Daily Herald">
+            </a>
+            <h1>Election Day</h1>
+            <p class="hero-dek">Live updates from The Herald on election day in Providence</p>
+            <div class="byline">
+                <p>Reporting by
+                    <a href="https://www.browndailyherald.com/staff/michelle-bi" target="_blank">Michelle Bi</a>
+                    ,
+                    <a href="https://www.browndailyherald.com/staff/talia-katz" target="_blank">Talia Katz</a>
+                    ,
+                    <a href="https://www.browndailyherald.com/staff/nate-barkow" target="_blank">Nate Barkow</a>
+                    &amp;
+                    <a href="https://www.browndailyherald.com/staff/annika-melwani" target="_blank">Annika Melwani</a>
+                </p>
+            </div>
+        </div>
+
+        <nav class="tabs" aria-label="Election coverage sections">
+            <a href="index.html">Live Updates</a>
+            <a href="ballot.html" aria-current="page">The Ballot</a>
+            <a href="polling-locations.html">Polling Locations</a>
+            <a href="previous-coverage.html">Previous Coverage</a>
+        </nav>
+
+        <main>
+            <!--
+                Each .slider becomes a set of tabs: one .slide per tab, shown one
+                at a time with arrows, swipe and a "see all" button. The tab
+                labels come from each slide's .slide-number, so add or remove
+                <article class="slide"> blocks freely.
+            -->
+            <div class="ballot-card">
+                <section class="slider" aria-labelledby="bonds-title">
+                    <h2 class="slider-title" id="bonds-title">The 5 statewide bonds on this year’s general election ballot</h2>
+                    <div class="slides">
+                        <article class="slide">
+                            <h3><span class="slide-number">Question 1:</span> Higher Education Facilities Bond</h3>
+                            <div class="slide-body">
+                                <!-- TODO: link for "allocate" -->
+                                <p>The first proposed measure on this year’s ballot aims to <a href="#">allocate</a> $275 million for “capital improvements to higher education facilities.”</p>
+                                <p>The bond would allow for the construction of an Integrated Health Building at the University of Rhode Island and a Workforce Innovation Center at Community College of Rhode Island, National Education Association Rhode Island Communications Director Stephanie DeSilva Mandeville wrote in an email to The Herald. It would also fund renovations of Rhode Island College’s Adams Library.</p>
+                                <p>A “yes” vote on Question 1 “is an investment in Rhode Island’s future,” Mandeville added in an email to The Herald. “We need to rethink what our college and university campuses look like to meet the changing needs of students in Rhode Island,” Mandeville wrote. “These investments will provide the resources necessary to build the skilled workforce our state’s economy needs to thrive.”</p>
+                            </div>
+                        </article>
+                        <article class="slide">
+                            <h3><span class="slide-number">Question 2:</span> Bond name</h3>
+                            <div class="slide-body">
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                            </div>
+                        </article>
+                        <article class="slide">
+                            <h3><span class="slide-number">Question 3:</span> Bond name</h3>
+                            <div class="slide-body">
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                            </div>
+                        </article>
+                        <article class="slide">
+                            <h3><span class="slide-number">Question 4:</span> Bond name</h3>
+                            <div class="slide-body">
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                            </div>
+                        </article>
+                        <article class="slide">
+                            <h3><span class="slide-number">Question 5:</span> Bond name</h3>
+                            <div class="slide-body">
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                            </div>
+                        </article>
+                        <article class="slide">
+                            <h3><span class="slide-number">Question 6:</span> Bond name</h3>
+                            <div class="slide-body">
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                            </div>
+                        </article>
+                        <article class="slide">
+                            <h3><span class="slide-number">Question 7:</span> Bond name</h3>
+                            <div class="slide-body">
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="slider" aria-labelledby="questions-title">
+                    <h2 class="slider-title" id="questions-title">Ballot questions</h2>
+                    <div class="slides">
+                        <article class="slide">
+                            <h3><span class="slide-number">Question 1:</span> Question name</h3>
+                            <div class="slide-body">
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                            </div>
+                        </article>
+                        <article class="slide">
+                            <h3><span class="slide-number">Question 2:</span> Question name</h3>
+                            <div class="slide-body">
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                            </div>
+                        </article>
+                        <article class="slide">
+                            <h3><span class="slide-number">Question 3:</span> Question name</h3>
+                            <div class="slide-body">
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <a href="https://www.browndailyherald.com" target="_blank">The Brown Daily Herald</a>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-321HPHTJEX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-321HPHTJEX');
+        </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Election Day</title>
+        <meta name="description" content="Live updates from The Herald on election day in Providence.">
+        <link rel="icon" href="images/icon.png" sizes="96x96">
+        <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="countdown" aria-live="polite">
+                <p class="countdown-time" id="countdown-time">&nbsp;</p>
+                <p class="countdown-label" id="countdown-label">until polls close</p>
+            </div>
+            <a class="breaking" id="breaking" href="index.html#live-updates" hidden>
+                <p class="breaking-time" id="breaking-time"></p>
+                <p class="breaking-text" id="breaking-text"></p>
+                <span class="breaking-more">see more &rarr;</span>
+            </a>
+            <div class="menu">
+                <button class="menu-button" id="menu-button" aria-label="Menu"
+                    aria-expanded="false" aria-controls="menu-list">
+                    <svg width="6" height="24" viewBox="0 0 6 24" aria-hidden="true">
+                        <circle cx="3" cy="3" r="3" fill="currentColor" />
+                        <circle cx="3" cy="12" r="3" fill="currentColor" />
+                        <circle cx="3" cy="21" r="3" fill="currentColor" />
+                    </svg>
+                </button>
+                <nav class="menu-list" id="menu-list" hidden>
+                    <a href="index.html">Live Updates</a>
+                    <a href="ballot.html">The Ballot</a>
+                    <a href="polling-locations.html">Polling Locations</a>
+                    <a href="previous-coverage.html">Previous Coverage</a>
+                    <hr>
+                    <a href="https://www.browndailyherald.com" target="_blank">The Brown Daily Herald</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="hero">
+            <a class="hero-logo" href="https://www.browndailyherald.com" target="_blank">
+                <img src="assets/logo-black.png" alt="The Brown Daily Herald">
+            </a>
+            <h1>Election Day</h1>
+            <p class="hero-dek">Live updates from The Herald on election day in Providence</p>
+            <div class="byline">
+                <p>Reporting by
+                    <a href="https://www.browndailyherald.com/staff/michelle-bi" target="_blank">Michelle Bi</a>
+                    ,
+                    <a href="https://www.browndailyherald.com/staff/talia-katz" target="_blank">Talia Katz</a>
+                    ,
+                    <a href="https://www.browndailyherald.com/staff/nate-barkow" target="_blank">Nate Barkow</a>
+                    &amp;
+                    <a href="https://www.browndailyherald.com/staff/annika-melwani" target="_blank">Annika Melwani</a>
+                </p>
+            </div>
+        </div>
+
+        <nav class="tabs" aria-label="Election coverage sections">
+            <a href="index.html" aria-current="page">Live Updates</a>
+            <a href="ballot.html">The Ballot</a>
+            <a href="polling-locations.html">Polling Locations</a>
+            <a href="previous-coverage.html">Previous Coverage</a>
+        </nav>
+
+        <main>
+            <section class="need-to-know">
+                <h2>Here’s what you need to know</h2>
+                <p>
+                    The Herald is talking to voters, poll workers and members of
+                    the community on election day to see how Providence is
+                    casting their vote. Follow The Herald’s live updates below.
+                </p>
+                <p>
+                    Read more about the <a href="ballot.html">ballot</a>,
+                    <a href="polling-locations.html">polling locations</a> and
+                    <a href="previous-coverage.html">previous Herald coverage</a>.
+                </p>
+            </section>
+
+            <!--
+                Live updates, newest first. Each update is one <article class="update">.
+                The time in .update-marker is shown beside the dot and copied into the
+                card and the breaking news bar, so it only needs to be written once.
+                Photos: one to three <figure>s in .update-photos. Add "side" to
+                .update-card to put the photo on the left and the text on the right.
+                To file an update from a polling location, add data-location with one
+                of the ids in LOCATIONS in script.js (e.g. data-location="hope-high").
+                It gets a link to that location and shows up on polling-locations.html.
+            -->
+            <div class="updates" id="live-updates">
+                <article class="update" data-location="hope-high">
+                    <div class="update-marker">
+                        <div class="marker-inner">
+                            <time datetime="2026-11-03T10:30-05:00">10:30 AM</time>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-byline">
+                            <span class="avatar"></span>
+                            <div>
+                                <p class="author">Author name</p>
+                                <p class="update-time"></p>
+                            </div>
+                        </div>
+                        <h2 class="update-headline">Update headline Update headline Update headline Update headline</h2>
+                        <div class="update-content">
+                            <div class="update-photos">
+                                <figure><div class="photo-placeholder"></div></figure>
+                                <figure><div class="photo-placeholder"></div></figure>
+                                <figure><div class="photo-placeholder"></div></figure>
+                            </div>
+                            <div class="update-body">
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="update" data-location="elmwood">
+                    <div class="update-marker">
+                        <div class="marker-inner">
+                            <time datetime="2026-11-03T09:15-05:00">9:15 AM</time>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="update-card side">
+                        <div class="update-byline">
+                            <span class="avatar"></span>
+                            <div>
+                                <p class="author">Author name</p>
+                                <p class="update-time"></p>
+                            </div>
+                        </div>
+                        <h2 class="update-headline">Update headline Update headline Update headline Update headline</h2>
+                        <div class="update-content">
+                            <div class="update-photos">
+                                <figure><div class="photo-placeholder"></div></figure>
+                            </div>
+                            <div class="update-body">
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="update" data-location="city-hall">
+                    <div class="update-marker">
+                        <div class="marker-inner">
+                            <time datetime="2026-11-03T07:00-05:00">7:00 AM</time>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-byline">
+                            <span class="avatar"></span>
+                            <div>
+                                <p class="author">Author name</p>
+                                <p class="update-time"></p>
+                            </div>
+                        </div>
+                        <h2 class="update-headline">Update headline Update headline Update headline</h2>
+                        <div class="update-content">
+                            <div class="update-body">
+                                <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <footer>
+            <a href="https://www.browndailyherald.com" target="_blank">The Brown Daily Herald</a>
+        </footer>
+    </body>
+</html>
