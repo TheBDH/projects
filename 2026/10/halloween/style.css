@@ -57,7 +57,7 @@ a {
 }
 
 #pumpkin {
-  width: min(300px, 70vw);
+  width: min(420px, 85vw);
   margin-bottom: 2rem;
   overflow: visible;
 }
@@ -189,8 +189,7 @@ h4 {
 
 /* day label sits in the corner opposite the cobweb */
 .day {
-  font-family: "Playfair Display", serif;
-  font-style: italic;
+  font-family: "Georgia", serif;
   font-weight: 400;
   font-size: 2rem;
   margin: 0 0 2.5rem;
@@ -211,7 +210,6 @@ h4 {
   font-size: 0.9rem;
   line-height: 1.5;
   margin: 0;
-  max-width: 34rem;
 }
 
 .photos {
@@ -249,7 +247,20 @@ h4 {
   color: var(--ink);
   font-size: 3rem;
   font-weight: 400;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.03em;
+  border-radius: 0.4rem;
+  pointer-events: none;
+}
+
+.shot-time-bottom {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  padding: 0.3rem 0.65rem;
+  color: var(--ink);
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
   border-radius: 0.4rem;
   pointer-events: none;
 }
@@ -257,6 +268,12 @@ h4 {
 @media (max-width: 600px) {
   .shot-time {
     top: 0.4rem;
+    left: 0.4rem;
+    font-size: 0.85rem;
+  }
+
+  .shot-time-bottom {
+    bottom: 0.4rem;
     left: 0.4rem;
     font-size: 0.85rem;
   }

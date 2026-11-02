@@ -146,13 +146,14 @@ if (!reduceMotion) {
   window.addEventListener("load", requestDraw);
 }
 
-// glowing orb cursor, the same size on screen as the pumpkin's front dots
+// glowing orb cursor, a bit smaller on screen than the pumpkin's front dots
+const CURSOR_SCALE = 0.8;
 const cursor = document.getElementById("cursor");
 const pumpkinSvg = document.getElementById("pumpkin");
 
 function sizeCursor() {
   const scale = pumpkinSvg.getBoundingClientRect().width / PUMPKIN_VIEWBOX_W;
-  const size = 2 * (DOT_R + DOT_R_GROW) * scale;
+  const size = 2 * (DOT_R + DOT_R_GROW) * scale * CURSOR_SCALE;
   document.documentElement.style.setProperty("--cursor-size", `${size.toFixed(1)}px`);
 }
 
