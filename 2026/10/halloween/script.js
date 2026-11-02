@@ -117,7 +117,12 @@ function drawTimeline() {
     const d = pen - top;
     const run = i === 0 ? 0 : topRun; // first chapter has no top line
     const topP = run ? clamp01(d / run) : 1;
-    const sideP = clamp01((d - run) / (height - run));
+    // the last chapter's line runs to the very bottom of the page, which the
+    // pen (60% down the screen) never reaches, so it finishes drawing exactly
+    // when you hit the end of the scroll
+    const last = i === chapters.length - 1;
+    const sideLen = last ? height - run - (window.innerHeight - pen) : height - run;
+    const sideP = clamp01((d - run) / sideLen);
 
     chapter.style.setProperty("--top", topP.toFixed(4));
     chapter.style.setProperty("--side", sideP.toFixed(4));

@@ -104,7 +104,6 @@ h4 {
 .timeline {
   width: min(960px, calc(100% - 32px));
   margin: 2rem auto 0;
-  padding-bottom: 6rem;
 }
 
 .chapter {
