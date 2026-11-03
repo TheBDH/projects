@@ -208,7 +208,7 @@ const AUTHORS = {
   "annika-melwani": {
     name: "Annika Melwani",
     page: "https://www.browndailyherald.com/staff/annika-melwani",
-    photo: "images/authors/annika-melwani.jpg",
+    photo: "assets/AnnikaMelwani.jpg",
   },
   "rachel-wicker": {
     name: "Rachel Wicker",
