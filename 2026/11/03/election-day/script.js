@@ -558,7 +558,7 @@ if (pollingUpdates) {
 // ---------- ballot sliders ----------
 
 // each .slider shows one .slide at a time, with a tab per slide along the
-// bottom, swipe and arrow keys. "Expand" lays every slide out at once
+// top, swipe and arrow keys. "Expand" lays every slide out at once
 document.querySelectorAll(".slider").forEach((slider, sliderIndex) => {
   const slides = [...slider.querySelectorAll(".slide")];
   if (!slides.length) return;
@@ -590,13 +590,13 @@ document.querySelectorAll(".slider").forEach((slider, sliderIndex) => {
   });
 
   controls.append(tablist);
-  slidesBox.after(controls);
+  slidesBox.before(controls);
 
   const expand = document.createElement("button");
   expand.type = "button";
   expand.className = "slider-expand";
   expand.setAttribute("aria-expanded", "false");
-  controls.after(expand);
+  slidesBox.after(expand);
 
   let current = 0;
 

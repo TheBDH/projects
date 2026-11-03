@@ -417,6 +417,15 @@ main {
     font-weight: 700;
 }
 
+/* writer names link to their pages without an underline until hovered */
+.author a {
+    text-decoration: none;
+}
+
+.author a:hover {
+    text-decoration: underline;
+}
+
 .update-time {
     font-size: 0.95rem;
 }
@@ -719,7 +728,7 @@ main.wide {
 }
 
 /* bonds/questions: the two cards share their rows (title, byline, intro,
-   slides, tabs, expand button) through subgrid, so the first slide in
+   tabs, slides, expand button) through subgrid, so the first slide in
    each starts at the same height even though only bonds has an intro */
 .slider-pair {
     row-gap: 0;
@@ -736,8 +745,8 @@ main.wide {
 .slider-pair .slider-title { grid-row: 1; }
 .slider-pair .slider-byline { grid-row: 2; }
 .slider-pair .slider > p { grid-row: 3; margin-top: 0; }
-.slider-pair .slides { grid-row: 4; }
-.slider-pair .slider-controls { grid-row: 5; }
+.slider-pair .slider-controls { grid-row: 4; }
+.slider-pair .slides { grid-row: 5; }
 .slider-pair .slider-expand { grid-row: 6; }
 
 /* once one is expanded the rows no longer line up anyway; let each card
@@ -821,16 +830,8 @@ main.wide {
     margin-right: auto;
 }
 
-.slider-byline .author a {
-    text-decoration: none;
-}
-
-.slider-byline .author a:hover {
-    text-decoration: underline;
-}
-
 .slides {
-    padding: 2.5rem 2rem 1rem;
+    padding: 1.75rem 2rem 2rem;
     background: var(--panel);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     overflow: hidden;
@@ -913,16 +914,18 @@ main.wide {
     display: none;
 }
 
-/* tab bar: the rule along the bottom of the slide, split into one segment
-   per slide; the current one is drawn thick */
+/* tab bar: a rule along the top of the slide, above the question number,
+   split into one segment per slide; the current one is drawn thick.
+   It sits over the slides' shadow so the two read as one panel */
 .slider-controls {
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-top: -1rem;
-    padding: 0 2rem 1.25rem;
+    padding: 0.5rem 2rem 0;
     background: var(--panel);
-    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 -1px 2px -1px rgba(0, 0, 0, 0.15);
 }
 
 .slider-tabs {
@@ -1160,12 +1163,12 @@ main.wide {
     }
 
     .slides {
-        padding: 1.5rem 1.25rem 1rem;
+        padding: 1.25rem 1.25rem 1.5rem;
     }
 
     .slider-controls {
         gap: 0.5rem;
-        padding: 0 1.25rem 1rem;
+        padding: 0.25rem 1.25rem 0;
     }
 
     .slide h3 {
