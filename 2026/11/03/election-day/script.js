@@ -451,7 +451,8 @@ function addLocationTag(row) {
   tag.className = "update-location";
   tag.href = `polling-locations.html#${loc.id}`;
   tag.textContent = loc.short || loc.name;
-  row.querySelector(".update-headline").before(tag);
+  // updates without a headline get the tag just above their content
+  (row.querySelector(".update-headline") || row.querySelector(".update-content")).before(tag);
 }
 
 // ---------- timeline ----------
@@ -537,7 +538,7 @@ function initTimeline(container, { onReach } = {}) {
 const BREAKING = [
 { time: "8:13 AM", headline: "After months of campaigning, polls are now open across Rhode Island until 8 p.m. today." },
 { time: "8:39 AM", headline: "A few minutes before 7 a.m. on Election Day in Providence, Kristen Johnson — warden at the Hope High School polling location — and a team of poll workers prepared to begin the day." },
-  // { time: "7:00 AM", headline: "Update headline Update headline Update headline" },
+ { time: "10:34 AM", headline: "At Vartan Gregorian Elementary School, Kimberly Allen, the election moderator of Vartan Gregorian Precinct 2818, said that the precinct has already seen “amazing turnout,” with in-person voter turnout reaching almost 200 in the first two and a half hours." },
 ];
 
 // rotates through them every few seconds; pauses while hovered or focused
