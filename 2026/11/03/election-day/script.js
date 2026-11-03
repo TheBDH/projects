@@ -332,6 +332,11 @@ const AUTHORS = {
     page: "https://www.browndailyherald.com/by/bomi-okimoto",
     photo: "",
   },
+  "vanson-vu": {
+    name: "Vanson Vu",
+    page: "https://www.browndailyherald.com/by/vanson-vu",
+    photo: "",
+  },
   
 };
 
@@ -425,7 +430,7 @@ const LOCATIONS = [
   {
     id: "doorley",
     name: "Joseph A. Doorley Municipal Building / St. Elizabeth’s Place",
-    short: "Doorley Building",
+    short: "Doorley Building / St. Elizabeth’s Place",
     address: "444 Westminster St.",
     x: 220.05,
     y: 157.92,
