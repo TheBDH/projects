@@ -193,12 +193,12 @@ const AUTHORS = {
   "michelle-bi": {
     name: "Michelle Bi",
     page: "https://www.browndailyherald.com/staff/michelle-bi",
-    photo: "images/authors/michelle-bi.jpg",
+    photo: "assets/MichelleBi.png",
   },
   "talia-katz": {
     name: "Talia Katz",
     page: "https://www.browndailyherald.com/staff/talia-katz",
-    photo: "images/authors/talia-katz.jpg",
+    photo: "assets/TaliaKatz.jpg",
   },
   "nate-barkow": {
     name: "Nate Barkow",
@@ -210,6 +210,22 @@ const AUTHORS = {
     page: "https://www.browndailyherald.com/staff/annika-melwani",
     photo: "images/authors/annika-melwani.jpg",
   },
+  "rachel-wicker": {
+    name: "Rachel Wicker",
+    page: "https://www.browndailyherald.com/staff/rachel-wicker",
+    photo: "images/authors/annika-melwani.jpg",
+  },
+  "james-libresco": {
+    name: "James Libresco",
+    page: "https://www.browndailyherald.com/staff/james-libresco",
+    photo: "assets/JamesLibresco.png",
+  },
+  "selina-kao": {
+    name: "Selina Kao",
+    page: "https://www.browndailyherald.com/staff/selina-kao",
+    photo: "assets/SelinaKao.png",
+  },
+  
 };
 
 function authorsFor(ids) {
