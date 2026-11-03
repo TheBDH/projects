@@ -536,7 +536,7 @@ function initTimeline(container, { onReach } = {}) {
 // list empty the bar stays hidden
 const BREAKING = [
 { time: "8:13 AM", headline: "After months of campaigning, polls are now open across Rhode Island until 8 p.m. today." },
-  // { time: "9:15 AM", headline: "Update headline Update headline Update headline Update headline" },
+{ time: "8:39 AM", headline: "A few minutes before 7 a.m. on Election Day in Providence, Kristen Johnson — warden at the Hope High School polling location — and a team of poll workers prepared to begin the day." },
   // { time: "7:00 AM", headline: "Update headline Update headline Update headline" },
 ];
 
