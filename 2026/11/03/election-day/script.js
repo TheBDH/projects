@@ -225,6 +225,11 @@ const AUTHORS = {
     page: "https://www.browndailyherald.com/staff/selina-kao",
     photo: "assets/SelinaKao.png",
   },
+  "pavani-durbhakula": {
+    name: "Pavani Durbhakula",
+    page: "https://www.browndailyherald.com/staff/pavani-durbhakula",
+    photo: "assets/PavaniDurbhakula.png",
+  },
   
 };
 
