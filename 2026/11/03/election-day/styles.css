@@ -33,6 +33,9 @@ body {
     background: var(--bg);
     color: var(--ink);
     font-family: var(--sans);
+    /* 100vw counts the scrollbar on Windows, so the full-width card pairs
+       can overhang by a few px; clip (unlike hidden) keeps the sticky tabs working */
+    overflow-x: clip;
 }
 
 a {
@@ -193,7 +196,7 @@ a {
     z-index: 5;
     background: var(--bg);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 2rem;
     padding: 0 1.25rem;
     border-top: 1px solid var(--rule);
@@ -678,6 +681,76 @@ main.wide {
     margin-top: 3.5rem;
 }
 
+/* pairs of cards side by side: governor/mayor, bonds/questions */
+.card-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+    /* as wide as the tabs bar, inset by the bar's own 1.25rem padding */
+    width: calc(100vw - 2.5rem);
+    margin-left: calc(50% - 50vw + 1.25rem);
+}
+
+.card-pair + .card-pair {
+    margin-top: 3.5rem;
+}
+
+.card-pair .ballot-card + .ballot-card {
+    margin-top: 0;
+}
+
+/* half-width cards: tighter padding, smaller portraits */
+.card-pair .ballot-card {
+    padding: 2rem 1.5rem 2.5rem;
+}
+
+.card-pair .candidate {
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: 1.25rem;
+}
+
+.card-pair .candidate h3 {
+    font-size: 1.35rem;
+}
+
+.card-pair .candidate p {
+    font-size: 0.95rem;
+}
+
+/* bonds/questions: the two cards share their rows (title, byline, intro,
+   slides, tabs, expand button) through subgrid, so the first slide in
+   each starts at the same height even though only bonds has an intro */
+.slider-pair {
+    row-gap: 0;
+}
+
+.slider-pair > .ballot-card,
+.slider-pair .slider {
+    display: grid;
+    grid-row: span 6;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+}
+
+.slider-pair .slider-title { grid-row: 1; }
+.slider-pair .slider-byline { grid-row: 2; }
+.slider-pair .slider > p { grid-row: 3; margin-top: 0; }
+.slider-pair .slides { grid-row: 4; }
+.slider-pair .slider-controls { grid-row: 5; }
+.slider-pair .slider-expand { grid-row: 6; }
+
+/* once one is expanded the rows no longer line up anyway; let each card
+   run to its own height instead of stretching the other one */
+.slider-pair:has(.slider.expanded) {
+    align-items: start;
+}
+
+.slider-pair:has(.slider.expanded) > .ballot-card,
+.slider-pair:has(.slider.expanded) .slider {
+    display: block;
+}
+
 /* race for governor: portrait on the left, name and blurb on the right,
    a rule between candidates */
 .candidate {
@@ -997,6 +1070,19 @@ main.wide {
 }
 
 @media (max-width: 640px) {
+    .card-pair {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+    }
+
+    .card-pair .ballot-card {
+        padding: 1.5rem 1rem 2rem;
+    }
+
+    .slider-pair > .ballot-card + .ballot-card {
+        margin-top: 1.5rem;
+    }
+
     :root {
         --time-col: 0px;
         --rail-col: 1.5rem;

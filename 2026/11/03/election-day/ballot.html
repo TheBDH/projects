@@ -66,6 +66,7 @@
                 One .candidate per person: portrait, name, a short blurb and a
                 link to the governor's race on previous-coverage.html.
             -->
+            <div class="card-pair">
             <section class="ballot-card race" aria-labelledby="governor-title">
                 <h2 class="slider-title" id="governor-title">The race for governor</h2>
                 <!-- TODO: author id from AUTHORS in script.js -->
@@ -95,7 +96,30 @@
                     </div>
                 </article>
             </section>
+            <section class="ballot-card race" aria-labelledby="mayor-title">
+                <h2 class="slider-title" id="mayor-title">The race for mayor</h2>
+                <!-- TODO: author id from AUTHORS in script.js -->
+                <div class="update-byline slider-byline" data-author=""></div>
+                <article class="candidate">
+                    <img class="candidate-portrait" src="assets/DaveTalan.png" alt="Illustration of Dave Talan">
+                    <div class="candidate-text">
+                        <h3>Dave Talan</h3>
+                        <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                        <a class="read-more" href="previous-coverage.html">Read more &rarr;</a>
+                    </div>
+                </article>
+                <article class="candidate">
+                    <img class="candidate-portrait" src="assets/DavidMorales.png" alt="Illustration of David Morales">
+                    <div class="candidate-text">
+                        <h3>David Morales</h3>
+                        <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                        <a class="read-more" href="previous-coverage.html">Read more &rarr;</a>
+                    </div>
+                </article>
+            </section>
+            </div>
 
+            <div class="card-pair slider-pair">
             <div class="ballot-card">
                 <section class="slider" aria-labelledby="bonds-title">
                     <h2 class="slider-title" id="bonds-title">The 5 statewide bonds on this year’s general election ballot</h2>
@@ -180,7 +204,9 @@
                         </article>
                     </div>
                 </section>
+            </div>
 
+            <div class="ballot-card">
                 <section class="slider" aria-labelledby="questions-title">
                     <h2 class="slider-title" id="questions-title">The questions on the ballot</h2>
                     <!-- TODO: author id from AUTHORS in script.js -->
@@ -207,6 +233,7 @@
                         </article>
                     </div>
                 </section>
+            </div>
             </div>
         </main>
     </body>
