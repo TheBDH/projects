@@ -45,6 +45,48 @@ const TABS_TOP_KEY = "tabs-top";
 const TABS_FROM_KEY = "tabs-from";
 
 if (tabs) {
+  // phones: the tabs fold into a dropdown under a button naming this page.
+  // The links go in a wrapper that's invisible to the layout on wider screens
+  // (display: contents), so the desktop bar is unchanged
+  const menu = document.createElement("div");
+  menu.className = "tabs-menu";
+  menu.id = "tabs-menu";
+  menu.append(...tabs.querySelectorAll(":scope > a"));
+
+  const toggle = document.createElement("button");
+  toggle.type = "button";
+  toggle.className = "tabs-toggle";
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-controls", menu.id);
+  const label = document.createElement("span");
+  // names the page you're on; falls back to the first tab (the home page)
+  label.textContent = (menu.querySelector('[aria-current="page"]') || menu.querySelector("a"))?.textContent.trim() ?? "";
+  const chevron = document.createElement("span");
+  chevron.className = "tabs-chevron";
+  chevron.setAttribute("aria-hidden", "true");
+  toggle.append(label, chevron);
+
+  tabs.append(toggle, menu);
+  tabs.classList.add("has-toggle");
+
+  const setOpen = (open) => {
+    tabs.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+  };
+  toggle.addEventListener("click", () => setOpen(!tabs.classList.contains("open")));
+  // close on a tap outside the menu, or Escape
+  document.addEventListener("click", (e) => {
+    if (!tabs.contains(e.target)) setOpen(false);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && tabs.classList.contains("open")) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+  // closed again when coming back to this page with the back button
+  window.addEventListener("pageshow", () => setOpen(false));
+
   // the bar is pinned to the top on scroll; share its height with the CSS so
   // anchors and the sticky map sit below it
   const setTabsHeight = () =>

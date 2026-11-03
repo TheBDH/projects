@@ -42,16 +42,17 @@
             </a>
             <h1>Election Day</h1>
             <p class="hero-dek">Live updates from The Herald on election day in Providence</p>
-        <div class="byline">
-                <p data-authors="michelle-bi talia-katz nate-barkow annika-melwani">Reporting by</p>
-                <p data-authors="selina-kao pavani-durbhakula">Photos by</p>
+            <div class="byline">
+                <p data-authors="michelle-bi talia-katz nate-barkow annika-melwani rachel-wicker james-libresco miriam-davison amber-marcus-blank">Reporting by</p>
+                <p data-authors="selina-kao pavani-durbhakula kaia-yalamanchili anthony-cianflone jake-parker razanne-shoukfeh">Photos by</p>
                 <p data-authors="nikos-koss selim-kutlu">Web Design by</p>
             </div>
             <p class="hero-credit">Pavani Durbhakula / Herald</p>
         </div>
 
         <nav class="tabs" aria-label="Election coverage sections">
-            <a href="index.html">Live Updates</a>
+            <!-- Live Updates hidden until the first update is posted; ballot.html is home for now
+            <a href="index.html">Live Updates</a> -->
             <a href="ballot.html" aria-current="page">The Ballot</a>
             <a href="polling-locations.html">Polling Locations</a>
             <a href="previous-coverage.html">Previous Coverage</a>
@@ -71,13 +72,15 @@
             <div class="card-pair">
             <section class="ballot-card race" aria-labelledby="governor-title">
                 <h2 class="slider-title" id="governor-title">The race for governor</h2>
-                <!-- TODO: author id from AUTHORS in script.js -->
-                <div class="update-byline slider-byline" data-author=""></div>
+                <h3 class="race-dek">Democrat Helena Foulkes will face Republican Aaron Guckian and Independent Kenneth Block.</h3>
+                <div class="update-byline slider-byline" data-author="annika-melwani"></div>
                 <article class="candidate">
                     <img class="candidate-portrait" src="assets/HelenaFoulkes.png" alt="Illustration of Helena Foulkes">
                     <div class="candidate-text">
                         <h3>Helena Foulkes</h3>
-                        <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                        <p>
+                            The former president of CVS Pharmacy won this year’s Democratic nomination over incumbent Gov. Dan McKee in a campaign emphasizing affordability and government accountability. According to her campaign, her plans as governor would include building 20,000 new housing units by 2034, supporting those at risk of losing access to Medicaid and promoting job creation.
+                        </p>
                         <a class="read-more" href="previous-coverage.html">Read more &rarr;</a>
                     </div>
                 </article>
@@ -85,7 +88,9 @@
                     <img class="candidate-portrait" src="assets/AaraonGuckian.png" alt="Illustration of Aaron Guckian">
                     <div class="candidate-text">
                         <h3>Aaron Guckian</h3>
-                        <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                        <p>
+                            A previous Republican candidate for Rhode Island lieutenant governor, Guckian has leveraged his party membership throughout his gubernatorial campaign to convince voters that he will secure positive outcomes for the state in coordination with the federal government. He plans to allocate 10% of the state budget — approximately $1.5 billion — to savings redirected to supporting retirees. 
+                        </p>
                         <a class="read-more" href="previous-coverage.html">Read more &rarr;</a>
                     </div>
                 </article>
@@ -93,19 +98,25 @@
                     <img class="candidate-portrait" src="assets/KennethBlock.png" alt="Illustration of Kenneth Block">
                     <div class="candidate-text">
                         <h3>Kenneth Block</h3>
-                        <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                        <p>
+                            A three-time gubernatorial candidate — having run as a Moderate, Republican and now Independent — Block brings to the 2026 race experience in software engineering and entrepreneurship. He has also challenged restrictive ballot laws in federal court and investigated voter fraud claims. As governor, Block aims to cut taxes on social security as well as reduce burdensome hospital bills and other healthcare costs.
+                        </p>
                         <a class="read-more" href="previous-coverage.html">Read more &rarr;</a>
                     </div>
                 </article>
             </section>
             <section class="ballot-card race" aria-labelledby="mayor-title">
                 <h2 class="slider-title" id="mayor-title">The race for mayor</h2>
-                                <div class="update-byline slider-byline" data-author=""></div>
+                                <h3 class="race-dek">Democrat David Morales will face Republican Dave Talan in the Providence mayoral race.</h3>
+
+                                <div class="update-byline slider-byline" data-author="michelle-bi"></div>
                                 <article class="candidate">
                     <img class="candidate-portrait" src="assets/DavidMorales.png" alt="Illustration of David Morales">
                     <div class="candidate-text">
                         <h3>David Morales</h3>
-                        <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                        <p>
+                            State Rep. David Morales MPA’19, the Democratic nominee for Providence mayor, defeated incumbent Brett Smiley in September’s primary. He is a fierce <a href = "https://www.browndailyherald.com/article/mayoral-candidate-david-morales-shares-his-vision-for-change-in-providence-20260907">proponent</a> for rent stabilization and has <a href = "https://davidtalan.com/#platform">promised</a> to work with the City Council to sign a policy into law, if elected. He previously told The Herald he hopes to adopt a “public developer model,” in which the City of Providence would purchase vacant properties and work with nonprofits to construct mixed-income housing. He has also expressed opposition to Providence’s existing network of 60 Flock cameras.
+                        </p>
                         <a class="read-more" href="previous-coverage.html">Read more &rarr;</a>
                     </div>
                 </article>
@@ -113,7 +124,9 @@
                     <img class="candidate-portrait" src="assets/DaveTalan.png" alt="Illustration of Dave Talan">
                     <div class="candidate-text">
                         <h3>Dave Talan</h3>
-                        <p>Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text Text text.</p>
+                        <p>
+                            Dave Talan, the Republican mayoral nominee, is a consistent proponent of policies that promote fiscal conservatism. A 1969 <a href = "https://www.urihillel.org/david-talan.html">graduate</a> of the University of Rhode Island, he has promised to hold taxes for voters steady mostly by tackling issues in the Providence Public School District: He hopes to promote neighborhood schools, thus decreasing the amount of students who ride buses, and to cut wasteful spending in administration. He has also promised to fully fund police, fire and public works.
+                        </p>
                         <a class="read-more" href="previous-coverage.html">Read more &rarr;</a>
                     </div>
                 </article>
@@ -127,7 +140,7 @@
                     <div class="update-byline slider-byline" data-author="annika-melwani"></div>
                     <p>
                         On Nov. 3, the final round of Rhode Island voters will cast their votes on five statewide ballot measures ranging from funding for affordable housing to watershed protection.
-                        <br><br>The Herald spoke with community members to understand the issues that will be on voters’ ballots this election.
+                       The Herald spoke with community members to understand the issues that will be on voters’ ballots this election.
                     </p>
                     <div class="slides">
                         <article class="slide">
@@ -212,6 +225,9 @@
                     <h2 class="slider-title" id="questions-title">The questions on the ballot</h2>
                     <!-- TODO: author id from AUTHORS in script.js -->
                     <div class="update-byline slider-byline" data-author="talia-katz"></div>
+                    <p>
+                        The two questions on the ballot seek to fund affordable multi-family housing and require the City to divest municipal funds. 
+                    </p>
                     <div class="slides">
                         <article class="slide">
                             <h3><span class="slide-number">Question 6</span></h3>
@@ -219,7 +235,7 @@
                                 <p>
 
 A “yes” on this measure would have Providence borrow $25 million to fund affordable multi-family housing. The combined cost of rent, mortgage payments and utilities for these units would not surpass 30% of the household’s monthly income. If the measure passes, construction on the affordable housing units is expected to begin by July 2027 and end by July 2030, according to the language on the ballot.
-<br><br>Providence first took out an affordable housing bond <a href = "https://www.providenceri.gov/city-providence-announces-historic-bond-capitalize-affordable-housing-trust-fund/">in</a> 2021 for $24.75 million, which has <a href = "https://drive.google.com/file/d/1kJHEptLuM8Px_ryn1QzeaSiomBc7hFuC/view?usp=sharing">funded </a>over 600 units of affordable housing. Until 2024, residents <a href = "https://providenceri.iqm2.com/Citizens/Detail_LegiFile.aspx?ID=43898">could</a> make no more than 120% the area median income to qualify for affordable housing; the City has since lowered that threshold to 80% for rental units. Housing advocates and politicians <a href = "https://www.providenceri.gov/mayor-brett-smiley-urges-providence-to-support-25-million-housing-bond/">including </a>Mayor Brett Smiley, Lieutenant Governor Sabrina Matos and Providence City Council President Rachel Miller have endorsed the initiative. 
+<br><br>Providence first took out an affordable housing bond <a href = "https://www.providenceri.gov/city-providence-announces-historic-bond-capitalize-affordable-housing-trust-fund/">in</a> 2021 for $24.75 million, which has <a href = "https://drive.google.com/file/d/1kJHEptLuM8Px_ryn1QzeaSiomBc7hFuC/view?usp=sharing">funded </a>over 600 units of affordable housing. Until 2024, residents <a href = "https://providenceri.iqm2.com/Citizens/Detail_LegiFile.aspx?ID=43898">could</a> make no more than 120% the area median income to qualify for affordable housing; the City has since lowered that threshold to 80% for rental units. Housing advocates and politicians <a href = "https://www.providenceri.gov/mayor-brett-smiley-urges-providence-to-support-25-million-housing-bond/">including</a> Mayor Brett Smiley, Lieutenant Governor Sabrina Matos and Providence City Council President Rachel Miller have endorsed the initiative. 
 
                                 </p>
                             </div>
@@ -229,7 +245,7 @@ A “yes” on this measure would have Providence borrow $25 million to fund aff
                             <div class="slide-body">
                                This measure would <a href = "https://www.providenceri.gov/wp-content/uploads/2026/09/November-2026-Local-Question-Explanantions.pdf">require</a> the City to divest municipal funds from countries found to have committed severe human rights violations and from corporations that enabled those violations. The ordinance technically does not mention any country by name, but The Providence for Palestine coalition — which <a href= "https://www.browndailyherald.com/article/fc4f4c85-ad28-4b70-a509-6f30c2278f22">spearheaded </a>the campaign to get Question 7 on the ballot and helped collect over 10,000 signatures to do so — has described Israel as a target for divestment. While a handful of other cities have passed similar measures, Providence <a href = "https://www.oceanstatemedia.org/elections/2026-10-28/providence-votes-on-divesting-from-genocide-a-court-fight-could-follow">would</a> become the largest city to divest and the first to pass such a measure through a direct popular vote. 
 <br><br>Supporters include Democratic nominee for mayor David Morales MPA’19, the Rhode Island Democratic Socialists of America and Jewish Voice for Peace Rhode Island. They argue that a “yes” vote will send an important message as to how voters feel about the Israel-Palestine conflict and pressure the government to take action. Morales has also emphasized that divesting these funds would not simply pull money out of the pension fund, but would allow for careful reinvestment elsewhere. Supporters have also compared this ordinance to Providence’s 2006 divestment from companies that conducted business in Sudan during the genocide in Darfur and its 2013 divestment from fossil fuels.
-<br><br>Critics <a href = "https://www.wpri.com/news/elections/why-providences-question-7-is-dividing-voters-over-foreign-policy-and-pensions/">include </a>Mayor Brett Smiley, Republican nominee for mayor David Talan and the <a href = "https://ballotpedia.org/Providence,_Rhode_Island,_Require_City_Divestment_from_Foreign_Countries_Conducting_Human_Rights_Violations_Initiative_(November_2026)">Jewish Alliance</a> of Greater Rhode Island. Some opponents have <a href = "https://www.browndailyherald.com/article/fc4f4c85-ad28-4b70-a509-6f30c2278f22">argued</a> that a “yes” vote would require the city to raise taxes in order to make up the <a href = "https://www.wpri.com/news/elections/why-providences-question-7-is-dividing-voters-over-foreign-policy-and-pensions/">difference</a> in the already-struggling pension fund. They also have argued that this <a href = "https://www.wpri.com/news/elections/why-providences-question-7-is-dividing-voters-over-foreign-policy-and-pensions/">would</a> be illegal: the City’s charter allows citizens to get a question on the ballot if they collect enough signatures, but these questions may not cost taxpayers additional money. Smiley has argued that Question 7 would therefore be a violation of the City’s charter and if it passes will likely face costly legal challenges.
+<br><br>Critics <a href = "https://www.wpri.com/news/elections/why-providences-question-7-is-dividing-voters-over-foreign-policy-and-pensions/">include</a> Mayor Brett Smiley, Republican nominee for mayor David Talan and the <a href = "https://ballotpedia.org/Providence,_Rhode_Island,_Require_City_Divestment_from_Foreign_Countries_Conducting_Human_Rights_Violations_Initiative_(November_2026)">Jewish Alliance</a> of Greater Rhode Island. Some opponents have <a href = "https://www.browndailyherald.com/article/fc4f4c85-ad28-4b70-a509-6f30c2278f22">argued</a> that a “yes” vote would require the city to raise taxes in order to make up the <a href = "https://www.wpri.com/news/elections/why-providences-question-7-is-dividing-voters-over-foreign-policy-and-pensions/">difference</a> in the already-struggling pension fund. They also have argued that this <a href = "https://www.wpri.com/news/elections/why-providences-question-7-is-dividing-voters-over-foreign-policy-and-pensions/">would</a> be illegal: the City’s charter allows citizens to get a question on the ballot if they collect enough signatures, but these questions may not cost taxpayers additional money. Smiley has argued that Question 7 would therefore be a violation of the City’s charter and if it passes will likely face costly legal challenges.
 
 
                             </div>
