@@ -667,7 +667,8 @@ main.wide {
     margin-top: 2rem;
 }
 
-.updates.is-empty::before {
+.updates.is-empty::before,
+.updates:not(:has(.update))::before {
     display: none;
 }
 

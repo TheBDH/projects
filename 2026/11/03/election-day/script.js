@@ -203,7 +203,7 @@ const AUTHORS = {
   "nate-barkow": {
     name: "Nate Barkow",
     page: "https://www.browndailyherald.com/staff/nate-barkow",
-    photo: "images/authors/nate-barkow.jpg",
+    photo: "assets/NateBarkow.jpeg",
   },
   "annika-melwani": {
     name: "Annika Melwani",
@@ -213,7 +213,7 @@ const AUTHORS = {
   "rachel-wicker": {
     name: "Rachel Wicker",
     page: "https://www.browndailyherald.com/staff/rachel-wicker",
-    photo: "images/authors/annika-melwani.jpg",
+    photo: "assets/RachelWicker.JPEG",
   },
   "james-libresco": {
     name: "James Libresco",
@@ -238,6 +238,51 @@ const AUTHORS = {
   "selim-kutlu": {
     name: "Selim Kutlu",
     page: "",
+    photo: "",
+  },
+  "miriam-davison": {
+    name: "Miriam Davison",
+    page: "https://www.browndailyherald.com/by/miriam-davison",
+    photo: "",
+  },
+   "amber-marcus-blank": {
+    name: "Amber Marcus-Blank",
+    page: "https://www.browndailyherald.com/by/amber-marcus-blank",
+    photo: "assets/AmberMarcusBlank.png",
+  },
+  "kaia-yalamanchili": {
+    name: "Kaia Yalamanchili",
+    page: "https://www.browndailyherald.com/by/kaia-yalamanchili",
+    photo: "",
+  },
+  "anthony-cianflone": {
+    name: "Anthony Cianflone",
+    page: "https://www.browndailyherald.com/by/anthony-cianflone",
+    photo: "",
+  },
+   "jake-parker": {
+    name: "Jake Parker",
+    page: "https://www.browndailyherald.com/by/jake-parker",
+    photo: "",
+  },
+   "ian-ritter": {
+    name: "Ian Ritter",
+    page: "https://www.browndailyherald.com/by/ian-ritter",
+    photo: "assets/IanRitter.png",
+  },
+    "horatio-hamilton": {
+    name: "Horatio Hamilton",
+    page: "https://www.browndailyherald.com/by/horatio-hamilton",
+    photo: "",
+  },
+    "razanne-shoukfeh": {
+    name: "Razanne Shoukeh",
+    page: "https://www.browndailyherald.com/by/razanne-shoukfeh",
+    photo: "",
+  },
+    "samantha-birns": {
+    name: "Samantha Birns",
+    page: "https://www.browndailyherald.com/by/samantha",
     photo: "",
   },
   
@@ -440,10 +485,12 @@ function initTimeline(container, { onReach } = {}) {
 // every page. Written here (not read from index.html) so the bar works on
 // every page without a request. When you post a new update, add it to the top
 // and drop the last one.
+// placeholders commented out until the first real update is posted; with the
+// list empty the bar stays hidden
 const BREAKING = [
-  { time: "10:30 AM", headline: "Update headline Update headline Update headline Update headline" },
-  { time: "9:15 AM", headline: "Update headline Update headline Update headline Update headline" },
-  { time: "7:00 AM", headline: "Update headline Update headline Update headline" },
+  // { time: "10:30 AM", headline: "Update headline Update headline Update headline Update headline" },
+  // { time: "9:15 AM", headline: "Update headline Update headline Update headline Update headline" },
+  // { time: "7:00 AM", headline: "Update headline Update headline Update headline" },
 ];
 
 // rotates through them every few seconds; pauses while hovered or focused
