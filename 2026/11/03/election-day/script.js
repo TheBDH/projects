@@ -285,9 +285,9 @@ const AUTHORS = {
   "miriam-davison": {
     name: "Miriam Davison",
     page: "https://www.browndailyherald.com/by/miriam-davison",
-    photo: "",
+    photo: "assets/MiramDavison.jpg",
   },
-   "amber-marcus-blank": {
+  "amber-marcus-blank": {
     name: "Amber Marcus-Blank",
     page: "https://www.browndailyherald.com/by/amber-marcus-blank",
     photo: "assets/AmberMarcusBlank.png",
