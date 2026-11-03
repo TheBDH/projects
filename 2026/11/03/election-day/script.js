@@ -327,6 +327,11 @@ const AUTHORS = {
     page: "https://www.browndailyherald.com/by/samantha",
     photo: "",
   },
+    "bomi-okimoto": {
+    name: "Bomi Okimoto",
+    page: "https://www.browndailyherald.com/by/bomi-okimoto",
+    photo: "",
+  },
   
 };
 
@@ -530,7 +535,7 @@ function initTimeline(container, { onReach } = {}) {
 // placeholders commented out until the first real update is posted; with the
 // list empty the bar stays hidden
 const BREAKING = [
-  // { time: "10:30 AM", headline: "Update headline Update headline Update headline Update headline" },
+{ time: "8:13 AM", headline: "After months of campaigning, polls are now open across Rhode Island until 8 p.m. today." },
   // { time: "9:15 AM", headline: "Update headline Update headline Update headline Update headline" },
   // { time: "7:00 AM", headline: "Update headline Update headline Update headline" },
 ];
