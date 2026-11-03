@@ -533,6 +533,18 @@ main {
     line-height: 1;
 }
 
+.update-headline-no-photo {
+    margin: 1.25rem 0 0.5rem;
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* no extra space above the first paragraph under a no-photo headline */
+.update-headline-no-photo + .update-content .update-body p:first-child {
+    margin-top: 0;
+}
+
 .update-photos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
