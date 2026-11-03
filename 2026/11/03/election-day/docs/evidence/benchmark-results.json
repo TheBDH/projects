@@ -1,0 +1,458 @@
+{
+  "measuredAt": "2026-11-03T17:32:54.488Z",
+  "environment": {
+    "node": "v22.20.0",
+    "v8": "12.4.254.21-node.33",
+    "arch": "arm64",
+    "cpu": "Apple M5"
+  },
+  "method": {
+    "samplesPerCase": 40,
+    "warmupRounds": 4,
+    "interleaved": true,
+    "clock": "process.threadCpuUsage for main thread; process.cpuUsage also recorded",
+    "networkIncludedInCpu": false,
+    "storageUploadIncluded": false,
+    "cloudflareProductionMeasurement": false,
+    "scope": "Local benchmark methodology; separate deployed Cloudflare measurements appear under cloudflareProductionBenchmark."
+  },
+  "workload": {
+    "generalExportBytes": 10716329,
+    "mockExportBytes": 10747182,
+    "threeHeadlineApiBytes": 2485468,
+    "allApiBytes": 9368442,
+    "allApiRequests": 42,
+    "municipalities": 39,
+    "governorReportingUnits": 454,
+    "localReportingUnits": [
+      {
+        "contest": "Providence: Mayor",
+        "units": 82
+      },
+      {
+        "contest": "Providence: 7. AN ORDINANCE DIVESTING FROM FOREIGN COUNTRIES CONDUCTING SEVERE VIOLATION OF HUMAN RIGHTS",
+        "units": 82
+      }
+    ],
+    "normalizedBytes": 172088,
+    "gzipNormalizedBytes": 33732
+  },
+  "historicalReconciliation": {
+    "governor": [
+      {
+        "name": "Helena Buonanno Foulkes",
+        "votes": 81314
+      },
+      {
+        "name": "Daniel J. McKee",
+        "votes": 48872
+      }
+    ],
+    "mayor": [
+      {
+        "name": "David Morales",
+        "votes": 14299
+      },
+      {
+        "name": "Brett P. Smiley*",
+        "votes": 12961
+      }
+    ]
+  },
+  "measured": [
+    {
+      "name": "Full export: parse already-decoded text only",
+      "firstInProcess": {
+        "threadCpuMs": 17.054,
+        "processCpuMs": 17.649,
+        "wallMs": 16.109249999999975
+      },
+      "threadCpuMs": {
+        "min": 16.321,
+        "median": 17.002,
+        "p95": 18.726,
+        "max": 19.284
+      },
+      "processCpuMs": {
+        "min": 18.989,
+        "median": 21.393,
+        "p95": 30.919,
+        "max": 32.475
+      },
+      "wallMs": {
+        "min": 16.347334000000046,
+        "median": 17.062082999999802,
+        "p95": 18.876875000000382,
+        "max": 19.474750000000313
+      }
+    },
+    {
+      "name": "Full export: UTF-8 decode + parse only",
+      "firstInProcess": {
+        "threadCpuMs": 23.97,
+        "processCpuMs": 42.961,
+        "wallMs": 30.34224999999998
+      },
+      "threadCpuMs": {
+        "min": 22.876,
+        "median": 24.77,
+        "p95": 43.891,
+        "max": 44.404
+      },
+      "processCpuMs": {
+        "min": 24.23,
+        "median": 34.997,
+        "p95": 120.596,
+        "max": 120.869
+      },
+      "wallMs": {
+        "min": 22.94120900000007,
+        "median": 25.061333000000104,
+        "p95": 45.1787919999997,
+        "max": 45.31908300000032
+      }
+    },
+    {
+      "name": "Current full export: decode + parse + validate + normalize + serialize",
+      "firstInProcess": {
+        "threadCpuMs": 41.154,
+        "processCpuMs": 104.238,
+        "wallMs": 42.79412500000001
+      },
+      "threadCpuMs": {
+        "min": 25.349,
+        "median": 27.652,
+        "p95": 40.127,
+        "max": 50.182
+      },
+      "processCpuMs": {
+        "min": 34.894,
+        "median": 41.646,
+        "p95": 101.165,
+        "max": 143.254
+      },
+      "wallMs": {
+        "min": 25.803124999999454,
+        "median": 27.903666999999587,
+        "p95": 41.83695799999987,
+        "max": 55.53975000000014
+      }
+    },
+    {
+      "name": "Populated mock full export: decode + parse + validate + normalize + serialize",
+      "firstInProcess": {
+        "threadCpuMs": 27.093,
+        "processCpuMs": 40.706,
+        "wallMs": 29.048249999999996
+      },
+      "threadCpuMs": {
+        "min": 24.528,
+        "median": 26.226,
+        "p95": 37.911,
+        "max": 38.575
+      },
+      "processCpuMs": {
+        "min": 34.3,
+        "median": 39.202,
+        "p95": 81.114,
+        "max": 82.277
+      },
+      "wallMs": {
+        "min": 25.614708000000064,
+        "median": 26.865625000000364,
+        "p95": 38.46387500000037,
+        "max": 39.235749999999825
+      }
+    },
+    {
+      "name": "Historical primary: decode + parse + validate + normalize + serialize",
+      "firstInProcess": {
+        "threadCpuMs": 11.769,
+        "processCpuMs": 18.422,
+        "wallMs": 11.777082999999948
+      },
+      "threadCpuMs": {
+        "min": 10.713,
+        "median": 10.902,
+        "p95": 11.387,
+        "max": 20.443
+      },
+      "processCpuMs": {
+        "min": 10.714,
+        "median": 10.937,
+        "p95": 16.81,
+        "max": 49.596
+      },
+      "wallMs": {
+        "min": 10.709458000000268,
+        "median": 10.903041999999914,
+        "p95": 15.181416999999783,
+        "max": 20.817374999999856
+      }
+    },
+    {
+      "name": "Three headline API responses: decode + parse ONLY; no governor precinct detail",
+      "firstInProcess": {
+        "threadCpuMs": 5.658,
+        "processCpuMs": 5.66,
+        "wallMs": 5.673415999999975
+      },
+      "threadCpuMs": {
+        "min": 5.415,
+        "median": 5.672,
+        "p95": 6.565,
+        "max": 15.183
+      },
+      "processCpuMs": {
+        "min": 5.414,
+        "median": 5.673,
+        "p95": 11.798,
+        "max": 29.03
+      },
+      "wallMs": {
+        "min": 5.411375000000135,
+        "median": 5.670208999999886,
+        "p95": 6.598165999999765,
+        "max": 15.351875000000064
+      }
+    },
+    {
+      "name": "All 42 API responses: decode + parse ONLY; full geography",
+      "firstInProcess": {
+        "threadCpuMs": 21.008,
+        "processCpuMs": 28.816,
+        "wallMs": 21.460541999999975
+      },
+      "threadCpuMs": {
+        "min": 19.412,
+        "median": 21.053,
+        "p95": 22.138,
+        "max": 22.901
+      },
+      "processCpuMs": {
+        "min": 25.349,
+        "median": 28.44,
+        "p95": 33.517,
+        "max": 33.784
+      },
+      "wallMs": {
+        "min": 20.154791999999816,
+        "median": 21.323959000000286,
+        "p95": 22.388167000000067,
+        "max": 23.145375000000058
+      }
+    },
+    {
+      "name": "Selected data already parsed: validate + normalize + serialize ONLY",
+      "firstInProcess": {
+        "threadCpuMs": 4.166,
+        "processCpuMs": 10.199,
+        "wallMs": 5.061417000000006
+      },
+      "threadCpuMs": {
+        "min": 1.169,
+        "median": 1.923,
+        "p95": 2.952,
+        "max": 3.06
+      },
+      "processCpuMs": {
+        "min": 1.169,
+        "median": 3.394,
+        "p95": 8.171,
+        "max": 10.096
+      },
+      "wallMs": {
+        "min": 1.1657089999998789,
+        "median": 1.9410419999994701,
+        "p95": 3.147041000000172,
+        "max": 3.610500000000002
+      }
+    }
+  ],
+  "validationChecks": [
+    {
+      "name": "Missing candidate",
+      "result": "rejected",
+      "reason": "Candidate coverage"
+    },
+    {
+      "name": "Negative votes",
+      "result": "rejected",
+      "reason": "Invalid vote count: 1"
+    },
+    {
+      "name": "Fractional votes",
+      "result": "rejected",
+      "reason": "Invalid vote count: 1"
+    },
+    {
+      "name": "Missing precinct",
+      "result": "rejected",
+      "reason": "Precinct coverage"
+    },
+    {
+      "name": "Duplicate precinct code",
+      "result": "rejected",
+      "reason": "Duplicate precinct: 2801"
+    },
+    {
+      "name": "Unknown precinct code",
+      "result": "rejected",
+      "reason": "Precinct identifier mismatch"
+    },
+    {
+      "name": "Candidate/precinct total mismatch",
+      "result": "rejected",
+      "reason": "Precinct/candidate total mismatch"
+    },
+    {
+      "name": "Method total mismatch",
+      "result": "rejected",
+      "reason": "Method total mismatch: 1"
+    },
+    {
+      "name": "Missing municipality",
+      "result": "rejected",
+      "reason": "Missing municipality: Warwick"
+    },
+    {
+      "name": "Wrong election",
+      "result": "rejected",
+      "reason": "Wrong election"
+    },
+    {
+      "name": "Unknown reporting status",
+      "result": "rejected",
+      "reason": "Unknown reporting status"
+    },
+    {
+      "name": "Older snapshot",
+      "result": "rejected",
+      "reason": "Older snapshot"
+    },
+    {
+      "name": "Newer genuine downward correction",
+      "result": "accepted"
+    }
+  ],
+  "cloudflareProductionBenchmark": {
+    "measuredAt": "2026-11-03T17:46:53.337Z",
+    "platform": "Cloudflare Workers Free, deployed temporary HTTP handler",
+    "method": {
+      "source": "Cloudflare Workers observability telemetry, $workers.cpuTimeMs",
+      "fullPipelineSamples": 4,
+      "cronInvocationsTested": false,
+      "networkWaitIncludedInCpu": false,
+      "storageUploadIncluded": false
+    },
+    "workload": {
+      "inputBytes": 10716329,
+      "contests": [
+        "Rhode Island governor",
+        "Providence mayor",
+        "Providence Question 7"
+      ],
+      "municipalities": 39,
+      "governorReportingUnits": 454,
+      "mayorReportingUnits": 82,
+      "question7ReportingUnits": 82,
+      "operations": [
+        "fetch official full export",
+        "bounded response read",
+        "UTF-8 decode",
+        "JSON parse",
+        "validate election, identifiers, candidates, vote methods and totals",
+        "aggregate wards",
+        "normalize percentages and serialize"
+      ]
+    },
+    "measurements": [
+      {
+        "timestamp": 1793727922746,
+        "cpuTimeMs": 210,
+        "wallTimeMs": 413,
+        "outcome": "ok",
+        "status": 200,
+        "test": {
+          "fixture": "general",
+          "mode": "parse",
+          "sample": "browser-parse"
+        }
+      },
+      {
+        "timestamp": 1793727904041,
+        "cpuTimeMs": 162,
+        "wallTimeMs": 240,
+        "outcome": "ok",
+        "status": 200,
+        "test": {
+          "fixture": "general",
+          "mode": "full",
+          "sample": "browser-first"
+        }
+      },
+      {
+        "timestamp": 1793727903205,
+        "cpuTimeMs": 276,
+        "wallTimeMs": 403,
+        "outcome": "ok",
+        "status": 200,
+        "test": {
+          "fixture": "general",
+          "mode": "full",
+          "sample": "browser-first"
+        }
+      },
+      {
+        "timestamp": 1793727902343,
+        "cpuTimeMs": 368,
+        "wallTimeMs": 637,
+        "outcome": "ok",
+        "status": 200,
+        "test": {
+          "fixture": "general",
+          "mode": "full",
+          "sample": "browser-first"
+        }
+      },
+      {
+        "timestamp": 1793727707413,
+        "cpuTimeMs": 233,
+        "wallTimeMs": 694,
+        "outcome": "ok",
+        "status": 200,
+        "test": {
+          "fixture": "general",
+          "mode": "full",
+          "sample": "browser-first"
+        }
+      }
+    ],
+    "fullPipelineCpuMs": {
+      "min": 162,
+      "max": 368,
+      "median": 254.5
+    },
+    "interpretation": "The straightforward full-export collector exceeds the documented Free plan's 10ms CPU allowance. Successful responses are not proof of compliance: Cloudflare documents occasional over-limit flexibility. This is a prototype measurement, not an exhaustive impossibility proof for every optimized or distributed implementation.",
+    "limitations": [
+      "Current general-election export contains no votes yet; populated mock and historical primary validation were benchmarked locally.",
+      "Tests used an HTTP entrypoint; the same 10ms documented Free CPU limit applies to Cron Triggers.",
+      "No R2 publication, monitoring, source retries or geometry computation included.",
+      "Four remote samples, not a load or long-duration reliability test."
+    ],
+    "cleanup": {
+      "workerDeleted": true,
+      "tailDeleted": true,
+      "temporarySubdomainDeleted": true,
+      "verifiedNoWorkers": true,
+      "verifiedNoSubdomain": true,
+      "projectFilesChanged": false,
+      "billingPlanChanged": false
+    },
+    "sources": {
+      "cpuLimits": "https://developers.cloudflare.com/workers/platform/limits/",
+      "pricing": "https://developers.cloudflare.com/workers/platform/pricing/",
+      "generalResults": "https://electionresults.ri.gov/cdn/results/RhodeIsland/export-2026StatewideGeneralElection.json"
+    }
+  }
+}

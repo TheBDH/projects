@@ -1,0 +1,22 @@
+[
+  {
+    "name": "waiting",
+    "url": "https://electionresults.ri.gov/cdn/results/RhodeIsland/export-2026StatewideGeneralElection.json",
+    "sourceCreatedAt": "2026-10-30T18:56:05.7249209Z",
+    "downloadedAt": "2026-11-03",
+    "originalBytes": 10716329,
+    "sha256": "e109cf75aea57e6459a229f0d69e9f5782e99a04043058ac861e714ca6b2eb6c",
+    "snapshotBytes": 294275,
+    "sourceElectionDate": "2026-11-03"
+  },
+  {
+    "name": "primary-2026",
+    "url": "https://electionresults.ri.gov/cdn/results/RhodeIsland/export-RI2026StatewidePrimary.json",
+    "sourceCreatedAt": "2026-09-15T21:20:17.4540576Z",
+    "downloadedAt": "2026-11-03",
+    "originalBytes": 5611971,
+    "sha256": "167b94a159726e15866554b47995610638fbb4cef59c2f470c6ab1717dc55f15",
+    "snapshotBytes": 216240,
+    "sourceElectionDate": "2026-09-09"
+  }
+]

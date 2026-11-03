@@ -1,0 +1,16 @@
+{
+  "name": "herald-election-results-collector",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "wrangler deploy --dry-run --outdir .build",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261103.1",
+    "esbuild": "0.28.2",
+    "miniflare": "5.20261103.0-beta",
+    "wrangler": "4.157.0"
+  }
+}

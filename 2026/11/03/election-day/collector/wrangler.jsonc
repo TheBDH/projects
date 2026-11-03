@@ -1,0 +1,22 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "herald-election-results-2026",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2026-11-03",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "secrets": { "required": ["ADMIN_TOKEN"] },
+  "observability": { "enabled": true, "head_sampling_rate": 1 },
+  "durable_objects": {
+    "bindings": [{ "name": "COLLECTOR", "class_name": "ElectionCollector" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["ElectionCollector"] }],
+  "r2_buckets": [{ "binding": "RESULTS", "bucket_name": "herald-election-results-2026" }],
+  "vars": {
+    "COLLECTION_ENABLED": "false",
+    "COLLECTION_STARTS_AT": "2026-11-04T01:00:00Z",
+    "COLLECTION_ENDS_AT": "2026-11-30T23:59:59Z"
+  },
+  "triggers": { "crons": ["*/5 * * * *"] }
+}

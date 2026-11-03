@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Results | The Brown Daily Herald</title>
+    <meta name="description" content="Rhode Island governor, Providence mayor and Question 7 election results, with interactive maps from The Brown Daily Herald.">
+    <link rel="stylesheet" href="https://use.typekit.net/tgd3gjm.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+    <link rel="stylesheet" href="styles.css?v=20261103-tabs-final">
+    <link rel="stylesheet" href="results.css?v=20261103-area-menu">
+    <script src="script.js?v=20261103-tabs-final" defer></script>
+    <script src="results/app.mjs?v=20261103-area-menu" type="module"></script>
+  </head>
+  <body class="results-page">
+    <a class="results-skip" href="#results-main">Skip to results</a>
+    <header class="topbar">
+      <div class="countdown" aria-live="polite">
+        <p class="countdown-time" id="countdown-time">&nbsp;</p>
+        <p class="countdown-label" id="countdown-label">until polls close</p>
+      </div>
+      <a class="breaking" id="breaking" href="index.html#live-updates" hidden>
+        <p class="breaking-time" id="breaking-time"></p>
+        <p class="breaking-text" id="breaking-text"></p>
+        <span class="breaking-more">see more &rarr;</span>
+      </a>
+    </header>
+    <div class="hero">
+      <a class="hero-logo" href="https://www.browndailyherald.com" target="_blank">
+        <img src="assets/logo-black.png" alt="The Brown Daily Herald">
+      </a>
+      <h1>Election Day</h1>
+      <p class="hero-dek">Live updates from The Herald on election day in Providence</p>
+      <div class="byline">
+        <p data-authors="michelle-bi talia-katz nate-barkow annika-melwani rachel-wicker james-libresco miriam-davison amber-marcus-blank ian-ritter">Reporting by</p>
+        <p data-authors="selina-kao pavani-durbhakula kaia-yalamanchili anthony-cianflone jake-parker razanne-shoukfeh bomi-okimoto">Photos by</p>
+        <p data-authors="nikos-koss selim-kutlu">Web Design by</p>
+      </div>
+      <p class="hero-credit">Pavani Durbhakula / Herald</p>
+    </div>
+    <nav class="tabs" aria-label="Election coverage sections">
+      <a href="index.html">Live Updates</a>
+      <a href="results.html" aria-current="page">Results</a>
+      <a href="ballot.html">The Ballot</a>
+      <a href="polling-locations.html">Polling Locations</a>
+      <a href="previous-coverage.html">Previous Coverage</a>
+    </nav>
+    <main id="results-main" class="results-main">
+      <div id="test-banner" class="test-banner" role="status" hidden></div>
+      <div class="results-intro">
+        <h2>Election results <span class="results-live-indicator" id="results-live-indicator" role="img" aria-label="Results are updating automatically" hidden></span></h2>
+      </div>
+      <div class="results-status" id="results-status">
+        <p class="status-message" id="status-message" role="status">Preparing results…</p>
+        <div class="status-times"><span id="source-time"></span><span id="checked-time"></span></div>
+      </div>
+      <p class="results-loading" id="results-loading">Loading the election maps…</p>
+      <div id="contests"></div>
+      <noscript><p class="results-error">The interactive maps need JavaScript. <a href="https://electionresults.ri.gov/results/public/rhodeisland">View the official Rhode Island election results.</a></p></noscript>
+      <p class="results-attribution">Results from the <a id="results-source" href="https://electionresults.ri.gov/results/public/rhodeisland" target="_blank" rel="noopener noreferrer">Rhode Island Board of Elections</a>.</p>
+      <div class="test-tools-wrap" id="test-tools-wrap" hidden>
+        <button type="button" id="preview-toggle" class="text-button" aria-expanded="false" aria-controls="preview-tools">Preview test data</button>
+        <div id="preview-tools" class="preview-tools" hidden>
+          <p>Test modes do not show live election returns.</p>
+          <label>Data <select id="data-mode"><option value="live">Results / waiting</option><option value="historical">2026 Democratic primary</option><option value="mock">Simulated election night</option></select></label>
+          <label>Simulation <select id="mock-scenario"><option value="normal">Normal updates</option><option value="delayed">Delayed update</option><option value="failure">Connection failure</option><option value="correction">Vote correction</option><option value="malformed">Invalid update</option></select></label>
+          <div class="preview-actions"><button type="button" id="mock-pause" aria-pressed="false">Pause simulation</button><button type="button" id="mock-next">Next update</button></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
