@@ -230,6 +230,16 @@ const AUTHORS = {
     page: "https://www.browndailyherald.com/staff/pavani-durbhakula",
     photo: "assets/PavaniDurbhakula.png",
   },
+  "nikos-koss": {
+    name: "Nikos Koss",
+    page: "https://www.browndailyherald.com/by/nikos-koss",
+    photo: "",
+  },
+  "selim-kutlu": {
+    name: "Selim Kutlu",
+    page: "",
+    photo: "",
+  },
   
 };
 
