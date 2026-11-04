@@ -3,7 +3,7 @@
 import { assert, aggregateAreas, validateSnapshot, METHODS } from './model.mjs';
 const SOURCE_METHODS = ['Election Day', 'Early Voting', 'Mail Ballots'];
 const STATUSES = new Map([
-  ['Not Reported', 'not-reporting'], ['Partially Reported', 'partial'],
+  ['Not Reported', 'not-reporting'], ['Not Participating', 'not-reporting'], ['Partially Reported', 'partial'],
   ['Election Night Complete', 'reported'], ['Fully Reported', 'reported'],
 ]);
 const COUNCIL_DISTRICTS = new Set(['Coventry', 'Cumberland', 'Johnston', 'Lincoln', 'North Providence', 'Pawtucket']);
@@ -106,11 +106,13 @@ export function normalizeBoeExport(source, manifest, { mode = 'live', publishedA
         for (const unit of units.values()) {
           const row = rows.get(unit.id);
           assert(row, 'Missing reporting unit: ' + unit.id);
-          assert(STATUSES.has(row.reportingStatus), 'Unknown reporting status');
+          assert(STATUSES.has(row.reportingStatus), 'Unknown reporting status: ' + String(row.reportingStatus).slice(0, 80) + ' in ' + unit.id);
           const status = STATUSES.get(row.reportingStatus);
           if (i === 0) unit.status = status;
           assert(unit.status === status, 'Inconsistent reporting status');
           const votes = count(row.voteCount), byMethod = methodCounts(row.groupResults, votes);
+          // The source can mark limited units Not Participating even with mail votes.
+          // Preserve reconciled votes without treating that status as completed.
           unit.votes.push(votes); subtotal += votes;
           byMethod.forEach((n, j) => { unit.methods[METHODS[j]].push(n); totals[j] += n; });
         }

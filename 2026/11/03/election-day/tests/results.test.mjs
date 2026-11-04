@@ -51,6 +51,33 @@ test('frozen official general source reconciles all three contests and the waiti
   for (const contest of Object.values(waiting.contests)) for (const area of Object.values(contest.areas)) assert.equal(area.total, 0);
 });
 
+test('zero-vote nonparticipating units remain unreported without blocking publication', () => {
+  const source = clone(sourceGeneral);
+  const contest = governorAt(source, 'Barrington');
+  const name = contest.ballotOptions[0].precinctResults.find(row => /limited/i.test(row.name)).name;
+  for (const choice of contest.ballotOptions) choice.precinctResults.find(row => row.name === name).reportingStatus = 'Not Participating';
+  const snapshot = normalizeBoeExport(source, generalManifest, options);
+  const area = Object.values(snapshot.contests.governor.areas).find(area => area.sourceName === name);
+  assert.equal(area.total, 0);
+  assert.equal(area.status, 'not-reporting');
+  assert.equal(area.reporting.reported, 0);
+  assert.equal(snapshot.status, 'unofficial');
+  assert.equal(snapshot.contests.governor.areas.state.total, 0);
+});
+
+test('nonparticipating status preserves reconciled official mail votes', () => {
+  const source = clone(sourcePrimary);
+  const contest = governorAt(source, 'Richmond');
+  const name = contest.ballotOptions[0].precinctResults.find(row => /limited/i.test(row.name)).name;
+  for (const choice of contest.ballotOptions) choice.precinctResults.find(row => row.name === name).reportingStatus = 'Not Participating';
+  const before = normalizeBoeExport(sourcePrimary, primaryManifest, { ...options, mode: 'historical' });
+  const after = normalizeBoeExport(source, primaryManifest, { ...options, mode: 'historical' });
+  assert.deepEqual(after.contests.governor.areas.state.votes, before.contests.governor.areas.state.votes);
+  const area = Object.values(after.contests.governor.areas).find(area => area.sourceName === name);
+  assert.equal(area.status, 'not-reporting');
+  assert.deepEqual(area.votes, Object.values(before.contests.governor.areas).find(area => area.sourceName === name).votes);
+});
+
 test('historical results match independently recorded official candidate totals', () => {
   const normalized = normalizeBoeExport(sourcePrimary, primaryManifest, { ...options, mode: 'historical' });
   assert.equal(votesFor(normalized, 'governor', 'Helena Buonanno Foulkes'), 81_314);
