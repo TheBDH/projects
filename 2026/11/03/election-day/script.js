@@ -42,6 +42,7 @@ if (updateCountdown()) {
 const tabs = document.querySelector(".tabs");
 const TABS_KEY = "tabs-scroll";
 const TABS_TOP_KEY = "tabs-top";
+const TABS_FROM_KEY = "tabs-from";
 
 if (tabs) {
   // phones: the tabs fold into a dropdown under a button naming this page.
@@ -149,6 +150,58 @@ if (tabs) {
     window.addEventListener('hashchange', release, { once: true, signal: restoration.signal });
   }
 
+  // underline: one bar that slides from the tab you came from to this one
+  const indicator = document.createElement("span");
+  indicator.className = "tabs-indicator";
+  indicator.setAttribute("aria-hidden", "true");
+  tabs.append(indicator);
+  tabs.classList.add("has-indicator");
+
+  const moveIndicator = (link) => {
+    if (!link) {
+      indicator.style.opacity = "0";
+      return;
+    }
+    const bar = tabs.getBoundingClientRect();
+    const box = link.getBoundingClientRect();
+    indicator.style.opacity = "1";
+    indicator.style.width = `${box.width}px`;
+    indicator.style.transform = `translateX(${box.left - bar.left + tabs.scrollLeft}px)`;
+  };
+
+  let from = null;
+  try {
+    from = sessionStorage.getItem(TABS_FROM_KEY);
+    sessionStorage.removeItem(TABS_FROM_KEY);
+  } catch {}
+  const fromLink = from && [...tabs.querySelectorAll("a")].find((a) => a.getAttribute("href") === from);
+
+  if (fromLink && fromLink !== current && !reduceMotion) {
+    // start under the old tab, then slide once that position has painted
+    moveIndicator(fromLink);
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        indicator.classList.add("animated");
+        moveIndicator(current);
+      })
+    );
+  } else {
+    moveIndicator(current);
+    requestAnimationFrame(() => indicator.classList.add("animated"));
+  }
+
+  // keep it under the tab as fonts load, the window resizes, or the pinned
+  // Live Updates tab moves while the bar scrolls sideways
+  const follow = () => {
+    indicator.classList.remove("animated");
+    moveIndicator(current);
+    requestAnimationFrame(() => indicator.classList.add("animated"));
+  };
+  window.addEventListener("resize", follow);
+  window.addEventListener("load", follow);
+  document.fonts?.ready.then(follow);
+  if (current === pinned) tabs.addEventListener("scroll", follow, { passive: true });
+
   const save = () => {
     try {
       sessionStorage.setItem(TABS_KEY, String(tabs.scrollLeft));
@@ -158,7 +211,7 @@ if (tabs) {
   window.addEventListener("pagehide", save);
 
   // any link to another page of this site (tabs, "Read more", the breaking
-  // bar...) carries the bar's position with it
+  // bar...) carries the bar's position and the tab we're leaving with it
   document.addEventListener("click", (e) => {
     const link = e.target.closest("a[href]");
     if (!link || e.defaultPrevented || e.button !== 0) return;
@@ -169,6 +222,7 @@ if (tabs) {
     if (url.pathname === location.pathname) return;
     try {
       sessionStorage.setItem(TABS_TOP_KEY, String(tabs.getBoundingClientRect().top));
+      if (current) sessionStorage.setItem(TABS_FROM_KEY, current.getAttribute("href"));
     } catch {}
   });
 }

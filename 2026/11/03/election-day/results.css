@@ -151,3 +151,17 @@ main.results-main { width:min(1280px,calc(100% - 64px)); margin:0 auto; min-heig
  .share-value { min-width:42px; }
  .candidate-name { font-size:1.08rem; }
 }
+
+/* Match the other pages: serif headings at their sizes, Roboto body text at
+   one size, and all text black. */
+.results-intro h2 { font:700 1.6rem/1 var(--serif); letter-spacing:normal; }
+.contest-heading h2 { font:700 1.5rem/1.1 var(--serif); letter-spacing:normal; }
+.race-picker-caret { width:28px; height:28px; flex-basis:28px; }
+.race-picker-caret::after { width:9px; height:9px; }
+.results-main :not(h1,h2,h3,h4,h1 *,h2 *,h3 *,h4 *,svg,svg *),
+.map-tooltip, .map-tooltip :not(h4,h4 *) {
+  font-family:var(--sans)!important;
+  font-size:1rem!important;
+}
+.results-main, .results-main *, .map-tooltip, .map-tooltip * { color:#000!important; }
+.results-main .map-view-buttons button[aria-pressed="true"] { color:#fff!important; }
