@@ -1,0 +1,189 @@
+{
+  "date": "2026-11-03",
+  "account": {
+    "name": "Techadmin@browndailyherald.com's Account",
+    "id": "44add93f0807dcac364f9aa9a2d28d20",
+    "workersPlan": "Free",
+    "planVerified": "Cloudflare dashboard Workers plans: Free — Current plan"
+  },
+  "pagesMetrics": {
+    "note": "Adaptive analytics may differ from the exact client count; CPU quantiles are microseconds.",
+    "data": {
+      "viewer": {
+        "accounts": [
+          {
+            "pagesFunctionsInvocationsAdaptiveGroups": [
+              {
+                "dimensions": {
+                  "scriptName": "__unknown__",
+                  "status": "success",
+                  "usageModel": "standard"
+                },
+                "quantiles": {
+                  "cpuTimeP50": 856,
+                  "cpuTimeP95": 1336,
+                  "cpuTimeP99": 1871
+                },
+                "sum": {
+                  "errors": 0,
+                  "requests": 2596,
+                  "subrequests": 0
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "errors": null
+  },
+  "collectorMetrics": {
+    "success": true,
+    "calculations": [
+      {
+        "alias": "events",
+        "aggregates": [
+          {
+            "groups": [
+              {
+                "key": "$workers.eventType",
+                "value": "alarm"
+              }
+            ],
+            "groupKey": "alarm",
+            "value": 3,
+            "interval": 1,
+            "sampleInterval": 1,
+            "count": 3
+          },
+          {
+            "groups": [
+              {
+                "key": "$workers.eventType",
+                "value": "fetch"
+              }
+            ],
+            "groupKey": "fetch",
+            "value": 8,
+            "interval": 1,
+            "sampleInterval": 1,
+            "count": 8
+          },
+          {
+            "groups": [
+              {
+                "key": "$workers.eventType",
+                "value": "jsrpc"
+              }
+            ],
+            "groupKey": "jsrpc",
+            "value": 6,
+            "interval": 1,
+            "sampleInterval": 1,
+            "count": 6
+          }
+        ]
+      },
+      {
+        "alias": "maxCpuMs",
+        "aggregates": [
+          {
+            "groups": [
+              {
+                "key": "$workers.eventType",
+                "value": "alarm"
+              }
+            ],
+            "groupKey": "alarm",
+            "value": 998,
+            "interval": 1,
+            "sampleInterval": 1,
+            "count": 3
+          },
+          {
+            "groups": [
+              {
+                "key": "$workers.eventType",
+                "value": "fetch"
+              }
+            ],
+            "groupKey": "fetch",
+            "value": 2,
+            "interval": 1,
+            "sampleInterval": 1,
+            "count": 8
+          },
+          {
+            "groups": [
+              {
+                "key": "$workers.eventType",
+                "value": "jsrpc"
+              }
+            ],
+            "groupKey": "jsrpc",
+            "value": 7,
+            "interval": 1,
+            "sampleInterval": 1,
+            "count": 6
+          }
+        ]
+      },
+      {
+        "alias": "maxWallMs",
+        "aggregates": [
+          {
+            "groups": [
+              {
+                "key": "$workers.eventType",
+                "value": "alarm"
+              }
+            ],
+            "groupKey": "alarm",
+            "value": 2270,
+            "interval": 1,
+            "sampleInterval": 1,
+            "count": 3
+          },
+          {
+            "groups": [
+              {
+                "key": "$workers.eventType",
+                "value": "fetch"
+              }
+            ],
+            "groupKey": "fetch",
+            "value": 221,
+            "interval": 1,
+            "sampleInterval": 1,
+            "count": 8
+          },
+          {
+            "groups": [
+              {
+                "key": "$workers.eventType",
+                "value": "jsrpc"
+              }
+            ],
+            "groupKey": "jsrpc",
+            "value": 109,
+            "interval": 1,
+            "sampleInterval": 1,
+            "count": 6
+          }
+        ]
+      }
+    ]
+  },
+  "finalCollectorSnapshot": {
+    "checkedAt": "2026-11-03T23:06:02.148Z",
+    "revision": "8e2be5f990442807b5677e60a485b00e315155ed583b3868c320d13d3d18b644",
+    "totals": {
+      "governor": 142,
+      "mayor": 142,
+      "question7": 142
+    },
+    "mode": "mock"
+  },
+  "testScope": "Synthetic full source structure, three minute alarms (populated, 304 unchanged, downward correction). Real SQLite Durable Object and R2 Standard; no BOE network calls.",
+  "archiveGuard": "Added after remote benchmark; an engine regression verifies the persisted 5 GB lifetime archive reservation cap. Local workerd tests verify publication and restart recovery with the final engine."
+}

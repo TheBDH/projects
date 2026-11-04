@@ -1,0 +1,133 @@
+{
+  "startedAt": "2026-11-04T00:38:48.607Z",
+  "target": "https://a6778c13.herald-election-data-2026.pages.dev",
+  "worker": "herald-election-collector-test",
+  "source": "official BOE export",
+  "isolation": "Existing private test Worker, separate test credential, separate Durable Object name and launch-check prefix in test R2 bucket",
+  "checks": [
+    {
+      "status": {
+        "running": true,
+        "attempts": 1,
+        "successes": 1,
+        "failures": 0,
+        "lastAttemptAt": 1793752730240,
+        "nextRunAt": 1793752790240,
+        "lastError": null,
+        "checkedAt": "2026-11-04T00:38:50.864Z",
+        "publishedAt": "2026-11-04T00:38:52.052Z",
+        "sourceUpdated": "2026-10-30T18:56:05.7249209Z",
+        "coverageEndedAt": null,
+        "revision": "35547eefd541d254a347458cf80ca0f8d73b7e1d0c54e340cb85ad12f5f1d59f",
+        "sourceHash": "e109cf75aea57e6459a229f0d69e9f5782e99a04043058ac861e714ca6b2eb6c",
+        "manifestHash": "8a433a10790cca639b7e5c1d4e509db2b8a5953627603d60e9ee47be3afe2800",
+        "etag": "0x8DF36B773FFAD42",
+        "lastModified": "Fri, 30 Oct 2026 18:56:06 GMT",
+        "pending": false,
+        "coveragePending": false,
+        "nextAlarm": 1793752790240,
+        "startsAt": "2026-11-03T00:00:00.000Z",
+        "endsAt": "2026-11-04T02:00:00.000Z",
+        "phase": "running",
+        "archiveBytesReserved": 547741,
+        "archiveByteLimit": 5000000000,
+        "stale": false
+      },
+      "snapshot": {
+        "checkedAt": "2026-11-04T00:38:50.864Z",
+        "sourceUpdated": "2026-10-30T18:56:05.7249209Z",
+        "revision": "35547eefd541d254a347458cf80ca0f8d73b7e1d0c54e340cb85ad12f5f1d59f",
+        "totals": {
+          "governor": 0,
+          "mayor": 0,
+          "question7": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "running": false,
+        "attempts": 2,
+        "successes": 2,
+        "failures": 0,
+        "lastAttemptAt": 1793752790241,
+        "nextRunAt": 0,
+        "lastError": null,
+        "checkedAt": "2026-11-04T00:39:50.307Z",
+        "publishedAt": "2026-11-04T00:39:50.534Z",
+        "sourceUpdated": "2026-10-30T18:56:05.7249209Z",
+        "coverageEndedAt": null,
+        "revision": "35547eefd541d254a347458cf80ca0f8d73b7e1d0c54e340cb85ad12f5f1d59f",
+        "sourceHash": "e109cf75aea57e6459a229f0d69e9f5782e99a04043058ac861e714ca6b2eb6c",
+        "manifestHash": "8a433a10790cca639b7e5c1d4e509db2b8a5953627603d60e9ee47be3afe2800",
+        "etag": "0x8DF36B773FFAD42",
+        "lastModified": "Fri, 30 Oct 2026 18:56:06 GMT",
+        "pending": false,
+        "coveragePending": false,
+        "nextAlarm": null,
+        "startsAt": "2026-11-03T00:00:00.000Z",
+        "endsAt": "2026-11-04T02:00:00.000Z",
+        "phase": "stopped",
+        "archiveBytesReserved": 547741,
+        "archiveByteLimit": 5000000000,
+        "stale": false
+      },
+      "snapshot": {
+        "checkedAt": "2026-11-04T00:39:50.307Z",
+        "sourceUpdated": "2026-10-30T18:56:05.7249209Z",
+        "revision": "35547eefd541d254a347458cf80ca0f8d73b7e1d0c54e340cb85ad12f5f1d59f",
+        "totals": {
+          "governor": 0,
+          "mayor": 0,
+          "question7": 0
+        }
+      }
+    }
+  ],
+  "start": {
+    "running": true,
+    "attempts": 0,
+    "successes": 0,
+    "failures": 0,
+    "lastAttemptAt": 0,
+    "nextRunAt": 1793752730240,
+    "pending": false,
+    "coveragePending": false,
+    "nextAlarm": 1793752730240,
+    "startsAt": "2026-11-03T00:00:00.000Z",
+    "endsAt": "2026-11-04T02:00:00.000Z",
+    "phase": "running",
+    "archiveBytesReserved": 0,
+    "archiveByteLimit": 5000000000,
+    "stale": true
+  },
+  "complete": true,
+  "stop": {
+    "running": false,
+    "attempts": 2,
+    "successes": 2,
+    "failures": 0,
+    "lastAttemptAt": 1793752790241,
+    "nextRunAt": 0,
+    "lastError": null,
+    "checkedAt": "2026-11-04T00:39:50.307Z",
+    "publishedAt": "2026-11-04T00:39:50.534Z",
+    "sourceUpdated": "2026-10-30T18:56:05.7249209Z",
+    "coverageEndedAt": null,
+    "revision": "35547eefd541d254a347458cf80ca0f8d73b7e1d0c54e340cb85ad12f5f1d59f",
+    "sourceHash": "e109cf75aea57e6459a229f0d69e9f5782e99a04043058ac861e714ca6b2eb6c",
+    "manifestHash": "8a433a10790cca639b7e5c1d4e509db2b8a5953627603d60e9ee47be3afe2800",
+    "etag": "0x8DF36B773FFAD42",
+    "lastModified": "Fri, 30 Oct 2026 18:56:06 GMT",
+    "pending": false,
+    "coveragePending": false,
+    "nextAlarm": null,
+    "startsAt": "2026-11-03T00:00:00.000Z",
+    "endsAt": "2026-11-04T02:00:00.000Z",
+    "phase": "stopped",
+    "archiveBytesReserved": 547741,
+    "archiveByteLimit": 5000000000,
+    "stale": false
+  },
+  "finishedAt": "2026-11-04T00:39:52.125Z"
+}

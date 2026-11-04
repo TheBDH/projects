@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-11-04T00:21:42.126Z",
+  "url": "https://electionresults.ri.gov/cdn/results/RhodeIsland/export-2026StatewideGeneralElection.json",
+  "contentType": "application/octet-stream",
+  "sourceUpdated": "2026-10-30T18:56:05.7249209Z",
+  "sourceSha256": "e109cf75aea57e6459a229f0d69e9f5782e99a04043058ac861e714ca6b2eb6c",
+  "rawBytes": 10716329,
+  "gzipBytes": 253421,
+  "normalizedBytes": 294287,
+  "contests": {
+    "governor": {
+      "total": 0,
+      "reporting": {
+        "reported": 0,
+        "expected": 454
+      }
+    },
+    "mayor": {
+      "total": 0,
+      "reporting": {
+        "reported": 0,
+        "expected": 82
+      }
+    },
+    "question7": {
+      "total": 0,
+      "reporting": {
+        "reported": 0,
+        "expected": 82
+      }
+    }
+  }
+}

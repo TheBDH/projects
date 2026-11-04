@@ -15,6 +15,10 @@ export function validateSnapshot(snapshot, { previous = null, expectedMode = nul
   assert(snapshot.mode !== 'mock' || snapshot.status !== 'certified', 'A simulation cannot be certified');
   assert(typeof snapshot.revision === 'string' && snapshot.revision.length > 0, 'Missing revision');
   for (const field of ['sourceUpdated', 'publishedAt', 'checkedAt']) assert(date(snapshot[field]), 'Invalid ' + field);
+  if (snapshot.coverageEndedAt !== undefined) {
+    assert(date(snapshot.coverageEndedAt), 'Invalid coverage end time');
+    assert(Date.parse(snapshot.coverageEndedAt) >= Date.parse(snapshot.checkedAt) && Date.parse(snapshot.coverageEndedAt) <= Date.parse(snapshot.publishedAt), 'Coverage end time must follow verification and precede publication');
+  }
   assert(snapshot.source && typeof snapshot.source.label === 'string' && /^https:\/\//.test(snapshot.source.url), 'Missing source');
   if (previous && previous.mode === snapshot.mode && previous.electionId === snapshot.electionId) {
     assert(Date.parse(snapshot.sourceUpdated) >= Date.parse(previous.sourceUpdated), 'Older source snapshot');

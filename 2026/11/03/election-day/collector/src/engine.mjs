@@ -5,12 +5,17 @@ export const SOURCE_URL = 'https://electionresults.ri.gov/cdn/results/RhodeIslan
 export const INTERVAL_MS = 60_000;
 export const MAX_SOURCE_BYTES = 20_000_000;
 export const MAX_SNAPSHOT_BYTES = 1_000_000;
+export const MAX_ARCHIVE_BYTES = 5_000_000_000;
 export const PREFIX = 'ri-2026-general/';
 export const LATEST_KEY = PREFIX + 'latest.json';
 const utf8 = new TextEncoder();
 const iso = n => new Date(n).toISOString();
 const initial = () => ({ running: false, attempts: 0, successes: 0, failures: 0, lastAttemptAt: 0, nextRunAt: 0 });
 const httpMetadata = cacheControl => ({ contentType: 'application/json; charset=utf-8', cacheControl });
+// The official Azure-hosted .json export uses application/octet-stream.
+// This allowlist applies only to SOURCE_URL; the body still must parse and
+// reconcile against the reviewed manifest before any publication.
+export const sourceContentTypeAllowed = value => /^application\/(?:octet-stream|(?:[\w.-]+\+)?json)(?:\s*;|$)/i.test(value || '');
 export async function sha256(value) {
   const bytes = typeof value === 'string' ? utf8.encode(value) : value;
   return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), n => n.toString(16).padStart(2, '0')).join('');
@@ -45,21 +50,32 @@ export async function readBounded(response, maxBytes = MAX_SOURCE_BYTES) {
  * lets tests reproduce crashes and failed publications without a live source.
  */
 export class CollectorEngine {
-  constructor({ store, bucket, manifest, fetchSource = (url, init) => fetch(url, init), now = Date.now, timeoutMs = 20_000, startAt = -Infinity, stopAt = Infinity, allowCollection = true, log = () => {} }) {
+  constructor({ store, bucket, manifest, fetchSource = (url, init) => fetch(url, init), now = Date.now, timeoutMs = 20_000, startAt = -Infinity, stopAt = Infinity, allowCollection = true, maxArchiveBytes = MAX_ARCHIVE_BYTES, log = () => {} }) {
     // Invalid configured dates fail closed instead of starting early or running forever.
-    Object.assign(this, { store, bucket, manifest, fetchSource, now, timeoutMs, startAt: Number.isNaN(startAt) ? Infinity : startAt, stopAt: Number.isNaN(stopAt) ? 0 : stopAt, allowCollection, log });
+    Object.assign(this, { store, bucket, manifest, fetchSource, now, timeoutMs, startAt: Number.isNaN(startAt) ? Infinity : startAt, stopAt: Number.isNaN(stopAt) ? 0 : stopAt, allowCollection, maxArchiveBytes, log });
     this.busy = null;
+    this.finishing = null;
   }
   meta() { return this.store.get('meta') || initial(); }
   async status() {
     const meta = this.meta(), now = this.now();
-    return { ...meta, pending: Boolean(this.store.get('pending')), nextAlarm: await this.store.getAlarm(),
+    return { ...meta, pending: Boolean(this.store.get('pending')), coveragePending: Boolean(this.store.get('pendingCoverage')), nextAlarm: await this.store.getAlarm(),
       startsAt: Number.isFinite(this.startAt) ? iso(this.startAt) : null,
       endsAt: Number.isFinite(this.stopAt) ? iso(this.stopAt) : null,
-      phase: !this.allowCollection || this.startAt >= this.stopAt ? 'disabled' : now >= this.stopAt ? 'ended' : !meta.running ? 'stopped' : now < this.startAt ? 'scheduled' : 'running',
-      stale: now >= this.startAt && (!meta.checkedAt || now - Date.parse(meta.checkedAt) > 180_000) };
+      phase: meta.ending ? 'ending' : meta.coverageEndedAt && !meta.running ? 'ended' : !this.allowCollection || this.startAt >= this.stopAt ? 'disabled' : now >= this.stopAt ? 'ended' : !meta.running ? 'stopped' : now < this.startAt ? 'scheduled' : 'running',
+      archiveBytesReserved: this.store.get('archiveBudget')?.reservedBytes || 0,
+      archiveByteLimit: this.maxArchiveBytes,
+      stale: !(meta.coverageEndedAt && !meta.running) && now >= this.startAt && (!meta.checkedAt || now - Date.parse(meta.checkedAt) > 180_000) };
+  }
+  reserveArchive(bytes) {
+    const used = this.store.get('archiveBudget')?.reservedBytes || 0;
+    if (!Number.isSafeInteger(bytes) || bytes < 0 || !Number.isSafeInteger(this.maxArchiveBytes) || used + bytes > this.maxArchiveBytes) throw new Error('Archive storage budget reached; retain last good results and review storage before resetting the budget');
+    // Reserve before the R2 write, so a crash/retry can overcount but cannot
+    // undercount storage. Expiry does not reset this conservative lifetime cap.
+    this.store.put('archiveBudget', { reservedBytes: used + bytes });
   }
   async start() {
+    if (this.meta().ending || this.finishing) throw new Error('Wait for the end-of-coverage publication before restarting');
     if (!this.allowCollection || !this.bucket) throw new Error('Collector is not configured for collection');
     if (this.startAt >= this.stopAt || this.now() >= this.stopAt) throw new Error('Collection window is invalid or has ended');
     const meta = this.meta(); meta.running = true;
@@ -75,8 +91,58 @@ export class CollectorEngine {
     await this.store.deleteAlarm();
     return this.status();
   }
+  finish() {
+    if (this.finishing) return this.finishing;
+    if (!this.store.get('current') && !this.busy) return Promise.reject(new Error('A verified snapshot is required before ending coverage'));
+    // Persist the editorial decision before yielding. Alarms and the watchdog
+    // can finish publication after a failed R2 write or an instance restart.
+    this.store.put('meta', { ...this.meta(), running: false, nextRunAt: 0, ending: true });
+    this.finishing = this.finishCoverage().finally(() => { this.finishing = null; });
+    return this.finishing;
+  }
+  async finishCoverage() {
+    await this.store.deleteAlarm();
+    if (this.busy) await this.busy;
+    const current = this.store.get('current');
+    if (!current) {
+      this.store.put('meta', { ...this.meta(), ending: false, running: false, nextRunAt: 0 });
+      throw new Error('A verified snapshot is required before ending coverage');
+    }
+    try {
+      let snapshot = this.store.get('pendingCoverage');
+      if (!snapshot && !current.coverageEndedAt) {
+        const endedAt = iso(Math.max(this.now(), Date.parse(current.publishedAt), Date.parse(current.checkedAt)));
+        snapshot = { ...current, coverageEndedAt: endedAt, publishedAt: endedAt };
+        validateSnapshot(snapshot, { expectedMode: 'live', previous: current });
+        this.store.put('pendingCoverage', snapshot);
+      }
+      if (snapshot) {
+        validateSnapshot(snapshot, { expectedMode: 'live', previous: current });
+        const body = JSON.stringify(snapshot);
+        if (utf8.encode(body).length > MAX_SNAPSHOT_BYTES) throw new Error('Prepared snapshot exceeds size limit');
+        // This only publishes coverage metadata. It must never advance the
+        // successful source-check time, change totals, or certify results.
+        await this.bucket.put(LATEST_KEY, body, {
+          httpMetadata: httpMetadata('public, max-age=0, s-maxage=15, must-revalidate'),
+          customMetadata: { sourceHash: this.meta().sourceHash, snapshotMode: snapshot.mode }
+        });
+      } else snapshot = current;
+      this.store.commit({ current: snapshot, meta: { ...this.meta(), running: false, nextRunAt: 0,
+        ending: false, coverageEndedAt: snapshot.coverageEndedAt, publishedAt: snapshot.publishedAt, lastError: null } }, ['pendingCoverage', 'pending']);
+      await this.store.deleteAlarm();
+      this.log({ event: 'coverage-ended', coverageEndedAt: snapshot.coverageEndedAt, checkedAt: snapshot.checkedAt });
+      return this.status();
+    } catch (error) {
+      const nextRunAt = this.now() + INTERVAL_MS, lastError = String(error.message || error).slice(0, 240);
+      this.store.put('meta', { ...this.meta(), ending: true, running: false, nextRunAt, lastError });
+      await this.store.setAlarm(nextRunAt);
+      this.log({ event: 'coverage-publication-failed', error: lastError });
+      throw error;
+    }
+  }
   async watchdog() {
     const meta = this.meta();
+    if (meta.ending) return this.finish();
     if (!this.allowCollection || this.startAt >= this.stopAt || this.now() >= this.stopAt) return this.stop();
     if (meta.running) {
       const alarm = await this.store.getAlarm();
@@ -92,6 +158,9 @@ export class CollectorEngine {
     // HTTP, alarms and retries share this lock. The persisted attempt timestamp
     // also prevents a replacement instance from fetching twice in one minute.
     if (this.busy) return this.busy;
+    const meta = this.meta();
+    if (meta.ending) return this.finish();
+    if (meta.coverageEndedAt && !meta.running) return Promise.resolve({ skipped: 'coverage-ended' });
     this.busy = this.run(alarm).finally(() => { this.busy = null; });
     return this.busy;
   }
@@ -100,18 +169,21 @@ export class CollectorEngine {
     validateSnapshot(snapshot, { expectedMode: 'live', previous: this.store.get('current') });
     const body = JSON.stringify(snapshot);
     if (utf8.encode(body).length > MAX_SNAPSHOT_BYTES) throw new Error('Prepared snapshot exceeds size limit');
-    if (pending.changed) await this.bucket.put(PREFIX + 'snapshots/' + snapshot.revision + '.json', body, {
-      httpMetadata: httpMetadata('public, max-age=31536000, immutable'),
-      customMetadata: { sourceHash: pending.sourceHash }
-    });
+    if (pending.changed) {
+      this.reserveArchive(utf8.encode(body).length);
+      await this.bucket.put(PREFIX + 'snapshots/' + snapshot.revision + '.json', body, {
+        httpMetadata: httpMetadata('public, max-age=31536000, immutable'),
+        customMetadata: { sourceHash: pending.sourceHash, snapshotMode: snapshot.mode }
+      });
+    }
     // A single R2 PUT atomically replaces the entire three-contest publication.
     await this.bucket.put(LATEST_KEY, body, {
       httpMetadata: httpMetadata('public, max-age=0, s-maxage=15, must-revalidate'),
-      customMetadata: { sourceHash: pending.sourceHash }
+      customMetadata: { sourceHash: pending.sourceHash, snapshotMode: snapshot.mode }
     });
     const meta = this.meta();
     const next = { ...meta, successes: meta.successes + 1, failures: 0, lastError: null,
-      checkedAt: snapshot.checkedAt, publishedAt: iso(this.now()), sourceUpdated: snapshot.sourceUpdated,
+      checkedAt: snapshot.checkedAt, publishedAt: iso(this.now()), sourceUpdated: snapshot.sourceUpdated, coverageEndedAt: snapshot.coverageEndedAt || null,
       revision: snapshot.revision, sourceHash: pending.sourceHash, manifestHash: pending.manifestHash,
       etag: pending.etag, lastModified: pending.lastModified };
     this.store.commit({ meta: next, current: snapshot }, ['pending']);
@@ -119,6 +191,8 @@ export class CollectorEngine {
   }
   async fetchCandidate(meta) {
     const previous = this.store.get('current');
+    const activePrevious = previous && { ...previous };
+    if (activePrevious) delete activePrevious.coverageEndedAt;
     const manifestHash = await sha256(JSON.stringify(this.manifest));
     const headers = new Headers({ Accept: 'application/json' });
     if (previous && meta.manifestHash === manifestHash) {
@@ -141,7 +215,7 @@ export class CollectorEngine {
           await response.body?.cancel();
           throw error;
         }
-        if (!/^application\/(?:[\w.-]+\+)?json(?:\s*;|$)/i.test(response.headers.get('content-type') || '')) {
+        if (!sourceContentTypeAllowed(response.headers.get('content-type'))) {
           await response.body?.cancel(); throw new Error('Source did not return JSON');
         }
         bytes = await readBounded(response);
@@ -150,13 +224,13 @@ export class CollectorEngine {
     const checkedAt = iso(this.now());
     if (response.status === 304) {
       if (!previous || meta.manifestHash !== manifestHash) throw new Error('Not-modified response without an approved baseline');
-      return { snapshot: validateSnapshot({ ...previous, checkedAt, publishedAt: checkedAt }, { expectedMode: 'live', previous }),
+      return { snapshot: validateSnapshot({ ...activePrevious, checkedAt, publishedAt: checkedAt }, { expectedMode: 'live', previous }),
         changed: false, sourceHash: meta.sourceHash, manifestHash, etag: meta.etag, lastModified: meta.lastModified };
     }
     const sourceHash = await sha256(bytes);
     let snapshot;
     if (previous && sourceHash === meta.sourceHash && manifestHash === meta.manifestHash) {
-      snapshot = validateSnapshot({ ...previous, checkedAt, publishedAt: checkedAt }, { expectedMode: 'live', previous });
+      snapshot = validateSnapshot({ ...activePrevious, checkedAt, publishedAt: checkedAt }, { expectedMode: 'live', previous });
     } else {
       const source = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
       if (Date.parse(source.createdAt) > this.now() + 300_000) throw new Error('Source timestamp is in the future');
@@ -171,6 +245,7 @@ export class CollectorEngine {
       // storage. Do this before publishing so every new revision has evidence.
       const compressed = new Blob([bytes]).stream().pipeThrough(new CompressionStream('gzip'));
       const archive = await new Response(compressed).arrayBuffer();
+      this.reserveArchive(archive.byteLength);
       await this.bucket.put(PREFIX + 'source/' + sourceHash + '.json.gz', archive, {
         httpMetadata: { contentType: 'application/gzip', cacheControl: 'public, max-age=31536000, immutable' },
         customMetadata: { sourceHash, sourceUpdated: snapshot.sourceUpdated }

@@ -1,6 +1,5 @@
 {
   "verifiedOn": "2026-11-03",
-  "deployment": "not deployed; collection disabled; viewer endpoint null",
   "viewerAndAdapterTests": {
     "passed": 39,
     "command": "node --test tests/results.test.mjs"
@@ -20,16 +19,6 @@
   },
   "wranglerDryRun": "Previous dry run passed before timed-start changes; current Worker rebuilt with esbuild and verified in the local runtime suite.",
   "dependencyAuditKnownVulnerabilities": 0,
-  "remoteComputeEvidence": "durable-object-results.json is a previous prototype's Cloudflare measurement, not this implementation's deployment acceptance",
-  "outstanding": [
-    "confirm Herald-owned hosting/account, data hostname and storage availability",
-    "implement/test Free Pages Function delivery on its production pages.dev address; optional Herald hostname needs a GoDaddy CNAME, or explicitly approve an alternative delivery setup",
-    "deploy staging and production resources",
-    "verify real custom-domain TLS, CORS, cache lifetime and R2 recovery",
-    "observe deployed minute alarms and compute quotas",
-    "configure independent monitoring, projected daily Free request usage alerts and an incident owner",
-    "confirm current official roster and connect viewer only after acceptance"
-  ],
   "browserChecks": {
     "desktop": "one visible race; cursor-following tooltip moved by the same 10 px as pointer; complete outline geometry over all polygons; ward drill-down; population mode preserved after town drill-down and return; Escape dismisses pinned details",
     "responsive": "all three contests: 390 px document width at 390 px viewport, inline share bars vertically centered with counts and percentages",
@@ -41,5 +30,7 @@
     "sectionTabs": "All five pages use matching shared asset versions. Direct on-screen navigation to/from every page: tabs top 0 px, no hero sliver, no animated underline. The bar remained at 0 px through 390 px and desktop resizing after layout restoration was updated. Mobile font/menu closure/width also verified. Results reserves loading height and confines button/focus styling to its main content.",
     "areaMenu": "Town selection directly opened Jamestown with precincts 1501/1502; selecting precinct 1501 opened its tooltip. Selecting Providence from population mode opened geographic precincts. Switching to wards and choosing Ward 1 opened its five precincts; returning through Providence to the state restored Population as the selected mode. Race-menu keyboard focus computed rgb(217, 217, 217), using the same CSS rule as hover. Screenshot saved locally. Browser console had no warnings/errors during these checks."
   },
-  "ownership": "Herald-owned infrastructure only; personal domain/account excluded"
+  "ownership": "Herald-owned infrastructure only; personal domain/account excluded",
+  "scope": "Historical local/browser verification; superseded for deployment and launch status by cloudflare-launch-verification.json",
+  "supersededBy": "cloudflare-launch-verification.json"
 }

@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "herald-election-data-2026",
+  "account_id": "44add93f0807dcac364f9aa9a2d28d20",
+  "pages_build_output_dir": ".build/delivery",
+  "compatibility_date": "2026-11-03",
+  "compatibility_flags": ["nodejs_compat"],
+  "limits": { "cpu_ms": 50 },
+  "vars": { "SNAPSHOT_MODE": "live" },
+  "r2_buckets": [{ "binding": "RESULTS", "bucket_name": "herald-election-results-2026" }],
+  "env": {
+    "preview": {
+      "vars": { "SNAPSHOT_MODE": "mock" },
+      "r2_buckets": [{ "binding": "RESULTS", "bucket_name": "herald-election-results-2026-test" }]
+    }
+  }
+}

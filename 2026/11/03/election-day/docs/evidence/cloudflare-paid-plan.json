@@ -1,0 +1,293 @@
+{
+  "checkedAt": "2026-11-04 00:06:44 UTC",
+  "account": {
+    "id": "44add93f0807dcac364f9aa9a2d28d20",
+    "workersPlan": "Paid",
+    "baseMonthlyUsd": 5,
+    "recurring": true,
+    "verification": "Cloudflare checkout visibly confirmed Purchase complete and subscription active on November 3, 2026, Eastern time."
+  },
+  "authorization": {
+    "decision": "Allow $5/month plus possible overages",
+    "target": "Stay inside included monthly allowances",
+    "hardCapConfigured": false,
+    "previousStrictCeilingSuperseded": true
+  },
+  "costControls": {
+    "collectorCpuMs": 10000,
+    "deliveryCpuMs": 50,
+    "archiveReservationByteLimit": 5000000000,
+    "archiveRetentionHours": 72,
+    "testRetentionHours": 24,
+    "latestObjectByteLimit": 1000000
+  },
+  "readbacks": [
+    {
+      "path": "/workers/scripts/herald-election-results-2026/settings",
+      "success": true,
+      "errors": [],
+      "result": {
+        "limits": {
+          "cpu_ms": 10000
+        },
+        "bindings": [
+          {
+            "name": "COLLECTION_ENABLED",
+            "text": "false",
+            "type": "plain_text"
+          },
+          {
+            "name": "COLLECTION_ENDS_AT",
+            "text": "2026-11-30T23:59:59Z",
+            "type": "plain_text"
+          },
+          {
+            "name": "COLLECTION_STARTS_AT",
+            "text": "2026-11-04T01:00:00Z",
+            "type": "plain_text"
+          },
+          {
+            "class_name": "ElectionCollector",
+            "name": "COLLECTOR",
+            "namespace_id": "a5c856971b9847ab9ca23acf9407c33e",
+            "type": "durable_object_namespace"
+          },
+          {
+            "bucket_name": "herald-election-results-2026",
+            "name": "RESULTS",
+            "type": "r2_bucket"
+          }
+        ],
+        "secretPresent": true
+      }
+    },
+    {
+      "path": "/pages/projects/herald-election-data-2026",
+      "success": true,
+      "errors": [],
+      "result": {
+        "deployment_configs": {
+          "preview": {
+            "env_vars": {
+              "SNAPSHOT_MODE": {
+                "type": "plain_text",
+                "value": "mock"
+              }
+            },
+            "r2_buckets": {
+              "RESULTS": {
+                "name": "herald-election-results-2026-test"
+              }
+            },
+            "services": {
+              "MOCK_COLLECTOR": {
+                "service": "herald-election-collector-test",
+                "environment": "production"
+              }
+            },
+            "fail_open": false,
+            "always_use_latest_compatibility_date": false,
+            "compatibility_date": "2026-11-03",
+            "compatibility_flags": [
+              "nodejs_compat"
+            ],
+            "build_image_major_version": 3,
+            "usage_model": "standard",
+            "limits": {
+              "cpu_ms": 50
+            }
+          },
+          "production": {
+            "env_vars": {
+              "SNAPSHOT_MODE": {
+                "type": "plain_text",
+                "value": "live"
+              }
+            },
+            "r2_buckets": {
+              "RESULTS": {
+                "name": "herald-election-results-2026"
+              }
+            },
+            "fail_open": false,
+            "always_use_latest_compatibility_date": false,
+            "compatibility_date": "2026-11-03",
+            "compatibility_flags": [
+              "nodejs_compat"
+            ],
+            "build_image_major_version": 3,
+            "usage_model": "standard",
+            "limits": {
+              "cpu_ms": 50
+            }
+          }
+        },
+        "canonical_deployment": "01883025-f7a4-4e7d-bfec-74d30152a6b7"
+      }
+    },
+    {
+      "path": "/pages/projects/herald-election-data-2026/deployments/01883025-f7a4-4e7d-bfec-74d30152a6b7",
+      "success": true,
+      "errors": [],
+      "result": {
+        "id": "01883025-f7a4-4e7d-bfec-74d30152a6b7",
+        "url": "https://01883025.herald-election-data-2026.pages.dev",
+        "stage": {
+          "name": "deploy",
+          "started_on": null,
+          "ended_on": "2026-11-04T00:03:06.347787Z",
+          "status": "success"
+        },
+        "limits": {
+          "cpu_ms": 50
+        },
+        "environment": "production",
+        "mode": {
+          "type": "plain_text",
+          "value": "live"
+        },
+        "bucket": {
+          "RESULTS": {
+            "name": "herald-election-results-2026"
+          }
+        }
+      }
+    },
+    {
+      "path": "/pages/projects/herald-election-data-2026/deployments/fec0309a-d64b-4eca-8910-870a60849715",
+      "success": true,
+      "errors": [],
+      "result": {
+        "id": "fec0309a-d64b-4eca-8910-870a60849715",
+        "url": "https://fec0309a.herald-election-data-2026.pages.dev",
+        "stage": {
+          "name": "deploy",
+          "started_on": null,
+          "ended_on": "2026-11-04T00:03:36.038621Z",
+          "status": "success"
+        },
+        "limits": {
+          "cpu_ms": 50
+        },
+        "environment": "preview",
+        "mode": {
+          "type": "plain_text",
+          "value": "mock"
+        },
+        "bucket": {
+          "RESULTS": {
+            "name": "herald-election-results-2026-test"
+          }
+        }
+      }
+    },
+    {
+      "path": "/alerting/v3/policies",
+      "success": true,
+      "errors": [],
+      "result": [
+        {
+          "id": "0e3cca6779fe4d099d11d9fcfb06e9de",
+          "name": "Herald election: metered overage warning",
+          "description": "Warn when usage-based charges reach $0.01 beyond included allowances. Excludes the Workers subscription fee; informational only, not a spending cap.",
+          "enabled": true,
+          "alert_type": "billing_budget_alert",
+          "mechanisms": {
+            "email": [
+              {
+                "id": "techadmin@browndailyherald.com"
+              }
+            ]
+          },
+          "created": "2026-11-03T22:55:54.302058Z",
+          "modified": "2026-11-03T23:58:16.443605Z",
+          "filters": {
+            "total_spend_dollars": [
+              "0.01"
+            ]
+          }
+        },
+        {
+          "id": "3387aab54dca4218b037b3ca565483ae",
+          "name": "Herald election: 8 million request warning",
+          "description": "Warn at 8 million Worker requests. Review usage before the 10 million monthly allowance is exhausted. Notification only, not a spending cap.",
+          "enabled": true,
+          "alert_type": "billing_usage_alert",
+          "mechanisms": {
+            "email": [
+              {
+                "id": "techadmin@browndailyherald.com"
+              }
+            ]
+          },
+          "created": "2026-11-04T00:01:42.575032Z",
+          "modified": "2026-11-04T00:01:42.575032Z",
+          "filters": {
+            "limit": [
+              "8000000"
+            ],
+            "product": [
+              "worker_bundled_request"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "notifications": {
+    "recipient": "techadmin@browndailyherald.com",
+    "meteredSpendThresholdUsd": 0.01,
+    "subscriptionFeeIncludedInThreshold": false,
+    "requestThreshold": 8000000,
+    "requestProduct": "worker_bundled_request",
+    "limitations": [
+      "Notifications do not block usage or cap charges.",
+      "Budget alerts process the prior day's usage and are not real time.",
+      "The dashboard only offered the legacy-labeled Workers Bundled Requests product. Triggering this usage policy under Standard has not been demonstrated.",
+      "No separate CPU/R2 threshold options were offered in the available UI.",
+      "The connector did not have permission to read billing spend policies; no spend block was configured.",
+      "No independent service-health monitor or newsroom incident owner has been configured."
+    ]
+  },
+  "verification": {
+    "wranglerCollectorDryRun": "passed",
+    "deliverySourceChanged": false,
+    "collectorSourceRedeployed": false,
+    "httpChecks": [
+      {
+        "name": "production",
+        "status": 503,
+        "mode": null,
+        "error": "Results have not been published yet",
+        "cors": "https://projects.browndailyherald.com",
+        "cacheControl": "no-store",
+        "etag": null
+      },
+      {
+        "name": "preview",
+        "status": 200,
+        "mode": "mock",
+        "error": null,
+        "cors": "https://projects.browndailyherald.com",
+        "cacheControl": "public, max-age=0, must-revalidate",
+        "etag": "W/\"b26d87b0f6ccc978b286bb275baf4f4d\"",
+        "conditionalStatus": 304
+      }
+    ],
+    "fullLoadTestRepeated": false,
+    "priorFreeLoadTest": "cloudflare-reader-load-test.json",
+    "priorCloudflareMetrics": "cloudflare-free-metrics.json"
+  },
+  "launch": {
+    "collectionEnabled": false,
+    "viewerEndpoint": null,
+    "productionSnapshotPublished": false,
+    "remaining": [
+      "Review and deploy subsequent collector changes with their acceptance checks.",
+      "Assign an incident owner and configure independent health monitoring.",
+      "Enable and arm collector; verify live-source publication and advancing checks.",
+      "Connect viewer to verified shared snapshot URL and publish separately."
+    ]
+  },
+  "renewal": "Recurring monthly subscription. Review the plan after coverage ends; stopping collection does not cancel the subscription or stop reader delivery."
+}

@@ -1,9 +1,9 @@
 import { LIVE_STARTS_AT } from './schedule.mjs';
 
-// Set this to the public, normalized snapshot URL after deployment acceptance.
+// Public normalized snapshot; production acceptance is recorded in docs/evidence/.
 // Never point browsers at the Board of Elections API or put credentials here.
 export const CONFIG = Object.freeze({
-  endpoint: null,
+  endpoint: 'https://herald-election-data-2026.pages.dev/ri-2026-general/latest.json',
   startsAt: LIVE_STARTS_AT,
   // Preview controls and test modes are allowed only on these exact hosts.
   // Add a Herald staging host explicitly if needed; never add the public site.

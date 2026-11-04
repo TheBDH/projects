@@ -1,0 +1,173 @@
+{
+  "startedAt": "2026-11-03T22:57:00.835Z",
+  "target": "https://d77d902c.herald-election-data-2026.pages.dev/ri-2026-general/latest.json",
+  "mode": "mock",
+  "storage": "R2 Standard test bucket",
+  "limitations": [
+    "One client/network location; simulated minute polls, not full browsers.",
+    "Reader load test does not itself test collection, write latency, storage failures or daily-quota exhaustion.",
+    "No automatic retries; full response bodies consumed."
+  ],
+  "snapshot": {
+    "revision": "mock-base",
+    "checkedAt": "2026-11-03T17:00:00.000Z",
+    "bytes": 0
+  },
+  "phases": [
+    {
+      "name": "100 readers polling once per minute",
+      "requests": 100,
+      "scheduledDurationSeconds": 60,
+      "elapsedSeconds": 59.427267583,
+      "maximumInFlight": 1,
+      "latencyMs": {
+        "p50": 27.874082999995153,
+        "p95": 125.30404200000339,
+        "p99": 207.47608300000138,
+        "max": 207.47608300000138
+      },
+      "schedulingLagMs": {
+        "p95": 1.2946670000019367,
+        "max": 21.27808300000106
+      },
+      "statuses": {
+        "200": 100
+      },
+      "cache": {
+        "HIT": 96,
+        "MISS": 4
+      },
+      "colos": {
+        "BOS": 100
+      },
+      "encoding": {
+        "br": 100
+      },
+      "decodedBytes": 30661600,
+      "errors": []
+    },
+    {
+      "name": "500 readers polling once per minute",
+      "requests": 500,
+      "scheduledDurationSeconds": 60,
+      "elapsedSeconds": 59.923674834,
+      "maximumInFlight": 2,
+      "latencyMs": {
+        "p50": 26.758708999986993,
+        "p95": 109.6974579999951,
+        "p99": 148.7754580000037,
+        "max": 180.7557919999963
+      },
+      "schedulingLagMs": {
+        "p95": 1.6642089999950258,
+        "max": 20.75470900000073
+      },
+      "statuses": {
+        "200": 500
+      },
+      "cache": {
+        "HIT": 496,
+        "MISS": 4
+      },
+      "colos": {
+        "BOS": 500
+      },
+      "encoding": {
+        "br": 500
+      },
+      "decodedBytes": 153308000,
+      "errors": []
+    },
+    {
+      "name": "1000 readers polling once per minute",
+      "requests": 1000,
+      "scheduledDurationSeconds": 60,
+      "elapsedSeconds": 60.066952917,
+      "maximumInFlight": 7,
+      "latencyMs": {
+        "p50": 29.23091700000805,
+        "p95": 111.81949999998324,
+        "p99": 150.51591700001154,
+        "max": 2155.0390840000036
+      },
+      "schedulingLagMs": {
+        "p95": 1.6596669999998994,
+        "max": 56.20220899998094
+      },
+      "statuses": {
+        "200": 1000
+      },
+      "cache": {
+        "HIT": 990,
+        "MISS": 10
+      },
+      "colos": {
+        "BOS": 1000
+      },
+      "encoding": {
+        "br": 1000
+      },
+      "decodedBytes": 306616000,
+      "errors": []
+    },
+    {
+      "name": "1000 initial page loads over 10 seconds",
+      "requests": 1000,
+      "scheduledDurationSeconds": 10,
+      "elapsedSeconds": 10.015013124999998,
+      "maximumInFlight": 17,
+      "latencyMs": {
+        "p50": 31.33145900000818,
+        "p95": 113.59350000001723,
+        "p99": 137.45912500002305,
+        "max": 165.42570900000283
+      },
+      "schedulingLagMs": {
+        "p95": 0.9725829999952111,
+        "max": 26.35845800000243
+      },
+      "statuses": {
+        "200": 1000
+      },
+      "cache": {
+        "HIT": 998,
+        "MISS": 2
+      },
+      "colos": {
+        "BOS": 1000
+      },
+      "encoding": {
+        "br": 1000
+      },
+      "decodedBytes": 306616000,
+      "errors": []
+    }
+  ],
+  "finishedAt": "2026-11-03T23:00:10.307Z",
+  "projections": [
+    {
+      "readers": 100,
+      "requestsPerSecond": 1.6666666666666667,
+      "requests8Hours": 48000,
+      "requests24Hours": 144000,
+      "requests72Hours": 432000,
+      "hoursTo100kDailyLimit": 16.666666666666668
+    },
+    {
+      "readers": 500,
+      "requestsPerSecond": 8.333333333333334,
+      "requests8Hours": 240000,
+      "requests24Hours": 720000,
+      "requests72Hours": 2160000,
+      "hoursTo100kDailyLimit": 3.3333333333333335
+    },
+    {
+      "readers": 1000,
+      "requestsPerSecond": 16.666666666666668,
+      "requests8Hours": 480000,
+      "requests24Hours": 1440000,
+      "requests72Hours": 4320000,
+      "hoursTo100kDailyLimit": 1.6666666666666667
+    }
+  ]
+}

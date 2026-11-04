@@ -1,22 +1,20 @@
-import { CONFIG, previewsAllowed } from './config.mjs';
-import { createFeed } from './feed.mjs';
+import { CONFIG } from './config.mjs?v=20261103-launch';
+import { createFeed, LIVE_MESSAGE } from './feed.mjs?v=20261103-launch';
+import { describeFreshness } from './freshness.mjs?v=20261103-launch';
 import { safeColor, leadOf, leaderColors, tint } from './map-colors.mjs';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const count = new Intl.NumberFormat('en-US');
-const dateTime = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York', timeZoneName: 'short' });
-const clockTime = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit', timeZone: 'America/New_York', timeZoneName: 'short' });
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const titles = { governor: 'Governor', mayor: 'Mayor of Providence', question7: 'Question 7' };
 const coverage = {
-  governor: ['Meet the candidates →', 'ballot.html#governor-title'],
-  mayor: ['Meet the candidates →', 'ballot.html#mayor-title'],
-  question7: ['What Question 7 would change →', 'ballot.html#question-7'],
+  governor: ['Read more →', 'ballot.html#governor-title'],
+  mayor: ['Read more →', 'ballot.html#mayor-title'],
+  question7: ['Read more →', 'ballot.html#question-7'],
 };
 const total = values => (values || []).reduce((sum, value) => sum + value, 0);
 const clamp = (value, low, high) => Math.max(low, Math.min(high, value));
 const percentage = (votes, denominator) => denominator > 0 ? `${(votes / denominator * 100).toFixed(1)}%` : '—';
-function formatDate(value, formatter = dateTime) { const date = new Date(value); return value && Number.isFinite(date.getTime()) ? formatter.format(date) : ''; }
 function node(tag, className, text) { const element = document.createElement(tag); if (className) element.className = className; if (text !== undefined) element.textContent = text; return element; }
 function svgNode(tag, attributes = {}) { const element = document.createElementNS(SVG_NS, tag); for (const [name, value] of Object.entries(attributes)) element.setAttribute(name, value); return element; }
 function pathData(rings, other, fraction = 0) {
@@ -54,7 +52,7 @@ class ContestView {
       <div class="contest-heading"><div><div class="race-picker"><h2 id="${id}-heading"></h2><span class="race-picker-caret" aria-hidden="true"></span><button type="button" class="race-select" aria-label="Choose a race" aria-haspopup="menu" aria-expanded="false" aria-controls="${id}-race-menu"></button><div class="race-menu" id="${id}-race-menu" role="menu" aria-label="Choose a race" hidden></div></div><a class="contest-coverage"></a></div></div>
       <p class="contest-notice" hidden></p>
       <div class="contest-content">
-        <div class="contest-summary"><div class="summary-meta"><span class="summary-status"></span><span class="summary-geography"></span></div><div class="summary-table"></div><div class="summary-total"><span>Votes reported</span><strong></strong></div></div>
+        <div class="contest-summary"><div class="summary-table"></div><div class="summary-total"><span>Votes reported</span><strong></strong></div></div>
         <div class="map-column">
           <button type="button" class="map-back" hidden></button>
           <div class="map-heading"><h3 id="${id}-map-heading"></h3><div class="map-view-buttons" role="group" aria-label="Map view"><button type="button" data-view="first"></button><button type="button" data-view="second"></button></div></div>
@@ -154,9 +152,6 @@ class ContestView {
 
   renderSummary() {
     const area = this.areas[this.contest.totalArea];
-    this.q('.summary-status').textContent = this.snapshot.mode === 'mock' ? 'Simulated returns' : this.snapshot.mode === 'historical' ? '2026 Democratic primary' : this.snapshot.status === 'certified' ? 'Certified results' : this.snapshot.status === 'waiting' ? 'Awaiting results' : 'Unofficial results';
-    this.q('.summary-status').dataset.baseLabel = this.q('.summary-status').textContent;
-    this.q('.summary-geography').textContent = this.id === 'governor' ? 'Rhode Island' : 'Providence';
     const table = node('table', 'candidate-table');
     table.setAttribute('aria-label', `${titles[this.id]} vote totals`);
     const head = node('thead'), header = node('tr');
@@ -527,72 +522,47 @@ class ContestView {
 }
 
 const params = new URLSearchParams(location.search);
-const allowPreview = previewsAllowed(location.hostname);
-let mode = allowPreview && ['historical', 'mock'].includes(params.get('mode')) ? params.get('mode') : 'live';
-let scenario = ['delayed', 'failure', 'correction', 'malformed'].includes(params.get('scenario')) ? params.get('scenario') : 'normal';
-let feed, lastSnapshot, paused = false;
+const mode = 'live';
+let feed, lastSnapshot;
+let lastStatus = { kind: 'loading', message: 'Preparing results…', mode }, freshnessTimer;
 const views = new Map();
 let selectedContest = Object.hasOwn(titles, params.get('contest')) ? params.get('contest') : Object.hasOwn(titles, location.hash.slice(1)) ? location.hash.slice(1) : 'governor';
 function selectContest() {
   for (const [id, view] of views) { view.toggleRaceMenu(false); view.section.hidden = id !== selectedContest; view.clearTooltip(); }
 }
-const modeSelect = document.getElementById('data-mode');
-const scenarioSelect = document.getElementById('mock-scenario');
-modeSelect.value = mode; scenarioSelect.value = scenario;
-
-function updateTestTools() {
-  document.getElementById('test-tools-wrap').hidden = !allowPreview;
-  const isMock = mode === 'mock';
-  scenarioSelect.disabled = !isMock;
-  document.getElementById('mock-pause').disabled = !isMock;
-  document.getElementById('mock-next').disabled = !isMock;
-  const banner = document.getElementById('test-banner');
-  // Keep the displayed snapshot labeled while an asynchronous mode switch is
-  // loading. A failed switch must never make old mock numbers look live.
-  const displayedMode = lastSnapshot?.mode || mode;
-  banner.hidden = displayedMode === 'live';
-  banner.textContent = displayedMode === 'mock' ? 'SIMULATED RESULTS — These are invented test numbers, not election returns.' : 'HISTORICAL RESULTS — 2026 Democratic primary. These are not general-election returns.';
-}
 function onStatus(status) {
+  lastStatus = status;
+  renderStatus();
+}
+function renderStatus() {
+  const status = lastStatus;
+  const freshness = describeFreshness({ snapshot: lastSnapshot, status, connected: !!CONFIG.endpoint });
   const indicator = document.getElementById('results-live-indicator');
   indicator.hidden = !status.updating;
-  indicator.setAttribute('aria-label', lastSnapshot?.mode === 'mock' ? 'Simulation is updating automatically' : 'Results are updating automatically');
+  indicator.setAttribute('aria-label', status.mode === 'mock' ? 'Automatic simulation checks are enabled' : 'Automatic results checks are enabled');
+  indicator.title = 'Automatic checks are enabled. See the last verified time below.';
   document.getElementById('results-status').dataset.kind = status.kind;
-  document.getElementById('status-message').textContent = status.message || (status.kind === 'waiting' ? 'Automatic results updates have not started.' : 'Results updated.');
-  for (const element of document.querySelectorAll('.summary-status')) {
-    const delayed = ['stale', 'error'].includes(status.kind);
-    element.textContent = (element.dataset.baseLabel || '') + (delayed ? ' · Updates delayed' : '');
-    element.classList.toggle('is-delayed', delayed);
-  }
-  const notConnected = lastSnapshot?.mode === 'live' && !CONFIG.endpoint;
-  const checked = notConnected || status.kind === 'scheduled' ? '' : formatDate(status.lastChecked || lastSnapshot?.checkedAt, clockTime);
-  document.getElementById('checked-time').textContent = checked ? `Last checked ${checked}` : '';
-  if (status.kind === 'scheduled') document.getElementById('source-time').textContent = '';
+  const message = status.message || LIVE_MESSAGE;
+  const messageElement = document.getElementById('status-message');
+  if (messageElement.textContent !== message) messageElement.textContent = message;
+  const note = document.getElementById('results-freshness');
+  note.hidden = !freshness.text;
+  if (note.textContent !== freshness.text) note.textContent = freshness.text;
+  note.title = freshness.title;
+  note.dataset.lastVerified = status.lastChecked || '';
+  note.dataset.sourceUpdated = lastSnapshot?.sourceUpdated || '';
 }
 function onSnapshot(snapshot) {
   lastSnapshot = snapshot;
   for (const [id, view] of views) view.update(snapshot.contests[id], snapshot);
-  const updated = snapshot.mode === 'live' && !CONFIG.endpoint ? '' : formatDate(snapshot.sourceUpdated);
-  document.getElementById('source-time').textContent = updated ? `Source updated ${updated}` : '';
-  updateTestTools();
 }
 function updateURL() {
   const url = new URL(location.href);
-  if (mode === 'live') url.searchParams.delete('mode'); else url.searchParams.set('mode', mode);
-  if (scenario === 'normal' || mode !== 'mock') url.searchParams.delete('scenario'); else url.searchParams.set('scenario', scenario);
+  url.searchParams.delete('mode'); url.searchParams.delete('scenario');
   if (selectedContest === 'governor') url.searchParams.delete('contest'); else url.searchParams.set('contest', selectedContest);
   url.hash = '';
   history.replaceState(null, '', url);
 }
-function showPreview(open) { const visible = allowPreview && open; document.getElementById('preview-tools').hidden = !visible; document.getElementById('preview-toggle').setAttribute('aria-expanded', String(visible)); }
-document.getElementById('preview-toggle').addEventListener('click', () => showPreview(document.getElementById('preview-tools').hidden));
-modeSelect.addEventListener('change', async () => { if (!allowPreview) return; mode = modeSelect.value; paused = false; document.getElementById('mock-pause').textContent = 'Pause simulation'; document.getElementById('mock-pause').setAttribute('aria-pressed', 'false'); updateTestTools(); updateURL(); await feed?.setMode(mode); });
-scenarioSelect.addEventListener('change', async () => { scenario = scenarioSelect.value; updateURL(); await feed?.setScenario(scenario); });
-document.getElementById('mock-next').addEventListener('click', () => feed?.next());
-document.getElementById('mock-pause').addEventListener('click', () => { paused = !paused; feed?.setPaused(paused); document.getElementById('mock-pause').textContent = paused ? 'Resume simulation' : 'Pause simulation'; document.getElementById('mock-pause').setAttribute('aria-pressed', String(paused)); });
-updateTestTools();
-if (mode !== 'live') showPreview(true);
-if (!allowPreview && (params.has('mode') || params.has('scenario'))) updateURL();
 
 async function initialize() {
   try {
@@ -603,15 +573,20 @@ async function initialize() {
     for (const id of ['governor', 'mayor', 'question7']) { const view = new ContestView(id, geography); views.set(id, view); document.getElementById('contests').append(view.section); }
     selectContest();
     document.getElementById('results-loading').hidden = true;
-    feed = createFeed({ onSnapshot, onStatus, mode, scenario, allowPreview });
+    feed = createFeed({ onSnapshot, onStatus });
     await feed.start();
   } catch (error) {
-    document.getElementById('results-loading').className = 'results-error';
-    document.getElementById('results-loading').textContent = 'The results viewer could not load. Please refresh or use the official Board of Elections link below.';
-    onStatus({ kind: 'error', message: 'Results are temporarily unavailable.' });
+    document.getElementById('results-loading').hidden = true;
+    onStatus({ kind: 'error', mode, updating: false, lastChecked: null, message: LIVE_MESSAGE });
     console.error('Results viewer:', error);
   }
 }
-window.addEventListener('pagehide', () => feed?.stop());
-window.addEventListener('pageshow', event => { if (event.persisted) feed?.start(); });
+function startFreshnessClock() {
+  clearInterval(freshnessTimer);
+  freshnessTimer = setInterval(() => { if (!document.hidden) renderStatus(); }, 15_000);
+}
+document.addEventListener('visibilitychange', () => { if (!document.hidden) renderStatus(); });
+window.addEventListener('pagehide', () => { clearInterval(freshnessTimer); feed?.stop(); });
+window.addEventListener('pageshow', event => { if (event.persisted) { startFreshnessClock(); feed?.start(); } });
+startFreshnessClock();
 initialize();

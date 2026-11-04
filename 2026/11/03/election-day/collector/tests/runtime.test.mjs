@@ -37,8 +37,7 @@ test('workerd runs the real Worker, SQLite object, authentication and R2 publica
     assert.equal((await request(mf, 'status', { headers: {} })).status, 401);
     assert.equal((await request(mf, 'start', { headers: { Authorization: 'Bearer wrong-token' } })).status, 401);
     assert.equal((await request(mf, 'check', { method: 'GET' })).status, 405);
-    const empty = await mf.dispatchFetch('https://collector.test/latest.json');
-    assert.equal(empty.status, 404); await empty.text();
+    assert.equal((await mf.dispatchFetch('https://collector.test/latest.json')).status, 404);
     assert.equal(calls, 0);
     const response = await request(mf, 'check');
     assert.equal(response.status, 200, await response.text());
@@ -52,18 +51,6 @@ test('workerd runs the real Worker, SQLite object, authentication and R2 publica
     assert.equal(before.successes, 1);
     assert.equal(before.pending, false);
     for (let i = 0; i < 10; i++) await bucket.get(LATEST_KEY);
-    const origin = 'https://projects.browndailyherald.com';
-    const pub = await mf.dispatchFetch('https://collector.test/latest.json', { headers: { Origin: origin } });
-    assert.equal(pub.status, 200);
-    assert.equal(pub.headers.get('access-control-allow-origin'), origin);
-    assert.match(pub.headers.get('cache-control'), /s-maxage=15/);
-    assert.equal((await pub.json()).revision, snapshot.revision);
-    const etag = pub.headers.get('etag');
-    const revalidated = await mf.dispatchFetch('https://collector.test/latest.json', { headers: { Origin: origin, 'If-None-Match': etag } });
-    assert.equal(revalidated.status, 304); await revalidated.arrayBuffer();
-    const foreign = await mf.dispatchFetch('https://collector.test/latest.json', { headers: { Origin: 'https://evil.example' } });
-    assert.equal(foreign.headers.get('access-control-allow-origin'), null); await foreign.arrayBuffer();
-    assert.equal((await mf.dispatchFetch('https://collector.test/latest.json', { method: 'POST' })).status, 405);
     assert.equal(calls, 1, 'Reading the shared file must not fetch BOE again');
     await mf.dispose(); mf = new Miniflare(options(path, outbound));
     const after = await (await request(mf, 'status')).json();
@@ -126,5 +113,31 @@ test('workerd arms a future start without fetching early and starts automaticall
     await waitUntil(async () => (await (await request(mf, 'status')).json()).successes === 1);
     assert.ok(firstCall >= Date.parse(startsAt));
     assert.equal((await (await request(mf, 'stop')).json()).nextAlarm, null);
+  } finally { await mf?.dispose(); await rm(path, { recursive: true, force: true }); }
+});
+
+test('authenticated finish publishes archived coverage to R2 and survives a real runtime restart', { timeout: 30_000 }, async () => {
+  const path = await mkdtemp(join(tmpdir(), 'herald-finish-'));
+  let mf, calls = 0;
+  const outbound = async () => { calls++; return Response.json(populated(121, new Date(Date.now() - 60_000).toISOString())); };
+  try {
+    mf = new Miniflare(options(path, outbound));
+    assert.equal((await request(mf, 'finish', { headers: {} })).status, 401);
+    assert.equal((await request(mf, 'finish', { method: 'GET' })).status, 405);
+    assert.equal((await request(mf, 'check')).status, 200);
+    const bucket = await mf.getR2Bucket('RESULTS');
+    const first = await (await bucket.get(LATEST_KEY)).json();
+    const response = await request(mf, 'finish');
+    assert.equal(response.status, 200);
+    const status = await response.json();
+    assert.equal(status.phase, 'ended'); assert.equal(status.nextAlarm, null);
+    const ended = await (await bucket.get(LATEST_KEY)).json();
+    validateSnapshot(ended, { previous: first, expectedMode: 'live' });
+    assert.ok(ended.coverageEndedAt); assert.equal(ended.checkedAt, first.checkedAt);
+    assert.equal(ended.status, first.status); assert.deepEqual(ended.contests, first.contests);
+    await mf.dispose(); mf = new Miniflare(options(path, outbound));
+    assert.equal((await (await request(mf, 'status')).json()).phase, 'ended');
+    assert.equal((await (await request(mf, 'check')).json()).skipped, 'coverage-ended');
+    assert.equal(calls, 1);
   } finally { await mf?.dispose(); await rm(path, { recursive: true, force: true }); }
 });
