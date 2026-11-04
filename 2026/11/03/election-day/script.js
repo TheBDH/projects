@@ -42,7 +42,6 @@ if (updateCountdown()) {
 const tabs = document.querySelector(".tabs");
 const TABS_KEY = "tabs-scroll";
 const TABS_TOP_KEY = "tabs-top";
-const TABS_FROM_KEY = "tabs-from";
 
 if (tabs) {
   // phones: the tabs fold into a dropdown under a button naming this page.
@@ -128,75 +127,27 @@ if (tabs) {
   } catch {}
 
   if (savedTop !== null && !location.hash) {
+    const targetTop = Math.max(0, Number(savedTop) || 0);
     const place = () =>
       window.scrollTo({
-        top: tabs.getBoundingClientRect().top + window.scrollY - Number(savedTop),
+        top: Math.ceil(tabs.getBoundingClientRect().top + window.scrollY - targetTop),
         behavior: "instant",
       });
     place();
-    // the logo above the bar can finish loading after this and push the bar
-    // down; follow it, unless the reader has already started scrolling
-    const placedAt = window.scrollY;
-    window.addEventListener(
-      "load",
-      () => {
-        if (Math.abs(window.scrollY - placedAt) < 2) place();
-      },
-      { once: true }
-    );
-  }
-
-  // underline: one bar that slides from the tab you came from to this one
-  const indicator = document.createElement("span");
-  indicator.className = "tabs-indicator";
-  indicator.setAttribute("aria-hidden", "true");
-  tabs.append(indicator);
-  tabs.classList.add("has-indicator");
-
-  const moveIndicator = (link) => {
-    if (!link) {
-      indicator.style.opacity = "0";
-      return;
+    // Fonts, bylines and asynchronous page content can settle after load.
+    // Follow those layout changes until the reader takes control; browser
+    // scroll anchoring alone is not evidence that the reader has scrolled.
+    const restoration = new AbortController();
+    const layout = new ResizeObserver(place);
+    for (const element of document.querySelectorAll('.topbar, .hero, main')) layout.observe(element);
+    const release = () => { layout.disconnect(); restoration.abort(); };
+    for (const event of ['wheel', 'touchstart', 'pointerdown', 'keydown']) {
+      window.addEventListener(event, release, { passive: true, signal: restoration.signal });
     }
-    const bar = tabs.getBoundingClientRect();
-    const box = link.getBoundingClientRect();
-    indicator.style.opacity = "1";
-    indicator.style.width = `${box.width}px`;
-    indicator.style.transform = `translateX(${box.left - bar.left + tabs.scrollLeft}px)`;
-  };
-
-  let from = null;
-  try {
-    from = sessionStorage.getItem(TABS_FROM_KEY);
-    sessionStorage.removeItem(TABS_FROM_KEY);
-  } catch {}
-  const fromLink = from && [...tabs.querySelectorAll("a")].find((a) => a.getAttribute("href") === from);
-
-  if (fromLink && fromLink !== current && !reduceMotion) {
-    // start under the old tab, then slide once that position has painted
-    moveIndicator(fromLink);
-    requestAnimationFrame(() =>
-      requestAnimationFrame(() => {
-        indicator.classList.add("animated");
-        moveIndicator(current);
-      })
-    );
-  } else {
-    moveIndicator(current);
-    requestAnimationFrame(() => indicator.classList.add("animated"));
+    window.addEventListener('load', place, { once: true, signal: restoration.signal });
+    window.addEventListener('pagehide', release, { once: true, signal: restoration.signal });
+    window.addEventListener('hashchange', release, { once: true, signal: restoration.signal });
   }
-
-  // keep it under the tab as fonts load, the window resizes, or the pinned
-  // Live Updates tab moves while the bar scrolls sideways
-  const follow = () => {
-    indicator.classList.remove("animated");
-    moveIndicator(current);
-    requestAnimationFrame(() => indicator.classList.add("animated"));
-  };
-  window.addEventListener("resize", follow);
-  window.addEventListener("load", follow);
-  document.fonts?.ready.then(follow);
-  if (current === pinned) tabs.addEventListener("scroll", follow, { passive: true });
 
   const save = () => {
     try {
@@ -207,7 +158,7 @@ if (tabs) {
   window.addEventListener("pagehide", save);
 
   // any link to another page of this site (tabs, "Read more", the breaking
-  // bar...) carries the bar's position and the tab we're leaving with it
+  // bar...) carries the bar's position with it
   document.addEventListener("click", (e) => {
     const link = e.target.closest("a[href]");
     if (!link || e.defaultPrevented || e.button !== 0) return;
@@ -218,7 +169,6 @@ if (tabs) {
     if (url.pathname === location.pathname) return;
     try {
       sessionStorage.setItem(TABS_TOP_KEY, String(tabs.getBoundingClientRect().top));
-      if (current) sessionStorage.setItem(TABS_FROM_KEY, current.getAttribute("href"));
     } catch {}
   });
 }
@@ -710,7 +660,7 @@ document.querySelectorAll(".slider").forEach((slider, sliderIndex) => {
   tablist.setAttribute("role", "tablist");
 
   const tabs = slides.map((slide, i) => {
-    const id = `slider${sliderIndex}-slide${i}`;
+    const id = slide.id || `slider${sliderIndex}-slide${i}`;
     const tab = document.createElement("button");
     tab.type = "button";
     tab.id = `${id}-tab`;
@@ -795,5 +745,14 @@ document.querySelectorAll(".slider").forEach((slider, sliderIndex) => {
   slider.classList.add("ready");
   show(0);
   setExpanded(false);
+  function revealLinkedSlide() {
+    const index = slides.findIndex(slide => `#${slide.id}` === location.hash);
+    if (index < 0) return;
+    show(index);
+    // Select the slide before scrolling, including on a fresh page load.
+    requestAnimationFrame(() => slider.scrollIntoView({ behavior: "auto", block: "start" }));
+  }
+  revealLinkedSlide();
+  window.addEventListener("hashchange", revealLinkedSlide);
 });
 

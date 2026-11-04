@@ -1,0 +1,125 @@
+[
+  {
+    "town": "Central Falls",
+    "name": "FORAND MANOR (CENTRAL FALLS 0401, 0402)",
+    "codes": [
+      "0401",
+      "0402"
+    ],
+    "wards": [
+      1,
+      3
+    ]
+  },
+  {
+    "town": "Central Falls",
+    "name": "WILFRID MANOR (CENTRAL FALLS 0403, 0404)",
+    "codes": [
+      "0403",
+      "0404"
+    ],
+    "wards": [
+      4,
+      5
+    ]
+  },
+  {
+    "town": "Central Falls",
+    "name": "KNIGHTS OF COLUMBUS (CENTRAL FALLS 0405, 0406)",
+    "codes": [
+      "0405",
+      "0406"
+    ],
+    "wards": [
+      2,
+      5
+    ]
+  },
+  {
+    "town": "Cumberland",
+    "name": "BEAR HILL VILLAGE (CUMBERLAND 0805, 0807)",
+    "codes": [
+      "0805",
+      "0807"
+    ],
+    "wards": [
+      3,
+      4
+    ]
+  },
+  {
+    "town": "Cumberland",
+    "name": "CHIMNEY HILL APARTMENTS (CUMBERLAND 0806. 0809)",
+    "codes": [
+      "0806",
+      "0809"
+    ],
+    "wards": [
+      2,
+      4
+    ]
+  },
+  {
+    "town": "Cumberland",
+    "name": "CUMBERLAND HIGH SCHOOL (CUMBERLAND 0808. 0810, 0814)",
+    "codes": [
+      "0808",
+      "0810",
+      "0814"
+    ],
+    "wards": [
+      2,
+      5
+    ]
+  },
+  {
+    "town": "Lincoln",
+    "name": "NORTHERN ELEMENTRY SCHOOL (LINCOLN 1702, 1703)",
+    "codes": [
+      "1702",
+      "1703"
+    ],
+    "wards": [
+      4,
+      5
+    ]
+  },
+  {
+    "town": "Lincoln",
+    "name": "SAYLESVILLE SCHOOL (LINCOLN 1704, 1707)",
+    "codes": [
+      "1704",
+      "1707"
+    ],
+    "wards": [
+      1,
+      3
+    ]
+  },
+  {
+    "town": "Lincoln",
+    "name": "CENTRAL ELEMENTARY (LINCOLN  1705, 1708, 1709)",
+    "codes": [
+      "1705",
+      "1708",
+      "1709"
+    ],
+    "wards": [
+      2,
+      4,
+      5
+    ]
+  },
+  {
+    "town": "Lincoln",
+    "name": "LINCOLN MANOR (LINCOLN 1710, 1711)",
+    "codes": [
+      "1710",
+      "1711"
+    ],
+    "wards": [
+      1,
+      2
+    ]
+  }
+]

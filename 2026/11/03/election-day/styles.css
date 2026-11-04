@@ -247,27 +247,6 @@ a {
     border-bottom-color: var(--rule);
 }
 
-/* with script.js running, the current tab's underline is a separate bar that
-   slides over from the tab you came from */
-.tabs.has-indicator a[aria-current="page"] {
-    border-bottom-color: transparent;
-}
-
-.tabs-indicator {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 2;
-    width: 0;
-    height: 3px;
-    background: var(--rule);
-    pointer-events: none;
-}
-
-.tabs-indicator.animated {
-    transition: transform 0.3s cubic-bezier(0.65, 0, 0.35, 1), width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-}
-
 /* dropdown on phones (built in script.js). On wider screens the wrapper
    doesn't affect layout and the button is hidden */
 .tabs-menu {
@@ -283,10 +262,6 @@ a {
         display: block;
         padding: 0;
         overflow: visible;
-    }
-
-    .tabs.has-toggle .tabs-indicator {
-        display: none;
     }
 
     .tabs-toggle {

@@ -1,0 +1,6 @@
+{
+  "rules": [
+    { "id": "expire-source-after-72-hours", "enabled": true, "conditions": { "prefix": "ri-2026-general/source/" }, "deleteObjectsTransition": { "condition": { "type": "Age", "maxAge": 259200 } } },
+    { "id": "expire-snapshots-after-72-hours", "enabled": true, "conditions": { "prefix": "ri-2026-general/snapshots/" }, "deleteObjectsTransition": { "condition": { "type": "Age", "maxAge": 259200 } } }
+  ]
+}

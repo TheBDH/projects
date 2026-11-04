@@ -1,0 +1,45 @@
+{
+  "verifiedOn": "2026-11-03",
+  "deployment": "not deployed; collection disabled; viewer endpoint null",
+  "viewerAndAdapterTests": {
+    "passed": 39,
+    "command": "node --test tests/results.test.mjs"
+  },
+  "collectorEngineTests": {
+    "passed": 25,
+    "command": "node --test tests/engine.test.mjs"
+  },
+  "cloudflareLocalRuntime": {
+    "runtime": "workerd through Miniflare 5.20261103.0-beta, bundled with Wrangler 4.157.0",
+    "passed": 3,
+    "restartTest": "Worker authentication, real local SQLite, local R2 publication, persisted state and minute guard after restart",
+    "alarmTest": "three naturally scheduled alarms about 60 seconds apart: populated 222 votes, 304 health update, downward correction to 142 votes; clean stop",
+    "alarmTestDurationMs": 121474.19225,
+    "alarmSource": "synthetic official-shaped full export; no live upstream fetch",
+    "scheduledStartTest": "Real workerd alarm armed for a future time: zero early fetches, automatic first publication at/after the boundary; clean stop. Unit tests cover the exact 8 p.m. EST boundary and restart/watchdog recovery."
+  },
+  "wranglerDryRun": "Previous dry run passed before timed-start changes; current Worker rebuilt with esbuild and verified in the local runtime suite.",
+  "dependencyAuditKnownVulnerabilities": 0,
+  "remoteComputeEvidence": "durable-object-results.json is a previous prototype's Cloudflare measurement, not this implementation's deployment acceptance",
+  "outstanding": [
+    "confirm Herald-owned hosting/account, data hostname and storage availability",
+    "implement/test Free Pages Function delivery on its production pages.dev address; optional Herald hostname needs a GoDaddy CNAME, or explicitly approve an alternative delivery setup",
+    "deploy staging and production resources",
+    "verify real custom-domain TLS, CORS, cache lifetime and R2 recovery",
+    "observe deployed minute alarms and compute quotas",
+    "configure independent monitoring, projected daily Free request usage alerts and an incident owner",
+    "confirm current official roster and connect viewer only after acceptance"
+  ],
+  "browserChecks": {
+    "desktop": "one visible race; cursor-following tooltip moved by the same 10 px as pointer; complete outline geometry over all polygons; ward drill-down; population mode preserved after town drill-down and return; Escape dismisses pinned details",
+    "responsive": "all three contests: 390 px document width at 390 px viewport, inline share bars vertically centered with counts and percentages",
+    "iPhoneSimulator": "Safari on iPhone 18 Pro / iOS 27: first town tap shows tooltip, second opens precincts; precinct tap shows complete details",
+    "console": "no browser errors on initial revised-page check",
+    "latestInterface": "16 px gap below heading to race menu; desktop and 390 px mobile layout; arrow/Enter selection retains trigger focus and Tab reaches reporting link; neutral beige legend stripes while Question 7 map ties retain Approve/Reject colors; mock activity dot visible while running and hidden on pause; direct Ballot Question 7 link opens its selected slide after versioning cached script.",
+    "productionPreviewGuard": "Verified on localhost. (not in previewHosts): mock/scenario parameters removed, waiting/live mode only, controls/banner hidden, no browser warnings or errors.",
+    "startTime": "Viewer unit tests prove an already-open page requests the live endpoint exactly at the configured 8 p.m. Eastern boundary and continues each minute. No deployed endpoint is configured.",
+    "sectionTabs": "All five pages use matching shared asset versions. Direct on-screen navigation to/from every page: tabs top 0 px, no hero sliver, no animated underline. The bar remained at 0 px through 390 px and desktop resizing after layout restoration was updated. Mobile font/menu closure/width also verified. Results reserves loading height and confines button/focus styling to its main content.",
+    "areaMenu": "Town selection directly opened Jamestown with precincts 1501/1502; selecting precinct 1501 opened its tooltip. Selecting Providence from population mode opened geographic precincts. Switching to wards and choosing Ward 1 opened its five precincts; returning through Providence to the state restored Population as the selected mode. Race-menu keyboard focus computed rgb(217, 217, 217), using the same CSS rule as hover. Screenshot saved locally. Browser console had no warnings/errors during these checks."
+  },
+  "ownership": "Herald-owned infrastructure only; personal domain/account excluded"
+}
