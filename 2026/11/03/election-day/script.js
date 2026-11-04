@@ -551,7 +551,7 @@ function initTimeline(container, { onReach } = {}) {
 // list empty the bar stays hidden
 const BREAKING = [
 {time: "8:03 PM", headline: "Polls closed at 8 p.m."},
-{ time: "8:13 AM", headline: "After months of campaigning, polls are now open across Rhode Island until 8 p.m. today." },
+{ time: "8:32 PM", headline: "Amo, Magaziner re-elected to U.S. House of Representatives" },
 { time: "8:39 AM", headline: "A few minutes before 7 a.m. on Election Day in Providence, Kristen Johnson — warden at the Hope High School polling location — and a team of poll workers prepared to begin the day." },
  { time: "10:34 AM", headline: "At Vartan Gregorian Elementary School, Kimberly Allen, the election moderator of Vartan Gregorian Precinct 2818, said that the precinct has already seen “amazing turnout,” with in-person voter turnout reaching almost 200 in the first two and a half hours." },
  {time: "2:15 PM", headline: "The three candidates for RI governor have all been at the polls today."},

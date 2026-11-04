@@ -6,7 +6,7 @@ import { safeColor, leadOf, leaderColors, tint } from './map-colors.mjs';
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const count = new Intl.NumberFormat('en-US');
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-const titles = { governor: 'Governor', mayor: 'Mayor of Providence', question7: 'Question 7' };
+const titles = { governor: 'Governor', mayor: 'Providence Mayor', question7: 'Question 7' };
 const coverage = {
   governor: ['Read more →', 'ballot.html#governor-title'],
   mayor: ['Read more →', 'ballot.html#mayor-title'],

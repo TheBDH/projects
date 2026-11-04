@@ -2,8 +2,8 @@ import { CONFIG } from './config.mjs?v=20261103-launch';
 import { validateSnapshot } from './model.mjs?v=20261103-launch';
 import { mockAtStep } from './mock.mjs';
 
-export const LIVE_MESSAGE = 'Results update automatically as they come in';
-export const ENDED_MESSAGE = 'Live updates have ended.';
+export const LIVE_MESSAGE = 'Results are still being updated.';
+export const ENDED_MESSAGE = 'Results are final.';
 
 export async function readSnapshotResponse(response, maxBytes = CONFIG.maxSnapshotBytes) {
   if (!response.ok) throw new Error('Results server returned HTTP ' + response.status);
