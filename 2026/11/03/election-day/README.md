@@ -480,3 +480,7 @@ From `collector/`, `node scripts/load-test.mjs <owned-preview-snapshot-url> <evi
 | `docs/evidence/` | Supporting benchmark and verification records |
 
 The former plan, hosting assessment and collector README have been consolidated here to avoid conflicting instructions. Maintain this file as the source of truth.
+
+### Source status compatibility
+
+The official export can label limited-ballot units `Not Participating`, including units with mail votes. The adapter accepts this as an incomplete status and preserves every reconciled vote; it does not interpret the label as completed returns or certification. Unknown statuses and inconsistent totals still block publication and retain the last valid snapshot. This handles the source change observed on election night after 9:08 p.m. EST.
