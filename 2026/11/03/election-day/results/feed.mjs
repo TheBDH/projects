@@ -1,6 +1,9 @@
-import { CONFIG } from './config.mjs';
-import { validateSnapshot } from './model.mjs';
+import { CONFIG } from './config.mjs?v=20261103-launch';
+import { validateSnapshot } from './model.mjs?v=20261103-launch';
 import { mockAtStep } from './mock.mjs';
+
+export const LIVE_MESSAGE = 'Results update automatically as they come in';
+export const ENDED_MESSAGE = 'Live updates have ended.';
 
 export async function readSnapshotResponse(response, maxBytes = CONFIG.maxSnapshotBytes) {
   if (!response.ok) throw new Error('Results server returned HTTP ' + response.status);
@@ -28,29 +31,32 @@ export function createFeed({ onSnapshot, onStatus, mode = 'live', scenario = 'no
   let currentMode = allowPreview && ['historical', 'mock'].includes(mode) ? mode : 'live';
   let currentScenario = scenario, current = null, base = null, step = 3;
   let timer = null, controller = null, generation = 0, paused = false, stopped = true;
-  let failures = 0, lastStatus = null;
+  let failures = 0, lastStatus = null, verified = false;
   const startsAt = config.startsAt ? Date.parse(config.startsAt) : -Infinity;
   const beforeStart = () => currentMode === 'live' && config.endpoint && now() < startsAt;
   const startLabel = Number.isFinite(startsAt) ? new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York', timeZoneName: 'short' }).format(startsAt) : '';
   const cacheKey = config.cacheKey + ':' + (config.endpoint || 'not-connected');
-  function status(kind, message, updating = false) {
-    lastStatus = { kind, message, lastChecked: current?.checkedAt || null, updating };
+  const coverageEnded = () => !!current?.coverageEndedAt;
+  const automaticUpdates = () => !coverageEnded() && (currentMode === 'mock' || (currentMode === 'live' && !!config.endpoint && !Number.isNaN(startsAt) && !beforeStart()));
+  function status(kind, message) {
+    lastStatus = { kind, message, mode: currentMode, lastChecked: verified ? current?.checkedAt || null : null };
     emitStatus();
   }
   function emitStatus() {
-    if (lastStatus) onStatus?.({ ...lastStatus, updating: lastStatus.updating && !paused && !stopped && !documentRef?.hidden });
+    if (lastStatus) onStatus?.({ ...lastStatus, paused, updating: automaticUpdates() && !paused && !stopped && !documentRef?.hidden });
   }
   function cancel() { clearTimeout(timer); timer = null; controller?.abort(); controller = null; }
-  function accept(snapshot) {
+  function accept(snapshot, isVerified = true) {
     validateSnapshot(snapshot, { previous: current, expectedMode: currentMode });
-    current = snapshot; onSnapshot?.(snapshot);
-    if (currentMode === 'live' && config.endpoint) {
+    current = snapshot; verified = isVerified; onSnapshot?.(snapshot);
+    if (verified && currentMode === 'live' && config.endpoint) {
       try { storage?.setItem(cacheKey, JSON.stringify(snapshot)); } catch { /* Storage is optional. */ }
     }
   }
   function liveStatus() {
-    if (now() - Date.parse(current.checkedAt) > config.staleAfterMs) status('stale', 'Updates are delayed. Showing the last verified results.');
-    else status(current.status === 'waiting' ? 'waiting' : 'live', current.status === 'waiting' ? 'Checking for election results every minute.' : 'Results refresh automatically every minute.', true);
+    if (coverageEnded()) status('ended', ENDED_MESSAGE);
+    else if (now() - Date.parse(current.checkedAt) >= config.staleAfterMs) status('stale', LIVE_MESSAGE);
+    else status(current.status === 'waiting' ? 'waiting' : 'live', LIVE_MESSAGE);
   }
   async function load(url, token) {
     controller = new AbortController();
@@ -65,7 +71,7 @@ export function createFeed({ onSnapshot, onStatus, mode = 'live', scenario = 'no
   }
   function schedule() {
     clearTimeout(timer);
-    if (stopped || paused || documentRef?.hidden || currentMode === 'historical' || (currentMode === 'live' && !config.endpoint)) return;
+    if (stopped || paused || coverageEnded() || documentRef?.hidden || currentMode === 'historical' || (currentMode === 'live' && !config.endpoint)) return;
     const interval = beforeStart() ? Math.min(2_147_000_000, startsAt - now()) : currentMode === 'mock' ? 8000 : Math.min(240000, config.pollIntervalMs * 2 ** Math.min(failures, 2));
     timer = setTimeout(() => { if (currentMode === 'mock') step = Math.min(12, step + 1); void refresh(); }, interval);
   }
@@ -78,37 +84,44 @@ export function createFeed({ onSnapshot, onStatus, mode = 'live', scenario = 'no
         if (!current) {
           const data = await load(config.fixtureUrls.waiting, token);
           if (!data || token !== generation) return;
-          accept(data);
+          accept(data, false);
         }
         status('scheduled', `Automatic updates begin ${startLabel}, when polls close.`);
       } else if (currentMode === 'mock') {
         if (!base) base = await load(config.fixtureUrls.mock, token);
         if (!base || token !== generation) return;
         if (currentScenario === 'failure') throw new Error('Simulated network failure');
-        if (currentScenario === 'delayed' && current?.mode === 'mock') { status('stale', 'Simulation: source updates are delayed. Previous results remain visible.'); return; }
+        if (currentScenario === 'delayed' && current?.mode === 'mock') { status('stale', LIVE_MESSAGE); return; }
+        if (currentScenario === 'ended') {
+          const data = structuredClone(current || mockAtStep(base, step, { now: now() }));
+          data.coverageEndedAt = data.publishedAt = new Date(now()).toISOString();
+          accept(data); status('ended', ENDED_MESSAGE); return;
+        }
         let data = mockAtStep(base, step, { now: now(), correction: currentScenario === 'correction' });
         if (currentScenario === 'malformed') { data = structuredClone(data); data.contests.governor.areas.state.votes[0] = -1; }
-        accept(data); status('mock', (currentScenario === 'correction' ? 'Simulation: a downward correction has been applied.' : 'Simulated election night.') + (paused ? ' Simulation paused; use Next update to advance.' : ' Updates every 8 seconds.'), true);
+        accept(data); status('mock', (currentScenario === 'correction' ? 'Simulation: a downward correction has been applied.' : 'Simulated election night.') + (paused ? ' Simulation paused; use Next update to advance.' : ' Updates every 8 seconds.'));
       } else {
         const url = currentMode === 'historical' ? config.fixtureUrls.historical : config.endpoint || config.fixtureUrls.waiting;
         const data = await load(url, token);
         if (!data || token !== generation) return;
-        accept(data);
+        accept(data, currentMode === 'historical' || !!config.endpoint);
         if (currentMode === 'historical') status('historical', 'Historical 2026 Democratic primary results. These are not general-election returns.');
-        else if (!config.endpoint) status('waiting', 'Results updates have not started. Official results are linked below.');
+        else if (!config.endpoint) status('waiting', LIVE_MESSAGE);
         else liveStatus();
       }
       failures = 0;
     } catch (error) {
       if (token !== generation || stopped) return;
       failures += 1;
-      status(current ? 'stale' : 'error', currentMode === 'mock' ? 'Simulation: update rejected or unavailable. The last valid results remain visible.' : current ? 'Updates are temporarily unavailable. Showing the last verified results.' : 'Results are temporarily unavailable. Please try again shortly.');
+      // Keep the existing results and verification time; network health is not
+      // reader-facing copy. An archived snapshot stays archived even offline.
+      status(coverageEnded() ? 'ended' : current ? 'stale' : 'error', coverageEnded() ? ENDED_MESSAGE : LIVE_MESSAGE);
     } finally { if (token === generation) schedule(); }
   }
   function visibilityChanged() {
     clearTimeout(timer);
     if (documentRef?.hidden) emitStatus();
-    else if (!paused && !stopped && currentMode !== 'historical' && (currentMode !== 'live' || config.endpoint)) {
+    else if (!paused && !stopped && !coverageEnded() && currentMode !== 'historical' && (currentMode !== 'live' || config.endpoint)) {
       generation++; cancel();
       if (lastStatus) status(lastStatus.kind, lastStatus.message);
       void refresh();
@@ -119,22 +132,24 @@ export function createFeed({ onSnapshot, onStatus, mode = 'live', scenario = 'no
       if (!stopped) return; stopped = false;
       documentRef?.addEventListener('visibilitychange', visibilityChanged);
       if (currentMode === 'live' && config.endpoint && !beforeStart()) {
-        try { const cached = JSON.parse(storage?.getItem(cacheKey) || 'null'); if (cached) { accept(cached); status('stale', 'Showing saved results while checking for an update.'); } } catch { /* Discard corrupt cache. */ }
+        try { const cached = JSON.parse(storage?.getItem(cacheKey) || 'null'); if (cached) { accept(cached); status(coverageEnded() ? 'ended' : 'stale', coverageEnded() ? ENDED_MESSAGE : LIVE_MESSAGE); } } catch { /* Discard corrupt cache. */ }
       }
+      if (!lastStatus) status('loading', 'Checking results…');
       await refresh();
     },
     async setMode(value) {
       if (!['live', 'historical', 'mock'].includes(value)) return;
       if (value !== 'live' && !allowPreview) return;
-      generation++; cancel(); currentMode = value; current = null; base = null; failures = 0; step = 3; paused = false;
+      generation++; cancel(); currentMode = value; current = null; base = null; verified = false; failures = 0; step = 3; paused = false;
       status('loading', 'Checking results…');
       await refresh();
     },
     async setScenario(value) { currentScenario = value; generation++; cancel(); await refresh(); },
-    async next() { if (currentMode !== 'mock') return; step = Math.min(12, step + 1); generation++; cancel(); await refresh(); },
+    async next() { if (currentMode !== 'mock' || coverageEnded()) return; step = Math.min(12, step + 1); generation++; cancel(); await refresh(); },
     setPaused(value) {
+      if (coverageEnded()) return;
       paused = !!value; if (paused) clearTimeout(timer); else schedule();
-      if (currentMode === 'mock' && current && !failures && !['delayed', 'failure', 'malformed'].includes(currentScenario)) status('mock', paused ? 'Simulation paused; use Next update to advance.' : 'Simulated election night. Updates every 8 seconds.', true);
+      if (currentMode === 'mock' && current && !failures && !['delayed', 'failure', 'malformed'].includes(currentScenario)) status('mock', paused ? 'Simulation paused; use Next update to advance.' : 'Simulated election night. Updates every 8 seconds.');
       else emitStatus();
     },
     stop() { stopped = true; generation++; cancel(); emitStatus(); documentRef?.removeEventListener('visibilitychange', visibilityChanged); },

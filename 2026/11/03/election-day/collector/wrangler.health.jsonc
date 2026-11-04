@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "herald-election-health-2026",
+  "account_id": "44add93f0807dcac364f9aa9a2d28d20",
+  "main": "src/health-worker.mjs",
+  "compatibility_date": "2026-11-03",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "limits": { "cpu_ms": 100 },
+  "secrets": { "required": ["ADMIN_TOKEN"] },
+  "observability": { "enabled": true, "head_sampling_rate": 1, "issues": { "enabled": true } },
+  "vars": { "COLLECTION_STARTS_AT": "2026-11-04T01:00:00Z" },
+  "triggers": { "crons": ["*/2 * * * *"] }
+}

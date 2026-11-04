@@ -10,9 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
     <link rel="stylesheet" href="styles.css?v=20261103-tabs-final">
-    <link rel="stylesheet" href="results.css?v=20261103-area-menu">
+    <link rel="stylesheet" href="results.css?v=20261103-coverage">
     <script src="script.js?v=20261103-tabs-final" defer></script>
-    <script src="results/app.mjs?v=20261103-area-menu" type="module"></script>
+    <script src="results/app.mjs?v=20261103-launch" type="module"></script>
   </head>
   <body class="results-page">
     <a class="results-skip" href="#results-main">Skip to results</a>
@@ -50,11 +50,11 @@
     <main id="results-main" class="results-main">
       <div id="test-banner" class="test-banner" role="status" hidden></div>
       <div class="results-intro">
-        <h2>Election results <span class="results-live-indicator" id="results-live-indicator" role="img" aria-label="Results are updating automatically" hidden></span></h2>
+        <h2>Election results <span class="results-live-indicator" id="results-live-indicator" role="img" aria-label="Automatic results checks are enabled" hidden></span></h2>
       </div>
       <div class="results-status" id="results-status">
         <p class="status-message" id="status-message" role="status">Preparing results…</p>
-        <div class="status-times"><span id="source-time"></span><span id="checked-time"></span></div>
+        <p class="status-times" id="results-freshness" hidden></p>
       </div>
       <p class="results-loading" id="results-loading">Loading the election maps…</p>
       <div id="contests"></div>
@@ -65,7 +65,7 @@
         <div id="preview-tools" class="preview-tools" hidden>
           <p>Test modes do not show live election returns.</p>
           <label>Data <select id="data-mode"><option value="live">Results / waiting</option><option value="historical">2026 Democratic primary</option><option value="mock">Simulated election night</option></select></label>
-          <label>Simulation <select id="mock-scenario"><option value="normal">Normal updates</option><option value="delayed">Delayed update</option><option value="failure">Connection failure</option><option value="correction">Vote correction</option><option value="malformed">Invalid update</option></select></label>
+          <label>Simulation <select id="mock-scenario"><option value="normal">Normal updates</option><option value="delayed">Delayed update</option><option value="failure">Connection failure</option><option value="correction">Vote correction</option><option value="malformed">Invalid update</option><option value="ended">Coverage ended</option></select></label>
           <div class="preview-actions"><button type="button" id="mock-pause" aria-pressed="false">Pause simulation</button><button type="button" id="mock-next">Next update</button></div>
         </div>
       </div>

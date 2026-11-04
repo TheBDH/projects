@@ -115,3 +115,29 @@ test('workerd arms a future start without fetching early and starts automaticall
     assert.equal((await (await request(mf, 'stop')).json()).nextAlarm, null);
   } finally { await mf?.dispose(); await rm(path, { recursive: true, force: true }); }
 });
+
+test('authenticated finish publishes archived coverage to R2 and survives a real runtime restart', { timeout: 30_000 }, async () => {
+  const path = await mkdtemp(join(tmpdir(), 'herald-finish-'));
+  let mf, calls = 0;
+  const outbound = async () => { calls++; return Response.json(populated(121, new Date(Date.now() - 60_000).toISOString())); };
+  try {
+    mf = new Miniflare(options(path, outbound));
+    assert.equal((await request(mf, 'finish', { headers: {} })).status, 401);
+    assert.equal((await request(mf, 'finish', { method: 'GET' })).status, 405);
+    assert.equal((await request(mf, 'check')).status, 200);
+    const bucket = await mf.getR2Bucket('RESULTS');
+    const first = await (await bucket.get(LATEST_KEY)).json();
+    const response = await request(mf, 'finish');
+    assert.equal(response.status, 200);
+    const status = await response.json();
+    assert.equal(status.phase, 'ended'); assert.equal(status.nextAlarm, null);
+    const ended = await (await bucket.get(LATEST_KEY)).json();
+    validateSnapshot(ended, { previous: first, expectedMode: 'live' });
+    assert.ok(ended.coverageEndedAt); assert.equal(ended.checkedAt, first.checkedAt);
+    assert.equal(ended.status, first.status); assert.deepEqual(ended.contests, first.contests);
+    await mf.dispose(); mf = new Miniflare(options(path, outbound));
+    assert.equal((await (await request(mf, 'status')).json()).phase, 'ended');
+    assert.equal((await (await request(mf, 'check')).json()).skipped, 'coverage-ended');
+    assert.equal(calls, 1);
+  } finally { await mf?.dispose(); await rm(path, { recursive: true, force: true }); }
+});

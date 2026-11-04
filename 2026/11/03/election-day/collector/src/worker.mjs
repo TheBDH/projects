@@ -2,6 +2,7 @@ import { DurableObject } from 'cloudflare:workers';
 import manifest from '../../data/results/general-manifest.json';
 import { CollectorEngine } from './engine.mjs';
 import { LIVE_STARTS_AT } from '../../results/schedule.mjs';
+import { authorized } from './auth.mjs';
 
 const OBJECT_NAME = 'ri-2026-general';
 const json = (body, status = 200) => Response.json(body, { status, headers: { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' } });
@@ -36,27 +37,17 @@ export class ElectionCollector extends DurableObject {
   }
   async start() { return this.engine.start(); }
   async stop() { return this.engine.stop(); }
+  async finish() { return this.engine.finish(); }
   async status() { return this.engine.status(); }
   async check() { return this.engine.collect(); }
   async watchdog() { return this.engine.watchdog(); }
   async alarm() { await this.engine.collect({ alarm: true }); }
 }
 
-async function authorized(request, secret) {
-  if (!secret || secret.length < 32) return false;
-  const candidate = request.headers.get('authorization') || '';
-  if (!candidate.startsWith('Bearer ') || candidate.length > 256) return false;
-  const enc = new TextEncoder();
-  const [actual, expected] = await Promise.all([
-    crypto.subtle.digest('SHA-256', enc.encode(candidate.slice(7))),
-    crypto.subtle.digest('SHA-256', enc.encode(secret))
-  ]);
-  return crypto.subtle.timingSafeEqual(actual, expected);
-}
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    if (url.pathname !== '/admin/status' && !['/admin/start', '/admin/stop', '/admin/check'].includes(url.pathname)) return json({ error: 'Not found' }, 404);
+    if (url.pathname !== '/admin/status' && !['/admin/start', '/admin/stop', '/admin/finish', '/admin/check'].includes(url.pathname)) return json({ error: 'Not found' }, 404);
     if (!await authorized(request, env.ADMIN_TOKEN)) return json({ error: 'Unauthorized' }, 401);
     const method = url.pathname === '/admin/status' ? 'GET' : 'POST';
     if (request.method !== method) return json({ error: 'Method not allowed' }, 405);

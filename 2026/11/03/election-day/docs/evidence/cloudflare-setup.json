@@ -1,0 +1,179 @@
+{
+  "checkedAt": "2026-11-03T23:17:37.464Z",
+  "account": {
+    "id": "44add93f0807dcac364f9aa9a2d28d20",
+    "name": "Techadmin@browndailyherald.com's Account",
+    "workersPlan": "Free",
+    "paidUpgrade": false
+  },
+  "pages": {
+    "project": "herald-election-data-2026",
+    "productionDeployment": {
+      "success": true,
+      "errors": [],
+      "id": "6637b858-a9ce-43e6-95d8-7c02464b1e7c",
+      "url": "https://6637b858.herald-election-data-2026.pages.dev",
+      "environment": "production",
+      "stage": {
+        "name": "deploy",
+        "status": "success",
+        "ended_on": "2026-11-03T23:16:17.585192Z"
+      },
+      "bindings": {
+        "RESULTS": {
+          "name": "herald-election-results-2026"
+        }
+      },
+      "mode": {
+        "type": "plain_text",
+        "value": "live"
+      }
+    },
+    "snapshotUrl": "https://herald-election-data-2026.pages.dev/ri-2026-general/latest.json",
+    "verifiedStatus": 503,
+    "verifiedBody": "Results have not been published yet",
+    "verifiedCors": "https://projects.browndailyherald.com",
+    "verifiedCacheControl": "no-store"
+  },
+  "collector": {
+    "success": true,
+    "errors": [],
+    "id": "herald-election-results-2026",
+    "deployment_id": "e9f24dfa242e40bf9f251b652e808d01",
+    "migration_tag": "v1",
+    "url": "https://herald-election-results-2026.herald-election-services.workers.dev",
+    "status": {
+      "phase": "disabled",
+      "running": false,
+      "attempts": 0,
+      "successes": 0,
+      "nextAlarm": null,
+      "startsAt": "2026-11-04T01:00:00.000Z",
+      "endsAt": "2026-11-30T23:59:59.000Z",
+      "archiveBytesReserved": 0,
+      "archiveByteLimit": 5000000000
+    },
+    "unauthenticatedStatus": 401,
+    "watchdogCron": "*/5 * * * *"
+  },
+  "storage": {
+    "production": {
+      "bucket": "herald-election-results-2026",
+      "objects": 0
+    },
+    "test": {
+      "bucket": "herald-election-results-2026-test",
+      "objects": 6,
+      "bytes": 1696772
+    },
+    "verification": [
+      {
+        "path": "/r2/buckets/herald-election-results-2026/domains/managed",
+        "success": true,
+        "result": {
+          "enabled": false,
+          "bucketId": "325875c630c6499a8ec6c22a15c44061",
+          "domain": "pub-325875c630c6499a8ec6c22a15c44061.r2.dev"
+        },
+        "errors": []
+      },
+      {
+        "path": "/r2/buckets/herald-election-results-2026/domains/custom",
+        "success": true,
+        "result": {
+          "domains": []
+        },
+        "errors": []
+      },
+      {
+        "path": "/r2/buckets/herald-election-results-2026/lifecycle",
+        "success": true,
+        "result": {
+          "rules": [
+            {
+              "id": "Expire archives 0",
+              "enabled": true,
+              "conditions": {
+                "prefix": "ri-2026-general/source/"
+              },
+              "deleteObjectsTransition": {
+                "condition": {
+                  "type": "Age",
+                  "maxAge": 259200
+                }
+              }
+            },
+            {
+              "id": "Expire archives 1",
+              "enabled": true,
+              "conditions": {
+                "prefix": "ri-2026-general/snapshots/"
+              },
+              "deleteObjectsTransition": {
+                "condition": {
+                  "type": "Age",
+                  "maxAge": 259200
+                }
+              }
+            }
+          ]
+        },
+        "errors": []
+      },
+      {
+        "path": "/r2/buckets/herald-election-results-2026-test/domains/managed",
+        "success": true,
+        "result": {
+          "enabled": false,
+          "bucketId": "87e85852e8e8452fa18659141272c3a9",
+          "domain": "pub-87e85852e8e8452fa18659141272c3a9.r2.dev"
+        },
+        "errors": []
+      },
+      {
+        "path": "/r2/buckets/herald-election-results-2026-test/lifecycle",
+        "success": true,
+        "result": {
+          "rules": [
+            {
+              "id": "Expire archives 0",
+              "enabled": true,
+              "conditions": {
+                "prefix": ""
+              },
+              "deleteObjectsTransition": {
+                "condition": {
+                  "type": "Age",
+                  "maxAge": 86400
+                }
+              }
+            }
+          ]
+        },
+        "errors": []
+      }
+    ]
+  },
+  "launch": {
+    "viewerEndpoint": null,
+    "collectionEnabled": false,
+    "customDomain": false,
+    "dnsChanges": false,
+    "incidentOwnerConfigured": false,
+    "quotaMonitorConfigured": false,
+    "reason": "Free minute polling cannot support 1,000 continuously active readers through the night; capacity and monitoring acceptance pending."
+  },
+  "verification": {
+    "engineTestsPassed": 27,
+    "deliveryTestsPassed": 5,
+    "runtimeTestsPassed": 3,
+    "note": "Full 34-test suite passed before official octet-stream acceptance was added. Final 27 engine tests, affected delivery rejection test, and real Worker/SQLite/R2 restart test passed after the last changes."
+  },
+  "mockCollector": {
+    "name": "herald-election-collector-test",
+    "publicWorkersDevEnabled": false,
+    "running": false,
+    "nextAlarm": null,
+    "successes": 3
+  }
+}

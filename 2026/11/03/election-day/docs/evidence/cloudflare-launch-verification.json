@@ -1,0 +1,220 @@
+{
+  "verifiedAt": "2026-11-04T01:07:31.216Z",
+  "accountId": "44add93f0807dcac364f9aa9a2d28d20",
+  "branch": "nikos-branch",
+  "deployed": {
+    "collector": "072a8832f18c4ec4badf68f1837eb808",
+    "health": "0178a6c436824e498ca65d4a8dc832ec",
+    "delivery": "01883025-f7a4-4e7d-bfec-74d30152a6b7",
+    "testRestoredDisabled": "6ded53a3d2b543ee8f639af4bc008131"
+  },
+  "tests": {
+    "viewerAdapter": 50,
+    "collectorEngine": 34,
+    "delivery": 5,
+    "collectorRuntime": 4,
+    "health": 7,
+    "total": 100,
+    "note": "Passed across the launch verification runs; runtime tests use workerd/Miniflare. See source tests for individual scenarios.",
+    "dryRuns": [
+      "collector",
+      "health"
+    ],
+    "deliveryBuild": true,
+    "diffCheck": true
+  },
+  "schedule": {
+    "startsAt": "2026-11-04T01:00:00Z",
+    "armedBeforeStart": true,
+    "beforeStartManualCheck": "skipped: before-start",
+    "firstAttemptAt": "2026-11-04T01:00:00.001Z",
+    "firstSuccessfulCheckAt": "2026-11-04T01:00:00.216Z",
+    "firstWriteCompletedAt": "2026-11-04T01:00:01.683Z"
+  },
+  "collector": {
+    "running": true,
+    "attempts": 8,
+    "successes": 8,
+    "failures": 0,
+    "lastAttemptAt": 1793754420012,
+    "nextRunAt": 1793754480012,
+    "lastError": null,
+    "checkedAt": "2026-11-04T01:07:00.077Z",
+    "publishedAt": "2026-11-04T01:07:00.347Z",
+    "sourceUpdated": "2026-10-30T18:56:05.7249209Z",
+    "coverageEndedAt": null,
+    "revision": "35547eefd541d254a347458cf80ca0f8d73b7e1d0c54e340cb85ad12f5f1d59f",
+    "sourceHash": "e109cf75aea57e6459a229f0d69e9f5782e99a04043058ac861e714ca6b2eb6c",
+    "manifestHash": "8a433a10790cca639b7e5c1d4e509db2b8a5953627603d60e9ee47be3afe2800",
+    "etag": "0x8DF36B773FFAD42",
+    "lastModified": "Fri, 30 Oct 2026 18:56:06 GMT",
+    "pending": false,
+    "coveragePending": false,
+    "nextAlarm": 1793754480012,
+    "startsAt": "2026-11-04T01:00:00.000Z",
+    "endsAt": "2026-11-30T23:59:59.000Z",
+    "phase": "running",
+    "archiveBytesReserved": 547741,
+    "archiveByteLimit": 5000000000,
+    "stale": false
+  },
+  "health": {
+    "phase": "healthy",
+    "checkedAt": "2026-11-04T01:07:00.077Z",
+    "revision": "35547eefd541d254a347458cf80ca0f8d73b7e1d0c54e340cb85ad12f5f1d59f"
+  },
+  "publicDelivery": {
+    "first": {
+      "verifiedAt": "2026-11-04T01:00:36.468Z",
+      "status": 200,
+      "url": "https://herald-election-data-2026.pages.dev/ri-2026-general/latest.json",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "access-control-allow-origin": "https://projects.browndailyherald.com",
+        "etag": "W/\"e6a933e334aeb49b60e183cb7ae88030\"",
+        "age": null
+      },
+      "decodedBytes": 294320,
+      "checkedAt": "2026-11-04T01:00:00.216Z",
+      "publishedAt": "2026-11-04T01:00:00.216Z",
+      "sourceUpdated": "2026-10-30T18:56:05.7249209Z",
+      "revision": "35547eefd541d254a347458cf80ca0f8d73b7e1d0c54e340cb85ad12f5f1d59f",
+      "mode": "live",
+      "resultStatus": "waiting",
+      "contests": {
+        "governor": {
+          "total": 0,
+          "reporting": {
+            "reported": 0,
+            "expected": 454
+          },
+          "choices": [
+            "Aaron C. Guckian",
+            "Helena Buonanno Foulkes",
+            "Kenneth Block",
+            "Jasjit S. Gotra",
+            "C. D. Reynolds",
+            "Write-in"
+          ]
+        },
+        "mayor": {
+          "total": 0,
+          "reporting": {
+            "reported": 0,
+            "expected": 82
+          },
+          "choices": [
+            "David B. Talan",
+            "David Morales",
+            "Write-in"
+          ]
+        },
+        "question7": {
+          "total": 0,
+          "reporting": {
+            "reported": 0,
+            "expected": 82
+          },
+          "choices": [
+            "Approve",
+            "Reject"
+          ]
+        }
+      }
+    },
+    "later": {
+      "verifiedAt": "2026-11-04T01:02:20.626Z",
+      "status": 200,
+      "checkedAt": "2026-11-04T01:02:00.073Z",
+      "sourceUpdated": "2026-10-30T18:56:05.7249209Z",
+      "revision": "35547eefd541d254a347458cf80ca0f8d73b7e1d0c54e340cb85ad12f5f1d59f",
+      "contests": {
+        "governor": 0,
+        "mayor": 0,
+        "question7": 0
+      },
+      "advancedSince": "2026-11-04T01:00:00.216Z"
+    },
+    "latestVerifiedAt": "2026-11-04T01:07:00.077Z",
+    "mode": "live",
+    "resultStatus": "waiting",
+    "allContestsValidated": true,
+    "totals": {
+      "governor": 0,
+      "mayor": 0,
+      "question7": 0
+    },
+    "realSourceRehearsal": "cloudflare-live-preflight.json",
+    "sourceStillUnchangedFromRehearsal": true
+  },
+  "monitoring": {
+    "workerCron": "*/2 * * * *",
+    "alertPolicyId": "35383aa851a941f2bbca6c87f4cffa07",
+    "evaluationInterval": "5m",
+    "window": "5m",
+    "repeatInterval": "1h",
+    "threshold": "scoped health Worker error logs > 0",
+    "recipientCount": 2,
+    "primaryOwner": "Nikos",
+    "manualTestEmailReceivedByOwner": true,
+    "automaticTest": {
+      "triggeredAt": "2026-11-04T01:00:06.220084660Z",
+      "sentToBothAt": "2026-11-04T01:03:24.968797Z",
+      "triggeredValue": 2,
+      "errorRequestAt": "2026-11-04T00:57:24.237Z",
+      "errorRequestPath": "/admin/test-alert",
+      "userConfirmedViaScreenshot": true,
+      "realCollectionUnaffected": true
+    },
+    "testErrorsStopped": true,
+    "unusedIssuesPolicyRetained": "86ca192398f64d2f9f4265d22c8a76a6",
+    "limitations": [
+      "Cloudflare-wide outages or a stopped monitor can interrupt alerts",
+      "Log ingestion, evaluation and email delivery add delay"
+    ]
+  },
+  "browser": {
+    "automaticTransition": "Already-open local page moved from scheduled to active checks without a reload; received production checkedAt 2026-11-04T01:02:00.073Z",
+    "contests": "Governor, Providence mayor and Question 7 rendered from live production snapshot with their guide links",
+    "productionHostGate": "localhost. rejected and removed mode=mock; no test controls rendered",
+    "mobilePreviewWidth": 462,
+    "physicalDeviceTestThisRun": false
+  },
+  "cleanup": {
+    "removed": [
+      "collector/r2-cors.json",
+      "docs/evidence/benchmark-results.json",
+      "docs/evidence/durable-object-results.json"
+    ],
+    "removedBrokenFaviconReferences": 4,
+    "trackedOrUnignoredFilesScannedForActualDeploymentTokens": 108,
+    "credentialLeaksFound": 0,
+    "localHtmlReferencesResolve": true,
+    "removedTemporaryBuilds": [
+      "collector/.build/launch-check",
+      "collector/.build/collector-benchmark",
+      "collector/.build/benchmark-delivery",
+      "collector/.build/mock-delivery",
+      "collector/.build/production-cycle-1.json",
+      "collector/.build/production-cycle-2.json"
+    ]
+  },
+  "publication": {
+    "githubPagesBranch": "main",
+    "githubPagesPath": "/",
+    "url": "https://projects.browndailyherald.com/2026/11/03/election-day/results.html",
+    "endpointConfiguredInCheckout": true,
+    "committedThisLaunchCheck": false,
+    "pushedThisLaunchCheck": false,
+    "mergedThisLaunchCheck": false,
+    "previewControlsAutomaticallyDisabledOnPublicHost": true
+  },
+  "remainingUserActions": [
+    "Have a teammate review and publish the project changes via main",
+    "Confirm the technical admin receives alerts and arrange backup coverage",
+    "Transfer the two service admin tokens through a team secret manager",
+    "Resolve or confirm the Morales biography link pointing to Talan before publication",
+    "Review usage during coverage and the recurring plan before renewal"
+  ]
+}

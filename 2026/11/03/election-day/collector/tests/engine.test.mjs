@@ -19,9 +19,28 @@ test('one collection validates all three contests and publishes an atomic snapsh
   const archive = [...r.bucket.values].find(([key]) => key.includes('/source/'))[1];
   assert.equal(JSON.parse(gunzipSync(Buffer.from(archive.value))).createdAt, '2026-11-03T21:59:00Z');
   assert.match(r.bucket.values.get(LATEST_KEY).options.httpMetadata.cacheControl, /s-maxage=15/);
+  assert.equal(r.bucket.values.get(LATEST_KEY).options.customMetadata.snapshotMode, 'live');
+  assert.ok((await r.engine.status()).archiveBytesReserved > 0);
+});
+test('the persisted archive budget stops new writes without losing the last good snapshot', async () => {
+  const r = rig({ source: populated(), maxArchiveBytes: 1_000_000 });
+  assert.equal((await r.engine.collect()).ok, true);
+  const before = latest(r), puts = r.bucket.puts.length;
+  r.store.put('archiveBudget', { reservedBytes: 999_999 });
+  r.advance(); r.set(populated(140, '2026-11-03T22:00:00Z'));
+  const restarted = r.make();
+  assert.match((await restarted.collect()).error, /storage budget/);
+  assert.deepEqual(latest(r), before); assert.equal(r.bucket.puts.length, puts);
+  assert.equal((await restarted.status()).archiveBytesReserved, 999_999);
 });
 test('pre-election zero counts remain explicitly waiting', async () => {
   const r = rig(); await r.engine.collect(); assert.equal(latest(r).status, 'waiting');
+});
+test('the official octet-stream content type is accepted only when the body passes full JSON validation', async () => {
+  const valid = rig({ source: populated(), headers: { 'Content-Type': 'application/octet-stream' } });
+  assert.equal((await valid.engine.collect()).ok, true);
+  const invalid = rig({ fetchSource: async () => new Response('<html>upstream error</html>', { headers: { 'Content-Type': 'application/octet-stream' } }) });
+  assert.equal((await invalid.engine.collect()).ok, false); assert.equal(invalid.bucket.values.size, 0);
 });
 test('conditional 304 advances checked time but preserves source time, revision and counts', async () => {
   const r = rig({ source: populated() }); await r.engine.collect(); const first = latest(r);
@@ -171,4 +190,81 @@ test('stop during collection lets the current publication finish without leaving
   assert.equal((await collection).ok, true);
   assert.equal((await stopped).running, false);
   assert.equal(r.store.alarm, null);
+});
+
+test('ending coverage publishes an explicit archive without changing totals, certification or verification time', async () => {
+  const r = rig({ source: populated() });
+  await r.engine.start(); await r.engine.collect();
+  const first = latest(r), successes = (await r.engine.status()).successes;
+  r.advance();
+  const status = await r.engine.finish(), ended = latest(r);
+  validateSnapshot(ended, { previous: first, expectedMode: 'live' });
+  assert.equal(status.phase, 'ended'); assert.equal(status.running, false); assert.equal(status.nextAlarm, null);
+  assert.equal(status.successes, successes, 'Publishing coverage metadata is not a source check');
+  assert.equal(ended.coverageEndedAt, new Date(r.now()).toISOString());
+  assert.equal(ended.checkedAt, first.checkedAt); assert.equal(ended.sourceUpdated, first.sourceUpdated);
+  assert.equal(ended.status, 'unofficial'); assert.equal(ended.revision, first.revision);
+  assert.deepEqual(ended.contests, first.contests);
+  const writes = r.bucket.puts.length;
+  await r.make().finish(); assert.equal(r.bucket.puts.length, writes, 'Repeated finish is idempotent');
+  r.advance(86_400_000); await r.make().watchdog();
+  assert.equal((await r.engine.collect()).skipped, 'coverage-ended'); assert.equal(r.calls(), 1);
+  assert.equal((await r.engine.status()).stale, false); assert.equal(r.store.alarm, null);
+});
+
+for (const failure of ['R2 write', 'SQLite commit']) test(`end-of-coverage survives a failed ${failure} and instance replacement`, async () => {
+  const r = rig({ source: populated() });
+  await r.engine.collect(); const first = latest(r); r.advance();
+  if (failure === 'R2 write') r.bucket.fail = key => key === LATEST_KEY;
+  else r.store.failCommit = true;
+  await assert.rejects(r.engine.finish(), /Injected/);
+  const pending = r.store.get('pendingCoverage');
+  assert.ok(pending); assert.equal((await r.engine.status()).phase, 'ending');
+  assert.equal(r.store.alarm, r.now() + 60_000);
+  await assert.rejects(r.engine.start(), /end-of-coverage/);
+  if (failure === 'R2 write') assert.deepEqual(latest(r), first);
+  r.bucket.fail = null; r.advance();
+  const status = await r.make().collect({ alarm: true });
+  assert.equal(status.phase, 'ended'); assert.equal(status.coveragePending, false);
+  assert.equal(latest(r).coverageEndedAt, pending.coverageEndedAt);
+  assert.equal(latest(r).checkedAt, first.checkedAt); assert.equal(r.calls(), 1);
+  assert.equal(r.store.alarm, null);
+});
+
+test('ending coverage drains an in-flight collection and prevents a new check from overwriting the archive', async () => {
+  let release;
+  const r = rig({ fetchSource: () => new Promise(resolve => { release = resolve; }) });
+  await r.engine.start();
+  const collection = r.engine.collect();
+  while (!release) await new Promise(resolve => setTimeout(resolve, 1));
+  const ending = r.engine.finish();
+  await assert.rejects(r.engine.start(), /end-of-coverage/);
+  release(Response.json(populated()));
+  assert.equal((await collection).ok, true);
+  assert.equal((await ending).phase, 'ended');
+  assert.equal(latest(r).contests.governor.areas.state.total, 222);
+  assert.ok(latest(r).coverageEndedAt);
+  assert.equal((await r.make().collect()).skipped, 'coverage-ended');
+  assert.equal(r.store.alarm, null);
+});
+
+test('ending coverage needs a verified snapshot and cannot fabricate a last-verified time', async () => {
+  const r = rig();
+  await assert.rejects(r.engine.finish(), /verified snapshot/);
+  assert.equal(r.bucket.values.size, 0); assert.equal(r.calls(), 0);
+  assert.equal((await r.engine.status()).coverageEndedAt, undefined);
+});
+
+for (const responseStatus of [200, 304]) test(`explicit restart reopens coverage on an unchanged ${responseStatus} response`, async () => {
+  const r = rig({ source: populated() });
+  await r.engine.collect(); await r.engine.finish();
+  const ended = latest(r);
+  r.advance(); r.set(responseStatus === 304 ? null : populated(), responseStatus);
+  await r.make().start();
+  assert.equal((await r.make().collect()).ok, true);
+  assert.equal(latest(r).coverageEndedAt, undefined);
+  assert.equal((await r.engine.status()).coverageEndedAt, null);
+  assert.equal((await r.engine.status()).phase, 'running');
+  assert.ok(latest(r).checkedAt > ended.checkedAt);
+  assert.deepEqual(latest(r).contests, ended.contests);
 });

@@ -6,7 +6,8 @@ import { setImmediate as nextTurn } from 'node:timers/promises';
 import { validateSnapshot } from '../results/model.mjs';
 import { normalizeBoeExport, geographicCodes } from '../results/boe-adapter.mjs';
 import { makeMockBase, mockAtStep } from '../results/mock.mjs';
-import { createFeed, readSnapshotResponse } from '../results/feed.mjs';
+import { createFeed, readSnapshotResponse, LIVE_MESSAGE, ENDED_MESSAGE } from '../results/feed.mjs';
+import { describeFreshness } from '../results/freshness.mjs';
 import { CONFIG, previewsAllowed } from '../results/config.mjs';
 import { leadOf, leaderColors } from '../results/map-colors.mjs';
 
@@ -212,6 +213,7 @@ test('mock feed retains the exact last good snapshot during delay, failure and m
     assert.equal(snapshots.length, 1, `${scenario} must not replace results`);
     assert.equal(snapshots.at(-1), first);
     assert.equal(statuses.at(-1).kind, 'stale');
+    assert.equal(statuses.at(-1).message, LIVE_MESSAGE);
   }
   time += 60_000; await feed.setScenario('normal');
   assert.equal(snapshots.length, 2);
@@ -346,14 +348,18 @@ test('an already-open page starts polling at 8 p.m. Eastern, then polls each min
   time += 60_000; t.mock.timers.tick(60_000); await nextTurn(); assert.equal(requests.length, 3);
 });
 
-test('the update indicator stops for paused, failed, historical and disconnected data', async t => {
+test('the update indicator stays on during retries and stops for paused, hidden, historical and disconnected data', async t => {
   const { feed, statuses, documentRef } = harness(t, { mode: 'mock', allowPreview: true });
   await feed.start(); assert.equal(statuses.at(-1).updating, true);
   feed.setPaused(true); assert.equal(statuses.at(-1).updating, false);
   feed.setPaused(false); assert.equal(statuses.at(-1).updating, true);
   documentRef.setHidden(true); assert.equal(statuses.at(-1).updating, false);
   documentRef.setHidden(false); await nextTurn(); assert.equal(statuses.at(-1).updating, true);
-  await feed.setScenario('failure'); assert.equal(statuses.at(-1).updating, false);
+  for (const scenario of ['failure', 'malformed', 'delayed']) {
+    await feed.setScenario(scenario); assert.equal(statuses.at(-1).updating, true);
+    feed.setPaused(true); assert.equal(statuses.at(-1).updating, false);
+    feed.setPaused(false); assert.equal(statuses.at(-1).updating, true);
+  }
   await feed.setMode('historical'); assert.equal(statuses.at(-1).updating, false);
   await feed.setMode('live'); assert.equal(statuses.at(-1).updating, false);
 });
@@ -365,7 +371,7 @@ test('an invalid start date cannot fetch or advertise a live endpoint', async t 
   assert.equal(requests.length, 0); assert.equal(statuses.at(-1).kind, 'error'); assert.equal(statuses.at(-1).updating, false);
 });
 
-test('successful delivery of an old snapshot cannot keep the live indicator on', async t => {
+test('successful delivery of an old snapshot keeps retrying without refreshing its verification time', async t => {
   let time = fixedNow;
   const { feed, statuses, documentRef } = harness(t, { now: () => time,
     config: { ...CONFIG, startsAt: null, endpoint: 'https://results.example.test/current.json' },
@@ -373,5 +379,190 @@ test('successful delivery of an old snapshot cannot keep the live indicator on',
   await feed.start(); assert.equal(statuses.at(-1).updating, true);
   time += CONFIG.staleAfterMs + 1;
   documentRef.setHidden(true); documentRef.setHidden(false); await nextTurn();
-  assert.equal(statuses.at(-1).kind, 'stale'); assert.equal(statuses.at(-1).updating, false);
+  assert.equal(statuses.at(-1).kind, 'stale'); assert.equal(statuses.at(-1).updating, true);
+  assert.equal(statuses.at(-1).lastChecked, publishedAt);
+  const note = describeFreshness({ snapshot: waiting, status: statuses.at(-1), connected: true, now: time });
+  assert.equal(statuses.at(-1).message, LIVE_MESSAGE);
+  assert.equal(note.text, 'Last verified 3 min ago (5:00 PM EST)');
+});
+
+test('freshness uses a successful source check even when the official vote totals have not changed', () => {
+  const snapshot = { ...waiting, sourceUpdated: '2026-11-03T20:00:00.000Z', checkedAt: publishedAt };
+  const note = describeFreshness({ snapshot, connected: true, now: fixedNow + 45_000,
+    status: { kind: 'live', mode: 'live', lastChecked: publishedAt, updating: true } });
+  assert.equal(note.text, 'Last verified just now (5:00 PM EST)');
+  assert.match(note.title, /Official source timestamp:.*3:00:00 PM EST/);
+});
+
+test('the verification age advances without adding warnings when updates are old', () => {
+  const status = { kind: 'live', mode: 'live', lastChecked: publishedAt, updating: true };
+  const describe = elapsed => describeFreshness({ snapshot: waiting, status, connected: true, now: fixedNow + elapsed });
+  assert.equal(describe(179_999).text, 'Last verified 2 min ago (5:00 PM EST)');
+  assert.equal(describe(180_000).text, 'Last verified 3 min ago (5:00 PM EST)');
+  assert.match(describe(7_200_000).text, /Last verified 2 hrs ago/);
+  assert.match(describe(86_400_000).text, /Last verified 1 day ago \(Nov 3, 5:00 PM EST\)/);
+});
+
+test('failed and rejected polls keep normal copy and the last verified time until recovery', async t => {
+  let time = fixedNow;
+  const { feed, snapshots, statuses } = harness(t, { mode: 'mock', allowPreview: true, now: () => time });
+  await feed.start();
+  const original = snapshots.at(-1);
+  time += 10_000; await feed.setScenario('failure');
+  let note = describeFreshness({ snapshot: original, status: statuses.at(-1), now: time });
+  assert.equal(note.text, 'Last verified just now (5:00 PM EST)');
+  assert.equal(statuses.at(-1).message, LIVE_MESSAGE);
+  time += 240_000; await feed.setScenario('malformed');
+  assert.equal(snapshots.at(-1), original);
+  assert.equal(statuses.at(-1).lastChecked, publishedAt);
+  note = describeFreshness({ snapshot: original, status: statuses.at(-1), now: time });
+  assert.equal(note.text, 'Last verified 4 min ago (5:00 PM EST)');
+  assert.equal(statuses.at(-1).message, LIVE_MESSAGE);
+  await feed.setScenario('normal');
+  note = describeFreshness({ snapshot: snapshots.at(-1), status: statuses.at(-1), now: time });
+  assert.match(note.text, /Last verified just now/);
+});
+
+test('a first-fetch failure keeps automatic retries active without inventing a verification timestamp', async t => {
+  const { feed, snapshots, statuses } = harness(t, {
+    config: { ...CONFIG, startsAt: null, endpoint: 'https://results.example.test/current.json' },
+    fetchImpl: async () => { throw new Error('offline'); },
+  });
+  await feed.start();
+  assert.equal(snapshots.length, 0);
+  assert.equal(statuses.at(-1).lastChecked, null);
+  assert.equal(statuses.at(-1).updating, true);
+  const note = describeFreshness({ status: statuses.at(-1), connected: true, now: fixedNow });
+  assert.equal(note.text, '');
+  assert.equal(statuses.at(-1).message, LIVE_MESSAGE);
+  feed.stop(); assert.equal(statuses.at(-1).updating, false);
+});
+
+test('a scheduled placeholder cannot claim a verified check or enter the live cache when the first poll fails', async t => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  let time = Date.parse(CONFIG.startsAt) - 1000, cacheWrites = 0;
+  const endpoint = 'https://results.example.test/current.json';
+  const { feed, snapshots, statuses } = harness(t, { config: { ...CONFIG, endpoint }, now: () => time,
+    storage: { getItem: () => null, setItem: () => { cacheWrites++; } },
+    fetchImpl: async url => { if (url === endpoint) throw new Error('offline'); return Response.json(waiting); },
+  });
+  await feed.start();
+  assert.equal(statuses.at(-1).lastChecked, null); assert.equal(cacheWrites, 0);
+  time += 1000; t.mock.timers.tick(1000); await nextTurn();
+  assert.equal(statuses.at(-1).updating, true); assert.equal(statuses.at(-1).lastChecked, null);
+  const note = describeFreshness({ snapshot: snapshots.at(-1), status: statuses.at(-1), connected: true, now: time });
+  assert.equal(note.text, ''); assert.equal(cacheWrites, 0);
+  assert.equal(statuses.at(-1).message, LIVE_MESSAGE);
+});
+
+test('scheduled, disconnected, historical and deliberately paused views do not claim a live delay', () => {
+  const status = { kind: 'live', mode: 'live', lastChecked: publishedAt, updating: true };
+  assert.equal(describeFreshness({ snapshot: waiting, status, now: fixedNow }).text, '');
+  assert.equal(describeFreshness({ snapshot: waiting, status: { ...status, kind: 'scheduled' }, connected: true, now: fixedNow }).text, '');
+  const historical = describeFreshness({ snapshot: primary, status: { kind: 'historical', mode: 'historical', lastChecked: primary.checkedAt }, now: fixedNow });
+  assert.match(historical.text, /^Historical results/);
+  const paused = describeFreshness({ snapshot: mock, status: { kind: 'mock', mode: 'mock', lastChecked: publishedAt, paused: true }, now: fixedNow + 600_000 });
+  assert.match(paused.text, /Last verified 10 min ago.*Paused/);
+});
+
+test('coverage-end metadata is validated separately from certification', () => {
+  const snapshot = { ...mock, mode: 'live', checkedAt: publishedAt, publishedAt, coverageEndedAt: publishedAt };
+  validateSnapshot(snapshot);
+  assert.equal(snapshot.status, 'unofficial');
+  for (const endedAt of [null, 'invalid', '2026-11-03T21:59:00Z', '2026-11-03T22:01:00Z']) {
+    assert.throws(() => validateSnapshot({ ...snapshot, coverageEndedAt: endedAt }), /[Cc]overage end time/);
+  }
+});
+
+test('live coverage uses the requested copy during success, failure, rejection and recovery', async t => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const snapshot = { ...mock, mode: 'live', checkedAt: publishedAt, publishedAt };
+  let request = 0;
+  const { feed, snapshots, statuses, documentRef } = harness(t, {
+    config: { ...CONFIG, startsAt: null, endpoint: 'https://results.example.test/current.json' },
+    fetchImpl: async () => {
+      request++;
+      if (request === 2) throw new Error('offline');
+      if (request === 3) return Response.json({ ...snapshot, schemaVersion: 99 });
+      return Response.json(snapshot);
+    },
+  });
+  await feed.start();
+  for (let step = 0; step < 4; step++) {
+    assert.equal(statuses.at(-1).message, LIVE_MESSAGE);
+    assert.equal(statuses.at(-1).lastChecked, publishedAt);
+    assert.equal(statuses.at(-1).updating, true);
+    if (step < 3) { documentRef.setHidden(true); documentRef.setHidden(false); await nextTurn(); }
+  }
+  assert.equal(snapshots.length, 2);
+  assert.deepEqual(snapshots[0], snapshots[1]);
+});
+
+test('ending coverage preserves results and stops polling across visibility changes and time', async t => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const live = { ...mock, mode: 'live', checkedAt: publishedAt, publishedAt };
+  const endedAt = new Date(fixedNow + 60_000).toISOString();
+  const ended = { ...live, coverageEndedAt: endedAt, publishedAt: endedAt };
+  let requests = 0;
+  const { feed, snapshots, statuses, documentRef } = harness(t, {
+    now: () => fixedNow + 60_000,
+    config: { ...CONFIG, startsAt: null, endpoint: 'https://results.example.test/current.json', pollIntervalMs: 100 },
+    fetchImpl: async () => Response.json(++requests === 1 ? live : ended),
+  });
+  await feed.start(); assert.equal(statuses.at(-1).updating, true);
+  t.mock.timers.tick(100); await nextTurn();
+  assert.equal(statuses.at(-1).kind, 'ended');
+  assert.equal(statuses.at(-1).message, ENDED_MESSAGE);
+  assert.equal(statuses.at(-1).updating, false);
+  assert.equal(statuses.at(-1).lastChecked, publishedAt);
+  assert.deepEqual(snapshots.at(-1).contests, live.contests);
+  const describe = now => describeFreshness({ snapshot: ended, status: statuses.at(-1), connected: true, now });
+  assert.equal(describe(fixedNow + 86_400_000).text, 'Last verified Nov 3, 2026, 5:00:00 PM EST');
+  assert.equal(describe(fixedNow + 86_400_000).text, describe(fixedNow + 604_800_000).text);
+  documentRef.setHidden(true); documentRef.setHidden(false);
+  t.mock.timers.tick(600_000); await nextTurn();
+  assert.equal(requests, 2);
+});
+
+test('an archived cache stays ended offline but a fresh visit can receive reopened coverage', async t => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const ended = { ...mock, mode: 'live', checkedAt: publishedAt, publishedAt, coverageEndedAt: publishedAt };
+  const reopened = { ...ended, checkedAt: new Date(fixedNow + 1000).toISOString(), publishedAt: new Date(fixedNow + 1000).toISOString() };
+  delete reopened.coverageEndedAt;
+  for (const online of [false, true]) {
+    let requests = 0;
+    const { feed, statuses } = harness(t, {
+      config: { ...CONFIG, startsAt: null, endpoint: 'https://results.example.test/current.json', pollIntervalMs: 100 },
+      storage: { getItem: () => JSON.stringify(ended), setItem() {} },
+      fetchImpl: async () => { requests++; if (!online) throw new Error('offline'); return Response.json(reopened); },
+    });
+    await feed.start();
+    assert.equal(statuses.at(-1).message, online ? LIVE_MESSAGE : ENDED_MESSAGE);
+    assert.equal(statuses.at(-1).updating, online);
+    t.mock.timers.tick(100); await nextTurn();
+    assert.equal(requests, online ? 2 : 1);
+    feed.stop();
+  }
+});
+
+test('mock end-of-coverage can be previewed without promoting simulated returns to certified', async t => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  let time = fixedNow;
+  const { feed, snapshots, statuses, documentRef } = harness(t, { mode: 'mock', allowPreview: true, now: () => time });
+  await feed.start();
+  const first = snapshots.at(-1);
+  time += 60_000; await feed.setScenario('ended');
+  assert.equal(statuses.at(-1).message, ENDED_MESSAGE);
+  assert.equal(statuses.at(-1).updating, false);
+  assert.equal(snapshots.at(-1).mode, 'mock');
+  assert.equal(snapshots.at(-1).status, 'unofficial');
+  assert.equal(snapshots.at(-1).checkedAt, first.checkedAt);
+  assert.deepEqual(snapshots.at(-1).contests, first.contests);
+  documentRef.setHidden(true); documentRef.setHidden(false);
+  await feed.next(); feed.setPaused(false);
+  t.mock.timers.tick(60_000); await nextTurn();
+  assert.equal(snapshots.length, 2);
+  time += 60_000; await feed.setScenario('normal');
+  assert.equal(snapshots.at(-1).coverageEndedAt, undefined);
+  assert.equal(statuses.at(-1).updating, true);
 });
