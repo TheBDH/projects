@@ -346,6 +346,11 @@ const AUTHORS = {
     page: "https://www.browndailyherald.com/by/herald-staff",
     photo: "assets/HeraldLogo.png",
   },
+  "rebecca-goodman": {
+    name: "Rebecca Goodman",
+    page: "https://www.browndailyherald.com/by/rebecca-goodman",
+    photo: "assets/RebeccaGoodman.png",
+  },
   
 };
 
