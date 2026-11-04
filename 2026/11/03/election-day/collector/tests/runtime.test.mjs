@@ -37,7 +37,8 @@ test('workerd runs the real Worker, SQLite object, authentication and R2 publica
     assert.equal((await request(mf, 'status', { headers: {} })).status, 401);
     assert.equal((await request(mf, 'start', { headers: { Authorization: 'Bearer wrong-token' } })).status, 401);
     assert.equal((await request(mf, 'check', { method: 'GET' })).status, 405);
-    assert.equal((await mf.dispatchFetch('https://collector.test/latest.json')).status, 404);
+    const empty = await mf.dispatchFetch('https://collector.test/latest.json');
+    assert.equal(empty.status, 404); await empty.text();
     assert.equal(calls, 0);
     const response = await request(mf, 'check');
     assert.equal(response.status, 200, await response.text());
@@ -51,6 +52,18 @@ test('workerd runs the real Worker, SQLite object, authentication and R2 publica
     assert.equal(before.successes, 1);
     assert.equal(before.pending, false);
     for (let i = 0; i < 10; i++) await bucket.get(LATEST_KEY);
+    const origin = 'https://projects.browndailyherald.com';
+    const pub = await mf.dispatchFetch('https://collector.test/latest.json', { headers: { Origin: origin } });
+    assert.equal(pub.status, 200);
+    assert.equal(pub.headers.get('access-control-allow-origin'), origin);
+    assert.match(pub.headers.get('cache-control'), /s-maxage=15/);
+    assert.equal((await pub.json()).revision, snapshot.revision);
+    const etag = pub.headers.get('etag');
+    const revalidated = await mf.dispatchFetch('https://collector.test/latest.json', { headers: { Origin: origin, 'If-None-Match': etag } });
+    assert.equal(revalidated.status, 304); await revalidated.arrayBuffer();
+    const foreign = await mf.dispatchFetch('https://collector.test/latest.json', { headers: { Origin: 'https://evil.example' } });
+    assert.equal(foreign.headers.get('access-control-allow-origin'), null); await foreign.arrayBuffer();
+    assert.equal((await mf.dispatchFetch('https://collector.test/latest.json', { method: 'POST' })).status, 405);
     assert.equal(calls, 1, 'Reading the shared file must not fetch BOE again');
     await mf.dispose(); mf = new Miniflare(options(path, outbound));
     const after = await (await request(mf, 'status')).json();
