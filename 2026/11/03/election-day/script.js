@@ -337,6 +337,11 @@ const AUTHORS = {
     page: "https://www.browndailyherald.com/by/vanson-vu",
     photo: "",
   },
+  "herald-staff": {
+    name: "Herald Staff",
+    page: "https://www.browndailyherald.com/by/herald-staff",
+    photo: "assets/HeraldLogo.png",
+  },
   
 };
 
